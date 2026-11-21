@@ -62,4 +62,4 @@ jobs:
         env:
           MAINS_WORKER_URL: ${{ vars.MAINS_WORKER_URL }}
           MAINS_WORKER_SECRET: ${{ secrets.MAINS_WORKER_SECRET }}
-        run: python worker.py
+        run: python worker.py 2>/dev/null
