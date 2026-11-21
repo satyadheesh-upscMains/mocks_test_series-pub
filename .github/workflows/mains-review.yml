@@ -22,6 +22,10 @@ jobs:
     if: ${{ (github.event_name == 'workflow_dispatch' && inputs.smoke) || vars.MAINS_WORKER_URL != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: ${{ fromJSON(github.event_name == 'workflow_dispatch' && inputs.smoke && '["en","hi"]' || '["queue"]') }}
     steps:
       - uses: actions/checkout@v4
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.smoke) }}
@@ -42,20 +46,31 @@ jobs:
         run: pip install llama-cpp-python==0.3.36 huggingface-hub==0.36.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
       - name: Verify synthetic examples
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.smoke }}
+        env:
+          SMOKE_LANG: ${{ matrix.variant }}
         run: |
           python - <<'PY'
           from huggingface_hub import hf_hub_download
           from llama_cpp import Llama
-          import json
+          import json, os, re
           path = hf_hub_download("unsloth/gemma-4-12b-it-GGUF", "gemma-4-12b-it-Q4_K_M.gguf", local_dir="models")
           model = Llama(model_path=path, n_ctx=2048, n_gpu_layers=0, verbose=False)
-          for answer, valid in [("Wetlands hold water and reduce runoff.", True), ("Cricket matches draw crowds.", False)]:
+          hi = os.environ["SMOKE_LANG"] == "hi"
+          question = "शहरी आर्द्रभूमि बाढ़ कम कैसे करती हैं?" if hi else "How do urban wetlands reduce flooding?"
+          answers = ("आर्द्रभूमि बारिश का पानी जमा करती हैं और बहाव कम करती हैं।", "क्रिकेट के मैच देखने बहुत लोग आते हैं।") if hi else (
+              "Wetlands hold water and reduce runoff.", "Cricket matches draw crowds.")
+          for answer, valid in zip(answers, (True, False)):
+              lang = "Hindi in Devanagari" if hi else "English"
               out = model.create_chat_completion(
-                  messages=[{"role": "user", "content": "Does the following answer address how wetlands reduce floods? Return JSON with a boolean field relevant. Answer: " + answer}],
-                  response_format={"type":"json_object","schema":{"type":"object","required":["relevant"],"properties":{"relevant":{"type":"boolean"}}}},
+                  messages=[{"role": "user", "content": f"Does the answer address the question? Write one short reason in {lang}. Question: {question} Answer: {answer}"}],
+                  response_format={"type":"json_object","schema":{"type":"object","required":["relevant","reason"],"properties":{"relevant":{"type":"boolean"},"reason":{"type":"string"}}}},
                   temperature=0, max_tokens=256)
-              assert json.loads(out["choices"][0]["message"]["content"])["relevant"] is valid
-          print("Synthetic on-task/off-task runtime check passed.")
+              feedback = json.loads(out["choices"][0]["message"]["content"])
+              assert feedback["relevant"] is valid
+              assert len(feedback["reason"].strip()) >= 8
+              if hi:
+                  assert len(re.findall("[अ-ॿ]", feedback["reason"])) >= 6
+          print("Synthetic scope and feedback-language checks passed.")
           PY
       - name: Review pending submissions
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.smoke) }}
