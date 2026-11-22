@@ -12,6 +12,7 @@ VERDICTS = ["good", "partial", "missing", "unsupported", "wrong", "not_applicabl
 PART_VERDICTS = ["met", "partial", "missing"]
 KINDS = ["wrong", "unsupported", "weak", "missing"]
 PRIORITY = ["major", "medium", "minor"]
+NO_REWRITE = ("evidence", "accuracy")
 
 FIELDS = """Fill the JSON fields in this order:
 - credit: up to 2 of the student's sentences that earn credit for THIS check, each with a specific reason. Empty if none does.
@@ -117,7 +118,9 @@ def bind(raw, prep, check_id):
             raise Rejected("part:gap_without_concern")
     else:
         if verdict == "not_applicable" and concerns:
-            raise Rejected("check:not_applicable_with_concerns")
+            # The model judged the check not needed but still found problems: the problems stand, so it is a
+            # partial result, not a rejected one.
+            verdict = "partial"
         if verdict == "good" and not credit:
             raise Rejected("check:good_without_credit")
         if verdict in ("partial", "missing", "unsupported", "wrong") and not concerns:
@@ -125,9 +128,17 @@ def bind(raw, prep, check_id):
         if verdict == "missing" and credit and check_id == "scope":
             credit = []  # an off-topic answer earns no credit; keep scope 'missing' instead of rejecting
 
+    if check_id == "evidence":
+        # A missing example weakens an answer but does not cost a required part: never a top-priority finding.
+        for c in concerns:
+            if c["priority"] == "major":
+                c["priority"] = "medium"
+
     rewrite = None
     rw = raw.get("rewrite") or {}
-    if isinstance(rw.get("text"), str) and rw["text"].strip():
+    # The examiner cannot supply a real example or a corrected fact without inventing one, so the evidence and
+    # accuracy checks give advice only, never a "try writing" line.
+    if check_id not in NO_REWRITE and isinstance(rw.get("text"), str) and rw["text"].strip():
         rsid = rw.get("sourceId")
         if rsid == "none":
             rsid = None
@@ -144,33 +155,6 @@ def bind(raw, prep, check_id):
             "note": clean(raw.get("note"), lang, src, hi=500, field="note")}
 
 
-_FALLBACK = {
-    "en": {"part": ("No sentence of the answer addresses this part of the question.",
-                    "Add a sentence that answers this part of the question.",
-                    "This part of the question is not addressed."),
-           "check": ("The answer does not address this aspect of the question.",
-                     "Add a point that deals with this aspect of the question.",
-                     "This aspect of the question is not addressed.")},
-    "hi": {"part": ("जवाब का कोई वाक्य सवाल के इस हिस्से को संबोधित नहीं करता।",
-                    "सवाल के इस हिस्से का जवाब देने वाला एक वाक्य जोड़िए।",
-                    "सवाल का यह हिस्सा संबोधित नहीं है।"),
-           "check": ("जवाब सवाल के इस पहलू को संबोधित नहीं करता।",
-                     "सवाल के इस पहलू से जुड़ा एक बिंदु जोड़िए।",
-                     "सवाल का यह पहलू संबोधित नहीं है।")},
-}
-
-
-def _fallback(prep, check_id, kind):
-    """A conservative valid result when a check could not be judged: the answer does not address it.
-
-    The report is still built and the 'every check ran' gate still passes; the finding is re-checked by the
-    second opinion like any other, and trust.fallbackChecks records which checks used it."""
-    reason, fix, note = _FALLBACK[prep["lang"]][kind]
-    return {"id": check_id, "kind": kind, "status": "ok", "verdict": "missing", "credit": [],
-            "concerns": [{"sourceId": None, "quote": None, "kind": "missing", "priority": "major",
-                          "reason": reason, "fix": fix}], "rewrite": None, "note": note, "fallback": True}
-
-
 def run(examiner, prep, system, check_id):
     kind = "part" if check_id.startswith("part:") else "check"
     sids = [s["id"] for s in prep["sentences"]]
@@ -178,6 +162,8 @@ def run(examiner, prep, system, check_id):
         value = examiner.ask(stage="check", check=check_id, system=system, task=task(prep, check_id),
                              schema=schema(sids, PART_VERDICTS if kind == "part" else VERDICTS), max_tokens=900,
                              validate=lambda raw: bind(raw, prep, check_id))
-    except Rejected:
-        return _fallback(prep, check_id, kind)
+    except Rejected as e:
+        # Not judged: the report shows this check as "Not checked" and adds no finding for it. Inventing a
+        # verdict here would put feedback in front of the student that no examiner pass actually made.
+        return {"id": check_id, "kind": kind, "status": "unavailable", "reason": e.code}
     return {"id": check_id, "kind": kind, "status": "ok", **value}

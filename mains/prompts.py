@@ -22,7 +22,8 @@ Ground rules
 - Never call something missing if any sentence covers it. Credit valid points that are not in the reference points: they are examples, not an answer key. Credit only a point that moves the answer towards what the question asks; a point about a different topic earns no credit.
 - If no sentence answers a question part, that part is "missing": give no credit and one concern with sourceId "none" and kind "missing".
 - If the whole answer is about a different topic, the scope check is "missing" with no credit, and a dimension the answer does not address is "missing" with a concern that names the gap, not "not_applicable".
-- Do not invent statistics, dates, or names of cases, schemes, reports, committees or laws. Use a number, date or name only if it appears in MATERIALS. If a fact needs checking, say what the student should check.
+- Do not invent statistics or dates, and never name a specific scheme, mission, policy, law, court case, report, committee, city project, river or place unless MATERIALS names it. When an example or evidence would help, describe the kind of example (for example "a city flood plan you have studied") and leave the choice to the student. If a fact needs checking, say what the student should check.
+- Write proper names and acronyms only when they appear in MATERIALS.
 - Do not give marks, scores or grades.
 - Every reason must point to what the cited words do or fail to do. No generic comment that would fit any answer.
 - Write every student-facing field in {language}. Use plain words and short sentences that a student understands on first reading.

@@ -110,6 +110,32 @@ def script_problem(value, lang, *sources):
     return None
 
 
+ALLOWED_NAMES = {"i", "india", "indian", "indians", "part", "parts", "mains", "prelims", "english", "hindi",
+                 "upsc", "gs", "gdp"}
+WORD = re.compile(r"[A-Za-z][A-Za-z'\u2019-]*")
+STARTERS = ".!?\u0964:;\"'\u201c\u2018("
+
+
+def unsourced_names(value, *sources):
+    """Proper names and acronyms in feedback that the question, answer and reference points never mention.
+
+    A capitalised word in the middle of a sentence (a scheme, river, city, court, report) or an all-caps acronym must
+    come from the materials; otherwise the model is supplying a fact nobody can check against the student's work.
+    """
+    allowed = {t.casefold() for s in sources for t in WORD.findall(nfc(s))} | ALLOWED_NAMES
+    text = nfc(value)
+    bad = []
+    for m in WORD.finditer(text):
+        w = m.group(0)
+        if w.casefold() in allowed:
+            continue
+        before = text[:m.start()].rstrip()
+        sentence_start = not before or before[-1] in STARTERS
+        if (len(w) >= 3 and w.isupper()) or (w[0].isupper() and not sentence_start):
+            bad.append(w)
+    return bad
+
+
 def degenerate(value):
     """Looping or stuttering output: a repeated 4-word run, a duplicated sentence, or a long run of one character."""
     words = fold(value).split()
@@ -162,4 +188,6 @@ def clean(value, lang, sources, lo=8, hi=600, field="text", allow_empty=False):
         raise Rejected(f"{field}:{problem}")
     if unsourced_numbers(out, *sources):
         raise Rejected(f"{field}:unsourced_number")
+    if unsourced_names(out, *sources):
+        raise Rejected(f"{field}:unsourced_name")
     return out

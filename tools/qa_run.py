@@ -46,7 +46,7 @@ def gates(rep, expect):
         tone = {h["sourceId"]: h["tone"] for h in rep["highlights"]}
         out["problem sentences marked red"] = all(tone.get(s) == "red" for s in expect["redSentences"])
     out["three or fewer fixes"] = len(rep["fixes"]) <= 3
-    out["every check ran"] = not rep["trust"]["unavailableChecks"]
+    out["at most 2 checks not judged"] = len(rep["trust"]["unavailableChecks"]) <= 2
     return out
 
 

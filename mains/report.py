@@ -12,7 +12,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v1"
+REPORT_VERSION = "mains-report-v2"
 MIN_CHECKS = 10  # of 12: below this the report is not trustworthy and the job is retried instead
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -49,6 +49,28 @@ def same_problem(g, f):
     if f["sourceId"] is not None and g["kind"] == f["kind"]:
         return True
     return similar(g["fix"], f["fix"], 0.45) or similar(g["reason"], f["reason"], 0.45)
+
+
+STOP = {"the", "a", "an", "and", "or", "of", "to", "with", "in", "on", "for", "by", "is", "are", "be", "this", "that",
+        "these", "your", "you", "it", "as", "how", "such", "like", "more", "add", "include",
+        "के", "की", "का", "में", "और", "को", "से", "है", "हैं", "जैसे", "जैसी", "कि", "या", "पर", "एक", "इस", "यह"}
+
+
+def _content(value):
+    from .text import tokens
+    return {t for t in tokens(value) if t not in STOP and len(t) > 1}
+
+
+def same_advice(a, b, threshold=0.5):
+    """Two fixes asking for the same change: most of the shorter one's content words appear in the other."""
+    ta, tb = _content(a), _content(b)
+    if not ta or not tb:
+        return False
+    return len(ta & tb) / min(len(ta), len(tb)) >= threshold
+
+
+def repeats(f, chosen):
+    return any(same_advice(f["fix"], g["fix"]) for g in chosen)
 
 
 def headline(parts, level, majors, L):
@@ -134,13 +156,15 @@ def assemble(prep, results):
     majors = [f for f in kept if f["priority"] == "major"]
 
     # 2. Up to three fixes, preferring different sentences so the student is not told three things about one line.
+    # A fix that asks for the same change as one already chosen (for example two checks both asking for the two
+    # missing challenges, in different words) is skipped: three fixes must be three different things to do.
     fixes, used = [], set()
     for f in kept:
-        if len(fixes) < 3 and (f["sourceId"] is None or f["sourceId"] not in used):
+        if len(fixes) < 3 and (f["sourceId"] is None or f["sourceId"] not in used) and not repeats(f, fixes):
             fixes.append(f)
             used.add(f["sourceId"])
     for f in kept:
-        if len(fixes) < 3 and f not in fixes:
+        if len(fixes) < 3 and f not in fixes and not repeats(f, fixes):
             fixes.append(f)
     fix_no = {id(f): i for i, f in enumerate(fixes, 1)}
 
@@ -235,8 +259,7 @@ def assemble(prep, results):
         "checks": checks, "stats": stats, "transcript": None,
         "trust": {"secondOpinions": len(verified), "overturned": verified.count("overturned"),
                   "softened": verified.count("softened"),
-                  "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims],
-                  "fallbackChecks": [r["id"] for r in ordered if r.get("fallback")]},
+                  "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims]},
     }
 
 

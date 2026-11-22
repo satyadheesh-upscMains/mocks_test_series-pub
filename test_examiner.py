@@ -249,15 +249,60 @@ class Report(unittest.TestCase):
             split = pipeline.finish(ex, prep, results)
         self.assertEqual(json.dumps(single, sort_keys=True), json.dumps(split, sort_keys=True))
 
-    def test_failed_checks_fall_back(self):
-        # Three checks that cannot be judged do not fail the run: each falls back to a valid 'missing' verdict.
-        script = {k: v for k, v in EN.items() if k not in ("concepts", "accuracy", "evidence")}
-        script.update({k: {"verdict": "nonsense"} for k in ("concepts", "accuracy", "evidence")})
+    def test_two_failed_checks_show_not_checked(self):
+        # A check that cannot be judged adds no finding: it is shown as "Not checked", never as an invented gap.
+        script = dict(EN, concepts={"verdict": "nonsense"}, language={"verdict": "nonsense"})
         rep, _ = self.run_all(script, "en")
         verdicts = {d["id"]: d["verdict"] for d in rep["checks"]}
-        self.assertEqual({verdicts[k] for k in ("concepts", "accuracy", "evidence")}, {"missing"})
-        self.assertEqual(rep["trust"]["fallbackChecks"], ["concepts", "accuracy", "evidence"])
-        self.assertEqual(rep["trust"]["unavailableChecks"], [])
+        self.assertEqual((verdicts["concepts"], verdicts["language"]), ("unavailable", "unavailable"))
+        self.assertEqual(rep["trust"]["unavailableChecks"], ["concepts", "language"])
+        self.assertTrue(all(f["where"] not in ("Concepts explained", "Clear wording") for f in rep["fixes"]))
+
+    def test_too_many_failed_checks_is_incomplete(self):
+        script = {k: v for k, v in EN.items() if k not in ("concepts", "accuracy", "evidence")}
+        script.update({k: {"verdict": "nonsense"} for k in ("concepts", "accuracy", "evidence")})
+        with self.assertRaises(report.Incomplete):
+            self.run_all(script, "en")
+
+    def test_same_advice_twice_is_one_fix(self):
+        a = "दो विशिष्ट चुनौतियां जोड़ें, जैसे कि फंड की कमी या अलग-अलग विभागों के बीच तालमेल की कमी।"
+        b = "भारतीय शहरों में फंड की कमी और विभागों के बीच तालमेल की कमी जैसी दो चुनौतियों को शामिल करें।"
+        self.assertTrue(report.same_advice(a, b))
+        self.assertFalse(report.same_advice("Replace concreting with protecting the natural inflow paths.",
+                                            "Remove the 80% claim or name a study you have read."))
+
+
+class NoInventedContent(unittest.TestCase):
+    def test_names_not_in_materials_are_rejected(self):
+        for value in ("For example, the AMRUT scheme can serve as a model.",
+                      "Cities should adopt frameworks like the National Water Policy.",
+                      "For example, the rejuvenation of the Yamuna floodplains shows this."):
+            with self.assertRaises(Rejected) as e:
+                text.clean(value, "en", [Q_EN, A_EN])
+            self.assertEqual(e.exception.code, "text:unsourced_name")
+        # Names that the question or answer use, and sentence-initial capitals, are fine.
+        self.assertTrue(text.clean("Municipalities should protect the inflow paths; Indian cities need this.",
+                                   "en", [Q_EN, A_EN]))
+
+    def test_evidence_check_gives_advice_only(self):
+        ex = Examiner(FakeGemma(EN))
+        prep = pipeline.prepare(ex, job())
+        raw = {"credit": [], "concerns": [concern("none", "missing", "major", "No example supports the points made.",
+                                                  "Add one wetland or city plan you have studied.")],
+               "note": "No example is given.", "verdict": "missing",
+               "rewrite": {"sourceId": "none", "text": "Cities such as the one you studied restored their wetlands."}}
+        bound = checks.bind(raw, prep, "evidence")
+        self.assertIsNone(bound["rewrite"])
+        self.assertEqual(bound["concerns"][0]["priority"], "medium")
+
+    def test_not_applicable_with_problems_is_partial(self):
+        ex = Examiner(FakeGemma(EN))
+        prep = pipeline.prepare(ex, job())
+        raw = {"credit": [], "concerns": [concern("s3", "weak", "minor", "Banning all entry ignores the people nearby.",
+                                                  "Say who uses the wetland and how they are involved.")],
+               "note": "The answer does not weigh who is affected.", "verdict": "not_applicable",
+               "rewrite": {"sourceId": "none", "text": ""}}
+        self.assertEqual(checks.bind(raw, prep, "balance")["verdict"], "partial")
 
 
 if __name__ == "__main__":
