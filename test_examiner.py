@@ -271,6 +271,30 @@ class Report(unittest.TestCase):
         self.assertFalse(report.same_advice("Replace concreting with protecting the natural inflow paths.",
                                             "Remove the 80% claim or name a study you have read."))
 
+    def test_dimension_gap_matching_a_missing_part_is_folded(self):
+        # The balance check also asking for the two challenges repeats Part 2's own finding: one fix, not two.
+        hi = dict(HI, balance={"credit": [], "concerns": [concern("none", "missing", "major",
+                  "भारतीय शहरों में लागू करने की चुनौतियाँ नहीं लिखीं।",
+                  "भारतीय शहरों में इन योजनाओं को लागू करने में आने वाली दो मुख्य चुनौतियों को लिखें।")],
+                  "note": "चुनौतियाँ नहीं लिखी गईं।", "verdict": "missing", "rewrite": {"sourceId": "none", "text": ""}})
+        rep, _ = self.run_all(hi, "hi")
+        self.assertEqual([f["where"] for f in rep["fixes"]].count("सीमाएँ और मुश्किलें"), 0)
+
+    def test_extra_angle_on_a_complete_answer_is_not_a_big_problem(self):
+        # Every part answered: a point a dimension check would like added is medium, so the level stays "Good".
+        en = dict(EN, **{"part:p2": dict(EN["part:p2"], verdict="met", concerns=[])},
+                  accuracy=good("s1", "The storage mechanism is stated accurately.", "No factual problem."),
+                  solutions=good("s4", "Community monitoring names who acts.", "Workable."),
+                  dimensions={"credit": [{"sourceId": "s1", "reason": "Covers the hydrological angle clearly."}],
+                              "concerns": [concern("none", "missing", "major", "The economic angle is not covered.",
+                                                   "Add one sentence on the economic cost of floods.")],
+                              "note": "One angle is missing.", "verdict": "partial",
+                              "rewrite": {"sourceId": "none", "text": ""}})
+        rep, _ = self.run_all(en, "en")
+        self.assertTrue(all(f["impact"] != "major" or f["where"].startswith("Part") for f in rep["fixes"]
+                            if f["yourLine"] is None))
+        self.assertIn(rep["level"], ("good", "strong"))
+
 
 class NoInventedContent(unittest.TestCase):
     def test_names_not_in_materials_are_rejected(self):

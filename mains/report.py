@@ -56,9 +56,20 @@ STOP = {"the", "a", "an", "and", "or", "of", "to", "with", "in", "on", "for", "b
         "के", "की", "का", "में", "और", "को", "से", "है", "हैं", "जैसे", "जैसी", "कि", "या", "पर", "एक", "इस", "यह"}
 
 
+HI_ENDINGS = ("ियों", "ियां", "ियाँ", "ओं", "ों", "ें", "ां", "ाँ", "ी", "ा", "े")
+
+
+def _stem(t):
+    """Fold common Hindi plural and oblique endings, so चुनौतियों / चुनौतियां / चुनौती compare as one word."""
+    for e in HI_ENDINGS:
+        if len(t) > len(e) + 2 and t.endswith(e):
+            return t[:-len(e)]
+    return t
+
+
 def _content(value):
     from .text import tokens
-    return {t for t in tokens(value) if t not in STOP and len(t) > 1}
+    return {_stem(t) for t in tokens(value) if t not in STOP and len(t) > 1}
 
 
 def same_advice(a, b, threshold=0.5):
@@ -136,13 +147,25 @@ def assemble(prep, results):
     ordered = [part_res[p["id"]] for p in prep["parts"]] + [dims[d["id"]] for d in DIMENSIONS if d["id"] in dims]
 
     # 1. Every finding, ranked: priority, then question parts before dimensions, then kind, then answer order.
+    all_met = all(part_res[p["id"]]["verdict"] == "met" for p in prep["parts"])
+    gaps = [p for p in prep["parts"] if part_res[p["id"]]["verdict"] != "met"]
     findings = []
     for r in ordered:
         rw = r.get("rewrite")
         for c in r["concerns"]:
             matched = bool(rw) and rw["sourceId"] == c["sourceId"]
-            findings.append(dict(c, origin=r["id"], fromPart=r["kind"] == "part", where=_where(prep, r, L),
-                                 rewrite=rw["text"] if matched else None))
+            f = dict(c, origin=r["id"], fromPart=r["kind"] == "part", where=_where(prep, r, L),
+                     rewrite=rw["text"] if matched else None)
+            if not f["fromPart"] and f["sourceId"] is None and f["kind"] == "missing":
+                # A dimension check asking for something the question part already asks for repeats the part's
+                # own finding in other words: fold it into that part.
+                if any(same_advice(f["fix"], p["quote"]) or same_advice(f["reason"], p["quote"]) for p in gaps):
+                    continue
+                # When every part is answered, a point a dimension check would like added is an improvement,
+                # not a lost requirement: it cannot rank as a big problem or pull the level down.
+                if all_met and f["priority"] == "major":
+                    f["priority"] = "medium"
+            findings.append(f)
     findings.sort(key=lambda f: (PRI[f["priority"]], 0 if f["fromPart"] else 1, KIND[f["kind"]],
                                  order.get(f["sourceId"], 10 ** 4)))
     kept = []
