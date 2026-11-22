@@ -1,0 +1,33 @@
+name: Gemma 4 12B · Mains report editor QA
+on:
+  push:
+    branches: [qa/mains-deep-editor]
+permissions:
+  contents: read
+jobs:
+  adjudicate:
+    name: Gemma 4 12B / resolve conflicting findings
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Install llama.cpp runtime
+        run: pip install -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - name: Load Gemma 4 12B and consolidate the findings
+        run: python edit_review.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-mains-editor-report
+          path: editor-report.json
+          retention-days: 1
+          if-no-files-found: error
