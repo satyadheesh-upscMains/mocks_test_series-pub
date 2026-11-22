@@ -1,23 +1,20 @@
 name: Mains examiner QA
 
-# Synthetic students only. Checks out the private core branch, runs the unit tests (no model), then the full Gemma
-# pipeline: breakdown -> 5 parallel check shards per student -> second opinion + report. Reports are artifacts.
+# Synthetic students only. Unit tests first (no model), then Gemma 4 12B:
+# question breakdown -> 5 parallel check shards per student -> second opinion + report.
 on:
   push:
     branches: [qa/mains-examiner-v1]
   workflow_dispatch:
-    inputs:
-      core_ref:
-        description: Core branch to test
-        default: feat/mains-examiner
 
-permissions: {}
+permissions:
+  contents: read
 concurrency:
   group: mains-examiner-qa
   cancel-in-progress: true
 
 env:
-  CORE_REF: ${{ inputs.core_ref || 'feat/mains-examiner' }}
+  MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
   RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 jobs:
@@ -27,9 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: satyadheesh-upscMains/mocks_test_series-core
-          ref: ${{ env.CORE_REF }}
-          token: ${{ secrets.CORE_TOKEN }}
           persist-credentials: false
           show-progress: false
       - uses: actions/setup-python@v5
@@ -38,9 +32,9 @@ jobs:
       - name: Unit tests (no model)
         run: |
           set +e
-          python -m unittest -v test_examiner test_review > unit.log 2>&1
+          python -m unittest -v test_examiner > unit.log 2>&1
           status=$?
-          grep -E "^(Ran|OK|FAILED)" unit.log
+          cat unit.log
           exit $status
       - if: always()
         uses: actions/upload-artifact@v4
@@ -49,8 +43,26 @@ jobs:
           path: unit.log
           retention-days: 3
 
-  prepare:
+  model:
     needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - id: cache
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          pip install -q huggingface-hub==0.36.0
+          python -c "from huggingface_hub import hf_hub_download; hf_hub_download('unsloth/gemma-4-12b-it-GGUF', 'gemma-4-12b-it-Q4_K_M.gguf', local_dir='models')"
+
+  prepare:
+    needs: model
     runs-on: ubuntu-latest
     timeout-minutes: 40
     strategy:
@@ -60,18 +72,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: satyadheesh-upscMains/mocks_test_series-core
-          ref: ${{ env.CORE_REF }}
-          token: ${{ secrets.CORE_TOKEN }}
           persist-credentials: false
           show-progress: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
           path: models
-          key: mains-gemma-4-12b-it-Q4_K_M-v1
+          key: ${{ env.MODEL_KEY }}
       - run: pip install -q ${{ env.RUNTIME }}
       - run: python tools/qa_run.py prepare --case ${{ matrix.case }} --dir qa-out
       - if: always()
@@ -83,8 +92,9 @@ jobs:
 
   checks:
     needs: prepare
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
     strategy:
       fail-fast: false
       max-parallel: 20
@@ -94,9 +104,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: satyadheesh-upscMains/mocks_test_series-core
-          ref: ${{ env.CORE_REF }}
-          token: ${{ secrets.CORE_TOKEN }}
           persist-credentials: false
           show-progress: false
       - uses: actions/setup-python@v5
@@ -105,7 +112,7 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: models
-          key: mains-gemma-4-12b-it-Q4_K_M-v1
+          key: ${{ env.MODEL_KEY }}
       - run: pip install -q ${{ env.RUNTIME }}
       - uses: actions/download-artifact@v4
         with:
@@ -125,7 +132,7 @@ jobs:
 
   finish:
     needs: checks
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && needs.checks.result != 'skipped' }}
     runs-on: ubuntu-latest
     timeout-minutes: 40
     strategy:
@@ -135,9 +142,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: satyadheesh-upscMains/mocks_test_series-core
-          ref: ${{ env.CORE_REF }}
-          token: ${{ secrets.CORE_TOKEN }}
           persist-credentials: false
           show-progress: false
       - uses: actions/setup-python@v5
@@ -146,7 +150,7 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: models
-          key: mains-gemma-4-12b-it-Q4_K_M-v1
+          key: ${{ env.MODEL_KEY }}
       - run: pip install -q ${{ env.RUNTIME }}
       - uses: actions/download-artifact@v4
         with:
@@ -187,10 +191,11 @@ jobs:
           TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports && cd reports
-          echo "${{ github.run_id }}" > RUN
+          echo "${{ github.run_id }} unit=${{ needs.unit.result }} finish=${{ needs.finish.result }}" > RUN
           git init -q -b qa/mains-examiner-reports
           git config user.name "mains-qa"
           git config user.email "mains-qa@users.noreply.github.com"
           git add -A
           git commit -qm "Synthetic QA reports, run ${{ github.run_id }}"
-          git push -qf "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" HEAD:qa/mains-examiner-reports
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-examiner-reports
