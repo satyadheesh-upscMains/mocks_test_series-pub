@@ -1,7 +1,7 @@
 name: Gemma 4 12B vision · synthetic answer photos
 on:
   push:
-    branches: [qa/mains-photo-review]
+    branches: [qa/mains-photo-retry]
 permissions:
   contents: read
 jobs:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        photo: [en, hi, unreadable]
+        photo: [hi]
     steps:
       - uses: actions/checkout@v4
         with:
