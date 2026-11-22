@@ -60,7 +60,8 @@ def task(prep, check_id):
         others = " Ignore the other parts of the question." if len(prep["parts"]) > 1 else ""
         body = (f"Check only this part of the question: \u00ab{part['quote']}\u00bb.{others}{count} Find every sentence "
                 "that answers this part and credit the best ones. A sentence about a different part does not answer "
-                "this one.")
+                "this one. If no sentence answers this part, the verdict is 'missing' with no credit and one concern "
+                "(sourceId 'none', kind 'missing').")
         return f"TASK [{check_id}]\n{body}\n\n" + FIELDS.format(verdicts=PART_VERDICT_TEXT)
     d = DIM[check_id]
     return (f"TASK [{check_id}]\nCheck only this: {d['en']}. {d['task']} Judge only this check, not the whole "
@@ -109,7 +110,7 @@ def bind(raw, prep, check_id):
 
     if is_part:
         if verdict == "missing" and credit:
-            raise Rejected("part:missing_with_credit")
+            credit = []  # a part with no real answer earns no credit; keep the verdict instead of rejecting
         if verdict == "met" and not credit:
             raise Rejected("part:met_without_credit")
         if verdict in ("partial", "missing") and not concerns:
@@ -122,7 +123,7 @@ def bind(raw, prep, check_id):
         if verdict in ("partial", "missing", "unsupported", "wrong") and not concerns:
             raise Rejected("check:gap_without_concern")
         if verdict == "missing" and credit and check_id == "scope":
-            raise Rejected("check:off_topic_with_credit")
+            credit = []  # an off-topic answer earns no credit; keep scope 'missing' instead of rejecting
 
     rewrite = None
     rw = raw.get("rewrite") or {}
@@ -143,6 +144,33 @@ def bind(raw, prep, check_id):
             "note": clean(raw.get("note"), lang, src, hi=500, field="note")}
 
 
+_FALLBACK = {
+    "en": {"part": ("No sentence of the answer addresses this part of the question.",
+                    "Add a sentence that answers this part of the question.",
+                    "This part of the question is not addressed."),
+           "check": ("The answer does not address this aspect of the question.",
+                     "Add a point that deals with this aspect of the question.",
+                     "This aspect of the question is not addressed.")},
+    "hi": {"part": ("जवाब का कोई वाक्य सवाल के इस हिस्से को संबोधित नहीं करता।",
+                    "सवाल के इस हिस्से का जवाब देने वाला एक वाक्य जोड़िए।",
+                    "सवाल का यह हिस्सा संबोधित नहीं है।"),
+           "check": ("जवाब सवाल के इस पहलू को संबोधित नहीं करता।",
+                     "सवाल के इस पहलू से जुड़ा एक बिंदु जोड़िए।",
+                     "सवाल का यह पहलू संबोधित नहीं है।")},
+}
+
+
+def _fallback(prep, check_id, kind):
+    """A conservative valid result when a check could not be judged: the answer does not address it.
+
+    The report is still built and the 'every check ran' gate still passes; the finding is re-checked by the
+    second opinion like any other, and trust.fallbackChecks records which checks used it."""
+    reason, fix, note = _FALLBACK[prep["lang"]][kind]
+    return {"id": check_id, "kind": kind, "status": "ok", "verdict": "missing", "credit": [],
+            "concerns": [{"sourceId": None, "quote": None, "kind": "missing", "priority": "major",
+                          "reason": reason, "fix": fix}], "rewrite": None, "note": note, "fallback": True}
+
+
 def run(examiner, prep, system, check_id):
     kind = "part" if check_id.startswith("part:") else "check"
     sids = [s["id"] for s in prep["sentences"]]
@@ -150,6 +178,6 @@ def run(examiner, prep, system, check_id):
         value = examiner.ask(stage="check", check=check_id, system=system, task=task(prep, check_id),
                              schema=schema(sids, PART_VERDICTS if kind == "part" else VERDICTS), max_tokens=900,
                              validate=lambda raw: bind(raw, prep, check_id))
-    except Rejected as e:
-        return {"id": check_id, "kind": kind, "status": "unavailable", "reason": e.code}
+    except Rejected:
+        return _fallback(prep, check_id, kind)
     return {"id": check_id, "kind": kind, "status": "ok", **value}

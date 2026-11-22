@@ -235,7 +235,8 @@ def assemble(prep, results):
         "checks": checks, "stats": stats, "transcript": None,
         "trust": {"secondOpinions": len(verified), "overturned": verified.count("overturned"),
                   "softened": verified.count("softened"),
-                  "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims]},
+                  "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims],
+                  "fallbackChecks": [r["id"] for r in ordered if r.get("fallback")]},
     }
 
 

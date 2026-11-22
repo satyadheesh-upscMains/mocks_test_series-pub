@@ -65,7 +65,7 @@ class Examiner:
         self.name = name
         self.calls = []
 
-    def ask(self, *, stage, check, system, task, schema, max_tokens, validate, attempts=2):
+    def ask(self, *, stage, check, system, task, schema, max_tokens, validate, attempts=3):
         reason = None
         for attempt in range(1, attempts + 1):
             user = task

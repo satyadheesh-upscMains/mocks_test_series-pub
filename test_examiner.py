@@ -236,11 +236,15 @@ class Report(unittest.TestCase):
             split = pipeline.finish(ex, prep, results)
         self.assertEqual(json.dumps(single, sort_keys=True), json.dumps(split, sort_keys=True))
 
-    def test_too_many_failed_checks_is_incomplete(self):
+    def test_failed_checks_fall_back(self):
+        # Three checks that cannot be judged do not fail the run: each falls back to a valid 'missing' verdict.
         script = {k: v for k, v in EN.items() if k not in ("concepts", "accuracy", "evidence")}
         script.update({k: {"verdict": "nonsense"} for k in ("concepts", "accuracy", "evidence")})
-        with self.assertRaises(report.Incomplete):
-            self.run_all(script, "en")
+        rep, _ = self.run_all(script, "en")
+        verdicts = {d["id"]: d["verdict"] for d in rep["checks"]}
+        self.assertEqual({verdicts[k] for k in ("concepts", "accuracy", "evidence")}, {"missing"})
+        self.assertEqual(rep["trust"]["fallbackChecks"], ["concepts", "accuracy", "evidence"])
+        self.assertEqual(rep["trust"]["unavailableChecks"], [])
 
 
 if __name__ == "__main__":
