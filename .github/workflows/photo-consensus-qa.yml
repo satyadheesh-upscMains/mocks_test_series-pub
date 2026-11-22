@@ -1,0 +1,43 @@
+name: Gemma 4 12B · Three-read photo transcription QA
+on:
+  push:
+    branches: [qa/mains-photo-consensus]
+permissions:
+  contents: read
+jobs:
+  transcribe:
+    name: Three independent reads / ${{ matrix.photo }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    strategy:
+      fail-fast: false
+      matrix:
+        photo: [clear-en, dim-hi, smudged-en, clipped-en]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Install pinned model runtime and test font
+        run: |
+          pip install -r requirements.txt Pillow==11.3.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+          curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
+      - name: Run three vision reads and crop uncertain regions
+        env:
+          QA_PHOTO: ${{ matrix.photo }}
+        run: python photo_consensus_qa.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: consensus-${{ matrix.photo }}
+          path: |
+            consensus-${{ matrix.photo }}.json
+            consensus-sample-${{ matrix.photo }}.jpg
+          if-no-files-found: error
+          retention-days: 1
