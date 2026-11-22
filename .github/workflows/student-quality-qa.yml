@@ -1,4 +1,4 @@
-name: Student feedback quality (synthetic only)
+name: Gemma 4 12B · Mains student feedback QA
 on:
   push:
     branches: [qa/mains-student-review]
@@ -6,13 +6,14 @@ permissions:
   contents: read
 jobs:
   review:
+    name: Gemma 4 12B / ${{ matrix.case }}
     runs-on: ubuntu-latest
     timeout-minutes: 13
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 7
       matrix:
-        case: [wetlands-off-topic]
+        case: [wetlands-one-sided, wetlands-strong, wetlands-overclaim, heat-strong-hi, wetlands-off-topic, heat-partial-hi, heat-off-topic]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,7 +27,9 @@ jobs:
           key: mains-gemma-4-12b-it-Q4_K_M-v1
       - name: Install the existing runtime
         run: pip install -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-      - name: Grade a synthetic submission with both rubrics
+      - name: Test validator (including off-topic responses)
+        run: python -m unittest -v test_grader
+      - name: Load Gemma 4 12B Q4_K_M and grade a synthetic answer
         env:
           QA_CASE: ${{ matrix.case }}
         run: python qa_student_reviews.py

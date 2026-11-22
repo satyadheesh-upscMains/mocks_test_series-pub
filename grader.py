@@ -6,7 +6,7 @@ import re
 
 MODEL_REPO = "unsloth/gemma-4-12b-it-GGUF"
 MODEL_FILE = "gemma-4-12b-it-Q4_K_M.gguf"
-RUBRIC_VERSION = "mains-v1"
+RUBRIC_VERSION = "mains-v2"
 CRITERIA = ("relevance", "coverage", "analysis", "evidence", "structure")
 
 SYSTEM = """You give formative feedback on UPSC GS Mains practice, not official marks.
@@ -16,11 +16,18 @@ Use these five independent scales from 0 (absent/off-task), 1 (weak), 2 (partial
 relevance: addresses the question's directive and all parts; coverage: develops important and distinct dimensions;
 analysis: makes reasoned connections and weighs trade-offs as appropriate; evidence: useful examples or support;
 structure: coherent argument, readable paragraphs and an appropriate conclusion.
-Reference points may be incomplete: credit valid alternatives. Never add unverifiable numbers or call a plausible claim false
-just because the references don't mention it. If a claim needs verification, say what to verify. Do not reward filler.
-Return concise practical feedback in the requested language. Strength is one thing that actually worked (or explicitly say
-none if the answer is off-topic), gap is the most important thing missing, nextStep is one specific revision. quote must be
-one brief verbatim excerpt from the answer supporting the feedback, or the empty string if none is useful. Do not write a full model answer."""
+Judge the question's exact tasks and requested number before checking the reference points. The references are examples,
+not a checklist. A valid point in the answer counts even if it is absent from the references. If asked for two distinct
+challenges and two valid ones are already present, explicitly credit both. Never require a specific named point unless the
+question asks for it. Before recommending any addition, check that the answer does not already make that point.
+If a whole part of the question is unanswered, identify it as the first gap. If the answer is entirely unrelated, give 0
+for relevance, coverage, analysis and evidence, then explain how to restart on the actual question. If a strong answer
+already completes the brief, offer one incremental refinement without inventing a missing requirement.
+Flag any material unsupported number or universal claim explicitly in gap or nextStep, even if there is another gap.
+Name the exact claim and advise verifying it or removing it. Do not invent a statistic or present an unverified claim as false.
+Return short, supportive feedback in the requested language. Strength is a concrete accomplishment (or a sentence explaining
+why none applies), gap is the highest-priority issue, and nextStep is an actionable revision the student can write now.
+Quote is a brief verbatim line from the student's answer, or the empty string. Do not return a full model answer."""
 
 SCHEMA = {
     "type": "object", "additionalProperties": False,
@@ -44,6 +51,11 @@ def validate(value, answer, lang):
     report = {"scores": scores}
     for k in ("strength", "gap", "nextStep"):
         v = value[k]
+        # A well-formed off-topic report shouldn't disappear just because the model writes "None".
+        # Do not invent a strength or forgive missing critique on an otherwise relevant answer.
+        if k == "strength" and isinstance(v, str) and len(v.strip()) < 8 and all(scores[c] == 0 for c in CRITERIA[:-1]):
+            v = ("इस उत्तर में प्रश्न से जुड़ी कोई उपलब्धि नहीं है।" if lang == "hi" else
+                 "This answer does not contain a point that addresses the question.")
         if not isinstance(v, str) or not 8 <= len(v.strip()) <= 1200:
             raise ValueError("Missing or oversized feedback")
         if lang == "hi" and len(re.findall(r"[\u0900-\u097f]", v)) < 6:
