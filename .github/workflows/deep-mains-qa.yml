@@ -1,7 +1,7 @@
 name: Gemma 4 12B · 12-check Mains evaluation QA
 on:
   push:
-    branches: [qa/mains-deep-review]
+    branches: [qa/mains-deep-retry]
 permissions:
   contents: read
 jobs:
@@ -13,8 +13,8 @@ jobs:
       fail-fast: false
       max-parallel: 12
       matrix:
-        case: [wetlands-one-sided, wetlands-overclaim, heat-strong-hi]
-        group: [demand, substance, reasoning, expression]
+        case: [heat-strong-hi]
+        group: [reasoning]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,26 +37,5 @@ jobs:
         with:
           name: checks-${{ matrix.case }}-${{ matrix.group }}
           path: review-${{ matrix.case }}-${{ matrix.group }}.json
-          retention-days: 1
-          if-no-files-found: error
-  assemble:
-    needs: checks
-    runs-on: ubuntu-latest
-    timeout-minutes: 4
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: checks-*
-          path: checks
-          merge-multiple: true
-      - name: Assemble the detailed reports
-        run: python3 assemble_report.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: synthetic-deep-feedback
-          path: deep-reports/
           retention-days: 1
           if-no-files-found: error

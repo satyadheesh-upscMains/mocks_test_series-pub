@@ -44,6 +44,12 @@ def validate(row, answer, lang):
     row = {k: v.strip() for k, v in row.items()}
     if row["verdict"] not in VERDICTS or row["priority"] not in PRIORITY:
         raise ValueError("Unknown assessment")
+    if row["verdict"] == "not_applicable":
+        if not 8 <= len(row["observation"]) <= 1100:
+            raise ValueError("An inapplicable check still needs an explanation")
+        if lang == "hi" and len(re.findall(r"[\u0900-\u097f]", row["observation"])) < 6:
+            raise ValueError("Explanation is not in the requested language")
+        return {**row, "priority":"none", "evidence":"", "nextEdit":""}
     evidence = row["evidence"]
     if evidence and evidence not in answer:
         # Allow display quotes stripped from a literal excerpt, not paraphrases.
@@ -57,7 +63,7 @@ def validate(row, answer, lang):
     row["evidence"] = evidence
     for k in ("observation", "nextEdit"):
         if not 8 <= len(row[k]) <= 1100:
-            raise ValueError("Unusable coaching feedback")
+            raise ValueError(f"Unusable coaching feedback: {k}")
         if lang == "hi" and len(re.findall(r"[\u0900-\u097f]", row[k])) < 6:
             raise ValueError("Feedback is not in the requested language")
     return row
@@ -75,6 +81,8 @@ def check(model, job, dimension):
         "Give a precise observation in 1–3 sentences and one actionable edit, or explain how to preserve a strong point. "
         "Use one short exact excerpt as evidence for points already in the answer (max 25 words); never paraphrase into a quote. "
         "When an entire required point is absent, or the check is not applicable, evidence may be empty. "
+        "If a check is not applicable, briefly explain why and set priority to none and evidence and nextEdit to empty strings. "
+        "If the question only requests analysis or challenges and asks for no solutions, do not penalize missing solutions. "
         "A major priority affects a required task, a material error, or the central argument; an optional improvement is minor. "
         "Do not present unverifiable facts as true. Label claims unverified when support is missing. "
         "Return the fixed JSON fields. Use the requested language for observation and nextEdit.\n"
