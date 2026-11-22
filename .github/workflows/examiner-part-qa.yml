@@ -1,0 +1,39 @@
+name: Gemma 4 12B · UPSC question-part examiner QA
+on:
+  push:
+    branches: [qa/mains-examiner-parts]
+permissions:
+  contents: read
+jobs:
+  examine:
+    name: Gemma question part / ${{ matrix.part }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [wetlands-mechanism, wetlands-conservation, one-sided-mechanism, hindi-challenges]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Install model runtime
+        run: pip install -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - name: Review one exact demand using Gemma and validate evidence
+        env:
+          QA_PART: ${{ matrix.part }}
+        run: python examiner_part.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: examiner-${{ matrix.part }}
+          path: examiner-${{ matrix.part }}.json
+          if-no-files-found: error
+          retention-days: 1
