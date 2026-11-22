@@ -1,0 +1,43 @@
+name: Gemma 4 12B vision · synthetic answer photos
+on:
+  push:
+    branches: [qa/mains-photo-review]
+permissions:
+  contents: read
+jobs:
+  photo:
+    name: Gemma 4 12B vision / ${{ matrix.photo }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        photo: [en, hi, unreadable]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Prepare the fixed synthetic scan font and runtime
+        run: |
+          pip install -r requirements.txt Pillow==11.3.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+          curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
+      - name: Load Gemma 4 12B with vision and inspect the synthetic page
+        env:
+          QA_PHOTO: ${{ matrix.photo }}
+        run: python photo_review_qa.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-photo-${{ matrix.photo }}
+          path: |
+            sample-${{ matrix.photo }}.jpg
+            photo-report-${{ matrix.photo }}.json
+          retention-days: 1
+          if-no-files-found: error

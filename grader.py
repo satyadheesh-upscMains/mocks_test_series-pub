@@ -66,12 +66,12 @@ def validate(value, answer, lang):
     return report
 
 
-def load_model():
+def load_model(chat_handler=None):
     from huggingface_hub import hf_hub_download
     import llama_cpp as lc
     path = hf_hub_download(repo_id=MODEL_REPO, filename=MODEL_FILE, local_dir="models")
     llm = lc.Llama(model_path=path, n_ctx=6144, n_threads=max(2, os.cpu_count() or 2),
-                   n_gpu_layers=0, verbose=False)
+                   n_gpu_layers=0, verbose=False, chat_handler=chat_handler)
     # Same fix as Satya's study-kit model for long Devanagari token pieces.
     model = llm._model
 
