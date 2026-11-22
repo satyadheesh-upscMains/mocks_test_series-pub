@@ -1,7 +1,7 @@
 name: Gemma 4 12B · Mains report editor QA
 on:
   push:
-    branches: [qa/mains-deep-editor]
+    branches: [qa/mains-editor-retest]
 permissions:
   contents: read
 jobs:
