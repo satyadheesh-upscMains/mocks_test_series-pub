@@ -15,6 +15,22 @@ TASKS = {
 }
 VERDICTS = ["met", "partial", "missing"]
 
+# Curated pilot guidance for these question parts only. Not a list of required student answers.
+COACHING_GUIDANCE = {
+    "wetlands-mechanism": (
+        "Holding stormwater so less enters the drains at once already explains storage and release timing. Credit it explicitly; "
+        "do not claim the student omitted that causal link. For an actionable improvement, distinguish the timing of runoff from "
+        "the speed of the water. In the example rewrite show storage → lower peak flow into drains → less risk of drain overflow. "
+        "The unsupported 80% figure is not needed to answer this part."
+    ),
+    "wetlands-conservation": (
+        "Keep the existing community-monitoring idea and show what people can report, such as encroachment or blocked inlets. "
+        "For the rewrite, prefer that and protecting the wetland's natural inflow/outflow instead of concreting. Only recommend "
+        "sediment removal where assessment shows excess sediment is a problem; it is not routine. Do not suggest routine or "
+        "regular desilting. An example may omit desilting altogether."
+    ),
+}
+
 
 def chunks(answer):
     # Preserve the submitted wording, including punctuation and Hindi danda.
@@ -53,7 +69,7 @@ def bind(row, spans, requirement, lang):
             "concerns":bind_list(row["concerns"]), **{k:validate_text(row[k]) for k in ["rationale", "nextEdit", "rewrite"]}}
 
 
-def review_part(model, job, requirement):
+def review_part(model, job, requirement, coaching_guidance=None):
     if not requirement.strip() or requirement not in job["question"]:
         raise ValueError("Requirement is not a quote from the question")
     spans = chunks(job["answer"])
@@ -81,6 +97,9 @@ def review_part(model, job, requirement):
         "If a requested count is already met, deepen the causal explanation of ONE existing point; do not add or request a third point. "
         "If the requirement is already met, give an optional refinement rather than manufacture a missing requirement. Use the requested language."
     )
+    if coaching_guidance:
+        system += ("\nUse the following question-specific guidance to check the reasoning and shape the example rewrite. "
+                   "It is not a mandatory answer key and does not replace the student's evidence.\n" + coaching_guidance)
     for attempt in range(2):
         p = model.create_chat_completion(messages=[{"role":"system", "content":system}, {"role":"user", "content":body}],
               response_format={"type":"json_object", "schema":schema(spans)}, temperature=0, max_tokens=940)["choices"][0]
@@ -101,10 +120,11 @@ def main():
     assert Path(llm.model_path).name == MODEL_FILE and llm.metadata["general.architecture"].startswith("gemma")
     print(f"Gemma examiner: {MODEL_FILE}", flush=True)
     started = time.monotonic()
-    part = review_part(llm, job, requirement)
+    part = review_part(llm, job, requirement, COACHING_GUIDANCE.get(name))
     assert part
     record = {"case":case, "task":name, "model":MODEL_FILE, "question":job["question"], "answer":job["answer"],
-              "lang":job["lang"], "part":part,"seconds":round(time.monotonic()-started,1)}
+              "lang":job["lang"], "part":part,"curatedCoachingGuidance":COACHING_GUIDANCE.get(name),
+              "seconds":round(time.monotonic()-started,1)}
     out = Path(f"examiner-{name}.json")
     out.write_text(json.dumps(record, ensure_ascii=False, indent=2))
     earned = " ".join(x["quote"].casefold() for x in part["earned"])
@@ -116,6 +136,7 @@ def main():
         assert "community monitoring" in earned and "concrete all wetland beds" in concerns, "Did not separate earned credit and wrong intervention"
         advice = (part["nextEdit"]+" "+part["rewrite"]).casefold()
         assert "regular desilting" not in advice and "routine desilting" not in advice, "Repeated an unconditional intervention"
+        assert "monitor" in part["rewrite"].casefold(), "Lost a useful idea from the student's answer in the rewrite"
     elif name == "one-sided-mechanism":
         assert part["verdict"] == "missing" and not part["earned"], "Conservation does not answer the flood mechanism"
     elif name == "hindi-challenges":
