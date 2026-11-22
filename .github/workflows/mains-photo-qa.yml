@@ -1,0 +1,113 @@
+name: Mains photo QA
+
+# Synthetic handwritten pages only. Unit tests first (no model), then Gemma 4 12B vision reads each page:
+# three reads per line, close-ups where they disagree, retake when a line stays unclear. Results are published.
+on:
+  push:
+    branches: [qa/mains-photo-v2]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: mains-photo-qa
+  cancel-in-progress: true
+
+env:
+  MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
+  PROJECTOR_KEY: mains-gemma-4-12b-mmproj-F32-v1
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q Pillow==11.3.0 numpy==2.2.6
+      - name: Unit tests (no model)
+        run: |
+          set +e
+          python -m unittest -v test_photo > unit-photo.log 2>&1
+          status=$?
+          cat unit-photo.log
+          exit $status
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-photo-log
+          path: unit-photo.log
+          retention-days: 3
+
+  photo:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [clear-en, clear-hi, tilted-en, dim-hi, smudged-en, clipped-en]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - uses: actions/cache@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models/mmproj-F32.gguf
+          key: ${{ env.PROJECTOR_KEY }}
+      - run: pip install -q ${{ env.RUNTIME }}
+      - run: curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
+      - run: python tools/photo_qa.py --case ${{ matrix.case }} --dir photo-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: photo-${{ matrix.case }}
+          path: photo-out
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    needs: [unit, photo]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '{photo-*,unit-photo-log}'
+          path: reports
+          merge-multiple: true
+      - name: Publish to qa/mains-photo-reports
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          echo "${{ github.run_id }} unit=${{ needs.unit.result }} photo=${{ needs.photo.result }}" > RUN
+          git init -q -b qa/mains-photo-reports
+          git config user.name "mains-qa"
+          git config user.email "mains-qa@users.noreply.github.com"
+          git add -A
+          git commit -qm "Synthetic photo QA, run ${{ github.run_id }}"
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-photo-reports
