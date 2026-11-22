@@ -1,0 +1,62 @@
+name: Gemma 4 12B · 12-check Mains evaluation QA
+on:
+  push:
+    branches: [qa/mains-deep-review]
+permissions:
+  contents: read
+jobs:
+  checks:
+    name: Gemma 4 12B / ${{ matrix.case }} / ${{ matrix.group }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        case: [wetlands-one-sided, wetlands-overclaim, heat-strong-hi]
+        group: [demand, substance, reasoning, expression]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Install llama.cpp runtime
+        run: pip install -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - name: Load Gemma 4 12B and run three independent checks
+        env:
+          QA_CASE: ${{ matrix.case }}
+          QA_GROUP: ${{ matrix.group }}
+        run: python deep_review.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: checks-${{ matrix.case }}-${{ matrix.group }}
+          path: review-${{ matrix.case }}-${{ matrix.group }}.json
+          retention-days: 1
+          if-no-files-found: error
+  assemble:
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: checks-*
+          path: checks
+          merge-multiple: true
+      - name: Assemble the detailed reports
+        run: python3 assemble_report.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-deep-feedback
+          path: deep-reports/
+          retention-days: 1
+          if-no-files-found: error
