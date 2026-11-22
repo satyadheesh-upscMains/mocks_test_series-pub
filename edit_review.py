@@ -13,8 +13,8 @@ SCHEMA = {
         "strength": TEXT,
         "priorityEdits": {"type": "array", "minItems": 1, "maxItems": 3,
                           "items": {"type": "object", "additionalProperties": False,
-                                    "required": ["issue", "edit", "evidence", "fromFinding"],
-                                    "properties": {k: TEXT for k in ("issue", "edit", "evidence", "fromFinding")}}},
+                                    "required": ["issue", "edit", "fromFinding"],
+                                    "properties": {k: TEXT for k in ("issue", "edit", "fromFinding")}}},
         "excludedFindings": {"type": "array", "items": {"type": "object", "additionalProperties": False,
                              "required": ["dimension", "reason"], "properties": {"dimension": TEXT, "reason": TEXT}}},
     },
@@ -25,8 +25,8 @@ Re-read the question and answer. Retain supported advice; explicitly exclude any
 contradicts the answer's valid reasoning, is irrelevant, or merely repeats a more important issue. Do not follow majority
 opinion if it conflicts with the evidence. A bad recommendation cannot be made sound by just changing its wording.
 Keep the most useful existing strength. Name at most 3 genuinely different priority edits, most important first. Each edit
-must identify a concrete change that a student can make, point to the underlying finding, and include a short verbatim quote
-from the answer if applicable. Treat unsupported statistics as unverified, not as proven false. Do not invent examples,
+must identify a concrete change that a student can make and select the ID of its underlying finding. The system will use
+the source quote from that finding. Treat unsupported statistics as unverified, not as proven false. Do not invent examples,
 facts, or official marks. If the answer proposes a technical intervention that contradicts its own reasoning, tell the student
 what to remove and what objective the replacement must serve. Do not recommend another engineering intervention unless it
 is supported by the input's reference examples. For fewer than 3 distinct edits, give fewer."""
@@ -51,7 +51,11 @@ def main():
     findings = json.loads(Path("synthetic_overclaim_findings.json").read_text())
     assert len(findings) == 12
     candidates = shortlist(findings)
-    ids = {f["dimension"] for f in candidates}
+    by_id = {f["dimension"]: f for f in candidates}
+    ids = sorted(by_id)
+    assert all(not c["evidence"] or c["evidence"] in job["answer"] for c in candidates)
+    SCHEMA["properties"]["priorityEdits"]["items"]["properties"]["fromFinding"] = {"type":"string", "enum":ids}
+    SCHEMA["properties"]["excludedFindings"]["items"]["properties"]["dimension"] = {"type":"string", "enum":ids}
     body = json.dumps({"question": job["question"], "answer": job["answer"], "referenceExamples":job["references"], "findings": [
         {k: f[k] for k in ("dimension", "observation", "evidence")} for f in candidates]},
         ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e")
@@ -67,8 +71,9 @@ def main():
     assert choice["finish_reason"] != "length"
     report = json.loads(choice["message"]["content"])
     assert 1 <= len(report["priorityEdits"]) <= 3
-    assert all(r["fromFinding"] in ids and (not r["evidence"] or r["evidence"] in job["answer"])
-               for r in report["priorityEdits"])
+    assert len({r["fromFinding"] for r in report["priorityEdits"]}) == len(report["priorityEdits"])
+    for r in report["priorityEdits"]:
+        r["evidence"] = by_id[r["fromFinding"]]["evidence"]
     assert all(r["dimension"] in ids and r["reason"] for r in report["excludedFindings"])
     output = {"case": job["id"], "seconds": round(time.monotonic() - at, 1), "report": report}
     Path("editor-report.json").write_text(json.dumps(output, ensure_ascii=False, indent=2))
