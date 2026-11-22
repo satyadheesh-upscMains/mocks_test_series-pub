@@ -1,0 +1,28 @@
+test_optional_nukta_is_the_same_word_but_flap_letters_are_not (test_photo.Agreement.test_optional_nukta_is_the_same_word_but_flap_letters_are_not) ... ok
+test_three_matching_reads_are_needed (test_photo.Agreement.test_three_matching_reads_are_needed) ... ok
+test_blank_page_has_no_lines (test_photo.Detection.test_blank_page_has_no_lines) ... ok
+test_dim_photo_still_finds_lines_and_is_flagged (test_photo.Detection.test_dim_photo_still_finds_lines_and_is_flagged) ... ok
+test_finds_each_line_on_ruled_paper (test_photo.Detection.test_finds_each_line_on_ruled_paper) ... ok
+test_line_running_off_the_edge_is_marked (test_photo.Detection.test_line_running_off_the_edge_is_marked) ... ok
+test_paper_noise_and_paragraph_gaps_are_not_faint_writing (test_photo.Detection.test_paper_noise_and_paragraph_gaps_are_not_faint_writing) ... ok
+test_smudged_line_is_flagged_not_dropped (test_photo.Detection.test_smudged_line_is_flagged_not_dropped) ... ok
+test_tilted_photo_is_straightened (test_photo.Detection.test_tilted_photo_is_straightened) ... ok
+test_blank_page_asks_for_retake (test_photo.Transcription.test_blank_page_asks_for_retake) ... ok
+test_clear_page_reads_every_line (test_photo.Transcription.test_clear_page_reads_every_line) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.3,"status":"ok"}
+ok
+test_cut_off_line_blocks_even_when_reads_agree (test_photo.Transcription.test_cut_off_line_blocks_even_when_reads_agree) ... gemma {"stage":"transcribe","check":"page1","lines":6,"seconds":0.4,"status":"ok"}
+ok
+test_same_misreading_twice_is_corrected_by_close_ups (test_photo.Transcription.test_same_misreading_twice_is_corrected_by_close_ups) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.3,"status":"ok"}
+ok
+test_smudged_page_asks_for_retake (test_photo.Transcription.test_smudged_page_asks_for_retake) ... gemma {"stage":"transcribe","check":"page1","lines":4,"seconds":0.2,"status":"ok"}
+ok
+test_two_pages_continue_the_answer (test_photo.Transcription.test_two_pages_continue_the_answer) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.3,"status":"ok"}
+gemma {"stage":"transcribe","check":"page2","lines":5,"seconds":0.3,"status":"ok"}
+ok
+test_unreadable_line_blocks_grading (test_photo.Transcription.test_unreadable_line_blocks_grading) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.3,"status":"ok"}
+ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.744s
+
+OK

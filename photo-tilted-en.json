@@ -1,0 +1,332 @@
+{
+ "case": "tilted-en",
+ "lang": "en",
+ "truth": [
+  "Urban wetlands hold stormwater after heavy rain, so",
+  "less water enters drains at once. This is",
+  "why wetland restoration has reduced flooding by 80%",
+  "in every Indian city where it has been",
+  "attempted. Municipalities should concrete all wetland beds to",
+  "stop seepage, build retaining walls and prohibit any",
+  "human entry. Regular desilting and community monitoring can",
+  "help protect the area. These measures will end",
+  "urban floods."
+ ],
+ "gates": {
+  "every line found or flagged": true,
+  "no wrong line accepted": true,
+  "page read without a retake": true
+ },
+ "wrongLines": [],
+ "exactLines": 9,
+ "transcript": {
+  "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once. This is why wetland restoration has reduced flooding by 80% in every Indian city where it has been attempted. Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry. Regular desilting and community monitoring can help protect the area. These measures will end urban floods.",
+  "pages": [
+   {
+    "page": 1,
+    "width": 1240,
+    "height": 1754,
+    "issues": [],
+    "lines": 9,
+    "faint": []
+   }
+  ],
+  "lines": [
+   {
+    "id": "p1-l1",
+    "page": 1,
+    "box": {
+     "x": 0.0952,
+     "y": 0.0536,
+     "w": 0.6968,
+     "h": 0.0274
+    },
+    "text": "Urban wetlands hold stormwater after heavy rain, so",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l2",
+    "page": 1,
+    "box": {
+     "x": 0.0895,
+     "y": 0.1078,
+     "w": 0.5347,
+     "h": 0.0245
+    },
+    "text": "less water enters drains at once. This is",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l3",
+    "page": 1,
+    "box": {
+     "x": 0.0944,
+     "y": 0.1602,
+     "w": 0.7129,
+     "h": 0.0279
+    },
+    "text": "why wetland restoration has reduced flooding by 80%",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l4",
+    "page": 1,
+    "box": {
+     "x": 0.0919,
+     "y": 0.2178,
+     "w": 0.5081,
+     "h": 0.0239
+    },
+    "text": "in every Indian city where it has been",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l5",
+    "page": 1,
+    "box": {
+     "x": 0.0855,
+     "y": 0.2691,
+     "w": 0.8113,
+     "h": 0.0279
+    },
+    "text": "attempted. Municipalities should concrete all wetland beds to",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l6",
+    "page": 1,
+    "box": {
+     "x": 0.0831,
+     "y": 0.3255,
+     "w": 0.6839,
+     "h": 0.0314
+    },
+    "text": "stop seepage, build retaining walls and prohibit any",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l7",
+    "page": 1,
+    "box": {
+     "x": 0.0895,
+     "y": 0.3831,
+     "w": 0.8258,
+     "h": 0.0314
+    },
+    "text": "human entry. Regular desilting and community monitoring can",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l8",
+    "page": 1,
+    "box": {
+     "x": 0.0879,
+     "y": 0.4373,
+     "w": 0.6226,
+     "h": 0.0274
+    },
+    "text": "help protect the area. These measures will end",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l9",
+    "page": 1,
+    "box": {
+     "x": 0.0935,
+     "y": 0.4971,
+     "w": 0.171,
+     "h": 0.02
+    },
+    "text": "urban floods.",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   }
+  ],
+  "offsets": [
+   {
+    "lineId": "p1-l1",
+    "start": 0,
+    "end": 51
+   },
+   {
+    "lineId": "p1-l2",
+    "start": 52,
+    "end": 93
+   },
+   {
+    "lineId": "p1-l3",
+    "start": 94,
+    "end": 145
+   },
+   {
+    "lineId": "p1-l4",
+    "start": 146,
+    "end": 184
+   },
+   {
+    "lineId": "p1-l5",
+    "start": 185,
+    "end": 246
+   },
+   {
+    "lineId": "p1-l6",
+    "start": 247,
+    "end": 299
+   },
+   {
+    "lineId": "p1-l7",
+    "start": 300,
+    "end": 359
+   },
+   {
+    "lineId": "p1-l8",
+    "start": 360,
+    "end": 406
+   },
+   {
+    "lineId": "p1-l9",
+    "start": 407,
+    "end": 420
+   }
+  ],
+  "blocked": false,
+  "retake": [],
+  "evidence": [
+   {
+    "lineId": "p1-l1",
+    "reads": [
+     "Urban wetlands hold stormwater after heavy rain, so",
+     "Urban wetlands hold stormwater after heavy rain, so",
+     "Urban wetlands hold stormwater after heavy rain, so"
+    ]
+   },
+   {
+    "lineId": "p1-l2",
+    "reads": [
+     "less water enters drains at once. This is",
+     "less water enters drains at once. This is",
+     "less water enters drains at once. This is"
+    ]
+   },
+   {
+    "lineId": "p1-l3",
+    "reads": [
+     "why wetland restoration has reduced flooding by 80%",
+     "why wetland restoration has reduced flooding by 80%",
+     "why wetland restoration has reduced flooding by 80%"
+    ]
+   },
+   {
+    "lineId": "p1-l4",
+    "reads": [
+     "in every Indian city where it has been",
+     "in every Indian city where it has been",
+     "in every Indian city where it has been"
+    ]
+   },
+   {
+    "lineId": "p1-l5",
+    "reads": [
+     "attempted. Municipalities should concrete all wetland beds to",
+     "attempted. Municipalities should concrete all wetland beds to",
+     "attempted. Municipalities should concrete all wetland beds to"
+    ]
+   },
+   {
+    "lineId": "p1-l6",
+    "reads": [
+     "stop seepage, build retaining walls and prohibit any",
+     "stop seepage, build retaining walls and prohibit any",
+     "stop seepage, build retaining walls and prohibit any"
+    ]
+   },
+   {
+    "lineId": "p1-l7",
+    "reads": [
+     "human entry. Regular desilting and community monitoring can",
+     "human entry. Regular desilting and community monitoring can",
+     "human entry. Regular desilting and community monitoring can"
+    ]
+   },
+   {
+    "lineId": "p1-l8",
+    "reads": [
+     "help protect the area. These measures will end",
+     "help protect the area. These measures will end",
+     "help protect the area. These measures will end"
+    ]
+   },
+   {
+    "lineId": "p1-l9",
+    "reads": [
+     "urban floods.",
+     "urban floods.",
+     "urban floods."
+    ]
+   }
+  ]
+ },
+ "retakeMessage": [],
+ "calls": [
+  {
+   "stage": "transcribe",
+   "check": "original",
+   "seconds": 164.5,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "original",
+   "seconds": 83.9,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "contrast",
+   "seconds": 148.7,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "contrast",
+   "seconds": 82.1,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 97.8,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 97.1,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 100.5,
+   "status": "ok"
+  }
+ ],
+ "seconds": 775.9
+}

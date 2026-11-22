@@ -1,0 +1,348 @@
+{
+ "case": "smudged-en",
+ "lang": "en",
+ "truth": [
+  "Urban wetlands hold stormwater after heavy rain, so",
+  "less water enters drains at once. This is",
+  "why wetland restoration has reduced flooding by 80%",
+  "in every Indian city where it has been",
+  "attempted. Municipalities should concrete all wetland beds to",
+  "stop seepage, build retaining walls and prohibit any",
+  "human entry. Regular desilting and community monitoring can",
+  "help protect the area. These measures will end",
+  "urban floods."
+ ],
+ "gates": {
+  "every line found or flagged": true,
+  "no wrong line accepted": true,
+  "smudged line read exactly or blocks grading": true
+ },
+ "wrongLines": [],
+ "exactLines": 8,
+ "transcript": {
+  "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once. This is why wetland restoration has reduced flooding by 80%\n\nattempted. Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry. Regular desilting and community monitoring can help protect the area. These measures will end urban floods.",
+  "pages": [
+   {
+    "page": 1,
+    "width": 1240,
+    "height": 1754,
+    "issues": [],
+    "lines": 8,
+    "faint": [
+     {
+      "after": 3,
+      "y": 0.1893,
+      "h": 0.081
+     }
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "p1-l1",
+    "page": 1,
+    "box": {
+     "x": 0.0895,
+     "y": 0.0525,
+     "w": 0.6968,
+     "h": 0.0274
+    },
+    "text": "Urban wetlands hold stormwater after heavy rain, so",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l2",
+    "page": 1,
+    "box": {
+     "x": 0.0952,
+     "y": 0.1112,
+     "w": 0.5347,
+     "h": 0.0245
+    },
+    "text": "less water enters drains at once. This is",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l3",
+    "page": 1,
+    "box": {
+     "x": 0.0911,
+     "y": 0.1613,
+     "w": 0.7129,
+     "h": 0.0279
+    },
+    "text": "why wetland restoration has reduced flooding by 80%",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l4",
+    "page": 1,
+    "box": {
+     "x": 0.0847,
+     "y": 0.2702,
+     "w": 0.8113,
+     "h": 0.0279
+    },
+    "text": "attempted. Municipalities should concrete all wetland beds to",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l5",
+    "page": 1,
+    "box": {
+     "x": 0.0895,
+     "y": 0.3261,
+     "w": 0.6839,
+     "h": 0.0314
+    },
+    "text": "stop seepage, build retaining walls and prohibit any",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l6",
+    "page": 1,
+    "box": {
+     "x": 0.0895,
+     "y": 0.3826,
+     "w": 0.8258,
+     "h": 0.0314
+    },
+    "text": "human entry. Regular desilting and community monitoring can",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l7",
+    "page": 1,
+    "box": {
+     "x": 0.0927,
+     "y": 0.4333,
+     "w": 0.6226,
+     "h": 0.0274
+    },
+    "text": "help protect the area. These measures will end",
+    "status": "unanimous",
+    "reads": 3,
+    "edge": false
+   },
+   {
+    "id": "p1-l8",
+    "page": 1,
+    "box": {
+     "x": 0.0927,
+     "y": 0.4943,
+     "w": 0.171,
+     "h": 0.02
+    },
+    "text": "urban floods.",
+    "status": "confirmed",
+    "reads": 6,
+    "edge": false
+   }
+  ],
+  "offsets": [
+   {
+    "lineId": "p1-l1",
+    "start": 0,
+    "end": 51
+   },
+   {
+    "lineId": "p1-l2",
+    "start": 52,
+    "end": 93
+   },
+   {
+    "lineId": "p1-l3",
+    "start": 94,
+    "end": 145
+   },
+   {
+    "lineId": "p1-l4",
+    "start": 147,
+    "end": 208
+   },
+   {
+    "lineId": "p1-l5",
+    "start": 209,
+    "end": 261
+   },
+   {
+    "lineId": "p1-l6",
+    "start": 262,
+    "end": 321
+   },
+   {
+    "lineId": "p1-l7",
+    "start": 322,
+    "end": 368
+   },
+   {
+    "lineId": "p1-l8",
+    "start": 369,
+    "end": 382
+   }
+  ],
+  "blocked": true,
+  "retake": [
+   {
+    "page": 1,
+    "line": null,
+    "after": 3,
+    "reason": "faint"
+   }
+  ],
+  "evidence": [
+   {
+    "lineId": "p1-l1",
+    "reads": [
+     "Urban wetlands hold stormwater after heavy rain, so",
+     "Urban wetlands hold stormwater after heavy rain, so",
+     "Urban wetlands hold stormwater after heavy rain, so"
+    ]
+   },
+   {
+    "lineId": "p1-l2",
+    "reads": [
+     "less water enters drains at once. This is",
+     "less water enters drains at once. This is",
+     "less water enters drains at once. This is"
+    ]
+   },
+   {
+    "lineId": "p1-l3",
+    "reads": [
+     "why wetland restoration has reduced flooding by 80%",
+     "why wetland restoration has reduced flooding by 80%",
+     "why wetland restoration has reduced flooding by 80%"
+    ]
+   },
+   {
+    "lineId": "p1-l4",
+    "reads": [
+     "attempted. Municipalities should concrete all wetland beds to",
+     "attempted. Municipalities should concrete all wetland beds to",
+     "attempted. Municipalities should concrete all wetland beds to"
+    ]
+   },
+   {
+    "lineId": "p1-l5",
+    "reads": [
+     "stop seepage, build retaining walls and prohibit any",
+     "stop seepage, build retaining walls and prohibit any",
+     "stop seepage, build retaining walls and prohibit any"
+    ]
+   },
+   {
+    "lineId": "p1-l6",
+    "reads": [
+     "human entry. Regular desilting and community monitoring can",
+     "human entry. Regular desilting and community monitoring can",
+     "human entry. Regular desilting and community monitoring can"
+    ]
+   },
+   {
+    "lineId": "p1-l7",
+    "reads": [
+     "help protect the area. These measures will end",
+     "help protect the area. These measures will end",
+     "help protect the area. These measures will end"
+    ]
+   },
+   {
+    "lineId": "p1-l8",
+    "reads": [
+     "urban Hoods.",
+     "urban hoods.",
+     "urban hoods.",
+     "urban floods.",
+     "urban floods.",
+     "urban floods."
+    ]
+   }
+  ]
+ },
+ "retakeMessage": [
+  {
+   "page": 1,
+   "lines": [],
+   "reasons": [
+    "Some writing on this page is too faint or smudged to read."
+   ],
+   "tips": []
+  }
+ ],
+ "calls": [
+  {
+   "stage": "transcribe",
+   "check": "original",
+   "seconds": 153.0,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "original",
+   "seconds": 56.7,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "contrast",
+   "seconds": 151.2,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "contrast",
+   "seconds": 55.5,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 98.0,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 98.7,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "zoom",
+   "seconds": 72.6,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "sharp",
+   "seconds": 32.2,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "binary",
+   "seconds": 32.9,
+   "status": "ok"
+  },
+  {
+   "stage": "transcribe",
+   "check": "large",
+   "seconds": 33.3,
+   "status": "ok"
+  }
+ ],
+ "seconds": 784.8
+}
