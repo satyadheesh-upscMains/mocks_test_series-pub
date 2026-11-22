@@ -165,6 +165,19 @@ class Stages(unittest.TestCase):
         bound = checks.bind(EN["part:p1"], prep, "part:p1")
         self.assertEqual(bound["credit"][0]["quote"], text.sentences(A_EN)[0]["text"])
 
+    def test_duplicate_concerns_are_deduped(self):
+        # Two concerns about the same sentence with the same kind are redundant: keep the first, do not reject.
+        ex = Examiner(FakeGemma(EN))
+        prep = pipeline.prepare(ex, job())
+        dup = {"credit": [{"sourceId": "s1", "reason": "It explains that wetlands store stormwater."}],
+               "concerns": [concern("s2", "unsupported", "major", "The 80% figure is unsupported.", "Remove the 80% claim."),
+                            concern("s2", "unsupported", "medium", "The 80% figure is unsupported.", "Remove the 80% claim.")],
+               "note": "Two notes about the same claim.", "verdict": "partial",
+               "rewrite": {"sourceId": "none", "text": ""}}
+        bound = checks.bind(dup, prep, "part:p1")
+        self.assertEqual(len(bound["concerns"]), 1)
+        self.assertEqual(bound["concerns"][0]["priority"], "major")
+
     def test_rejected_output_gets_one_corrected_retry(self):
         invented = good("s1", "Like the 2019 Chennai plan, this cut floods by 75% in a year.", "Done well.")
         fake = FakeGemma(EN, bad={"directive": invented})

@@ -100,7 +100,7 @@ def bind(raw, prep, check_id):
         elif sid not in spans:
             raise Rejected("concern:source")
         if (sid, kind) in seen:
-            raise Rejected("concern:duplicate")
+            continue  # two concerns about the same sentence with the same kind are redundant; keep the first
         seen.add((sid, kind))
         concerns.append({"sourceId": sid, "quote": spans.get(sid), "kind": kind, "priority": priority,
                          "reason": clean(c.get("reason"), lang, src, hi=400, field="reason"),
