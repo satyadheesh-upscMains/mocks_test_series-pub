@@ -25,8 +25,10 @@ DIM_VERDICTS = ("good (clearly done), partial (done with a material gap), missin
                 "(the main problem is unsupported or exaggerated claims), wrong (the main problem is an error or a "
                 "harmful suggestion), not_applicable (this check does not apply to this question; then credit and "
                 "concerns are empty).")
-PART_VERDICT_TEXT = ("met (this part is answered), partial (relevant substance with a material gap), missing (no "
-                     "sentence really answers this part; credit must then be empty).")
+PART_VERDICT_TEXT = ("met (this part is answered with its main substance: what an examiner expects for this demand "
+                     "is there), partial (relevant substance, but only one narrow aspect or with a material gap: for "
+                     "example only awareness when the part asks how a plan reduces risk), missing (no sentence really "
+                     "answers this part; credit must then be empty).")
 
 
 def schema(sids, verdicts):

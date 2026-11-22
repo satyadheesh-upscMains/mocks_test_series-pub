@@ -271,6 +271,17 @@ class Report(unittest.TestCase):
         self.assertFalse(report.same_advice("Replace concreting with protecting the natural inflow paths.",
                                             "Remove the 80% claim or name a study you have read."))
 
+    def test_same_rewrite_twice_is_one_fix_and_repeated_sentences_are_trimmed(self):
+        same_line = "Urban wetlands reduce flood risk by acting as natural sponges that store rainfall."
+        a = {"fix": "Add a sentence explaining how wetlands absorb excess rainwater.", "rewrite": same_line}
+        b = {"fix": "Explain the mechanism by which wetlands mitigate flooding.", "rewrite": same_line}
+        self.assertTrue(report.repeats(b, [a]))
+        c = {"fix": "Add hospital preparation and protection for outdoor workers.",
+             "rewrite": "Plans protect outdoor workers and prepare hospitals. " + same_line}
+        self.assertFalse(report.repeats(c, [a]))
+        report.trim_rewrite(c, [a])
+        self.assertEqual(c["rewrite"], "Plans protect outdoor workers and prepare hospitals.")
+
     def test_dimension_gap_matching_a_missing_part_is_folded(self):
         # The balance check also asking for the two challenges repeats Part 2's own finding: one fix, not two.
         hi = dict(HI, balance={"credit": [], "concerns": [concern("none", "missing", "major",

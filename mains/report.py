@@ -81,7 +81,25 @@ def same_advice(a, b, threshold=0.5):
 
 
 def repeats(f, chosen):
-    return any(same_advice(f["fix"], g["fix"]) for g in chosen)
+    """Same change asked twice: the fixes say the same thing, or the example rewrites are the same sentence (two
+    checks can word the advice differently and still hand the student the same line to write)."""
+    for g in chosen:
+        if same_advice(f["fix"], g["fix"]):
+            return True
+        if f.get("rewrite") and g.get("rewrite") and similar(f["rewrite"], g["rewrite"], 0.85):
+            return True
+    return False
+
+
+def trim_rewrite(f, chosen):
+    """Drop sentences of a rewrite that repeat a sentence another chosen fix already gives the student."""
+    from .text import SENTENCE_END
+    if not f.get("rewrite"):
+        return
+    given = [s for g in chosen if g is not f and g.get("rewrite") for s in SENTENCE_END.split(g["rewrite"]) if s.strip()]
+    keep = [s for s in SENTENCE_END.split(f["rewrite"]) if s.strip()
+            and not any(same_advice(s, t, 0.7) for t in given)]
+    f["rewrite"] = " ".join(keep) if keep else None
 
 
 def headline(parts, level, majors, L):
@@ -189,6 +207,8 @@ def assemble(prep, results):
     for f in kept:
         if len(fixes) < 3 and f not in fixes and not repeats(f, fixes):
             fixes.append(f)
+    for i, f in enumerate(fixes):
+        trim_rewrite(f, fixes[:i])
     fix_no = {id(f): i for i, f in enumerate(fixes, 1)}
 
     # 3. Question parts.
