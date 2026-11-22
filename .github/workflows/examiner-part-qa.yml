@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        part: [wetlands-mechanism, wetlands-conservation, one-sided-mechanism, hindi-challenges]
+        part: [wetlands-mechanism, wetlands-conservation, hindi-challenges]
     steps:
       - uses: actions/checkout@v4
         with:

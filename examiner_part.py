@@ -70,11 +70,15 @@ def review_part(model, job, requirement):
         "credit and concern may refer to different aspects of the same excerpt. Explain specifically why each earns or loses credit. "
         "The verdict 'met' means the required task is present; 'partial' means relevant substance but a material gap; "
         "'missing' means no real answer to this part and must have an empty earned list. Do not assign numerical marks. "
-        "For a mechanism question, credit a causal link already present and name the next step, rather than saying merely 'add depth'. "
-        "For recommendations, distinguish a usable idea from a blanket measure and explain the condition or limitation. "
+        "For a mechanism question, credit the links already present; extend them to the outcome the prompt asks about. "
+        "Do not restate the same link in different words. For flood risk, distinguish slower runoff from a lower peak flow and reduced drain overflow. "
+        "For recommendations, say where or when a measure applies, not simply that it should happen. "
+        "Distinguish community or protective measures from potentially disruptive interventions such as removing sediment: never present the latter as routine regardless of site conditions. "
+        "An unsupported statistic is a concern, not an earned fact. "
         "For a requested number of distinct points, count any valid distinct points, even if they share one source excerpt. "
         "In rationale explain the threshold for this verdict. In nextEdit name the single best change. In rewrite give just 1–2 concrete "
         "sentences using the student's useful ideas, not a complete answer. Do not invent statistics, cases, legal rules or official marks. "
+        "If a requested count is already met, deepen the causal explanation of ONE existing point; do not add or request a third point. "
         "If the requirement is already met, give an optional refinement rather than manufacture a missing requirement. Use the requested language."
     )
     for attempt in range(2):
@@ -107,9 +111,11 @@ def main():
     concerns = " ".join(x["quote"].casefold() for x in part["concerns"])
     if name == "wetlands-mechanism":
         assert "hold stormwater" in earned and part["verdict"] != "missing", "Lost real mechanism credit"
-        assert "peak" in part["rewrite"].casefold(), "Did not show the deeper mechanism"
+        assert "peak" in part["rewrite"].casefold() and "overflow" in part["rewrite"].casefold(), "Did not connect peak flow with flood risk"
     elif name == "wetlands-conservation":
         assert "community monitoring" in earned and "concrete all wetland beds" in concerns, "Did not separate earned credit and wrong intervention"
+        advice = (part["nextEdit"]+" "+part["rewrite"]).casefold()
+        assert "regular desilting" not in advice and "routine desilting" not in advice, "Repeated an unconditional intervention"
     elif name == "one-sided-mechanism":
         assert part["verdict"] == "missing" and not part["earned"], "Conservation does not answer the flood mechanism"
     elif name == "hindi-challenges":
