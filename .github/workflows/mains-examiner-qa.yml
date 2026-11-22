@@ -15,6 +15,8 @@ concurrency:
 
 env:
   MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
+  # A stalled cache download gives up after 5 minutes; the model is then fetched from Hugging Face instead.
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
   RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 jobs:
@@ -46,13 +48,15 @@ jobs:
   model:
     needs: unit
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - id: cache
         uses: actions/cache@v4
+        timeout-minutes: 12
+        continue-on-error: true
         with:
           path: models
           key: ${{ env.MODEL_KEY }}
@@ -64,7 +68,7 @@ jobs:
   prepare:
     needs: model
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     strategy:
       fail-fast: false
       matrix:
@@ -78,6 +82,8 @@ jobs:
         with:
           python-version: '3.11'
       - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
         with:
           path: models
           key: ${{ env.MODEL_KEY }}
@@ -94,7 +100,7 @@ jobs:
     needs: prepare
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       max-parallel: 20
@@ -110,6 +116,8 @@ jobs:
         with:
           python-version: '3.11'
       - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
         with:
           path: models
           key: ${{ env.MODEL_KEY }}
@@ -134,7 +142,7 @@ jobs:
     needs: checks
     if: ${{ !cancelled() && needs.checks.result != 'skipped' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     strategy:
       fail-fast: false
       matrix:
@@ -148,6 +156,8 @@ jobs:
         with:
           python-version: '3.11'
       - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
         with:
           path: models
           key: ${{ env.MODEL_KEY }}
