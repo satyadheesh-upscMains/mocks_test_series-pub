@@ -135,6 +135,12 @@ class Agreement(unittest.TestCase):
         self.assertIsNone(photo.decide([None, None, None]))
         self.assertEqual(photo.decide(["a  b", "a b", "a b\n"]), "a b")   # spacing differences are not words
 
+    def test_optional_nukta_is_the_same_word_but_flap_letters_are_not(self):
+        with_n, without = "बस्तियों की ज़्यादा गर्मी", "बस्तियों की ज्यादा गर्मी"
+        self.assertEqual(photo.decide([with_n, without, without]), without)
+        self.assertEqual(photo.decide([with_n, with_n, without]), with_n)
+        self.assertIsNone(photo.decide(["और पेड़ गर्मी", "और पेड़ गर्मी", "और पेड गर्मी"]))   # ड़ is its own letter
+
 
 class Transcription(unittest.TestCase):
     def test_clear_page_reads_every_line(self):

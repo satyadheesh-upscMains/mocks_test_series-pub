@@ -82,13 +82,13 @@ def draw(name):
 
 def gates(name, tr):
     c = CASES[name]
-    truth = [photo.canon(t) for t in c["lines"]]
+    truth = [photo.same_words(t) for t in c["lines"]]
     lines = tr["lines"]
     faint = sum(len(p.get("faint", [])) for p in tr["pages"])
     out = {"every line found or flagged": len(lines) + faint >= len(truth)}
     # An accepted line must be one of the true lines, word for word.
-    accepted = [photo.canon(x["text"]) for x in lines if x["text"]]
-    wrong = [x["id"] for x in lines if x["text"] and photo.canon(x["text"]) not in truth]
+    accepted = [photo.same_words(x["text"]) for x in lines if x["text"]]
+    wrong = [x["id"] for x in lines if x["text"] and photo.same_words(x["text"]) not in truth]
     out["no wrong line accepted"] = not wrong
     exact = sum(1 for t in truth if t in accepted)
     if c["expect"] == "read":

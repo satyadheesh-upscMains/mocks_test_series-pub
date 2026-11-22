@@ -263,20 +263,31 @@ def canon(text):
     return re.sub(r"\s+", " ", unicodedata.normalize("NFC", text or "")).strip()
 
 
+# A nukta under क ख ग ज फ is an optional spelling variant in Hindi (ज़्यादा / ज्यादा, फ़ैसला / फैसला): same word, same
+# meaning, written either way. Reads that differ only there agree. ड़ and ढ़ are different letters and stay exact.
+_OPTIONAL_NUKTA = re.compile("([\u0915\u0916\u0917\u091c\u092b])\u093c")
+
+
+def same_words(text):
+    return _OPTIONAL_NUKTA.sub(r"\1", unicodedata.normalize("NFD", canon(text)))
+
+
 def decide(reads):
     """reads: texts, None for an unsure read. Accept a text read the same way at least VOTES times and more often
-    than any other text. Never a 2-of-3 majority: disagreement means more reads, not a vote."""
-    counts = {}
+    than any other text. Never a 2-of-3 majority: disagreement means more reads, not a vote. The accepted text is
+    the spelling most reads used."""
+    groups = {}
     for r in reads:
         c = canon(r)
         if c:
-            counts[c] = counts.get(c, 0) + 1
-    if not counts:
+            g = groups.setdefault(same_words(c), {})
+            g[c] = g.get(c, 0) + 1
+    if not groups:
         return None
-    ranked = sorted(counts.items(), key=lambda kv: -kv[1])
-    best, n = ranked[0]
-    if n >= VOTES and (len(ranked) == 1 or n > ranked[1][1]):
-        return best
+    ranked = sorted(groups.values(), key=lambda g: -sum(g.values()))
+    n = sum(ranked[0].values())
+    if n >= VOTES and (len(ranked) == 1 or n > sum(ranked[1].values())):
+        return max(ranked[0].items(), key=lambda kv: kv[1])[0]
     return None
 
 
@@ -370,7 +381,7 @@ def _join(prev, nxt):
 
 def transcribe(pages, lang, reader):
     """pages: raw image bytes. Returns the transcript, the line boxes and what blocks grading."""
-    page_info, lines, retake = [], [], []
+    page_info, lines, retake, evidence = [], [], [], []
     text, offsets = "", []
     for pno, raw in enumerate(pages, 1):
         started = time.monotonic()
@@ -412,6 +423,7 @@ def transcribe(pages, lang, reader):
             lid = f"p{pno}-l{i + 1}"
             lines.append({"id": lid, "page": pno, "box": ln["box"], "text": result or "",
                           "status": status or "unclear", "reads": len(reads[i]), "edge": ln["edge"]})
+            evidence.append({"lineId": lid, "reads": [r if r is not None else None for r in reads[i]]})
             if reason:
                 retake.append({"page": pno, "line": i + 1, "lineId": lid, "reason": reason})
                 continue
@@ -427,7 +439,7 @@ def transcribe(pages, lang, reader):
         log(stage="transcribe", check=f"page{pno}", lines=len(found),
             seconds=round(time.monotonic() - started, 1), status="ok")
     return {"text": text, "pages": page_info, "lines": lines, "offsets": offsets,
-            "blocked": bool(retake), "retake": retake}
+            "blocked": bool(retake), "retake": retake, "evidence": evidence}
 
 
 def locate(sentences, transcript):
