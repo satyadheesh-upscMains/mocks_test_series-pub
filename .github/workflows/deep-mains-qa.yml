@@ -1,7 +1,7 @@
 name: Gemma 4 12B · 12-check Mains evaluation QA
 on:
   push:
-    branches: [qa/mains-deep-retry]
+    branches: [qa/mains-photo-deep]
 permissions:
   contents: read
 jobs:
@@ -13,8 +13,8 @@ jobs:
       fail-fast: false
       max-parallel: 12
       matrix:
-        case: [heat-strong-hi]
-        group: [reasoning]
+        case: [photo-en]
+        group: [demand, substance, reasoning, expression]
     steps:
       - uses: actions/checkout@v4
         with:

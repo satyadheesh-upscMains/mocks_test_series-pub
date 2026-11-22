@@ -1,5 +1,12 @@
 [
   {
+    "id": "photo-en",
+    "lang": "en",
+    "question": "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them.",
+    "references": ["Store rainfall and slow runoff", "Restoring inlets and preserving vegetation"],
+    "answer": "Urban wetlands store stormwater.\nThey slow runoff into city drains.\nRestoration reduced floods by 80% in every city.\nCities should protect wetland boundaries.\nBlocked inlets should be restored."
+  },
+  {
     "id": "wetlands-one-sided",
     "lang": "en",
     "question": "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them.",
