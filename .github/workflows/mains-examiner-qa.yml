@@ -1,0 +1,196 @@
+name: Mains examiner QA
+
+# Synthetic students only. Checks out the private core branch, runs the unit tests (no model), then the full Gemma
+# pipeline: breakdown -> 5 parallel check shards per student -> second opinion + report. Reports are artifacts.
+on:
+  push:
+    branches: [qa/mains-examiner-v1]
+  workflow_dispatch:
+    inputs:
+      core_ref:
+        description: Core branch to test
+        default: feat/mains-examiner
+
+permissions: {}
+concurrency:
+  group: mains-examiner-qa
+  cancel-in-progress: true
+
+env:
+  CORE_REF: ${{ inputs.core_ref || 'feat/mains-examiner' }}
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (no model)
+        run: |
+          set +e
+          python -m unittest -v test_examiner test_review > unit.log 2>&1
+          status=$?
+          grep -E "^(Ran|OK|FAILED)" unit.log
+          exit $status
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-log
+          path: unit.log
+          retention-days: 3
+
+  prepare:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [wetlands-strong, wetlands-one-sided, wetlands-overclaim, wetlands-off-topic, heat-strong-hi, heat-partial-hi, heat-off-topic]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - run: pip install -q ${{ env.RUNTIME }}
+      - run: python tools/qa_run.py prepare --case ${{ matrix.case }} --dir qa-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prep-${{ matrix.case }}
+          path: qa-out
+          retention-days: 3
+
+  checks:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        case: [wetlands-strong, wetlands-one-sided, wetlands-overclaim, wetlands-off-topic, heat-strong-hi, heat-partial-hi, heat-off-topic]
+        shard: [parts, question, content, reasoning, writing]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - run: pip install -q ${{ env.RUNTIME }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep-${{ matrix.case }}
+          path: qa-out
+      - run: python tools/qa_run.py shard --case ${{ matrix.case }} --shard ${{ matrix.shard }} --dir qa-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.case }}-${{ matrix.shard }}
+          path: |
+            qa-out/shard-*
+            qa-out/calls-*-${{ matrix.shard }}.json
+            qa-out/error-*
+          if-no-files-found: ignore
+          retention-days: 3
+
+  finish:
+    needs: checks
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [wetlands-strong, wetlands-one-sided, wetlands-overclaim, wetlands-off-topic, heat-strong-hi, heat-partial-hi, heat-off-topic]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - run: pip install -q ${{ env.RUNTIME }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep-${{ matrix.case }}
+          path: qa-out
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-${{ matrix.case }}-*
+          path: qa-out
+          merge-multiple: true
+      - run: python tools/qa_run.py finish --case ${{ matrix.case }} --dir qa-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.case }}
+          path: |
+            qa-out/report-*
+            qa-out/error-*
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # Synthetic reports only: published to a branch so they can be read without signing in.
+  publish:
+    needs: [unit, finish]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '{report-*,unit-log}'
+          path: reports
+          merge-multiple: true
+      - name: Publish to qa/mains-examiner-reports
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          echo "${{ github.run_id }}" > RUN
+          git init -q -b qa/mains-examiner-reports
+          git config user.name "mains-qa"
+          git config user.email "mains-qa@users.noreply.github.com"
+          git add -A
+          git commit -qm "Synthetic QA reports, run ${{ github.run_id }}"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" HEAD:qa/mains-examiner-reports
