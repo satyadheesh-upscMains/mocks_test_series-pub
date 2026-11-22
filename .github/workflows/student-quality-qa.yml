@@ -1,0 +1,39 @@
+name: Student feedback quality (synthetic only)
+on:
+  push:
+    branches: [qa/mains-student-review]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        case: [wetlands-one-sided, wetlands-strong, wetlands-overclaim, heat-strong-hi, wetlands-off-topic, heat-partial-hi]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: models
+          key: mains-gemma-4-12b-it-Q4_K_M-v1
+      - name: Install the existing runtime
+        run: pip install -r requirements.txt --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - name: Grade a synthetic submission with both rubrics
+        env:
+          QA_CASE: ${{ matrix.case }}
+        run: python qa_student_reviews.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-mains-reports-${{ matrix.case }}
+          path: reports-${{ matrix.case }}.json
+          retention-days: 1
+          if-no-files-found: error
