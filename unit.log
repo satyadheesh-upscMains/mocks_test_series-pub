@@ -1,0 +1,57 @@
+test_evidence_check_gives_advice_only (test_examiner.NoInventedContent.test_evidence_check_gives_advice_only) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_names_not_in_materials_are_rejected (test_examiner.NoInventedContent.test_names_not_in_materials_are_rejected) ... ok
+test_not_applicable_with_problems_is_partial (test_examiner.NoInventedContent.test_not_applicable_with_problems_is_partial) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_dimension_gap_matching_a_missing_part_is_folded (test_examiner.Report.test_dimension_gap_matching_a_missing_part_is_folded) ... ok
+test_english_report (test_examiner.Report.test_english_report) ... ok
+test_extra_angle_on_a_complete_answer_is_not_a_big_problem (test_examiner.Report.test_extra_angle_on_a_complete_answer_is_not_a_big_problem) ... ok
+test_hindi_report_with_missing_part (test_examiner.Report.test_hindi_report_with_missing_part) ... ok
+test_same_advice_twice_is_one_fix (test_examiner.Report.test_same_advice_twice_is_one_fix) ... ok
+test_same_rewrite_twice_is_one_fix_and_repeated_sentences_are_trimmed (test_examiner.Report.test_same_rewrite_twice_is_one_fix_and_repeated_sentences_are_trimmed) ... ok
+test_shards_match_single_runner (test_examiner.Report.test_shards_match_single_runner) ... ok
+test_too_many_failed_checks_is_incomplete (test_examiner.Report.test_too_many_failed_checks_is_incomplete) ... ok
+test_two_failed_checks_show_not_checked (test_examiner.Report.test_two_failed_checks_show_not_checked) ... ok
+test_breakdown_falls_back_to_sentences (test_examiner.Stages.test_breakdown_falls_back_to_sentences) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+gemma {"stage":"breakdown","check":"question","attempt":2,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+gemma {"stage":"breakdown","check":"question","attempt":3,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+ok
+test_breakdown_must_be_verbatim (test_examiner.Stages.test_breakdown_must_be_verbatim) ... ok
+test_check_binding_rules (test_examiner.Stages.test_check_binding_rules) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_duplicate_concerns_are_deduped (test_examiner.Stages.test_duplicate_concerns_are_deduped) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_overturned_finding_is_dropped (test_examiner.Stages.test_overturned_finding_is_dropped) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"part:p1","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"part:p2","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"directive","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"scope","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"dimensions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"concepts","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"accuracy","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"evidence","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"causality","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"balance","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"structure","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"language","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"presentation","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"part:p1","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"part:p2","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"accuracy","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"solutions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"structure","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_rejected_output_gets_one_corrected_retry (test_examiner.Stages.test_rejected_output_gets_one_corrected_retry) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"directive","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"credit:unsourced_number"}
+gemma {"stage":"check","check":"directive","attempt":2,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_clean_rejects_gibberish (test_examiner.TextRules.test_clean_rejects_gibberish) ... ok
+test_invented_numbers_are_caught (test_examiner.TextRules.test_invented_numbers_are_caught) ... ok
+test_script_rules (test_examiner.TextRules.test_script_rules) ... ok
+test_sentences_keep_exact_wording (test_examiner.TextRules.test_sentences_keep_exact_wording) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.089s
+
+OK

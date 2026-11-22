@@ -1,0 +1,675 @@
+{
+ "case": "wetlands-strong",
+ "what": "strong English answer",
+ "gates": {
+  "level": true,
+  "no part missing": true,
+  "three or fewer fixes": true,
+  "at most 2 checks not judged": true
+ },
+ "report": {
+  "version": "mains-report-v2",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "good",
+  "levelLabel": "Good",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Every part is answered. The fixes below will make it stronger.",
+  "summary": "The answer successfully explains how wetlands lower flood peaks by storing water and slowing surface runoff. However, it lacks a discussion on the economic benefits of nature-based solutions and proactive legal protections. To improve, first clarify the specific mechanism of risk reduction and include a point on infrastructure cost-benefits.",
+  "question": "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them.",
+  "directives": [
+   {
+    "word": "Discuss",
+    "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+   },
+   {
+    "word": "Suggest",
+    "meaning": "Propose practical measures and say who should act and how."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Urban wetlands act as temporary reservoirs.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "During intense rain they spread and store water, and release it slowly into streams, lowering the flood peak downstream.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "Wetland plants slow surface runoff.",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "When drains are blocked or wetlands are filled for construction, this storage and connectivity are lost.",
+    "para": 1
+   },
+   {
+    "id": "s5",
+    "text": "Cities should first map the catchment, floodplain and inflows, then enforce no-fill buffers through development plans.",
+    "para": 1
+   },
+   {
+    "id": "s6",
+    "text": "Restore blocked inlets and treat sewage before it reaches lakes.",
+    "para": 1
+   },
+   {
+    "id": "s7",
+    "text": "Residents can map encroachments and report changes in water levels.",
+    "para": 1
+   },
+   {
+    "id": "s8",
+    "text": "Drains and pumps still matter in exceptional storms; plans should track flood depths and drainage time before and after restoration.",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "Part 1",
+    "text": "how urban wetlands reduce flood risk",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "You have correctly identified the primary mechanisms of flood mitigation, such as storage and runoff deceleration. To improve, ensure the link between these actions and the reduction of downstream risk is explicit.",
+    "checkedTwice": false,
+    "sentences": [
+     "s2",
+     "s3"
+    ]
+   },
+   {
+    "id": "p2",
+    "label": "Part 2",
+    "text": "suggest ways to conserve them",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "You have provided good technical and planning measures for conservation. To improve, include more on legal protections or community-led restoration initiatives.",
+    "checkedTwice": false,
+    "sentences": [
+     "s5",
+     "s6"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Add a point about the economic benefits of using wetlands to reduce infrastructure costs.",
+    "where": "Covered the key angles",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer does not mention the economic angle, such as the cost-benefit of nature-based solutions versus grey infrastructure.",
+    "tryWriting": "Conservation should also consider the economic benefits of nature-based solutions, which can reduce the long-term costs of building and maintaining heavy grey infrastructure.",
+    "checkedTwice": false
+   },
+   {
+    "n": 2,
+    "title": "Explain how acting as a reservoir specifically mitigates flood risk.",
+    "where": "Part 1",
+    "impact": "minor",
+    "impactLabel": "Small polish",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s1",
+     "text": "Urban wetlands act as temporary reservoirs."
+    },
+    "why": "The sentence identifies the role of wetlands but does not explain the mechanism of risk reduction.",
+    "tryWriting": "Urban wetlands act as temporary reservoirs that mitigate flood risk by absorbing excess water during heavy rainfall.",
+    "checkedTwice": false
+   },
+   {
+    "n": 3,
+    "title": "Include a point about creating legal protections or zoning for wetlands.",
+    "where": "Part 2",
+    "impact": "minor",
+    "impactLabel": "Small polish",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s7",
+     "text": "Residents can map encroachments and report changes in water levels."
+    },
+    "why": "Reporting changes is a reactive measure rather than a proactive conservation strategy.",
+    "tryWriting": "Establish legal protections for wetlands and create community-led programs to monitor and protect these ecosystems.",
+    "checkedTwice": false
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Urban wetlands act as temporary reservoirs.",
+    "credit": [
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence directly addresses how wetlands function as reservoirs to manage water."
+     },
+     {
+      "where": "Structure",
+      "reason": "The opening sentence directly addresses the first part of the question by defining the role of wetlands."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Part 1",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence identifies the role of wetlands but does not explain the mechanism of risk reduction.",
+      "fix": "Explain how acting as a reservoir specifically mitigates flood risk.",
+      "fixNumber": 2
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s2",
+    "text": "During intense rain they spread and store water, and release it slowly into streams, lowering the flood peak downstream.",
+    "credit": [
+     {
+      "where": "Part 1",
+      "reason": "It explains the mechanism of lowering flood peaks by storing water and releasing it slowly."
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "It explains the mechanism of flood reduction by describing how wetlands store water and regulate its release to lower downstream peaks."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It explains the mechanism of how storing water and slow release leads to the specific outcome of lowering the flood peak."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s3",
+    "text": "Wetland plants slow surface runoff.",
+    "credit": [
+     {
+      "where": "Part 1",
+      "reason": "It identifies how vegetation contributes to flood risk reduction by slowing surface runoff."
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "It explains the physical role of vegetation in slowing surface runoff."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It identifies the physical action of plants slowing runoff as a cause for reduced flood risk."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "When drains are blocked or wetlands are filled for construction, this storage and connectivity are lost.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Use of space",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "This sentence describes the loss of wetland functions rather than directly answering how they reduce flood risk or how to conserve them.",
+      "fix": "Remove this sentence to save space for more conservation measures.",
+      "fixNumber": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s5",
+    "text": "Cities should first map the catchment, floodplain and inflows, then enforce no-fill buffers through development plans.",
+    "credit": [
+     {
+      "where": "Part 2",
+      "reason": "It suggests a specific planning approach by mapping catchments and enforcing no-fill buffers."
+     },
+     {
+      "where": "Did what the question asks",
+      "reason": "It provides a concrete measure for conservation by suggesting specific mapping and buffer enforcement."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence addresses the administrative and legal angle by suggesting development plans and buffers."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Examples and evidence",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The suggestion to enforce buffers is a policy idea but lacks a specific legal framework or a named urban planning guideline to support it.",
+      "fix": "Mention a specific type of urban planning guideline or a local government policy you have studied.",
+      "fixNumber": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s6",
+    "text": "Restore blocked inlets and treat sewage before it reaches lakes.",
+    "credit": [
+     {
+      "where": "Part 2",
+      "reason": "It provides concrete actions for restoration and water quality management."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence addresses the environmental and technological angle by mentioning sewage treatment and restoration."
+     },
+     {
+      "where": "Suggestions are workable",
+      "reason": "It provides concrete technical actions like restoring inlets and treating sewage to maintain wetland health."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s7",
+    "text": "Residents can map encroachments and report changes in water levels.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Part 2",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "Reporting changes is a reactive measure rather than a proactive conservation strategy.",
+      "fix": "Include a point about creating legal protections or zoning for wetlands.",
+      "fixNumber": 3
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s8",
+    "text": "Drains and pumps still matter in exceptional storms; plans should track flood depths and drainage time before and after restoration.",
+    "credit": [
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The sentence acknowledges that wetlands alone are not a complete solution and that drains and pumps are still necessary during extreme storms."
+     },
+     {
+      "where": "Structure",
+      "reason": "The final sentence provides a forward-looking point by suggesting monitoring and tracking after restoration."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Covered the key angles",
+    "reason": "The answer does not mention the economic angle, such as the cost-benefit of nature-based solutions versus grey infrastructure.",
+    "fix": "Add a point about the economic benefits of using wetlands to reduce infrastructure costs.",
+    "fixNumber": 1
+   },
+   {
+    "where": "Concepts explained",
+    "reason": "The answer does not explain the ecological concept of 'buffer zones' or 'catchment' beyond just naming them as parts to map.",
+    "fix": "Briefly define how a buffer zone acts as a protective barrier between urban development and wetland areas.",
+    "fixNumber": null
+   },
+   {
+    "where": "Cause and effect",
+    "reason": "The answer does not explicitly link how the conservation measures in the second half of the answer directly result in a reduced flood risk.",
+    "fix": "Add a concluding sentence explaining how these conservation actions maintain the wetland's capacity to mitigate floods.",
+    "fixNumber": null
+   },
+   {
+    "where": "Trade-offs and limits",
+    "reason": "The answer does not mention the potential costs or social trade-offs of enforcing no-fill buffers or restricting construction.",
+    "fix": "Mention the economic or land-use trade-offs involved in protecting wetland areas.",
+    "fixNumber": null
+   }
+  ],
+  "strengths": [
+   {
+    "where": "Part 1",
+    "sourceId": "s2",
+    "quote": "During intense rain they spread and store water, and release it slowly into streams, lowering the flood peak downstream.",
+    "reason": "It explains the mechanism of lowering flood peaks by storing water and releasing it slowly."
+   },
+   {
+    "where": "Part 1",
+    "sourceId": "s3",
+    "quote": "Wetland plants slow surface runoff.",
+    "reason": "It identifies how vegetation contributes to flood risk reduction by slowing surface runoff."
+   },
+   {
+    "where": "Part 2",
+    "sourceId": "s5",
+    "quote": "Cities should first map the catchment, floodplain and inflows, then enforce no-fill buffers through development plans.",
+    "reason": "It suggests a specific planning approach by mapping catchments and enforcing no-fill buffers."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "It explains the mechanism of how wetlands lower flood peaks by storing and slowly releasing water."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer stays strictly on topic by addressing both the mechanics of flood reduction and conservation strategies. It avoids irrelevant information."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer covers administrative and environmental aspects well. Including the economic dimension would make the answer more comprehensive."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The student correctly explains the physical mechanisms of how wetlands manage water flow. The answer could be improved by briefly defining the technical terms used in the conservation section."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The factual claims regarding the hydrological functions of wetlands are accurate and well-supported."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer provides good conceptual logic but lacks specific evidence like data, reports, or named projects to substantiate the claims."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer successfully explains the physical mechanisms of flood reduction. However, it could be stronger by explicitly linking the conservation actions back to the flood-reduction outcome."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer correctly identifies that wetlands have limits during extreme events. However, it could be improved by acknowledging the socio-economic costs of land-use restrictions."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The suggestions are mostly workable as they include specific actions like mapping and buffer enforcement. The community involvement point could be more specific regarding the official process."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer follows a logical flow by addressing the mechanism of flood reduction before moving to conservation. However, it ends abruptly on a technical point rather than a concluding summary."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer uses good technical terminology like 'flood peak' and 'catchment'. Improving the specificity of community actions would enhance the clarity of the conservation section."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer uses the word count well, providing a balanced distribution between the two parts of the question. You avoided repetitive phrasing and padding."
+   }
+  ],
+  "stats": {
+   "words": 102,
+   "sentences": 8,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "Part 1",
+     "words": 30
+    },
+    {
+     "partId": "p2",
+     "label": "Part 2",
+     "words": 36
+    }
+   ],
+   "uncreditedSentences": []
+  },
+  "transcript": null,
+  "trust": {
+   "secondOpinions": 2,
+   "overturned": 2,
+   "softened": 0,
+   "unavailableChecks": []
+  }
+ },
+ "calls": [
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 254.6,
+   "prompt_tokens": 1122,
+   "output_tokens": 233,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 110.9,
+   "prompt_tokens": 1187,
+   "output_tokens": 114,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 155.5,
+   "prompt_tokens": 1164,
+   "output_tokens": 229,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 171.4,
+   "prompt_tokens": 1165,
+   "output_tokens": 213,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 99.4,
+   "prompt_tokens": 1164,
+   "output_tokens": 197,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 39.4,
+   "prompt_tokens": 196,
+   "output_tokens": 51,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 224.3,
+   "prompt_tokens": 1183,
+   "output_tokens": 225,
+   "status": "rejected",
+   "reason": "concern:none_needs_missing"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 2,
+   "seconds": 86.3,
+   "prompt_tokens": 1211,
+   "output_tokens": 226,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 112.1,
+   "prompt_tokens": 1149,
+   "output_tokens": 181,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 127.8,
+   "prompt_tokens": 1166,
+   "output_tokens": 215,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 254.5,
+   "prompt_tokens": 1141,
+   "output_tokens": 233,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 142.8,
+   "prompt_tokens": 1148,
+   "output_tokens": 214,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 147.3,
+   "prompt_tokens": 1162,
+   "output_tokens": 220,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 217.8,
+   "prompt_tokens": 1152,
+   "output_tokens": 229,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 134.4,
+   "prompt_tokens": 1139,
+   "output_tokens": 237,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 119.1,
+   "prompt_tokens": 1153,
+   "output_tokens": 191,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 126.4,
+   "prompt_tokens": 937,
+   "output_tokens": 46,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 36.3,
+   "prompt_tokens": 930,
+   "output_tokens": 50,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 68.4,
+   "prompt_tokens": 1111,
+   "output_tokens": 64,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 2628.7
+}

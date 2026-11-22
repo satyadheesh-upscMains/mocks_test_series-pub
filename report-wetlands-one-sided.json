@@ -1,0 +1,611 @@
+{
+ "case": "wetlands-one-sided",
+ "what": "answers only the conservation part",
+ "gates": {
+  "level": true,
+  "part not credited as answered": true,
+  "three or fewer fixes": true,
+  "at most 2 checks not judged": true
+ },
+ "report": {
+  "version": "mains-report-v2",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "developing",
+  "levelLabel": "Developing",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Part 2 is answered. Part 1 is missing.",
+  "summary": "The answer successfully suggests specific actions like mapping, legal protection, and sewage treatment, along with a collaborative approach for monitoring and funding. However, it fails to explain the mechanism of how wetlands reduce flood risk, such as by storing rainfall or slowing down runoff. You should first add a sentence explaining how wetlands act as sponges to absorb excess water during heavy rains.",
+  "question": "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them.",
+  "directives": [
+   {
+    "word": "Discuss",
+    "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+   },
+   {
+    "word": "Suggest",
+    "meaning": "Propose practical measures and say who should act and how."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Urban wetlands are priceless ecological assets.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "Cities should map and legally protect their boundaries, prevent dumping and encroachment, and treat sewage before it enters them.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "Local bodies can work with communities to monitor water quality and fund maintenance.",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "Awareness drives should encourage nearby residents to use lakes responsibly.",
+    "para": 1
+   },
+   {
+    "id": "s5",
+    "text": "Together these measures can make cities cleaner, greener and more resilient.",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "Part 1",
+    "text": "how urban wetlands reduce flood risk",
+    "status": "missing",
+    "statusLabel": "Missing",
+    "note": "The answer completely omits the first part of the question regarding the flood-reduction mechanisms of wetlands.",
+    "checkedTwice": true,
+    "sentences": []
+   },
+   {
+    "id": "p2",
+    "label": "Part 2",
+    "text": "suggest ways to conserve them",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "You have provided a good range of conservation measures including legal, technical, and community-based actions. To improve, ensure the link between these actions and the specific goal of wetland health is clear.",
+    "checkedTwice": false,
+    "sentences": [
+     "s2",
+     "s3"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Add a sentence explaining how wetlands act as sponges to absorb excess water during heavy rains.",
+    "where": "Part 1",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer does not explain the mechanism of how wetlands reduce flood risk, such as by storing rainfall or slowing down runoff.",
+    "tryWriting": "Urban wetlands reduce flood risk by acting as natural sponges that store rainfall and slow down surface runoff.",
+    "checkedTwice": false
+   },
+   {
+    "n": 2,
+    "title": "Include a specific report or a city-level wetland conservation project as an example.",
+    "where": "Examples and evidence",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer lacks any specific data, reports, or real-world examples to support the claims about wetland benefits or conservation methods.",
+    "tryWriting": null,
+    "checkedTwice": false
+   },
+   {
+    "n": 3,
+    "title": "Specify how awareness can lead to specific conservation actions.",
+    "where": "Part 2",
+    "impact": "minor",
+    "impactLabel": "Small polish",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s4",
+     "text": "Awareness drives should encourage nearby residents to use lakes responsibly."
+    },
+    "why": "While awareness is helpful, it is less impactful than the structural and legal measures mentioned in other sentences.",
+    "tryWriting": "Awareness campaigns should educate residents on the role of wetlands in flood prevention to ensure community support for conservation rules.",
+    "checkedTwice": false
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Urban wetlands are priceless ecological assets.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Did what the question asks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence identifies wetlands as assets but does not discuss their specific function in flood risk reduction.",
+      "fix": "Explain the mechanism by which wetlands mitigate flooding.",
+      "fixNumber": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s2",
+    "text": "Cities should map and legally protect their boundaries, prevent dumping and encroachment, and treat sewage before it enters them.",
+    "credit": [
+     {
+      "where": "Part 2",
+      "reason": "This sentence provides specific actions like mapping, legal protection, and sewage treatment to preserve the wetlands."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence provides specific actions for the conservation part of the question."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence addresses the legal and administrative dimensions of conservation by mentioning legal protection and local body involvement."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s3",
+    "text": "Local bodies can work with communities to monitor water quality and fund maintenance.",
+    "credit": [
+     {
+      "where": "Part 2",
+      "reason": "It suggests a collaborative approach involving local bodies and communities for monitoring and funding."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence suggests a collaborative approach for the conservation part of the question."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence covers the social and administrative dimensions by mentioning community work and funding."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "Awareness drives should encourage nearby residents to use lakes responsibly.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Part 2",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "While awareness is helpful, it is less impactful than the structural and legal measures mentioned in other sentences.",
+      "fix": "Specify how awareness can lead to specific conservation actions.",
+      "fixNumber": 3
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s5",
+    "text": "Together these measures can make cities cleaner, greener and more resilient.",
+    "credit": [
+     {
+      "where": "Structure",
+      "reason": "It provides a forward-looking conclusion by mentioning city resilience."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   }
+  ],
+  "missing": [
+   {
+    "partId": "p1",
+    "where": "Part 1",
+    "partText": "how urban wetlands reduce flood risk",
+    "reason": "The answer does not explain the mechanism of how wetlands reduce flood risk, such as by storing rainfall or slowing down runoff.",
+    "fix": "Add a sentence explaining how wetlands act as sponges to absorb excess water during heavy rains.",
+    "fixNumber": 1
+   }
+  ],
+  "additions": [
+   {
+    "where": "Examples and evidence",
+    "reason": "The answer lacks any specific data, reports, or real-world examples to support the claims about wetland benefits or conservation methods.",
+    "fix": "Include a specific report or a city-level wetland conservation project as an example.",
+    "fixNumber": 2
+   },
+   {
+    "where": "Trade-offs and limits",
+    "reason": "The answer does not mention the costs, potential conflicts with urban development, or the difficulty of maintaining these areas.",
+    "fix": "Mention the trade-off between urban expansion and wetland preservation.",
+    "fixNumber": null
+   }
+  ],
+  "strengths": [
+   {
+    "where": "Part 2",
+    "sourceId": "s2",
+    "quote": "Cities should map and legally protect their boundaries, prevent dumping and encroachment, and treat sewage before it enters them.",
+    "reason": "This sentence provides specific actions like mapping, legal protection, and sewage treatment to preserve the wetlands."
+   },
+   {
+    "where": "Part 2",
+    "sourceId": "s3",
+    "quote": "Local bodies can work with communities to monitor water quality and fund maintenance.",
+    "reason": "It suggests a collaborative approach involving local bodies and communities for monitoring and funding."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer only addresses the conservation part of the question. You must include a discussion on the flood-reduction mechanisms to satisfy the first part of the prompt."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer focuses entirely on conservation but completely ignores the first part of the question regarding flood risk reduction."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer focuses well on the 'how to conserve' part but completely ignores the 'how they reduce flood risk' part of the question."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer completely omits the first part of the question regarding the flood-reduction mechanisms of wetlands."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer completely omits the first part of the question regarding the mechanism of flood risk reduction."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer provides general suggestions but lacks the evidence required for a high-scoring UPSC answer. You should incorporate specific data or a known government initiative to ground your points."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer completely fails to address the first part of the question regarding the mechanism of flood risk reduction."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The question asks to discuss and suggest, but the answer does not address the practical limitations or costs of conservation."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The suggestions are workable as they identify specific actors and actions. However, the community awareness point could be more specific regarding the actions residents should take."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer lacks a direct introduction to the first part of the question. The body is well-organized around conservation, but the opening is too general."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer uses good administrative terminology for conservation. However, the opening sentence relies on emotive language rather than technical clarity."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is very concise but fails to address half of the question. You spent all your space on conservation and ignored the flood risk mechanism."
+   }
+  ],
+  "stats": {
+   "words": 59,
+   "sentences": 5,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "Part 1",
+     "words": 0
+    },
+    {
+     "partId": "p2",
+     "label": "Part 2",
+     "words": 42
+    }
+   ],
+   "uncreditedSentences": []
+  },
+  "transcript": null,
+  "trust": {
+   "secondOpinions": 8,
+   "overturned": 0,
+   "softened": 0,
+   "unavailableChecks": []
+  }
+ },
+ "calls": [
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 204.9,
+   "prompt_tokens": 1047,
+   "output_tokens": 148,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 120.4,
+   "prompt_tokens": 1112,
+   "output_tokens": 145,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 123.8,
+   "prompt_tokens": 1089,
+   "output_tokens": 164,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 179.5,
+   "prompt_tokens": 1090,
+   "output_tokens": 148,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 129.8,
+   "prompt_tokens": 1089,
+   "output_tokens": 225,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 38.8,
+   "prompt_tokens": 196,
+   "output_tokens": 51,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 145.9,
+   "prompt_tokens": 1108,
+   "output_tokens": 218,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 88.6,
+   "prompt_tokens": 1074,
+   "output_tokens": 220,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 93.1,
+   "prompt_tokens": 1091,
+   "output_tokens": 227,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 198.9,
+   "prompt_tokens": 1066,
+   "output_tokens": 153,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 111.4,
+   "prompt_tokens": 1073,
+   "output_tokens": 145,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 142.3,
+   "prompt_tokens": 1087,
+   "output_tokens": 214,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 245.8,
+   "prompt_tokens": 1077,
+   "output_tokens": 245,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 128.9,
+   "prompt_tokens": 1064,
+   "output_tokens": 184,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 144.1,
+   "prompt_tokens": 1078,
+   "output_tokens": 224,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 111.5,
+   "prompt_tokens": 844,
+   "output_tokens": 39,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 32.3,
+   "prompt_tokens": 859,
+   "output_tokens": 40,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 32.2,
+   "prompt_tokens": 860,
+   "output_tokens": 41,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 31.1,
+   "prompt_tokens": 864,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 29.1,
+   "prompt_tokens": 859,
+   "output_tokens": 33,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 31.3,
+   "prompt_tokens": 856,
+   "output_tokens": 40,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 31.1,
+   "prompt_tokens": 860,
+   "output_tokens": 39,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 29.6,
+   "prompt_tokens": 854,
+   "output_tokens": 36,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 70.6,
+   "prompt_tokens": 1038,
+   "output_tokens": 77,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 2495.0
+}

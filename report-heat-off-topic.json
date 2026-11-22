@@ -1,0 +1,556 @@
+{
+ "case": "heat-off-topic",
+ "what": "off-topic Hindi answer",
+ "gates": {
+  "level": true,
+  "three or fewer fixes": true,
+  "at most 2 checks not judged": true
+ },
+ "report": {
+  "version": "mains-report-v2",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "hi",
+  "level": "off_track",
+  "levelLabel": "विषय से हटकर",
+  "levels": [
+   "विषय से हटकर",
+   "सुधार चाहिए",
+   "अच्छा",
+   "बहुत अच्छा"
+  ],
+  "headline": "यह जवाब अभी सवाल का जवाब नहीं देता।",
+  "summary": "यह उत्तर पूरी तरह से प्रश्न से अलग है और इसमें कोई भी प्रासंगिक जानकारी नहीं है। आपको सांस्कृतिक परंपराओं वाले वाक्यों को हटाकर हीट एक्शन प्लान के मुख्य बिंदुओं जैसे समय पर चेतावनी और बाहर काम करने वालों की सुरक्षा पर ध्यान देना चाहिए। सबसे पहले, आपको यह स्पष्ट करना चाहिए कि ये प्लान शहरों में गर्मी के जोखिम को कैसे कम करते हैं।",
+  "question": "समझाइए कि हीट एक्शन प्लान शहरों में गर्मी का जोखिम कैसे कम करते हैं। भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+  "directives": [
+   {
+    "word": "समझाइए",
+    "meaning": "साफ़ बताइए कि यह कैसे और क्यों होता है: कारण, बीच की कड़ियाँ और असर।"
+   },
+   {
+    "word": "चर्चा कीजिए",
+    "meaning": "मुद्दे को एक से ज़्यादा पहलुओं से देखिए, कारण दीजिए और संतुलित राय पर पहुँचिए।"
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "लोकगीत और लोकनृत्य किसी क्षेत्र की पहचान दिखाते हैं।",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "स्कूलों में स्थानीय कलाकारों के कार्यक्रम करवाने चाहिए ताकि विद्यार्थी अपनी सांस्कृतिक परंपराओं को समझें।",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "नगर निगम कलाकारों के लिए मंच और अभ्यास की जगह भी उपलब्ध करा सकता है।",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "भाग 1",
+    "text": "समझाइए कि हीट एक्शन प्लान शहरों में गर्मी का जोखिम कैसे कम करते हैं।",
+    "status": "missing",
+    "statusLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से विषय से बाहर है। आपने सांस्कृतिक परंपराओं पर लिखा है, जबकि प्रश्न गर्मी से बचाव के प्लान के बारे में है।",
+    "checkedTwice": true,
+    "sentences": []
+   },
+   {
+    "id": "p2",
+    "label": "भाग 2",
+    "text": "भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+    "status": "missing",
+    "statusLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से विषय से बाहर है। आपने सांस्कृतिक परंपराओं पर लिखा है, जबकि प्रश्न गर्मी से बचाव के प्लान और उसकी चुनौतियों पर है।",
+    "checkedTwice": true,
+    "sentences": []
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "हीट एक्शन प्लान के मुख्य बिंदुओं जैसे समय पर चेतावनी और बाहर काम करने वालों की सुरक्षा को शामिल करें।",
+    "where": "भाग 1",
+    "impact": "major",
+    "impactLabel": "अंकों पर बड़ा असर",
+    "kind": "missing",
+    "kindLabel": "छूटा",
+    "yourLine": null,
+    "why": "उत्तर में हीट एक्शन प्लान या गर्मी के जोखिम को कम करने के बारे में कोई जानकारी नहीं दी गई है।",
+    "tryWriting": "हीट एक्शन प्लान समय पर चेतावनी जारी करके और बाहर काम करने वाले लोगों के लिए सुरक्षा उपाय बनाकर गर्मी के जोखिम को कम करते हैं।",
+    "checkedTwice": false
+   },
+   {
+    "n": 2,
+    "title": "भारतीय शहरों में हीट एक्शन प्लान लागू करने में आने वाली दो चुनौतियों को लिखें।",
+    "where": "भाग 2",
+    "impact": "major",
+    "impactLabel": "अंकों पर बड़ा असर",
+    "kind": "missing",
+    "kindLabel": "छूटा",
+    "yourLine": null,
+    "why": "उत्तर में हीट एक्शन प्लान को लागू करने की किसी भी चुनौती का जिक्र नहीं किया गया है।",
+    "tryWriting": "भारतीय शहरों में हीट एक्शन प्लान लागू करने में डेटा की कमी और अलग-अलग वार्डों में अलग-अलग जोखिमों को समझना बड़ी चुनौतियां हैं।",
+    "checkedTwice": false
+   },
+   {
+    "n": 3,
+    "title": "इसे हटा दें और गर्मी के जोखिम कम करने के उपायों पर ध्यान दें।",
+    "where": "विषय पर टिके रहे",
+    "impact": "major",
+    "impactLabel": "अंकों पर बड़ा असर",
+    "kind": "wrong",
+    "kindLabel": "गलत",
+    "yourLine": {
+     "sourceId": "s1",
+     "text": "लोकगीत और लोकनृत्य किसी क्षेत्र की पहचान दिखाते हैं।"
+    },
+    "why": "यह वाक्य सांस्कृतिक परंपराओं की बात करता है जो प्रश्न के विषय से संबंधित नहीं है।",
+    "tryWriting": null,
+    "checkedTwice": true
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "लोकगीत और लोकनृत्य किसी क्षेत्र की पहचान दिखाते हैं।",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "विषय पर टिके रहे",
+      "kind": "wrong",
+      "kindLabel": "गलत",
+      "reason": "यह वाक्य सांस्कृतिक परंपराओं की बात करता है जो प्रश्न के विषय से संबंधित नहीं है।",
+      "fix": "इसे हटा दें और गर्मी के जोखिम कम करने के उपायों पर ध्यान दें।",
+      "fixNumber": 3
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s2",
+    "text": "स्कूलों में स्थानीय कलाकारों के कार्यक्रम करवाने चाहिए ताकि विद्यार्थी अपनी सांस्कृतिक परंपराओं को समझें।",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "सुझाव व्यावहारिक हैं",
+      "kind": "wrong",
+      "kindLabel": "गलत",
+      "reason": "यह सुझाव प्रश्न में पूछी गई समस्या (हीट एक्शन प्लान और गर्मी का जोखिम) से बिल्कुल अलग है और इसका लक्ष्य से कोई संबंध नहीं है।",
+      "fix": "हीट एक्शन प्लान के तहत गर्मी से बचाव के उपायों का सुझाव दें।",
+      "fixNumber": null
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s3",
+    "text": "नगर निगम कलाकारों के लिए मंच और अभ्यास की जगह भी उपलब्ध करा सकता है।",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "सुझाव व्यावहारिक हैं",
+      "kind": "wrong",
+      "kindLabel": "गलत",
+      "reason": "यह सुझाव भी गर्मी के जोखिम को कम करने के बजाय सांस्कृतिक कार्यक्रमों पर केंद्रित है, जो प्रश्न के लिए अप्रासंगिक है।",
+      "fix": "गर्मी के दौरान श्रमिकों की सुरक्षा के लिए नगर निगम द्वारा किए जाने वाले उपायों को लिखें।",
+      "fixNumber": null
+     }
+    ],
+    "tone": "red"
+   }
+  ],
+  "missing": [
+   {
+    "partId": "p1",
+    "where": "भाग 1",
+    "partText": "समझाइए कि हीट एक्शन प्लान शहरों में गर्मी का जोखिम कैसे कम करते हैं।",
+    "reason": "उत्तर में हीट एक्शन प्लान या गर्मी के जोखिम को कम करने के बारे में कोई जानकारी नहीं दी गई है।",
+    "fix": "हीट एक्शन प्लान के मुख्य बिंदुओं जैसे समय पर चेतावनी और बाहर काम करने वालों की सुरक्षा को शामिल करें।",
+    "fixNumber": 1
+   },
+   {
+    "partId": "p2",
+    "where": "भाग 2",
+    "partText": "भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+    "reason": "उत्तर में हीट एक्शन प्लान को लागू करने की किसी भी चुनौती का जिक्र नहीं किया गया है।",
+    "fix": "भारतीय शहरों में हीट एक्शन प्लान लागू करने में आने वाली दो चुनौतियों को लिखें।",
+    "fixNumber": 2
+   }
+  ],
+  "additions": [
+   {
+    "where": "ज़रूरी पहलू",
+    "reason": "पूरा उत्तर प्रश्न से अलग विषय (संस्कृति) पर है और हीट एक्शन प्लान के बारे में कुछ नहीं बताता।",
+    "fix": "हीट एक्शन प्लान के काम करने के तरीके और चुनौतियों पर आधारित जानकारी लिखें।",
+    "fixNumber": null
+   },
+   {
+    "where": "उदाहरण",
+    "reason": "पूरे उत्तर में कोई भी उदाहरण, डेटा या रिपोर्ट का उपयोग नहीं किया गया है।",
+    "fix": "हीट एक्शन प्लान के प्रभाव को दिखाने के लिए किसी शहर के उदाहरण या डेटा का प्रयोग करें।",
+    "fixNumber": null
+   }
+  ],
+  "strengths": [],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "सवाल की माँग पूरी की",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से विषय से बाहर है। आपने सांस्कृतिक परंपराओं पर लिखा है, जबकि प्रश्न हीट एक्शन प्लान के बारे में है।"
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "विषय पर टिके रहे",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से गलत विषय पर है। आपको हीट एक्शन प्लान और शहरों में गर्मी से बचाव के उपायों पर ध्यान केंद्रित करना चाहिए।"
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "ज़रूरी पहलू",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से विषय से बाहर है। आपने सांस्कृतिक परंपराओं पर लिखा है, जबकि प्रश्न हीट एक्शन प्लान और गर्मी के जोखिम के बारे में है।"
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "मूल बातें",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से प्रश्न से अलग है। आपने सांस्कृतिक परंपराओं पर लिखा है, जबकि प्रश्न हीट एक्शन प्लान और गर्मी के जोखिम के बारे में है।"
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "तथ्य सही",
+    "verdict": "wrong",
+    "verdictLabel": "गलत",
+    "note": "आपका उत्तर प्रश्न के विषय से पूरी तरह अलग है। आपने गर्मी के जोखिम और हीट एक्शन प्लान के बारे में कुछ भी नहीं लिखा है।"
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "उदाहरण",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "उत्तर में किसी भी तथ्य या उदाहरण का अभाव है। आपको अपने तर्कों को पुख्ता करने के लिए विशिष्ट उदाहरणों या रिपोर्ट का सहारा लेना चाहिए।"
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "कारण और असर",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर पूरी तरह से प्रश्न से अलग विषय (लोक कला) पर है। इसमें गर्मी के जोखिम को कम करने के कारणों का कोई जिक्र नहीं है।"
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "सीमाएँ और मुश्किलें",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "इस प्रश्न में चुनौतियों और सीमाओं पर चर्चा करने को कहा गया है, लेकिन आपके उत्तर में इसका कोई उल्लेख नहीं है।"
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "सुझाव व्यावहारिक हैं",
+    "verdict": "wrong",
+    "verdictLabel": "गलत",
+    "note": "आपके सुझाव प्रश्न की मांग से पूरी तरह बाहर हैं। आपने गर्मी के जोखिम कम करने के बजाय सांस्कृतिक कार्यक्रमों पर ध्यान केंद्रित किया है।"
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "ढाँचा",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर प्रश्न से बिल्कुल अलग विषय पर है। आपको प्रश्न को ध्यान से पढ़कर उसके अनुसार ही उत्तर लिखना चाहिए।"
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "साफ़ भाषा",
+    "verdict": "wrong",
+    "verdictLabel": "गलत",
+    "note": "आपका उत्तर प्रश्न के विषय से पूरी तरह अलग है। आपको हीट एक्शन प्लान के बारे में लिखना चाहिए था।"
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "जगह का इस्तेमाल",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपका उत्तर प्रश्न से पूरी तरह अलग विषय (लोक कला) पर है। शब्द सीमा का उपयोग प्रश्न के उत्तर के लिए नहीं किया गया है।"
+   }
+  ],
+  "stats": {
+   "words": 39,
+   "sentences": 3,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "भाग 1",
+     "words": 0
+    },
+    {
+     "partId": "p2",
+     "label": "भाग 2",
+     "words": 0
+    }
+   ],
+   "uncreditedSentences": []
+  },
+  "transcript": null,
+  "trust": {
+   "secondOpinions": 8,
+   "overturned": 0,
+   "softened": 0,
+   "unavailableChecks": []
+  }
+ },
+ "calls": [
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 162.9,
+   "prompt_tokens": 1159,
+   "output_tokens": 230,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 87.0,
+   "prompt_tokens": 1224,
+   "output_tokens": 168,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 83.4,
+   "prompt_tokens": 1201,
+   "output_tokens": 164,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 150.0,
+   "prompt_tokens": 1212,
+   "output_tokens": 172,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 84.5,
+   "prompt_tokens": 1249,
+   "output_tokens": 167,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 49.9,
+   "prompt_tokens": 211,
+   "output_tokens": 72,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 266.2,
+   "prompt_tokens": 1220,
+   "output_tokens": 230,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 154.9,
+   "prompt_tokens": 1186,
+   "output_tokens": 239,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 152.4,
+   "prompt_tokens": 1203,
+   "output_tokens": 230,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 216.1,
+   "prompt_tokens": 1178,
+   "output_tokens": 169,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 103.7,
+   "prompt_tokens": 1185,
+   "output_tokens": 158,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 133.7,
+   "prompt_tokens": 1199,
+   "output_tokens": 240,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 266.8,
+   "prompt_tokens": 1189,
+   "output_tokens": 240,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 120.3,
+   "prompt_tokens": 1176,
+   "output_tokens": 158,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 149.2,
+   "prompt_tokens": 1190,
+   "output_tokens": 230,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 152.9,
+   "prompt_tokens": 966,
+   "output_tokens": 39,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 36.8,
+   "prompt_tokens": 963,
+   "output_tokens": 39,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 36.4,
+   "prompt_tokens": 969,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 38.6,
+   "prompt_tokens": 986,
+   "output_tokens": 35,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 36.4,
+   "prompt_tokens": 969,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 37.0,
+   "prompt_tokens": 975,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 36.2,
+   "prompt_tokens": 966,
+   "output_tokens": 38,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 38.1,
+   "prompt_tokens": 975,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 81.3,
+   "prompt_tokens": 1109,
+   "output_tokens": 79,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 2674.7
+}

@@ -1,0 +1,620 @@
+{
+ "case": "heat-partial-hi",
+ "what": "Hindi answer that skips the two challenges",
+ "gates": {
+  "level": true,
+  "part marked missing": true,
+  "three or fewer fixes": true,
+  "at most 2 checks not judged": true
+ },
+ "report": {
+  "version": "mains-report-v2",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "hi",
+  "level": "developing",
+  "levelLabel": "सुधार चाहिए",
+  "levels": [
+   "विषय से हटकर",
+   "सुधार चाहिए",
+   "अच्छा",
+   "बहुत अच्छा"
+  ],
+  "headline": "भाग 2 छूट गया है। भाग 1 अधूरा है।",
+  "summary": "आपका उत्तर मोबाइल संदेश और पोस्टर के जरिए जागरूकता बढ़ाने के तरीके को सही ढंग से बताता है। हालांकि, आपने भारतीय शहरों में लागू होने वाली चुनौतियों का जिक्र नहीं किया है और अस्पताल की तैयारी या बाहर काम करने वालों की सुरक्षा जैसे मुख्य पहलुओं को छोड़ दिया है। सबसे पहले, आपको बजट की कमी या विभागों के बीच तालमेल जैसी दो विशिष्ट चुनौतियां जोड़नी चाहिए।",
+  "question": "समझाइए कि हीट एक्शन प्लान शहरों में गर्मी का जोखिम कैसे कम करते हैं। भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+  "directives": [
+   {
+    "word": "समझाइए",
+    "meaning": "साफ़ बताइए कि यह कैसे और क्यों होता है: कारण, बीच की कड़ियाँ और असर।"
+   },
+   {
+    "word": "चर्चा कीजिए",
+    "meaning": "मुद्दे को एक से ज़्यादा पहलुओं से देखिए, कारण दीजिए और संतुलित राय पर पहुँचिए।"
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "हीट एक्शन प्लान में लोगों को गर्मी के खतरे के बारे में बताना चाहिए।",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "नगर निगम मोबाइल पर संदेश भेज सकता है और स्कूलों में पोस्टर लगा सकता है।",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "लोगों को खूब पानी पीना चाहिए और धूप में जाने से बचना चाहिए।",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "अगर जागरूकता बढ़ेगी तो गर्मी से कम लोग बीमार होंगे।",
+    "para": 1
+   },
+   {
+    "id": "s5",
+    "text": "इस काम के लिए सभी को मिलकर प्रयास करना चाहिए।",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "भाग 1",
+    "text": "समझाइए कि हीट एक्शन प्लान शहरों में गर्मी का जोखिम कैसे कम करते हैं।",
+    "status": "partial",
+    "statusLabel": "अधूरा",
+    "note": "आपने जागरूकता और सूचना के माध्यम से जोखिम कम करने के तरीके बताए हैं। हालांकि, इसमें अस्पताल की तैयारी या बाहर काम करने वालों की सुरक्षा जैसे महत्वपूर्ण पहलुओं को शामिल करना चाहिए।",
+    "checkedTwice": false,
+    "sentences": [
+     "s2",
+     "s4"
+    ]
+   },
+   {
+    "id": "p2",
+    "label": "भाग 2",
+    "text": "भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+    "status": "missing",
+    "statusLabel": "छूटा",
+    "note": "आपने केवल हीट एक्शन प्लान के फायदों के बारे में लिखा है। प्रश्न के दूसरे भाग में पूछी गई चुनौतियों को शामिल करना आवश्यक है।",
+    "checkedTwice": true,
+    "sentences": []
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "दो विशिष्ट चुनौतियां जोड़ें जैसे कि बजट की कमी या अलग-अलग विभागों के बीच तालमेल की कमी।",
+    "where": "भाग 2",
+    "impact": "major",
+    "impactLabel": "अंकों पर बड़ा असर",
+    "kind": "missing",
+    "kindLabel": "छूटा",
+    "yourLine": null,
+    "why": "उत्तर में भारतीय शहरों में हीट एक्शन प्लान लागू करने की किसी भी चुनौती का जिक्र नहीं किया गया है।",
+    "tryWriting": "इन योजनाओं को लागू करने में दो बड़ी चुनौतियां हैं: पहला, अलग-अलग सरकारी विभागों के बीच तालमेल की कमी और दूसरा, बजट या धन की उपलब्धता की समस्या।",
+    "checkedTwice": false
+   },
+   {
+    "n": 2,
+    "title": "अस्पतालों की तैयारी और बाहर काम करने वाले लोगों के लिए सुरक्षा उपायों को शामिल करें।",
+    "where": "मूल बातें",
+    "impact": "major",
+    "impactLabel": "अंकों पर बड़ा असर",
+    "kind": "missing",
+    "kindLabel": "छूटा",
+    "yourLine": null,
+    "why": "उत्तर में हीट एक्शन प्लान के मुख्य पहलुओं जैसे कि अस्पताल की तैयारी या बाहर काम करने वालों की सुरक्षा का जिक्र नहीं है।",
+    "tryWriting": "हीट एक्शन प्लान अस्पतालों की तैयारी, बाहर काम करने वालों की सुरक्षा और समय पर चेतावनी देने के जरिए जोखिम कम करते हैं।",
+    "checkedTwice": true
+   },
+   {
+    "n": 3,
+    "title": "एक शहर के हीट एक्शन प्लान से संबंधित डेटा या किसी रिपोर्ट का संदर्भ दें।",
+    "where": "उदाहरण",
+    "impact": "medium",
+    "impactLabel": "अंकों पर मध्यम असर",
+    "kind": "unsupported",
+    "kindLabel": "बिना आधार",
+    "yourLine": {
+     "sourceId": "s4",
+     "text": "अगर जागरूकता बढ़ेगी तो गर्मी से कम लोग बीमार होंगे।"
+    },
+    "why": "यह दावा कि जागरूकता बढ़ने से कम लोग बीमार होंगे, बिना किसी डेटा या विशिष्ट उदाहरण के दिया गया है।",
+    "tryWriting": null,
+    "checkedTwice": false
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "हीट एक्शन प्लान में लोगों को गर्मी के खतरे के बारे में बताना चाहिए।",
+    "credit": [
+     {
+      "where": "ढाँचा",
+      "reason": "यह वाक्य सीधे तौर पर प्रश्न के पहले भाग से शुरू होता है और हीट एक्शन प्लान के उद्देश्य को स्पष्ट करता है।"
+     }
+    ],
+    "concerns": [
+     {
+      "where": "भाग 1",
+      "kind": "weak",
+      "kindLabel": "सुधार चाहिए",
+      "reason": "यह वाक्य केवल एक सुझाव देता है, लेकिन यह नहीं बताता कि प्लान के जरिए जोखिम कम कैसे होगा।",
+      "fix": "इसमें यह जोड़ें कि समय पर चेतावनी देने से लोग सुरक्षित कदम उठा पाएंगे।",
+      "fixNumber": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s2",
+    "text": "नगर निगम मोबाइल पर संदेश भेज सकता है और स्कूलों में पोस्टर लगा सकता है।",
+    "credit": [
+     {
+      "where": "भाग 1",
+      "reason": "यह बताता है कि मोबाइल संदेश और पोस्टर के जरिए लोगों तक जानकारी पहुँचाना जोखिम कम करने का एक तरीका है।"
+     },
+     {
+      "where": "सवाल की माँग पूरी की",
+      "reason": "यह वाक्य बताता है कि मोबाइल संदेश और पोस्टर के जरिए जानकारी कैसे पहुंचाई जा सकती है, जो जोखिम कम करने के तरीके को स्पष्ट करता है।"
+     },
+     {
+      "where": "ज़रूरी पहलू",
+      "reason": "यह तकनीकी और प्रशासनिक माध्यमों (मोबाइल संदेश और पोस्टर) के उपयोग को दर्शाता है।"
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "अगर जागरूकता बढ़ेगी तो गर्मी से कम लोग बीमार होंगे।",
+    "credit": [
+     {
+      "where": "भाग 1",
+      "reason": "यह स्पष्ट करता है कि जागरूकता बढ़ने से गर्मी से होने वाली बीमारियों में कमी आएगी।"
+     },
+     {
+      "where": "सवाल की माँग पूरी की",
+      "reason": "यह वाक्य बताता है कि जागरूकता बढ़ने से बीमारी कम होगी, जो गर्मी के जोखिम को कम करने के परिणाम को समझाता है।"
+     },
+     {
+      "where": "ज़रूरी पहलू",
+      "reason": "यह जागरूकता के माध्यम से स्वास्थ्य जोखिम कम करने के सामाजिक प्रभाव को बताता है।"
+     }
+    ],
+    "concerns": [
+     {
+      "where": "उदाहरण",
+      "kind": "unsupported",
+      "kindLabel": "बिना आधार",
+      "reason": "यह दावा कि जागरूकता बढ़ने से कम लोग बीमार होंगे, बिना किसी डेटा या विशिष्ट उदाहरण के दिया गया है।",
+      "fix": "एक शहर के हीट एक्शन प्लान से संबंधित डेटा या किसी रिपोर्ट का संदर्भ दें।",
+      "fixNumber": 3
+     },
+     {
+      "where": "तथ्य सही",
+      "kind": "weak",
+      "kindLabel": "सुधार चाहिए",
+      "reason": "यह वाक्य केवल एक सामान्य परिणाम बताता है, लेकिन यह स्पष्ट नहीं करता कि यह जोखिम को कम करने के लिए कैसे काम करता है।",
+      "fix": "यह स्पष्ट करें कि जागरूकता से लोग समय पर सुरक्षा कदम उठा पाएंगे।",
+      "fixNumber": null
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s5",
+    "text": "इस काम के लिए सभी को मिलकर प्रयास करना चाहिए।",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "सुझाव व्यावहारिक हैं",
+      "kind": "weak",
+      "kindLabel": "सुधार चाहिए",
+      "reason": "यह सुझाव बहुत सामान्य है और यह नहीं बताता कि वास्तव में कौन से विभाग या संस्थाएं मिलकर काम करेंगी।",
+      "fix": "बताएं कि नगर निगम, स्वास्थ्य विभाग और स्थानीय प्रशासन को मिलकर काम करना चाहिए।",
+      "fixNumber": null
+     }
+    ],
+    "tone": "amber"
+   }
+  ],
+  "missing": [
+   {
+    "partId": "p2",
+    "where": "भाग 2",
+    "partText": "भारतीय शहरों में इन्हें लागू करने की दो चुनौतियों पर चर्चा कीजिए।",
+    "reason": "उत्तर में भारतीय शहरों में हीट एक्शन प्लान लागू करने की किसी भी चुनौती का जिक्र नहीं किया गया है।",
+    "fix": "दो विशिष्ट चुनौतियां जोड़ें जैसे कि बजट की कमी या अलग-अलग विभागों के बीच तालमेल की कमी।",
+    "fixNumber": 1
+   }
+  ],
+  "additions": [
+   {
+    "where": "मूल बातें",
+    "reason": "उत्तर में हीट एक्शन प्लान के मुख्य पहलुओं जैसे कि अस्पताल की तैयारी या बाहर काम करने वालों की सुरक्षा का जिक्र नहीं है।",
+    "fix": "अस्पतालों की तैयारी और बाहर काम करने वाले लोगों के लिए सुरक्षा उपायों को शामिल करें।",
+    "fixNumber": 2
+   }
+  ],
+  "strengths": [
+   {
+    "where": "भाग 1",
+    "sourceId": "s2",
+    "quote": "नगर निगम मोबाइल पर संदेश भेज सकता है और स्कूलों में पोस्टर लगा सकता है।",
+    "reason": "यह बताता है कि मोबाइल संदेश और पोस्टर के जरिए लोगों तक जानकारी पहुँचाना जोखिम कम करने का एक तरीका है।"
+   },
+   {
+    "where": "भाग 1",
+    "sourceId": "s4",
+    "quote": "अगर जागरूकता बढ़ेगी तो गर्मी से कम लोग बीमार होंगे।",
+    "reason": "यह स्पष्ट करता है कि जागरूकता बढ़ने से गर्मी से होने वाली बीमारियों में कमी आएगी।"
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "सवाल की माँग पूरी की",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने यह तो बताया कि हीट एक्शन प्लान कैसे काम करते हैं, लेकिन प्रश्न के दूसरे हिस्से यानी चुनौतियों पर कोई जानकारी नहीं दी है।"
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "विषय पर टिके रहे",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने केवल जोखिम कम करने के तरीकों पर ध्यान दिया है। प्रश्न के दूसरे भाग यानी चुनौतियों पर कोई जानकारी नहीं दी गई है।"
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "सवाल",
+    "label": "ज़रूरी पहलू",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने हीट एक्शन प्लान के काम करने के तरीके को अच्छे से समझाया है, लेकिन प्रश्न का दूसरा हिस्सा (चुनौतियां) पूरी तरह गायब है।"
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "मूल बातें",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने केवल जागरूकता के पहलू को कवर किया है। जोखिम कम करने के अन्य महत्वपूर्ण तरीकों और लागू करने की चुनौतियों को शामिल करना जरूरी है।"
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "तथ्य सही",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने चेतावनी देने के तरीकों को सही बताया है। जोखिम कम करने के तंत्र को और अधिक विस्तार से समझाएं।"
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "सामग्री",
+    "label": "उदाहरण",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "आपके उत्तर में कोई भी ठोस प्रमाण या उदाहरण नहीं है। अपनी बात को पुख्ता करने के लिए किसी रिपोर्ट या शहर के उदाहरण का उपयोग करें।"
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "कारण और असर",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने यह तो बताया कि जागरूकता से जोखिम कम होता है, लेकिन प्रश्न के दूसरे हिस्से (चुनौतियों) को पूरी तरह छोड़ दिया है।"
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "सीमाएँ और मुश्किलें",
+    "verdict": "missing",
+    "verdictLabel": "छूटा",
+    "note": "प्रश्न के दूसरे भाग में चुनौतियों पर चर्चा करने को कहा गया है, लेकिन आपके उत्तर में इसका कोई उल्लेख नहीं है।"
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "तर्क",
+    "label": "सुझाव व्यावहारिक हैं",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपके सुझावों में नगर निगम की भूमिका स्पष्ट है, लेकिन 'सबको मिलकर' जैसे वाक्यों में स्पष्टता की कमी है।"
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "ढाँचा",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने प्रश्न के पहले हिस्से को तो शुरू किया है, लेकिन दूसरे हिस्से (चुनौतियों) को पूरी तरह छोड़ दिया है।"
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "साफ़ भाषा",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपके उत्तर में कुछ अच्छे उदाहरण हैं, लेकिन 'सबको मिलकर' जैसे शब्दों के बजाय विशिष्ट विभागों या संस्थाओं के तालमेल का जिक्र करना बेहतर होगा।"
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "लेखन",
+    "label": "जगह का इस्तेमाल",
+    "verdict": "partial",
+    "verdictLabel": "अधूरा",
+    "note": "आपने शब्द सीमा का उपयोग केवल एक हिस्से के लिए किया है। दूसरे भाग (चुनौतियों) को पूरी तरह से छोड़ दिया गया है, जिससे उत्तर अधूरा है।"
+   }
+  ],
+  "stats": {
+   "words": 62,
+   "sentences": 5,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "भाग 1",
+     "words": 39
+    },
+    {
+     "partId": "p2",
+     "label": "भाग 2",
+     "words": 0
+    }
+   ],
+   "uncreditedSentences": [
+    {
+     "sourceId": "s3",
+     "text": "लोगों को खूब पानी पीना चाहिए और धूप में जाने से बचना चाहिए।"
+    }
+   ]
+  },
+  "transcript": null,
+  "trust": {
+   "secondOpinions": 8,
+   "overturned": 0,
+   "softened": 0,
+   "unavailableChecks": []
+  }
+ },
+ "calls": [
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 286.5,
+   "prompt_tokens": 1217,
+   "output_tokens": 317,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 142.1,
+   "prompt_tokens": 1282,
+   "output_tokens": 198,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 151.7,
+   "prompt_tokens": 1259,
+   "output_tokens": 228,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 275.2,
+   "prompt_tokens": 1270,
+   "output_tokens": 235,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 143.7,
+   "prompt_tokens": 1307,
+   "output_tokens": 178,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 53.2,
+   "prompt_tokens": 211,
+   "output_tokens": 72,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 238.5,
+   "prompt_tokens": 1278,
+   "output_tokens": 252,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 127.2,
+   "prompt_tokens": 1244,
+   "output_tokens": 221,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 133.3,
+   "prompt_tokens": 1261,
+   "output_tokens": 227,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 229.1,
+   "prompt_tokens": 1236,
+   "output_tokens": 241,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 102.2,
+   "prompt_tokens": 1243,
+   "output_tokens": 159,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 116.1,
+   "prompt_tokens": 1257,
+   "output_tokens": 196,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 297.4,
+   "prompt_tokens": 1247,
+   "output_tokens": 291,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 140.2,
+   "prompt_tokens": 1234,
+   "output_tokens": 205,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 165.5,
+   "prompt_tokens": 1248,
+   "output_tokens": 267,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p2",
+   "attempt": 1,
+   "seconds": 136.7,
+   "prompt_tokens": 1021,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 34.0,
+   "prompt_tokens": 1028,
+   "output_tokens": 35,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 34.5,
+   "prompt_tokens": 1027,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 32.7,
+   "prompt_tokens": 1024,
+   "output_tokens": 35,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 36.6,
+   "prompt_tokens": 1030,
+   "output_tokens": 41,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 36.1,
+   "prompt_tokens": 1024,
+   "output_tokens": 42,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 34.2,
+   "prompt_tokens": 1029,
+   "output_tokens": 36,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 35.6,
+   "prompt_tokens": 1026,
+   "output_tokens": 40,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 84.3,
+   "prompt_tokens": 1234,
+   "output_tokens": 81,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 3066.6
+}
