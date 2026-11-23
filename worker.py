@@ -39,13 +39,15 @@ class ModelUnavailable(RuntimeError):
 
 
 class Models:
-    """Loads Gemma once per runner; reloads with the vision projector the first time a photo answer arrives."""
+    """Loads Gemma per runner: with the vision projector to read photos, text-only to grade. Grading on the text-only
+    model keeps the shared examiner prompt cached between the 15 checks, so a photo answer grades as fast as a typed
+    one (end-to-end run 45116948023: 31 min typed vs 94 min photo while grading ran on the vision-loaded model)."""
 
     def __init__(self, factory):
         self.factory, self.llm, self.vision = factory, None, False
 
     def get(self, vision=False):
-        if self.llm is None or (vision and not self.vision):
+        if self.llm is None or vision != self.vision:
             self.llm = None
             try:
                 self.llm = self.factory(vision=vision)
@@ -81,7 +83,7 @@ def handle(call, job, models, reader_factory=photo.GemmaReader):
         if call({"action": "renew", **key}).get("ignored"):
             raise LeaseLost()
 
-    examiner = Examiner(models.get(vision=transcript is not None))
+    examiner = Examiner(models.get(vision=False))
     report = pipeline.evaluate(examiner, dict(job, answer=answer), between=renew)
     if transcript is not None:
         attach_page(report, transcript)

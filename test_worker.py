@@ -86,6 +86,20 @@ class Worker(unittest.TestCase):
         self.assertEqual(len(rep["page"]["pages"]), 1)
         self.assertNotIn("stormwater", logs)
 
+    def test_photo_is_read_with_vision_and_graded_text_only(self):
+        loads = []
+
+        def models(vision=False):
+            loads.append(vision)
+            return FakeGemma(EN)
+
+        site = Site([photo_job(), typed("t2")])
+        with contextlib.redirect_stdout(io.StringIO()):
+            counts = worker.process(site, model_factory=models,
+                                    reader_factory=lambda llm: Script(same(lines=PHOTO_LINES)))
+        self.assertEqual(counts["done"], 2)
+        self.assertEqual(loads, [True, False])   # vision to read, text-only to grade, reused for the typed answer
+
     def test_unreadable_photo_asks_for_a_retake_and_is_not_graded(self):
         reads = same(lines=PHOTO_LINES)
         reads[2] = [None] * 6
