@@ -12,8 +12,8 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v6"
-MIN_CHECKS = 10  # of 12: below this the report is not trustworthy and the job is retried instead
+REPORT_VERSION = "mains-report-v7"
+MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
 KIND_LABEL = {"wrong": ("Wrong", "गलत"), "unsupported": ("Unsupported", "बिना आधार"),
@@ -153,6 +153,7 @@ def level_of(parts, dims, majors):
 
 def assemble(prep, results):
     L = 1 if prep["lang"] == "hi" else 0
+    labels = {r["id"]: r["label"] for r in prep.get("refs") or []}
     spans = {s["id"]: s["text"] for s in prep["sentences"]}
     order = {s["id"]: i for i, s in enumerate(prep["sentences"])}
     ok = [r for r in results if r["status"] == "ok"]
@@ -160,7 +161,9 @@ def assemble(prep, results):
     dims = {r["id"]: r for r in ok if r["kind"] == "check"}
     if len(part_res) < len(prep["parts"]):
         raise Incomplete("part")
-    if len(dims) < MIN_CHECKS:
+    # A check skipped because it does not apply (no Constitution/NCERT extract fits the question) still returns a
+    # result, so it never counts as a failure here.
+    if len(dims) < len(DIMENSIONS) - MAX_UNJUDGED:
         raise Incomplete("checks")
     ordered = [part_res[p["id"]] for p in prep["parts"]] + [dims[d["id"]] for d in DIMENSIONS if d["id"] in dims]
 
@@ -173,7 +176,8 @@ def assemble(prep, results):
         for c in r["concerns"]:
             matched = bool(rw) and rw["sourceId"] == c["sourceId"]
             f = dict(c, origin=r["id"], fromPart=r["kind"] == "part", where=_where(prep, r, L),
-                     rewrite=rw["text"] if matched else None)
+                     rewrite=rw["text"] if matched else None, rewriteRef=rw.get("ref") if matched else None)
+            f["source"] = labels.get(f.get("ref")) or labels.get(f.get("rewriteRef"))
             if not f["fromPart"] and f["sourceId"] is None and f["kind"] == "missing":
                 # A dimension check asking for something the question part already asks for repeats the part's
                 # own finding in other words: fold it into that part.
@@ -192,6 +196,7 @@ def assemble(prep, results):
         if dup:
             dup.setdefault("alsoFrom", []).append(f["origin"])
             dup["rewrite"] = dup["rewrite"] or f["rewrite"]
+            dup["source"] = dup["source"] or f["source"]
         else:
             kept.append(f)
     majors = [f for f in kept if f["priority"] == "major"]
@@ -235,16 +240,17 @@ def assemble(prep, results):
         if f["sourceId"]:
             mark(f["sourceId"])["concerns"].append({
                 "where": f["where"], "kind": f["kind"], "kindLabel": KIND_LABEL[f["kind"]][L],
-                "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f))})
+                "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f)), "source": f["source"]})
     for m in marks.values():
         kinds = {c["kind"] for c in m["concerns"]}
         m["tone"] = "red" if kinds & {"wrong", "unsupported"} else "amber" if kinds else "green"
     highlights = sorted(marks.values(), key=lambda m: order[m["sourceId"]])
     missing = [{"partId": f["origin"][5:], "where": f["where"],
                 "partText": next(p["quote"] for p in prep["parts"] if p["id"] == f["origin"][5:]),
-                "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f))}
+                "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f)), "source": f["source"]}
                for f in kept if f["sourceId"] is None and f["fromPart"]]
-    additions = [{"where": f["where"], "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f))}
+    additions = [{"where": f["where"], "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f)),
+                  "source": f["source"]}
                  for f in kept if f["sourceId"] is None and not f["fromPart"]][:4]
 
     # 5. What worked: credit from the question parts first, then from checks that went well; one per sentence.
@@ -262,7 +268,7 @@ def assemble(prep, results):
                 strengths.append({"where": _where(prep, r, L), "sourceId": c["sourceId"], "quote": c["quote"],
                                   "reason": c["reason"]})
 
-    # 6. Full examiner notes, all twelve checks in a fixed order.
+    # 6. Full examiner notes, every check in a fixed order.
     checks = []
     for d in DIMENSIONS:
         r = dims.get(d["id"])
@@ -299,10 +305,14 @@ def assemble(prep, results):
                    "kindLabel": KIND_LABEL[f["kind"]][L],
                    "yourLine": {"sourceId": f["sourceId"], "text": f["quote"]} if f["sourceId"] else None,
                    "why": f["reason"], "tryWriting": f["rewrite"],
-                   "checkedTwice": f.get("verification") in ("upheld", "softened")}
+                   "checkedTwice": f.get("verification") in ("upheld", "softened"), "source": f["source"]}
                   for i, f in enumerate(fixes, 1)],
         "highlights": highlights, "missing": missing, "additions": additions, "strengths": strengths,
         "checks": checks, "stats": stats, "transcript": None,
+        # Checked extracts the examiner compared the answer with: labels only, never the text. "used" when at least
+        # one finding shown to the student relies on it.
+        "sources": [{"label": r["label"], "used": any(f["source"] == r["label"] for f in kept)}
+                    for r in prep.get("refs") or []],
         "trust": {"secondOpinions": len(verified), "overturned": verified.count("overturned"),
                   "softened": verified.count("softened"),
                   "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims]},
@@ -328,7 +338,7 @@ def summarize(examiner, prep, system, report):
     }
 
     def validate(raw):
-        out = clean(raw.get("summary"), prep["lang"], prompts.sources(prep), lo=40, hi=520, field="summary")
+        out = clean(raw.get("summary"), prep["lang"], prompts.sources(prep, True), lo=40, hi=520, field="summary")
         if not 2 <= sentence_count(out) <= 4:
             raise Rejected("summary:sentences")
         return out

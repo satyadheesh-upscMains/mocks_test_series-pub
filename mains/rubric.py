@@ -7,8 +7,9 @@ GROUPS = {
     "writing": ("Writing", "लेखन"),
 }
 
-# Twelve focused checks. Each is one separate Gemma call that judges only its own dimension; the question's
-# parts are checked separately (one call per part), so these never re-judge "did you answer part 2".
+# Thirteen focused checks. Each is one separate Gemma call that judges only its own dimension; the question's
+# parts are checked separately (one call per part), so these never re-judge "did you answer part 2". "provisions"
+# compares the answer with the Constitution/NCERT extracts and is skipped (not needed) when none fits the question.
 DIMENSIONS = [
     dict(id="directive", group="question", en="Did what the question asks", hi="सवाल की माँग पूरी की", task=(
         "Check the command words of the question (for example discuss, explain, critically examine, analyse, evaluate, "
@@ -38,6 +39,14 @@ DIMENSIONS = [
         "or court judgements, and whether each example really supports its point. If evidence is missing, describe "
         "the kind of evidence that would help most (for example 'one city flood plan you have studied'); never "
         "invent a specific example.")),
+    dict(id="provisions", group="content", en="Constitution and textbook basics", hi="संविधान और किताब की बुनियादी बातें",
+         task=(
+        "Compare the answer with the sources in MATERIALS. Credit a sentence that uses a provision, body, power or "
+        "concept from the sources correctly. A sentence that states one wrongly (for example names the wrong body or "
+        "Article) is a concern of kind wrong, with that source's refId. Then name the single most important point "
+        "from the sources that fits this question and that the answer leaves out: a concern with sourceId 'none', "
+        "kind missing and that source's refId. Use only what the sources state. If no source fits this question, "
+        "the verdict is not_applicable.")),
     dict(id="causality", group="reasoning", en="Cause and effect", hi="कारण और असर", task=(
         "Check the reasoning chain: does the answer show how one thing leads to another, up to the outcome the "
         "question asks about? Point to the weakest or missing link, or credit a clear chain.")),
@@ -72,7 +81,7 @@ DIM = {d["id"]: d for d in DIMENSIONS}
 SHARDS = {
     "parts": None,
     "question": ("directive", "scope", "dimensions"),
-    "content": ("concepts", "accuracy", "evidence"),
+    "content": ("concepts", "accuracy", "evidence", "provisions"),
     "reasoning": ("causality", "balance", "solutions"),
     "writing": ("structure", "language", "presentation"),
 }

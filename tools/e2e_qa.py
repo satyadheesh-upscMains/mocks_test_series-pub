@@ -21,8 +21,24 @@ import photo_qa  # noqa: E402
 
 STUDENTS = {s["id"]: s for s in json.loads((ROOT / "qa" / "students.json").read_text())}
 BASE = STUDENTS["wetlands-overclaim"]
+# A GS2 Polity answer with two planted errors the Constitution/NCERT sources can catch: panchayat elections are run
+# by the State Election Commission (Article 243K), not the Election Commission of India, and panchayats get the
+# Eleventh Schedule matters a State law devolves (Article 243G), not "all the subjects in the State List".
+POLITY = {
+    "question": ("Discuss how the 73rd Constitutional Amendment strengthened rural local self-government in India. "
+                 "What challenges remain?"),
+    "answer": ("The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system of "
+               "village, block and district panchayats. It made elections every five years compulsory, and these "
+               "elections are conducted by the Election Commission of India. One-third of the seats are reserved for "
+               "women, which has brought many women into local politics. Panchayats now control all the subjects in "
+               "the State List. However, many panchayats still depend on grants from the State government and lack "
+               "trained staff."),
+    "references": ["Panchayats got constitutional status through the 73rd Amendment",
+                   "Devolution of funds, functions and staff to panchayats remains uneven across States"],
+}
 CASES = {
     "typed-en": dict(input="typed"),
+    "typed-polity": dict(input="typed", **POLITY),
     "photo-en": dict(input="photos", page="clear-en"),
     "photo-smudged": dict(input="photos", page="smudged-en"),
 }
@@ -46,10 +62,10 @@ class Site:
 
 def job_for(case):
     c = CASES[case]
-    job = {"id": "e2e-" + case, "lease": "lease", "lang": "en", "question": BASE["question"],
-           "references": BASE["references"], "marks": 10, "input": c["input"]}
+    job = {"id": "e2e-" + case, "lease": "lease", "lang": "en", "question": c.get("question", BASE["question"]),
+           "references": c.get("references", BASE["references"]), "marks": 10, "input": c["input"]}
     if c["input"] == "typed":
-        job["answer"] = BASE["answer"]
+        job["answer"] = c.get("answer", BASE["answer"])
     else:
         job["pages"] = [base64.b64encode(photo_qa.draw(c["page"])).decode()]
     return job
@@ -68,9 +84,17 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v6"] = rep["version"] == "mains-report-v6"
+    g["report version v7"] = rep["version"] == "mains-report-v7"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
+    if case == "typed-polity":
+        shown = rep["fixes"] + rep["additions"] + rep["missing"] + [c for h in rep["highlights"] for c in h["concerns"]]
+        g["Constitution/NCERT sources given"] = bool(rep["sources"])
+        g["a finding cites a source"] = any(x.get("source") for x in shown)
+        eci = [h for h in rep["highlights"] if "Election Commission of India" in h["text"]]
+        g["Election Commission error marked red"] = bool(eci) and eci[0]["tone"] == "red"
+        return g
+    g["no sources for an off-syllabus topic"] = rep["sources"] == []
     des = [h for h in rep["highlights"] if "desilt" in h["text"].lower()]
     g["routine desilting flagged, not praised"] = bool(des) and all(h["tone"] != "green" for h in des) and not any(
         "desilt" in s["quote"].lower() for s in rep["strengths"])

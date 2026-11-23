@@ -6,7 +6,8 @@
 
 `evaluate` runs the same stages one after another on a single runner. Both paths give the same report.
 """
-from . import breakdown, checks, prompts, report, verify
+from . import breakdown, checks, prompts, refs, report, verify
+from .model import log
 from .rubric import SHARDS, usual_limit
 from .text import Rejected, norm, sentences, word_count
 
@@ -26,10 +27,21 @@ def prepare(examiner, job, cached_breakdown=None):
         "stats": {"words": word_count(job["answer"]), "sentences": len(sents),
                   "paragraphs": max(s["para"] for s in sents), "limit": usual_limit(job.get("marks"))},
     }
+    prep["refs"] = sources_for(prep)
     bd = cached_breakdown or breakdown.run(examiner, prep)
     prep.update(parts=bd["parts"], directives=bd["directives"], breakdown={"source": bd.get("source", "cache"),
                                                                           "key": breakdown.key(prep["question"])})
     return prep
+
+
+def sources_for(prep):
+    """Checked extracts from the Constitution and NCERT for this question. A missing index never stops grading."""
+    try:
+        found = refs.pack(prep["question"], " ".join(s["text"] for s in prep["sentences"]))
+    except Exception:
+        found = []
+    log(stage="refs", passages=len(found), constitution=sum(r["label"].startswith("Constitution") for r in found))
+    return found
 
 
 def check_ids(prep, shard):

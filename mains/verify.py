@@ -77,7 +77,8 @@ def run(examiner, prep, system, results):
         else:
             c = r["concerns"][ci]
             criticism = {"about": _about(prep, r), "kind": c["kind"], "priority": c["priority"],
-                         "sentence": c["sourceId"], "criticism": c["reason"]}
+                         "sentence": c["sourceId"], "criticism": c["reason"],
+                         "source": c.get("ref") or "none"}  # the cited extract is in MATERIALS under this id
         try:
             out = examiner.ask(stage="verify", check=r["id"], system=system,
                                task=TASK.format(criticism=json.dumps(criticism, ensure_ascii=False)),

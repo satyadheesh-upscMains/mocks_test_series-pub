@@ -23,6 +23,7 @@ Ground rules
 - If no sentence answers a question part, that part is "missing": give no credit and one concern with sourceId "none" and kind "missing".
 - If the whole answer is about a different topic, the scope check is "missing" with no credit, and a dimension the answer does not address is "missing" with a concern that names the gap, not "not_applicable".
 - Do not invent statistics or dates, and never name a specific scheme, mission, policy, law, court case, report, committee, city project, river or place unless MATERIALS names it. When an example or evidence would help, describe the kind of example (for example "a city flood plan you have studied") and leave the choice to the student. If a fact needs checking, say what the student should check.
+- MATERIALS may include sources: checked extracts from the Constitution of India and NCERT textbooks, each with an id (r1, r2, ...). Use a source only when it fits this question. When a reason, fix or rewrite relies on a source, set refId to that source's id and use only what its text says; otherwise refId is "none". A student's sentence that contradicts a source (a wrong Article, body, power or year) is kind "wrong", with that source's refId.
 - Write proper names and acronyms only when they appear in MATERIALS.
 - Do not give marks, scores or grades.
 - Every reason must point to what the cited words do or fail to do. No generic comment that would fit any answer.
@@ -46,6 +47,8 @@ def materials(prep):
         "referencePoints": prep.get("references") or [],
         "facts": {"words": prep["stats"]["words"], "usualLimit": prep["stats"]["limit"]},
     }
+    if prep.get("refs"):
+        data["sources"] = [{"id": r["id"], "source": r["label"], "text": r["text"]} for r in prep["refs"]]
     return escape(json.dumps(data, ensure_ascii=False, indent=1))
 
 
@@ -53,6 +56,14 @@ def system(prep):
     return SYSTEM.format(language=LANGUAGE[prep["lang"]], register=REGISTER[prep["lang"]], materials=materials(prep))
 
 
-def sources(prep):
-    """Text a feedback field may draw numbers and non-English words from."""
-    return [prep["question"], " ".join(s["text"] for s in prep["sentences"]), " ".join(prep.get("references") or [])]
+def ref_text(r):
+    return f"{r['label']}. {r['text']}"
+
+
+def sources(prep, refs=()):
+    """Text a feedback field may draw numbers, names and non-English words from: the question, the answer, the note's
+    reference points, and only the source extracts this field cites (`refs`: ids, or True for all of them)."""
+    out = [prep["question"], " ".join(s["text"] for s in prep["sentences"]), " ".join(prep.get("references") or [])]
+    pack = prep.get("refs") or []
+    out += [ref_text(r) for r in pack if refs is True or r["id"] in refs]
+    return out

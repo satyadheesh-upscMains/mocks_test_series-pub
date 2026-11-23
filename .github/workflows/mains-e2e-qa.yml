@@ -1,7 +1,8 @@
 name: Mains end-to-end QA
 
 # Synthetic submissions through the real queue worker, against an in-memory site. Unit tests first (no model),
-# then Gemma 4 12B: typed answer, clear photo answer, smudged photo (must ask for a retake). Results are published.
+# then Gemma 4 12B: typed answer, typed Polity answer (checked against Constitution/NCERT extracts), clear photo
+# answer, smudged photo (must ask for a retake). Results are published.
 on:
   push:
     branches: [qa/mains-e2e]
@@ -17,7 +18,7 @@ env:
   MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
   PROJECTOR_KEY: mains-gemma-4-12b-mmproj-F32-v1
   SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
-  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 jobs:
   unit:
@@ -35,7 +36,7 @@ jobs:
       - name: Unit tests (no model)
         run: |
           set +e
-          python -m unittest -v test_examiner test_photo test_worker test_review > unit-e2e.log 2>&1
+          python -m unittest -v test_examiner test_refs test_photo test_worker test_review > unit-e2e.log 2>&1
           status=$?
           cat unit-e2e.log
           exit $status
@@ -53,7 +54,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [typed-en, photo-en, photo-smudged]
+        case: [typed-en, typed-polity, photo-en, photo-smudged]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -75,6 +76,15 @@ jobs:
           path: models/mmproj-F32.gguf
           key: ${{ env.PROJECTOR_KEY }}
       - run: pip install -q ${{ env.RUNTIME }}
+      # Constitution (committed) + NCERT Class 11 Political Science (downloaded from ncert.nic.in, cached; never
+      # committed). Prints counts only.
+      - uses: actions/cache@v4
+        continue-on-error: true
+        with:
+          path: refs/cache
+          key: mains-ncert-polity-v1
+      - name: Build reference index
+        run: python tools/build_refs.py
       - run: curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
       - run: python tools/e2e_qa.py --case ${{ matrix.case }} --dir e2e-out
       - if: always()
