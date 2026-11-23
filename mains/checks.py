@@ -102,14 +102,22 @@ def bind(raw, prep, check_id):
     if verdict not in (PART_VERDICTS if is_part else VERDICTS):
         raise Rejected("verdict")
 
-    credit, seen = [], set()
+    credit, seen, dropped = [], set(), None
     for c in raw.get("credit") or []:
         sid = c.get("sourceId")
         if sid not in spans or sid in seen:
             raise Rejected("credit:source")
         seen.add(sid)
-        credit.append({"sourceId": sid, "quote": spans[sid],
-                       "reason": clean(c.get("reason"), lang, src_all, hi=400, field="credit")})
+        try:
+            reason = clean(c.get("reason"), lang, src_all, hi=400, field="credit")
+        except Rejected as e:
+            # Credit is optional: a credit line naming something MATERIALS does not have is dropped, not retried.
+            # Three rejected attempts over one credit name left a whole check "Not checked" (run 45223096235).
+            if e.code.endswith(("unsourced_name", "unsourced_number")):
+                dropped = e.code
+                continue
+            raise
+        credit.append({"sourceId": sid, "quote": spans[sid], "reason": reason})
 
     concerns, seen = [], set()
     for c in raw.get("concerns") or []:
@@ -143,7 +151,7 @@ def bind(raw, prep, check_id):
             # partial result, not a rejected one.
             verdict = "partial"
         if verdict == "good" and not credit:
-            raise Rejected("check:good_without_credit")
+            raise Rejected(dropped or "check:good_without_credit")
         if verdict in ("partial", "missing", "unsupported", "wrong") and not concerns:
             raise Rejected("check:gap_without_concern")
         if verdict == "missing" and credit and check_id == "scope":

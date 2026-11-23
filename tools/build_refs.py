@@ -2,7 +2,8 @@
 
     python tools/build_refs.py
 
-NCERT chapters are downloaded from ncert.nic.in into refs/cache/ (never committed; the runner caches them). If a
+NCERT chapters come from refs/ncert_pages.json.gz in the private core repo; elsewhere (the public QA repo) they are
+downloaded from ncert.nic.in into refs/cache/, never committed. If a
 chapter cannot be downloaded, the index is built without it and the run says so: the examiner then simply has fewer
 sources, it never invents one. Prints counts only, never passage text.
 """
@@ -43,11 +44,20 @@ def fetch(code):
     return None
 
 
+LOCAL = REFS / "ncert_pages.json.gz"   # text extracted from the NCERT PDFs; kept in the private core repo only
+
+
 def ncert_pages():
+    # ncert.nic.in refused every download from GitHub's runners (run 45223096235), so the private core repo carries
+    # the extracted page text. The public QA repo never has it and falls back to downloading.
+    if LOCAL.exists():
+        pages = json.loads(gzip.decompress(LOCAL.read_bytes()))
+        have = {p["file"] for p in pages}
+        return pages, [c for c in refs.NCERT_FILES if c not in have]
     from pypdf import PdfReader
     pages, missing = [], []
     for code in refs.NCERT_FILES:
-        path = fetch(code)
+        path = None if (missing and not pages) else fetch(code)   # the first refusal means the site blocks us
         if not path:
             missing.append(code)
             continue

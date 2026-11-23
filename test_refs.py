@@ -21,6 +21,11 @@ CONST = [
      "description": "The Legislature of a State may, by law, endow the Panchayats with such powers and authority as may "
                     "be necessary to enable them to function as institutions of self-government in relation to the "
                     "matters listed in the Eleventh Schedule."},
+    {"article": "324", "title": "Superintendence, direction and control of elections to be vested in an Election "
+                               "Commission", "notes": [],
+     "description": "The superintendence, direction and control of the preparation of the electoral rolls for, and the "
+                    "conduct of, all elections to Parliament and to the Legislature of every State shall be vested in "
+                    "a Commission (referred to in this Constitution as the Election Commission)."},
     {"article": "21", "title": "Protection of life and personal liberty", "notes": [],
      "description": "No person shall be deprived of his life or personal liberty except according to procedure "
                     "established by law."},
@@ -64,6 +69,17 @@ class Search(unittest.TestCase):
         self.assertEqual([r["id"] for r in found], [f"r{i}" for i in range(1, len(found) + 1)])
         self.assertLessEqual(len(found), refs.MAX_PASSAGES)
 
+    def test_each_claim_gets_its_passage_within_the_topic(self):
+        # Constitution only, as on the runners: the panchayat election claim must find Article 243K, not 324.
+        idx = refs.Index(refs.constitution_chunks(CONST), min_score=0.5, min_coverage=0.2)
+        found = idx.pack(Q + " Panchayats", "These elections are conducted by the Election Commission of India.")
+        labels = [r["label"] for r in found]
+        self.assertIn("Constitution of India, Article 243K", labels)
+        self.assertNotIn("Constitution of India, Article 324", labels)
+        self.assertEqual(refs.family({"id": "c243ZA"}), "243")
+        self.assertEqual(refs.family({"id": "cSCH11"}), "SCH11")
+        self.assertEqual(refs.family({"id": "n208.4"}), "n208")
+
     def test_named_article_comes_first(self):
         found = index().pack("Discuss the scope of Article 21 today.", "")
         self.assertEqual(found[0]["label"], "Constitution of India, Article 21")
@@ -97,6 +113,16 @@ class Citing(unittest.TestCase):
         with self.assertRaises(Rejected) as e:
             checks.bind(self.raw("none"), self.prep, "accuracy")
         self.assertEqual(e.exception.code, "reason:unsourced_name")
+
+    def test_credit_naming_an_unknown_body_is_dropped_not_retried(self):
+        raw = {"credit": [{"sourceId": "s2", "reason": "Women's reservation is right, as the Kothari Committee said."},
+                          {"sourceId": "s2", "reason": "dup"}][:1],
+               "concerns": [], "note": "Mostly accurate.", "verdict": "good",
+               "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+        with self.assertRaises(Rejected):   # nothing left to back "good"
+            checks.bind(raw, self.prep, "accuracy")
+        raw["verdict"] = "not_applicable"
+        self.assertEqual(checks.bind(raw, self.prep, "accuracy")["credit"], [])
 
     def test_a_citation_the_advice_does_not_use_is_dropped(self):
         raw = self.raw(self.sec)

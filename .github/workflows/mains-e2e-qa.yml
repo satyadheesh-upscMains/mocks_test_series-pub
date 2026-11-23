@@ -6,6 +6,7 @@ name: Mains end-to-end QA
 on:
   push:
     branches: [qa/mains-e2e]
+    paths-ignore: ['.github/workflows/mains-split-qa.yml']
   workflow_dispatch:
 
 permissions:
@@ -54,7 +55,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [typed-en, typed-polity, photo-en, photo-smudged]
+        case: [photo-en, photo-smudged]   # typed answers run split across runners (mains-split-qa.yml)
     steps:
       - uses: actions/checkout@v4
         with:
@@ -78,13 +79,23 @@ jobs:
       - run: pip install -q ${{ env.RUNTIME }}
       # Constitution (committed) + NCERT Class 11 Political Science (downloaded from ncert.nic.in, cached; never
       # committed). Prints counts only.
-      - uses: actions/cache@v4
+      # Restore only: saving at job end hung for 45+ min on run 45223096235 and held back the published reports.
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 5
         continue-on-error: true
         with:
           path: refs/cache
           key: mains-ncert-polity-v1
       - name: Build reference index
+        timeout-minutes: 10
         run: python tools/build_refs.py
+      - if: matrix.case == 'photo-smudged'
+        uses: actions/cache/save@v4
+        timeout-minutes: 3
+        continue-on-error: true
+        with:
+          path: refs/cache
+          key: mains-ncert-polity-v1
       - run: curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
       - run: python tools/e2e_qa.py --case ${{ matrix.case }} --dir e2e-out
       - if: always()

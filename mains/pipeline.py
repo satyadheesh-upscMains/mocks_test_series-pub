@@ -50,6 +50,16 @@ def check_ids(prep, shard):
     return list(SHARDS[shard])
 
 
+def task_ids(prep):
+    """Every focused check for this answer, in the fixed order: one per question part, then each dimension. Each is
+    independent of the others, so each can run on its own runner; `finish` takes their results in any order."""
+    return [cid for shard in SHARD_ORDER for cid in check_ids(prep, shard)]
+
+
+def run_task(examiner, prep, check_id):
+    return checks.run(examiner, prep, prompts.system(prep), check_id)
+
+
 def run_shard(examiner, prep, shard):
     system = prompts.system(prep)
     return [checks.run(examiner, prep, system, cid) for cid in check_ids(prep, shard)]

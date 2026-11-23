@@ -15,8 +15,9 @@ from pathlib import Path
 
 INDEX = Path(os.environ.get("MAINS_REFS", Path(__file__).resolve().parents[1] / "refs" / "index.json.gz"))
 MAX_PASSAGES = 6
-FROM_QUESTION = 4
-FROM_ANSWER = 2
+FROM_QUESTION_FIRST = 2   # passages for the question itself, before the answer's claims get theirs
+CLAIM_SCORE = 0.6         # a claim's passage may score lower than a question's: claims are one short sentence
+TOPIC_HITS = 15           # the question's top hits that define its topic (Articles, Schedules, NCERT chapters)
 PASSAGE_WORDS = 130
 MIN_SCORE = 10.5      # tuned on sample GS2 and non-polity questions: below this, the hits are noise
 MIN_COVERAGE = 0.33   # share of the question's (idf-weighted) terms a passage must contain
@@ -150,27 +151,42 @@ class Index:
         # Articles named in the question or the answer: the text of the Article itself, to check the claim against.
         for m in ARTICLE.finditer(f"{question} {answer}"):
             add(self.by_article.get(m.group(1).upper()))
-        on_topic = [i for s, cov, i in self.search(question)
-                    if s >= self.min_score and cov >= self.min_coverage]
-        for i in on_topic[:FROM_QUESTION]:
+        hits = self.search(question)
+        on_topic = [i for s, cov, i in hits if s >= self.min_score and cov >= self.min_coverage]
+        if not on_topic:
+            return self._out(chosen)
+        for i in on_topic[:FROM_QUESTION_FIRST]:
             add(i)
-        if on_topic:
-            # The answer's own claims, each read with the question for context (so "Election Commission" in an
-            # answer on panchayats finds the State Election Commission, not the national one). Only when the
-            # question itself is on a covered topic.
-            best = {}
-            for sent in re.split(r"(?<=[.!?\u0964])\s+", answer or ""):
-                for s, _, i in self.search(f"{sent} {question}")[:3]:
-                    if s >= self.min_score and i not in chosen:
-                        best[i] = max(best.get(i, 0), s)
-                        break
-            for i in sorted(best, key=best.get, reverse=True)[:FROM_ANSWER]:
-                add(i)
+        # The answer's own claims are where its errors are, so each claim gets the passage that can check it. A claim
+        # is searched on its own words but only within the question's topic (the same Part of the Constitution or
+        # the same NCERT chapter): "conducted by the Election Commission of India" in an answer on panchayats finds
+        # Article 243K (State Election Commission), not Article 324 (run 45223096235 missed it when the claim was
+        # searched together with the question).
+        families = {family(self.chunks[i]) for s, _, i in hits[:TOPIC_HITS] if s >= self.min_score * CLAIM_SCORE}
+        for sent in re.split(r"(?<=[.!?\u0964])\s+", answer or ""):
+            for s, _, i in self.search(sent):
+                if s < self.min_score * CLAIM_SCORE:
+                    break
+                if family(self.chunks[i]) in families and i not in chosen:
+                    add(i)
+                    break
+        for i in on_topic[FROM_QUESTION_FIRST:]:
+            add(i)
+        return self._out(chosen)
+
+    def _out(self, chosen):
         out = []
         for n, i in enumerate(chosen, 1):
             c = self.chunks[i]
             out.append({"id": f"r{n}", "label": c["label"], "text": " ".join(c["text"].split()[:PASSAGE_WORDS])})
         return out
+
+
+def family(chunk):
+    """The topic a passage belongs to: an Article and its sub-articles (243, 243K, 243ZA are all Part IX's 243
+    family), a Schedule, or one NCERT chapter."""
+    m = re.match(r"c(SCH\d+|\d+)", chunk["id"]) or re.match(r"(n\d+)", chunk["id"])
+    return m.group(1) if m else chunk["id"]
 
 
 _LOADED = {}
