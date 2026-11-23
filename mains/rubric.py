@@ -47,7 +47,10 @@ DIMENSIONS = [
         "is not_applicable.")),
     dict(id="solutions", group="reasoning", en="Suggestions are workable", hi="सुझाव व्यावहारिक हैं", task=(
         "If the answer makes suggestions, check whether each is workable: who acts, what exactly, where or when it "
-        "applies, and whether it fits the problem. Flag a suggestion that would harm the goal as wrong. If the "
+        "applies, and whether it fits the problem. Flag a suggestion that would harm the goal as wrong. Do not credit "
+        "a measure just because it sounds standard: a step that should be targeted, offered as a blanket routine (for "
+        "example yearly dredging of every canal instead of where a survey shows it is needed), is a concern, and the "
+        "fix says where or when it applies. If the "
         "question asks for no suggestions and the answer makes none, the verdict is not_applicable.")),
     dict(id="structure", group="writing", en="Structure", hi="ढाँचा", task=(
         "Check the order: an opening that addresses the question directly, a body organised by the question's parts, "
