@@ -12,12 +12,13 @@ Site protocol (POST JSON to MAINS_WORKER_URL with "Authorization: Bearer MAINS_W
                  transcript: text, pages, lines (id, page, box, text, status), evidence, blocked, retake,
                  retakeMessage. When blocked, the site asks the student for a retake and the job ends here.
   complete    {id, lease, result, reportVersion} -> {"ok": true} | {"ignored": true}
-                 result: the student report (mains-report-v3), with page marks for photo answers
+                 result: the student report (mains-report-v4), with page marks for photo answers
   fail        {id, lease}                       -> {"ok": true}   (back to the queue, at most 3 attempts)
   deliver     {}                                -> {"processed": n} (sends the opt-in alerts)
 """
 import base64
 import binascii
+import gc
 import json
 import os
 import sys
@@ -48,13 +49,27 @@ class Models:
 
     def get(self, vision=False):
         if self.llm is None or vision != self.vision:
-            self.llm = None
+            self.release()
             try:
                 self.llm = self.factory(vision=vision)
             except Exception:
                 raise ModelUnavailable() from None
             self.vision = vision
         return self.llm
+
+    def release(self):
+        """Free the loaded model before another one loads. Two 12B copies do not fit in a runner's RAM together:
+        end-to-end run 45139380428 swapped for 200 min and timed out when the vision copy stayed alive."""
+        old, self.llm = self.llm, None
+        if old is not None:
+            close = getattr(old, "close", None)
+            if callable(close):
+                try:
+                    close()
+                except Exception:
+                    pass
+            del old
+            gc.collect()
 
 
 def pages_of(job):
@@ -70,6 +85,7 @@ def handle(call, job, models, reader_factory=photo.GemmaReader):
     if job.get("input") == "photos":
         reader = reader_factory(models.get(vision=True))
         transcript = photo.transcribe(pages_of(job), job["lang"], reader)
+        del reader   # drop the last reference to the vision model so it can be freed before grading
         transcript["retakeMessage"] = photo.retake_message(transcript, job["lang"])
         answer = transcript["text"]
         if call({"action": "transcribe", **key, "transcript": transcript}).get("ignored"):

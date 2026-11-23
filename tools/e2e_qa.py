@@ -68,11 +68,12 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v3"] = rep["version"] == "mains-report-v3"
+    g["report version v4"] = rep["version"] == "mains-report-v4"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
-    g["routine desilting not praised"] = not any("desilt" in s["reason"].lower() or "गाद" in s["reason"]
-                                                 for s in rep["strengths"])
+    des = [h for h in rep["highlights"] if "desilt" in h["text"].lower()]
+    g["routine desilting flagged, not praised"] = bool(des) and all(h["tone"] != "green" for h in des) and not any(
+        "desilt" in s["quote"].lower() for s in rep["strengths"])
     red = {h["text"] for h in rep["highlights"] if h["tone"] == "red"}
     g["80% claim marked red"] = any("80%" in t for t in red)
     g["concreting marked red"] = any("concrete" in t for t in red)

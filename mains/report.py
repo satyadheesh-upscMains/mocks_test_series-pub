@@ -12,7 +12,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v3"
+REPORT_VERSION = "mains-report-v4"
 MIN_CHECKS = 10  # of 12: below this the report is not trustworthy and the job is retried instead
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -248,11 +248,14 @@ def assemble(prep, results):
                  for f in kept if f["sourceId"] is None and not f["fromPart"]][:4]
 
     # 5. What worked: credit from the question parts first, then from checks that went well; one per sentence.
+    # A sentence the student is also told to fix is never listed as a strength: mixed praise confuses the student.
     strengths, seen = [], set()
     for r in ordered:
         if r["kind"] == "check" and r["verdict"] != "good":
             continue
         for c in r["credit"]:
+            if marks.get(c["sourceId"], {}).get("concerns"):
+                continue
             if len(strengths) < 3 and c["sourceId"] not in seen and not any(
                     similar(s["reason"], c["reason"], 0.5) for s in strengths):
                 seen.add(c["sourceId"])

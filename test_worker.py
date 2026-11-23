@@ -100,6 +100,24 @@ class Worker(unittest.TestCase):
         self.assertEqual(counts["done"], 2)
         self.assertEqual(loads, [True, False])   # vision to read, text-only to grade, reused for the typed answer
 
+    def test_vision_model_is_freed_before_the_text_model_loads(self):
+        events = []
+
+        class Tracked(FakeGemma):
+            def close(self):
+                events.append("close")
+
+        def models(vision=False):
+            events.append("load-vision" if vision else "load-text")
+            return Tracked(EN)
+
+        site = Site([photo_job()])
+        with contextlib.redirect_stdout(io.StringIO()):
+            counts = worker.process(site, model_factory=models,
+                                    reader_factory=lambda llm: Script(same(lines=PHOTO_LINES)))
+        self.assertEqual(counts["done"], 1)
+        self.assertEqual(events[:3], ["load-vision", "close", "load-text"])   # never two 12B copies at once
+
     def test_unreadable_photo_asks_for_a_retake_and_is_not_graded(self):
         reads = same(lines=PHOTO_LINES)
         reads[2] = [None] * 6
