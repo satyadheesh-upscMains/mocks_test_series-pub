@@ -51,7 +51,13 @@ def finish(examiner, prep, results):
     return out
 
 
-def evaluate(examiner, job):
+def evaluate(examiner, job, between=None):
+    """All stages on one runner. `between()` runs after each stage (the queue worker renews its lease there)."""
+    tick = between or (lambda: None)
     prep = prepare(examiner, job)
-    results = [r for shard in SHARD_ORDER for r in run_shard(examiner, prep, shard)]
+    tick()
+    results = []
+    for shard in SHARD_ORDER:
+        results += run_shard(examiner, prep, shard)
+        tick()
     return finish(examiner, prep, results)

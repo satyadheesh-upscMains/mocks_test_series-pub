@@ -336,3 +336,27 @@ def summarize(examiner, prep, system, report):
                             schema=SUMMARY_SCHEMA, max_tokens=300, validate=validate)
     except Rejected:
         return None  # the headline and fixes stand on their own
+
+
+def attach_page(report, transcript):
+    """Point every highlight at the handwritten lines it came from, so the report can mark the student's own page."""
+    from .photo import locate
+    where = locate(report["sentences"], transcript)
+    boxes = {ln["id"]: {"lineId": ln["id"], "page": ln["page"], "box": ln["box"]}
+             for ln in transcript["lines"] if ln["text"]}
+
+    def on_page(sid):
+        return [boxes[i] for i in where.get(sid, []) if i in boxes]
+
+    for h in report["highlights"]:
+        h["lines"] = on_page(h["sourceId"])
+    for s in report["strengths"]:
+        s["lines"] = on_page(s["sourceId"])
+    for f in report["fixes"]:
+        if f["yourLine"]:
+            f["yourLine"]["lines"] = on_page(f["yourLine"]["sourceId"])
+    report["input"] = "photos"
+    report["page"] = {"pages": [{"page": p["page"], "width": p["width"], "height": p["height"]}
+                                for p in transcript["pages"]],
+                      "lines": list(boxes.values())}
+    return report

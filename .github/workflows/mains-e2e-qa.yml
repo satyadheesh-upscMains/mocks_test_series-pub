@@ -1,0 +1,113 @@
+name: Mains end-to-end QA
+
+# Synthetic submissions through the real queue worker, against an in-memory site. Unit tests first (no model),
+# then Gemma 4 12B: typed answer, clear photo answer, smudged photo (must ask for a retake). Results are published.
+on:
+  push:
+    branches: [qa/mains-e2e]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: mains-e2e-qa
+  cancel-in-progress: true
+
+env:
+  MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
+  PROJECTOR_KEY: mains-gemma-4-12b-mmproj-F32-v1
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q Pillow==11.3.0 numpy==2.2.6
+      - name: Unit tests (no model)
+        run: |
+          set +e
+          python -m unittest -v test_examiner test_photo test_worker test_review > unit-e2e.log 2>&1
+          status=$?
+          cat unit-e2e.log
+          exit $status
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-e2e-log
+          path: unit-e2e.log
+          retention-days: 3
+
+  e2e:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [typed-en, photo-en, photo-smudged]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models/mmproj-F32.gguf
+          key: ${{ env.PROJECTOR_KEY }}
+      - run: pip install -q ${{ env.RUNTIME }}
+      - run: curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
+      - run: python tools/e2e_qa.py --case ${{ matrix.case }} --dir e2e-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-${{ matrix.case }}
+          path: e2e-out
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    needs: [unit, e2e]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '{e2e-*,unit-e2e-log}'
+          path: reports
+          merge-multiple: true
+      - name: Publish to qa/mains-e2e-reports
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          echo "${{ github.run_id }} unit=${{ needs.unit.result }} e2e=${{ needs.e2e.result }}" > RUN
+          git init -q -b qa/mains-e2e-reports
+          git config user.name "mains-qa"
+          git config user.email "mains-qa@users.noreply.github.com"
+          git add -A
+          git commit -qm "Synthetic end-to-end QA, run ${{ github.run_id }}"
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-e2e-reports
