@@ -68,7 +68,7 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v4"] = rep["version"] == "mains-report-v4"
+    g["report version v5"] = rep["version"] == "mains-report-v5"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
     des = [h for h in rep["highlights"] if "desilt" in h["text"].lower()]

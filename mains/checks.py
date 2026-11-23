@@ -168,4 +168,39 @@ def run(examiner, prep, system, check_id):
         # Not judged: the report shows this check as "Not checked" and adds no finding for it. Inventing a
         # verdict here would put feedback in front of the student that no examiner pass actually made.
         return {"id": check_id, "kind": kind, "status": "unavailable", "reason": e.code}
+    if check_id == "solutions" and value["verdict"] != "not_applicable":
+        value = second_look(examiner, prep, system, value)
     return {"id": check_id, "kind": kind, "status": "ok", **value}
+
+
+REST_TASK = ("TASK [solutions:rest]\nCheck only this: the answer's OTHER suggestions. The suggestions in sentences "
+             "{flagged} are already judged: ignore them. For each other sentence that proposes a measure, check who "
+             "acts, what exactly, and where or when it applies. A measure that should be targeted at a stated need "
+             "but is offered as a blanket routine (for example yearly dredging of every canal instead of where a "
+             "survey shows it is needed) is a concern of kind weak, with a fix that says where or when it applies. "
+             "A measure that already says who acts and where it applies earns credit. If no other sentence proposes "
+             "a measure, credit and concerns are empty and the verdict is not_applicable.\n\n")
+
+
+def second_look(examiner, prep, system, value):
+    """Gemma 12B judges the worst suggestion and stops (run 45169827637: concreting flagged, routine desilting
+    credited). A second focused pass over the remaining suggestions catches the lesser flaws."""
+    flagged = sorted({c["sourceId"] for c in value["concerns"] if c["sourceId"]})
+    rest = [s["id"] for s in prep["sentences"] if s["id"] not in flagged]
+    if not flagged or not rest:
+        return value
+    try:
+        more = examiner.ask(stage="check", check="solutions:rest", system=system,
+                            task=REST_TASK.format(flagged=", ".join(flagged)) + FIELDS.format(verdicts=DIM_VERDICTS),
+                            schema=schema(rest, VERDICTS), max_tokens=900,
+                            validate=lambda raw: bind(raw, prep, "solutions"))
+    except Rejected:
+        return value  # the first pass stands on its own
+    seen = {c["sourceId"] for c in value["concerns"]}
+    added = [c for c in more["concerns"] if c["sourceId"] in rest and c["sourceId"] not in seen]
+    if not added:
+        return value
+    out = dict(value, concerns=(value["concerns"] + added)[:3])
+    if out["verdict"] == "good":
+        out["verdict"] = "partial"
+    return out

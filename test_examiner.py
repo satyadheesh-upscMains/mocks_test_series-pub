@@ -97,7 +97,8 @@ class FakeGemma:
         user = messages[1]["content"]
         self.prompts.append(messages)
         key = user.split("TASK [", 1)[1].split("]", 1)[0]
-        value = self.script[key]
+        # A follow-up pass (e.g. "solutions:rest") falls back to its base check's scripted reply unless scripted.
+        value = self.script[key] if key in self.script else self.script[key.split(":", 1)[0]]
         if key in self.bad and "rejected by an automatic quality check" not in user:
             value = self.bad[key]
         return {"choices": [{"finish_reason": "stop", "message": {"content": json.dumps(value, ensure_ascii=False)}}],
@@ -203,6 +204,22 @@ class Report(unittest.TestCase):
         with contextlib.redirect_stdout(out):
             rep = pipeline.evaluate(Examiner(FakeGemma(script)), job(lang))
         return rep, out.getvalue()
+
+    def test_second_look_flags_a_lesser_suggestion(self):
+        script = dict(EN)
+        script["solutions:rest"] = {
+            "credit": [], "note": "Desilting is offered as routine, not tied to a need.", "verdict": "partial",
+            "concerns": [concern("s4", "weak", "medium", "Regular desilting everywhere is not tied to a surveyed need.",
+                                 "Say desilting is done where a survey finds excess silt.")],
+            "rewrite": {"sourceId": "none", "text": ""}}
+        rep, _ = self.run_all(script, "en")
+        tone = {h["sourceId"]: h["tone"] for h in rep["highlights"]}
+        self.assertEqual(tone["s4"], "amber")                               # flagged, no longer green
+        self.assertNotIn("s4", [s["sourceId"] for s in rep["strengths"]])   # and not praised
+        self.assertEqual(tone["s3"], "red")                                 # the first finding still stands
+        script["solutions:rest"]["concerns"] = [concern("s3", "weak", "minor", "Again concreting.", "Drop concreting.")]
+        rep, _ = self.run_all(script, "en")
+        self.assertEqual({h["sourceId"]: h["tone"] for h in rep["highlights"]}["s3"], "red")  # no double counting
 
     def test_english_report(self):
         rep, logs = self.run_all(EN, "en")

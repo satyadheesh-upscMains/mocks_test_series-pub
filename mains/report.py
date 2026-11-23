@@ -12,7 +12,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v4"
+REPORT_VERSION = "mains-report-v5"
 MIN_CHECKS = 10  # of 12: below this the report is not trustworthy and the job is retried instead
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
