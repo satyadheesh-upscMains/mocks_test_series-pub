@@ -67,6 +67,13 @@ def _about(prep, r):
     return f"the check '{DIM[r['id']]['en']}'"
 
 
+def _source(prep, ref_id):
+    """The extract a finding relies on, given to the second opinion in full: claim-check extracts are not in
+    MATERIALS."""
+    r = next((x for x in prep.get("refs") or [] if x["id"] == ref_id), None)
+    return {"source": f"{r['label']}: {r['text']}"} if r else {}
+
+
 def run(examiner, prep, system, results):
     sids = [s["id"] for s in prep["sentences"]]
     for _, ri, ci in targets(prep, results):
@@ -78,7 +85,7 @@ def run(examiner, prep, system, results):
             c = r["concerns"][ci]
             criticism = {"about": _about(prep, r), "kind": c["kind"], "priority": c["priority"],
                          "sentence": c["sourceId"], "criticism": c["reason"],
-                         "source": c.get("ref") or "none"}  # the cited extract is in MATERIALS under this id
+                         **_source(prep, c.get("ref"))}
         try:
             out = examiner.ask(stage="verify", check=r["id"], system=system,
                                task=TASK.format(criticism=json.dumps(criticism, ensure_ascii=False)),

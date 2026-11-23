@@ -36,12 +36,79 @@ POLITY = {
     "references": ["Panchayats got constitutional status through the 73rd Amendment",
                    "Devolution of funds, functions and staff to panchayats remains uneven across States"],
 }
+# Polity test set: eight GS2 answers, each with one or two planted errors that the Constitution itself settles.
+# Every other sentence is correct. `planted`: a phrase of the wrong sentence and the Articles (or Schedules) that
+# show it is wrong. Checked against refs/constitution_of_india_2026.json: each planted error reaches its Article.
+POLITY_SET = {
+    'polity-local': dict(
+        question='Discuss how the 73rd Constitutional Amendment strengthened rural local self-government in India. What challenges remain?',
+        answer=('The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system of village, block and district panchayats. '
+                'It made elections every five years compulsory, and these elections are conducted by the Election Commission of India. '
+                'One-third of the seats are reserved for women, which has brought many women into local politics. '
+                'Panchayats now control all the subjects in the State List. '
+                'However, many panchayats still depend on grants from the State government and lack trained staff.'),
+        planted=[('Election Commission of India', ['243K']), ('all the subjects in the State List', ['243G', 'SCH11'])]),
+    'polity-art21': dict(
+        question='Examine how the Supreme Court has widened the scope of Article 21 of the Constitution.',
+        answer=('Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law. '
+                'This protection is available only to citizens of India, not to foreigners. '
+                'Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life. '
+                'A citizen whose Article 21 right is violated can approach the High Court directly under Article 32. '
+                'This expansion has made Article 21 the heart of the Fundamental Rights.'),
+        planted=[('only to citizens', ['21']), ('High Court directly under Article 32', ['32'])]),
+    'polity-eci': dict(
+        question='Examine the constitutional safeguards that protect the independence of the Election Commission of India.',
+        answer=('Article 324 vests the superintendence, direction and control of elections to Parliament and the State Legislatures in the Election Commission. '
+                'The Chief Election Commissioner can be removed by the President on the advice of the Prime Minister, like any other senior officer. '
+                'His conditions of service cannot be varied to his disadvantage after his appointment. '
+                'The Commission also prepares the electoral rolls for these elections. '
+                'These safeguards help the Commission act without fear of the government of the day.'),
+        planted=[('advice of the Prime Minister', ['324'])]),
+    'polity-governor': dict(
+        question="Analyse the position of the Governor in India's federal structure.",
+        answer=('The Governor is the constitutional head of a State. '
+                'The Governor is elected by the State Legislative Assembly for a fixed term of five years and cannot be removed before that. '
+                'The executive power of the State is vested in the Governor and is exercised through the Council of Ministers. '
+                'Because the Governor is linked to the Centre, the office has often been at the centre of Centre-State disputes.'),
+        planted=[('elected by the State Legislative Assembly', ['155', '156'])]),
+    'polity-amend': dict(
+        question='Critically examine the procedure for amending the Constitution under Article 368.',
+        answer=('Under Article 368, an amendment can be initiated by introducing a Bill in either House of Parliament. '
+                'It must be passed in each House by a majority of the total membership and two-thirds of the members present and voting. '
+                'Every constitutional amendment must also be ratified by the legislatures of at least half of the States. '
+                'This makes the Indian Constitution partly rigid and partly flexible.'),
+        planted=[('Every constitutional amendment must also be ratified', ['368'])]),
+    'polity-moneybill': dict(
+        question='Discuss the role of the Rajya Sabha in the passage of Money Bills.',
+        answer=('A Money Bill can be introduced in either House of Parliament. '
+                'After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations. '
+                'The Rajya Sabha can keep a Money Bill for up to three months before returning it. '
+                "The Lok Sabha may accept or reject the Rajya Sabha's recommendations. "
+                'This shows the financial supremacy of the directly elected House.'),
+        planted=[('introduced in either House', ['109']), ('up to three months', ['109'])]),
+    'polity-356': dict(
+        question='Examine the use of Article 356 and its impact on Indian federalism.',
+        answer=('Article 356 lets the President take over the government of a State when its government cannot be carried on in accordance with the Constitution. '
+                'The proclamation must be approved by both Houses of Parliament. '
+                "Once approved, President's Rule can continue indefinitely until the Centre decides to end it. "
+                'Its frequent use in the past weakened the autonomy of States.'),
+        planted=[('continue indefinitely', ['356'])]),
+    'polity-dpsp': dict(
+        question='Discuss the relationship between Fundamental Rights and Directive Principles of State Policy.',
+        answer=('Fundamental Rights are in Part III and Directive Principles are in Part IV of the Constitution. '
+                'Directive Principles can be enforced in courts in the same way as Fundamental Rights. '
+                'Directive Principles guide the State in making laws for social and economic justice. '
+                'Courts have tried to read both parts together in harmony.'),
+        planted=[('enforced in courts in the same way', ['37'])]),
+}
 CASES = {
     "typed-en": dict(input="typed"),
     "typed-polity": dict(input="typed", **POLITY),
     "photo-en": dict(input="photos", page="clear-en"),
     "photo-smudged": dict(input="photos", page="smudged-en"),
 }
+CASES.update({k: dict(input="typed", question=v["question"], answer=v["answer"], references=[])
+              for k, v in POLITY_SET.items()})
 
 
 class Site:
@@ -71,6 +138,27 @@ def job_for(case):
     return job
 
 
+def polity_gates(case, rep):
+    """Per planted error: its sentence is marked red, and a finding on it cites one of the Articles that settle it.
+    Also counts red marks on the correct sentences (false alarms); those are reported, not failed."""
+    planted = POLITY_SET[case]["planted"]
+    labels = {f"Constitution of India, {'Schedule ' + a[3:] if a.startswith('SCH') else 'Article ' + a}"
+              for _, arts in planted for a in arts}
+    g, wrong_ids = {}, set()
+    for phrase, arts in planted:
+        want = {f"Constitution of India, {'Schedule ' + a[3:] if a.startswith('SCH') else 'Article ' + a}" for a in arts}
+        h = next((h for h in rep["highlights"] if phrase in h["text"]), None)
+        sid = next((s["id"] for s in rep["sentences"] if phrase in s["text"]), None)
+        wrong_ids.add(sid)
+        g[f"caught: {phrase}"] = bool(h) and h["tone"] == "red"
+        g[f"cited: {phrase}"] = bool(h) and any(c.get("source") in want for c in h["concerns"])
+    rep.setdefault("qa", {})["falseRed"] = [h["text"] for h in rep["highlights"]
+                                            if h["tone"] == "red" and h["sourceId"] not in wrong_ids]
+    rep["qa"]["sourcesUsed"] = [s["label"] for s in rep["sources"] if s["used"]]
+    rep["qa"]["expected"] = sorted(labels)
+    return g
+
+
 def gates(case, site, counts):
     actions = [c["action"] for c in site.calls]
     tr = next((c["transcript"] for c in site.calls if c["action"] == "transcribe"), None)
@@ -84,9 +172,11 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v7"] = rep["version"] == "mains-report-v7"
+    g["report version v8"] = rep["version"] == "mains-report-v8"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
+    if case in POLITY_SET:
+        return g | polity_gates(case, rep)
     if case == "typed-polity":
         shown = rep["fixes"] + rep["additions"] + rep["missing"] + [c for h in rep["highlights"] for c in h["concerns"]]
         g["Constitution/NCERT sources given"] = bool(rep["sources"])

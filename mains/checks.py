@@ -194,10 +194,101 @@ def _with_source(prep, c, lang, src):
     return {"reason": reason, "fix": fix, "ref": ref["id"] if ref and _uses(prep, ref, f"{reason} {fix}") else None}
 
 
+FACT_TASK = """TASK [facts:{sid}]
+Check one claim of the student's answer against the extracts below. They are exact text from the Constitution of India or NCERT textbooks.
+CLAIM ({sid}): \u00ab{text}\u00bb
+EXTRACTS
+{extracts}
+Decide from these extracts only:
+- contradicted: an extract states something that makes the claim wrong (a different body, office, House, power, time limit, number or condition).
+- confirmed: an extract states the same thing as the claim.
+- not_covered: no extract speaks to this claim. This is the usual case for opinions, examples, effects and claims about practice.
+If contradicted: one concern on {sid}, kind wrong, priority major (minor only for a small slip), refId = the extract that contradicts it; reason = what that extract says instead; fix = the corrected statement in one sentence, in words from that extract. If confirmed: credit {sid} with a reason that names the extract's provision; concerns empty. If not_covered: credit and concerns empty.
+
+"""
+FACT_VERDICTS = {"contradicted": "wrong", "confirmed": "good", "not_covered": "not_applicable"}
+MAX_FACTS = 8
+
+
+GAP_TASK = """TASK [gap:{pid}]
+Check only this part of the question: \u00ab{part}\u00bb. Using only the sources in MATERIALS, name the single most important point that answers this part, that a sharp examiner expects, and that no sentence of the answer makes: a provision, body, power, safeguard or limit stated in a source. Give it as one concern with sourceId "none", kind missing, priority medium, refId = that source; reason = why this point matters for this part; fix = what to add, in words from that source. If the answer already makes every such point, or no source fits this part, concerns are empty, and the verdict is good (credit the sentence that makes the point) or not_applicable.
+
+"""
+
+
+def gap_ids(prep):
+    """One "what the sources add" check per question part, when the question has shared extracts."""
+    if not any(r.get("shared", True) for r in prep.get("refs") or []):
+        return []
+    return [f"gap:{p['id']}" for p in prep.get("parts") or []]
+
+
+def run_gap(examiner, prep, system, check_id):
+    """The one combined "provisions" check named the answer's error and stopped: none of its suggested additions
+    used a source (split run 45238473782). A separate small call per part asks only for the missing point."""
+    pid = check_id.split(":", 1)[1]
+    part = next(p for p in prep["parts"] if p["id"] == pid)
+    shown = [r["id"] for r in prep["refs"] if r.get("shared", True)]
+    sids = [s["id"] for s in prep["sentences"]]
+
+    def validate(raw):
+        out = bind(raw, prep, "gap")
+        out["concerns"] = [c for c in out["concerns"] if c["kind"] == "missing" and c.get("ref")][:1]
+        out["rewrite"] = None
+        return out
+
+    try:
+        value = examiner.ask(stage="check", check=check_id, system=system,
+                             task=GAP_TASK.format(pid=pid, part=prompts.escape(part["quote"]))
+                             + FIELDS.format(verdicts=DIM_VERDICTS),
+                             schema=schema(sids, VERDICTS, shown), max_tokens=500, validate=validate)
+    except Rejected as e:
+        return {"id": check_id, "kind": "fact", "status": "unavailable", "reason": e.code}
+    return {"id": check_id, "kind": "fact", "status": "ok", **value}
+
+
+def fact_ids(prep):
+    """One claim check per answer sentence that has its own extracts, in answer order, at most MAX_FACTS."""
+    claimed = {sid for r in prep.get("refs") or [] for sid in r.get("claims", [])}
+    return [f"facts:{s['id']}" for s in prep["sentences"] if s["id"] in claimed][:MAX_FACTS]
+
+
+def run_fact(examiner, prep, system, check_id):
+    """Gemma 12B judges a whole answer by its worst problem (runs 45169827637, 45238473782): a wrong body or time
+    limit in a lesser sentence goes unseen. So each claim is checked on its own, against only its own extracts."""
+    sid = check_id.split(":", 1)[1]
+    sent = next(s for s in prep["sentences"] if s["id"] == sid)
+    mine = [r for r in prep.get("refs") or [] if sid in r.get("claims", [])]
+    extracts = "\n".join(f"[{r['id']}] {r['label']}: {prompts.escape(r['text'])}" for r in mine)
+    task = (FACT_TASK.format(sid=sid, text=prompts.escape(sent["text"]), extracts=extracts)
+            + FIELDS.format(verdicts="contradicted, confirmed or not_covered, as decided above"))
+    sch = schema([sid], list(FACT_VERDICTS), [r["id"] for r in mine])
+
+    def validate(raw):
+        if not isinstance(raw, dict) or raw.get("verdict") not in FACT_VERDICTS:
+            raise Rejected("fact:verdict")
+        out = bind(dict(raw, verdict=FACT_VERDICTS[raw["verdict"]]), prep, "facts")
+        # A claim is called wrong only on an extract's evidence: a concern that cites no extract is dropped.
+        out["concerns"] = [c for c in out["concerns"] if c.get("ref") and c["kind"] in ("wrong", "unsupported")]
+        out["rewrite"] = None
+        return out
+
+    try:
+        value = examiner.ask(stage="check", check=check_id, system=system, task=task, schema=sch, max_tokens=500,
+                             validate=validate)
+    except Rejected as e:
+        return {"id": check_id, "kind": "fact", "status": "unavailable", "reason": e.code}
+    return {"id": check_id, "kind": "fact", "status": "ok", **value}
+
+
 def run(examiner, prep, system, check_id):
+    if check_id.startswith("facts:"):
+        return run_fact(examiner, prep, system, check_id)
+    if check_id.startswith("gap:"):
+        return run_gap(examiner, prep, system, check_id)
     kind = "part" if check_id.startswith("part:") else "check"
     sids = [s["id"] for s in prep["sentences"]]
-    ref_ids = [r["id"] for r in prep.get("refs") or []]
+    ref_ids = [r["id"] for r in prep.get("refs") or [] if r.get("shared", True)]
     if check_id == "provisions" and not ref_ids:
         # No checked source fits this question (for example a geography or economy topic): nothing to compare with.
         return {"id": check_id, "kind": kind, "status": "ok", "verdict": "not_applicable", "credit": [],

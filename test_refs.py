@@ -26,6 +26,9 @@ CONST = [
      "description": "The superintendence, direction and control of the preparation of the electoral rolls for, and the "
                     "conduct of, all elections to Parliament and to the Legislature of every State shall be vested in "
                     "a Commission (referred to in this Constitution as the Election Commission)."},
+    {"article": "SCH6", "title": "Sixth Schedule", "notes": [],
+     "description": "Elections to the District Councils of the autonomous districts shall be conducted by the "
+                    "Election Commission, which shall hold such elections every five years."},
     {"article": "21", "title": "Protection of life and personal liberty", "notes": [],
      "description": "No person shall be deprived of his life or personal liberty except according to procedure "
                     "established by law."},
@@ -72,13 +75,23 @@ class Search(unittest.TestCase):
     def test_each_claim_gets_its_passage_within_the_topic(self):
         # Constitution only, as on the runners: the panchayat election claim must find Article 243K, not 324.
         idx = refs.Index(refs.constitution_chunks(CONST), min_score=0.5, min_coverage=0.2)
-        found = idx.pack(Q + " Panchayats", "These elections are conducted by the Election Commission of India.")
-        labels = [r["label"] for r in found]
-        self.assertIn("Constitution of India, Article 243K", labels)
-        self.assertNotIn("Constitution of India, Article 324", labels)
-        self.assertEqual(refs.family({"id": "c243ZA"}), "243")
+        found = idx.pack(Q + " Panchayats", [{"id": "s1", "text": "These elections are conducted by the Election "
+                                                               "Commission of India."}])
+        claimed = [r["label"] for r in found if "s1" in r.get("claims", [])]
+        self.assertIn("Constitution of India, Article 243K", claimed)
+        self.assertNotIn("Constitution of India, Article 324", claimed)
+        self.assertNotIn("Constitution of India, Schedule 6", claimed)   # matches the claim's words, not the topic
+        self.assertEqual(refs.family({"id": "c243K"}), "IX")              # Part IX: Panchayats
+        self.assertEqual(refs.family({"id": "c243ZA"}), "IXA")            # Part IXA: Municipalities
+        self.assertEqual(refs.family({"id": "c156"}), "VI.2")             # the Governor's chapter
         self.assertEqual(refs.family({"id": "cSCH11"}), "SCH11")
         self.assertEqual(refs.family({"id": "n208.4"}), "n208")
+
+    def test_claim_only_extracts_stay_out_of_the_shared_prompt(self):
+        found = index().pack(Q, [{"id": "s1", "text": A.split(". ")[0] + "."}])
+        self.assertTrue(all(r["shared"] for r in found[:sum(r["shared"] for r in found)]))   # shared come first
+        self.assertLessEqual(sum(r["shared"] for r in found), refs.MAX_PASSAGES)
+        self.assertLessEqual(len(found), refs.MAX_REFS)
 
     def test_named_article_comes_first(self):
         found = index().pack("Discuss the scope of Article 21 today.", "")
@@ -133,6 +146,8 @@ class Citing(unittest.TestCase):
         self.assertIsNone(out["concerns"][0]["ref"])   # no source label on advice that does not come from it
 
 
+NOTHING = {"credit": [], "concerns": [], "note": "Nothing to add.", "verdict": "not_applicable",
+           "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
 ART48A = [{"id": "r1", "label": "Constitution of India, Article 48A",
            "text": "Protection and improvement of environment and safeguarding of forests and wild life. The State "
                    "shall endeavour to protect and improve the environment and to safeguard the forests and wild life "
@@ -145,7 +160,7 @@ class InTheReport(unittest.TestCase):
             return pipeline.evaluate(Examiner(FakeGemma(script)), job("en"))
 
     def test_source_backed_point_shows_its_label(self):
-        script = dict(EN)
+        script = dict(EN, gap=NOTHING)
         c = concern("none", "missing", "medium",
                     "The answer does not link conservation to Article 48A, which asks the State to protect the "
                     "environment.", "Add that Article 48A directs the State to protect and improve the environment.")
@@ -157,6 +172,40 @@ class InTheReport(unittest.TestCase):
         shown = rep["additions"] + rep["fixes"]
         self.assertTrue(any(x["source"] == "Constitution of India, Article 48A" for x in shown))
         self.assertEqual({d["id"]: d["verdict"] for d in rep["checks"]}["provisions"], "partial")
+
+    def test_a_wrong_claim_is_marked_on_its_own_sentence(self):
+        # The claim check finds the error the combined check missed; it reaches the report as a red, cited fix.
+        found = [dict(ART48A[0], shared=True),
+                 {"id": "r2", "label": "Constitution of India, Article 243K", "shared": False, "claims": ["s4"],
+                  "text": "Elections to the Panchayats. The conduct of all elections to the Panchayats shall be vested "
+                          "in a State Election Commission."}]
+        wrong = concern("s4", "wrong", "major",
+                        "Article 243K vests panchayat elections in a State Election Commission, not this body.",
+                        "Write that a State Election Commission conducts panchayat elections.")
+        wrong["refId"] = "r2"
+        script = dict(EN, gap=NOTHING, provisions=NOTHING)
+        script["facts:s4"] = {"credit": [], "concerns": [wrong], "note": "The claim is contradicted.",
+                              "verdict": "contradicted", "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+        rep = self.run_all(script, found)
+        s4 = next(h for h in rep["highlights"] if h["sourceId"] == "s4")
+        self.assertEqual(s4["tone"], "red")
+        self.assertTrue(any(c["source"] == "Constitution of India, Article 243K" for c in s4["concerns"]))
+        self.assertEqual({d["id"]: d["verdict"] for d in rep["checks"]}["provisions"], "wrong")
+        self.assertIn({"label": "Constitution of India, Article 243K", "used": True}, rep["sources"])
+
+    def test_a_claim_flagged_without_its_extract_is_dropped(self):
+        found = [dict(ART48A[0], shared=True),
+                 {"id": "r2", "label": "Constitution of India, Article 243K", "shared": False, "claims": ["s4"],
+                  "text": "Elections to the Panchayats. A State Election Commission conducts them."}]
+        loose = concern("s4", "wrong", "major", "This sentence is not right as written.", "Rewrite the sentence.")
+        loose["refId"] = "none"
+        script = dict(EN, gap=NOTHING, provisions=NOTHING)
+        script["facts:s4"] = {"credit": [], "concerns": [loose], "note": "Contradicted.", "verdict": "contradicted",
+                              "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+        base = self.run_all(dict(EN, gap=NOTHING, provisions=NOTHING, **{"facts:s4": NOTHING}), found)
+        rep = self.run_all(script, found)
+        tone = lambda r: {h["sourceId"]: h["tone"] for h in r["highlights"]}.get("s4")
+        self.assertEqual(tone(rep), tone(base))   # no evidence from an extract: the claim check adds nothing
 
     def test_no_sources_skips_the_check_without_a_model_call(self):
         gemma = FakeGemma(EN)

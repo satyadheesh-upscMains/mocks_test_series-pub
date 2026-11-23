@@ -37,17 +37,64 @@ def prepare(examiner, job, cached_breakdown=None):
 def sources_for(prep):
     """Checked extracts from the Constitution and NCERT for this question. A missing index never stops grading."""
     try:
-        found = refs.pack(prep["question"], " ".join(s["text"] for s in prep["sentences"]))
+        found = refs.pack(prep["question"], prep["sentences"])
     except Exception:
         found = []
-    log(stage="refs", passages=len(found), constitution=sum(r["label"].startswith("Constitution") for r in found))
+    log(stage="refs", passages=len(found), shared=sum(r.get("shared", True) for r in found),
+        claims=len({sid for r in found for sid in r.get("claims", [])}),
+        constitution=sum(r["label"].startswith("Constitution") for r in found))
     return found
 
 
 def check_ids(prep, shard):
     if shard == "parts":
         return [f"part:{p['id']}" for p in prep["parts"]]
+    if shard == "content":
+        return list(SHARDS[shard]) + checks.fact_ids(prep) + checks.gap_ids(prep)
     return list(SHARDS[shard])
+
+
+def merge_facts(results):
+    """Claim checks become findings of the "Constitution and textbook basics" check, so the report, the second
+    opinion and the student see one check, with each wrong claim marked on its own sentence."""
+    extra = ("facts:", "gap:")
+    facts = [r for r in results if r["id"].startswith(extra) and r["status"] == "ok"]
+    rest = [r for r in results if not r["id"].startswith(extra)]
+    concerns = [c for r in facts for c in r["concerns"]]
+    flagged = {c["sourceId"] for c in concerns}
+    credit = [c for r in facts for c in r["credit"] if c["sourceId"] not in flagged]
+    if not concerns and not credit:
+        return rest
+    at = next((n for n, r in enumerate(rest) if r["id"] == "provisions"), None)
+    prov = rest[at] if at is not None else None
+    if prov is None or prov["status"] != "ok":
+        prov = {"id": "provisions", "kind": "check", "status": "ok", "verdict": "not_applicable", "credit": [],
+                "concerns": [], "rewrite": None, "note": None}
+        if at is None:
+            rest.append(prov)
+        else:
+            rest[at] = prov
+    have = {(c["sourceId"], c["kind"]) for c in prov["concerns"]}
+    for c in concerns:
+        if (c["sourceId"], c["kind"]) not in have:
+            prov["concerns"].append(c)
+            have.add((c["sourceId"], c["kind"]))
+    seen = {c["sourceId"] for c in prov["credit"]}
+    prov["credit"] = [c for c in prov["credit"] if c["sourceId"] not in flagged]
+    for c in credit:
+        if c["sourceId"] not in seen and len(prov["credit"]) < 3:
+            prov["credit"].append(c)
+            seen.add(c["sourceId"])
+    if any(c["kind"] == "wrong" for c in concerns) and prov["verdict"] in ("good", "partial", "not_applicable",
+                                                                            "missing"):
+        prov["verdict"] = "wrong"
+    elif concerns and prov["verdict"] in ("good", "not_applicable"):
+        prov["verdict"] = "partial"
+    elif prov["verdict"] == "not_applicable" and prov["credit"]:
+        prov["verdict"] = "good"
+    if not prov.get("note"):
+        prov["note"] = (concerns or prov["credit"])[0]["reason"]
+    return rest
 
 
 def task_ids(prep):
@@ -67,7 +114,7 @@ def run_shard(examiner, prep, shard):
 
 def finish(examiner, prep, results):
     system = prompts.system(prep)
-    results = verify.run(examiner, prep, system, results)
+    results = verify.run(examiner, prep, system, merge_facts(results))
     out = report.assemble(prep, results)
     out["summary"] = report.summarize(examiner, prep, system, out)
     return out

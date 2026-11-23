@@ -48,7 +48,9 @@ def materials(prep):
         "facts": {"words": prep["stats"]["words"], "usualLimit": prep["stats"]["limit"]},
     }
     if prep.get("refs"):
-        data["sources"] = [{"id": r["id"], "source": r["label"], "text": r["text"]} for r in prep["refs"]]
+        shown = [r for r in prep["refs"] if r.get("shared", True)]
+        if shown:
+            data["sources"] = [{"id": r["id"], "source": r["label"], "text": r["text"]} for r in shown]
     return escape(json.dumps(data, ensure_ascii=False, indent=1))
 
 

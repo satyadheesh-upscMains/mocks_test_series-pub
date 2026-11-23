@@ -12,7 +12,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v7"
+REPORT_VERSION = "mains-report-v8"
 MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -312,7 +312,8 @@ def assemble(prep, results):
         # Checked extracts the examiner compared the answer with: labels only, never the text. "used" when at least
         # one finding shown to the student relies on it.
         "sources": [{"label": r["label"], "used": any(f["source"] == r["label"] for f in kept)}
-                    for r in prep.get("refs") or []],
+                    for r in prep.get("refs") or []
+                    if r.get("shared", True) or any(f["source"] == r["label"] for f in kept)],
         "trust": {"secondOpinions": len(verified), "overturned": verified.count("overturned"),
                   "softened": verified.count("softened"),
                   "unavailableChecks": [d["id"] for d in DIMENSIONS if d["id"] not in dims]},

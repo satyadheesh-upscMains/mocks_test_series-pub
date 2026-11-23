@@ -2,7 +2,8 @@ name: Mains split QA
 
 # The faster path: one synthetic answer spread across runners. Unit tests (no model), then Gemma 4 12B:
 # question breakdown + Constitution sources (1 runner per answer) -> one focused check per runner (15 per answer)
-# -> second opinion + report + the same gates as the end-to-end run (1 runner per answer). Synthetic fixtures only:
+# -> second opinion + report + the same gates as the end-to-end run (1 runner per answer). Eight Polity answers with
+# planted errors the Constitution settles, plus the wetlands answer as a regression check. Synthetic fixtures only:
 # in-between files are artifacts here, which the live queue never uses for real students.
 on:
   push:
@@ -54,7 +55,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [typed-polity, typed-en]
+        case: [polity-local, polity-art21, polity-eci, polity-governor, polity-amend, polity-moneybill, polity-356, polity-dpsp, typed-en]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -152,7 +153,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [typed-polity, typed-en]
+        case: [polity-local, polity-art21, polity-eci, polity-governor, polity-amend, polity-moneybill, polity-356, polity-dpsp, typed-en]
     steps:
       - uses: actions/checkout@v4
         with:
