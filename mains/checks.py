@@ -173,34 +173,43 @@ def run(examiner, prep, system, check_id):
     return {"id": check_id, "kind": kind, "status": "ok", **value}
 
 
-REST_TASK = ("TASK [solutions:rest]\nCheck only this: the answer's OTHER suggestions. The suggestions in sentences "
-             "{flagged} are already judged: ignore them. For each other sentence that proposes a measure, check who "
-             "acts, what exactly, and where or when it applies. A measure that should be targeted at a stated need "
-             "but is offered as a blanket routine (for example yearly dredging of every canal instead of where a "
-             "survey shows it is needed) is a concern of kind weak, with a fix that says where or when it applies. "
-             "A measure that already says who acts and where it applies earns credit. If no other sentence proposes "
-             "a measure, credit and concerns are empty and the verdict is not_applicable.\n\n")
+ONE_TASK = ("TASK [solutions:{sid}]\nJudge only this one sentence of the answer: \u00ab{text}\u00bb\n"
+            "First decide: does it propose a measure, that is, something someone should do? A claim, a description "
+            "of how things work or a conclusion is not a measure: then the verdict is not_applicable and credit and "
+            "concerns are empty. If it is a measure, check who acts, what exactly, and where or when it applies. A "
+            "measure that should be targeted at a stated need but is offered as a blanket routine (for example "
+            "yearly dredging of every canal instead of where a survey shows it is needed) is a concern of kind weak, "
+            "with a fix that says where or when it applies. A measure that already says who acts and where it "
+            "applies earns credit.\n\n")
+MAX_SECOND_LOOKS = 6
 
 
 def second_look(examiner, prep, system, value):
     """Gemma 12B judges the worst suggestion and stops (run 45169827637: concreting flagged, routine desilting
-    credited). A second focused pass over the remaining suggestions catches the lesser flaws."""
+    credited). Asked about all the remaining sentences at once, it again picks the most obvious problem, even a
+    claim (run 45178857154). So each remaining sentence gets its own short call, with only that sentence to cite."""
     flagged = sorted({c["sourceId"] for c in value["concerns"] if c["sourceId"]})
-    rest = [s["id"] for s in prep["sentences"] if s["id"] not in flagged]
+    rest = [s for s in prep["sentences"] if s["id"] not in flagged][:MAX_SECOND_LOOKS]
     if not flagged or not rest:
         return value
-    try:
-        more = examiner.ask(stage="check", check="solutions:rest", system=system,
-                            task=REST_TASK.format(flagged=", ".join(flagged)) + FIELDS.format(verdicts=DIM_VERDICTS),
-                            schema=schema(rest, VERDICTS), max_tokens=900,
-                            validate=lambda raw: bind(raw, prep, "solutions"))
-    except Rejected:
-        return value  # the first pass stands on its own
-    seen = {c["sourceId"] for c in value["concerns"]}
-    added = [c for c in more["concerns"] if c["sourceId"] in rest and c["sourceId"] not in seen]
+    added = []
+    for s in rest:
+        try:
+            said, one = examiner.ask(
+                stage="check", check=f"solutions:{s['id']}", system=system,
+                task=ONE_TASK.format(sid=s["id"], text=s["text"]) + FIELDS.format(verdicts=DIM_VERDICTS),
+                schema=schema([s["id"]], VERDICTS), max_tokens=600,
+                validate=lambda raw: (raw.get("verdict") if isinstance(raw, dict) else None,
+                                      bind(raw, prep, "solutions")))
+        except Rejected:
+            continue  # this sentence keeps whatever the first pass said about it
+        # Only a concern about this very sentence counts, and only when Gemma itself said it is a measure.
+        hit = [c for c in one["concerns"] if c["sourceId"] == s["id"]]
+        if said != "not_applicable" and hit:
+            added.append(hit[0])
     if not added:
         return value
-    out = dict(value, concerns=(value["concerns"] + added)[:3])
+    out = dict(value, concerns=value["concerns"] + added)
     if out["verdict"] == "good":
         out["verdict"] = "partial"
     return out

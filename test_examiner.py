@@ -207,7 +207,7 @@ class Report(unittest.TestCase):
 
     def test_second_look_flags_a_lesser_suggestion(self):
         script = dict(EN)
-        script["solutions:rest"] = {
+        script["solutions:s4"] = {
             "credit": [], "note": "Desilting is offered as routine, not tied to a need.", "verdict": "partial",
             "concerns": [concern("s4", "weak", "medium", "Regular desilting everywhere is not tied to a surveyed need.",
                                  "Say desilting is done where a survey finds excess silt.")],
@@ -217,9 +217,17 @@ class Report(unittest.TestCase):
         self.assertEqual(tone["s4"], "amber")                               # flagged, no longer green
         self.assertNotIn("s4", [s["sourceId"] for s in rep["strengths"]])   # and not praised
         self.assertEqual(tone["s3"], "red")                                 # the first finding still stands
-        script["solutions:rest"]["concerns"] = [concern("s3", "weak", "minor", "Again concreting.", "Drop concreting.")]
+
+    def test_second_look_ignores_claims_and_other_sentences(self):
+        script = dict(EN)
+        # A claim judged "not a measure" adds nothing, even if a concern slips into the reply.
+        script["solutions:s5"] = {"credit": [], "note": "Not a measure.", "verdict": "not_applicable",
+                                  "concerns": [concern("s5", "weak", "minor", "Overclaims.", "Soften the claim.")],
+                                  "rewrite": {"sourceId": "none", "text": ""}}
+        base, _ = self.run_all(EN, "en")
         rep, _ = self.run_all(script, "en")
-        self.assertEqual({h["sourceId"]: h["tone"] for h in rep["highlights"]}["s3"], "red")  # no double counting
+        self.assertEqual([h["tone"] for h in rep["highlights"]], [h["tone"] for h in base["highlights"]])
+        self.assertEqual(len(rep["fixes"]), len(base["fixes"]))
 
     def test_english_report(self):
         rep, logs = self.run_all(EN, "en")
