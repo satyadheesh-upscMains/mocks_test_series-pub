@@ -189,6 +189,25 @@ class CasesAndBook(unittest.TestCase):
                        "Urban wetlands hold stormwater after heavy rain.")
         self.assertEqual(got, [])
 
+    def test_a_textbook_only_question_still_gets_its_articles_from_the_claims(self):
+        # v10 retrieval check: the 73rd Amendment question matched only NCERT, so no Part IX Article checked a claim.
+        root = refs.Path(__file__).resolve().parent
+        chunks = refs.constitution_chunks(json.load(open(root / "refs/constitution_of_india_2026.json",
+                                                         encoding="utf-8")))
+        chunks.append({"id": "n108.1", "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+                       "title": "Local Governments", "text": "The 73rd Amendment strengthened rural local "
+                       "self-government through panchayats in villages, blocks and districts. " * 4})
+        idx = refs.Index(chunks)
+        ans = ["The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system "
+               "of village, block and district panchayats.",
+               "It made elections every five years compulsory, and these elections are conducted by the Election "
+               "Commission of India.", "One-third of the seats are reserved for women in panchayats.",
+               "Panchayats now control all the subjects in the State List."]
+        got = idx.pack("Discuss how the 73rd Constitutional Amendment strengthened rural local self-government in "
+                       "India. What challenges remain?", [{"id": f"s{n}", "text": t} for n, t in enumerate(ans, 1)])
+        arts = [r["label"] for r in got if r["label"].startswith("Constitution of India, Article 243")]
+        self.assertTrue(arts)
+
     def test_book_labels_name_chapter_and_section(self):
         c = refs.laxmikanth_chunks([{"chapter": 30, "title": "Governor", "section": "Appointment of Governor",
                                      "page": 677, "text": "words " * 40}])[0]

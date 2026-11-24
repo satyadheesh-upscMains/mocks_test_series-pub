@@ -173,17 +173,29 @@ def laxmikanth_chunks(entries):
 # ------------------------------------------------------------------ search
 
 class Index:
-    def __init__(self, chunks, min_score=MIN_SCORE, min_coverage=MIN_COVERAGE, embedder=None, cache_dir=None):
-        self.chunks = list(chunks)
+    def __init__(self, chunks, min_score=MIN_SCORE, min_coverage=MIN_COVERAGE, embedder=None, cache_dir=None,
+                 extras=True):
+        chunks = list(chunks)
+        core = [c for c in chunks if not c.get("case") and not c.get("private")]
+        extra = [c for c in chunks if c.get("case") or c.get("private")]
+        # Keyword weights come from the Constitution and NCERT only. Adding 2,332 passages of the licensed book to the
+        # same statistics made "panchayat" common, so no Article of Part IX reached the threshold for the 73rd
+        # Amendment question (v10 retrieval check). Cases and the book are searched in their own index, after the core
+        # search has decided the question's topic. Indices: 0..len(core)-1 are core, then the extras in order.
+        if not extras:
+            core, extra = chunks, []
+        self.chunks = core + extra
         self.cache_dir = cache_dir
+        self.extra = Index(extra, min_score, min_coverage, embedder=None, extras=False) if extra else None
+        self.offset = len(core)
         self.min_score, self.min_coverage = min_score, min_coverage
         self.embedder = embedder
         self._vectors = None
-        self.docs = [collections.Counter(terms(c["title"] + " " + c["text"])) for c in self.chunks]
+        self.docs = [collections.Counter(terms(c["title"] + " " + c["text"])) for c in core]
         # An Article's own title says what it is about ("Appointment of Governor"). Titles get their own index, with
         # their own rarity weights: "Governor" is common in the text of the Constitution but rare in its titles, so a
         # question on the Governor finds Articles 153-156 before the many Articles that only mention a Governor.
-        self.heads = [collections.Counter(terms(c["title"])) for c in self.chunks]
+        self.heads = [collections.Counter(terms(c["title"])) for c in core]
         hdf = collections.Counter(t for d in self.heads for t in d)
         self.hidf = {t: math.log(1 + (len(self.heads) - k + 0.5) / (k + 0.5)) for t, k in hdf.items()}
         self.lens = [sum(d.values()) for d in self.docs]
@@ -192,7 +204,7 @@ class Index:
         n = len(self.docs)
         self.idf = {t: math.log(1 + (n - k + 0.5) / (k + 0.5)) for t, k in df.items()}
         self.by_article = {}
-        for i, c in enumerate(self.chunks):
+        for i, c in enumerate(core):
             m = re.match(r"c(\w+?)(?:\.\d+)?$", c["id"])
             if m:
                 self.by_article.setdefault(m.group(1).upper(), i)
@@ -215,7 +227,7 @@ class Index:
             return []
 
     def _passage_vectors(self, np):
-        texts = ["passage: " + c["title"] + " " + c["text"] for c in self.chunks]
+        texts = ["passage: " + c["title"] + " " + c["text"] for c in self.chunks[:len(self.docs)]]
         key = hashlib.sha256((EMBED_SHA256 + "\n".join(texts)).encode("utf-8")).hexdigest()[:16]
         cache = Path(self.cache_dir) / f"vectors-{key}.npy" if self.cache_dir else None
         if cache and cache.exists():
@@ -318,6 +330,32 @@ class Index:
         # meets Article 243K (State Election Commission), not Article 324 or Schedule 6, which runs 45223096235 and
         # 45238473782 used instead. Tuned on eleven planted errors in eight Polity answers: all eleven reach a check.
         families = {family(self.chunks[i]) for i in on_topic}
+        if on_topic:
+            # The answer's own claims vote for the Constitution's Parts: each sentence's best Article, and a Part named
+            # by at least two sentences joins the question's topics. "The 73rd Amendment ... rural local
+            # self-government" matches NCERT's Local Governments chapter (and the word "amend" Article 368's title),
+            # while Part IX's titles say "Gram Sabha" and "Constitution of Panchayats": the v10 retrieval check gave
+            # that answer no Part IX Article, so none of its claims could be checked. Off-syllabus questions have no
+            # on-topic passage and never get here.
+            votes = collections.Counter()
+            for s in sents:
+                # Each sentence on its own words, Constitution passages only (textbook passages outrank Articles on
+                # every claim, as the v10 diagnostic showed), the Parts of its five best Articles, one vote each.
+                arts = [i for sc, _, i in self.search(s["text"], titles=True)
+                        if sc >= self.min_score * CLAIM_SCORE and self.chunks[i]["id"].startswith("c")][:5]
+                votes.update({family(self.chunks[i]) for i in arts})
+            self.last_votes = dict(votes)
+            whole = question + " " + " ".join(x["text"] for x in sents)
+            need = max(2, math.ceil(0.6 * len(sents)))   # most of the answer points at this Part
+            for fam, n in votes.most_common(2):
+                if n >= need and fam not in families:
+                    families.add(fam)
+                    best = next((i for sc, cov, i in self.search(whole) if family(self.chunks[i]) == fam), None)
+                    if best is not None:
+                        take(best, True)
+                        on_topic.append(best)
+        ranked_families = list(dict.fromkeys(family(self.chunks[i]) for i in named + on_topic))
+        named_articles = {m.group(1).upper() for m in ARTICLE.finditer(question + " " + " ".join(s["text"] for s in sents))}
         for s in sents:
             for m in ARTICLE.finditer(s["text"]):
                 claim(s["id"], take(self.by_article.get(m.group(1).upper()), True))
@@ -341,30 +379,44 @@ class Index:
                             got += 1
         for i in on_topic[FROM_QUESTION_FIRST:]:
             take(i, True)
-        if families:
-            self._extras(question, sents, families, take)
+        if families and self.extra:
+            self._extras(question, sents, ranked_families, named_articles, take)
         return self._out(order, shared, claims)
 
-    def _extras(self, question, sents, families, take):
-        """Landmark cases whose Articles sit in the question's Parts, and the licensed book's best sections."""
+    def _extras(self, question, sents, families, named, take):
+        """Landmark cases and the licensed book's best sections, on a question the Constitution speaks to.
+
+        Cases: those on an Article the question or answer names come first, then those in the question's own Parts of
+        the Constitution, in the order the core search ranked those Parts; ties go to the better keyword match. (The
+        v10 check gave the Article 21 question the Judges cases, because "Supreme Court" in the question put Part V
+        chapter 4 among its topics.) Book: the best section for the question, and the best for question and answer."""
         text = question + " " + " ".join(s["text"] for s in sents)
-        cases = []
-        for sc, cov, i in self.search(text):
-            c = self.chunks[i]
+        score = {j: sc for sc, _, j in self.extra.search(text)}
+        rank = {f: n for n, f in enumerate(families)}
+        picks = []
+        for j, c in enumerate(self.extra.chunks):
             if not c.get("case"):
                 continue
-            near = any(part_of(a) in families for a in c.get("articles", []))
-            if near or (sc >= self.min_score and cov >= self.min_coverage):
-                cases.append((0 if near else 1, -sc, i))
-        for _, _, i in sorted(cases)[:MAX_CASES]:
-            take(i, True, extra=True)
-        got = 0
-        for sc, cov, i in self.search(question):
+            arts = {str(a).upper() for a in c.get("articles", [])}
+            near = [rank[part_of(a)] for a in arts if part_of(a) in rank]
+            if not (arts & named or near):
+                continue
+            picks.append((0 if arts & named else 1, -len(arts & named), min(near) if near else 99,
+                          -score.get(j, 0.0), j))
+        for *_, j in sorted(picks)[:MAX_CASES]:
+            take(self.offset + j, True, extra=True)
+        got, seen = 0, set()
+        for query in (question, text):
+            for sc, cov, j in self.extra.search(query):
+                c = self.extra.chunks[j]
+                if not c.get("private") or j in seen:
+                    continue
+                if sc >= self.min_score and cov >= self.min_coverage and take(self.offset + j, True, extra=True) is not None:
+                    seen.add(j)
+                    got += 1
+                break
             if got >= MAX_BOOK:
                 break
-            if self.chunks[i].get("private") and sc >= self.min_score and cov >= self.min_coverage:
-                if take(i, True, extra=True) is not None:
-                    got += 1
 
     def _out(self, order, shared, claims):
         ranked = [i for i in order if i in shared] + [i for i in order if i not in shared]
