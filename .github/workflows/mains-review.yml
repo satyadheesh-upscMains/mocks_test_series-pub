@@ -1,10 +1,16 @@
 name: Mains review
 
+# Live queue for UPSC Mains practice feedback. Runs from the public runner repo's main branch and checks out the
+# private core. Each slot is one runner that claims submissions from the site one at a time and handles each end to
+# end (photo reading, 15 checks, second opinion, report), so student data stays in that runner's memory.
+#
+# To enable: copy this file to mocks_test_series-pub/.github/workflows/mains-review.yml on main, then set
+# vars.MAINS_WORKER_URL and secrets.MAINS_WORKER_SECRET + CORE_TOKEN (contents read on the core repo only).
 on:
   workflow_dispatch:
     inputs:
       smoke:
-        description: Review synthetic samples without any user data
+        description: Unit tests only, no user data
         type: boolean
         default: true
   repository_dispatch:
@@ -13,22 +19,44 @@ on:
     - cron: "11,41 * * * *"
 
 permissions: {}
-concurrency:
-  group: mains-${{ github.event_name == 'workflow_dispatch' && inputs.smoke && 'smoke' || 'queue' }}
-  cancel-in-progress: false
+env:
+  MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
+  PROJECTOR_KEY: mains-gemma-4-12b-mmproj-F32-v1
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 jobs:
-  review:
-    if: ${{ (github.event_name == 'workflow_dispatch' && inputs.smoke) || vars.MAINS_WORKER_URL != '' }}
+  smoke:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.smoke }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: main
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q Pillow==11.3.0 numpy==2.2.6
+      - run: python -m unittest test_examiner test_refs test_photo test_worker test_review test_v10 test_v11 2>&1 | tail -n 4
+
+  review:
+    if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.smoke) && vars.MAINS_WORKER_URL != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
     strategy:
       fail-fast: false
       matrix:
-        variant: ${{ fromJSON(github.event_name == 'workflow_dispatch' && inputs.smoke && '["en","hi"]' || '["queue"]') }}
+        slot: [1, 2, 3, 4]
+    concurrency:
+      group: mains-queue-${{ matrix.slot }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.smoke) }}
         with:
           repository: satyadheesh-upscMains/mocks_test_series-core
           ref: main
@@ -39,42 +67,29 @@ jobs:
         with:
           python-version: '3.11'
       - uses: actions/cache@v4
+        timeout-minutes: 12
+        continue-on-error: true
         with:
-          path: models
-          key: mains-gemma-4-12b-it-Q4_K_M-v1
-      - name: Install model runtime
-        run: pip install llama-cpp-python==0.3.36 huggingface-hub==0.36.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-      - name: Verify synthetic examples
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.smoke }}
-        env:
-          SMOKE_LANG: ${{ matrix.variant }}
-        run: |
-          python - <<'PY'
-          from huggingface_hub import hf_hub_download
-          from llama_cpp import Llama
-          import json, os, re
-          path = hf_hub_download("unsloth/gemma-4-12b-it-GGUF", "gemma-4-12b-it-Q4_K_M.gguf", local_dir="models")
-          model = Llama(model_path=path, n_ctx=2048, n_gpu_layers=0, verbose=False)
-          hi = os.environ["SMOKE_LANG"] == "hi"
-          question = "शहरी आर्द्रभूमि बाढ़ कम कैसे करती हैं?" if hi else "How do urban wetlands reduce flooding?"
-          answers = ("आर्द्रभूमि बारिश का पानी जमा करती हैं और बहाव कम करती हैं।", "क्रिकेट के मैच देखने बहुत लोग आते हैं।") if hi else (
-              "Wetlands hold water and reduce runoff.", "Cricket matches draw crowds.")
-          for answer, valid in zip(answers, (True, False)):
-              lang = "Hindi in Devanagari" if hi else "English"
-              out = model.create_chat_completion(
-                  messages=[{"role": "user", "content": f"Does the answer address the question? Write one short reason in {lang}. Question: {question} Answer: {answer}"}],
-                  response_format={"type":"json_object","schema":{"type":"object","required":["relevant","reason"],"properties":{"relevant":{"type":"boolean"},"reason":{"type":"string"}}}},
-                  temperature=0, max_tokens=256)
-              feedback = json.loads(out["choices"][0]["message"]["content"])
-              assert feedback["relevant"] is valid
-              assert len(feedback["reason"].strip()) >= 8
-              if hi:
-                  assert len(re.findall("[अ-ॿ]", feedback["reason"])) >= 6
-          print("Synthetic scope and feedback-language checks passed.")
-          PY
-      - name: Review pending submissions
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.smoke) }}
+          path: models/gemma-4-12b-it-Q4_K_M.gguf
+          key: ${{ env.MODEL_KEY }}
+      - uses: actions/cache@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models/mmproj-F32.gguf
+          key: ${{ env.PROJECTOR_KEY }}
+      - run: pip install -q ${{ env.RUNTIME }}
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 5
+        continue-on-error: true
+        with:
+          path: refs/cache
+          key: mains-ncert-polity-v1
+      - name: Build reference index (Constitution + NCERT, counts only)
+        timeout-minutes: 10
+        run: python tools/build_refs.py
+      - name: Review queued submissions
         env:
           MAINS_WORKER_URL: ${{ vars.MAINS_WORKER_URL }}
           MAINS_WORKER_SECRET: ${{ secrets.MAINS_WORKER_SECRET }}
-        run: python worker.py 2>/dev/null
+        run: python worker.py
