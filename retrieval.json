@@ -1,0 +1,1500 @@
+{
+ "polity-local": {
+  "shared": [
+   "Schedule 7",
+   "Article 244A",
+   "Article 243",
+   "Case: K. Krishna Murthy v Union of India (2010)"
+  ],
+  "planted": [
+   {
+    "phrase": "Election Commission of India",
+    "sentence": "s2",
+    "want": [
+     "243K"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Schedule 7",
+     "Article 244A",
+     "Article 243K",
+     "Article 243F",
+     "Article 243I"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 324",
+      0.864
+     ],
+     [
+      "Constitution of India, Article 243K",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 326",
+      0.844
+     ],
+     [
+      "Constitution of India, Article 324",
+      0.836
+     ],
+     [
+      "Constitution of India, Article 324",
+      0.835
+     ],
+     [
+      "Constitution of India, Article 71",
+      0.827
+     ],
+     [
+      "Constitution of India, Article 55",
+      0.827
+     ],
+     [
+      "Constitution of India, Article 51A",
+      0.827
+     ],
+     [
+      "Constitution of India, Article 58",
+      0.827
+     ],
+     [
+      "Constitution of India, Article 142",
+      0.826
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+      0.839
+     ],
+     [
+      "Case: Anoop Baranwal v Union of India (2023)",
+      0.827
+     ],
+     [
+      "Case: Re Presidential Reference (1998)",
+      0.807
+     ]
+    ]
+   },
+   {
+    "phrase": "all the subjects in the State List",
+    "sentence": "s4",
+    "want": [
+     "243G",
+     "SCH11"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 243B",
+     "Article 244A",
+     "Article 243K",
+     "Schedule 7",
+     "Article 243G"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 243D",
+      0.852
+     ],
+     [
+      "Constitution of India, Article 243C",
+      0.851
+     ],
+     [
+      "Constitution of India, Article 243K",
+      0.85
+     ],
+     [
+      "Constitution of India, Article 243C",
+      0.847
+     ],
+     [
+      "Constitution of India, Article 243B",
+      0.847
+     ],
+     [
+      "Constitution of India, Article 243H",
+      0.845
+     ],
+     [
+      "Constitution of India, Article 243D",
+      0.844
+     ],
+     [
+      "Constitution of India, Article 243N",
+      0.843
+     ],
+     [
+      "Constitution of India, Article 243I",
+      0.842
+     ],
+     [
+      "Constitution of India, Article 243J",
+      0.838
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: NHRC v State of Arunachal Pradesh (1996)",
+      0.82
+     ],
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.817
+     ],
+     [
+      "Case: I.R. Coelho v State of Tamil Nadu (2007)",
+      0.815
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-art21": {
+  "shared": [
+   "Article 21",
+   "Article 32",
+   "Article 124",
+   "Article 129",
+   "Article 130",
+   "Article 134A",
+   "Case: A.K. Gopalan v State of Madras (1950)",
+   "Case: Louis De Raedt v Union of India (1991)"
+  ],
+  "planted": [
+   {
+    "phrase": "only to citizens",
+    "sentence": "s2",
+    "want": [
+     "21"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 21",
+     "Article 32",
+     "Article 129",
+     "Article 124",
+     "Article 29"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 29",
+      0.849
+     ],
+     [
+      "Constitution of India, Article 19",
+      0.834
+     ],
+     [
+      "Constitution of India, Article 51A",
+      0.825
+     ],
+     [
+      "Constitution of India, Article 9",
+      0.824
+     ],
+     [
+      "Constitution of India, Article 19",
+      0.82
+     ],
+     [
+      "Constitution of India, Article 15",
+      0.817
+     ],
+     [
+      "Constitution of India, Article 8",
+      0.816
+     ],
+     [
+      "Constitution of India, Article 19",
+      0.815
+     ],
+     [
+      "Constitution of India, Article 16",
+      0.812
+     ],
+     [
+      "Constitution of India, Article 258",
+      0.811
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: NHRC v State of Arunachal Pradesh (1996)",
+      0.843
+     ],
+     [
+      "Case: Louis De Raedt v Union of India (1991)",
+      0.815
+     ],
+     [
+      "Case: Maneka Gandhi v Union of India (1978)",
+      0.806
+     ]
+    ]
+   },
+   {
+    "phrase": "High Court directly under Article 32",
+    "sentence": "s4",
+    "want": [
+     "32"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 21",
+     "Article 32",
+     "Article 129",
+     "Article 124",
+     "Article 226"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 35",
+      0.853
+     ],
+     [
+      "Constitution of India, Article 32",
+      0.851
+     ],
+     [
+      "Constitution of India, Article 226",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 226",
+      0.839
+     ],
+     [
+      "Constitution of India, Article 376",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 359",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 363",
+      0.836
+     ],
+     [
+      "Constitution of India, Article 232",
+      0.836
+     ],
+     [
+      "Constitution of India, Article 233A",
+      0.835
+     ],
+     [
+      "Constitution of India, Article 37",
+      0.833
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: Romesh Thappar v State of Madras (1950)",
+      0.85
+     ],
+     [
+      "Case: A.K. Gopalan v State of Madras (1950)",
+      0.85
+     ],
+     [
+      "Case: Maneka Gandhi v Union of India (1978)",
+      0.834
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-eci": {
+  "shared": [
+   "Article 324",
+   "Article 48A",
+   "Article 338",
+   "Article 338A",
+   "Article 338B",
+   "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+   "Case: Anoop Baranwal v Union of India (2023)"
+  ],
+  "planted": [
+   {
+    "phrase": "advice of the Prime Minister",
+    "sentence": "s2",
+    "want": [
+     "324"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 48A",
+     "Article 338A",
+     "Article 324",
+     "Article 338",
+     "Article 329A"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 324",
+      0.873
+     ],
+     [
+      "Constitution of India, Article 324",
+      0.871
+     ],
+     [
+      "Constitution of India, Article 317",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 78",
+      0.844
+     ],
+     [
+      "Constitution of India, Article 92",
+      0.843
+     ],
+     [
+      "Constitution of India, Article 185",
+      0.843
+     ],
+     [
+      "Constitution of India, Article 75",
+      0.842
+     ],
+     [
+      "Constitution of India, Article 243K",
+      0.842
+     ],
+     [
+      "Constitution of India, Article 310",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 167",
+      0.84
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+      0.835
+     ],
+     [
+      "Case: B.P. Singhal v Union of India (2010)",
+      0.829
+     ],
+     [
+      "Case: Shamsher Singh v State of Punjab (1974)",
+      0.817
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-governor": {
+  "shared": [
+   "Article 153",
+   "Article 155",
+   "Case: Shamsher Singh v State of Punjab (1974)",
+   "Case: Nabam Rebia v Deputy Speaker, Arunachal Pradesh (2016)"
+  ],
+  "planted": [
+   {
+    "phrase": "elected by the State Legislative Assembly",
+    "sentence": "s2",
+    "want": [
+     "155",
+     "156"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 153",
+     "Article 155",
+     "Article 156",
+     "Article 164",
+     "Article 157"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 164",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 172",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 174",
+      0.854
+     ],
+     [
+      "Constitution of India, Article 156",
+      0.853
+     ],
+     [
+      "Constitution of India, Article 316",
+      0.853
+     ],
+     [
+      "Constitution of India, Article 213",
+      0.852
+     ],
+     [
+      "Constitution of India, Article 158",
+      0.847
+     ],
+     [
+      "Constitution of India, Article 171",
+      0.846
+     ],
+     [
+      "Constitution of India, Schedule 6",
+      0.845
+     ],
+     [
+      "Constitution of India, Article 371",
+      0.843
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: B.P. Singhal v Union of India (2010)",
+      0.841
+     ],
+     [
+      "Case: Nabam Rebia v Deputy Speaker, Arunachal Pradesh (2016)",
+      0.84
+     ],
+     [
+      "Case: Shamsher Singh v State of Punjab (1974)",
+      0.81
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-amend": {
+  "shared": [
+   "Article 368",
+   "Article 109",
+   "Article 349",
+   "Article 4",
+   "Article 119",
+   "Case: Shankari Prasad v Union of India (1951)",
+   "Case: Kesavananda Bharati v State of Kerala (1973)"
+  ],
+  "planted": [
+   {
+    "phrase": "Every constitutional amendment must also be ratified",
+    "sentence": "s3",
+    "want": [
+     "368"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 109",
+     "Article 4",
+     "Article 368",
+     "Article 90",
+     "Article 118"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 194",
+      0.851
+     ],
+     [
+      "Constitution of India, Article 368",
+      0.849
+     ],
+     [
+      "Constitution of India, Article 80",
+      0.848
+     ],
+     [
+      "Constitution of India, Article 168",
+      0.848
+     ],
+     [
+      "Constitution of India, Article 368",
+      0.847
+     ],
+     [
+      "Constitution of India, Article 194",
+      0.844
+     ],
+     [
+      "Constitution of India, Article 169",
+      0.843
+     ],
+     [
+      "Constitution of India, Article 246",
+      0.842
+     ],
+     [
+      "Constitution of India, Article 306",
+      0.841
+     ],
+     [
+      "Constitution of India, Article 385",
+      0.839
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.807
+     ],
+     [
+      "Case: K. Krishna Murthy v Union of India (2010)",
+      0.805
+     ],
+     [
+      "Case: A.K. Gopalan v State of Madras (1950)",
+      0.804
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-moneybill": {
+  "shared": [
+   "Article 109",
+   "Article 110",
+   "Article 114",
+   "Article 107",
+   "Article 111",
+   "Article 80",
+   "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+   "Case: Rojer Mathew v South Indian Bank (2019)"
+  ],
+  "planted": [
+   {
+    "phrase": "introduced in either House",
+    "sentence": "s1",
+    "want": [
+     "109"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 109",
+     "Article 110",
+     "Article 114",
+     "Article 107",
+     "Article 111"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 107",
+      0.883
+     ],
+     [
+      "Constitution of India, Article 196",
+      0.871
+     ],
+     [
+      "Constitution of India, Article 110",
+      0.87
+     ],
+     [
+      "Constitution of India, Article 197",
+      0.868
+     ],
+     [
+      "Constitution of India, Article 199",
+      0.868
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.867
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.866
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.866
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.864
+     ],
+     [
+      "Constitution of India, Article 111",
+      0.856
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.824
+     ],
+     [
+      "Case: Rojer Mathew v South Indian Bank (2019)",
+      0.821
+     ],
+     [
+      "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      0.812
+     ]
+    ]
+   },
+   {
+    "phrase": "up to three months",
+    "sentence": "s3",
+    "want": [
+     "109"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 109",
+     "Article 110",
+     "Article 114",
+     "Article 107",
+     "Article 111"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 198",
+      0.865
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.863
+     ],
+     [
+      "Constitution of India, Article 197",
+      0.858
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 201",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 249",
+      0.839
+     ],
+     [
+      "Constitution of India, Article 196",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 110",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 275",
+      0.837
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.821
+     ],
+     [
+      "Case: Rojer Mathew v South Indian Bank (2019)",
+      0.819
+     ],
+     [
+      "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      0.815
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-356": {
+  "shared": [
+   "Article 356",
+   "Article 357",
+   "Case: S.R. Bommai v Union of India (1994)",
+   "Case: Rameshwar Prasad v Union of India (2006)"
+  ],
+  "planted": [
+   {
+    "phrase": "continue indefinitely",
+    "sentence": "s3",
+    "want": [
+     "356"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 357",
+     "Article 356",
+     "Article 360",
+     "Article 353",
+     "Article 352"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 339",
+      0.85
+     ],
+     [
+      "Constitution of India, Article 373",
+      0.85
+     ],
+     [
+      "Constitution of India, Article 372",
+      0.844
+     ],
+     [
+      "Constitution of India, Article 118",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 324",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 65",
+      0.839
+     ],
+     [
+      "Constitution of India, Article 352",
+      0.837
+     ],
+     [
+      "Constitution of India, Article 67",
+      0.836
+     ],
+     [
+      "Constitution of India, Schedule 6",
+      0.835
+     ],
+     [
+      "Constitution of India, Article 360",
+      0.834
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: Kishansing Tomar v Municipal Corporation of Ahmedabad (2006)",
+      0.821
+     ],
+     [
+      "Case: A.K. Gopalan v State of Madras (1950)",
+      0.815
+     ],
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.811
+     ]
+    ]
+   }
+  ]
+ },
+ "polity-dpsp": {
+  "shared": [
+   "Article 31C",
+   "Article 37",
+   "Article 11",
+   "Article 13",
+   "Article 38",
+   "Case: Minerva Mills v Union of India (1980)",
+   "Case: State of Madras v Champakam Dorairajan (1951)"
+  ],
+  "planted": [
+   {
+    "phrase": "enforced in courts in the same way",
+    "sentence": "s2",
+    "want": [
+     "37"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 31C",
+     "Article 37",
+     "Article 11",
+     "Article 13",
+     "Article 21A"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 37",
+      0.861
+     ],
+     [
+      "Constitution of India, Article 142",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 32",
+      0.848
+     ],
+     [
+      "Constitution of India, Article 145",
+      0.836
+     ],
+     [
+      "Constitution of India, Article 375",
+      0.832
+     ],
+     [
+      "Constitution of India, Article 135",
+      0.832
+     ],
+     [
+      "Constitution of India, Schedule 6",
+      0.831
+     ],
+     [
+      "Constitution of India, Article 374",
+      0.83
+     ],
+     [
+      "Constitution of India, Article 31C",
+      0.83
+     ],
+     [
+      "Constitution of India, Article 226",
+      0.83
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: State of Madras v Champakam Dorairajan (1951)",
+      0.87
+     ],
+     [
+      "Case: Minerva Mills v Union of India (1980)",
+      0.856
+     ],
+     [
+      "Case: Romesh Thappar v State of Madras (1950)",
+      0.829
+     ]
+    ]
+   }
+  ]
+ },
+ "band-strong-10": {
+  "shared": [
+   "Article 154",
+   "Article 163",
+   "Article 156",
+   "Article 356",
+   "Article 200",
+   "Article 153",
+   "Case: Shamsher Singh v State of Punjab (1974)",
+   "Case: B.P. Singhal v Union of India (2010)"
+  ],
+  "planted": []
+ },
+ "band-wrong-10": {
+  "shared": [
+   "Article 110",
+   "Article 109",
+   "Article 266",
+   "Article 117",
+   "Article 274",
+   "Article 107",
+   "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+   "Case: Rojer Mathew v South Indian Bank (2019)"
+  ],
+  "planted": [
+   {
+    "phrase": "introduced in either House",
+    "sentence": "s2",
+    "want": [
+     "109"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 109",
+     "Article 117",
+     "Article 274",
+     "Article 110",
+     "Article 111"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 109",
+      0.875
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.875
+     ],
+     [
+      "Constitution of India, Article 107",
+      0.872
+     ],
+     [
+      "Constitution of India, Article 110",
+      0.872
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.868
+     ],
+     [
+      "Constitution of India, Article 111",
+      0.868
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.866
+     ],
+     [
+      "Constitution of India, Article 196",
+      0.866
+     ],
+     [
+      "Constitution of India, Article 199",
+      0.865
+     ],
+     [
+      "Constitution of India, Article 368",
+      0.864
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.83
+     ],
+     [
+      "Case: Rojer Mathew v South Indian Bank (2019)",
+      0.819
+     ],
+     [
+      "Case: B.P. Singhal v Union of India (2010)",
+      0.803
+     ]
+    ]
+   },
+   {
+    "phrase": "up to three months",
+    "sentence": "s4",
+    "want": [
+     "109"
+    ],
+    "reached": true,
+    "claimSources": [
+     "Article 109",
+     "Article 107",
+     "Article 114",
+     "Article 110",
+     "Article 111"
+    ],
+    "embedding": [
+     [
+      "Constitution of India, Article 198",
+      0.865
+     ],
+     [
+      "Constitution of India, Article 198",
+      0.863
+     ],
+     [
+      "Constitution of India, Article 197",
+      0.858
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.855
+     ],
+     [
+      "Constitution of India, Article 201",
+      0.84
+     ],
+     [
+      "Constitution of India, Article 249",
+      0.839
+     ],
+     [
+      "Constitution of India, Article 196",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 110",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 109",
+      0.838
+     ],
+     [
+      "Constitution of India, Article 275",
+      0.837
+     ]
+    ],
+    "embeddingCasesAndBook": [
+     [
+      "Case: S.R. Bommai v Union of India (1994)",
+      0.821
+     ],
+     [
+      "Case: Rojer Mathew v South Indian Bank (2019)",
+      0.819
+     ],
+     [
+      "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      0.815
+     ]
+    ]
+   }
+  ]
+ },
+ "band-noform-10": {
+  "shared": [
+   "Article 37",
+   "Article 31C",
+   "Article 21A",
+   "Article 45",
+   "Article 13",
+   "Article 38",
+   "Case: State of Madras v Champakam Dorairajan (1951)",
+   "Case: Minerva Mills v Union of India (1980)"
+  ],
+  "planted": []
+ },
+ "band-strong-15": {
+  "shared": [
+   "Article 324"
+  ],
+  "planted": []
+ },
+ "band-offtopic-10": {
+  "shared": [
+   "Article 153",
+   "Article 155",
+   "Case: B.P. Singhal v Union of India (2010)"
+  ],
+  "planted": []
+ },
+ "wetlands": {
+  "shared": [],
+  "embedding": [
+   [
+    "Constitution of India, Article 297",
+    0.836
+   ],
+   [
+    "Constitution of India, Article 48A",
+    0.825
+   ],
+   [
+    "Constitution of India, Schedule 12",
+    0.824
+   ]
+  ]
+ },
+ "hindiProbes": [
+  {
+   "question": "राज्यपाल का चुनाव राज्य की विधानसभा पाँच वर्ष के लिए करती है।",
+   "want": [
+    "155",
+    "156"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 156",
+     0.827
+    ],
+    [
+     "Constitution of India, Article 210",
+     0.819
+    ],
+    [
+     "Constitution of India, Article 155",
+     0.817
+    ],
+    [
+     "Constitution of India, Article 174",
+     0.816
+    ],
+    [
+     "Constitution of India, Article 157",
+     0.816
+    ],
+    [
+     "Constitution of India, Schedule 6",
+     0.815
+    ],
+    [
+     "Constitution of India, Article 361",
+     0.813
+    ],
+    [
+     "Constitution of India, Article 164",
+     0.813
+    ],
+    [
+     "Constitution of India, Article 326",
+     0.813
+    ],
+    [
+     "Constitution of India, Article 213",
+     0.812
+    ]
+   ]
+  },
+  {
+   "question": "धन विधेयक संसद के किसी भी सदन में पेश किया जा सकता है।",
+   "want": [
+    "109",
+    "110"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 107",
+     0.836
+    ],
+    [
+     "Constitution of India, Article 361A",
+     0.834
+    ],
+    [
+     "Constitution of India, Article 250",
+     0.833
+    ],
+    [
+     "Constitution of India, Article 196",
+     0.832
+    ],
+    [
+     "Constitution of India, Article 198",
+     0.831
+    ],
+    [
+     "Constitution of India, Article 114",
+     0.831
+    ],
+    [
+     "Constitution of India, Article 246",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 120",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 109",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 204",
+     0.829
+    ]
+   ]
+  },
+  {
+   "question": "पंचायतों के चुनाव भारत का निर्वाचन आयोग कराता है।",
+   "want": [
+    "243K"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 243K",
+     0.834
+    ],
+    [
+     "Constitution of India, Article 243C",
+     0.824
+    ],
+    [
+     "Constitution of India, Article 344",
+     0.821
+    ],
+    [
+     "Constitution of India, Article 243C",
+     0.821
+    ],
+    [
+     "Constitution of India, Article 243ZD",
+     0.82
+    ],
+    [
+     "Constitution of India, Article 326",
+     0.818
+    ],
+    [
+     "Constitution of India, Article 124B",
+     0.818
+    ],
+    [
+     "Constitution of India, Article 340",
+     0.815
+    ],
+    [
+     "Constitution of India, Article 243D",
+     0.814
+    ],
+    [
+     "Constitution of India, Schedule 7",
+     0.814
+    ]
+   ]
+  },
+  {
+   "question": "राष्ट्रपति शासन अनिश्चित काल तक जारी रह सकता है।",
+   "want": [
+    "356"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 372",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 373",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 361",
+     0.824
+    ],
+    [
+     "Constitution of India, Article 71",
+     0.822
+    ],
+    [
+     "Constitution of India, Article 372",
+     0.82
+    ],
+    [
+     "Constitution of India, Article 65",
+     0.819
+    ],
+    [
+     "Constitution of India, Article 239B",
+     0.818
+    ],
+    [
+     "Constitution of India, Article 372",
+     0.817
+    ],
+    [
+     "Constitution of India, Article 123",
+     0.817
+    ],
+    [
+     "Constitution of India, Article 239AB",
+     0.817
+    ]
+   ]
+  },
+  {
+   "question": "नीति निदेशक तत्वों को मौलिक अधिकारों की तरह अदालत में लागू कराया जा सकता है।",
+   "want": [
+    "37"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 37",
+     0.842
+    ],
+    [
+     "Constitution of India, Article 32",
+     0.832
+    ],
+    [
+     "Constitution of India, Article 134",
+     0.831
+    ],
+    [
+     "Constitution of India, Schedule 6",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 374",
+     0.83
+    ],
+    [
+     "Constitution of India, Article 375",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 374",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 226",
+     0.827
+    ],
+    [
+     "Constitution of India, Schedule 6",
+     0.826
+    ],
+    [
+     "Constitution of India, Article 371D",
+     0.826
+    ]
+   ]
+  },
+  {
+   "question": "मुख्य निर्वाचन आयुक्त को प्रधानमंत्री की सलाह पर राष्ट्रपति हटा सकते हैं।",
+   "want": [
+    "324"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 324",
+     0.844
+    ],
+    [
+     "Constitution of India, Article 324",
+     0.836
+    ],
+    [
+     "Constitution of India, Article 317",
+     0.835
+    ],
+    [
+     "Constitution of India, Article 392",
+     0.834
+    ],
+    [
+     "Constitution of India, Article 92",
+     0.833
+    ],
+    [
+     "Constitution of India, Article 185",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 71",
+     0.827
+    ],
+    [
+     "Constitution of India, Article 90",
+     0.825
+    ],
+    [
+     "Constitution of India, Article 340",
+     0.822
+    ],
+    [
+     "Constitution of India, Article 94",
+     0.821
+    ]
+   ]
+  },
+  {
+   "question": "राज्यपाल की नियुक्ति कैसे होती है? भारत की संघीय व्यवस्था में राज्यपाल की स्थिति का विश्लेषण कीजिए।",
+   "want": [
+    "153",
+    "155",
+    "156"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 165",
+     0.837
+    ],
+    [
+     "Constitution of India, Article 361",
+     0.836
+    ],
+    [
+     "Constitution of India, Article 155",
+     0.833
+    ],
+    [
+     "Constitution of India, Article 157",
+     0.832
+    ],
+    [
+     "Constitution of India, Article 258A",
+     0.831
+    ],
+    [
+     "Constitution of India, Article 371J",
+     0.829
+    ],
+    [
+     "Constitution of India, Article 148",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 243I",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 166",
+     0.828
+    ],
+    [
+     "Constitution of India, Article 164",
+     0.826
+    ]
+   ]
+  },
+  {
+   "question": "धन विधेयक के पारित होने में राज्यसभा की भूमिका की चर्चा कीजिए।",
+   "want": [
+    "109",
+    "110"
+   ],
+   "keyword": [],
+   "embedding": [
+    [
+     "Constitution of India, Article 196",
+     0.842
+    ],
+    [
+     "Constitution of India, Article 274",
+     0.838
+    ],
+    [
+     "Constitution of India, Article 198",
+     0.837
+    ],
+    [
+     "Constitution of India, Article 249",
+     0.836
+    ],
+    [
+     "Constitution of India, Schedule 2",
+     0.836
+    ],
+    [
+     "Constitution of India, Schedule 7",
+     0.836
+    ],
+    [
+     "Constitution of India, Article 109",
+     0.835
+    ],
+    [
+     "Constitution of India, Article 334A",
+     0.835
+    ],
+    [
+     "Constitution of India, Article 107",
+     0.835
+    ],
+    [
+     "Constitution of India, Article 197",
+     0.833
+    ]
+   ]
+  }
+ ],
+ "embeddingSummary": {
+  "englishTop10": 10,
+  "english": 13,
+  "hindiTop10": 7,
+  "hindi": 8
+ }
+}

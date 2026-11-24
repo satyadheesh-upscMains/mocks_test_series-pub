@@ -1,0 +1,1129 @@
+{
+ "case": "band-noform-10",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": false,
+  "structure not rated good without an introduction and a conclusion": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "developing",
+  "levelLabel": "Developing",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Every part is answered, but 2 serious problems cost you credit.",
+  "summary": "You correctly identified the legal distinction regarding enforceability and the judicial need for harmony between the two concepts. However, the answer loses credit because it incorrectly limits the scope of Article 31C and fails to discuss the complementary nature of rights and principles. You should first clarify that Article 31C protects laws for all principles in Part IV and add a point on how they work together to achieve a welfare state.",
+  "levelWhy": [
+   "It has no introduction that sets the context.",
+   "It has no conclusion with a way forward.",
+   "It does not fully do what the question's command word asks.",
+   "It has 2 serious problems (see the fixes)."
+  ],
+  "formatNote": null,
+  "question": "Discuss the relationship between Fundamental Rights and Directive Principles of State Policy. (Answer in 150 words)",
+  "directives": [
+   {
+    "word": "Discuss",
+    "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "In Champakam Dorairajan (1951) the Supreme Court held that the Directive Principles must yield to the Fundamental Rights.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "The First Amendment then allowed special provisions for backward classes.",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+    "para": 1
+   },
+   {
+    "id": "s5",
+    "text": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c).",
+    "para": 1
+   },
+   {
+    "id": "s6",
+    "text": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+    "para": 1
+   },
+   {
+    "id": "s7",
+    "text": "The right to education in Article 21A began as a Directive Principle in Article 45.",
+    "para": 1
+   },
+   {
+    "id": "s8",
+    "text": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "the relationship between Fundamental Rights and Directive Principles of State Policy",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "You have correctly identified the legal status of both categories and the evolution of their relationship through judicial and legislative actions. However, ensure you distinguish between early judicial rulings and the final settled position of the Constitution.",
+    "checkedTwice": false,
+    "sentences": [
+     "s1",
+     "s8"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Parliament has the power to amend the Constitution under Article 368.",
+    "where": "Constitution and textbook basics",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s4",
+     "text": "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights."
+    },
+    "why": "Article 13(4) explicitly states that the prohibition on laws abridging fundamental rights does not apply to amendments made under Article 368.",
+    "tryWriting": null,
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 13",
+    "sourceRef": "r5",
+    "evidence": {
+     "wrongWords": "Parliament could not amend the Fundamental Rights",
+     "sourceWords": "Nothing in this article shall apply to any amendment of this Constitution made under article 368."
+    }
+   },
+   {
+    "n": 2,
+    "title": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to any of the principles laid down in Part IV.",
+    "where": "Constitution and textbook basics",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s5",
+     "text": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c)."
+    },
+    "why": "The extract shows that Article 31C protects laws giving effect to all or any of the principles in Part IV, not just specific ones like 39(b) and (c).",
+    "tryWriting": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to all or any of the principles laid down in Part IV.",
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 31C",
+    "sourceRef": "r2",
+    "evidence": {
+     "wrongWords": "protect laws giving effect to Article 39(b) and (c)",
+     "sourceWords": "no law giving effect to the policy of the State towards securing [all or any of the principles laid down in Part IV] shall be deemed to be void on the ground that it is inconsistent with, or takes away or abridges any of the rights conferred by [article 14 or article 19;]"
+    }
+   },
+   {
+    "n": 3,
+    "title": "Add a sentence explaining that they are complementary, with rights providing the means and principles providing the ends.",
+    "where": "Covered the key angles",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer lacks a clear discussion on the complementary nature of the two, such as how they work together to achieve a welfare state.",
+    "tryWriting": "The Fundamental Rights and Directive Principles are complementary; while rights protect individual liberty, the principles guide the state toward a social welfare objective.",
+    "checkedTwice": true,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "The sentence correctly identifies the legal distinction between the enforceability of Fundamental Rights and the non-enforceability of Directive Principles."
+     },
+     {
+      "where": "Did what the question asks",
+      "reason": "It establishes the fundamental legal distinction between the two categories by mentioning enforceability."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Correctly identifies the non-enforceable nature of Directive Principles as stated in Article 37."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s2",
+    "text": "In Champakam Dorairajan (1951) the Supreme Court held that the Directive Principles must yield to the Fundamental Rights.",
+    "credit": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The student correctly uses a specific court judgment to support the initial conflict between the two types of rights."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It correctly identifies the initial legal outcome where Fundamental Rights were prioritized over Directive Principles."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Concepts explained",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence names the case but does not explain the underlying principle of the conflict between the two sets of rights.",
+      "fix": "Explain that the court initially viewed the rights as mutually exclusive in a conflict.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s3",
+    "text": "The First Amendment then allowed special provisions for backward classes.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Clear wording",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The phrase 'special provisions' is vague; it does not specify what kind of provisions were allowed.",
+      "fix": "Specify that it allowed for the implementation of Directive Principles through special provisions.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s4",
+    "text": "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Constitution and textbook basics",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "Article 13(4) explicitly states that the prohibition on laws abridging fundamental rights does not apply to amendments made under Article 368.",
+      "fix": "Parliament has the power to amend the Constitution under Article 368.",
+      "fixNumber": 1,
+      "source": "Constitution of India, Article 13"
+     },
+     {
+      "where": "Stayed on topic",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "While this case is important for constitutional history, it focuses on the power to amend rights rather than the specific relationship or harmony between rights and principles.",
+      "fix": "Briefly explain how this case relates to the balance between rights and principles.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s5",
+    "text": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c).",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Constitution and textbook basics",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "The extract shows that Article 31C protects laws giving effect to all or any of the principles in Part IV, not just specific ones like 39(b) and (c).",
+      "fix": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to any of the principles laid down in Part IV.",
+      "fixNumber": 2,
+      "source": "Constitution of India, Article 31C"
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s6",
+    "text": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+    "credit": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The student provides a specific court judgment to show the judicial interpretation of the balance between rights and principles."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s7",
+    "text": "The right to education in Article 21A began as a Directive Principle in Article 45.",
+    "credit": [
+     {
+      "where": "Stayed on topic",
+      "reason": "It provides a concrete example of a Directive Principle being transformed into a Fundamental Right."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Accurately describes the transition of the right to education from a Directive Principle to a Fundamental Right."
+     },
+     {
+      "where": "Use of space",
+      "reason": "This sentence provides a specific example of a principle transitioning into a right, showing a practical evolution of the relationship."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Examples and evidence",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "While this shows a transition from a principle to a right, it does not explicitly explain the 'relationship' or 'harmony' between them as requested by the prompt.",
+      "fix": "Explain how this transition demonstrates the practical implementation of Directive Principles into Fundamental Rights.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s8",
+    "text": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "The sentence correctly identifies the judicial conclusion that there must be a harmony between Fundamental Rights and Directive Principles."
+     },
+     {
+      "where": "Did what the question asks",
+      "reason": "It provides a concluding point on the judicial stance regarding the balance between the two sets of principles."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It shows the final judicial outcome where the extension of one over the other was struck down to maintain harmony."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Covered the key angles",
+    "reason": "The answer lacks a clear discussion on the complementary nature of the two, such as how they work together to achieve a welfare state.",
+    "fix": "Add a sentence explaining that they are complementary, with rights providing the means and principles providing the ends.",
+    "fixNumber": 3,
+    "source": null
+   },
+   {
+    "where": "Constitution and textbook basics",
+    "reason": "The answer fails to mention that the harmony between Fundamental Rights and Directive Principles is part of the basic structure.",
+    "fix": "Include a statement about the harmony between the two being part of the basic structure.",
+    "fixNumber": null,
+    "source": "Case: Minerva Mills v Union of India (1980)"
+   },
+   {
+    "where": "Suggestions are workable",
+    "reason": "The answer describes the historical evolution and legal conflicts between the two concepts but does not offer any suggestions or measures to improve their relationship.",
+    "fix": "Add a concluding sentence suggesting a specific way to balance the two, such as through judicial interpretation that ensures harmony.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Structure",
+    "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "fixNumber": null,
+    "source": null
+   }
+  ],
+  "strengths": [
+   {
+    "where": "The question",
+    "sourceId": "s1",
+    "quote": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court.",
+    "reason": "The sentence correctly identifies the legal distinction between the enforceability of Fundamental Rights and the non-enforceability of Directive Principles."
+   },
+   {
+    "where": "The question",
+    "sourceId": "s8",
+    "quote": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.",
+    "reason": "The sentence correctly identifies the judicial conclusion that there must be a harmony between Fundamental Rights and Directive Principles."
+   },
+   {
+    "where": "Examples and evidence",
+    "sourceId": "s6",
+    "quote": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+    "reason": "The student provides a specific court judgment to show the judicial interpretation of the balance between rights and principles."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer provides a good chronological history of the legal friction between the two concepts. However, to fully 'discuss' the relationship, it needs a concluding synthesis on how they function together today."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer stays on topic by tracing the historical and legal evolution of the relationship between the two sets of provisions."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer effectively tracks the historical and legal evolution of the relationship through various amendments and cases. However, it focuses heavily on conflict and chronology rather than the conceptual synergy between the two."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer correctly identifies the legal status and the historical evolution of the relationship between the two sets of principles."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "Correctly identifies the non-enforceable nature of Directive Principles as stated in Article 37."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer is well-supported by specific legal cases and constitutional amendments. To improve, ensure the examples explicitly highlight the 'harmony' or 'balance' between the two concepts."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "wrong",
+    "verdictLabel": "Wrong",
+    "note": "You have correctly identified the legal status and the historical shift of specific rights. However, you missed the fundamental constitutional principle regarding their harmony."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer effectively traces the historical legal conflict between the two concepts but misses the core principle of their complementary relationship."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "You successfully identified historical legal conflicts and limits. To improve, you should explicitly mention the current principle of harmony between the two."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is a historical and legal discussion. Since the question asks to 'discuss' and not to 'suggest' measures, no suggestions were provided to evaluate."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer provides a good chronological history of the legal relationship but lacks the required structural components of an introduction and a conclusion."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer uses accurate legal terminology and clearly distinguishes between the two types of provisions. Adding more specific detail to the legislative actions would improve precision."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer uses the word count well to provide a chronological history of the legal conflict. However, it ends abruptly on a specific court case rather than summarizing the current balanced relationship."
+   }
+  ],
+  "stats": {
+   "words": 140,
+   "sentences": 8,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 45
+    }
+   ],
+   "uncreditedSentences": [],
+   "marks": 10,
+   "format": "gs-10",
+   "ratio": 0.93
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 37",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 31C",
+    "used": true
+   },
+   {
+    "label": "Constitution of India, Article 21A",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 45",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 13",
+    "used": true
+   },
+   {
+    "label": "Constitution of India, Article 38",
+    "used": false
+   },
+   {
+    "label": "Case: State of Madras v Champakam Dorairajan (1951)",
+    "used": false
+   },
+   {
+    "label": "Case: Minerva Mills v Union of India (1980)",
+    "used": true
+   }
+  ],
+  "trust": {
+   "secondOpinions": 9,
+   "overturned": 3,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [
+    "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+    "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c)."
+   ],
+   "levelWhy": [
+    "It has no introduction that sets the context.",
+    "It has no conclusion with a way forward.",
+    "It does not fully do what the question's command word asks.",
+    "It has 2 serious problems (see the fixes)."
+   ]
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 478.8,
+   "prompt_tokens": 2384,
+   "output_tokens": 278,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 451.3,
+   "prompt_tokens": 2289,
+   "output_tokens": 247,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 445.2,
+   "prompt_tokens": 2282,
+   "output_tokens": 243,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 448.6,
+   "prompt_tokens": 2263,
+   "output_tokens": 242,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 483.4,
+   "prompt_tokens": 2307,
+   "output_tokens": 258,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 315.0,
+   "prompt_tokens": 2387,
+   "output_tokens": 272,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 469.4,
+   "prompt_tokens": 2305,
+   "output_tokens": 275,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 527.4,
+   "prompt_tokens": 3393,
+   "output_tokens": 227,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 595.0,
+   "prompt_tokens": 3325,
+   "output_tokens": 155,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 413.0,
+   "prompt_tokens": 3668,
+   "output_tokens": 169,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 417.2,
+   "prompt_tokens": 3442,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 1,
+   "seconds": 692.1,
+   "prompt_tokens": 3446,
+   "output_tokens": 307,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s6",
+   "attempt": 1,
+   "seconds": 533.7,
+   "prompt_tokens": 3393,
+   "output_tokens": 251,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s7",
+   "attempt": 1,
+   "seconds": 447.4,
+   "prompt_tokens": 3019,
+   "output_tokens": 158,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s8",
+   "attempt": 1,
+   "seconds": 551.7,
+   "prompt_tokens": 3282,
+   "output_tokens": 328,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 405.1,
+   "prompt_tokens": 2379,
+   "output_tokens": 235,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 366.0,
+   "prompt_tokens": 2280,
+   "output_tokens": 238,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 388.6,
+   "prompt_tokens": 2303,
+   "output_tokens": 279,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 41.5,
+   "prompt_tokens": 204,
+   "output_tokens": 36,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 460.9,
+   "prompt_tokens": 2323,
+   "output_tokens": 262,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 397.7,
+   "prompt_tokens": 2361,
+   "output_tokens": 253,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 288.0,
+   "prompt_tokens": 2290,
+   "output_tokens": 244,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 443.4,
+   "prompt_tokens": 2387,
+   "output_tokens": 165,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 556.2,
+   "prompt_tokens": 2455,
+   "output_tokens": 462,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 243.6,
+   "prompt_tokens": 2467,
+   "output_tokens": 57,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 74.9,
+   "prompt_tokens": 2460,
+   "output_tokens": 70,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 69.8,
+   "prompt_tokens": 2447,
+   "output_tokens": 62,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 41.0,
+   "prompt_tokens": 2124,
+   "output_tokens": 66,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 32.9,
+   "prompt_tokens": 2105,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 39.4,
+   "prompt_tokens": 2112,
+   "output_tokens": 64,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 36.0,
+   "prompt_tokens": 2135,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 31.6,
+   "prompt_tokens": 2103,
+   "output_tokens": 42,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 29.0,
+   "prompt_tokens": 2094,
+   "output_tokens": 35,
+   "status": "ok"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:1",
+   "attempt": 1,
+   "seconds": 56.2,
+   "prompt_tokens": 2256,
+   "output_tokens": 59,
+   "status": "rejected",
+   "reason": "correct:unsourced_number"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:1",
+   "attempt": 2,
+   "seconds": 21.6,
+   "prompt_tokens": 2283,
+   "output_tokens": 58,
+   "status": "rejected",
+   "reason": "correct:unsourced_number"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:2",
+   "attempt": 1,
+   "seconds": 37.4,
+   "prompt_tokens": 2196,
+   "output_tokens": 36,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 68.4,
+   "prompt_tokens": 2287,
+   "output_tokens": 89,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 11398.4,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 37",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 31C",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  {
+   "id": "r3",
+   "label": "Constitution of India, Article 21A",
+   "shared": true,
+   "claims": [
+    "s2",
+    "s7"
+   ]
+  },
+  {
+   "id": "r4",
+   "label": "Constitution of India, Article 45",
+   "shared": true,
+   "claims": [
+    "s7"
+   ]
+  },
+  {
+   "id": "r5",
+   "label": "Constitution of India, Article 13",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s8"
+   ]
+  },
+  {
+   "id": "r6",
+   "label": "Constitution of India, Article 38",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r7",
+   "label": "Case: State of Madras v Champakam Dorairajan (1951)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r8",
+   "label": "Case: Minerva Mills v Union of India (1980)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r9",
+   "label": "Constitution of India, Article 32",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s2",
+    "s4",
+    "s6"
+   ]
+  },
+  {
+   "id": "r10",
+   "label": "Constitution of India, Article 34",
+   "shared": false,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r11",
+   "label": "Constitution of India, Article 15",
+   "shared": false,
+   "claims": [
+    "s3"
+   ]
+  },
+  {
+   "id": "r12",
+   "label": "Constitution of India, Article 16",
+   "shared": false,
+   "claims": [
+    "s3"
+   ]
+  },
+  {
+   "id": "r13",
+   "label": "Constitution of India, Article 33",
+   "shared": false,
+   "claims": [
+    "s4"
+   ]
+  },
+  {
+   "id": "r14",
+   "label": "Constitution of India, Article 35",
+   "shared": false,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r15",
+   "label": "Constitution of India, Article 32A",
+   "shared": false,
+   "claims": [
+    "s5",
+    "s8"
+   ]
+  },
+  {
+   "id": "r16",
+   "label": "Constitution of India, Article 31D",
+   "shared": false,
+   "claims": [
+    "s6",
+    "s8"
+   ]
+  },
+  {
+   "id": "r17",
+   "label": "Constitution of India, Article 41",
+   "shared": false,
+   "claims": [
+    "s7"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  },
+  {
+   "id": "facts:s5",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  },
+  {
+   "id": "facts:s6",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s7",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s8",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  }
+ ]
+}

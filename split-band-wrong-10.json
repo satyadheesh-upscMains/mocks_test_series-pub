@@ -1,0 +1,1020 @@
+{
+ "case": "band-wrong-10",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: introduced in either House": true,
+  "cited: introduced in either House": true,
+  "caught: up to three months": true,
+  "cited: up to three months": true,
+  "no red marks on correct sentences": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "developing",
+  "levelLabel": "Developing",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Every part is answered, but 2 serious problems cost you credit.",
+  "summary": "You correctly identified the Rajya Sabha's role in receiving recommendations and its limited power to suggest changes. However, you lost credit for stating that Money Bills can be introduced in either House and for providing an incorrect timeframe for the Rajya Sabha's response. You must first correct these by noting that Money Bills cannot be introduced in the Council of States and must be returned within fourteen days.",
+  "levelWhy": [
+   "It has 2 serious problems (see the fixes)."
+  ],
+  "formatNote": null,
+  "question": "Discuss the role of the Rajya Sabha in the passage of Money Bills. (Answer in 150 words)",
+  "directives": [
+   {
+    "word": "Discuss",
+    "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President.",
+    "para": 2
+   },
+   {
+    "id": "s3",
+    "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+    "para": 2
+   },
+   {
+    "id": "s4",
+    "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+    "para": 2
+   },
+   {
+    "id": "s5",
+    "text": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+    "para": 2
+   },
+   {
+    "id": "s6",
+    "text": "The Speaker's certificate that a Bill is a Money Bill is final under Article 110(3).",
+    "para": 2
+   },
+   {
+    "id": "s7",
+    "text": "The passage of the Aadhaar Act as a Money Bill showed how this certificate can narrow the Rajya Sabha's role.",
+    "para": 2
+   },
+   {
+    "id": "s8",
+    "text": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.",
+    "para": 3
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "the role of the Rajya Sabha in the passage of Money Bills",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "It correctly identifies that the Rajya Sabha receives the Bill for recommendations after the Lok Sabha passes it.",
+    "checkedTwice": false,
+    "sentences": [
+     "s3",
+     "s5"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "A Money Bill can only be introduced in the House of the People on the recommendation of the President.",
+    "where": "Constitution and textbook basics",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s2",
+     "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President."
+    },
+    "why": "The extract explicitly states that a Money Bill cannot be introduced in the Council of States (Rajya Sabha).",
+    "tryWriting": "A Money Bill shall not be introduced in the Council of States.",
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 109",
+    "sourceRef": "r2",
+    "evidence": {
+     "wrongWords": "introduced in either House",
+     "sourceWords": "A Money Bill shall not be introduced in the Council of States."
+    }
+   },
+   {
+    "n": 2,
+    "title": "The Rajya Sabha must return a Money Bill within fourteen days of its receipt.",
+    "where": "Constitution and textbook basics",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s4",
+     "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it."
+    },
+    "why": "The extract states that the Council of States must return the bill within fourteen days, not three months.",
+    "tryWriting": "The Rajya Sabha shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People with its recommendations.",
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 109",
+    "sourceRef": "r2",
+    "evidence": {
+     "wrongWords": "up to three months",
+     "sourceWords": "the Council of States shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People with its recommendations"
+    }
+   },
+   {
+    "n": 3,
+    "title": "State that a Money Bill shall not be introduced in the Council of States.",
+    "where": "Constitution and textbook basics",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The student claims a Money Bill can be introduced in either House, but the source explicitly states it cannot be introduced in the Council of States.",
+    "tryWriting": null,
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 109",
+    "sourceRef": "r2",
+    "evidence": null
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.",
+    "credit": [
+     {
+      "where": "Stayed on topic",
+      "reason": "The sentence correctly identifies the core subject of the question by mentioning the definition and passage of Money Bills."
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence correctly identifies the core components of a Money Bill as defined in the Constitution, such as taxes and the Consolidated Fund."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Correctly identifies the definition of Money Bills and the relevant Article."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s2",
+    "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Constitution and textbook basics",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "The extract explicitly states that a Money Bill cannot be introduced in the Council of States (Rajya Sabha).",
+      "fix": "A Money Bill can only be introduced in the House of the People on the recommendation of the President.",
+      "fixNumber": 1,
+      "source": "Constitution of India, Article 109"
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s3",
+    "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "It correctly identifies that the Rajya Sabha receives the Bill for recommendations after the Lok Sabha passes it."
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The sentence correctly identifies that a Money Bill is transmitted to the Council of States for recommendations after being passed by the House of the People."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It correctly identifies the sequence where the passage by the first House leads to the transmission to the Rajya Sabha."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Constitution and textbook basics",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "The extract states that the Council of States must return the bill within fourteen days, not three months.",
+      "fix": "The Rajya Sabha must return a Money Bill within fourteen days of its receipt.",
+      "fixNumber": 2,
+      "source": "Constitution of India, Article 109"
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s5",
+    "text": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "It accurately describes the limited power of the Rajya Sabha to only suggest changes rather than reject or amend the Bill."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It explains the effect of the Rajya Sabha's role, which is limited to making recommendations that the first House can choose to ignore."
+     },
+     {
+      "where": "Use of space",
+      "reason": "This sentence efficiently explains the limited power of the Rajya Sabha without using filler words."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s6",
+    "text": "The Speaker's certificate that a Bill is a Money Bill is final under Article 110(3).",
+    "credit": [
+     {
+      "where": "Facts are accurate",
+      "reason": "Correctly identifies the finality of the Speaker's certificate under the specific Article."
+     },
+     {
+      "where": "Clear wording",
+      "reason": "The sentence correctly identifies the 'Speaker's certificate' as the specific mechanism for determining the status of a Money Bill."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s7",
+    "text": "The passage of the Aadhaar Act as a Money Bill showed how this certificate can narrow the Rajya Sabha's role.",
+    "credit": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The sentence addresses the legal and procedural dimension by discussing the judicial interpretation of the certification process."
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The student uses a specific legislative example to illustrate how the certification power affects the Rajya Sabha's role."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s8",
+    "text": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.",
+    "credit": [
+     {
+      "where": "Did what the question asks",
+      "reason": "It provides a balanced conclusion by acknowledging the financial primacy of the Lok Sabha while suggesting a need for restraint in certification."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "The sentence concludes by discussing the balance of power between the two Houses regarding these specific bills."
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The sentence identifies a limitation on the Rajya Sabha's role by highlighting the risk of being bypassed due to the certification power."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Constitution and textbook basics",
+    "reason": "The student claims a Money Bill can be introduced in either House, but the source explicitly states it cannot be introduced in the Council of States.",
+    "fix": "State that a Money Bill shall not be introduced in the Council of States.",
+    "fixNumber": 3,
+    "source": "Constitution of India, Article 109"
+   }
+  ],
+  "strengths": [
+   {
+    "where": "The question",
+    "sourceId": "s3",
+    "quote": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+    "reason": "It correctly identifies that the Rajya Sabha receives the Bill for recommendations after the Lok Sabha passes it."
+   },
+   {
+    "where": "The question",
+    "sourceId": "s5",
+    "quote": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+    "reason": "It accurately describes the limited power of the Rajya Sabha to only suggest changes rather than reject or amend the Bill."
+   },
+   {
+    "where": "Did what the question asks",
+    "sourceId": "s8",
+    "quote": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.",
+    "reason": "It provides a balanced conclusion by acknowledging the financial primacy of the Lok Sabha while suggesting a need for restraint in certification."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "It explains the limited power of the Rajya Sabha to suggest changes without the power to reject or amend, showing one side of its role."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence correctly identifies the core subject of the question by mentioning the definition and passage of Money Bills."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence identifies the political and federal dimension by discussing the balance of power between the two Houses."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence correctly identifies the core components of a Money Bill as defined in the Constitution, such as taxes and the Consolidated Fund."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "Correctly identifies the definition of Money Bills and the relevant Article."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The student uses a specific legislative example to illustrate how the certification power affects the Rajya Sabha's role."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "wrong",
+    "verdictLabel": "Wrong",
+    "note": "You correctly identified the definition and the Speaker's power, but you made a significant error regarding where a Money Bill can be introduced. You also missed the specific timeframe for the Rajya Sabha's response."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "It correctly identifies the sequence where the passage by the first House leads to the transmission to the Rajya Sabha."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence identifies a limitation on the Rajya Sabha's role by highlighting the risk of being bypassed due to the certification power."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer identifies a valid problem regarding the bypassing of the Rajya Sabha but fails to provide a workable, specific mechanism for the suggested fix."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "It provides a clear definition of Money Bills and sets the context of parliamentary balance."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence correctly identifies the 'Speaker's certificate' as the specific mechanism for determining the status of a Money Bill."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "This sentence efficiently explains the limited power of the Rajya Sabha without using filler words."
+   }
+  ],
+  "stats": {
+   "words": 156,
+   "sentences": 8,
+   "paragraphs": 3,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 37
+    }
+   ],
+   "uncreditedSentences": [],
+   "marks": 10,
+   "format": "gs-10",
+   "ratio": 1.04
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 110",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 109",
+    "used": true
+   },
+   {
+    "label": "Constitution of India, Article 266",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 117",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 274",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 107",
+    "used": false
+   },
+   {
+    "label": "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+    "used": false
+   },
+   {
+    "label": "Case: Rojer Mathew v South Indian Bank (2019)",
+    "used": false
+   }
+  ],
+  "trust": {
+   "secondOpinions": 3,
+   "overturned": 0,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [],
+   "levelWhy": [
+    "It has 2 serious problems (see the fixes)."
+   ]
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 546.7,
+   "prompt_tokens": 2706,
+   "output_tokens": 310,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 492.8,
+   "prompt_tokens": 2611,
+   "output_tokens": 212,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 441.3,
+   "prompt_tokens": 2604,
+   "output_tokens": 316,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 444.0,
+   "prompt_tokens": 2585,
+   "output_tokens": 253,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 418.9,
+   "prompt_tokens": 2629,
+   "output_tokens": 233,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 568.5,
+   "prompt_tokens": 2709,
+   "output_tokens": 333,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 527.0,
+   "prompt_tokens": 2627,
+   "output_tokens": 274,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 683.0,
+   "prompt_tokens": 4232,
+   "output_tokens": 276,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 769.6,
+   "prompt_tokens": 4049,
+   "output_tokens": 210,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 656.2,
+   "prompt_tokens": 4103,
+   "output_tokens": 260,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 769.3,
+   "prompt_tokens": 4049,
+   "output_tokens": 224,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 1,
+   "seconds": 681.5,
+   "prompt_tokens": 4260,
+   "output_tokens": 251,
+   "status": "rejected",
+   "reason": "fact:wrong_words"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 2,
+   "seconds": 95.9,
+   "prompt_tokens": 4286,
+   "output_tokens": 213,
+   "status": "rejected",
+   "reason": "fact:wrong_words"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s6",
+   "attempt": 1,
+   "seconds": 668.7,
+   "prompt_tokens": 4118,
+   "output_tokens": 312,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s7",
+   "attempt": 1,
+   "seconds": 787.8,
+   "prompt_tokens": 4084,
+   "output_tokens": 257,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s8",
+   "attempt": 1,
+   "seconds": 743.7,
+   "prompt_tokens": 4180,
+   "output_tokens": 259,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 343.6,
+   "prompt_tokens": 2702,
+   "output_tokens": 319,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 511.5,
+   "prompt_tokens": 2602,
+   "output_tokens": 258,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 486.7,
+   "prompt_tokens": 2626,
+   "output_tokens": 332,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 42.6,
+   "prompt_tokens": 205,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 532.3,
+   "prompt_tokens": 2645,
+   "output_tokens": 293,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 466.1,
+   "prompt_tokens": 2683,
+   "output_tokens": 331,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 410.0,
+   "prompt_tokens": 2612,
+   "output_tokens": 232,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 424.2,
+   "prompt_tokens": 2709,
+   "output_tokens": 240,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 512.7,
+   "prompt_tokens": 2777,
+   "output_tokens": 379,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 356.6,
+   "prompt_tokens": 2773,
+   "output_tokens": 56,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 90.1,
+   "prompt_tokens": 2790,
+   "output_tokens": 45,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 80.3,
+   "prompt_tokens": 2686,
+   "output_tokens": 52,
+   "status": "ok"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:1",
+   "attempt": 1,
+   "seconds": 59.8,
+   "prompt_tokens": 2571,
+   "output_tokens": 20,
+   "status": "ok"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:2",
+   "attempt": 1,
+   "seconds": 59.4,
+   "prompt_tokens": 2569,
+   "output_tokens": 39,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 84.8,
+   "prompt_tokens": 2568,
+   "output_tokens": 82,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 13755.6,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 110",
+   "shared": true,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 109",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  {
+   "id": "r3",
+   "label": "Constitution of India, Article 266",
+   "shared": true,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r4",
+   "label": "Constitution of India, Article 117",
+   "shared": true,
+   "claims": [
+    "s2",
+    "s3",
+    "s6",
+    "s8"
+   ]
+  },
+  {
+   "id": "r5",
+   "label": "Constitution of India, Article 274",
+   "shared": true,
+   "claims": [
+    "s2",
+    "s3"
+   ]
+  },
+  {
+   "id": "r6",
+   "label": "Constitution of India, Article 107",
+   "shared": true,
+   "claims": [
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  {
+   "id": "r7",
+   "label": "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r8",
+   "label": "Case: Rojer Mathew v South Indian Bank (2019)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r9",
+   "label": "Constitution of India, Article 114",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s4",
+    "s6"
+   ]
+  },
+  {
+   "id": "r10",
+   "label": "Constitution of India, Article 293",
+   "shared": false,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r11",
+   "label": "Constitution of India, Article 110",
+   "shared": false,
+   "claims": [
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+   ]
+  },
+  {
+   "id": "r12",
+   "label": "Constitution of India, Article 111",
+   "shared": false,
+   "claims": [
+    "s2",
+    "s4"
+   ]
+  },
+  {
+   "id": "r13",
+   "label": "Constitution of India, Article 108",
+   "shared": false,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r14",
+   "label": "Constitution of India, Article 81",
+   "shared": false,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r15",
+   "label": "Constitution of India, Article 108",
+   "shared": false,
+   "claims": [
+    "s7"
+   ]
+  },
+  {
+   "id": "r16",
+   "label": "Constitution of India, Article 80",
+   "shared": false,
+   "claims": [
+    "s7",
+    "s8"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  },
+  {
+   "id": "facts:s5",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": true,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s6",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s7",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s8",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  }
+ ]
+}

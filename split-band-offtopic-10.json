@@ -1,0 +1,687 @@
+{
+ "case": "band-offtopic-10",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "a short answer is not Good or Strong": true,
+  "level is off_track": true,
+  "the report says what stops the next level": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "off_track",
+  "levelLabel": "Off track",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "This answer does not yet address the question.",
+  "summary": "The answer does not address the question as it discusses urban wetlands instead of the Governor's role. You must rewrite the entire answer to focus on the constitutional position of the Governor and expand the content to meet the 150-word limit. Start by adding a one- or two-sentence introduction to set the context.",
+  "levelWhy": [
+   "The answer does not yet address the question."
+  ],
+  "formatNote": null,
+  "question": "Analyse the position of the Governor in India's federal structure. (Answer in 150 words)",
+  "directives": [
+   {
+    "word": "Analyse",
+    "meaning": "Break the issue into its parts and show how they connect and what follows from them."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "They recharge groundwater and keep cities cooler in summer.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "Encroachment and dumping of waste have shrunk many of them.",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "Municipalities should map their wetlands, stop construction on their beds and involve local communities in protecting them.",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "the position of the Governor in India's federal structure",
+    "status": "missing",
+    "statusLabel": "Missing",
+    "note": "The answer is completely irrelevant to the question asked. It discusses environmental issues rather than the political and constitutional role of the Governor.",
+    "checkedTwice": true,
+    "sentences": []
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Rewrite the entire answer to discuss the constitutional role, powers, and position of the Governor.",
+    "where": "The question",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The entire answer discusses urban wetlands and municipal actions instead of the role of the Governor in the federal structure.",
+    "tryWriting": null,
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 2,
+    "title": "Write about 150 words: this answer has 50.",
+    "where": "Use of space",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The word limit tells you how much a 10-mark answer needs. At 50 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+    "tryWriting": null,
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 3,
+    "title": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "where": "Structure",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "tryWriting": null,
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   }
+  ],
+  "highlights": [],
+  "missing": [
+   {
+    "partId": "p1",
+    "where": "The question",
+    "partText": "the position of the Governor in India's federal structure",
+    "reason": "The entire answer discusses urban wetlands and municipal actions instead of the role of the Governor in the federal structure.",
+    "fix": "Rewrite the entire answer to discuss the constitutional role, powers, and position of the Governor.",
+    "fixNumber": 1,
+    "source": null
+   }
+  ],
+  "additions": [
+   {
+    "where": "Structure",
+    "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+    "fixNumber": 3,
+    "source": null
+   },
+   {
+    "where": "Structure",
+    "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+    "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Structure",
+    "reason": "Make about 5 distinct points in the body; it has 0.",
+    "fix": "Make about 5 distinct points in the body; it has 0.",
+    "fixNumber": null,
+    "source": null
+   }
+  ],
+  "strengths": [],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The response does not address the question at all. It provides information on environmental issues instead of the political and constitutional role of the Governor."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is entirely off-topic. It addresses environmental issues instead of the political and constitutional role of the Governor."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely off-topic. It addresses urban ecology instead of the political and constitutional role of the Governor."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is entirely off-topic. It addresses environmental issues instead of the political and constitutional role of the Governor."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is completely off-topic. It addresses urban wetlands instead of the Governor's role in the federal system."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "wrong",
+    "verdictLabel": "Wrong",
+    "note": "The answer is completely irrelevant to the question asked. It discusses environmental issues instead of the constitutional role of the Governor."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely irrelevant to the question asked. It discusses urban wetlands instead of the constitutional position of the Governor."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is entirely off-topic. It addresses environmental issues instead of the political and constitutional role of the Governor."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely irrelevant to the question asked. It discusses urban wetlands instead of the Governor's role in federalism."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is entirely irrelevant to the question asked. It discusses urban wetlands instead of the Governor's role in the federal structure."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely irrelevant to the question asked. It discusses environmental issues instead of the constitutional role of the Governor."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely irrelevant to the question asked. It discusses environmental issues instead of the constitutional role of the Governor."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "missing",
+    "verdictLabel": "Missing",
+    "note": "The answer is completely off-topic. It discusses environmental issues instead of the political and constitutional role of the Governor."
+   }
+  ],
+  "stats": {
+   "words": 50,
+   "sentences": 4,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 0
+    }
+   ],
+   "uncreditedSentences": [
+    {
+     "sourceId": "s1",
+     "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once."
+    },
+    {
+     "sourceId": "s2",
+     "text": "They recharge groundwater and keep cities cooler in summer."
+    },
+    {
+     "sourceId": "s3",
+     "text": "Encroachment and dumping of waste have shrunk many of them."
+    },
+    {
+     "sourceId": "s4",
+     "text": "Municipalities should map their wetlands, stop construction on their beds and involve local communities in protecting them."
+    }
+   ],
+   "marks": 10,
+   "format": "gs-10",
+   "ratio": 0.33
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 153",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 155",
+    "used": false
+   },
+   {
+    "label": "Case: B.P. Singhal v Union of India (2010)",
+    "used": false
+   }
+  ],
+  "trust": {
+   "secondOpinions": 7,
+   "overturned": 0,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [],
+   "levelWhy": [
+    "The answer does not yet address the question."
+   ]
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 288.6,
+   "prompt_tokens": 1461,
+   "output_tokens": 197,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 275.6,
+   "prompt_tokens": 1366,
+   "output_tokens": 192,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 180.3,
+   "prompt_tokens": 1359,
+   "output_tokens": 185,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 226.6,
+   "prompt_tokens": 1340,
+   "output_tokens": 195,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 280.1,
+   "prompt_tokens": 1384,
+   "output_tokens": 198,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 284.0,
+   "prompt_tokens": 1462,
+   "output_tokens": 201,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 279.7,
+   "prompt_tokens": 1382,
+   "output_tokens": 186,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 280.2,
+   "prompt_tokens": 2310,
+   "output_tokens": 198,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 333.3,
+   "prompt_tokens": 2126,
+   "output_tokens": 203,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 262.3,
+   "prompt_tokens": 2129,
+   "output_tokens": 194,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 338.4,
+   "prompt_tokens": 2178,
+   "output_tokens": 194,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 187.6,
+   "prompt_tokens": 1456,
+   "output_tokens": 192,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 270.5,
+   "prompt_tokens": 1357,
+   "output_tokens": 170,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 224.6,
+   "prompt_tokens": 1380,
+   "output_tokens": 187,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 42.9,
+   "prompt_tokens": 205,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 314.7,
+   "prompt_tokens": 1400,
+   "output_tokens": 261,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 314.1,
+   "prompt_tokens": 1438,
+   "output_tokens": 254,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 261.6,
+   "prompt_tokens": 1367,
+   "output_tokens": 167,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 248.9,
+   "prompt_tokens": 1464,
+   "output_tokens": 158,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 269.4,
+   "prompt_tokens": 1532,
+   "output_tokens": 258,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 154.3,
+   "prompt_tokens": 1167,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 39.6,
+   "prompt_tokens": 1180,
+   "output_tokens": 41,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 40.0,
+   "prompt_tokens": 1178,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 37.8,
+   "prompt_tokens": 1169,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 37.6,
+   "prompt_tokens": 1175,
+   "output_tokens": 38,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 39.0,
+   "prompt_tokens": 1176,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 39.5,
+   "prompt_tokens": 1177,
+   "output_tokens": 43,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 64.1,
+   "prompt_tokens": 1261,
+   "output_tokens": 72,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 5615.3,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 153",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 155",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ]
+  },
+  {
+   "id": "r3",
+   "label": "Case: B.P. Singhal v Union of India (2010)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r4",
+   "label": "Constitution of India, Article 156",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s2",
+    "s3"
+   ]
+  },
+  {
+   "id": "r5",
+   "label": "Constitution of India, Article 158",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ]
+  },
+  {
+   "id": "r6",
+   "label": "Constitution of India, Article 159",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s4"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  }
+ ]
+}

@@ -1,0 +1,1021 @@
+{
+ "case": "band-strong-10",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "developing",
+  "levelLabel": "Developing",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Every part is answered. The fixes below will make it stronger.",
+  "summary": "The answer successfully identifies the Governor as a bridge between the Union and States and correctly links the office to constitutional provisions for executive power and the aid and advice of the Council of Ministers. To improve, you should explicitly state that every State must have a Governor and clarify how the Governor's specific powers impact federal stability. You should first specify that constitutional discretion must be limited to the areas defined by the judiciary.",
+  "levelWhy": [
+   "It does not fully do what the question's command word asks."
+  ],
+  "formatNote": null,
+  "question": "Analyse the position of the Governor in India's federal structure. (Answer in 150 words)",
+  "directives": [
+   {
+    "word": "Analyse",
+    "meaning": "Break the issue into its parts and show how they connect and what follows from them."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "Because the Governor is appointed by the President, the office sits where the Union and the States meet.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+    "para": 2
+   },
+   {
+    "id": "s4",
+    "text": "As a link with the Union, the Governor holds office during the pleasure of the President under Article 156.",
+    "para": 2
+   },
+   {
+    "id": "s5",
+    "text": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200.",
+    "para": 2
+   },
+   {
+    "id": "s6",
+    "text": "Discretion in inviting a party to form the government after a hung verdict has often caused Centre-State friction.",
+    "para": 2
+   },
+   {
+    "id": "s7",
+    "text": "The Sarkaria Commission therefore recommended that Governors be detached figures from outside the State.",
+    "para": 2
+   },
+   {
+    "id": "s8",
+    "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P.",
+    "para": 3
+   },
+   {
+    "id": "s9",
+    "text": "Singhal (2010) and Nabam Rebia (2016).",
+    "para": 3
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "the position of the Governor in India's federal structure",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": null,
+    "checkedTwice": false,
+    "sentences": [
+     "s2",
+     "s8"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Specify that the Governor should exercise constitutional discretion only in the limited areas defined by the judiciary.",
+    "where": "Suggestions are workable",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s8",
+     "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P."
+    },
+    "why": "The sentence states the Governor must act as a guardian but does not specify the exact mechanism or actions required to achieve this beyond a general statement.",
+    "tryWriting": "To ensure federal harmony, the Governor should exercise constitutional discretion only in the limited areas defined by the judiciary, ensuring they act as a constitutional guardian rather than a political agent.",
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 2,
+    "title": "Explain how these powers can be used to maintain federal stability or cause friction.",
+    "where": "The question",
+    "impact": "minor",
+    "impactLabel": "Small polish",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s5",
+     "text": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200."
+    },
+    "why": "While these powers are important, the sentence does not explicitly explain how they impact the federal balance.",
+    "tryWriting": null,
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 3,
+    "title": "Add a sentence stating that every State must have a Governor.",
+    "where": "Constitution and textbook basics",
+    "impact": "minor",
+    "impactLabel": "Small polish",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer does not mention that there shall be a Governor for each State.",
+    "tryWriting": "There shall be a Governor for each State to ensure the presence of a constitutional head in every unit of the federation.",
+    "checkedTwice": false,
+    "source": "Constitution of India, Article 153",
+    "sourceRef": "r6",
+    "evidence": null
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+    "credit": [
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence correctly identifies the Governor's role as the constitutional head and links it to the specific constitutional provision for executive power."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Correctly identifies the Governor as the constitutional head and cites the correct Article for the vesting of executive power."
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "Correctly identifies that executive power is vested in the Governor as per Article 154."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s2",
+    "text": "Because the Governor is appointed by the President, the office sits where the Union and the States meet.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "The sentence correctly identifies the Governor's role as a bridge between the Union and the States."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s3",
+    "text": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+    "credit": [
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence explains the operational mechanism of the Governor's office by mentioning the requirement to act on the aid and advice of the Council of Ministers."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Accurately describes the role of the Council of Ministers and cites the relevant Article and court case."
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The student correctly supports the role of the Governor as a constitutional head by citing a specific court judgment."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "As a link with the Union, the Governor holds office during the pleasure of the President under Article 156.",
+    "credit": [
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The sentence correctly identifies that the Governor holds office during the pleasure of the President as per Article 156."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s5",
+    "text": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200.",
+    "credit": [
+     {
+      "where": "Stayed on topic",
+      "reason": "It highlights specific constitutional powers that define the Governor's role in maintaining the federal balance."
+     },
+     {
+      "where": "Use of space",
+      "reason": "This sentence efficiently uses space to cover multiple constitutional powers (Article 356 and Article 200) in a single concise statement."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "The question",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "While these powers are important, the sentence does not explicitly explain how they impact the federal balance.",
+      "fix": "Explain how these powers can be used to maintain federal stability or cause friction.",
+      "fixNumber": 2,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s6",
+    "text": "Discretion in inviting a party to form the government after a hung verdict has often caused Centre-State friction.",
+    "credit": [
+     {
+      "where": "Did what the question asks",
+      "reason": "This sentence moves beyond description by identifying a specific cause (discretion in hung verdicts) and its effect (Centre-State friction) to analyze the friction in the federal structure."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "It addresses the political friction and administrative challenges arising from the Governor's discretionary powers."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It connects the exercise of discretionary powers in specific scenarios to the resulting friction in the federal structure."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s7",
+    "text": "The Sarkaria Commission therefore recommended that Governors be detached figures from outside the State.",
+    "credit": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The student provides evidence for the recommendation on the Governor's role by citing a specific commission."
+     },
+     {
+      "where": "Suggestions are workable",
+      "reason": "The student identifies a specific recommendation from a commission to ensure the Governor is an independent figure."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s8",
+    "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "The sentence highlights the dual role of the Governor as a constitutional guardian and a representative of the Union."
+     },
+     {
+      "where": "Structure",
+      "reason": "It provides a balanced, forward-looking conclusion regarding the role of the Governor as a constitutional guardian."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Suggestions are workable",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence states the Governor must act as a guardian but does not specify the exact mechanism or actions required to achieve this beyond a general statement.",
+      "fix": "Specify that the Governor should exercise constitutional discretion only in the limited areas defined by the judiciary.",
+      "fixNumber": 1,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Constitution and textbook basics",
+    "reason": "The answer does not mention that there shall be a Governor for each State.",
+    "fix": "Add a sentence stating that every State must have a Governor.",
+    "fixNumber": 3,
+    "source": "Constitution of India, Article 153"
+   }
+  ],
+  "strengths": [
+   {
+    "where": "The question",
+    "sourceId": "s2",
+    "quote": "Because the Governor is appointed by the President, the office sits where the Union and the States meet.",
+    "reason": "The sentence correctly identifies the Governor's role as a bridge between the Union and the States."
+   },
+   {
+    "where": "Concepts explained",
+    "sourceId": "s1",
+    "quote": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+    "reason": "The sentence correctly identifies the Governor's role as the constitutional head and links it to the specific constitutional provision for executive power."
+   },
+   {
+    "where": "Concepts explained",
+    "sourceId": "s3",
+    "quote": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+    "reason": "The sentence explains the operational mechanism of the Governor's office by mentioning the requirement to act on the aid and advice of the Council of Ministers."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": null
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer stays focused on the constitutional and functional role of the Governor within the federal framework."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer covers the political and structural aspects well but could be strengthened by explicitly discussing the legal boundaries of the office."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer correctly identifies the constitutional basis for the Governor's powers. However, the description of the office's position in the federal structure could be more technically precise."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The factual citations regarding the Constitution and the Shamsher Singh case are accurate. Ensure that any court case mentioned is fully supported by the specific details of the judgment."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer uses several relevant legal and commission references to support its points. However, some references are listed without explaining their specific relevance to the argument."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer accurately uses several key constitutional articles and judicial precedents to describe the Governor's role. It could be strengthened by mentioning the requirement for a Governor in every state."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "You successfully identify the Governor's dual role and the friction caused by discretion. To improve, explicitly link the constitutional powers to the specific impact they have on the federal balance."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer successfully identifies the friction points and the dual role of the Governor in a federal setup."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer provides a valid recommendation from a commission, but the concluding suggestion is too vague to be considered a workable plan."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The structure is well-organized with a clear introduction, distinct body points, and a concluding judgment. The list of cases at the end feels like a fragment rather than a finished sentence."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer uses high-quality constitutional terminology and specific article references. Replacing metaphorical language with more formal political science terms would improve the professional tone."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is slightly over the word limit. You should merge the case citations into the analytical sentences to save space and improve flow."
+   }
+  ],
+  "stats": {
+   "words": 173,
+   "sentences": 9,
+   "paragraphs": 3,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 68
+    }
+   ],
+   "uncreditedSentences": [
+    {
+     "sourceId": "s9",
+     "text": "Singhal (2010) and Nabam Rebia (2016)."
+    }
+   ],
+   "marks": 10,
+   "format": "gs-10",
+   "ratio": 1.15
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 154",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 163",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 156",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 356",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 200",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 153",
+    "used": true
+   },
+   {
+    "label": "Case: Shamsher Singh v State of Punjab (1974)",
+    "used": false
+   },
+   {
+    "label": "Case: B.P. Singhal v Union of India (2010)",
+    "used": false
+   }
+  ],
+  "trust": {
+   "secondOpinions": 0,
+   "overturned": 0,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [],
+   "levelWhy": [
+    "It does not fully do what the question's command word asks."
+   ]
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 499.9,
+   "prompt_tokens": 2533,
+   "output_tokens": 269,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 311.5,
+   "prompt_tokens": 2438,
+   "output_tokens": 239,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 501.0,
+   "prompt_tokens": 2431,
+   "output_tokens": 303,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 490.9,
+   "prompt_tokens": 2412,
+   "output_tokens": 292,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 472.3,
+   "prompt_tokens": 2456,
+   "output_tokens": 235,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 556.3,
+   "prompt_tokens": 2534,
+   "output_tokens": 384,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 514.6,
+   "prompt_tokens": 2454,
+   "output_tokens": 336,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 352.2,
+   "prompt_tokens": 3225,
+   "output_tokens": 148,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 593.4,
+   "prompt_tokens": 3370,
+   "output_tokens": 239,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 378.7,
+   "prompt_tokens": 3419,
+   "output_tokens": 164,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 473.3,
+   "prompt_tokens": 3262,
+   "output_tokens": 141,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 1,
+   "seconds": 364.9,
+   "prompt_tokens": 3482,
+   "output_tokens": 168,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s6",
+   "attempt": 1,
+   "seconds": 516.6,
+   "prompt_tokens": 3313,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s7",
+   "attempt": 1,
+   "seconds": 622.5,
+   "prompt_tokens": 3297,
+   "output_tokens": 220,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s8",
+   "attempt": 1,
+   "seconds": 421.7,
+   "prompt_tokens": 3412,
+   "output_tokens": 256,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 323.5,
+   "prompt_tokens": 2528,
+   "output_tokens": 256,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 292.0,
+   "prompt_tokens": 2429,
+   "output_tokens": 262,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 401.0,
+   "prompt_tokens": 2452,
+   "output_tokens": 263,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 43.3,
+   "prompt_tokens": 205,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 308.9,
+   "prompt_tokens": 2472,
+   "output_tokens": 257,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 403.5,
+   "prompt_tokens": 2510,
+   "output_tokens": 239,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 382.4,
+   "prompt_tokens": 2439,
+   "output_tokens": 239,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 405.5,
+   "prompt_tokens": 2536,
+   "output_tokens": 222,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s1",
+   "attempt": 1,
+   "seconds": 127.5,
+   "prompt_tokens": 2548,
+   "output_tokens": 145,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s2",
+   "attempt": 1,
+   "seconds": 147.6,
+   "prompt_tokens": 2541,
+   "output_tokens": 197,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s3",
+   "attempt": 1,
+   "seconds": 130.0,
+   "prompt_tokens": 2561,
+   "output_tokens": 148,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s4",
+   "attempt": 1,
+   "seconds": 124.6,
+   "prompt_tokens": 2545,
+   "output_tokens": 140,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s5",
+   "attempt": 1,
+   "seconds": 127.2,
+   "prompt_tokens": 2551,
+   "output_tokens": 142,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s6",
+   "attempt": 1,
+   "seconds": 125.1,
+   "prompt_tokens": 2543,
+   "output_tokens": 139,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 569.7,
+   "prompt_tokens": 2604,
+   "output_tokens": 403,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 331.3,
+   "prompt_tokens": 2391,
+   "output_tokens": 87,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 11312.9,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 154",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 163",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9"
+   ]
+  },
+  {
+   "id": "r3",
+   "label": "Constitution of India, Article 156",
+   "shared": true,
+   "claims": [
+    "s4"
+   ]
+  },
+  {
+   "id": "r4",
+   "label": "Constitution of India, Article 356",
+   "shared": true,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r5",
+   "label": "Constitution of India, Article 200",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r6",
+   "label": "Constitution of India, Article 153",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9"
+   ]
+  },
+  {
+   "id": "r7",
+   "label": "Case: Shamsher Singh v State of Punjab (1974)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r8",
+   "label": "Case: B.P. Singhal v Union of India (2010)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r9",
+   "label": "Constitution of India, Article 155",
+   "shared": false,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s6",
+    "s7",
+    "s8",
+    "s9"
+   ]
+  },
+  {
+   "id": "r10",
+   "label": "Constitution of India, Article 161",
+   "shared": false,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r11",
+   "label": "Constitution of India, Article 158",
+   "shared": false,
+   "claims": [
+    "s2",
+    "s9"
+   ]
+  },
+  {
+   "id": "r12",
+   "label": "Constitution of India, Article 164",
+   "shared": false,
+   "claims": [
+    "s3",
+    "s8"
+   ]
+  },
+  {
+   "id": "r13",
+   "label": "Constitution of India, Article 200",
+   "shared": false,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r14",
+   "label": "Constitution of India, Article 166",
+   "shared": false,
+   "claims": [
+    "s6"
+   ]
+  },
+  {
+   "id": "r15",
+   "label": "Constitution of India, Article 159",
+   "shared": false,
+   "claims": [
+    "s7"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s5",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s6",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s7",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s8",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  }
+ ]
+}
