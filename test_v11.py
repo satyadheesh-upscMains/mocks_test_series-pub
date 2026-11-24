@@ -282,5 +282,37 @@ class CheckedCorrections(unittest.TestCase):
                                       "The Governor is not elected: the President appoints the Governor."))
 
 
+class QuoteMustDiffer(unittest.TestCase):
+    """v13, from split run 45382853367: a correct Money Bill sentence was marked wrong with a quote that agrees."""
+
+    def test_a_source_quote_that_says_the_same_thing_is_not_a_contradiction(self):
+        self.assertTrue(checks.quote_agrees(
+            "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+            "After a Money Bill has been passed by the House of the People it shall be transmitted to the Council "
+            "of States for its recommendations"))
+
+    def test_every_planted_error_still_counts(self):
+        for wrong, said in [
+                ("can be introduced in either House", "A Money Bill shall not be introduced in the Council of States."),
+                ("up to three months", "shall within a period of fourteen days from the date of its receipt"),
+                ("Election Commission of India", "vested in a State Election Commission"),
+                ("elected by the State Legislative Assembly", "The Governor of a State shall be appointed by the President"),
+                ("only to citizens of India", "No person shall be deprived of his life or personal liberty"),
+                ("continue indefinitely", "cease to operate on the expiration of a period of six months")]:
+            self.assertFalse(checks.quote_agrees(wrong, said), wrong)
+
+    def test_the_claim_check_retries_then_marks_nothing(self):
+        prep = prep_for("moneybill")
+        sid = sid_of(prep, "sent to the Rajya Sabha")
+        a109 = next(r for r in claim_refs(prep, sid) if r["label"].endswith("Article 109"))
+        reply = contradicted(sid, a109["id"],
+                             "After a Money Bill has been passed by the House of the People it shall be transmitted "
+                             "to the Council of States for its recommendations",
+                             "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha")
+        out = fact(prep, sid, reply)
+        self.assertEqual(out["concerns"], [])
+        self.assertTrue(out.get("unproven"))
+
+
 if __name__ == "__main__":
     unittest.main()

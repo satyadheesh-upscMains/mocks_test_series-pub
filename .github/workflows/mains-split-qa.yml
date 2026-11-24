@@ -56,6 +56,8 @@ jobs:
     needs: unit
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      cases: ${{ steps.cases.outputs.cases }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -74,6 +76,20 @@ jobs:
       - name: Build reference index
         timeout-minutes: 10
         run: python tools/build_refs.py
+      # Which answers this run grades: qa/split-cases.json. All eight before any merge into main; a fix that touches
+      # one answer can be checked on that answer alone first (about 35 minutes instead of two hours).
+      - id: cases
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          allowed = ["polity-local", "polity-art21", "polity-eci", "polity-governor", "polity-amend",
+                     "polity-moneybill", "polity-356", "polity-dpsp"]
+          path = Path("qa/split-cases.json")
+          cases = json.loads(path.read_text()) if path.exists() else allowed
+          cases = [c for c in cases if c in allowed] or allowed
+          print("cases=" + json.dumps(cases))
+          PY
       - name: Planted errors reach their Articles
         run: python tools/retrieval_check.py
         env:
@@ -100,7 +116,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [polity-local, polity-art21, polity-eci, polity-governor, polity-amend, polity-moneybill, polity-356, polity-dpsp]
+        case: ${{ fromJSON(needs.retrieval.outputs.cases) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -191,14 +207,14 @@ jobs:
           retention-days: 3
 
   finish:
-    needs: checks
+    needs: [retrieval, checks]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
-        case: [polity-local, polity-art21, polity-eci, polity-governor, polity-amend, polity-moneybill, polity-356, polity-dpsp]
+        case: ${{ fromJSON(needs.retrieval.outputs.cases) }}
     steps:
       - uses: actions/checkout@v4
         with:

@@ -94,6 +94,15 @@ def run(examiner, prep, system, results):
             criticism = {"about": _about(prep, r), "kind": c["kind"], "priority": c["priority"],
                          "sentence": c["sourceId"], "criticism": c["reason"],
                          **_source(prep, c.get("ref"))}
+            if c.get("fromClaim") and c["sourceId"]:
+                # The sentence itself and the two quotes, so the second opinion judges this sentence's words: in v12 it
+                # upheld a true reason that belonged to the sentence before.
+                criticism.update({
+                    "sentenceText": next(s["text"] for s in prep["sentences"] if s["id"] == c["sourceId"]),
+                    "quotedAsWrong": (c.get("evidence") or {}).get("wrongWords"),
+                    "quotedFromSource": (c.get("evidence") or {}).get("sourceWords"),
+                    "question": "Do the words of sentenceText itself contradict the source? Overturn if they say the "
+                                "same thing in other words, or if the criticism is about a different sentence."})
         try:
             out = examiner.ask(stage="verify", check=r["id"], system=system,
                                task=TASK.format(criticism=json.dumps(criticism, ensure_ascii=False)),

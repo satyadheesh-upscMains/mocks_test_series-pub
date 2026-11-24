@@ -337,6 +337,32 @@ def quoted_from(said, extracts):
     return [n for n, r in enumerate(runs) if r == top and r >= need]
 
 
+AGREE = 0.8   # share of the claim's quoted words that the source quote repeats, beyond which they say the same thing
+
+
+def quote_agrees(wrong_words, source_words):
+    """True when the source words Gemma quotes as the clash say what the claim says, in the Constitution's words.
+
+    v12 Money Bill: "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations" was
+    marked wrong with the quote "After a Money Bill has been passed by the House of the People it shall be transmitted
+    to the Council of States for its recommendations": the same statement, while the reason was the previous
+    sentence's error. A contradiction needs a difference: a negation or an "only" on one side, a different number,
+    or words of the claim that the source does not repeat. Tuned on every v12 finding: it rejects that one, and none
+    of the eleven planted errors (the closest, "Election Commission of India" against "State Election Commission",
+    repeats 0.67 of the claim's words)."""
+    from .refs import vocabulary
+    from .report import number_terms, stems
+    w, q = stems(vocabulary(wrong_words or "")), stems(vocabulary(source_words or ""))
+    if not w:
+        return False
+    if ("not" in q) != ("not" in w) or ("only" in q) != ("only" in w):
+        return False
+    if (number_terms(wrong_words or "") or number_terms(source_words or "")) and \
+            number_terms(wrong_words or "") != number_terms(source_words or ""):
+        return False
+    return len(w & q) >= AGREE * len(w)
+
+
 def run_fact(examiner, prep, system, check_id):
     """Gemma 12B judges a whole answer by its worst problem (runs 45169827637, 45238473782): a wrong body or time
     limit in a lesser sentence goes unseen. So each claim is checked on its own, against only its own extracts.
@@ -389,6 +415,8 @@ def run_fact(examiner, prep, system, check_id):
         hits = quoted_from(raw.get("sourceWords"), [r["text"] for r in mine])
         if not hits:
             raise Rejected("fact:source_words")
+        if quote_agrees(raw.get("wrongWords"), raw.get("sourceWords")):
+            raise Rejected("fact:quote_agrees")
         c = next((c for c in raw.get("concerns") or [] if isinstance(c, dict) and c.get("sourceId") == sid), {})
         ref = next((mine[n] for n in hits if mine[n]["id"] == c.get("refId")), mine[hits[0]])
         use = base_src + [prompts.ref_text(ref)]
@@ -412,7 +440,7 @@ def run_fact(examiner, prep, system, check_id):
         value = examiner.ask(stage="check", check=check_id, system=system, task=task, schema=sch, max_tokens=500,
                              validate=validate, attempts=2)
     except Rejected as e:
-        if e.code in ("fact:wrong_words", "fact:source_words"):
+        if e.code in ("fact:wrong_words", "fact:source_words", "fact:quote_agrees"):
             # Gemma said "contradicted" twice but could not show the clash. Neither an error nor a clearance: the
             # sentence keeps whatever the other checks found (v10 counted this as cleared and lost the Governor error).
             return {"id": check_id, "kind": "fact", "status": "ok", "verdict": "not_applicable", "credit": [],

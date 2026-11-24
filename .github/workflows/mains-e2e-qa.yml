@@ -6,7 +6,7 @@ name: Mains end-to-end QA
 on:
   push:
     branches: [qa/mains-e2e]
-    paths-ignore: ['.github/workflows/mains-split-qa.yml']
+    paths-ignore: ['.github/workflows/mains-split-qa.yml', 'qa/split-cases.json']
   workflow_dispatch:
 
 permissions:
