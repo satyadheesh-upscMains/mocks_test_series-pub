@@ -5,14 +5,15 @@ memory: no artifacts, no files, nothing in the logs except stage, timing and sta
 parallel, each holding its own lease from the site.
 
 Site protocol (POST JSON to MAINS_WORKER_URL with "Authorization: Bearer MAINS_WORKER_SECRET"):
-  claim       -> {"job": {id, lease, lang, question, references, marks?, input: "typed"|"photos", answer?, pages?}}
+  claim       -> {"job": {id, lease, lang, question, references, marks?, format?, wordLimit?, input: "typed"|"photos",
+                 answer?, pages?}}
                  pages: base64 JPEGs, at most 2
   renew       {id, lease}                       -> {"ok": true} | {"ignored": true}   (keeps the lease alive)
   transcribe  {id, lease, transcript}           -> {"ok": true, "blocked": bool} | {"ignored": true}
                  transcript: text, pages, lines (id, page, box, text, status), evidence, blocked, retake,
                  retakeMessage. When blocked, the site asks the student for a retake and the job ends here.
   complete    {id, lease, result, reportVersion} -> {"ok": true} | {"ignored": true}
-                 result: the student report (mains-report-v14), with page marks for photo answers
+                 result: the student report (mains-report-v15), with page marks for photo answers
   fail        {id, lease}                       -> {"ok": true}   (back to the queue, at most 3 attempts)
   deliver     {}                                -> {"processed": n} (sends the opt-in alerts)
 """

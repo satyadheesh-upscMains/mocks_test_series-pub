@@ -84,7 +84,8 @@ jobs:
           import json
           from pathlib import Path
           allowed = ["polity-local", "polity-art21", "polity-eci", "polity-governor", "polity-amend",
-                     "polity-moneybill", "polity-356", "polity-dpsp"]
+                     "polity-moneybill", "polity-356", "polity-dpsp", "band-strong-10", "band-wrong-10",
+                     "band-noform-10", "band-strong-15", "band-offtopic-10"]
           path = Path("qa/split-cases.json")
           cases = json.loads(path.read_text()) if path.exists() else allowed
           cases = [c for c in cases if c in allowed] or allowed

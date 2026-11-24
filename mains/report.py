@@ -8,12 +8,12 @@ import json
 import re
 
 from .model import MODEL_FILE
-from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS, PART_LABEL, VERDICT_LABEL,
+from .rubric import (DIM, DIMENSIONS, GROUPS, HINDI_ALLOWANCE, IMPACT_LABEL, LEVEL_LABEL, LEVELS, PART_LABEL, VERDICT_LABEL,
                      directive_guide)
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v14"
+REPORT_VERSION = "mains-report-v15"
 MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -150,7 +150,11 @@ def trim_rewrite(f, chosen):
     f["rewrite"] = " ".join(keep) if keep else None
 
 
-def headline(parts, level, majors, L):
+def headline(parts, level, majors, L, length=None):
+    ratio = (length or {}).get("ratio")
+    if level != "off_track" and ratio is not None and ratio < 0.6 and all(p["status"] == "met" for p in parts):
+        return (f"At {length['words']} words, this answer is far shorter than the {length['limit']} the question expects.",
+                f"{length['words']} शब्दों में यह उत्तर सवाल की अपेक्षित {length['limit']} शब्द-सीमा से बहुत छोटा है।")[L]
     miss = [p["label"] for p in parts if p["status"] == "missing"]
     part = [p["label"] for p in parts if p["status"] == "partial"]
     met = [p["label"] for p in parts if p["status"] == "met"]
@@ -186,17 +190,140 @@ def headline(parts, level, majors, L):
     return " ".join(out)
 
 
-def level_of(parts, dims, majors):
+def length_of(prep):
+    """Words written against the word limit. Hindi gets an allowance on the limit: it writes postpositions and
+    auxiliaries as separate words (an inference, to be calibrated on real scripts; docs/marking-standard.md)."""
+    words, limit = prep["stats"]["words"], prep["stats"].get("limit")
+    if not limit:
+        return {"words": words, "limit": None, "ratio": None}
+    allowed = limit * (HINDI_ALLOWANCE if prep["lang"] == "hi" else 1)
+    return {"words": words, "limit": limit, "ratio": round(words / allowed, 2)}
+
+
+# What a level needs, in code, so the model cannot talk its way past it. Candidates report about 4/10 as an average
+# 10-mark score and 5-6 as good; "Good" here is an exam-ready answer, "Strong" topper level (docs/marking-standard.md).
+def level_of(parts, dims, majors, length=None, form=None, L=0):
+    """(level, reasons): the level, and in plain words what stops the next one up."""
     statuses = [p["status"] for p in parts]
     if all(s == "missing" for s in statuses) or dims.get("scope", {}).get("verdict") == "missing":
-        return "off_track"
-    if all(s == "met" for s in statuses):
-        if not majors:
-            good = sum(1 for r in dims.values() if r["verdict"] in ("good", "not_applicable"))
-            return "strong" if good >= 9 else "good"
-        if len(majors) == 1:
-            return "good"
-    return "developing"
+        return "off_track", [("The answer does not yet address the question.", "उत्तर अभी सवाल का जवाब नहीं देता।")[L]]
+    verdict = lambda d: dims.get(d, {}).get("verdict")
+    ok = lambda d: verdict(d) in ("good", "not_applicable", None)
+    ratio = (length or {}).get("ratio")
+    words, limit = (length or {}).get("words"), (length or {}).get("limit")
+
+    def short(threshold):
+        if ratio is None or ratio >= threshold:
+            return []
+        return [(f"At {words} words it is too short: a question with this word limit expects about {limit}.",
+                 f"{words} शब्दों में यह बहुत छोटा है: इस शब्द-सीमा वाले सवाल में लगभग {limit} शब्द अपेक्षित हैं।")[L]]
+
+    def shape():
+        out = []
+        if form:
+            if not form.get("intro"):
+                out.append(("It has no introduction that sets the context.", "इसमें संदर्भ बताने वाली भूमिका नहीं है।")[L])
+            if not form.get("conclusion"):
+                out.append(("It has no conclusion with a way forward.", "इसमें आगे की राह बताने वाला निष्कर्ष नहीं है।")[L])
+            if form.get("points", 0) < form.get("pointsNeeded", 0):
+                out.append((f"It makes {form['points']} distinct points; about {form['pointsNeeded']} are expected.",
+                            f"इसमें {form['points']} अलग बिंदु हैं; लगभग {form['pointsNeeded']} अपेक्षित हैं।")[L])
+        if not out and not ok("structure"):
+            out.append(("Its structure needs work (see the Structure check).", "इसके ढाँचे में सुधार चाहिए (ढाँचा जाँच देखें)।")[L])
+        return out
+
+    good_needs = []
+    if not all(s == "met" for s in statuses):
+        good_needs.append(("Not every part of the question is answered.", "सवाल का हर हिस्सा पूरा नहीं है।")[L])
+    good_needs += short(0.7 if not ok("dimensions") else 0.6)
+    good_needs += shape()
+    if not ok("directive"):
+        good_needs.append(("It does not fully do what the question's command word asks.",
+                           "यह सवाल के निर्देश शब्द की माँग पूरी तरह नहीं करता।")[L])
+    if len(majors) > 1:
+        good_needs.append((f"It has {len(majors)} serious problems (see the fixes).",
+                           f"इसमें {len(majors)} गंभीर कमियाँ हैं (सुधार देखें)।")[L])
+    if good_needs:
+        return "developing", good_needs
+    strong_needs = short(0.85)
+    if ratio is not None and ratio > 1.3:
+        strong_needs.append((f"At {words} words it is well over the limit of about {limit}.",
+                             f"{words} शब्दों में यह लगभग {limit} की सीमा से काफ़ी ज़्यादा है।")[L])
+    if majors:
+        strong_needs.append(("It has a serious problem (see the fixes).", "इसमें एक गंभीर कमी है (सुधार देखें)।")[L])
+    if not ok("dimensions"):
+        strong_needs.append(("It leaves out an important angle of the issue.", "इसमें मुद्दे का एक ज़रूरी पहलू छूटा है।")[L])
+    if not ok("evidence"):
+        strong_needs.append(("Its points need specific examples, data or cases.", "इसके बिंदुओं को ठोस उदाहरण, आँकड़े या केस चाहिए।")[L])
+    return ("good", strong_needs) if strong_needs else ("strong", [])
+
+
+def apply_form(dims, form, L):
+    """Structure can be good only with an introduction, a conclusion and enough distinct body points."""
+    r = dims.get("structure")
+    if not r or not form:
+        return
+    gaps = []
+    if not form.get("intro"):
+        gaps.append(("Add a one- or two-sentence introduction that sets the context before your first point.",
+                     "पहले बिंदु से पहले एक-दो वाक्य की भूमिका जोड़ें जो संदर्भ बताए।")[L])
+    if not form.get("conclusion"):
+        gaps.append(("End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+                     "अंत में एक-दो वाक्य का निष्कर्ष लिखें जो सार नहीं, आगे की राह बताए।")[L])
+    if form.get("points", 0) < form.get("pointsNeeded", 0):
+        gaps.append((f"Make about {form['pointsNeeded']} distinct points in the body; it has {form['points']}.",
+                     f"मुख्य भाग में लगभग {form['pointsNeeded']} अलग बिंदु रखें; अभी {form['points']} हैं।")[L])
+    if not gaps:
+        return
+    if r["verdict"] == "good":
+        r["verdict"] = "partial"
+        r["note"] = gaps[0]
+    have = " ".join(c["fix"] for c in r["concerns"])
+    for g in gaps:
+        if not same_advice(g, have):
+            r["concerns"].append({"sourceId": None, "quote": None, "kind": "missing", "priority": "medium",
+                                  "reason": g, "fix": g, "ref": None, "structural": True})
+
+
+def format_note(prep, L):
+    """What this review does not yet do for the chosen format, said plainly (docs/marking-standard.md)."""
+    paper, limit = prep.get("paper"), prep["stats"].get("limit")
+    if paper == "ethics_case":
+        return ("Case studies are checked here with the same checks as GS answers. A dedicated case-study review "
+                "(stakeholders, the value conflict, options and the course of action you choose) is not available yet.",
+                "केस स्टडी यहाँ जीएस उत्तरों वाली जाँचों से ही जाँची जाती है। अलग केस-स्टडी समीक्षा (हितधारक, मूल्यों का "
+                "टकराव, विकल्प और आपका चुना हुआ रास्ता) अभी उपलब्ध नहीं है।")[L]
+    if paper == "essay":
+        return ("Essays are checked here with the same checks as GS answers; a dedicated essay review is not available yet.",
+                "निबंध यहाँ जीएस उत्तरों वाली जाँचों से ही जाँचा जाता है; अलग निबंध समीक्षा अभी उपलब्ध नहीं है।")[L]
+    if paper == "optional" and limit:
+        return (f"Optional papers print no word limit; length here is measured against a suggested {limit} words.",
+                f"वैकल्पिक विषय के प्रश्नपत्र में शब्द-सीमा नहीं छपती; यहाँ लंबाई सुझाई गई {limit} शब्द-सीमा से मापी गई है।")[L]
+    return None
+
+
+def length_finding(prep, length, L):
+    """The length fix, written by code from the word count: the model never supplies these numbers."""
+    ratio, words, limit = length.get("ratio"), length.get("words"), length.get("limit")
+    if ratio is None or 0.6 <= ratio <= 1.3:
+        return None
+    marks = prep.get("marks")
+    of = (f"a {marks}-mark answer" if marks else "this question", f"{marks} अंक के उत्तर" if marks else "इस सवाल")
+    if ratio < 0.6:
+        title = (f"Write about {limit} words: this answer has {words}.", f"लगभग {limit} शब्द लिखें: इस उत्तर में {words} हैं।")[L]
+        why = (f"The word limit tells you how much {of[0]} needs. At {words} words there is room for only a few points, "
+               "so the answer cannot reach the level of an average exam answer however accurate it is.",
+               f"शब्द-सीमा बताती है कि {of[1]} में कितना चाहिए। {words} शब्दों में कुछ ही बिंदु आ पाते हैं, इसलिए उत्तर "
+               "कितना भी सही हो, औसत परीक्षा-उत्तर के स्तर तक नहीं पहुँचता।")[L]
+        priority = "major"
+    else:
+        title = (f"Cut to about {limit} words: this answer has {words}.", f"लगभग {limit} शब्दों तक छोटा करें: इस उत्तर में {words} हैं।")[L]
+        why = ("UPSC asks candidates to keep to the word limit. A much longer answer uses time meant for other questions.",
+               "यूपीएससी शब्द-सीमा का पालन करने को कहता है। बहुत लंबा उत्तर दूसरे सवालों का समय ले लेता है।")[L]
+        priority = "medium"
+    return {"sourceId": None, "quote": None, "kind": "missing", "priority": priority, "reason": why, "fix": title,
+            "origin": "presentation", "fromPart": False, "where": DIM["presentation"][("en", "hi")[L]], "rewrite": None,
+            "rewriteRef": None, "source": None, "ref": None, "length": True}
 
 
 def assemble(prep, results):
@@ -217,6 +344,11 @@ def assemble(prep, results):
                                   "note": "This part could not be judged automatically.", "notJudged": True}
     # A check skipped because it does not apply (no Constitution/NCERT extract fits the question) still returns a
     # result, so it never counts as a failure here.
+    length = length_of(prep)
+    form = (dims.get("structure") or {}).get("form")
+    apply_form(dims, form, L)
+    if length["ratio"] is not None and length["ratio"] < 0.6 and dims.get("presentation", {}).get("verdict") == "good":
+        dims["presentation"]["verdict"] = "partial"  # an answer far under the limit is not "economical"
     ordered = [part_res[p["id"]] for p in prep["parts"]] + [dims[d["id"]] for d in DIMENSIONS if d["id"] in dims]
 
     # 1. Every finding, ranked: priority, then question parts before dimensions, then kind, then answer order.
@@ -268,7 +400,13 @@ def assemble(prep, results):
         if f["kind"] == "wrong" and f["sourceId"] and not f["source"] and \
                 not all(o in OPINION_CHECKS for o in origins):
             f["rewrite"] = None
-    majors = [f for f in kept if f["priority"] == "major"]
+    lf = length_finding(prep, length, L)
+    if lf:
+        # Too short: first, after any missing or weak question part (answering that part is itself the way to add
+        # length). Too long: after the serious problems.
+        at = sum(1 for f in kept if f["priority"] == "major" and (f["fromPart"] or lf["priority"] != "major"))
+        kept.insert(at, lf)
+    majors = [f for f in kept if f["priority"] == "major" and not f.get("length")]
 
     # 2. Up to three fixes, preferring different sentences so the student is not told three things about one line.
     # A fix that asks for the same change as one already chosen (for example two checks both asking for the two
@@ -320,7 +458,7 @@ def assemble(prep, results):
                for f in kept if f["sourceId"] is None and f["fromPart"]]
     additions = [{"where": f["where"], "reason": f["reason"], "fix": f["fix"], "fixNumber": fix_no.get(id(f)),
                   "source": f["source"]}
-                 for f in kept if f["sourceId"] is None and not f["fromPart"]][:4]
+                 for f in kept if f["sourceId"] is None and not f["fromPart"] and not f.get("length")][:4]
 
     # 5. What worked: credit from the question parts first, then from checks that went well; one per sentence.
     # A sentence the student is also told to fix is never listed as a strength: mixed praise confuses the student.
@@ -361,12 +499,14 @@ def assemble(prep, results):
     stats["uncreditedSentences"] = [{"sourceId": s["id"], "text": s["text"]} for s in prep["sentences"]
                                     if s["id"] not in cited]
 
-    level = level_of(parts, dims, majors)
+    level, why = level_of(parts, dims, majors, length, form, L)
+    stats.update(marks=prep.get("marks"), format=prep.get("format"), ratio=length["ratio"])
     verified = [d for r in ordered for d in r.get("opinions", [])]
     return {
         "version": REPORT_VERSION, "model": MODEL_FILE, "lang": prep["lang"],
         "level": level, "levelLabel": LEVEL_LABEL[level][L], "levels": [LEVEL_LABEL[x][L] for x in LEVELS],
-        "headline": headline(parts, level, majors, L), "summary": None,
+        "headline": headline(parts, level, majors, L, length), "summary": None, "levelWhy": why,
+        "formatNote": format_note(prep, L),
         "question": prep["question"], "directives": directive_guide(prep["question"], prep["lang"]),
         "sentences": prep["sentences"], "parts": parts,
         "fixes": [{"n": i, "title": f["fix"], "where": f["where"], "impact": f["priority"],

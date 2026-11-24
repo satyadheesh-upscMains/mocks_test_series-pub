@@ -7,7 +7,7 @@ import io
 import json
 import unittest
 
-from mains import breakdown, checks, pipeline, report, text, verify
+from mains import breakdown, checks, pipeline, report, rubric, text, verify
 from mains.model import Examiner
 from mains.text import Rejected
 
@@ -199,10 +199,10 @@ class Stages(unittest.TestCase):
 
 
 class Report(unittest.TestCase):
-    def run_all(self, script, lang):
+    def run_all(self, script, lang, **kw):
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
-            rep = pipeline.evaluate(Examiner(FakeGemma(script)), job(lang))
+            rep = pipeline.evaluate(Examiner(FakeGemma(script)), job(lang, **kw))
         return rep, out.getvalue()
 
     def test_second_look_flags_a_lesser_suggestion(self):
@@ -327,10 +327,97 @@ class Report(unittest.TestCase):
                                                    "Add one sentence on the economic cost of floods.")],
                               "note": "One angle is missing.", "verdict": "partial",
                               "rewrite": {"sourceId": "none", "text": ""}})
-        rep, _ = self.run_all(en, "en")
+        # No word limit here, so only severity decides. The four-sentence fixture has no room for an introduction, a
+        # conclusion and five points, so its shape keeps it Developing; the missing angle must not be one more reason.
+        rep, _ = self.run_all(en, "en", marks=None)
         self.assertTrue(all(f["impact"] != "major" or f["where"].startswith("Part") for f in rep["fixes"]
                             if f["yourLine"] is None))
-        self.assertIn(rep["level"], ("good", "strong"))
+        self.assertFalse([w for w in rep["levelWhy"] if "serious" in w or "angle" in w], rep["levelWhy"])
+
+
+class MarkingStandard(unittest.TestCase):
+    """The level follows docs/marking-standard.md: length, shape and the command word are checked in code."""
+
+    def form(self, **kw):
+        return dict({"intro": "s1", "conclusion": "s9", "points": 6, "pointsNeeded": 5, "paragraphs": 3}, **kw)
+
+    def level(self, words, limit=150, form=None, dims=None, majors=(), parts=("met",), L=0):
+        ps = [{"status": s} for s in parts]
+        ds = {d: {"verdict": "good"} for d in ("directive", "scope", "dimensions", "evidence", "structure")}
+        ds.update(dims or {})
+        length = {"words": words, "limit": limit, "ratio": round(words / limit, 2) if limit else None}
+        return report.level_of(ps, ds, list(majors), length, self.form() if form is None else form, L)
+
+    def test_a_complete_accurate_answer_far_under_the_limit_is_developing(self):
+        lvl, why = self.level(69)          # the v14 Governor answer: every part met, no errors, called "Good"
+        self.assertEqual(lvl, "developing")
+        self.assertIn("69 words", why[0])
+
+    def test_full_length_well_shaped_answer_can_be_strong(self):
+        self.assertEqual(self.level(150), ("strong", []))
+
+    def test_no_conclusion_caps_at_developing(self):
+        lvl, why = self.level(150, form=self.form(conclusion=None))
+        self.assertEqual(lvl, "developing")
+        self.assertTrue(any("conclusion" in w for w in why))
+
+    def test_too_few_points_caps_at_developing(self):
+        self.assertEqual(self.level(150, form=self.form(points=3))[0], "developing")
+
+    def test_directive_not_met_caps_at_developing(self):
+        self.assertEqual(self.level(150, dims={"directive": {"verdict": "partial"}})[0], "developing")
+
+    def test_missing_evidence_stops_strong_only(self):
+        lvl, why = self.level(150, dims={"evidence": {"verdict": "partial"}})
+        self.assertEqual(lvl, "good")
+        self.assertTrue(why)
+
+    def test_between_sixty_and_seventy_percent_needs_the_angles(self):
+        self.assertEqual(self.level(100)[0], "good")
+        self.assertEqual(self.level(100, dims={"dimensions": {"verdict": "partial"}})[0], "developing")
+
+    def test_much_too_long_is_not_strong(self):
+        self.assertEqual(self.level(220)[0], "good")
+
+    def test_hindi_gets_an_allowance(self):
+        prep = {"lang": "hi", "stats": {"words": 160, "limit": 150}}
+        self.assertEqual(report.length_of(prep)["ratio"], round(160 / 180, 2))
+
+    def test_printed_word_limit_wins(self):
+        self.assertEqual(rubric.word_limit("Examine X. (Answer in 250 words)", "gs-10", 10), 250)
+        self.assertEqual(rubric.word_limit("Examine X.", "ethics-case-20", None), 250)
+        self.assertEqual(rubric.word_limit("Examine X.", None, 15), 250)
+        self.assertIsNone(rubric.word_limit("Examine X.", None, None))
+        self.assertEqual(rubric.word_limit("X की समीक्षा कीजिए। (उत्तर 150 शब्दों में)", None, None), 150)
+
+    def test_form_needs_intro_at_the_start_and_conclusion_at_the_end(self):
+        sents = [{"id": f"s{i}", "para": 1 if i < 3 else (2 if i < 8 else 3), "text": "x"} for i in range(1, 10)]
+        prep = {"sentences": sents, "marks": 10}
+        pts = [{"sourceId": f"s{i}", "point": f"point number {i}"} for i in range(2, 9)]
+        f = checks.form_of(prep, {"introId": "s1", "conclusionId": "s9", "points": pts})
+        self.assertEqual((f["intro"], f["conclusion"], f["points"]), ("s1", "s9", 7))
+        f = checks.form_of(prep, {"introId": "s5", "conclusionId": "s4", "points": pts})
+        self.assertEqual((f["intro"], f["conclusion"]), (None, None))
+        one_para = [dict(s, para=1) for s in sents]
+        f = checks.form_of(dict(prep, sentences=one_para), {"introId": "s1", "conclusionId": "s9", "points": pts})
+        self.assertEqual(f["conclusion"], "s9")
+        same = [{"sourceId": "s2", "point": "the same point"}] * 4
+        self.assertEqual(checks.form_of(prep, {"introId": "none", "conclusionId": "none", "points": same})["points"], 1)
+
+    def test_length_fix_is_first_and_uses_the_real_numbers(self):
+        f = report.length_finding({"marks": 10}, {"words": 69, "limit": 150, "ratio": 0.46}, 0)
+        self.assertEqual(f["fix"], "Write about 150 words: this answer has 69.")
+        self.assertEqual(f["priority"], "major")
+        self.assertIsNone(report.length_finding({"marks": 10}, {"words": 140, "limit": 150, "ratio": 0.93}, 0))
+
+    def test_case_studies_say_what_is_not_checked_yet(self):
+        prep = {"paper": "ethics_case", "stats": {"limit": 250}}
+        self.assertIn("not available yet", report.format_note(prep, 0))
+        self.assertIsNone(report.format_note({"paper": "gs", "stats": {"limit": 150}}, 0))
+
+    def test_directive_task_names_the_failure_to_avoid(self):
+        prep = {"question": "Critically examine the role of the Governor.", "parts": [], "sentences": []}
+        self.assertIn("no reasoned verdict", checks.task(prep, "directive"))
 
 
 class NoInventedContent(unittest.TestCase):

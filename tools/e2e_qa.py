@@ -101,6 +101,73 @@ POLITY_SET = {
                 'Courts have tried to read both parts together in harmony.'),
         planted=[('enforced in courts in the same way', ['37'])]),
 }
+# Full-length answers in quality bands, each with the levels an examiner-like standard allows (docs/marking-standard.md):
+# a strong 10-marker and 15-marker, a well-shaped answer with two planted errors, an accurate answer with no
+# introduction or conclusion, and an off-topic answer. v14 had only 50-80 word answers and called two of them "Good".
+BAND_SET = {
+    'band-strong-10': dict(
+        format='gs-10', marks=10,
+        question="Analyse the position of the Governor in India's federal structure. (Answer in 150 words)",
+        answer=(            "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office. "
+            'Because the Governor is appointed by the President, the office sits where the Union and the States meet.\n\n'
+            'As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974). '
+            'As a link with the Union, the Governor holds office during the pleasure of the President under Article 156. '
+            'The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200. '
+            'Discretion in inviting a party to form the government after a hung verdict has often caused Centre-State friction. '
+            'The Sarkaria Commission therefore recommended that Governors be detached figures from outside the State.\n\n'
+            'For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P. '
+            'Singhal (2010) and Nabam Rebia (2016).'),
+        expect=('good', 'strong'), planted=[]),
+    'band-wrong-10': dict(
+        format='gs-10', marks=10,
+        question='Discuss the role of the Rajya Sabha in the passage of Money Bills. (Answer in 150 words)',
+        answer=(            'Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.\n\n'
+            'A Money Bill can be introduced in either House of Parliament on the recommendation of the President. '
+            'After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations. '
+            'The Rajya Sabha can keep a Money Bill for up to three months before returning it. '
+            'It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject. '
+            "The Speaker's certificate that a Bill is a Money Bill is final under Article 110(3). "
+            "The passage of the Aadhaar Act as a Money Bill showed how this certificate can narrow the Rajya Sabha's role.\n\n"
+            'The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.'),
+        expect=('developing',), planted=[('introduced in either House', ['109']), ('up to three months', ['109'])]),
+    'band-noform-10': dict(
+        format='gs-10', marks=10,
+        question='Discuss the relationship between Fundamental Rights and Directive Principles of State Policy. (Answer in 150 words)',
+        answer=(            'Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court. '
+            'In Champakam Dorairajan (1951) the Supreme Court held that the Directive Principles must yield to the Fundamental Rights. '
+            'The First Amendment then allowed special provisions for backward classes. '
+            'In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights. '
+            'The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c). '
+            'In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review. '
+            'The right to education in Article 21A began as a Directive Principle in Article 45. '
+            'The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.'),
+        expect=('developing',), planted=[]),
+    'band-strong-15': dict(
+        format='gs-15', marks=15,
+        question='Examine the role of the Election Commission of India in ensuring free and fair elections. (Answer in 250 words)',
+        answer=(            'Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India. '
+            "Its independence and its wide powers are the base of India's electoral democracy.\n\n"
+            "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment. "
+            'The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent. '
+            'Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces. '
+            'Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute. '
+            'Technologically, electronic voting machines with VVPAT slips have made counting faster and more verifiable.\n\n'
+            'Challenges remain. '
+            "Other Election Commissioners lack the CEC's protection, as they can be removed on the CEC's recommendation. "
+            'Money power and criminal candidates still weaken the level playing field. '
+            'In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.\n\n'
+            "Giving all Commissioners equal protection, a statutory basis for the Model Code and an independent selection process would make the Commission's role in free and fair elections more secure."),
+        expect=('good', 'strong'), planted=[]),
+    'band-offtopic-10': dict(
+        format='gs-10', marks=10,
+        question="Analyse the position of the Governor in India's federal structure. (Answer in 150 words)",
+        answer=(            'Urban wetlands hold stormwater after heavy rain, so less water enters drains at once. '
+            'They recharge groundwater and keep cities cooler in summer. '
+            'Encroachment and dumping of waste have shrunk many of them. '
+            'Municipalities should map their wetlands, stop construction on their beds and involve local communities in protecting them.'),
+        expect=('off_track',), planted=[]),
+}
+
 CASES = {
     "typed-en": dict(input="typed"),
     "typed-polity": dict(input="typed", **POLITY),
@@ -109,6 +176,8 @@ CASES = {
 }
 CASES.update({k: dict(input="typed", question=v["question"], answer=v["answer"], references=[])
               for k, v in POLITY_SET.items()})
+CASES.update({k: dict(input="typed", question=v["question"], answer=v["answer"], references=[], marks=v["marks"],
+                      format=v["format"]) for k, v in BAND_SET.items()})
 
 
 class Site:
@@ -130,12 +199,45 @@ class Site:
 def job_for(case):
     c = CASES[case]
     job = {"id": "e2e-" + case, "lease": "lease", "lang": "en", "question": c.get("question", BASE["question"]),
-           "references": c.get("references", BASE["references"]), "marks": 10, "input": c["input"]}
+           "references": c.get("references", BASE["references"]), "marks": c.get("marks", 10),
+           "format": c.get("format", "gs-10"), "input": c["input"]}
     if c["input"] == "typed":
         job["answer"] = c.get("answer", BASE["answer"])
     else:
         job["pages"] = [base64.b64encode(photo_qa.draw(c["page"])).decode()]
     return job
+
+
+def level_gates(rep, expect=None):
+    """The level must follow the standard: an answer under 60% of its word limit is never Good or Strong."""
+    g = {}
+    ratio = rep["stats"].get("ratio")
+    if ratio is not None and ratio < 0.6:
+        g["a short answer is not Good or Strong"] = rep["level"] in ("developing", "off_track")
+    if expect:
+        g[f"level is {' or '.join(expect)}"] = rep["level"] in expect
+    g["the report says what stops the next level"] = rep["level"] == "strong" or bool(rep.get("levelWhy"))
+    return g
+
+
+def band_gates(case, rep):
+    v = BAND_SET[case]
+    g = level_gates(rep, v["expect"])
+    wrong_ids = set()
+    for phrase, arts in v["planted"]:
+        want = {f"Constitution of India, Article {a}" for a in arts}
+        h = next((h for h in rep["highlights"] if phrase in h["text"]), None)
+        wrong_ids.add(next((s["id"] for s in rep["sentences"] if phrase in s["text"]), None))
+        g[f"caught: {phrase}"] = bool(h) and h["tone"] == "red"
+        g[f"cited: {phrase}"] = bool(h) and any(c.get("source") in want for c in h["concerns"])
+    false_red = [h["text"] for h in rep["highlights"] if h["tone"] == "red" and h["sourceId"] not in wrong_ids]
+    if case != "band-offtopic-10":
+        g["no red marks on correct sentences"] = not false_red
+    if case == "band-noform-10":
+        g["structure not rated good without an introduction and a conclusion"] = next(
+            (c["verdict"] for c in rep["checks"] if c["id"] == "structure"), None) != "good"
+    rep.setdefault("qa", {}).update(falseRed=false_red, levelWhy=rep.get("levelWhy"))
+    return g
 
 
 def polity_gates(case, rep):
@@ -191,11 +293,13 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v14"] = rep["version"] == "mains-report-v14"
+    g["report version v15"] = rep["version"] == "mains-report-v15"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
+    if case in BAND_SET:
+        return g | band_gates(case, rep)
     if case in POLITY_SET:
-        return g | polity_gates(case, rep)
+        return g | polity_gates(case, rep) | level_gates(rep)
     if case == "typed-polity":
         shown = rep["fixes"] + rep["additions"] + rep["missing"] + [c for h in rep["highlights"] for c in h["concerns"]]
         g["Constitution/NCERT sources given"] = bool(rep["sources"])

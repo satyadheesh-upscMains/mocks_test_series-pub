@@ -8,7 +8,7 @@
 """
 from . import breakdown, checks, prompts, refs, report, verify
 from .model import log
-from .rubric import SHARDS, usual_limit
+from .rubric import FORMATS, SHARDS, word_limit
 from .text import Rejected, norm, sentences, similar, word_count
 
 SHARD_ORDER = tuple(SHARDS)
@@ -20,12 +20,17 @@ def prepare(examiner, job, cached_breakdown=None):
     sents = sentences(job.get("answer") or "")
     if not sents:
         raise Rejected("job:empty_answer")
+    # The student chooses the question's format on the site (gs-10, gs-15, ethics-case-20, ...); marks come with it.
+    fmt = job.get("format") if job.get("format") in FORMATS else None
+    marks = job.get("marks") if isinstance(job.get("marks"), int) else (FORMATS[fmt]["marks"] if fmt else None)
     prep = {
         "id": job["id"], "lang": job["lang"], "question": norm(job["question"]),
-        "references": [norm(r) for r in job.get("references") or [] if norm(r)], "marks": job.get("marks"),
+        "references": [norm(r) for r in job.get("references") or [] if norm(r)], "marks": marks,
+        "format": fmt, "paper": FORMATS[fmt]["paper"] if fmt in FORMATS else "gs",
         "sentences": sents,
         "stats": {"words": word_count(job["answer"]), "sentences": len(sents),
-                  "paragraphs": max(s["para"] for s in sents), "limit": usual_limit(job.get("marks"))},
+                  "paragraphs": max(s["para"] for s in sents),
+                  "limit": word_limit(job["question"], fmt, marks, job.get("wordLimit"))},
     }
     prep["refs"] = sources_for(prep)
     bd = cached_breakdown or breakdown.run(examiner, prep)

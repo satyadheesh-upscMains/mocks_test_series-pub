@@ -59,7 +59,7 @@ def main():
         sys.exit("refs/index.json.gz missing: run tools/build_refs.py first")
     print(f"embeddings: {'on (measured only)' if idx.embedder else 'off'}")
     ok, report = True, {}
-    for case, v in e2e_qa.POLITY_SET.items():
+    for case, v in {**e2e_qa.POLITY_SET, **e2e_qa.BAND_SET}.items():
         sents = sentences(v["answer"])
         got = idx.pack(v["question"], sents)
         rows = []

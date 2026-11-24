@@ -8,7 +8,7 @@ import math
 import re
 
 from . import prompts
-from .rubric import DIM
+from .rubric import DIM, DIRECTIVE_FAILURE, directive_guide, points_norm
 from .text import Rejected, SENTENCE_END, clean, fold, similar, tokens, unsourced_names, unsourced_numbers
 
 VERDICTS = ["good", "partial", "missing", "unsupported", "wrong", "not_applicable"]
@@ -73,7 +73,15 @@ def task(prep, check_id):
                 "(sourceId 'none', kind 'missing').")
         return f"TASK [{check_id}]\n{body}\n\n" + FIELDS.format(verdicts=PART_VERDICT_TEXT)
     d = DIM[check_id]
-    return (f"TASK [{check_id}]\nCheck only this: {d['en']}. {d['task']} Judge only this check, not the whole "
+    extra = ""
+    if check_id == "directive":
+        found = [g["word"] for g in directive_guide(prep["question"], "en")]
+        fails = [f"'{w}': the answer fails if it is {DIRECTIVE_FAILURE[w]}" for w in found if w in DIRECTIVE_FAILURE]
+        if fails:
+            extra = (" For this question: " + "; ".join(fails) + ". If the answer commits that failure, the verdict "
+                     "cannot be good. In a question with two command words, a strong first part does not make up for "
+                     "an unanswered second one.")
+    return (f"TASK [{check_id}]\nCheck only this: {d['en']}. {d['task']}{extra} Judge only this check, not the whole "
             "answer.\n\n" + FIELDS.format(verdicts=DIM_VERDICTS))
 
 
@@ -457,7 +465,70 @@ def run_fact(examiner, prep, system, check_id):
     return {"id": check_id, "kind": "fact", "status": "ok", **value}
 
 
+STRUCTURE_FIELDS = """Before the fields above, fill these, from the student's sentence IDs only:
+- introId: the sentence that is the introduction (context or definition before the first point), or "none".
+- conclusionId: the sentence that is the conclusion (a way forward or judgement after the last point), or "none".
+- points: each distinct point the body makes, as {sourceId, point}: the sentence and a few words naming the point."""
+
+
+def form_of(prep, raw):
+    """The answer's shape, checked by code: an introduction in the opening, a conclusion at the close that is not the
+    introduction, and the distinct body points between them. v14 called a 69-word, four-sentence paragraph 'Good' on
+    structure because nothing checked this (split run 45410497198)."""
+    sids = [s["id"] for s in prep["sentences"]]
+    n = len(sids)
+    paras = {s["id"]: s["para"] for s in prep["sentences"]}
+    last_para = max(paras.values()) if paras else 1
+    intro = raw.get("introId") if raw.get("introId") in sids else None
+    concl = raw.get("conclusionId") if raw.get("conclusionId") in sids else None
+    # The introduction opens the answer; the conclusion closes it. Neither can be a body point, and one sentence
+    # cannot be both. An answer of three sentences or fewer has no room for all three parts.
+    if intro and (sids.index(intro) > 1 or paras[intro] != 1 or n <= 3):
+        intro = None
+    if concl and (sids.index(concl) < n - 2 or paras[concl] != last_para or concl == intro or n <= 3):
+        concl = None
+    body = set(sids) - {intro, concl}
+    seen, points = set(), []
+    for p in raw.get("points") or []:
+        if not isinstance(p, dict) or p.get("sourceId") not in body or not isinstance(p.get("point"), str):
+            continue
+        label = " ".join(fold(p["point"]).split()[:8])
+        per = sum(1 for q in points if q["sourceId"] == p["sourceId"])
+        if label and label not in seen and per < 2:   # at most two points credited to one sentence
+            seen.add(label)
+            points.append({"sourceId": p["sourceId"], "point": p["point"].strip()[:120]})
+    return {"intro": intro, "conclusion": concl, "points": len(points), "pointsNeeded": points_norm(prep.get("marks")),
+            "paragraphs": last_para}
+
+
+def run_structure(examiner, prep, system):
+    sids = [s["id"] for s in prep["sentences"]]
+    ref_ids = [r["id"] for r in prep.get("refs") or [] if r.get("shared", True)]
+    base = schema(sids, VERDICTS, ref_ids)
+    ids_or_none = {"type": "string", "enum": sids + ["none"]}
+    point = {"type": "object", "additionalProperties": False, "required": ["sourceId", "point"],
+             "properties": {"sourceId": {"type": "string", "enum": sids}, "point": {"type": "string"}}}
+    sch = dict(base, required=["introId", "conclusionId", "points"] + base["required"],
+               properties={"introId": ids_or_none, "conclusionId": ids_or_none,
+                           "points": {"type": "array", "maxItems": 16, "items": point}, **base["properties"]})
+
+    def validate(raw):
+        out = bind(raw, prep, "structure")
+        out["form"] = form_of(prep, raw if isinstance(raw, dict) else {})
+        return out
+
+    try:
+        value = examiner.ask(stage="check", check="structure", system=system,
+                             task=task(prep, "structure") + "\n" + STRUCTURE_FIELDS, schema=sch, max_tokens=1100,
+                             validate=validate)
+    except Rejected as e:
+        return {"id": "structure", "kind": "check", "status": "unavailable", "reason": e.code}
+    return {"id": "structure", "kind": "check", "status": "ok", **value}
+
+
 def run(examiner, prep, system, check_id):
+    if check_id == "structure":
+        return run_structure(examiner, prep, system)
     if check_id.startswith("facts:"):
         return run_fact(examiner, prep, system, check_id)
     if check_id.startswith("gap:"):

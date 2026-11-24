@@ -1,4 +1,5 @@
 """What the examiner checks, and the fixed labels the student report uses in English and Hindi."""
+import re
 
 GROUPS = {
     "question": ("The question", "सवाल"),
@@ -65,16 +66,20 @@ DIMENSIONS = [
         "lesser flaw in a different suggestion still gets its own concern (kind weak). If the "
         "question asks for no suggestions and the answer makes none, the verdict is not_applicable.")),
     dict(id="structure", group="writing", en="Structure", hi="ढाँचा", task=(
-        "Check the order: an opening that addresses the question directly, a body organised by the question's parts, "
-        "and a conclusion that adds a balanced or forward-looking point instead of repeating or overclaiming. Do not "
-        "demand a generic introduction if the answer already opens well.")),
+        "Check the shape a UPSC examiner expects: an introduction of one or two sentences that sets the context or "
+        "defines the issue without restating the question; a body that makes distinct points organised by the "
+        "question's parts; and a conclusion of one or two sentences that gives a balanced, forward-looking way ahead "
+        "instead of repeating the body. Name the introduction sentence, the conclusion sentence and each distinct "
+        "body point. A sentence that only starts the first point is not an introduction; a last body point is not a "
+        "conclusion. If either is missing, the verdict is partial and one concern says which is missing.")),
     dict(id="language", group="writing", en="Clear wording", hi="साफ़ भाषा", task=(
         "Check clarity and precise subject terms. Point to one phrase that is vague or imprecise and show a sharper "
         "version, or credit precise wording. Never penalise writing in English or Hindi, or simple vocabulary.")),
     dict(id="presentation", group="writing", en="Use of space", hi="जगह का इस्तेमाल", task=(
         "Check how the answer uses its length: repetition, padding, sentences that earn nothing, and whether the "
         "space is shared sensibly across the question's parts. MATERIALS.facts gives the word count and the usual "
-        "limit; use those figures and do not count words yourself.")),
+        "limit; use those figures and do not count words yourself. An answer far shorter than the limit is not "
+        "economical: it has left out points the marks expect, so it is not good on this check.")),
 ]
 DIM = {d["id"]: d for d in DIMENSIONS}
 
@@ -140,6 +145,60 @@ DIRECTIVES = [
 def usual_limit(marks):
     """UPSC GS Mains: 150 words for a 10-mark question, 250 for 15 marks."""
     return {10: 150, 15: 250}.get(marks)
+
+
+# Question formats the site offers (lib/mainsFormats.ts mirrors this). Marks and word limits are those printed on the
+# 2024 papers: GS I-III Q1-10 "150 words" (10 marks), Q11-20 "250 words" (15 marks); GS IV Section A theory 10 marks /
+# 150 words, Section B case studies 20 marks / about 250 words; Essay 125 marks, "about 1000-1200 words". Optional
+# papers print no word limit, so their limits are suggestions. Sources: docs/marking-standard.md.
+FORMATS = {
+    "gs-10": dict(paper="gs", marks=10, words=150),
+    "gs-15": dict(paper="gs", marks=15, words=250),
+    "ethics-10": dict(paper="ethics", marks=10, words=150),
+    "ethics-case-20": dict(paper="ethics_case", marks=20, words=250),
+    "essay-125": dict(paper="essay", marks=125, words=1100),
+    "optional-10": dict(paper="optional", marks=10, words=150, suggested=True),
+    "optional-15": dict(paper="optional", marks=15, words=250, suggested=True),
+    "optional-20": dict(paper="optional", marks=20, words=300, suggested=True),
+}
+WORD_TAG = re.compile(r"\(\s*(?:answer\s+in|in)\s+(?:about\s+)?(\d{2,4})\s+words?\s*\)|\(\s*(?:उत्तर\s+)?(\d{2,4})\s+शब्दों\s+में\s*\)",
+                      re.I)
+HINDI_ALLOWANCE = 1.2  # Hindi writes postpositions and auxiliaries as separate words; to be calibrated on real scripts
+
+
+def word_limit(question, fmt=None, marks=None, limit=None):
+    """The limit printed in the question ("(Answer in 150 words)") wins; then the student's chosen format; then the
+    usual GS limit for the marks. None when nothing says what the limit is."""
+    m = WORD_TAG.search(question or "")
+    if m:
+        return int(m.group(1) or m.group(2))
+    if isinstance(limit, int) and 30 <= limit <= 3000:
+        return limit
+    if fmt in FORMATS:
+        return FORMATS[fmt]["words"]
+    return usual_limit(marks)
+
+
+def points_norm(marks):
+    """Distinct body points a sharp answer makes: 5-6 for 10 marks, 6-7 for 15 (Vajiram & Ravi's norm, the lower end)."""
+    if not marks:
+        return 5
+    return {10: 5, 15: 6, 20: 7}.get(marks, max(4, min(8, round(marks / 2.5))))
+
+
+# What each command word demands, and the failure that most often costs marks on it (coaching consensus: Vajiram &
+# Ravi, BYJU'S, CivilsDaily, StudyIQ; see docs/marking-standard.md). Given to the directive check.
+DIRECTIVE_FAILURE = {
+    "Critically examine": "criticism without first examining the issue, or no reasoned verdict at the end",
+    "Discuss": "one-sided: only advantages or only disadvantages, with no reasoned conclusion",
+    "Explain": "describing what without the how and why",
+    "Analyse": "describing facts without explaining causes, effects and how they link",
+    "Evaluate": "no final judgement, or evidence for one side only",
+    "Examine": "a shallow overview without the key facts, causes and implications",
+    "Comment": "a long discussion with no clear, reasoned opinion",
+    "Suggest": "spending the answer on the problem instead of specific, workable measures",
+    "Illustrate": "theory without concrete examples",
+}
 
 
 def directive_guide(question, lang):

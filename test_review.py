@@ -11,11 +11,20 @@ class Migrations(unittest.TestCase):
         with sqlite3.connect(":memory:") as db:
             db.execute("CREATE TABLE upsc_articles (id INTEGER PRIMARY KEY)")
             db.execute("INSERT INTO upsc_articles VALUES (17)")
-            for name in ("schema.sql", "schema_v2.sql", "schema.sql", "schema_v2.sql"):
+            for name in ("schema.sql", "schema_v2.sql", "schema_v3.sql", "schema.sql", "schema_v2.sql", "schema_v3.sql"):
                 db.executescript((HERE / name).read_text())
             self.assertEqual(db.execute("SELECT id FROM upsc_articles").fetchone(), (17,))
             tables = {r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-            self.assertTrue({"mains_submissions", "mains_submission_pages", "mains_reviews"} <= tables)
+            self.assertTrue({"mains_submissions", "mains_submission_pages", "mains_reviews",
+                             "mains_submission_format"} <= tables)
+
+    def test_v3_rejects_bad_formats(self):
+        with sqlite3.connect(":memory:") as db:
+            db.executescript((HERE / "schema_v3.sql").read_text())
+            db.execute("INSERT INTO mains_submission_format VALUES ('a','gs-15',15,250,1)")
+            for bad in (("b", "gs-20", 20, 250), ("c", "gs-10", 0, 150), ("d", "custom", 10, 5)):
+                with self.assertRaises(sqlite3.IntegrityError):
+                    db.execute("INSERT INTO mains_submission_format VALUES (?,?,?,?,1)", bad)
 
     def test_v2_rejects_bad_values(self):
         with sqlite3.connect(":memory:") as db:
