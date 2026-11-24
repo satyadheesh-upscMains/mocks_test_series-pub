@@ -1,0 +1,435 @@
+{
+ "gguf-current": {
+  "secondsToEmbedAll": 59.7,
+  "passages": 841,
+  "dim": 384,
+  "tokenizerMatchesHF": [
+   false,
+   false,
+   false
+  ],
+  "englishRanks": [
+   262,
+   485,
+   137,
+   112,
+   67,
+   4,
+   503,
+   81,
+   288,
+   172,
+   46
+  ],
+  "englishTop10": 1,
+  "hindiRanks": [
+   9,
+   428,
+   330,
+   322,
+   69,
+   15,
+   3,
+   364
+  ],
+  "hindiTop10": 2,
+  "polityQuestionTopCos": [
+   0.955,
+   0.947,
+   0.974,
+   0.92,
+   0.962,
+   0.96,
+   0.928,
+   0.962
+  ],
+  "offTopicTopCos": [
+   0.941,
+   0.939,
+   0.951,
+   0.948
+  ],
+  "separation": -0.031,
+  "mostCommonTop": [
+   [
+    "Article 44",
+    7
+   ],
+   [
+    "Schedule 5",
+    3
+   ],
+   [
+    "Article 155",
+    2
+   ]
+  ],
+  "english": [
+   {
+    "rank": 262,
+    "top": "Article 115",
+    "topCos": 0.948,
+    "spread": 0.045,
+    "case": "polity-local",
+    "phrase": "Election Commission of India"
+   },
+   {
+    "rank": 485,
+    "top": "Article 43B",
+    "topCos": 0.91,
+    "spread": 0.04,
+    "case": "polity-local",
+    "phrase": "all the subjects in the State List"
+   },
+   {
+    "rank": 137,
+    "top": "Article 14",
+    "topCos": 0.946,
+    "spread": 0.055,
+    "case": "polity-art21",
+    "phrase": "only to citizens"
+   },
+   {
+    "rank": 112,
+    "top": "Schedule 5",
+    "topCos": 0.93,
+    "spread": 0.041,
+    "case": "polity-art21",
+    "phrase": "High Court directly under Article 32"
+   },
+   {
+    "rank": 67,
+    "top": "Article 281",
+    "topCos": 0.959,
+    "spread": 0.051,
+    "case": "polity-eci",
+    "phrase": "advice of the Prime Minister"
+   },
+   {
+    "rank": 4,
+    "top": "Article 44",
+    "topCos": 0.957,
+    "spread": 0.049,
+    "case": "polity-governor",
+    "phrase": "elected by the State Legislative Assembly"
+   },
+   {
+    "rank": 503,
+    "top": "Article 44",
+    "topCos": 0.951,
+    "spread": 0.049,
+    "case": "polity-amend",
+    "phrase": "Every constitutional amendment must also be ratified"
+   },
+   {
+    "rank": 81,
+    "top": "Schedule 5",
+    "topCos": 0.926,
+    "spread": 0.043,
+    "case": "polity-moneybill",
+    "phrase": "introduced in either House"
+   },
+   {
+    "rank": 288,
+    "top": "Article 44",
+    "topCos": 0.949,
+    "spread": 0.051,
+    "case": "polity-moneybill",
+    "phrase": "up to three months"
+   },
+   {
+    "rank": 172,
+    "top": "Article 155",
+    "topCos": 0.953,
+    "spread": 0.065,
+    "case": "polity-356",
+    "phrase": "continue indefinitely"
+   },
+   {
+    "rank": 46,
+    "top": "Article 153",
+    "topCos": 0.934,
+    "spread": 0.052,
+    "case": "polity-dpsp",
+    "phrase": "enforced in courts in the same way"
+   }
+  ],
+  "hindi": [
+   {
+    "rank": 9,
+    "top": "Article 44",
+    "topCos": 0.948,
+    "spread": 0.052,
+    "query": "राज्यपाल का चुनाव राज्य की विधानसभा पाँच"
+   },
+   {
+    "rank": 428,
+    "top": "Article 155",
+    "topCos": 0.927,
+    "spread": 0.039,
+    "query": "धन विधेयक संसद के किसी भी सदन में पेश कि"
+   },
+   {
+    "rank": 330,
+    "top": "Article 44",
+    "topCos": 0.946,
+    "spread": 0.052,
+    "query": "पंचायतों के चुनाव भारत का निर्वाचन आयोग "
+   },
+   {
+    "rank": 322,
+    "top": "Schedule 5",
+    "topCos": 0.942,
+    "spread": 0.05,
+    "query": "राष्ट्रपति शासन अनिश्चित काल तक जारी रह "
+   },
+   {
+    "rank": 69,
+    "top": "Article 194",
+    "topCos": 0.952,
+    "spread": 0.047,
+    "query": "नीति निदेशक तत्वों को मौलिक अधिकारों की "
+   },
+   {
+    "rank": 15,
+    "top": "Article 194",
+    "topCos": 0.953,
+    "spread": 0.052,
+    "query": "मुख्य निर्वाचन आयुक्त को प्रधानमंत्री की"
+   },
+   {
+    "rank": 3,
+    "top": "Article 44",
+    "topCos": 0.936,
+    "spread": 0.043,
+    "query": "राज्यपाल की नियुक्ति कैसे होती है? भारत "
+   },
+   {
+    "rank": 364,
+    "top": "Article 44",
+    "topCos": 0.936,
+    "spread": 0.05,
+    "query": "धन विधेयक के पारित होने में राज्यसभा की "
+   }
+  ],
+  "checksumOk": true
+ },
+ "gguf-cstr": {
+  "error": "ValueError: Failed to load model from file: models/probe/multilingual-e5-small-q8_0.gguf"
+ },
+ "onnx-int8": {
+  "secondsToEmbedAll": 27.3,
+  "passages": 841,
+  "dim": 384,
+  "tokenizerMatchesHF": [
+   true,
+   true,
+   true
+  ],
+  "englishRanks": [
+   2,
+   24,
+   60,
+   2,
+   1,
+   5,
+   1,
+   4,
+   4,
+   25,
+   1
+  ],
+  "englishTop10": 8,
+  "hindiRanks": [
+   1,
+   9,
+   1,
+   13,
+   1,
+   1,
+   3,
+   7
+  ],
+  "hindiTop10": 7,
+  "polityQuestionTopCos": [
+   0.841,
+   0.858,
+   0.852,
+   0.851,
+   0.866,
+   0.859,
+   0.851,
+   0.851
+  ],
+  "offTopicTopCos": [
+   0.836,
+   0.836,
+   0.824,
+   0.838
+  ],
+  "separation": 0.003,
+  "mostCommonTop": [
+   [
+    "Article 324",
+    3
+   ],
+   [
+    "Article 107",
+    2
+   ],
+   [
+    "Article 37",
+    2
+   ]
+  ],
+  "english": [
+   {
+    "rank": 2,
+    "top": "Article 324",
+    "topCos": 0.865,
+    "spread": 0.073,
+    "case": "polity-local",
+    "phrase": "Election Commission of India"
+   },
+   {
+    "rank": 24,
+    "top": "Article 243C",
+    "topCos": 0.858,
+    "spread": 0.058,
+    "case": "polity-local",
+    "phrase": "all the subjects in the State List"
+   },
+   {
+    "rank": 60,
+    "top": "Article 29",
+    "topCos": 0.866,
+    "spread": 0.081,
+    "case": "polity-art21",
+    "phrase": "only to citizens"
+   },
+   {
+    "rank": 2,
+    "top": "Article 35",
+    "topCos": 0.862,
+    "spread": 0.062,
+    "case": "polity-art21",
+    "phrase": "High Court directly under Article 32"
+   },
+   {
+    "rank": 1,
+    "top": "Article 324",
+    "topCos": 0.883,
+    "spread": 0.079,
+    "case": "polity-eci",
+    "phrase": "advice of the Prime Minister"
+   },
+   {
+    "rank": 5,
+    "top": "Article 213",
+    "topCos": 0.858,
+    "spread": 0.059,
+    "case": "polity-governor",
+    "phrase": "elected by the State Legislative Assembly"
+   },
+   {
+    "rank": 1,
+    "top": "Article 368",
+    "topCos": 0.863,
+    "spread": 0.056,
+    "case": "polity-amend",
+    "phrase": "Every constitutional amendment must also be ratified"
+   },
+   {
+    "rank": 4,
+    "top": "Article 107",
+    "topCos": 0.899,
+    "spread": 0.088,
+    "case": "polity-moneybill",
+    "phrase": "introduced in either House"
+   },
+   {
+    "rank": 4,
+    "top": "Article 198",
+    "topCos": 0.87,
+    "spread": 0.065,
+    "case": "polity-moneybill",
+    "phrase": "up to three months"
+   },
+   {
+    "rank": 25,
+    "top": "Article 339",
+    "topCos": 0.86,
+    "spread": 0.055,
+    "case": "polity-356",
+    "phrase": "continue indefinitely"
+   },
+   {
+    "rank": 1,
+    "top": "Article 37",
+    "topCos": 0.873,
+    "spread": 0.07,
+    "case": "polity-dpsp",
+    "phrase": "enforced in courts in the same way"
+   }
+  ],
+  "hindi": [
+   {
+    "rank": 1,
+    "top": "Article 156",
+    "topCos": 0.827,
+    "spread": 0.054,
+    "query": "राज्यपाल का चुनाव राज्य की विधानसभा पाँच"
+   },
+   {
+    "rank": 9,
+    "top": "Article 107",
+    "topCos": 0.836,
+    "spread": 0.047,
+    "query": "धन विधेयक संसद के किसी भी सदन में पेश कि"
+   },
+   {
+    "rank": 1,
+    "top": "Article 243K",
+    "topCos": 0.834,
+    "spread": 0.066,
+    "query": "पंचायतों के चुनाव भारत का निर्वाचन आयोग "
+   },
+   {
+    "rank": 13,
+    "top": "Article 372",
+    "topCos": 0.83,
+    "spread": 0.051,
+    "query": "राष्ट्रपति शासन अनिश्चित काल तक जारी रह "
+   },
+   {
+    "rank": 1,
+    "top": "Article 37",
+    "topCos": 0.842,
+    "spread": 0.052,
+    "query": "नीति निदेशक तत्वों को मौलिक अधिकारों की "
+   },
+   {
+    "rank": 1,
+    "top": "Article 324",
+    "topCos": 0.844,
+    "spread": 0.065,
+    "query": "मुख्य निर्वाचन आयुक्त को प्रधानमंत्री की"
+   },
+   {
+    "rank": 3,
+    "top": "Article 165",
+    "topCos": 0.837,
+    "spread": 0.05,
+    "query": "राज्यपाल की नियुक्ति कैसे होती है? भारत "
+   },
+   {
+    "rank": 7,
+    "top": "Article 196",
+    "topCos": 0.842,
+    "spread": 0.043,
+    "query": "धन विधेयक के पारित होने में राज्यसभा की "
+   }
+  ],
+  "checksumOk": true
+ }
+}
