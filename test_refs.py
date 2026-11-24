@@ -184,7 +184,8 @@ class InTheReport(unittest.TestCase):
                         "Write that a State Election Commission conducts panchayat elections.")
         wrong["refId"] = "r2"
         script = dict(EN, gap=NOTHING, provisions=NOTHING)
-        script["facts:s4"] = {"credit": [], "concerns": [wrong], "note": "The claim is contradicted.",
+        script["facts:s4"] = {"sourceWords": "vested in a State Election Commission", "wrongWords": "community monitoring",
+                              "credit": [], "concerns": [wrong], "note": "The claim is contradicted.",
                               "verdict": "contradicted", "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
         rep = self.run_all(script, found)
         s4 = next(h for h in rep["highlights"] if h["sourceId"] == "s4")
@@ -206,6 +207,49 @@ class InTheReport(unittest.TestCase):
         rep = self.run_all(script, found)
         tone = lambda r: {h["sourceId"]: h["tone"] for h in r["highlights"]}.get("s4")
         self.assertEqual(tone(rep), tone(base))   # no evidence from an extract: the claim check adds nothing
+
+    def test_a_clash_not_in_the_claims_own_words_is_not_called_wrong(self):
+        # Split run 45252594185: correct sentences were marked red with another sentence's error. A contradiction
+        # must quote the wrong words from this claim and the clashing words from its extract.
+        found = [dict(ART48A[0], shared=True),
+                 {"id": "r2", "label": "Constitution of India, Article 243K", "shared": False, "claims": ["s1"],
+                  "text": "Elections to the Panchayats. The conduct of all elections to the Panchayats shall be vested "
+                          "in a State Election Commission."}]
+        wrong = concern("s1", "wrong", "major", "Article 243K vests panchayat elections in a State Election Commission.",
+                        "Write that a State Election Commission conducts panchayat elections.")
+        wrong["refId"] = "r2"
+        script = dict(EN, gap=NOTHING, provisions=NOTHING)
+        script["facts:s1"] = {"sourceWords": "vested in a State Election Commission",
+                              "wrongWords": "the Election Commission of India",   # not in s1
+                              "credit": [], "concerns": [wrong], "note": "Contradicted.", "verdict": "contradicted",
+                              "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+        base = self.run_all(dict(EN, gap=NOTHING, provisions=NOTHING, **{"facts:s1": NOTHING}), found)
+        rep = self.run_all(script, found)
+        tone = lambda r: {h["sourceId"]: h["tone"] for h in r["highlights"]}.get("s1")
+        self.assertEqual(tone(rep), tone(base))
+
+    def test_a_cleared_claim_is_not_called_wrong_by_another_check(self):
+        found = [dict(ART48A[0], shared=True, claims=["s1"])]
+        loud = concern("s1", "wrong", "major",
+                       "Article 48A asks the State to protect the environment, which this sentence ignores.",
+                       "Add that Article 48A directs the State to protect the environment.")
+        loud["refId"] = "r1"
+        provisions = {"credit": [], "concerns": [loud], "note": "One error.", "verdict": "wrong",
+                      "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+        cleared = dict(NOTHING, sourceWords="", wrongWords="", verdict="not_covered")
+        rep = self.run_all(dict(EN, gap=NOTHING, provisions=provisions, **{"facts:s1": cleared}), found)
+        s1 = next(h for h in rep["highlights"] if h["sourceId"] == "s1")
+        self.assertFalse(any(c["kind"] == "wrong" for c in s1["concerns"]))   # the claim check read it and cleared it
+
+    def test_a_failed_question_part_gets_one_more_try(self):
+        gemma = FakeGemma(dict(EN, gap=NOTHING))
+        ex = Examiner(gemma)
+        with mock.patch.object(refs, "pack", return_value=[]), contextlib.redirect_stdout(io.StringIO()):
+            prep = pipeline.prepare(ex, job("en"))
+            results = [r for shard in pipeline.SHARD_ORDER for r in pipeline.run_shard(ex, prep, shard)]
+            results = [dict(r, status="unavailable", reason="runner") if r["id"] == "part:p2" else r for r in results]
+            rep = pipeline.finish(ex, prep, results)
+        self.assertEqual([p["status"] for p in rep["parts"]], ["met", "partial"])
 
     def test_no_sources_skips_the_check_without_a_model_call(self):
         gemma = FakeGemma(EN)

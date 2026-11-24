@@ -12,7 +12,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v8"
+REPORT_VERSION = "mains-report-v9"
 MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}

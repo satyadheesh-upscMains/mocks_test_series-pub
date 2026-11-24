@@ -9,7 +9,7 @@
 from . import breakdown, checks, prompts, refs, report, verify
 from .model import log
 from .rubric import SHARDS, usual_limit
-from .text import Rejected, norm, sentences, word_count
+from .text import Rejected, norm, sentences, similar, word_count
 
 SHARD_ORDER = tuple(SHARDS)
 
@@ -60,6 +60,26 @@ def merge_facts(results):
     extra = ("facts:", "gap:")
     facts = [r for r in results if r["id"].startswith(extra) and r["status"] == "ok"]
     rest = [r for r in results if not r["id"].startswith(extra)]
+    # A claim check that read a sentence against its own extracts and found no clash overrules any other check that
+    # calls that sentence wrong on a source's authority; and an error found in one sentence is not repeated on
+    # another (split run 45252594185: the DPSP error was marked on three correct sentences).
+    cleared = {r["id"].split(":", 1)[1] for r in facts if r["id"].startswith("facts:")
+               and not any(c["kind"] == "wrong" for c in r["concerns"])}
+    found = [c for r in facts if r["id"].startswith("facts:") for c in r["concerns"] if c["kind"] == "wrong"]
+    for r in rest:
+        if r["status"] != "ok":
+            continue
+        keep = []
+        for c in r["concerns"]:
+            sid = c.get("sourceId")
+            if c["kind"] in ("wrong", "unsupported") and c.get("ref") and sid in cleared:
+                continue
+            if sid and any(f["sourceId"] != sid and similar(f["reason"], c["reason"], 0.45) for f in found):
+                continue
+            keep.append(c)
+        if len(keep) != len(r["concerns"]):
+            r["concerns"] = keep
+            r["revised"] = True
     concerns = [c for r in facts for c in r["concerns"]]
     flagged = {c["sourceId"] for c in concerns}
     credit = [c for r in facts for c in r["credit"] if c["sourceId"] not in flagged]
@@ -114,6 +134,10 @@ def run_shard(examiner, prep, shard):
 
 def finish(examiner, prep, results):
     system = prompts.system(prep)
+    # A question part that could not be judged would leave the report unbuilt: it gets one more try here (split run
+    # 45252594185 lost three of nine reports this way).
+    results = [checks.run(examiner, prep, system, r["id"]) if r["kind"] == "part" and r["status"] != "ok" else r
+               for r in results]
     results = verify.run(examiner, prep, system, merge_facts(results))
     out = report.assemble(prep, results)
     out["summary"] = report.summarize(examiner, prep, system, out)

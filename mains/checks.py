@@ -4,9 +4,11 @@ Every finding points at a sentence ID that Gemma can only choose from the studen
 lists them), so a quote shown to the student is always the student's exact words. Text fields go through
 `text.clean`, and the verdict must agree with the evidence (for example "met" needs credit, "missing" allows none).
 """
+import re
+
 from . import prompts
 from .rubric import DIM
-from .text import Rejected, SENTENCE_END, clean, similar, tokens, unsourced_names, unsourced_numbers
+from .text import Rejected, SENTENCE_END, clean, fold, similar, tokens, unsourced_names, unsourced_numbers
 
 VERDICTS = ["good", "partial", "missing", "unsupported", "wrong", "not_applicable"]
 PART_VERDICTS = ["met", "partial", "missing"]
@@ -119,7 +121,7 @@ def bind(raw, prep, check_id):
             raise
         credit.append({"sourceId": sid, "quote": spans[sid], "reason": reason})
 
-    concerns, seen = [], set()
+    concerns, seen, dropped_c = [], set(), None
     for c in raw.get("concerns") or []:
         sid, kind, priority = c.get("sourceId"), c.get("kind"), c.get("priority")
         if kind not in KINDS or priority not in PRIORITY:
@@ -132,9 +134,17 @@ def bind(raw, prep, check_id):
             raise Rejected("concern:source")
         if (sid, kind) in seen:
             continue  # two concerns about the same sentence with the same kind are redundant; keep the first
+        try:
+            text = _with_source(prep, c, lang, src)
+        except Rejected as e:
+            # A finding that names a fact no source has is dropped, not retried: three rejected attempts over one
+            # name left whole checks "Not checked" and three Polity reports unbuilt (split run 45252594185).
+            if e.code.endswith(("unsourced_name", "unsourced_number")):
+                dropped_c = e.code
+                continue
+            raise
         seen.add((sid, kind))
-        concerns.append({"sourceId": sid, "quote": spans.get(sid), "kind": kind, "priority": priority,
-                         **_with_source(prep, c, lang, src)})
+        concerns.append({"sourceId": sid, "quote": spans.get(sid), "kind": kind, "priority": priority, **text})
     if len(concerns) == 2 and similar(concerns[0]["fix"], concerns[1]["fix"], 0.7):
         raise Rejected("concern:same_fix_twice")
 
@@ -144,7 +154,7 @@ def bind(raw, prep, check_id):
         if verdict == "met" and not credit:
             raise Rejected("part:met_without_credit")
         if verdict in ("partial", "missing") and not concerns:
-            raise Rejected("part:gap_without_concern")
+            raise Rejected(dropped_c or "part:gap_without_concern")
     else:
         if verdict == "not_applicable" and concerns:
             # The model judged the check not needed but still found problems: the problems stand, so it is a
@@ -153,15 +163,19 @@ def bind(raw, prep, check_id):
         if verdict == "good" and not credit:
             raise Rejected(dropped or "check:good_without_credit")
         if verdict in ("partial", "missing", "unsupported", "wrong") and not concerns:
-            raise Rejected("check:gap_without_concern")
+            raise Rejected(dropped_c or "check:gap_without_concern")
         if verdict == "missing" and credit and check_id == "scope":
             credit = []  # an off-topic answer earns no credit; keep scope 'missing' instead of rejecting
 
     if check_id == "evidence":
-        # A missing example weakens an answer but does not cost a required part: never a top-priority finding.
+        # A missing example weakens an answer but does not cost a required part: never a top-priority finding, and
+        # never red. A general claim with no example is "could be stronger" (split run 45252594185 marked "frequent
+        # use weakened State autonomy" red as if it were a factual error).
         for c in concerns:
             if c["priority"] == "major":
                 c["priority"] = "medium"
+            if c["kind"] == "unsupported":
+                c["kind"] = "weak"
 
     rewrite = None
     rw = raw.get("rewrite") or {}
@@ -174,16 +188,27 @@ def bind(raw, prep, check_id):
         elif rsid not in spans:
             raise Rejected("rewrite:source")
         ref = _cited(prep, rw.get("refId"))
-        out = clean(rw["text"], lang, prompts.sources(prep, (ref["id"],)) if ref else src, lo=15, hi=450,
-                    field="rewrite")
-        if len([s for s in SENTENCE_END.split(out) if s.strip()]) > 3:
-            raise Rejected("rewrite:too_long")
-        if rsid and similar(out, spans[rsid], 0.85):
-            raise Rejected("rewrite:unchanged")
-        rewrite = {"sourceId": rsid, "text": out, "ref": ref["id"] if ref and _uses(prep, ref, out) else None}
+        try:
+            out = clean(rw["text"], lang, prompts.sources(prep, (ref["id"],)) if ref else src, lo=15, hi=450,
+                        field="rewrite")
+        except Rejected as e:
+            if not e.code.endswith(("unsourced_name", "unsourced_number")):
+                raise
+            out = None  # a rewrite is optional: one that names an unsourced fact is left out, not retried
+        if out is not None:
+            if len([s for s in SENTENCE_END.split(out) if s.strip()]) > 3:
+                raise Rejected("rewrite:too_long")
+            if not (rsid and similar(out, spans[rsid], 0.85)):
+                rewrite = {"sourceId": rsid, "text": out,
+                           "ref": ref["id"] if ref and _uses(prep, ref, out) else None}
 
-    return {"verdict": verdict, "credit": credit, "concerns": concerns, "rewrite": rewrite,
-            "note": clean(raw.get("note"), lang, src_all, hi=500, field="note")}
+    try:
+        note = clean(raw.get("note"), lang, src_all, hi=500, field="note")
+    except Rejected as e:
+        if not e.code.endswith(("unsourced_name", "unsourced_number")):
+            raise
+        note = None  # the note is a summary line: without it the findings still stand
+    return {"verdict": verdict, "credit": credit, "concerns": concerns, "rewrite": rewrite, "note": note}
 
 
 def _with_source(prep, c, lang, src):
@@ -203,7 +228,7 @@ Decide from these extracts only:
 - contradicted: an extract states something that makes the claim wrong (a different body, office, House, power, time limit, number or condition).
 - confirmed: an extract states the same thing as the claim.
 - not_covered: no extract speaks to this claim. This is the usual case for opinions, examples, effects and claims about practice.
-If contradicted: one concern on {sid}, kind wrong, priority major (minor only for a small slip), refId = the extract that contradicts it; reason = what that extract says instead; fix = the corrected statement in one sentence, in words from that extract. If confirmed: credit {sid} with a reason that names the extract's provision; concerns empty. If not_covered: credit and concerns empty.
+If contradicted: sourceWords = the exact words copied from the extract that contradict the claim; wrongWords = the exact words copied from THIS claim that are wrong; one concern on {sid}, kind wrong, priority major (minor only for a small slip), refId = the extract that contradicts it; reason = what that extract says instead; fix = the corrected statement in one sentence, in words from that extract. Judge only the words of this claim: an error in another sentence of the answer is not this claim's error. If confirmed: credit {sid} with a reason that names the extract's provision; concerns empty. If not_covered: credit and concerns empty. sourceWords and wrongWords are empty unless contradicted.
 
 """
 FACT_VERDICTS = {"contradicted": "wrong", "confirmed": "good", "not_covered": "not_applicable"}
@@ -232,6 +257,12 @@ def run_gap(examiner, prep, system, check_id):
     sids = [s["id"] for s in prep["sentences"]]
 
     def validate(raw):
+        if isinstance(raw, dict):
+            raw = dict(raw, concerns=[c for c in raw.get("concerns") or []
+                                      if isinstance(c, dict) and c.get("sourceId") == "none"],
+                       rewrite={"sourceId": "none", "text": "", "refId": "none"})
+            for c in raw["concerns"]:
+                c["kind"] = "missing"
         out = bind(raw, prep, "gap")
         out["concerns"] = [c for c in out["concerns"] if c["kind"] == "missing" and c.get("ref")][:1]
         out["rewrite"] = None
@@ -262,12 +293,33 @@ def run_fact(examiner, prep, system, check_id):
     extracts = "\n".join(f"[{r['id']}] {r['label']}: {prompts.escape(r['text'])}" for r in mine)
     task = (FACT_TASK.format(sid=sid, text=prompts.escape(sent["text"]), extracts=extracts)
             + FIELDS.format(verdicts="contradicted, confirmed or not_covered, as decided above"))
-    sch = schema([sid], list(FACT_VERDICTS), [r["id"] for r in mine])
+    base = schema([sid], list(FACT_VERDICTS), [r["id"] for r in mine])
+    props = dict(base["properties"])
+    # Evidence first: the words that clash, then the finding, then the verdict.
+    sch = dict(base, required=["sourceWords", "wrongWords"] + base["required"],
+               properties={"sourceWords": {"type": "string"}, "wrongWords": {"type": "string"}, **props})
+    def flat(value):  # case, spacing and punctuation do not matter when words are compared
+        return " ".join(re.findall(r"\w+", fold(value)))
+
+    claim_text = flat(sent["text"])
+    extract_text = [flat(r["text"]) for r in mine]
+    # The claim's own extracts are its sources: a reason may use any of them, not only the one it cites.
+    own = dict(prep, refs=[dict(r, shared=True) for r in mine])
 
     def validate(raw):
         if not isinstance(raw, dict) or raw.get("verdict") not in FACT_VERDICTS:
             raise Rejected("fact:verdict")
-        out = bind(dict(raw, verdict=FACT_VERDICTS[raw["verdict"]]), prep, "facts")
+        if raw["verdict"] == "contradicted":
+            # A claim is called wrong only when the clash is in the words themselves (split run 45252594185
+            # marked three correct sentences red with the reason of a different sentence's error).
+            wrong, said = flat(raw.get("wrongWords")), flat(raw.get("sourceWords"))
+            if len(wrong.split()) < 2 or wrong not in claim_text:
+                raise Rejected("fact:wrong_words")
+            if len(said.split()) < 3 or not any(said in t for t in extract_text):
+                raise Rejected("fact:source_words")
+        raw = dict(raw, verdict=FACT_VERDICTS[raw["verdict"]],
+                   rewrite={"sourceId": "none", "text": "", "refId": "none"})
+        out = bind(raw, own, "facts")
         # A claim is called wrong only on an extract's evidence: a concern that cites no extract is dropped.
         out["concerns"] = [c for c in out["concerns"] if c.get("ref") and c["kind"] in ("wrong", "unsupported")]
         out["rewrite"] = None

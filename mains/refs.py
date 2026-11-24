@@ -230,8 +230,9 @@ class Index:
         out = []
         for n, i in enumerate(ranked, 1):
             c = self.chunks[i]
-            r = {"id": f"r{n}", "label": c["label"], "text": " ".join(c["text"].split()[:PASSAGE_WORDS]),
-                 "shared": i in shared}
+            words = c["text"].split()
+            r = {"id": f"r{n}", "label": c["label"],
+                 "text": " ".join(words[:PASSAGE_WORDS] if i in shared else words), "shared": i in shared}
             mine = sorted((sid for sid, js in claims.items() if i in js), key=lambda x: int(x[1:]))
             if mine:
                 r["claims"] = mine
