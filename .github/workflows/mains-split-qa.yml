@@ -37,7 +37,7 @@ jobs:
       - name: Unit tests (no model)
         run: |
           set +e
-          python -m unittest -v test_examiner test_refs test_photo test_worker test_review test_v10 > unit-split.log 2>&1
+          python -m unittest -v test_examiner test_refs test_photo test_worker test_review test_v10 test_v11 > unit-split.log 2>&1
           status=$?
           cat unit-split.log
           exit $status
@@ -48,8 +48,52 @@ jobs:
           path: unit-split.log
           retention-days: 3
 
-  prepare:
+  # v11: the sources each planted error needs, checked in about three minutes before any Gemma call. If a planted
+  # error cannot reach the Article that settles it, or the off-syllabus answer gets a source, the run stops here.
+  # With the pinned multilingual-e5-small model it also records what embeddings would pick (measured, not used).
+  retrieval:
     needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 5
+        continue-on-error: true
+        with:
+          path: models/multilingual-e5-small-Q8_0.gguf
+          key: mains-e5-small-q8-v1
+      - run: pip install -q ${{ env.RUNTIME }}
+      - name: Build reference index
+        timeout-minutes: 10
+        run: python tools/build_refs.py
+      - name: Planted errors reach their Articles
+        run: python tools/retrieval_check.py
+        env:
+          MAINS_EMBED_DOWNLOAD: '1'
+      - uses: actions/cache/save@v4
+        if: always()
+        timeout-minutes: 3
+        continue-on-error: true
+        with:
+          path: models/multilingual-e5-small-Q8_0.gguf
+          key: mains-e5-small-q8-v1
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: split-retrieval
+          path: retrieval-out
+          if-no-files-found: ignore
+          retention-days: 7
+
+  prepare:
+    needs: retrieval
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
@@ -74,11 +118,7 @@ jobs:
       - name: Build reference index
         timeout-minutes: 10
         run: python tools/build_refs.py
-      # v10: the pinned multilingual-e5-small model (132 MB, sha256-checked in mains/refs.py) re-ranks the keyword
-      # hits. If it cannot be downloaded or loaded, search stays keyword-only and the run continues.
       - run: python tools/split_qa.py prepare --case ${{ matrix.case }} --dir split-out
-        env:
-          MAINS_EMBED_DOWNLOAD: '1'
       - uses: actions/upload-artifact@v4
         with:
           name: prep-${{ matrix.case }}
@@ -194,7 +234,7 @@ jobs:
           retention-days: 7
 
   publish:
-    needs: [unit, finish]
+    needs: [unit, retrieval, finish]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -211,7 +251,7 @@ jobs:
           TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports && cd reports
-          echo "${{ github.run_id }} unit=${{ needs.unit.result }} finish=${{ needs.finish.result }}" > RUN
+          echo "${{ github.run_id }} unit=${{ needs.unit.result }} retrieval=${{ needs.retrieval.result }} finish=${{ needs.finish.result }}" > RUN
           git init -q -b qa/mains-split-reports
           git config user.name "mains-qa"
           git config user.email "mains-qa@users.noreply.github.com"

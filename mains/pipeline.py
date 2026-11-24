@@ -63,7 +63,10 @@ def merge_facts(results):
     # A claim check that read a sentence against its own extracts and found no clash overrules any other check that
     # calls that sentence wrong on a source's authority; and an error found in one sentence is not repeated on
     # another (split run 45252594185: the DPSP error was marked on three correct sentences).
+    # Cleared: the claim check read the sentence against its extracts and gave a verdict, confirmed or not covered.
+    # A contradiction, or a claim it could not settle ("unproven"), clears nothing.
     cleared = {r["id"].split(":", 1)[1] for r in facts if r["id"].startswith("facts:")
+               and r.get("verdict") in ("good", "not_applicable") and not r.get("unproven")
                and not any(c["kind"] == "wrong" for c in r["concerns"])}
     found = [c for r in facts if r["id"].startswith("facts:") for c in r["concerns"] if c["kind"] == "wrong"]
     wrong_at = {c["sourceId"] for c in found}

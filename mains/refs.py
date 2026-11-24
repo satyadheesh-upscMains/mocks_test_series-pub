@@ -35,7 +35,8 @@ other some own same too very can will just should would could may might must sha
 having i you he she we they them their our your his her my me us also only upon whereas thereof therein said section
 clause discuss examine explain analyse analyze evaluate critically comment suggest illustrate marks words
 position role significance impact structure system challenges remain issues relevance importance way ways
-measures steps need india indian scope widen widened constitution constitutional""".split())
+measures steps need india indian scope widen widened constitution constitutional
+federal federalism""".split())  # "federal" in the Constitution's text is the pre-1950 Federal Court (Articles 135, 374)
 ARTICLE = re.compile(r"(?:\bart(?:icle)?s?\.?|अनुच्छेद)\s*(\d{1,3}[A-Z]{0,3})\b", re.I)
 BOOK = {"keps1": "Political Theory", "keps2": "Indian Constitution at Work"}
 NCERT_FILES = [f"keps10{i}" for i in (1, 2, 3, 4, 6, 7, 8)] + [f"keps2{i:02d}" for i in range(1, 11)]
@@ -55,6 +56,14 @@ class Embedder:
 
     def embed(self, texts):
         return [self.llm.embed(t[:1500], normalize=True, truncate=True) for t in texts]
+
+
+VECTORS = Path(__file__).resolve().parents[1] / "refs" / "vectors"
+
+
+def vector_key(texts):
+    """Names a vector file by the model and the exact passages, so a changed source never uses stale vectors."""
+    return hashlib.sha256((EMBED_SHA256 + "\n".join(texts)).encode("utf-8")).hexdigest()[:16]
 
 
 def embedder():
@@ -80,6 +89,39 @@ def embedder():
     except Exception as e:  # noqa: BLE001 - fail open to keyword search
         print(f"refs embedding unavailable ({type(e).__name__}); using keyword search only", flush=True)
         return None
+
+
+# Common names the Constitution does not use, mapped to its own words. Matched on the query only, as whole phrases.
+# "Sabha" alone matched Article 243A (Gram Sabha) for a Money Bill question in v10, which then pulled Part IX cases in.
+VOCAB = [(r"\brajya sabha\b", "council of states"), (r"\blok sabha\b", "house of the people"),
+         (r"\bvidhan sabhas?\b", "legislative assembly"), (r"\bvidhan parishads?\b", "legislative council"),
+         (r"\bpresident'?s'? rule\b", "failure of constitutional machinery proclamation"),
+         (r"\bpanchayati raj\b", "panchayats"), (r"\bgram panchayats?\b", "village panchayats"),
+         (r"\bzila parishads?\b", "district panchayats"), (r"\beci\b", "election commission"),
+         (r"\bcec\b", "chief election commissioner"), (r"\bdpsps?\b", "directive principles of state policy"),
+         (r"\bcag\b", "comptroller and auditor-general")]
+
+
+def vocabulary(text):
+    out = (text or "").lower()
+    for pattern, words in VOCAB:
+        out = re.sub(pattern, words, out)
+    return out
+
+
+# The Constitution repeats many Union provisions for the States (Article 109 and 198 on Money Bills, 74 and 163 on
+# ministers). An answer about Parliament must not be checked against the State Legislature's Article, and the other
+# way round: v10 cited Article 198 for the Rajya Sabha.
+UNION_WORDS = ("parliament", "lok sabha", "rajya sabha", "house of the people", "council of states", "president",
+               "prime minister", "union government")
+STATE_WORDS = ("state legislature", "legislative assembly", "legislative council", "governor", "chief minister",
+               "state government")
+
+
+def level_of(text):
+    t = (text or "").lower()
+    union, state = any(w in t for w in UNION_WORDS), any(w in t for w in STATE_WORDS)
+    return "union" if union and not state else "state" if state and not union else None
 
 
 def _stem(w):
@@ -186,7 +228,8 @@ class Index:
             core, extra = chunks, []
         self.chunks = core + extra
         self.cache_dir = cache_dir
-        self.extra = Index(extra, min_score, min_coverage, embedder=None, extras=False) if extra else None
+        self.extra = Index(extra, min_score, min_coverage, embedder=embedder, cache_dir=cache_dir,
+                           extras=False) if extra else None
         self.offset = len(core)
         self.min_score, self.min_coverage = min_score, min_coverage
         self.embedder = embedder
@@ -203,11 +246,12 @@ class Index:
         df = collections.Counter(t for d in self.docs for t in d)
         n = len(self.docs)
         self.idf = {t: math.log(1 + (n - k + 0.5) / (k + 0.5)) for t, k in df.items()}
-        self.by_article = {}
+        self.by_article, self.chunks_of = {}, {}
         for i, c in enumerate(core):
             m = re.match(r"c(\w+?)(?:\.\d+)?$", c["id"])
             if m:
                 self.by_article.setdefault(m.group(1).upper(), i)
+                self.chunks_of.setdefault(m.group(1).upper(), []).append(i)
 
     def _embedding_ranks(self, query):
         """Optional e5 second ranker. Fail-open: graders work without the model, and unit tests inject a tiny
@@ -228,12 +272,16 @@ class Index:
 
     def _passage_vectors(self, np):
         texts = ["passage: " + c["title"] + " " + c["text"] for c in self.chunks[:len(self.docs)]]
-        key = hashlib.sha256((EMBED_SHA256 + "\n".join(texts)).encode("utf-8")).hexdigest()[:16]
+        key = vector_key(texts)
+        # A committed file (built once with tools/build_vectors.py, private core only when it holds the licensed
+        # book) is used first; otherwise the runner's cache; otherwise they are computed here and cached.
+        for path in [VECTORS / f"vectors-{key}.npy"] + ([Path(self.cache_dir) / f"vectors-{key}.npy"]
+                                                         if self.cache_dir else []):
+            if path.exists():
+                vec = np.load(path)
+                if vec.shape[0] == len(texts):
+                    return vec.astype("float32")
         cache = Path(self.cache_dir) / f"vectors-{key}.npy" if self.cache_dir else None
-        if cache and cache.exists():
-            vec = np.load(cache)
-            if vec.shape[0] == len(texts):
-                return vec.astype("float32")
         vec = np.asarray(self.embedder.embed(texts), dtype="float32")
         if cache:
             cache.parent.mkdir(parents=True, exist_ok=True)
@@ -241,7 +289,7 @@ class Index:
         return vec
 
     def search(self, query, k1=1.4, b=0.75, titles=True):
-        weights = {t: self.idf[t] for t in set(terms(query)) if t in self.idf}
+        weights = {t: self.idf[t] for t in set(terms(vocabulary(query))) if t in self.idf}
         total = sum(weights.values()) or 1.0
         both = {t: max(w, self.hidf.get(t, 0)) for t, w in weights.items()}
         total_both = sum(both.values()) or 1.0
@@ -261,15 +309,33 @@ class Index:
                 cov = sum(both[t] for t in both if t in d or t in head) / total_both
                 hits.append((s, cov, i))
         hits.sort(reverse=True)
-        # Reciprocal-rank fusion preserves BM25's exact Article-number advantage
-        # while allowing paraphrases to surface a relevant passage.
-        eranks = self._embedding_ranks(query)
-        if eranks and hits:
-            bm = {i: n for n, (_, _, i) in enumerate(hits, 1)}
-            em = {i: n for n, i in enumerate(eranks, 1)}
-            hits.sort(key=lambda x: (1 / (60 + bm[x[2]]) + 0.7 / (60 + em.get(x[2], 10**6))), reverse=True)
+        # Embeddings do not change these results (v11): in v10 they re-ordered the picks on GitHub's runners in a way
+        # no local check could reproduce. They are measured by `shadow` until their thresholds are tuned on real scores.
         # Textbook exercise pages are mostly questions to the reader: they carry no facts to check against.
         return [(s, cov, i) for s, cov, i in hits if self.chunks[i]["text"].count("?") < 3]
+
+    def shadow(self, query, k=3):
+        """What the embedding model would pick for `query`: [(label, cosine)], or [] without the model. Measurement
+        only; nothing in grading uses it yet."""
+        ranks = self._embedding_ranks(query)
+        if not ranks:
+            return []
+        import numpy as np
+        q = np.asarray(self.embedder.embed(["query: " + query])[0], dtype="float32")
+        out = []
+        for i in ranks[:k]:
+            v = self._vectors[i]
+            out.append((self.chunks[i]["label"], round(float(v @ q / max(np.linalg.norm(v) * np.linalg.norm(q), 1e-9)), 3)))
+        return out
+
+    def best_chunk(self, number, text):
+        """The slice of a long Article that best matches `text`: Article 356(4) on the six-month limit sits in its third
+        slice, Article 324(5) on removal in its second; v10 always handed the claim check the first."""
+        cands = self.chunks_of.get(str(number).upper()) or []
+        if len(cands) <= 1:
+            return cands[0] if cands else None
+        score = {i: sc for sc, _, i in self.search(text, titles=False)}
+        return max(cands, key=lambda i: (score.get(i, 0.0), -i))
 
     def article(self, number):
         i = self.by_article.get(str(number).upper())
@@ -292,11 +358,16 @@ class Index:
         order, shared, claims = [], set(), {}
 
         def take(i, share, extra=False):
-            # One extract per Article or chapter label: a second slice of the same Article adds little. Returns the
-            # extract that now stands for i (itself, or the one with the same label), or None when there is no room.
+            # Shown to every check: one extract per Article or chapter label, since a second slice adds little there.
+            # For a single claim the exact slice matters (v10: the claim checks on Articles 356 and 324 never saw the
+            # clause that settles them), so a claim's slice is its own extract. Returns the extract that now stands for
+            # i, or None when there is no room.
             if i is None:
                 return None
-            same = next((j for j in order if self.chunks[j]["label"] == self.chunks[i]["label"]), None)
+            if share or extra:
+                same = next((j for j in order if self.chunks[j]["label"] == self.chunks[i]["label"]), None)
+            else:
+                same = i if i in order else None
             if same is None:
                 if not extra and (len(order) >= MAX_REFS or (share and len(shared) >= MAX_PASSAGES)):
                     return None
@@ -320,7 +391,14 @@ class Index:
             if j is not None and j not in named:
                 named.append(j)
         hits = self.search(question)
-        on_topic = [i for sc, cov, i in hits if sc >= self.min_score and cov >= self.min_coverage and self._core(i)]
+        level = level_of(question + " " + " ".join(s["text"] for s in sents))
+
+        def fits(i):  # a Union answer is not checked against the State's mirror Article, nor the other way round
+            fam = family(self.chunks[i])
+            return not ((level == "union" and fam.startswith("VI.")) or (level == "state" and fam.startswith("V.")))
+
+        on_topic = [i for sc, cov, i in hits
+                    if sc >= self.min_score and cov >= self.min_coverage and self._core(i) and fits(i)]
         for i in on_topic[:FROM_QUESTION_FIRST]:
             take(i, True)
         # Each claim gets the extracts that can check it, because the answer's claims are where its errors are:
@@ -342,7 +420,7 @@ class Index:
                 # Each sentence on its own words, Constitution passages only (textbook passages outrank Articles on
                 # every claim, as the v10 diagnostic showed), the Parts of its five best Articles, one vote each.
                 arts = [i for sc, _, i in self.search(s["text"], titles=True)
-                        if sc >= self.min_score * CLAIM_SCORE and self.chunks[i]["id"].startswith("c")][:5]
+                        if sc >= self.min_score * CLAIM_SCORE and self.chunks[i]["id"].startswith("c") and fits(i)][:5]
                 votes.update({family(self.chunks[i]) for i in arts})
             self.last_votes = dict(votes)
             whole = question + " " + " ".join(x["text"] for x in sents)
@@ -350,59 +428,87 @@ class Index:
             for fam, n in votes.most_common(2):
                 if n >= need and fam not in families:
                     families.add(fam)
-                    best = next((i for sc, cov, i in self.search(whole) if family(self.chunks[i]) == fam), None)
+                    best = next((i for sc, cov, i in self.search(whole) if family(self.chunks[i]) == fam and fits(i)),
+                                None)
                     if best is not None:
                         take(best, True)
                         on_topic.append(best)
         ranked_families = list(dict.fromkeys(family(self.chunks[i]) for i in named + on_topic))
         named_articles = {m.group(1).upper() for m in ARTICLE.finditer(question + " " + " ".join(s["text"] for s in sents))}
+        # The question's own leading Constitution extracts: every claim is read against the core provisions of the
+        # topic. "elected by the State Legislative Assembly" shares no word with Article 155, and its own words filled
+        # its slots with Articles 176 and 171 (v11 source check with NCERT), so the Governor error never met it.
+        core_q = [i for i in on_topic if self.chunks[i]["id"].startswith("c")][:FROM_QUESTION_FIRST]
+
+        def art_of(i):
+            m = re.match(r"c(\w+?)(?:\.\d+)?$", self.chunks[i]["id"])
+            return m.group(1) if m else None
+
         for s in sents:
+            mine = claims.setdefault(s["id"], [])
+
+            def add(i, share=False):
+                # One extract per Article or chapter for a claim, and the slice of a long Article that best matches the
+                # claim; at most one textbook extract, so the Constitution's text is never crowded out (v11 check:
+                # five slices of one NCERT chapter took every slot of the DPSP and Panchayat claims).
+                if i is None or len(mine) >= CLAIM_SOURCES or not self._core(i):
+                    return
+                art = art_of(i)
+                if art:
+                    i = self.best_chunk(art, s["text"]) or i
+                label = self.chunks[i]["label"]
+                if any(self.chunks[j]["label"] == label for j in mine):
+                    return
+                if not art and sum(1 for j in mine if not art_of(j)) >= 1:
+                    return
+                j = take(i, share) if share else take(i, False)
+                if j is not None:
+                    claim(s["id"], j)
+
             for m in ARTICLE.finditer(s["text"]):
-                claim(s["id"], take(self.by_article.get(m.group(1).upper()), True))
+                art = m.group(1).upper()
+                take(self.by_article.get(art), True)
+                add(self.by_article.get(art))
             for j in named[:2]:
-                claim(s["id"], j)
+                add(j)
             if not families:
                 continue
+            for j in core_q:
+                add(j)
             for query, titles in ((s["text"], False), (f"{s['text']} {question}", True)):
                 got = 0
-                # Thresholds on the keyword score first, then the fused order (keyword + embedding ranks): a
-                # paraphrase can lift a passage that keyword search ranked lower, never one it did not find.
                 for sc, _, i in self.search(query, titles=titles):
-                    if got >= 2:
+                    if got >= 2 or sc < self.min_score * CLAIM_SCORE or len(mine) >= CLAIM_SOURCES:
                         break
-                    if sc < self.min_score * CLAIM_SCORE or not self._core(i):
-                        continue
-                    if family(self.chunks[i]) in families:
-                        j = take(i, False)
-                        if j is not None and j not in claims.get(s["id"], []):
-                            claim(s["id"], j)
-                            got += 1
+                    if self._core(i) and fits(i) and family(self.chunks[i]) in families:
+                        before = len(mine)
+                        add(i)
+                        got += len(mine) - before
         for i in on_topic[FROM_QUESTION_FIRST:]:
             take(i, True)
         if families and self.extra:
-            self._extras(question, sents, ranked_families, named_articles, take)
+            checked = {m.group(1).upper() for j in order if self._core(j)
+                       for m in [re.match(r"c(\w+?)(?:\.\d+)?$", self.chunks[j]["id"])] if m}
+            self._extras(question, sents, named_articles, checked, take)
         return self._out(order, shared, claims)
 
-    def _extras(self, question, sents, families, named, take):
+    def _extras(self, question, sents, named, checked, take):
         """Landmark cases and the licensed book's best sections, on a question the Constitution speaks to.
 
-        Cases: those on an Article the question or answer names come first, then those in the question's own Parts of
-        the Constitution, in the order the core search ranked those Parts; ties go to the better keyword match. (The
-        v10 check gave the Article 21 question the Judges cases, because "Supreme Court" in the question put Part V
-        chapter 4 among its topics.) Book: the best section for the question, and the best for question and answer."""
+        A case is offered only when it is about an Article this answer is checked against (named in the question or
+        answer first, then any Article in its extracts); ties go to the better keyword match with the question and
+        answer. v10 matched cases by Part of the Constitution and gave a Money Bill answer a Panchayat case and a
+        Panchayat answer a Governor case. Book: the best section for the question, then for question and answer."""
         text = question + " " + " ".join(s["text"] for s in sents)
         score = {j: sc for sc, _, j in self.extra.search(text)}
-        rank = {f: n for n, f in enumerate(families)}
         picks = []
         for j, c in enumerate(self.extra.chunks):
             if not c.get("case"):
                 continue
             arts = {str(a).upper() for a in c.get("articles", [])}
-            near = [rank[part_of(a)] for a in arts if part_of(a) in rank]
-            if not (arts & named or near):
+            if not arts & (named | checked):
                 continue
-            picks.append((0 if arts & named else 1, -len(arts & named), min(near) if near else 99,
-                          -score.get(j, 0.0), j))
+            picks.append((-len(arts & named), -score.get(j, 0.0), -len(arts & checked), j))
         for *_, j in sorted(picks)[:MAX_CASES]:
             take(self.offset + j, True, extra=True)
         got, seen = 0, set()

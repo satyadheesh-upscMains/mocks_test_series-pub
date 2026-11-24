@@ -13,7 +13,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v10"
+REPORT_VERSION = "mains-report-v11"
 MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -218,8 +218,6 @@ def assemble(prep, results):
                     f["priority"] = "medium"
             if f["kind"] == "weak" and PHRASING.search(f["reason"]):
                 continue
-            if f["kind"] == "wrong" and f["rewrite"] and not f["source"] and r["id"] not in OPINION_CHECKS:
-                f["rewrite"] = None  # a corrected fact needs a source; `correct` writes it from one
             if not f["fromPart"] and f["sourceId"] is None and f["kind"] == "missing":
                 # A dimension check asking for something the question part already asks for repeats the part's
                 # own finding in other words: fold it into that part.
@@ -238,9 +236,18 @@ def assemble(prep, results):
         if dup:
             dup.setdefault("alsoFrom", []).append(f["origin"])
             dup["rewrite"] = dup["rewrite"] or f["rewrite"]
-            dup["source"] = dup["source"] or f["source"]
+            if not dup["source"] and f["source"]:
+                dup["source"], dup["ref"] = f["source"], f.get("ref") or f.get("rewriteRef")
         else:
             kept.append(f)
+    for f in kept:
+        # A wrong fact with no source gets no "try writing" line, whichever merged check supplied it: v10 dropped the
+        # unsourced Article 356 rewrite from one check and the merge brought it back from another. Suggestions judged
+        # by the opinion checks (concreting a wetland) keep theirs: they rest on the answer, not on a fact.
+        origins = [f["origin"]] + f.get("alsoFrom", [])
+        if f["kind"] == "wrong" and f["sourceId"] and not f["source"] and \
+                not all(o in OPINION_CHECKS for o in origins):
+            f["rewrite"] = None
     majors = [f for f in kept if f["priority"] == "major"]
 
     # 2. Up to three fixes, preferring different sentences so the student is not told three things about one line.
@@ -347,7 +354,8 @@ def assemble(prep, results):
                    "kindLabel": KIND_LABEL[f["kind"]][L],
                    "yourLine": {"sourceId": f["sourceId"], "text": f["quote"]} if f["sourceId"] else None,
                    "why": f["reason"], "tryWriting": f["rewrite"],
-                   "checkedTwice": f.get("verification") in ("upheld", "softened"), "source": f["source"]}
+                   "checkedTwice": f.get("verification") in ("upheld", "softened"), "source": f["source"],
+                   "sourceRef": (f.get("ref") or f.get("rewriteRef")) if f["source"] else None}
                   for i, f in enumerate(fixes, 1)],
         "highlights": highlights, "missing": missing, "additions": additions, "strengths": strengths,
         "checks": checks, "stats": stats, "transcript": None,
@@ -414,11 +422,13 @@ def correct(examiner, prep, system, report):
     keep it only when every number and name in it comes from that extract or the student's sentence. v9 handed a
     student a wrong rule for Article 356; a fix must never teach a new error."""
     from .checks import copies, licensed
+    by_id = {r["id"]: r for r in prep.get("refs") or []}
     by_label = {r["label"]: r for r in prep.get("refs") or []}
     for f in report["fixes"]:
         if f["kind"] != "wrong" or not f.get("yourLine"):
             continue
-        ref = by_label.get(f.get("source") or "")
+        # The exact slice the finding cites (Article 356 has four): the label alone would pick the first.
+        ref = by_id.get(f.get("sourceRef") or "") or by_label.get(f.get("source") or "")
         if not ref or not f["source"].startswith(CHECKED):
             continue  # `assemble` already dropped an unsourced rewrite of a wrong fact
         sentence = f["yourLine"]["text"]
@@ -431,6 +441,11 @@ def correct(examiner, prep, system, report):
                 raise Rejected("correct:unsourced_number")
             if similar(out, sentence, 0.9):
                 raise Rejected("correct:unchanged")
+            from .text import tokens
+            words = tokens(out)
+            if words and len(words & tokens(ref["text"])) >= 0.9 * len(words) and \
+                    len(words & tokens(sentence)) < 0.35 * len(words):
+                raise Rejected("correct:not_a_rewrite")  # v10 Panchayats: Article 40 copied out as the "correction"
             if licensed(ref) and copies(out, ref["text"]):
                 raise Rejected("correct:copied")
             return out

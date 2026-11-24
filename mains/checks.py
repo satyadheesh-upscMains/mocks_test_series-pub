@@ -4,6 +4,7 @@ Every finding points at a sentence ID that Gemma can only choose from the studen
 lists them), so a quote shown to the student is always the student's exact words. Text fields go through
 `text.clean`, and the verdict must agree with the evidence (for example "met" needs credit, "missing" allows none).
 """
+import math
 import re
 
 from . import prompts
@@ -247,8 +248,8 @@ Check one claim of the student's answer against the extracts below. They are exa
 CLAIM ({sid}): \u00ab{text}\u00bb
 EXTRACTS
 {extracts}
-Decide from these extracts only:
-- contradicted: an extract states something that makes the claim wrong (a different body, office, House, power, time limit, number or condition).
+First answer bothTrue: could the claim and the extracts all be true at the same time? "no" only when the claim and an extract cannot both hold: a different body, office, House, power, time limit, number or condition for the same thing. An extract that describes one way something is done does not rule out a claim that names another way, unless the extract excludes it ("only", "shall not", another body taking the same decision). Then decide, from these extracts only:
+- contradicted: bothTrue is "no".
 - confirmed: an extract states the same thing as the claim.
 - not_covered: no extract speaks to this claim. This is the usual case for opinions, examples, effects and claims about practice.
 If contradicted: sourceWords = the exact words copied from the extract that contradict the claim; wrongWords = the exact words copied from THIS claim that are wrong; one concern on {sid}, kind wrong, priority major (minor only for a small slip), refId = the extract that contradicts it; reason = what that extract says instead; fix = the corrected statement in one sentence, in words from that extract. Judge only the words of this claim: an error in another sentence of the answer is not this claim's error. If confirmed: credit {sid} with a reason that names the extract's provision; concerns empty. If not_covered: credit and concerns empty. sourceWords and wrongWords are empty unless contradicted.
@@ -307,9 +308,43 @@ def fact_ids(prep):
     return [f"facts:{s['id']}" for s in prep["sentences"] if s["id"] in claimed][:MAX_FACTS]
 
 
+def _flat(value):  # case, spacing and punctuation do not matter when words are compared
+    return re.findall(r"\w+", fold(value or ""))
+
+
+def longest_run(words, text_words):
+    """Longest run of consecutive `words` that appears, in order and unbroken, in `text_words`."""
+    hay = " " + " ".join(text_words) + " "
+    best = 0
+    for i in range(len(words)):
+        for j in range(len(words), i + best, -1):
+            if " " + " ".join(words[i:j]) + " " in hay:
+                best = j - i
+                break
+    return best
+
+
+def quoted_from(said, extracts):
+    """Indices of the extracts the quoted words come from. Gemma 12B trims or joins a few words when it copies a
+    clause (v10 Governor: "appointed by the President" was rejected twice and the planted error went unmarked), so a
+    quote counts when most of it is one unbroken run of an extract's words."""
+    words = _flat(said)
+    if len(words) < 3:
+        return []
+    runs = [longest_run(words, _flat(t)) for t in extracts]
+    need = max(3, math.ceil(0.6 * len(words)))
+    top = max(runs) if runs else 0
+    return [n for n, r in enumerate(runs) if r == top and r >= need]
+
+
 def run_fact(examiner, prep, system, check_id):
     """Gemma 12B judges a whole answer by its worst problem (runs 45169827637, 45238473782): a wrong body or time
-    limit in a lesser sentence goes unseen. So each claim is checked on its own, against only its own extracts."""
+    limit in a lesser sentence goes unseen. So each claim is checked on its own, against only its own extracts.
+
+    The result is built here, not by `bind`: a contradiction is shown only with verified quotes, and it always carries
+    the extract those quotes come from. In v10 the general rule that drops a source label when the advice does not
+    seem to use the source removed the Article from six correct findings (the student's own words already named it),
+    and the sentence then counted as cleared."""
     sid = check_id.split(":", 1)[1]
     sent = next(s for s in prep["sentences"] if s["id"] == sid)
     mine = [r for r in prep.get("refs") or [] if sid in r.get("claims", [])]
@@ -319,43 +354,63 @@ def run_fact(examiner, prep, system, check_id):
             + FIELDS.format(verdicts="contradicted, confirmed or not_covered, as decided above"))
     base = schema([sid], list(FACT_VERDICTS), [r["id"] for r in mine])
     props = dict(base["properties"])
-    # Evidence first: the words that clash, then the finding, then the verdict.
-    sch = dict(base, required=["sourceWords", "wrongWords"] + base["required"],
-               properties={"sourceWords": {"type": "string"}, "wrongWords": {"type": "string"}, **props})
-    def flat(value):  # case, spacing and punctuation do not matter when words are compared
-        return " ".join(re.findall(r"\w+", fold(value)))
+    # Evidence first: can both be true, the words that clash, then the finding, then the verdict.
+    sch = dict(base, required=["bothTrue", "sourceWords", "wrongWords"] + base["required"],
+               properties={"bothTrue": {"type": "string", "enum": ["yes", "no"]}, "sourceWords": {"type": "string"},
+                           "wrongWords": {"type": "string"}, **props})
+    claim_words = " " + " ".join(_flat(sent["text"])) + " "
+    lang = prep["lang"]
+    base_src = prompts.sources(prep)
 
-    claim_text = flat(sent["text"])
-    extract_text = [flat(r["text"]) for r in mine]
-    # The claim's own extracts are its sources: a reason may use any of them, not only the one it cites.
-    own = dict(prep, refs=[dict(r, shared=True) for r in mine])
+    def text_or(value, fallback, sources, field, hi):
+        try:
+            return clean(value, lang, sources, hi=hi, field=field)
+        except Rejected:
+            return fallback
 
     def validate(raw):
         if not isinstance(raw, dict) or raw.get("verdict") not in FACT_VERDICTS:
             raise Rejected("fact:verdict")
-        if raw["verdict"] == "contradicted":
-            # A claim is called wrong only when the clash is in the words themselves (split run 45252594185
-            # marked three correct sentences red with the reason of a different sentence's error).
-            wrong, said = flat(raw.get("wrongWords")), flat(raw.get("sourceWords"))
-            if len(wrong.split()) < 2 or wrong not in claim_text:
-                raise Rejected("fact:wrong_words")
-            if len(said.split()) < 3 or not any(said in t for t in extract_text):
-                raise Rejected("fact:source_words")
-        raw = dict(raw, verdict=FACT_VERDICTS[raw["verdict"]],
-                   rewrite={"sourceId": "none", "text": "", "refId": "none"})
-        out = bind(raw, own, "facts")
-        # A claim is called wrong only on an extract's evidence: a concern that cites no extract is dropped.
-        out["concerns"] = [c for c in out["concerns"] if c.get("ref") and c["kind"] in ("wrong", "unsupported")]
-        out["rewrite"] = None
-        return out
+        verdict = raw["verdict"]
+        if verdict == "contradicted" and raw.get("bothTrue") == "yes":
+            verdict = "not_covered"  # Gemma itself says both can hold: no contradiction (v10 Governor, Article 154)
+        if verdict == "not_covered":
+            return {"verdict": "not_applicable", "credit": [], "concerns": [], "rewrite": None, "note": None}
+        if verdict == "confirmed":
+            c = next((c for c in raw.get("credit") or [] if isinstance(c, dict) and c.get("sourceId") == sid), {})
+            reason = text_or(c.get("reason"), "This matches the text of the Constitution.",
+                             base_src + [prompts.ref_text(r) for r in mine], "credit", 400)
+            return {"verdict": "good", "credit": [{"sourceId": sid, "quote": sent["text"], "reason": reason}],
+                    "concerns": [], "rewrite": None, "note": None}
+        # contradicted: the wrong words must be this claim's own, and the source words an extract's
+        wrong = _flat(raw.get("wrongWords"))
+        if len(wrong) < 2 or " " + " ".join(wrong) + " " not in claim_words:
+            raise Rejected("fact:wrong_words")
+        hits = quoted_from(raw.get("sourceWords"), [r["text"] for r in mine])
+        if not hits:
+            raise Rejected("fact:source_words")
+        c = next((c for c in raw.get("concerns") or [] if isinstance(c, dict) and c.get("sourceId") == sid), {})
+        ref = next((mine[n] for n in hits if mine[n]["id"] == c.get("refId")), mine[hits[0]])
+        use = base_src + [prompts.ref_text(ref)]
+        quote = " ".join(str(raw.get("sourceWords") or "").split()[:12])
+        reason = text_or(c.get("reason"), f"{ref['label']} says: \u00ab{quote}\u00bb.", use, "reason", 400)
+        if copies(reason, ref["text"]) and licensed(ref):
+            reason = f"This does not match {ref['label']}."
+        fix = text_or(c.get("fix"), f"Correct this sentence using {ref['label']}.", use, "fix", 300)
+        if copies(fix, ref["text"]) and licensed(ref):
+            fix = f"Correct this sentence using {ref['label']}."
+        priority = c.get("priority") if c.get("priority") in PRIORITY else "major"
+        return {"verdict": "wrong", "credit": [], "rewrite": None, "note": None, "contradicted": True,
+                "concerns": [{"sourceId": sid, "quote": sent["text"], "kind": "wrong", "priority": priority,
+                              "reason": reason, "fix": fix, "ref": ref["id"]}]}
 
     try:
         value = examiner.ask(stage="check", check=check_id, system=system, task=task, schema=sch, max_tokens=500,
                              validate=validate, attempts=2)
     except Rejected as e:
         if e.code in ("fact:wrong_words", "fact:source_words"):
-            # Gemma said "contradicted" twice but could not quote the clash (v9: Money Bill s2, Article 356 s2). An
-            # error nobody can show is not an error: the claim stands as not covered, and nothing is marked.
+            # Gemma said "contradicted" twice but could not show the clash. Neither an error nor a clearance: the
+            # sentence keeps whatever the other checks found (v10 counted this as cleared and lost the Governor error).
             return {"id": check_id, "kind": "fact", "status": "ok", "verdict": "not_applicable", "credit": [],
                     "concerns": [], "rewrite": None, "note": None, "unproven": True}
         return {"id": check_id, "kind": "fact", "status": "unavailable", "reason": e.code}

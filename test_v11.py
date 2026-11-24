@@ -1,0 +1,224 @@
+"""v11 rules, each on a fixture from the v10 split run 45344215712. No model: a scripted stand-in plays Gemma."""
+import json
+import unittest
+from pathlib import Path
+
+from mains import checks, pipeline, refs, report
+from mains.model import Examiner
+from mains.text import Rejected, sentences
+
+ROOT = Path(__file__).resolve().parent
+CONST = json.loads((ROOT / "refs/constitution_of_india_2026.json").read_text(encoding="utf-8"))
+CASES = json.loads((ROOT / "refs/cases.json").read_text(encoding="utf-8"))
+IDX = refs.Index(refs.constitution_chunks(CONST) + refs.case_chunks(CASES))
+
+ANSWERS = {
+    "art21": ("Examine how the Supreme Court has widened the scope of Article 21 of the Constitution.",
+              "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure "
+              "established by law. This protection is available only to citizens of India, not to foreigners. Over the "
+              "years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right "
+              "to life. A citizen whose Article 21 right is violated can approach the High Court directly under Article 32. "
+              "This expansion has made Article 21 the heart of the Fundamental Rights."),
+    "governor": ("Analyse the position of the Governor in India's federal structure.",
+                 "The Governor is the constitutional head of a State. The Governor is elected by the State Legislative "
+                 "Assembly for a fixed term of five years and cannot be removed before that. The executive power of the "
+                 "State is vested in the Governor and is exercised through the Council of Ministers. Because the Governor "
+                 "is linked to the Centre, the office has often been at the centre of Centre-State disputes."),
+    "moneybill": ("Discuss the role of the Rajya Sabha in the passage of Money Bills.",
+                  "A Money Bill can be introduced in either House of Parliament. After the Lok Sabha passes it, the Bill is "
+                  "sent to the Rajya Sabha for its recommendations. The Rajya Sabha can keep a Money Bill for up to three "
+                  "months before returning it. The Lok Sabha may accept or reject the Rajya Sabha's recommendations. This "
+                  "shows the financial supremacy of the directly elected House."),
+    "356": ("Examine the use of Article 356 and its impact on Indian federalism.",
+            "Article 356 lets the President take over the government of a State when its government cannot be carried on "
+            "in accordance with the Constitution. The proclamation must be approved by both Houses of Parliament. Once "
+            "approved, President's Rule can continue indefinitely until the Centre decides to end it. Its frequent use "
+            "in the past weakened the autonomy of States."),
+}
+
+
+def prep_for(name):
+    q, a = ANSWERS[name]
+    sents = [dict(s, para=1) for s in sentences(a)]
+    return {"id": name, "lang": "en", "question": q, "references": [], "marks": 15, "sentences": sents,
+            "stats": {"words": 80, "sentences": len(sents), "paragraphs": 1, "limit": 250},
+            "parts": [{"id": "p1", "quote": q}], "directives": [], "refs": IDX.pack(q, sents)}
+
+
+def sid_of(prep, phrase):
+    return next(s["id"] for s in prep["sentences"] if phrase in s["text"])
+
+
+def claim_refs(prep, sid):
+    return [r for r in prep["refs"] if sid in r.get("claims", [])]
+
+
+class Script:
+    def __init__(self, *replies):
+        self.replies = list(replies)
+
+    def create_chat_completion(self, messages, **_):
+        value = self.replies.pop(0) if len(self.replies) > 1 else self.replies[0]
+        return {"choices": [{"finish_reason": "stop", "message": {"content": json.dumps(value)}}], "usage": {}}
+
+
+def contradicted(sid, ref_id, source_words, wrong_words, both="no"):
+    return {"bothTrue": both, "sourceWords": source_words, "wrongWords": wrong_words, "credit": [],
+            "concerns": [{"sourceId": sid, "kind": "wrong", "priority": "major", "refId": ref_id,
+                          "reason": "The extract says something different.", "fix": "Correct the sentence."}],
+            "note": "Wrong.", "verdict": "contradicted", "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+
+
+def fact(prep, sid, reply):
+    return checks.run_fact(Examiner(Script(reply)), prep, "sys", f"facts:{sid}")
+
+
+def label_of(prep, ref_id):
+    return next(r["label"] for r in prep["refs"] if r["id"] == ref_id)
+
+
+class ClaimCheck(unittest.TestCase):
+    def test_a_found_error_keeps_its_article_when_the_answer_names_it(self):
+        # v10: "Supreme Court" and "Article 32" were already in the question and answer, so the Article was dropped.
+        prep = prep_for("art21")
+        sid = sid_of(prep, "High Court directly under Article 32")
+        a32 = next(r for r in claim_refs(prep, sid) if r["label"].endswith("Article 32"))
+        out = fact(prep, sid, contradicted(sid, a32["id"], "The right to move the Supreme Court",
+                                           "approach the High Court directly"))
+        self.assertEqual(out["verdict"], "wrong")
+        self.assertEqual(label_of(prep, out["concerns"][0]["ref"]), "Constitution of India, Article 32")
+
+    def test_both_true_is_not_a_contradiction(self):
+        # v10 Governor: "exercised through the Council of Ministers" marked red against Article 154's wording.
+        prep = prep_for("governor")
+        sid = sid_of(prep, "Council of Ministers")
+        a154 = next(r for r in claim_refs(prep, sid) if r["label"].endswith("Article 154"))
+        out = fact(prep, sid, contradicted(sid, a154["id"], "either directly or through officers subordinate to him",
+                                           "through the Council of Ministers", both="yes"))
+        self.assertEqual(out["verdict"], "not_applicable")
+        self.assertEqual(out["concerns"], [])
+
+    def test_a_trimmed_quote_counts_and_cites_the_extract_it_comes_from(self):
+        # v10 Governor: the quote was rejected twice and the planted error went unmarked.
+        prep = prep_for("governor")
+        sid = sid_of(prep, "elected by the State Legislative Assembly")
+        out = fact(prep, sid, contradicted(sid, "none", "Governor shall be appointed by President",
+                                           "elected by the State Legislative Assembly"))
+        self.assertEqual(label_of(prep, out["concerns"][0]["ref"]), "Constitution of India, Article 155")
+
+    def test_not_covered_carries_no_concern(self):
+        # v10 Governor s4: an opinion marked red as "unsupported" by the claim check.
+        prep = prep_for("governor")
+        sid = sid_of(prep, "Centre-State disputes")
+        reply = dict(contradicted(sid, "none", "", "", both="yes"), verdict="not_covered")
+        reply["concerns"][0]["kind"] = "unsupported"
+        out = fact(prep, sid, reply)
+        self.assertEqual(out["concerns"], [])
+
+    def test_an_unproven_claim_clears_nothing(self):
+        prov = {"id": "provisions", "kind": "check", "status": "ok", "verdict": "wrong", "credit": [], "rewrite": None,
+                "note": "N.", "concerns": [{"sourceId": "s2", "quote": "q", "kind": "wrong", "priority": "major",
+                                            "reason": "Appointed by the President.", "fix": "Fix it.", "ref": "r2"}]}
+        unproven = {"id": "facts:s2", "kind": "fact", "status": "ok", "verdict": "not_applicable", "credit": [],
+                    "concerns": [], "rewrite": None, "note": None, "unproven": True}
+        out = pipeline.merge_facts([prov, unproven])
+        p = next(r for r in out if r["id"] == "provisions")
+        self.assertTrue([c for c in p["concerns"] if c["sourceId"] == "s2"])
+
+
+class Sources(unittest.TestCase):
+    def test_a_long_article_gives_the_claim_its_deciding_clause(self):
+        prep = prep_for("356")
+        sid = sid_of(prep, "continue indefinitely")
+        text = " ".join(r.get("full") or r["text"] for r in claim_refs(prep, sid))
+        self.assertIn("six months", text)
+
+    def test_a_union_answer_is_not_checked_against_the_state_mirror(self):
+        prep = prep_for("moneybill")
+        labels = {r["label"] for r in prep["refs"]}
+        self.assertNotIn("Constitution of India, Article 198", labels)
+        self.assertNotIn("Constitution of India, Article 243A", labels)
+        sid = sid_of(prep, "up to three months")
+        self.assertIn("Constitution of India, Article 109", {r["label"] for r in claim_refs(prep, sid)})
+
+    def test_a_claim_meets_the_article_that_settles_it_without_sharing_a_word(self):
+        prep = prep_for("governor")
+        sid = sid_of(prep, "elected by the State Legislative Assembly")
+        self.assertIn("Constitution of India, Article 155", {r["label"] for r in claim_refs(prep, sid)})
+
+    def test_cases_come_only_through_the_articles_the_answer_is_checked_against(self):
+        cases = [r["label"] for r in prep_for("moneybill")["refs"] if r["label"].startswith("Case:")]
+        self.assertTrue(cases)
+        self.assertTrue(all("Puttaswamy" in c or "Rojer Mathew" in c for c in cases), cases)
+
+    def test_textbook_slices_never_crowd_out_the_constitution(self):
+        # v11 source check with NCERT: five slices of one textbook chapter took every slot of the DPSP claim.
+        filler = ("Directive Principles of State Policy cannot be enforced in courts like Fundamental Rights; the State "
+                  "applies them in making laws and courts read the two parts in harmony. ")
+        book = [{"id": f"n102.{n}", "label": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights)",
+                 "title": "Rights in the Indian Constitution", "text": filler * 6} for n in range(1, 7)]
+        idx = refs.Index(refs.constitution_chunks(CONST) + book)
+        q = "Discuss the relationship between Fundamental Rights and Directive Principles of State Policy."
+        sents = [{"id": "s1", "text": "Fundamental Rights are in Part III and Directive Principles are in Part IV."},
+                 {"id": "s2", "text": "Directive Principles can be enforced in courts in the same way as Fundamental "
+                                      "Rights."}]
+        mine = [r["label"] for r in idx.pack(q, sents) if "s2" in r.get("claims", [])]
+        self.assertLessEqual(sum(1 for m in mine if m.startswith("NCERT")), 1, mine)
+        self.assertIn("Constitution of India, Article 37", mine)
+
+    def test_common_names_map_to_the_constitutions_words(self):
+        self.assertEqual(refs.vocabulary("Rajya Sabha and Lok Sabha"), "council of states and house of the people")
+
+
+def finding(cid, sid, kind, reason, rewrite=None, ref=None, kind_of="check"):
+    return {"id": cid, "kind": kind_of, "status": "ok", "verdict": "partial", "credit": [], "note": "N.",
+            "concerns": [{"sourceId": sid, "quote": "q", "kind": kind, "priority": "major", "reason": reason,
+                          "fix": "Change the sentence.", "ref": ref}],
+            "rewrite": {"sourceId": sid, "text": rewrite, "ref": None} if rewrite else None}
+
+
+class Corrections(unittest.TestCase):
+    def setUp(self):
+        self.prep = prep_for("356")
+        self.part = {"id": "part:p1", "kind": "part", "status": "ok", "verdict": "partial", "note": "N.",
+                     "credit": [{"sourceId": "s1", "quote": "q", "reason": "Right."}], "concerns": [], "rewrite": None}
+
+    def test_a_dropped_rewrite_of_a_wrong_fact_does_not_come_back_through_a_merge(self):
+        # v10 Article 356: "continues until the situation is resolved" reached the student this way.
+        rep = report.assemble(self.prep, [
+            self.part,
+            finding("concepts", "s3", "wrong", "It cannot continue indefinitely."),
+            finding("causality", "s3", "wrong", "It cannot continue indefinitely.",
+                    rewrite="Once approved, President's Rule continues until the situation is resolved.")])
+        fix = next(f for f in rep["fixes"] if f["yourLine"] and f["yourLine"]["sourceId"] == "s3")
+        self.assertIsNone(fix["tryWriting"])
+
+    def test_an_opinion_checks_rewrite_stays(self):
+        rep = report.assemble(self.prep, [
+            self.part, finding("solutions", "s4", "wrong", "This works against the goal.",
+                               rewrite="Its frequent use in the past weakened the autonomy of States, which courts now review.")])
+        fix = next(f for f in rep["fixes"] if f["yourLine"] and f["yourLine"]["sourceId"] == "s4")
+        self.assertTrue(fix["tryWriting"])
+
+    def test_a_copied_extract_is_not_a_correction(self):
+        ref = next(r for r in self.prep["refs"] if r["label"].endswith("Article 356"))
+        sentence = next(s["text"] for s in self.prep["sentences"] if "indefinitely" in s["text"])
+        rep = {"fixes": [{"n": 1, "kind": "wrong", "title": "t", "where": "w", "why": "It lapses.", "tryWriting": None,
+                          "source": ref["label"], "sourceRef": ref["id"],
+                          "yourLine": {"sourceId": "s3", "text": sentence}}]}
+
+        class Ask:
+            def ask(self, *, validate, attempts=3, **_):
+                for value in ({"sentence": ref["text"][:400]},):
+                    try:
+                        return validate(value)
+                    except Rejected:
+                        pass
+                raise Rejected("failed")
+
+        report.correct(Ask(), self.prep, "sys", rep)
+        self.assertIsNone(rep["fixes"][0]["tryWriting"])
+
+
+if __name__ == "__main__":
+    unittest.main()

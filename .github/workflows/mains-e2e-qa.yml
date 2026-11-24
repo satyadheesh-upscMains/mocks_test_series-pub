@@ -37,7 +37,7 @@ jobs:
       - name: Unit tests (no model)
         run: |
           set +e
-          python -m unittest -v test_examiner test_refs test_photo test_worker test_review test_v10 > unit-e2e.log 2>&1
+          python -m unittest -v test_examiner test_refs test_photo test_worker test_review test_v10 test_v11 > unit-e2e.log 2>&1
           status=$?
           cat unit-e2e.log
           exit $status
@@ -98,8 +98,6 @@ jobs:
           key: mains-ncert-polity-v1
       - run: curl -fsSL https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/Kalam-Regular.ttf -o Kalam-Regular.ttf
       - run: python tools/e2e_qa.py --case ${{ matrix.case }} --dir e2e-out
-        env:
-          MAINS_EMBED_DOWNLOAD: '1'
       - if: always()
         uses: actions/upload-artifact@v4
         with:

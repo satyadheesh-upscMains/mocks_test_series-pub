@@ -86,7 +86,13 @@ def main():
             calls += ex.calls
             write(out / f"split-{case}.json", {
                 "case": case, "gates": g, "lostTasks": lost, "report": rep, "modelCalls": calls,
-                "modelSeconds": round(sum(c.get("seconds", 0) for c in calls), 1)})
+                "modelSeconds": round(sum(c.get("seconds", 0) for c in calls), 1),
+                # The extracts this answer was checked against, labels only (no text): which sentence each may check.
+                "prepSources": [{"id": r["id"], "label": r["label"], "shared": r.get("shared", True),
+                                 "claims": r.get("claims", [])} for r in prep.get("refs") or []],
+                "claimResults": [{"id": r["id"], "status": r["status"], "verdict": r.get("verdict"),
+                                  "unproven": bool(r.get("unproven")), "contradicted": bool(r.get("contradicted"))}
+                                 for r in results if r["id"].startswith("facts:")]})
             for k, v in g.items():
                 print(f"  {'PASS' if v else 'FAIL'} {k}", flush=True)
             if not all(g.values()):
