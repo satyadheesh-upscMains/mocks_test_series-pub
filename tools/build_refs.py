@@ -9,7 +9,6 @@ sources, it never invents one. Prints counts only, never passage text.
 """
 import json
 import gzip
-import http.client
 import sys
 import time
 from pathlib import Path
@@ -24,6 +23,11 @@ REFS = ROOT / "refs"
 CONSTITUTION = REFS / "constitution_of_india_2026.json"
 CASES = REFS / "cases.json"
 LAXMIKANTH = REFS / "laxmikanth_pages.json.gz"
+# NCERT textbooks for the other GS subjects (v16): extracted page text and its chapter list, private core repo only,
+# like ncert_pages.json.gz. Background sources: they never check a claim (mains/refs.py, subject_chunks).
+GS_PAGES = REFS / "ncert_gs_pages.json.gz"
+GS_MANIFEST = REFS / "ncert_gs_manifest.json"
+GS_BOOKS = REFS / "gs_books.json.gz"   # standard reference books (tools/build_books.py), private core only
 CACHE = REFS / "cache"
 URL = "https://ncert.nic.in/textbook/pdf/{code}.pdf"
 
@@ -41,7 +45,7 @@ def fetch(code):
                 CACHE.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data)
                 return path
-        except (OSError, http.client.HTTPException):
+        except OSError:
             pass
         time.sleep(3 * (attempt + 1))
     return None
@@ -81,10 +85,21 @@ def main():
     except ImportError:
         pages, missing = [], list(refs.NCERT_FILES)
     chunks += refs.ncert_chunks(pages)
+    n_subject = 0
+    if GS_PAGES.exists() and GS_MANIFEST.exists():
+        subject = refs.subject_chunks(json.loads(gzip.decompress(GS_PAGES.read_bytes())),
+                                      json.loads(GS_MANIFEST.read_text(encoding="utf-8")))
+        n_subject = len(subject)
+        chunks += subject
+    if GS_BOOKS.exists():
+        books = refs.book_chunks(json.loads(gzip.decompress(GS_BOOKS.read_bytes())))
+        n_subject += len(books)
+        chunks += books
     REFS.mkdir(exist_ok=True)
     out = REFS / "index.json.gz"
     out.write_bytes(gzip.compress(json.dumps(chunks, ensure_ascii=False).encode("utf-8"), 9))
-    print(json.dumps({"refs": "built", "constitution_passages": n_const, "ncert_passages": len(chunks) - n_const,
+    print(json.dumps({"refs": "built", "constitution_passages": n_const,
+                      "ncert_passages": len(chunks) - n_const - n_subject, "gs_textbook_passages": n_subject,
                       "ncert_missing": missing}), flush=True)
 
 

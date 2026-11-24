@@ -7,13 +7,13 @@ name: Mains split QA
 # in-between files are artifacts here, which the live queue never uses for real students.
 on:
   push:
-    branches: [qa/mains-e2e]
+    branches: [qa/mains-e2e, qa/mains-v16]
   workflow_dispatch:
 
 permissions:
   contents: read
 concurrency:
-  group: mains-split-qa
+  group: mains-split-qa-v16
   cancel-in-progress: true
 
 env:
@@ -264,16 +264,16 @@ jobs:
           pattern: '{split-*,unit-split-log}'
           path: reports
           merge-multiple: true
-      - name: Publish to qa/mains-split-reports
+      - name: Publish to qa/mains-split-reports-v16
         env:
           TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports && cd reports
           echo "${{ github.run_id }} unit=${{ needs.unit.result }} retrieval=${{ needs.retrieval.result }} finish=${{ needs.finish.result }}" > RUN
-          git init -q -b qa/mains-split-reports
+          git init -q -b qa/mains-split-reports-v16
           git config user.name "mains-qa"
           git config user.email "mains-qa@users.noreply.github.com"
           git add -A
           git commit -qm "Synthetic split QA, run ${{ github.run_id }}"
           AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
-          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-split-reports
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-split-reports-v16

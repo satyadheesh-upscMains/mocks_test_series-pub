@@ -5,6 +5,10 @@ import unittest
 from mains import checks, pipeline, refs, report
 from mains.model import Examiner
 from mains.text import Rejected
+# Unit tests never read the real reference index on disk: once it holds the GS textbooks (v16), every answer gets
+# sources and checks the scripted fake model has no reply for. Tests that need sources build their own index.
+refs._LOADED[refs.INDEX] = None
+
 
 
 def concern(sid, kind="wrong", reason="The sentence is wrong.", fix="Correct the sentence.", ref=None,

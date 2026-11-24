@@ -8,7 +8,12 @@ import io
 import unittest
 
 import worker
+from mains import refs
 from mains.report import REPORT_VERSION
+
+# Unit tests never read the real reference index on disk: once it holds the GS textbooks (v16), every answer gets
+# sources and checks the scripted fake model has no reply for. Tests that need sources build their own index.
+refs._LOADED[refs.INDEX] = None
 from test_examiner import A_EN, EN, FakeGemma, Q_EN
 from test_photo import TRUTH, Script, page, same
 

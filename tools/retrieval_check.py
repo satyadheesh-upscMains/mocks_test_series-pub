@@ -76,10 +76,15 @@ def main():
             print(f"{'PASS' if hit else 'FAIL'} {case:17} {sid} {phrase!r} -> {', '.join(short(m) for m in mine)}")
         report[case] = {"shared": [short(r["label"]) for r in got if r["shared"]], "planted": rows}
     q, a = WETLANDS
-    wet = idx.pack(q, sentences(a))
-    ok &= not wet
-    print(f"{'PASS' if not wet else 'FAIL'} wetlands gets no source ({len(wet)})")
-    report["wetlands"] = {"shared": [short(r["label"]) for r in wet], "embedding": safe(idx.shadow, q)}
+    found = idx.pack(q, sentences(a))
+    # v16: a geography answer may get background GS textbook passages; it must get no Constitution or Polity source,
+    # and no source may check one of its claims.
+    wet = [r for r in found if not r.get("background")]
+    claims = [r for r in found if r.get("claims")]
+    ok &= not wet and not claims
+    print(f"{'PASS' if not wet and not claims else 'FAIL'} wetlands gets no Polity source ({len(wet)}; "
+          f"background {len(found) - len(wet)}: {', '.join(short(r['label']) for r in found if r.get('background'))})")
+    report["wetlands"] = {"shared": [short(r["label"]) for r in found], "embedding": safe(idx.shadow, q)}
     report["hindiProbes"] = [{"question": h, "want": arts, "keyword": [short(r["label"]) for r in idx.pack(h, "")],
                               "embedding": safe(idx.shadow, h, k=10)} for h, arts in HINDI_PROBES]
     try:

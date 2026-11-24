@@ -7,9 +7,13 @@ import io
 import json
 import unittest
 
-from mains import breakdown, checks, pipeline, report, rubric, text, verify
+from mains import breakdown, checks, pipeline, refs, report, rubric, text, verify
 from mains.model import Examiner
 from mains.text import Rejected
+# Unit tests never read the real reference index on disk: once it holds the GS textbooks (v16), every answer gets
+# sources and checks the scripted fake model has no reply for. Tests that need sources build their own index.
+refs._LOADED[refs.INDEX] = None
+
 
 Q_EN = "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them."
 A_EN = ("Urban wetlands hold stormwater after heavy rain, so less water enters drains at once. This is why wetland "

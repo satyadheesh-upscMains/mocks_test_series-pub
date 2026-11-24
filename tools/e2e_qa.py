@@ -307,7 +307,9 @@ def gates(case, site, counts):
         eci = [h for h in rep["highlights"] if "Election Commission of India" in h["text"]]
         g["Election Commission error marked red"] = bool(eci) and eci[0]["tone"] == "red"
         return g
-    g["no sources for an off-syllabus topic"] = rep["sources"] == []
+    # Background GS textbooks (v16) may support a wetlands answer; the Constitution must not.
+    g["no Constitution sources for an off-syllabus topic"] = not any(
+        s["label"].startswith("Constitution of India") for s in rep["sources"])
     des = [h for h in rep["highlights"] if "desilt" in h["text"].lower()]
     g["routine desilting flagged, not praised"] = bool(des) and all(h["tone"] != "green" for h in des) and not any(
         "desilt" in s["quote"].lower() for s in rep["strengths"])

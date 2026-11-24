@@ -7,7 +7,7 @@ import io
 import unittest
 from unittest import mock
 
-from mains import checks, pipeline, refs, text
+from mains import checks, pipeline, prompts, refs, text
 from mains.model import Examiner
 from mains.text import Rejected
 from test_examiner import EN, FakeGemma, concern, job
@@ -272,6 +272,86 @@ class InTheReport(unittest.TestCase):
         self.assertEqual({d["id"]: d["verdict"] for d in rep["checks"]}["provisions"], "not_applicable")
         self.assertFalse(any("TASK [provisions]" in m[1]["content"] for m in gemma.prompts))
         self.assertNotIn('"sources"', gemma.prompts[0][0]["content"])   # no empty sources block in the prompt
+
+GS_PAGES = [{"file": "kegy203", "page": 1, "text": (
+    "Chapter 3: Drainage System\nThe Himalayan rivers are perennial because they are fed by glaciers and rainfall. "
+    "The Peninsular rivers are seasonal and depend on the monsoon. The Ganga basin covers about 26 per cent of the "
+    "country's area. Rivers of the Peninsular plateau flow mostly eastwards into the Bay of Bengal.\n21")}]
+GS_MANIFEST = {"kegy2": {"title": "India Physical Environment", "class": 11,
+                         "chapters": [{"file": "kegy203", "n": 3, "title": "Drainage System"}]}}
+GQ = "Explain why the Himalayan rivers are perennial while the Peninsular rivers are seasonal."
+GA = "Himalayan rivers are fed by melting snow and rain. Peninsular rivers dry up in summer."
+
+
+def gs_index():
+    return refs.Index(refs.constitution_chunks(CONST) + refs.ncert_chunks(PAGES)
+                      + refs.subject_chunks(GS_PAGES, GS_MANIFEST), min_score=0.5, min_coverage=0.2)
+
+
+class Background(unittest.TestCase):
+    """v16 GS textbooks: support credit and suggestions, never a red mark, never a figure."""
+
+    def test_label_and_flag(self):
+        c = refs.subject_chunks(GS_PAGES, GS_MANIFEST)[0]
+        self.assertEqual(c["label"], "NCERT Class 11, India Physical Environment, Ch. 3 (Drainage System)")
+        self.assertTrue(c["subject"])
+
+    def test_geography_question_gets_its_chapter_as_background_only(self):
+        found = gs_index().pack(GQ, GA)
+        gs = [r for r in found if r.get("background")]
+        self.assertEqual(len(gs), 1)
+        self.assertTrue(gs[0]["shared"])
+        self.assertNotIn("claims", gs[0])   # never checks a claim
+
+    def test_polity_extracts_do_not_change(self):
+        self.assertEqual([r["label"] for r in index().pack(Q, A)],
+                         [r["label"] for r in gs_index().pack(Q, A) if not r.get("background")])
+
+    def prep(self):
+        found = gs_index().pack(GQ, GA)
+        return prep_for(GQ, GA, found), next(r["id"] for r in found if r.get("background"))
+
+    def raw(self, ref_id, kind="wrong", reason=None, fix=None):
+        c = concern("s2", kind, "major", reason or "Peninsular rivers depend on the monsoon, as the textbook explains.",
+                    fix or "Say that Peninsular rivers depend on the monsoon rains.")
+        c["refId"] = ref_id
+        return {"credit": [], "concerns": [c], "note": "One point to sharpen.", "verdict": "wrong",
+                "rewrite": {"sourceId": "none", "text": "", "refId": "none"}}
+
+    def test_a_background_source_never_marks_a_sentence_wrong(self):
+        prep, gid = self.prep()
+        out = checks.bind(self.raw(gid), prep, "accuracy")
+        self.assertEqual(out["concerns"][0]["kind"], "weak")
+        self.assertEqual(out["concerns"][0]["priority"], "medium")
+
+    def test_a_textbook_figure_is_never_quoted(self):
+        prep, gid = self.prep()
+        raw = self.raw(gid, "missing", "The Ganga basin covers about 26 per cent of the country's area.",
+                       "Add that the Ganga basin covers 26 per cent of India.")
+        raw["concerns"][0]["sourceId"] = "none"
+        raw["verdict"] = "partial"
+        out = checks.bind(raw, prep, "dimensions")
+        self.assertEqual(out["concerns"], [])   # dropped, like an unsourced number
+
+    def test_reference_books_are_background_one_passage_per_chapter(self):
+        books = [{"book": "G.C. Leong, Certificate Physical and Human Geography", "chapter": 16,
+                  "title": "The Tropical Monsoon and Tropical Marine Climate", "section": None, "page": 171,
+                  "text": "Himalayan rivers are perennial because glaciers feed them through the dry season and "
+                          "the monsoon adds to them in summer, while Peninsular rivers are seasonal."}] * 2
+        chunks = refs.book_chunks(books)
+        self.assertEqual(chunks[0]["label"],
+                         "G.C. Leong, Certificate Physical and Human Geography, Ch. 16 "
+                         "(The Tropical Monsoon and Tropical Marine Climate)")
+        idx = refs.Index(refs.constitution_chunks(CONST) + chunks, min_score=0.5, min_coverage=0.2)
+        found = [r for r in idx.pack(GQ, GA) if r.get("background")]
+        self.assertEqual(len(found), 1)          # two passages of one chapter: one is shown
+        self.assertTrue(checks.licensed(found[0]))  # findings must paraphrase it
+
+    def test_the_prompt_marks_background_sources(self):
+        prep, gid = self.prep()
+        prep["stats"] = {"words": 17, "limit": 150}
+        self.assertIn('"use": "background"', prompts.materials(prep))
+
 
 
 if __name__ == "__main__":

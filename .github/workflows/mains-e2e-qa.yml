@@ -5,14 +5,14 @@ name: Mains end-to-end QA
 # answer, smudged photo (must ask for a retake). Results are published.
 on:
   push:
-    branches: [qa/mains-e2e]
+    branches: [qa/mains-e2e, qa/mains-v16]
     paths-ignore: ['.github/workflows/mains-split-qa.yml', 'qa/split-cases.json']
   workflow_dispatch:
 
 permissions:
   contents: read
 concurrency:
-  group: mains-e2e-qa
+  group: mains-e2e-qa-v16
   cancel-in-progress: true
 
 env:
@@ -119,16 +119,16 @@ jobs:
           pattern: '{e2e-*,unit-e2e-log}'
           path: reports
           merge-multiple: true
-      - name: Publish to qa/mains-e2e-reports
+      - name: Publish to qa/mains-e2e-reports-v16
         env:
           TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports && cd reports
           echo "${{ github.run_id }} unit=${{ needs.unit.result }} e2e=${{ needs.e2e.result }}" > RUN
-          git init -q -b qa/mains-e2e-reports
+          git init -q -b qa/mains-e2e-reports-v16
           git config user.name "mains-qa"
           git config user.email "mains-qa@users.noreply.github.com"
           git add -A
           git commit -qm "Synthetic end-to-end QA, run ${{ github.run_id }}"
           AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
-          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-e2e-reports
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-e2e-reports-v16

@@ -40,6 +40,10 @@ federal federalism""".split())  # "federal" in the Constitution's text is the pr
 ARTICLE = re.compile(r"(?:\bart(?:icle)?s?\.?|अनुच्छेद)\s*(\d{1,3}[A-Z]{0,3})\b", re.I)
 BOOK = {"keps1": "Political Theory", "keps2": "Indian Constitution at Work"}
 NCERT_FILES = [f"keps10{i}" for i in (1, 2, 3, 4, 6, 7, 8)] + [f"keps2{i:02d}" for i in range(1, 11)]
+# NCERT textbooks for the other GS subjects (v16). Background sources only: they can support credit and suggest a
+# point to add, but never mark a sentence wrong, and their figures are never quoted (Economy and Geography data in
+# them is years old). No planted-error tests exist for these subjects yet; see docs/marking-standard.md.
+MAX_SUBJECT = 3      # background textbook passages per answer
 # multilingual-e5-small run the reference way: its ONNX export (int8) through onnxruntime, with the model's own
 # Hugging Face tokenizer. The GGUF file used in v10/v11 tokenized every text wrongly (its token ids never matched the
 # model's tokenizer), so all passages looked alike: embedding probe run 45381554000 ranked the settling Article in the
@@ -231,6 +235,38 @@ def ncert_chunks(pages):
     return out
 
 
+def subject_chunks(pages, manifest):
+    """pages: [{"file": "kegy103", "page": 1, "text": ...}]; manifest: {"kegy1": {"title", "class", "chapters": [{"file",
+    "n", "title"}]}} from tools/build_ncert_gs.py. Background passages, searched in their own index."""
+    chapters = {c["file"]: (book, b, c) for book, b in manifest.items() for c in b.get("chapters", [])}
+    by_file = collections.OrderedDict()
+    for p in pages:
+        if p["file"] in chapters:
+            by_file.setdefault(p["file"], []).append(p)
+    out = []
+    for f, ps in by_file.items():
+        book, b, c = chapters[f]
+        title = (c.get("title") or "").strip()
+        label = f"NCERT Class {b['class']}, {b['title']}, Ch. {c['n']}" + (f" ({title})" if title else "")
+        words = " ".join(_clean_page(p["text"]) for p in ps).split()
+        for k, i in enumerate(range(0, len(words), 150), 1):
+            out.append({"id": f"g{f}.{k}", "label": label, "title": title, "text": " ".join(words[i:i + 180]),
+                        "subject": True})
+    return out
+
+
+def book_chunks(entries):
+    """Standard GS reference books (tools/build_books.py, private core only): background passages like the NCERT GS
+    textbooks, labelled by book, chapter and section."""
+    out = []
+    for n, e in enumerate(entries, 1):
+        sec = e.get("section") or ""
+        label = f"{e['book']}, Ch. {e['chapter']} ({e['title']})" + (f", {sec}" if sec else "")
+        out.append({"id": f"b{n}", "label": label, "title": f"{e['title']}. {sec}".strip(". "), "text": e["text"],
+                    "subject": True, "group": f"{e['book']}|{e['chapter']}"})
+    return out
+
+
 def case_chunks(entries):
     """Our summaries are useful for credit/gaps, never contradiction evidence."""
     return [{"id": "case:" + e["id"], "label": f"Case: {e['name']} ({e['year']})",
@@ -255,6 +291,11 @@ class Index:
     def __init__(self, chunks, min_score=MIN_SCORE, min_coverage=MIN_COVERAGE, embedder=None, cache_dir=None,
                  extras=True):
         chunks = list(chunks)
+        # Background textbooks for the other GS subjects get their own index and statistics too: 2,000+ History and
+        # Geography passages in the core statistics would shift every Polity weight the eleven planted errors were
+        # tuned on. Order of self.chunks: core, then cases and the licensed book, then the subject books.
+        subject = [c for c in chunks if c.get("subject")] if extras else []
+        chunks = [c for c in chunks if not c.get("subject")] if extras else chunks
         core = [c for c in chunks if not c.get("case") and not c.get("private")]
         extra = [c for c in chunks if c.get("case") or c.get("private")]
         # Keyword weights come from the Constitution and NCERT only. Adding 2,332 passages of the licensed book to the
@@ -263,11 +304,13 @@ class Index:
         # search has decided the question's topic. Indices: 0..len(core)-1 are core, then the extras in order.
         if not extras:
             core, extra = chunks, []
-        self.chunks = core + extra
+        self.chunks = core + extra + subject
         self.cache_dir = cache_dir
         self.extra = Index(extra, min_score, min_coverage, embedder=embedder, cache_dir=cache_dir,
                            extras=False) if extra else None
+        self.subject = Index(subject, min_score, min_coverage, cache_dir=cache_dir, extras=False) if subject else None
         self.offset = len(core)
+        self.subject_offset = len(core) + len(extra)
         self.min_score, self.min_coverage = min_score, min_coverage
         self.embedder = embedder
         self._vectors = None
@@ -381,7 +424,7 @@ class Index:
     def _core(self, i):
         """Constitution and NCERT text: the only passages that can check a claim or fill the main extract slots."""
         c = self.chunks[i]
-        return not c.get("case") and not c.get("private")
+        return not c.get("case") and not c.get("private") and not c.get("subject")
 
     def pack(self, question, answer=""):
         """Extracts for one answer. `answer` is its text or its numbered sentences ([{"id": "s1", "text": ...}]).
@@ -527,7 +570,26 @@ class Index:
             checked = {m.group(1).upper() for j in order if self._core(j)
                        for m in [re.match(r"c(\w+?)(?:\.\d+)?$", self.chunks[j]["id"])] if m}
             self._extras(question, sents, named_articles, checked, take)
+        if self.subject:
+            self._subjects(question, sents, take)
         return self._out(order, shared, claims)
+
+    def _subjects(self, question, sents, take):
+        """The best background textbook passages for the question, then for question and answer: one per chapter,
+        at most MAX_SUBJECT, only above the same thresholds as the core search. Shared, never claim evidence."""
+        text = question + " " + " ".join(s["text"] for s in sents)
+        got, seen = 0, set()
+        for query in (question, text):
+            for sc, cov, j in self.subject.search(query):
+                if got >= MAX_SUBJECT or sc < self.min_score or cov < self.min_coverage:
+                    break
+                c = self.subject.chunks[j]
+                label = c.get("group") or c["label"]   # one passage per chapter
+                if label in seen:
+                    continue
+                if take(self.subject_offset + j, True, extra=True) is not None:
+                    seen.add(label)
+                    got += 1
 
     def _extras(self, question, sents, named, checked, take):
         """Landmark cases and the licensed book's best sections, on a question the Constitution speaks to.
@@ -575,6 +637,8 @@ class Index:
                 r["case"] = True
             if c.get("private"):
                 r["private"] = True
+            if c.get("subject"):
+                r["background"] = True
             mine = sorted((sid for sid, js in claims.items() if i in js), key=lambda x: int(x[1:]))
             if mine:
                 r["claims"] = mine

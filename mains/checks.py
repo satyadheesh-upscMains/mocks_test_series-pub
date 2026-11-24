@@ -152,6 +152,12 @@ def bind(raw, prep, check_id):
                 dropped_c = e.code
                 continue
             raise
+        if (_cited(prep, c.get("refId")) or {}).get("background") and kind in ("wrong", "unsupported"):
+            # A background textbook can show that a point is thin, never that a sentence is wrong: no planted-error
+            # tests exist for these subjects, and an older textbook can contradict a correct current fact.
+            kind, priority = "weak", ("medium" if priority == "major" else priority)
+            if (sid, kind) in seen:
+                continue
         seen.add((sid, kind))
         concerns.append({"sourceId": sid, "quote": spans.get(sid), "kind": kind, "priority": priority, **text})
     if len(concerns) == 2 and similar(concerns[0]["fix"], concerns[1]["fix"], 0.7):
@@ -211,6 +217,8 @@ def bind(raw, prep, check_id):
             out = None  # a rewrite is optional: one that names an unsourced fact is left out, not retried
         if out is not None and licensed(ref) and copies(out, ref["text"]):
             out = None
+        if out is not None and background_figures(prep, ref, out):
+            out = None
         if out is not None:
             if len([s for s in SENTENCE_END.split(out) if s.strip()]) > 3:
                 raise Rejected("rewrite:too_long")
@@ -238,7 +246,19 @@ def copies(text, passage, run=COPY_RUN):
 
 
 def licensed(ref):
-    return bool(ref and (ref.get("private") or ref.get("label", "").startswith(("NCERT", "Laxmikanth"))))
+    """Book text a finding must paraphrase: the licensed book, NCERT and the GS background books."""
+    return bool(ref and (ref.get("private") or ref.get("background")
+                         or ref.get("label", "").startswith(("NCERT", "Laxmikanth"))))
+
+
+def background_figures(prep, ref, text):
+    """A background textbook (v16 GS subjects) may suggest a point, never a figure: its data is years old. True when
+    `text` cites one and has a number that is not already in the question or the student's answer."""
+    if not (ref and ref.get("background")):
+        return False
+    own = prep["question"] + " " + " ".join(s["text"] for s in prep["sentences"])
+    have = set(re.findall(r"\d+(?:\.\d+)?", own))
+    return any(n not in have for n in re.findall(r"\d+(?:\.\d+)?", text or ""))
 
 
 def _with_source(prep, c, lang, src):
@@ -248,6 +268,8 @@ def _with_source(prep, c, lang, src):
     fix = clean(c.get("fix"), lang, use, hi=300, field="fix")
     if licensed(ref) and copies(f"{reason} {fix}", ref["text"]):
         raise Rejected("fix:copied")  # dropped like an unsourced fact: paraphrase only
+    if background_figures(prep, ref, f"{reason} {fix}"):
+        raise Rejected("fix:unsourced_number")  # dropped: a textbook figure may be out of date
     return {"reason": reason, "fix": fix, "ref": ref["id"] if ref and _uses(prep, ref, f"{reason} {fix}") else None}
 
 

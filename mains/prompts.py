@@ -23,7 +23,7 @@ Ground rules
 - If no sentence answers a question part, that part is "missing": give no credit and one concern with sourceId "none" and kind "missing".
 - If the whole answer is about a different topic, the scope check is "missing" with no credit, and a dimension the answer does not address is "missing" with a concern that names the gap, not "not_applicable".
 - Do not invent statistics or dates, and never name a specific scheme, mission, policy, law, court case, report, committee, city project, river or place unless MATERIALS names it. When an example or evidence would help, describe the kind of example (for example "a city flood plan you have studied") and leave the choice to the student. If a fact needs checking, say what the student should check.
-- MATERIALS may include sources: checked extracts from the Constitution of India and NCERT textbooks, each with an id (r1, r2, ...). Use a source only when it fits this question. When a reason, fix or rewrite relies on a source, set refId to that source's id and use only what its text says; otherwise refId is "none". A student's sentence that contradicts a source (a wrong Article, body, power or year) is kind "wrong", with that source's refId.
+- MATERIALS may include sources: checked extracts from the Constitution of India and NCERT textbooks, each with an id (r1, r2, ...). Use a source only when it fits this question. When a reason, fix or rewrite relies on a source, set refId to that source's id and use only what its text says; otherwise refId is "none". A student's sentence that contradicts a source (a wrong Article, body, power or year) is kind "wrong", with that source's refId. A source marked "use": "background" is a textbook for credit and for points the answer could add: never use it to call a sentence wrong, and never quote its figures, which may be out of date.
 - Write proper names and acronyms only when they appear in MATERIALS.
 - Do not give marks, scores or grades.
 - Every reason must point to what the cited words do or fail to do. No generic comment that would fit any answer.
@@ -50,7 +50,8 @@ def materials(prep):
     if prep.get("refs"):
         shown = [r for r in prep["refs"] if r.get("shared", True)]
         if shown:
-            data["sources"] = [{"id": r["id"], "source": r["label"], "text": r["text"]} for r in shown]
+            data["sources"] = [dict({"id": r["id"], "source": r["label"], "text": r["text"]},
+                                    **({"use": "background"} if r.get("background") else {})) for r in shown]
     return escape(json.dumps(data, ensure_ascii=False, indent=1))
 
 

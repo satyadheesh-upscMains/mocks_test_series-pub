@@ -6,6 +6,10 @@ from pathlib import Path
 from mains import checks, pipeline, refs, report
 from mains.model import Examiner
 from mains.text import Rejected, sentences
+# Unit tests never read the real reference index on disk: once it holds the GS textbooks (v16), every answer gets
+# sources and checks the scripted fake model has no reply for. Tests that need sources build their own index.
+refs._LOADED[refs.INDEX] = None
+
 
 ROOT = Path(__file__).resolve().parent
 CONST = json.loads((ROOT / "refs/constitution_of_india_2026.json").read_text(encoding="utf-8"))
