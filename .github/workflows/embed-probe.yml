@@ -1,0 +1,61 @@
+name: Embedding probe
+
+# Measurement only (v11 follow-up): which embedding setup ranks the right Articles, in English and Hindi. Runs on
+# its own branch, never on the QA branch, and touches no grading code. About 10-15 minutes, no Gemma.
+on:
+  push:
+    branches: [qa/embed-probe]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: >-
+          pip install -q llama-cpp-python==0.3.36 huggingface-hub==0.36.0 numpy==2.2.6 Pillow==11.3.0 pypdf==5.1.0
+          onnxruntime==1.20.1 tokenizers==0.21.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - run: python tools/embed_probe.py --out probe-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: embed-probe
+          path: probe-out
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    needs: probe
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: embed-probe
+          path: reports
+      - name: Publish to qa/embed-probe-reports
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          echo "${{ github.run_id }} probe=${{ needs.probe.result }}" > RUN
+          git init -q -b qa/embed-probe-reports
+          git config user.name "mains-qa"
+          git config user.email "mains-qa@users.noreply.github.com"
+          git add -A
+          git commit -qm "Embedding probe, run ${{ github.run_id }}"
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/embed-probe-reports
