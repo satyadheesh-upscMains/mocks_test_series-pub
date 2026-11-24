@@ -8,3 +8,4 @@ models/
 refs/index.json.gz
 refs/cache/
 refs/*.npy
+retrieval-out/

@@ -20,7 +20,8 @@ CRITICISM
 Fill the JSON fields in order:
 - coveredBy: IDs of the student's sentences that already do what the criticism says is missing or wrong. Empty if none.
 - reason: one sentence in English explaining your decision.
-- decision: upheld (correct and as serious as stated), softened (partly correct, or less serious than stated), overturned (wrong: the answer already does this, or the cited sentence is actually correct)."""
+- decision: upheld (correct and as serious as stated), softened (partly correct, or less serious than stated), overturned (wrong: the answer already does this, or the cited sentence is actually correct).
+A sentence that says the same thing as the source in other words, or uses a common name for the same body, House or level ("block" for the intermediate level, "Lok Sabha" for the House of the People), is correct."""
 
 
 def schema(sids):
@@ -41,11 +42,14 @@ def _validate(raw):
 def targets(prep, results):
     """(rank, result index, concern index or None) for each finding to re-check, most serious first.
 
-    Ties follow the fixed check order (question parts, then the twelve checks), never the order in which runner
-    shards happened to deliver their results, so a sharded run re-checks exactly what a single runner would."""
+    Every contradiction found by a claim check is re-checked first, outside the budget: in v11 the Panchayat report
+    spent its eight re-checks on other findings and its one false contradiction ("block" for the intermediate level)
+    reached the student, while in the four reports where the claim contradictions were re-checked, all four false
+    ones were overturned and every planted error stood. The rest follow within LIMIT; ties follow the fixed check
+    order (question parts, then the twelve checks), never the order in which runner shards delivered their results."""
     canon = [f"part:{p['id']}" for p in prep["parts"]] + [d for d in DIM]
     pos = {cid: i for i, cid in enumerate(canon)}
-    out = []
+    first, out = [], []
     for ri, r in enumerate(results):
         if r["status"] != "ok":
             continue
@@ -53,11 +57,15 @@ def targets(prep, results):
         if r["kind"] == "part" and r["verdict"] == "missing":
             out.append((-1, at, -1, ri, None))
         for ci, c in enumerate(r["concerns"]):
+            if c.get("fromClaim") and c["kind"] == "wrong":
+                first.append((at, ci, ri, ci))
+                continue
             if r["kind"] == "part" and r["verdict"] == "missing" and c["sourceId"] is None:
                 continue  # covered by the part-level re-check above
             if c["kind"] in ("wrong", "unsupported") or c["priority"] == "major":
                 out.append((RANK[c["priority"]], at, ci, ri, ci))
-    return [(t[0], t[3], t[4]) for t in sorted(out, key=lambda t: t[:3])[:LIMIT]]
+    return ([(-2, t[2], t[3]) for t in sorted(first, key=lambda t: t[:2])]
+            + [(t[0], t[3], t[4]) for t in sorted(out, key=lambda t: t[:3])[:LIMIT]])
 
 
 def _about(prep, r):
@@ -71,7 +79,7 @@ def _source(prep, ref_id):
     """The extract a finding relies on, given to the second opinion in full: claim-check extracts are not in
     MATERIALS."""
     r = next((x for x in prep.get("refs") or [] if x["id"] == ref_id), None)
-    return {"source": f"{r['label']}: {r['text']}"} if r else {}
+    return {"source": f"{r['label']}: {r.get('full') or r['text']}"} if r else {}
 
 
 def run(examiner, prep, system, results):

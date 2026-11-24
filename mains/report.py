@@ -13,7 +13,7 @@ from .rubric import (DIM, DIMENSIONS, GROUPS, IMPACT_LABEL, LEVEL_LABEL, LEVELS,
 from .text import Rejected, clean, sentence_count, similar, word_count
 from . import prompts
 
-REPORT_VERSION = "mains-report-v11"
+REPORT_VERSION = "mains-report-v12"
 MAX_UNJUDGED = 2  # checks that may fail to be judged; beyond this the report is not trustworthy and is retried
 PRI = {"major": 0, "medium": 1, "minor": 2}
 KIND = {"wrong": 0, "missing": 1, "unsupported": 2, "weak": 3}
@@ -38,6 +38,24 @@ OPINION_CHECKS = ("solutions", "balance", "causality", "language", "structure", 
 NUMBER_WORDS = set("""one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen
 seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand half third quarter
 fourth twice thrice एक दो तीन चार पाँच पांच छह छः सात आठ नौ दस चौदह पंद्रह बीस तीस साठ सौ आधा तिहाई""".split())
+
+
+NEGATION = {"not", "no", "never", "cannot", "can't", "only", "except", "नहीं", "केवल"}
+
+
+def stems(value):
+    """Content words cut to five letters, numbers and negations: "enforced"/"enforceable" and "court"/"courts" match,
+    and "cannot" counts as "not", so a correction that says the source's fact in the student's words still matches."""
+    from .text import tokens
+    out = set()
+    for t in tokens(value):
+        if t in NEGATION:
+            out.add("not" if t not in ("only", "except", "केवल") else "only")
+        elif t.isdigit() or t in NUMBER_WORDS:
+            out.add(t)
+        elif len(t) > 3:
+            out.add(t[:5])
+    return out
 
 
 def number_terms(value):
@@ -238,6 +256,8 @@ def assemble(prep, results):
             dup["rewrite"] = dup["rewrite"] or f["rewrite"]
             if not dup["source"] and f["source"]:
                 dup["source"], dup["ref"] = f["source"], f.get("ref") or f.get("rewriteRef")
+            if f.get("evidence") and not dup.get("evidence") and f["source"] == dup["source"]:
+                dup["evidence"] = f["evidence"]
         else:
             kept.append(f)
     for f in kept:
@@ -355,7 +375,9 @@ def assemble(prep, results):
                    "yourLine": {"sourceId": f["sourceId"], "text": f["quote"]} if f["sourceId"] else None,
                    "why": f["reason"], "tryWriting": f["rewrite"],
                    "checkedTwice": f.get("verification") in ("upheld", "softened"), "source": f["source"],
-                   "sourceRef": (f.get("ref") or f.get("rewriteRef")) if f["source"] else None}
+                   "sourceRef": (f.get("ref") or f.get("rewriteRef")) if f["source"] else None,
+                   # The checked clash behind a red fix: the student's wrong words and the source's own words.
+                   "evidence": f.get("evidence") if f["kind"] == "wrong" else None}
                   for i, f in enumerate(fixes, 1)],
         "highlights": highlights, "missing": missing, "additions": additions, "strengths": strengths,
         "checks": checks, "stats": stats, "transcript": None,
@@ -434,20 +456,31 @@ def correct(examiner, prep, system, report):
         sentence = f["yourLine"]["text"]
         ref = dict(ref, text=ref.get("full") or ref["text"])
 
-        def validate(raw, sentence=sentence, ref=ref):
+        def validate(raw, sentence=sentence, ref=ref, evidence=f.get("evidence")):
+            from .text import tokens
             out = clean(raw.get("sentence") if isinstance(raw, dict) else None, prep["lang"],
-                        [ref["text"], sentence, prep["question"]], lo=15, hi=350, field="correct")
+                        [ref["text"], sentence, prep["question"]], lo=15, hi=450, field="correct")
             if number_terms(out) - number_terms(f"{ref['text']} {sentence}"):
                 raise Rejected("correct:unsourced_number")
             if similar(out, sentence, 0.9):
                 raise Rejected("correct:unchanged")
-            from .text import tokens
-            words = tokens(out)
-            if words and len(words & tokens(ref["text"])) >= 0.9 * len(words) and \
-                    len(words & tokens(sentence)) < 0.35 * len(words):
-                raise Rejected("correct:not_a_rewrite")  # v10 Panchayats: Article 40 copied out as the "correction"
             if licensed(ref) and copies(out, ref["text"]):
                 raise Rejected("correct:copied")
+            words = tokens(out)
+            if evidence and evidence.get("sourceWords"):
+                # Checked against the clash itself: the line must carry something the source says that the student's
+                # sentence does not (the corrected fact) and keep the student's topic. v11's overlap rule refused
+                # three correct lines because they were worded like the Constitution.
+                own = stems(sentence)
+                new = stems(evidence["sourceWords"]) - own
+                if new and not new & stems(out):
+                    raise Rejected("correct:misses_source")
+                wrong = stems(evidence.get("wrongWords") or "")
+                if not (own - wrong) & stems(out):
+                    raise Rejected("correct:off_topic")
+            elif words and len(words & tokens(ref["text"])) >= 0.9 * len(words) and \
+                    len(words & tokens(sentence)) < 0.35 * len(words):
+                raise Rejected("correct:not_a_rewrite")  # no checked clash: an extract copied out is not a correction
             return out
 
         try:

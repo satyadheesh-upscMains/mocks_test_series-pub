@@ -40,22 +40,51 @@ federal federalism""".split())  # "federal" in the Constitution's text is the pr
 ARTICLE = re.compile(r"(?:\bart(?:icle)?s?\.?|अनुच्छेद)\s*(\d{1,3}[A-Z]{0,3})\b", re.I)
 BOOK = {"keps1": "Political Theory", "keps2": "Indian Constitution at Work"}
 NCERT_FILES = [f"keps10{i}" for i in (1, 2, 3, 4, 6, 7, 8)] + [f"keps2{i:02d}" for i in range(1, 11)]
-EMBED_REPO = "keisuke-miyako/multilingual-e5-small-gguf-q8_0"   # intfloat/multilingual-e5-small, GGUF Q8_0
-EMBED_FILE = "multilingual-e5-small-Q8_0.gguf"
-EMBED_SHA256 = "0d5a5a0b0ad84faad6357a6145e769b0661f0efbf53acf74598afc34dab454f4"   # pinned: the file is checked
-EMBED_DIR = Path(os.environ.get("MAINS_EMBED_DIR", Path(__file__).resolve().parents[1] / "models"))
+# multilingual-e5-small run the reference way: its ONNX export (int8) through onnxruntime, with the model's own
+# Hugging Face tokenizer. The GGUF file used in v10/v11 tokenized every text wrongly (its token ids never matched the
+# model's tokenizer), so all passages looked alike: embedding probe run 45381554000 ranked the settling Article in the
+# top 10 for 1 of 11 English and 2 of 8 Hindi claims with it, against 8 of 11 and 7 of 8 this way.
+EMBED_REPO = "Xenova/multilingual-e5-small"
+EMBED_FILE = "onnx/model_int8.onnx"
+EMBED_SHA256 = "4d24e2bc01a447951524466ef533e52944bf48509e6552810bcee1a2711cb02c"   # pinned: the file is checked
+TOKENIZER_FILE = "tokenizer.json"
+TOKENIZER_SHA256 = "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+EMBED_DIR = Path(os.environ.get("MAINS_EMBED_DIR", Path(__file__).resolve().parents[1] / "models" / "e5"))
 
 
 class Embedder:
-    """multilingual-e5-small through llama-cpp-python (already installed for Gemma): no torch, no API, CPU only."""
+    """multilingual-e5-small on the CPU: onnxruntime + tokenizers (small wheels, no torch, no API). Mean pooling over
+    the attention mask, L2-normalised, as the model card specifies."""
 
-    def __init__(self, path):
-        import llama_cpp
-        self.llm = llama_cpp.Llama(model_path=str(path), embedding=True, n_ctx=512, n_batch=512,
-                                   n_threads=max(2, os.cpu_count() or 2), pooling_type=1, verbose=False)
+    def __init__(self, model_path, tokenizer_path, threads=None):
+        import onnxruntime as ort
+        from tokenizers import Tokenizer
+        opts = ort.SessionOptions()
+        opts.intra_op_num_threads = threads or max(2, os.cpu_count() or 2)
+        self.sess = ort.InferenceSession(str(model_path), opts, providers=["CPUExecutionProvider"])
+        self.inputs = {i.name for i in self.sess.get_inputs()}
+        self.tok = Tokenizer.from_file(str(tokenizer_path))
+        self.tok.enable_truncation(512)
 
-    def embed(self, texts):
-        return [self.llm.embed(t[:1500], normalize=True, truncate=True) for t in texts]
+    def embed(self, texts, batch=32):
+        import numpy as np
+        out = []
+        for i in range(0, len(texts), batch):
+            enc = self.tok.encode_batch(list(texts[i:i + batch]))
+            n = max(len(e.ids) for e in enc)
+            ids = np.zeros((len(enc), n), dtype="int64")
+            mask = np.zeros((len(enc), n), dtype="int64")
+            for k, e in enumerate(enc):
+                ids[k, :len(e.ids)] = e.ids
+                mask[k, :len(e.ids)] = 1
+            feed = {"input_ids": ids, "attention_mask": mask}
+            if "token_type_ids" in self.inputs:
+                feed["token_type_ids"] = np.zeros_like(ids)
+            hidden = self.sess.run(None, feed)[0]
+            pooled = (hidden * mask[..., None]).sum(1) / np.maximum(mask.sum(1, keepdims=True), 1)
+            pooled = pooled / np.maximum(np.linalg.norm(pooled, axis=1, keepdims=True), 1e-9)
+            out.extend(pooled.astype("float32"))
+        return out
 
 
 VECTORS = Path(__file__).resolve().parents[1] / "refs" / "vectors"
@@ -66,26 +95,34 @@ def vector_key(texts):
     return hashlib.sha256((EMBED_SHA256 + "\n".join(texts)).encode("utf-8")).hexdigest()[:16]
 
 
+def _sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
 def embedder():
-    """The pinned e5 model when it is on this runner (models/, downloaded by the workflow) and its checksum matches;
-    otherwise None, and search is keyword-only. Never raises: a missing model must not stop grading."""
+    """The pinned e5 model when it is on this runner (models/e5/, downloaded when MAINS_EMBED_DOWNLOAD=1) and both
+    checksums match; otherwise None, and search is keyword-only. Never raises: a missing model must not stop grading.
+    Grading does not use it yet: `Index.shadow` measures what it would pick (tools/retrieval_check.py)."""
     if os.environ.get("MAINS_EMBED", "1") == "0":
         return None
-    path = EMBED_DIR / EMBED_FILE
     try:
-        if not path.exists():
-            if os.environ.get("MAINS_EMBED_DOWNLOAD") != "1":
+        paths = {}
+        for name, digest in ((EMBED_FILE, EMBED_SHA256), (TOKENIZER_FILE, TOKENIZER_SHA256)):
+            path = EMBED_DIR / name
+            if not path.exists():
+                if os.environ.get("MAINS_EMBED_DOWNLOAD") != "1":
+                    return None
+                from huggingface_hub import hf_hub_download
+                path = Path(hf_hub_download(repo_id=EMBED_REPO, filename=name, local_dir=str(EMBED_DIR)))
+            if _sha256(path) != digest:
+                print("refs embedding model checksum mismatch; using keyword search only", flush=True)
                 return None
-            from huggingface_hub import hf_hub_download
-            path = Path(hf_hub_download(repo_id=EMBED_REPO, filename=EMBED_FILE, local_dir=str(EMBED_DIR)))
-        h = hashlib.sha256()
-        with open(path, "rb") as fh:
-            for block in iter(lambda: fh.read(1 << 20), b""):
-                h.update(block)
-        if h.hexdigest() != EMBED_SHA256:
-            print("refs embedding model checksum mismatch; using keyword search only", flush=True)
-            return None
-        return Embedder(path)
+            paths[name] = path
+        return Embedder(paths[EMBED_FILE], paths[TOKENIZER_FILE])
     except Exception as e:  # noqa: BLE001 - fail open to keyword search
         print(f"refs embedding unavailable ({type(e).__name__}); using keyword search only", flush=True)
         return None

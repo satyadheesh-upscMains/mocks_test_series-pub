@@ -191,7 +191,7 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v11"] = rep["version"] == "mains-report-v11"
+    g["report version v12"] = rep["version"] == "mains-report-v12"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
     if case in POLITY_SET:

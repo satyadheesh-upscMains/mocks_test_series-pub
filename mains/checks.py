@@ -248,7 +248,7 @@ Check one claim of the student's answer against the extracts below. They are exa
 CLAIM ({sid}): \u00ab{text}\u00bb
 EXTRACTS
 {extracts}
-First answer bothTrue: could the claim and the extracts all be true at the same time? "no" only when the claim and an extract cannot both hold: a different body, office, House, power, time limit, number or condition for the same thing. An extract that describes one way something is done does not rule out a claim that names another way, unless the extract excludes it ("only", "shall not", another body taking the same decision). Then decide, from these extracts only:
+First answer bothTrue: could the claim and the extracts all be true at the same time? "no" only when the claim and an extract cannot both hold: a different body, office, House, power, time limit, number or condition for the same thing. An extract that describes one way something is done does not rule out a claim that names another way, unless the extract excludes it ("only", "shall not", another body taking the same decision). A different or more common name for the same thing is not a contradiction: "block" for the intermediate level, "Lok Sabha" for the House of the People, "Rajya Sabha" for the Council of States, "Centre" for the Union. Then decide, from these extracts only:
 - contradicted: bothTrue is "no".
 - confirmed: an extract states the same thing as the claim.
 - not_covered: no extract speaks to this claim. This is the usual case for opinions, examples, effects and claims about practice.
@@ -402,7 +402,11 @@ def run_fact(examiner, prep, system, check_id):
         priority = c.get("priority") if c.get("priority") in PRIORITY else "major"
         return {"verdict": "wrong", "credit": [], "rewrite": None, "note": None, "contradicted": True,
                 "concerns": [{"sourceId": sid, "quote": sent["text"], "kind": "wrong", "priority": priority,
-                              "reason": reason, "fix": fix, "ref": ref["id"]}]}
+                              "reason": reason, "fix": fix, "ref": ref["id"], "fromClaim": True,
+                              # The verified clash: the student's wrong words and the source's words. The correction
+                              # step checks its line against these (see report.correct).
+                              "evidence": {"wrongWords": " ".join(str(raw.get("wrongWords") or "").split()),
+                                           "sourceWords": " ".join(str(raw.get("sourceWords") or "").split())}}]}
 
     try:
         value = examiner.ask(stage="check", check=check_id, system=system, task=task, schema=sch, max_tokens=500,

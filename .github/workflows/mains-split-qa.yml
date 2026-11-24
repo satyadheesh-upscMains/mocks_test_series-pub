@@ -50,7 +50,8 @@ jobs:
 
   # v11: the sources each planted error needs, checked in about three minutes before any Gemma call. If a planted
   # error cannot reach the Article that settles it, or the off-syllabus answer gets a source, the run stops here.
-  # With the pinned multilingual-e5-small model it also records what embeddings would pick (measured, not used).
+  # With the pinned multilingual-e5-small model (ONNX int8 + its own tokenizer) it also records what embeddings would
+  # pick, in English and Hindi (measured, not used in grading).
   retrieval:
     needs: unit
     runs-on: ubuntu-latest
@@ -67,9 +68,9 @@ jobs:
         timeout-minutes: 5
         continue-on-error: true
         with:
-          path: models/multilingual-e5-small-Q8_0.gguf
-          key: mains-e5-small-q8-v1
-      - run: pip install -q ${{ env.RUNTIME }}
+          path: models/e5
+          key: mains-e5-small-onnx-int8-v1
+      - run: pip install -q ${{ env.RUNTIME }} onnxruntime==1.20.1 tokenizers==0.21.0
       - name: Build reference index
         timeout-minutes: 10
         run: python tools/build_refs.py
@@ -82,8 +83,8 @@ jobs:
         timeout-minutes: 3
         continue-on-error: true
         with:
-          path: models/multilingual-e5-small-Q8_0.gguf
-          key: mains-e5-small-q8-v1
+          path: models/e5
+          key: mains-e5-small-onnx-int8-v1
       - if: always()
         uses: actions/upload-artifact@v4
         with:

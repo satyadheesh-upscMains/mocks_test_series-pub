@@ -220,5 +220,67 @@ class Corrections(unittest.TestCase):
         self.assertIsNone(rep["fixes"][0]["tryWriting"])
 
 
+class SecondOpinion(unittest.TestCase):
+    """v12, from split run 45361966648: the Panchayat report's false contradiction was never re-checked."""
+
+    def test_claim_contradictions_are_rechecked_first_and_outside_the_budget(self):
+        from mains import verify
+        prep = prep_for("governor")
+        busy = [{"id": d, "kind": "check", "status": "ok", "verdict": "partial", "credit": [], "rewrite": None,
+                 "note": "N.", "concerns": [{"sourceId": "s1", "quote": "q", "kind": "unsupported", "priority": "major",
+                                             "reason": "R.", "fix": "F.", "ref": None}]}
+                for d in ("directive", "scope", "dimensions", "concepts", "accuracy", "evidence", "causality",
+                          "balance", "solutions")]
+        prov = {"id": "provisions", "kind": "check", "status": "ok", "verdict": "wrong", "credit": [], "rewrite": None,
+                "note": "N.", "concerns": [{"sourceId": "s1", "quote": "q", "kind": "wrong", "priority": "major",
+                                            "reason": "Block is not the intermediate level.", "fix": "F.",
+                                            "ref": "r1", "fromClaim": True}]}
+        results = busy + [prov]
+        got = verify.targets(prep, results)
+        self.assertEqual(results[got[0][1]]["id"], "provisions")
+        self.assertEqual(len(got), verify.LIMIT + 1)
+
+
+class CheckedCorrections(unittest.TestCase):
+    """v12: a correction is checked against the clash itself, not against how much it looks like the Constitution."""
+
+    def run_line(self, name, phrase, label, wrong, said, line):
+        prep = prep_for(name)
+        sid = sid_of(prep, phrase)
+        ref = next(r for r in claim_refs(prep, sid) if r["label"] == "Constitution of India, " + label)
+        sentence = next(s["text"] for s in prep["sentences"] if s["id"] == sid)
+        rep = {"fixes": [{"n": 1, "kind": "wrong", "title": "t", "where": "w", "why": "w.", "tryWriting": None,
+                          "source": ref["label"], "sourceRef": ref["id"],
+                          "evidence": {"wrongWords": wrong, "sourceWords": said},
+                          "yourLine": {"sourceId": sid, "text": sentence}}]}
+
+        class Ask:
+            def ask(self, *, validate, **_):
+                return validate({"sentence": line})
+
+        try:
+            report.correct(Ask(), prep, "sys", rep)
+        except Rejected:
+            pass
+        return rep["fixes"][0]["tryWriting"]
+
+    def test_a_correct_line_worded_like_the_constitution_is_kept(self):
+        # v11 refused this kind of line for Articles 356, 109 and 243G.
+        self.assertTrue(self.run_line("moneybill", "up to three months", "Article 109", "up to three months",
+                                      "within a period of fourteen days",
+                                      "The Rajya Sabha must return a Money Bill within fourteen days."))
+
+    def test_a_line_without_the_sources_fact_is_dropped(self):
+        self.assertIsNone(self.run_line("356", "continue indefinitely", "Article 356", "continue indefinitely",
+                                        "cease to operate on the expiration of a period of six months",
+                                        "Once approved, President's Rule can continue until the situation is resolved."))
+
+    def test_a_negated_correction_counts(self):
+        self.assertTrue(self.run_line("governor", "elected by the State Legislative Assembly", "Article 155",
+                                      "elected by the State Legislative Assembly",
+                                      "appointed by the President by warrant under his hand and seal",
+                                      "The Governor is not elected: the President appoints the Governor."))
+
+
 if __name__ == "__main__":
     unittest.main()

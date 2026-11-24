@@ -21,8 +21,28 @@ from mains.text import sentences  # noqa: E402
 import e2e_qa  # noqa: E402
 
 WETLANDS = (e2e_qa.BASE["question"], e2e_qa.BASE["answer"])
-HINDI_PROBES = ["राज्यपाल की नियुक्ति कैसे होती है? भारत की संघीय व्यवस्था में राज्यपाल की स्थिति का विश्लेषण कीजिए।",
-                "धन विधेयक के पारित होने में राज्यसभा की भूमिका की चर्चा कीजिए।"]
+HINDI_PROBES = [  # (Hindi claim or question, Articles that settle or answer it): measured, not gated
+    ("राज्यपाल का चुनाव राज्य की विधानसभा पाँच वर्ष के लिए करती है।", ["155", "156"]),
+    ("धन विधेयक संसद के किसी भी सदन में पेश किया जा सकता है।", ["109", "110"]),
+    ("पंचायतों के चुनाव भारत का निर्वाचन आयोग कराता है।", ["243K"]),
+    ("राष्ट्रपति शासन अनिश्चित काल तक जारी रह सकता है।", ["356"]),
+    ("नीति निदेशक तत्वों को मौलिक अधिकारों की तरह अदालत में लागू कराया जा सकता है।", ["37"]),
+    ("मुख्य निर्वाचन आयुक्त को प्रधानमंत्री की सलाह पर राष्ट्रपति हटा सकते हैं।", ["324"]),
+    ("राज्यपाल की नियुक्ति कैसे होती है? भारत की संघीय व्यवस्था में राज्यपाल की स्थिति का विश्लेषण कीजिए।", ["153", "155", "156"]),
+    ("धन विधेयक के पारित होने में राज्यसभा की भूमिका की चर्चा कीजिए।", ["109", "110"]),
+]
+
+
+def safe(fn, *a, **k):
+    try:
+        return fn(*a, **k)
+    except Exception as e:  # noqa: BLE001 - measurement only
+        return [["error", f"{type(e).__name__}"]]
+
+
+def in_top(shadow, arts):
+    want = {label(a) for a in arts}
+    return any(lab in want for lab, _ in shadow)
 
 
 def label(a):
@@ -50,23 +70,38 @@ def main():
             ok &= hit
             rows.append({"phrase": phrase, "sentence": sid, "want": arts, "reached": hit,
                          "claimSources": [short(m) for m in mine],
-                         "embedding": idx.shadow(next(s["text"] for s in sents if s["id"] == sid)),
-                         "embeddingCasesAndBook": idx.extra.shadow(next(s["text"] for s in sents if s["id"] == sid))
-                         if idx.extra else []})
+                         "embedding": safe(idx.shadow, next(s["text"] for s in sents if s["id"] == sid), k=10),
+                         "embeddingCasesAndBook": safe(idx.extra.shadow, next(s["text"] for s in sents
+                                                                               if s["id"] == sid)) if idx.extra else []})
             print(f"{'PASS' if hit else 'FAIL'} {case:17} {sid} {phrase!r} -> {', '.join(short(m) for m in mine)}")
         report[case] = {"shared": [short(r["label"]) for r in got if r["shared"]], "planted": rows}
     q, a = WETLANDS
     wet = idx.pack(q, sentences(a))
     ok &= not wet
     print(f"{'PASS' if not wet else 'FAIL'} wetlands gets no source ({len(wet)})")
-    report["wetlands"] = {"shared": [short(r["label"]) for r in wet], "embedding": idx.shadow(q)}
-    report["hindiProbes"] = [{"question": h, "keyword": [short(r["label"]) for r in idx.pack(h, "")],
-                              "embedding": idx.shadow(h)} for h in HINDI_PROBES]
+    report["wetlands"] = {"shared": [short(r["label"]) for r in wet], "embedding": safe(idx.shadow, q)}
+    report["hindiProbes"] = [{"question": h, "want": arts, "keyword": [short(r["label"]) for r in idx.pack(h, "")],
+                              "embedding": safe(idx.shadow, h, k=10)} for h, arts in HINDI_PROBES]
+    try:
+        summarise(idx, report)
+    except Exception as e:  # noqa: BLE001 - a measurement must never fail the source gate
+        print(f"embedding measurement failed ({type(e).__name__}: {e})")
     for h in report["hindiProbes"]:
-        print(f"hindi probe: keyword {len(h['keyword'])} sources; embedding {h['embedding']}")
+        print(f"hindi probe: keyword {len(h['keyword'])} sources; embedding top {h['embedding'][:1]}")
     Path("retrieval-out").mkdir(exist_ok=True)
     Path("retrieval-out/retrieval.json").write_text(json.dumps(report, ensure_ascii=False, indent=1))
     sys.exit(0 if ok else 1)
+
+
+def summarise(idx, report):
+    if idx.embedder:
+        eng = [row for case in report.values() if isinstance(case, dict) for row in case.get("planted", [])]
+        e_hits = sum(in_top(r["embedding"], r["want"]) for r in eng)
+        h_hits = sum(in_top(h["embedding"], h["want"]) for h in report["hindiProbes"])
+        report["embeddingSummary"] = {"englishTop10": e_hits, "english": len(eng), "hindiTop10": h_hits,
+                                      "hindi": len(report["hindiProbes"])}
+        print(f"embeddings (measured only): settling Article in top 10 for {e_hits}/{len(eng)} English planted "
+              f"claims and {h_hits}/{len(report['hindiProbes'])} Hindi claims and questions")
 
 
 if __name__ == "__main__":
