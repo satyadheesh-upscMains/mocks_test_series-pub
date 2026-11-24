@@ -351,16 +351,24 @@ def quote_agrees(wrong_words, source_words):
     of the eleven planted errors (the closest, "Election Commission of India" against "State Election Commission",
     repeats 0.67 of the claim's words)."""
     from .refs import vocabulary
-    from .report import number_terms, stems
+    from .report import stems
     w, q = stems(vocabulary(wrong_words or "")), stems(vocabulary(source_words or ""))
-    if not w:
-        return False
-    if ("not" in q) != ("not" in w) or ("only" in q) != ("only" in w):
-        return False
-    if (number_terms(wrong_words or "") or number_terms(source_words or "")) and \
-            number_terms(wrong_words or "") != number_terms(source_words or ""):
+    if not w or hard_difference(wrong_words, source_words):
         return False
     return len(w & q) >= AGREE * len(w)
+
+
+def hard_difference(wrong_words, source_words):
+    """A difference code can see without judging meaning: a "not" or an "only" on one side and not the other, or a
+    different number. Eight of the eleven planted errors have one; the other three (elected/appointed, Election
+    Commission of India/State Election Commission, State List/powers a State law gives) need a reading."""
+    from .refs import vocabulary
+    from .report import number_terms, stems
+    w, q = stems(vocabulary(wrong_words or "")), stems(vocabulary(source_words or ""))
+    if ("not" in q) != ("not" in w) or ("only" in q) != ("only" in w):
+        return True
+    a, b = number_terms(wrong_words or ""), number_terms(source_words or "")
+    return bool((a or b) and a != b)
 
 
 def run_fact(examiner, prep, system, check_id):

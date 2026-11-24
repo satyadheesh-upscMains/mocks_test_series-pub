@@ -314,5 +314,51 @@ class QuoteMustDiffer(unittest.TestCase):
         self.assertTrue(out.get("unproven"))
 
 
+class ThirdView(unittest.TestCase):
+    """v13.1: a narrow same-or-different look at each upheld claim contradiction, which can only remove a red mark."""
+
+    def setUp(self):
+        from mains import verify
+        self.verify = verify
+
+    def results(self, sid, wrong, said):
+        return [{"id": "provisions", "kind": "check", "status": "ok", "verdict": "wrong", "credit": [], "rewrite": None,
+                 "note": "N.", "concerns": [{"sourceId": sid, "quote": "q", "kind": "wrong", "priority": "major",
+                                             "reason": "R.", "fix": "F.", "ref": None, "fromClaim": True,
+                                             "evidence": {"wrongWords": wrong, "sourceWords": said}}]}]
+
+    def run_third(self, prep, results, verdict):
+        asked = []
+
+        class Ask:
+            def ask(self, *, validate, check, **_):
+                asked.append(check)
+                return validate({"difference": "x", "verdict": verdict})
+
+        self.verify.third_view(Ask(), prep, "sys", results)
+        self.verify.settle(results)
+        return asked
+
+    def test_same_meaning_removes_the_red_mark(self):
+        prep = prep_for("moneybill")
+        res = self.results("s2", "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha",
+                           "After a Money Bill has been passed by the House of the People it shall be transmitted")
+        self.assertEqual(self.run_third(prep, res, "same"), ["third:s2"])
+        self.assertEqual(res[0]["concerns"], [])
+
+    def test_a_real_difference_keeps_the_red_mark(self):
+        prep = prep_for("governor")
+        res = self.results("s2", "elected by the State Legislative Assembly",
+                           "The Governor of a State shall be appointed by the President")
+        self.run_third(prep, res, "different")
+        self.assertEqual(len(res[0]["concerns"]), 1)
+
+    def test_a_hard_difference_is_not_asked_and_cannot_be_removed(self):
+        prep = prep_for("moneybill")
+        res = self.results("s3", "up to three months", "shall within a period of fourteen days")
+        self.assertEqual(self.run_third(prep, res, "same"), [])
+        self.assertEqual(len(res[0]["concerns"]), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

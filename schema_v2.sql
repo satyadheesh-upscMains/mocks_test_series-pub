@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS mains_submission_pages (
 --   input            typed | photos
 --   transcript_json  photo answers: lines with page boxes, read status, every read (the evidence), retake reasons
 --   blocked          1 when a photo could not be read with certainty and the student was asked to retake it
---   report_json      the student report (report_version mains-report-v13), with page marks for photo answers
+--   report_json      the student report (report_version mains-report-v14), with page marks for photo answers
 CREATE TABLE IF NOT EXISTS mains_reviews (
   id TEXT PRIMARY KEY,
   input TEXT NOT NULL CHECK (input IN ('typed','photos')),

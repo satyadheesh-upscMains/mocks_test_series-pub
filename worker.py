@@ -12,7 +12,7 @@ Site protocol (POST JSON to MAINS_WORKER_URL with "Authorization: Bearer MAINS_W
                  transcript: text, pages, lines (id, page, box, text, status), evidence, blocked, retake,
                  retakeMessage. When blocked, the site asks the student for a retake and the job ends here.
   complete    {id, lease, result, reportVersion} -> {"ok": true} | {"ignored": true}
-                 result: the student report (mains-report-v13), with page marks for photo answers
+                 result: the student report (mains-report-v14), with page marks for photo answers
   fail        {id, lease}                       -> {"ok": true}   (back to the queue, at most 3 attempts)
   deliver     {}                                -> {"processed": n} (sends the opt-in alerts)
 """

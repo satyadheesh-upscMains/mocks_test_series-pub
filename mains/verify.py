@@ -82,6 +82,60 @@ def _source(prep, ref_id):
     return {"source": f"{r['label']}: {r.get('full') or r['text']}"} if r else {}
 
 
+THIRD_TASK = """TASK [third]
+Compare two statements. Decide only whether they say the same thing or something different. Ignore the rest of the answer.
+STUDENT'S WORDS: \u00ab{wrong}\u00bb (in the sentence \u00ab{sentence}\u00bb)
+SOURCE ({label}): \u00ab{said}\u00bb
+Different: a different body, office, House, level, power, procedure, number, time limit or condition, or one says only, never or not where the other does not. The same: the same fact in other words, or a common name for the same body (Lok Sabha for the House of the People, Rajya Sabha for the Council of States, block for the intermediate level, Centre for the Union).
+Fill the JSON fields in order:
+- difference: one short sentence naming the difference, or "none".
+- verdict: different or same."""
+THIRD_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["difference", "verdict"],
+                "properties": {"difference": {"type": "string"},
+                               "verdict": {"type": "string", "enum": ["different", "same"]}}}
+
+
+def _third(raw):
+    if not isinstance(raw, dict) or raw.get("verdict") not in ("different", "same"):
+        raise Rejected("third:verdict")
+    return raw["verdict"]
+
+
+def third_view(examiner, prep, system, results):
+    """A third, narrower look at each claim contradiction the second opinion upheld: only the student's quoted words
+    against the source's quoted words, same or different. It can only remove a red mark, never add one, and it is
+    asked only when code sees no hard difference (a "not", an "only" or a number): those eight of the eleven planted
+    errors are settled by the words themselves. Added after v12, where both Gemma passes upheld a correct Money Bill
+    sentence because the reason belonged to the sentence before; v13's code rule catches that case, this catches the
+    same mistake in words the rule cannot compare."""
+    from .checks import hard_difference
+    labels = {r["id"]: r["label"] for r in prep.get("refs") or []}
+    spans = {s["id"]: s["text"] for s in prep["sentences"]}
+    for r in results:
+        if r["status"] != "ok":
+            continue
+        for c in r["concerns"]:
+            ev = c.get("evidence") or {}
+            if not (c.get("fromClaim") and c["kind"] == "wrong" and not c.get("dropped") and ev.get("sourceWords")):
+                continue
+            if hard_difference(ev.get("wrongWords"), ev.get("sourceWords")):
+                c["third"] = "not_needed"
+                continue
+            task = THIRD_TASK.format(wrong=ev.get("wrongWords") or spans.get(c["sourceId"], ""),
+                                     sentence=spans.get(c["sourceId"], ""), label=labels.get(c.get("ref"), "source"),
+                                     said=ev["sourceWords"])
+            try:
+                out = examiner.ask(stage="third", check=f"third:{c['sourceId']}", system=system, task=task,
+                                   schema=THIRD_SCHEMA, max_tokens=120, validate=_third)
+            except Rejected:
+                out = "failed"  # the two earlier passes stand
+            c["third"] = out
+            r.setdefault("thirdOpinions", []).append(out)
+            if out == "same":
+                c["dropped"] = True
+                r["revised"] = True
+
+
 def run(examiner, prep, system, results):
     sids = [s["id"] for s in prep["sentences"]]
     for _, ri, ci in targets(prep, results):
@@ -110,6 +164,7 @@ def run(examiner, prep, system, results):
         except Rejected:
             out = {"decision": "failed", "coveredBy": []}
         apply(r, ci, out)
+    third_view(examiner, prep, system, results)
     settle(results)
     return results
 

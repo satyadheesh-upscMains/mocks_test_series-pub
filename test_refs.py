@@ -167,6 +167,8 @@ class InTheReport(unittest.TestCase):
     def run_all(self, script, found):
         script = dict(script)
         script.setdefault("correct", {"sentence": "Panchayat elections are conducted by a State Election Commission."})
+        script.setdefault("third", {"difference": "A State Election Commission, not the Election Commission of India.",
+                                    "verdict": "different"})
         with mock.patch.object(refs, "pack", return_value=found), contextlib.redirect_stdout(io.StringIO()):
             return pipeline.evaluate(Examiner(FakeGemma(script)), job("en"))
 
