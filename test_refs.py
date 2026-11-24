@@ -64,6 +64,16 @@ class Building(unittest.TestCase):
 
 
 class Search(unittest.TestCase):
+    def test_embedding_ranker_finds_governor_paraphrase(self):
+        class FakeEmbedder:
+            def embed(self, values):
+                # e5 prefixes are part of the production contract.
+                return [[1.0, 0.0] if "removed" in v or "term" in v else [0.0, 1.0] for v in values]
+        chunks = refs.constitution_chunks(CONST + [{"article": "156", "title": "Term of office of Governor",
+            "notes": [], "description": "The Governor shall hold office during the pleasure of the President."}])
+        idx = refs.Index(chunks, min_score=0, min_coverage=0, embedder=FakeEmbedder())
+        labels = [idx.chunks[i]["label"] for _, _, i in idx.search("A Governor cannot be removed before that")]
+        self.assertIn("Constitution of India, Article 156", labels[:2])
     def test_topic_question_gets_its_chapter_and_articles(self):
         found = index().pack(Q, A)
         labels = [r["label"] for r in found]
@@ -122,10 +132,9 @@ class Citing(unittest.TestCase):
         out = checks.bind(self.raw(self.sec), self.prep, "accuracy")
         self.assertEqual(out["concerns"][0]["ref"], self.sec)
 
-    def test_naming_a_source_fact_without_citing_it_is_rejected(self):
-        with self.assertRaises(Rejected) as e:
-            checks.bind(self.raw("none"), self.prep, "accuracy")
-        self.assertEqual(e.exception.code, "reason:unsourced_name")
+    def test_naming_a_source_fact_without_citing_it_is_dropped(self):
+        out = checks.bind(self.raw("none"), self.prep, "accuracy")
+        self.assertEqual(out["concerns"], [])
 
     def test_credit_naming_an_unknown_body_is_dropped_not_retried(self):
         raw = {"credit": [{"sourceId": "s2", "reason": "Women's reservation is right, as the Kothari Committee said."},
@@ -156,6 +165,8 @@ ART48A = [{"id": "r1", "label": "Constitution of India, Article 48A",
 
 class InTheReport(unittest.TestCase):
     def run_all(self, script, found):
+        script = dict(script)
+        script.setdefault("correct", {"sentence": "Panchayat elections are conducted by a State Election Commission."})
         with mock.patch.object(refs, "pack", return_value=found), contextlib.redirect_stdout(io.StringIO()):
             return pipeline.evaluate(Examiner(FakeGemma(script)), job("en"))
 

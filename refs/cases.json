@@ -1,0 +1,587 @@
+[
+ {
+  "id": "kesavananda",
+  "name": "Kesavananda Bharati v State of Kerala",
+  "year": 1973,
+  "citation": "(1973) 4 SCC 225",
+  "bench": "13 judges",
+  "articles": [
+   "13",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "Parliament may amend the Constitution, but cannot damage its basic structure.",
+  "url": "https://indiankanoon.org/doc/257876/",
+  "verified": false
+ },
+ {
+  "id": "golaknath",
+  "name": "I.C. Golaknath v State of Punjab",
+  "year": 1967,
+  "citation": "AIR 1967 SC 1643",
+  "bench": "11 judges",
+  "articles": [
+   "13",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "The Court held that Parliament could not take away fundamental rights by amendment; this position was later displaced by the Twenty-fourth Amendment and Kesavananda.",
+  "url": "https://indiankanoon.org/doc/1772786/",
+  "verified": false
+ },
+ {
+  "id": "shankari-prasad",
+  "name": "Shankari Prasad v Union of India",
+  "year": 1951,
+  "citation": "AIR 1951 SC 458",
+  "bench": "5 judges",
+  "articles": [
+   "13",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "A constitutional amendment was held not to be law under Article 13, so Parliament could amend fundamental rights.",
+  "url": "https://indiankanoon.org/doc/1655048/",
+  "verified": false
+ },
+ {
+  "id": "minerva-mills",
+  "name": "Minerva Mills v Union of India",
+  "year": 1980,
+  "citation": "(1980) 3 SCC 625",
+  "bench": "5 judges",
+  "articles": [
+   "14",
+   "19",
+   "31C",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "Limited amending power and harmony between fundamental rights and directive principles are parts of the basic structure.",
+  "url": "https://indiankanoon.org/doc/1939993/",
+  "verified": false
+ },
+ {
+  "id": "waman-rao",
+  "name": "Waman Rao v Union of India",
+  "year": 1981,
+  "citation": "(1981) 2 SCC 362",
+  "articles": [
+   "13",
+   "31B",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "Laws put in the Ninth Schedule after 24 April 1973 remain open to basic-structure review.",
+  "url": "https://indiankanoon.org/doc/1855893/",
+  "verified": false
+ },
+ {
+  "id": "ir-coelho",
+  "name": "I.R. Coelho v State of Tamil Nadu",
+  "year": 2007,
+  "citation": "(2007) 2 SCC 1",
+  "bench": "9 judges",
+  "articles": [
+   "14",
+   "19",
+   "21",
+   "31B"
+  ],
+  "topic": "Amendment",
+  "holding": "Ninth Schedule laws inserted after Kesavananda can be tested where they violate rights forming part of the basic structure.",
+  "url": "https://indiankanoon.org/doc/1633474/",
+  "verified": false
+ },
+ {
+  "id": "indira-gandhi",
+  "name": "Indira Nehru Gandhi v Raj Narain",
+  "year": 1975,
+  "citation": "1975 Supp SCC 1",
+  "articles": [
+   "329A",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "Free and fair elections and judicial review were treated as basic constitutional features.",
+  "url": "https://indiankanoon.org/doc/476494/",
+  "verified": false
+ },
+ {
+  "id": "ak-gopalan",
+  "name": "A.K. Gopalan v State of Madras",
+  "year": 1950,
+  "citation": "AIR 1950 SC 27",
+  "articles": [
+   "19",
+   "21",
+   "22"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "The early Article 21 ruling read procedure established by law narrowly; later decisions expanded rights protection.",
+  "url": "https://indiankanoon.org/doc/1858820/",
+  "verified": false
+ },
+ {
+  "id": "maneka",
+  "name": "Maneka Gandhi v Union of India",
+  "year": 1978,
+  "citation": "(1978) 1 SCC 248",
+  "articles": [
+   "14",
+   "19",
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "Procedure affecting life or personal liberty must be fair, just and reasonable, linking Articles 14, 19 and 21.",
+  "url": "https://indiankanoon.org/doc/1766147/",
+  "verified": false
+ },
+ {
+  "id": "francis",
+  "name": "Francis Coralie Mullin v Administrator, Union Territory of Delhi",
+  "year": 1981,
+  "citation": "(1981) 1 SCC 608",
+  "articles": [
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "The right to life includes living with human dignity and necessities that make life meaningful.",
+  "url": "https://indiankanoon.org/doc/78536/",
+  "verified": false
+ },
+ {
+  "id": "olga",
+  "name": "Olga Tellis v Bombay Municipal Corporation",
+  "year": 1985,
+  "citation": "(1985) 3 SCC 545",
+  "articles": [
+   "14",
+   "19",
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "Livelihood was recognised as part of Article 21, while eviction action remained subject to lawful procedure.",
+  "url": "https://indiankanoon.org/doc/709776/",
+  "verified": false
+ },
+ {
+  "id": "privacy",
+  "name": "K.S. Puttaswamy v Union of India",
+  "year": 2017,
+  "citation": "(2017) 10 SCC 1",
+  "bench": "9 judges",
+  "articles": [
+   "14",
+   "19",
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "Privacy is a fundamental right protected principally by Articles 14, 19 and 21.",
+  "url": "https://indiankanoon.org/doc/127517806/",
+  "verified": false
+ },
+ {
+  "id": "nhrc-arunachal",
+  "name": "NHRC v State of Arunachal Pradesh",
+  "year": 1996,
+  "citation": "(1996) 1 SCC 742",
+  "articles": [
+   "14",
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "The State was required to protect Chakma residents; Article 21 protects every person, not citizens alone.",
+  "url": "https://indiankanoon.org/doc/1443235/",
+  "verified": false
+ },
+ {
+  "id": "louis",
+  "name": "Louis De Raedt v Union of India",
+  "year": 1991,
+  "citation": "(1991) 3 SCC 554",
+  "articles": [
+   "14",
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "Foreigners enjoy Article 21 protection, though they have no fundamental right to remain in India.",
+  "url": "https://indiankanoon.org/doc/1400800/",
+  "verified": false
+ },
+ {
+  "id": "romesh",
+  "name": "Romesh Thappar v State of Madras",
+  "year": 1950,
+  "citation": "AIR 1950 SC 124",
+  "articles": [
+   "19",
+   "32"
+  ],
+  "topic": "Judicial review",
+  "holding": "The Court entertained a direct Article 32 challenge and stressed the importance of free political discussion.",
+  "url": "https://indiankanoon.org/doc/1100019/",
+  "verified": false
+ },
+ {
+  "id": "l-chandra",
+  "name": "L. Chandra Kumar v Union of India",
+  "year": 1997,
+  "citation": "(1997) 3 SCC 261",
+  "bench": "7 judges",
+  "articles": [
+   "32",
+   "136",
+   "226",
+   "227"
+  ],
+  "topic": "Judicial review",
+  "holding": "High Court and Supreme Court judicial review cannot be excluded; tribunal decisions remain reviewable by High Courts.",
+  "url": "https://indiankanoon.org/doc/1404776/",
+  "verified": false
+ },
+ {
+  "id": "bommai",
+  "name": "S.R. Bommai v Union of India",
+  "year": 1994,
+  "citation": "(1994) 3 SCC 1",
+  "bench": "9 judges",
+  "articles": [
+   "356"
+  ],
+  "topic": "Emergency",
+  "holding": "A proclamation under Article 356 is subject to judicial review and majority should ordinarily be tested on the House floor.",
+  "url": "https://indiankanoon.org/doc/1646783/",
+  "verified": false
+ },
+ {
+  "id": "rameshwar",
+  "name": "Rameshwar Prasad v Union of India",
+  "year": 2006,
+  "citation": "(2006) 2 SCC 1",
+  "articles": [
+   "174",
+   "356"
+  ],
+  "topic": "Emergency",
+  "holding": "The dissolution of the Bihar Assembly before it met was held unconstitutional.",
+  "url": "https://indiankanoon.org/doc/1283032/",
+  "verified": false
+ },
+ {
+  "id": "bp-singhal",
+  "name": "B.P. Singhal v Union of India",
+  "year": 2010,
+  "citation": "(2010) 6 SCC 331",
+  "articles": [
+   "156"
+  ],
+  "topic": "Governor",
+  "holding": "A Governor holds office during the President's pleasure, but removal cannot be arbitrary or capricious.",
+  "url": "https://indiankanoon.org/doc/1368565/",
+  "verified": false
+ },
+ {
+  "id": "shamsher",
+  "name": "Shamsher Singh v State of Punjab",
+  "year": 1974,
+  "citation": "(1974) 2 SCC 831",
+  "bench": "7 judges",
+  "articles": [
+   "74",
+   "163",
+   "154"
+  ],
+  "topic": "Governor",
+  "holding": "The Governor ordinarily acts on the aid and advice of the Council of Ministers except in limited constitutional discretion.",
+  "url": "https://indiankanoon.org/doc/1490162/",
+  "verified": false
+ },
+ {
+  "id": "nabam",
+  "name": "Nabam Rebia v Deputy Speaker, Arunachal Pradesh",
+  "year": 2016,
+  "citation": "(2016) 8 SCC 1",
+  "articles": [
+   "163",
+   "174"
+  ],
+  "topic": "Governor",
+  "holding": "The Governor cannot ordinarily advance an Assembly session without ministerial advice in order to influence legislative business.",
+  "url": "https://indiankanoon.org/doc/145565012/",
+  "verified": false
+ },
+ {
+  "id": "champakam",
+  "name": "State of Madras v Champakam Dorairajan",
+  "year": 1951,
+  "citation": "AIR 1951 SC 226",
+  "articles": [
+   "15",
+   "29",
+   "46"
+  ],
+  "topic": "DPSP",
+  "holding": "Fundamental rights prevailed over directive principles in a conflict; the decision led to the First Amendment.",
+  "url": "https://indiankanoon.org/doc/1737450/",
+  "verified": false
+ },
+ {
+  "id": "kishansing",
+  "name": "Kishansing Tomar v Municipal Corporation of Ahmedabad",
+  "year": 2006,
+  "citation": "(2006) 8 SCC 352",
+  "articles": [
+   "243U",
+   "243ZA"
+  ],
+  "topic": "Local government",
+  "holding": "Local-body elections must be completed before the constitutional term ends, save limited exceptions recognised by the Constitution.",
+  "url": "https://indiankanoon.org/doc/1108778/",
+  "verified": false
+ },
+ {
+  "id": "krishna-murthy",
+  "name": "K. Krishna Murthy v Union of India",
+  "year": 2010,
+  "citation": "(2010) 7 SCC 202",
+  "articles": [
+   "243D",
+   "243T"
+  ],
+  "topic": "Local government",
+  "holding": "Reservation for backward classes in local bodies needs contemporaneous empirical justification and must respect constitutional limits.",
+  "url": "https://indiankanoon.org/doc/1271105/",
+  "verified": false
+ },
+ {
+  "id": "mohinder",
+  "name": "Mohinder Singh Gill v Chief Election Commissioner",
+  "year": 1978,
+  "citation": "(1978) 1 SCC 405",
+  "articles": [
+   "324"
+  ],
+  "topic": "Elections",
+  "holding": "Article 324 gives the Election Commission broad powers to ensure free and fair elections where law is silent.",
+  "url": "https://indiankanoon.org/doc/1786873/",
+  "verified": false
+ },
+ {
+  "id": "anoop",
+  "name": "Anoop Baranwal v Union of India",
+  "year": 2023,
+  "citation": "2023 SCC OnLine SC 216",
+  "articles": [
+   "324"
+  ],
+  "topic": "Elections",
+  "holding": "Pending legislation, the Court prescribed a committee process for appointments to the Election Commission.",
+  "url": "https://indiankanoon.org/doc/191007489/",
+  "verified": false
+ },
+ {
+  "id": "kihoto",
+  "name": "Kihoto Hollohan v Zachillhu",
+  "year": 1992,
+  "citation": "1992 Supp (2) SCC 651",
+  "articles": [
+   "102",
+   "191",
+   "Tenth Schedule"
+  ],
+  "topic": "Parliament",
+  "holding": "The anti-defection law was upheld subject to judicial review of the Speaker's decision after it is made.",
+  "url": "https://indiankanoon.org/doc/1314713/",
+  "verified": false
+ },
+ {
+  "id": "indra",
+  "name": "Indra Sawhney v Union of India",
+  "year": 1992,
+  "citation": "1992 Supp (3) SCC 217",
+  "bench": "9 judges",
+  "articles": [
+   "16"
+  ],
+  "topic": "Equality",
+  "holding": "Reservations for socially and educationally backward classes were upheld, with the creamy-layer principle for OBC reservations.",
+  "url": "https://indiankanoon.org/doc/1363234/",
+  "verified": false
+ },
+ {
+  "id": "vishaka",
+  "name": "Vishaka v State of Rajasthan",
+  "year": 1997,
+  "citation": "(1997) 6 SCC 241",
+  "articles": [
+   "14",
+   "15",
+   "19",
+   "21"
+  ],
+  "topic": "Equality",
+  "holding": "The Court framed workplace sexual-harassment guidelines until legislation was enacted.",
+  "url": "https://indiankanoon.org/doc/1031794/",
+  "verified": false
+ },
+ {
+  "id": "sp-gupta",
+  "name": "S.P. Gupta v Union of India",
+  "year": 1981,
+  "citation": "1981 Supp SCC 87",
+  "articles": [
+   "124",
+   "217"
+  ],
+  "topic": "Judiciary",
+  "holding": "The First Judges case gave primacy to executive opinion in judicial appointments.",
+  "url": "https://indiankanoon.org/doc/1294856/",
+  "verified": false
+ },
+ {
+  "id": "advocates-1993",
+  "name": "Supreme Court Advocates-on-Record Association v Union of India",
+  "year": 1993,
+  "citation": "(1993) 4 SCC 441",
+  "bench": "9 judges",
+  "articles": [
+   "124",
+   "217"
+  ],
+  "topic": "Judiciary",
+  "holding": "The Second Judges case gave primacy to the Chief Justice of India's collegium in appointments.",
+  "url": "https://indiankanoon.org/doc/262865/",
+  "verified": false
+ },
+ {
+  "id": "re-presidential-reference",
+  "name": "Re Presidential Reference",
+  "year": 1998,
+  "citation": "(1998) 7 SCC 739",
+  "bench": "9 judges",
+  "articles": [
+   "124",
+   "217"
+  ],
+  "topic": "Judiciary",
+  "holding": "The Third Judges case clarified the collegium process and the required consultation for appointments.",
+  "url": "https://indiankanoon.org/doc/1955811/",
+  "verified": false
+ },
+ {
+  "id": "njac",
+  "name": "Supreme Court Advocates-on-Record Association v Union of India",
+  "year": 2015,
+  "citation": "(2016) 5 SCC 1",
+  "bench": "5 judges",
+  "articles": [
+   "124A",
+   "124B",
+   "124C",
+   "368"
+  ],
+  "topic": "Judiciary",
+  "holding": "The Ninety-ninth Amendment and NJAC Act were struck down for violating judicial independence, a basic-structure principle.",
+  "url": "https://indiankanoon.org/doc/111003505/",
+  "verified": false
+ },
+ {
+  "id": "aadhaar",
+  "name": "K.S. Puttaswamy v Union of India (Aadhaar)",
+  "year": 2018,
+  "citation": "(2019) 1 SCC 1",
+  "articles": [
+   "110",
+   "14",
+   "21"
+  ],
+  "topic": "Parliament",
+  "holding": "The majority upheld most of the Aadhaar Act and accepted that it could be passed as a Money Bill; in Rojer Mathew (2019) a later Bench doubted that reasoning and referred the Money Bill question to a larger Bench.",
+  "url": "https://indiankanoon.org/doc/127517806/",
+  "verified": false
+ },
+ {
+  "id": "rojer",
+  "name": "Rojer Mathew v South Indian Bank",
+  "year": 2019,
+  "citation": "(2020) 6 SCC 1",
+  "articles": [
+   "110"
+  ],
+  "topic": "Parliament",
+  "holding": "The Court referred important Money Bill questions, including the Aadhaar reasoning, to a larger Bench.",
+  "url": "https://indiankanoon.org/doc/24558645/",
+  "verified": false
+ },
+ {
+  "id": "d-k-basu",
+  "name": "D.K. Basu v State of West Bengal",
+  "year": 1997,
+  "citation": "(1997) 1 SCC 416",
+  "articles": [
+   "21",
+   "22"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "The Court laid down safeguards against custodial violence and arbitrary arrest.",
+  "url": "https://indiankanoon.org/doc/501198/",
+  "verified": false
+ },
+ {
+  "id": "hussainara",
+  "name": "Hussainara Khatoon v Home Secretary, State of Bihar",
+  "year": 1979,
+  "citation": "(1980) 1 SCC 81",
+  "articles": [
+   "21"
+  ],
+  "topic": "Fundamental Rights",
+  "holding": "Speedy trial was recognised as an essential part of fair procedure under Article 21.",
+  "url": "https://indiankanoon.org/doc/846544/",
+  "verified": false
+ },
+ {
+  "id": "unni-krishnan",
+  "name": "Unni Krishnan v State of Andhra Pradesh",
+  "year": 1993,
+  "citation": "(1993) 1 SCC 645",
+  "articles": [
+   "21",
+   "45"
+  ],
+  "topic": "DPSP",
+  "holding": "The Court recognised a limited right to education under Article 21 before Article 21A was inserted.",
+  "url": "https://indiankanoon.org/doc/1385913/",
+  "verified": false
+ },
+ {
+  "id": "m-c-mehta",
+  "name": "M.C. Mehta v Union of India",
+  "year": 1987,
+  "citation": "(1987) 1 SCC 395",
+  "articles": [
+   "21",
+   "48A",
+   "51A(g)"
+  ],
+  "topic": "Environment",
+  "holding": "The Court developed remedies and principles to protect life and environment in public-interest litigation.",
+  "url": "https://indiankanoon.org/doc/1486949/",
+  "verified": false
+ },
+ {
+  "id": "sajjan",
+  "name": "Sajjan Singh v State of Rajasthan",
+  "year": 1965,
+  "citation": "AIR 1965 SC 845",
+  "articles": [
+   "13",
+   "368"
+  ],
+  "topic": "Amendment",
+  "holding": "The Court upheld Parliament's power to amend fundamental rights, preceding Golaknath.",
+  "url": "https://indiankanoon.org/doc/1372957/",
+  "verified": false
+ }
+]

@@ -139,7 +139,7 @@ def bind(raw, prep, check_id):
         except Rejected as e:
             # A finding that names a fact no source has is dropped, not retried: three rejected attempts over one
             # name left whole checks "Not checked" and three Polity reports unbuilt (split run 45252594185).
-            if e.code.endswith(("unsourced_name", "unsourced_number")):
+            if e.code.endswith(("unsourced_name", "unsourced_number", "copied")):
                 dropped_c = e.code
                 continue
             raise
@@ -153,8 +153,10 @@ def bind(raw, prep, check_id):
             credit = []  # a part with no real answer earns no credit; keep the verdict instead of rejecting
         if verdict == "met" and not credit:
             raise Rejected("part:met_without_credit")
-        if verdict in ("partial", "missing") and not concerns:
-            raise Rejected(dropped_c or "part:gap_without_concern")
+        if verdict in ("partial", "missing") and not concerns and not dropped_c:
+            # v10: when the only concern named an unsourced fact it is dropped and the verdict stands; three retries
+            # over one name left parts and checks "Not checked" in v9 (split run 45324728302).
+            raise Rejected("part:gap_without_concern")
     else:
         if verdict == "not_applicable" and concerns:
             # The model judged the check not needed but still found problems: the problems stand, so it is a
@@ -163,7 +165,10 @@ def bind(raw, prep, check_id):
         if verdict == "good" and not credit:
             raise Rejected(dropped or "check:good_without_credit")
         if verdict in ("partial", "missing", "unsupported", "wrong") and not concerns:
-            raise Rejected(dropped_c or "check:gap_without_concern")
+            if not dropped_c:
+                raise Rejected("check:gap_without_concern")
+            if verdict in ("unsupported", "wrong"):
+                verdict = "partial"  # the finding behind a red verdict was dropped: no red without a finding
         if verdict == "missing" and credit and check_id == "scope":
             credit = []  # an off-topic answer earns no credit; keep scope 'missing' instead of rejecting
 
@@ -195,6 +200,8 @@ def bind(raw, prep, check_id):
             if not e.code.endswith(("unsourced_name", "unsourced_number")):
                 raise
             out = None  # a rewrite is optional: one that names an unsourced fact is left out, not retried
+        if out is not None and licensed(ref) and copies(out, ref["text"]):
+            out = None
         if out is not None:
             if len([s for s in SENTENCE_END.split(out) if s.strip()]) > 3:
                 raise Rejected("rewrite:too_long")
@@ -211,11 +218,27 @@ def bind(raw, prep, check_id):
     return {"verdict": verdict, "credit": credit, "concerns": concerns, "rewrite": rewrite, "note": note}
 
 
+COPY_RUN = 12  # most consecutive words a finding may take from a licensed book or textbook passage
+
+
+def copies(text, passage, run=COPY_RUN):
+    """True when `text` repeats `run` or more consecutive words of `passage`."""
+    a = re.findall(r"\w+", fold(text or ""))
+    b = " " + " ".join(re.findall(r"\w+", fold(passage or ""))) + " "
+    return any(" " + " ".join(a[i:i + run]) + " " in b for i in range(0, max(0, len(a) - run + 1)))
+
+
+def licensed(ref):
+    return bool(ref and (ref.get("private") or ref.get("label", "").startswith(("NCERT", "Laxmikanth"))))
+
+
 def _with_source(prep, c, lang, src):
     ref = _cited(prep, c.get("refId"))
     use = prompts.sources(prep, (ref["id"],)) if ref else src
     reason = clean(c.get("reason"), lang, use, hi=400, field="reason")
     fix = clean(c.get("fix"), lang, use, hi=300, field="fix")
+    if licensed(ref) and copies(f"{reason} {fix}", ref["text"]):
+        raise Rejected("fix:copied")  # dropped like an unsourced fact: paraphrase only
     return {"reason": reason, "fix": fix, "ref": ref["id"] if ref and _uses(prep, ref, f"{reason} {fix}") else None}
 
 
@@ -290,6 +313,7 @@ def run_fact(examiner, prep, system, check_id):
     sid = check_id.split(":", 1)[1]
     sent = next(s for s in prep["sentences"] if s["id"] == sid)
     mine = [r for r in prep.get("refs") or [] if sid in r.get("claims", [])]
+    mine = [dict(r, text=r.get("full") or r["text"]) for r in mine]
     extracts = "\n".join(f"[{r['id']}] {r['label']}: {prompts.escape(r['text'])}" for r in mine)
     task = (FACT_TASK.format(sid=sid, text=prompts.escape(sent["text"]), extracts=extracts)
             + FIELDS.format(verdicts="contradicted, confirmed or not_covered, as decided above"))
@@ -327,8 +351,13 @@ def run_fact(examiner, prep, system, check_id):
 
     try:
         value = examiner.ask(stage="check", check=check_id, system=system, task=task, schema=sch, max_tokens=500,
-                             validate=validate)
+                             validate=validate, attempts=2)
     except Rejected as e:
+        if e.code in ("fact:wrong_words", "fact:source_words"):
+            # Gemma said "contradicted" twice but could not quote the clash (v9: Money Bill s2, Article 356 s2). An
+            # error nobody can show is not an error: the claim stands as not covered, and nothing is marked.
+            return {"id": check_id, "kind": "fact", "status": "ok", "verdict": "not_applicable", "credit": [],
+                    "concerns": [], "rewrite": None, "note": None, "unproven": True}
         return {"id": check_id, "kind": "fact", "status": "unavailable", "reason": e.code}
     return {"id": check_id, "kind": "fact", "status": "ok", **value}
 

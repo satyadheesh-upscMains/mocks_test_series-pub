@@ -9,6 +9,7 @@ sources, it never invents one. Prints counts only, never passage text.
 """
 import json
 import gzip
+import http.client
 import sys
 import time
 from pathlib import Path
@@ -21,6 +22,8 @@ from mains import refs  # noqa: E402
 
 REFS = ROOT / "refs"
 CONSTITUTION = REFS / "constitution_of_india_2026.json"
+CASES = REFS / "cases.json"
+LAXMIKANTH = REFS / "laxmikanth_pages.json.gz"
 CACHE = REFS / "cache"
 URL = "https://ncert.nic.in/textbook/pdf/{code}.pdf"
 
@@ -38,7 +41,7 @@ def fetch(code):
                 CACHE.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data)
                 return path
-        except OSError:
+        except (OSError, http.client.HTTPException):
             pass
         time.sleep(3 * (attempt + 1))
     return None
@@ -68,6 +71,10 @@ def ncert_pages():
 
 def main():
     chunks = refs.constitution_chunks(json.loads(CONSTITUTION.read_text(encoding="utf-8")))
+    if CASES.exists():
+        chunks += refs.case_chunks(json.loads(CASES.read_text(encoding="utf-8")))
+    if LAXMIKANTH.exists():
+        chunks += refs.laxmikanth_chunks(json.loads(gzip.decompress(LAXMIKANTH.read_bytes())))
     n_const = len(chunks)
     try:
         pages, missing = ncert_pages()

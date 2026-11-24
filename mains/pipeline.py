@@ -66,13 +66,19 @@ def merge_facts(results):
     cleared = {r["id"].split(":", 1)[1] for r in facts if r["id"].startswith("facts:")
                and not any(c["kind"] == "wrong" for c in r["concerns"])}
     found = [c for r in facts if r["id"].startswith("facts:") for c in r["concerns"] if c["kind"] == "wrong"]
+    wrong_at = {c["sourceId"] for c in found}
     for r in rest:
         if r["status"] != "ok":
             continue
+        rw = r.get("rewrite") or {}
         keep = []
         for c in r["concerns"]:
             sid = c.get("sourceId")
-            if c["kind"] in ("wrong", "unsupported") and c.get("ref") and sid in cleared:
+            # Only the claim check may call a sentence wrong on a source's authority. v9 Governor s3 was cleared by its
+            # claim check yet marked wrong by "Constitution and textbook basics" against Article 154's literal
+            # wording: the source came through the check's rewrite, not the concern, so the old rule missed it.
+            on_source = bool(c.get("ref")) or r["id"] == "provisions" or (rw.get("ref") and rw.get("sourceId") == sid)
+            if c["kind"] in ("wrong", "unsupported") and on_source and (sid in cleared or sid in wrong_at):
                 continue
             if sid and any(f["sourceId"] != sid and similar(f["reason"], c["reason"], 0.45) for f in found):
                 continue
@@ -94,6 +100,9 @@ def merge_facts(results):
             rest.append(prov)
         else:
             rest[at] = prov
+    # The claim check's finding replaces the check's own one on the same sentence: it carries the Article and the
+    # verified quotes (v9: four planted errors were caught with no Article shown, because the uncited finding won).
+    prov["concerns"] = [c for c in prov["concerns"] if not (c["kind"] == "wrong" and c["sourceId"] in wrong_at)]
     have = {(c["sourceId"], c["kind"]) for c in prov["concerns"]}
     for c in concerns:
         if (c["sourceId"], c["kind"]) not in have:
@@ -140,6 +149,7 @@ def finish(examiner, prep, results):
                for r in results]
     results = verify.run(examiner, prep, system, merge_facts(results))
     out = report.assemble(prep, results)
+    report.correct(examiner, prep, system, out)
     out["summary"] = report.summarize(examiner, prep, system, out)
     return out
 

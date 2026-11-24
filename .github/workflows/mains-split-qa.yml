@@ -37,7 +37,7 @@ jobs:
       - name: Unit tests (no model)
         run: |
           set +e
-          python -m unittest -v test_examiner test_refs test_photo test_worker test_review > unit-split.log 2>&1
+          python -m unittest -v test_examiner test_refs test_photo test_worker test_review test_v10 > unit-split.log 2>&1
           status=$?
           cat unit-split.log
           exit $status
@@ -74,7 +74,11 @@ jobs:
       - name: Build reference index
         timeout-minutes: 10
         run: python tools/build_refs.py
+      # v10: the pinned multilingual-e5-small model (132 MB, sha256-checked in mains/refs.py) re-ranks the keyword
+      # hits. If it cannot be downloaded or loaded, search stays keyword-only and the run continues.
       - run: python tools/split_qa.py prepare --case ${{ matrix.case }} --dir split-out
+        env:
+          MAINS_EMBED_DOWNLOAD: '1'
       - uses: actions/upload-artifact@v4
         with:
           name: prep-${{ matrix.case }}

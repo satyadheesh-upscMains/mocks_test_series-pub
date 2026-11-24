@@ -32,8 +32,10 @@ DIMENSIONS = [
         "Find factual statements that are wrong, unsupported, exaggerated or stated as universal (every, always, "
         "never, will end). Judge against the reference points and well-established knowledge only. A claim you cannot "
         "confirm is 'unsupported', not 'wrong'. Never supply a corrected number, date or name unless it appears in "
-        "MATERIALS; say what the student should check instead. If there is no factual problem, credit the most "
-        "precise factual sentence.")),
+        "MATERIALS; say what the student should check instead. A sentence is wrong only for what it says: a detail it "
+        "leaves out is 'missing' or 'weak', never 'wrong'. Wording that means the same as the Constitution (for "
+        "example 'at least half' for 'not less than one-half') is correct. If there is no factual problem, credit "
+        "the most precise factual sentence.")),
     dict(id="evidence", group="content", en="Examples and evidence", hi="उदाहरण", task=(
         "Check whether points are supported by specific examples, cases, schemes, committee or report findings, data "
         "or court judgements, and whether each example really supports its point. If evidence is missing, describe "

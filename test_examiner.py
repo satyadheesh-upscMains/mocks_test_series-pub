@@ -283,11 +283,12 @@ class Report(unittest.TestCase):
         self.assertEqual(rep["trust"]["unavailableChecks"], ["concepts", "language"])
         self.assertTrue(all(f["where"] not in ("Concepts explained", "Clear wording") for f in rep["fixes"]))
 
-    def test_too_many_failed_checks_is_incomplete(self):
+    def test_many_failed_checks_still_build_a_report(self):
         script = {k: v for k, v in EN.items() if k not in ("concepts", "accuracy", "evidence")}
         script.update({k: {"verdict": "nonsense"} for k in ("concepts", "accuracy", "evidence")})
-        with self.assertRaises(report.Incomplete):
-            self.run_all(script, "en")
+        rep, _ = self.run_all(script, "en")
+        unavailable = {d["id"] for d in rep["checks"] if d["verdict"] == "unavailable"}
+        self.assertTrue({"concepts", "accuracy", "evidence"} <= unavailable)
 
     def test_same_advice_twice_is_one_fix(self):
         a = "दो विशिष्ट चुनौतियां जोड़ें, जैसे कि फंड की कमी या अलग-अलग विभागों के बीच तालमेल की कमी।"

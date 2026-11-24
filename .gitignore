@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+models/
+.venv/
+.env*
+*.db
+*.sqlite
+refs/index.json.gz
+refs/cache/
+refs/*.npy

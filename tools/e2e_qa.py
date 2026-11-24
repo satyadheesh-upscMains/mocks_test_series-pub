@@ -156,7 +156,26 @@ def polity_gates(case, rep):
                                             if h["tone"] == "red" and h["sourceId"] not in wrong_ids]
     rep["qa"]["sourcesUsed"] = [s["label"] for s in rep["sources"] if s["used"]]
     rep["qa"]["expected"] = sorted(labels)
+    # v10: a correct sentence marked red teaches the student a wrong fact about their own answer.
+    g["no red marks on correct sentences"] = not rep["qa"]["falseRed"]
+    # Landmark cases are measured, not gated: the public runs carry our own case summaries only.
+    shown = rep["fixes"] + rep["additions"] + rep["missing"] + [c for h in rep["highlights"] for c in h["concerns"]]
+    cited = sorted({x["source"] for x in shown if (x.get("source") or "").startswith("Case:")})
+    want = EXPECTED_CASES.get(case, ())
+    rep["qa"]["casesGiven"] = [s["label"] for s in rep["sources"] if s["label"].startswith("Case:")]
+    rep["qa"]["casesCited"] = cited
+    rep["qa"]["expectedCaseCited"] = any(w in c for c in cited for w in want) if want else None
+    rep["qa"]["redFixesWithTryWriting"] = sum(1 for f in rep["fixes"] if f["kind"] == "wrong" and f["tryWriting"])
     return g
+
+
+EXPECTED_CASES = {
+    "polity-art21": ("Maneka Gandhi", "Olga Tellis", "Puttaswamy", "Francis Coralie Mullin"),
+    "polity-356": ("S.R. Bommai", "Rameshwar Prasad"),
+    "polity-dpsp": ("Minerva Mills", "Champakam Dorairajan", "Kesavananda Bharati"),
+    "polity-amend": ("Kesavananda Bharati", "Minerva Mills", "Golaknath", "I.R. Coelho"),
+    "polity-governor": ("B.P. Singhal", "Shamsher Singh", "Nabam Rebia", "Rameshwar Prasad"),
+}
 
 
 def gates(case, site, counts):
@@ -172,7 +191,7 @@ def gates(case, site, counts):
     g["report completed"] = counts["done"] == 1 and rep is not None
     if rep is None:
         return g
-    g["report version v9"] = rep["version"] == "mains-report-v9"
+    g["report version v10"] = rep["version"] == "mains-report-v10"
     g["three or fewer fixes"] = len(rep["fixes"]) <= 3
     g["every check judged"] = not rep["trust"]["unavailableChecks"]
     if case in POLITY_SET:

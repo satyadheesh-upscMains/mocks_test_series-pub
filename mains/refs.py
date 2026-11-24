@@ -1,4 +1,4 @@
-"""Reference extracts for the examiner: the Constitution of India and NCERT Class 11 Political Science.
+"""Reference extracts for the examiner: Constitution, NCERT and original case summaries.
 
 `tools/build_refs.py` builds refs/index.json.gz once per runner: the Constitution comes from the committed JSON (public
 domain); NCERT chapters are downloaded from ncert.nic.in at build time, so no textbook text is ever committed. Search
@@ -6,17 +6,21 @@ is plain BM25 in Python, no model. Passages go to Gemma inside MATERIALS only: r
 example "Constitution of India, Article 243K"), never its text, and logs print counts only.
 """
 import collections
+import hashlib
 import gzip
 import json
 import math
 import os
 import re
+import hashlib
 from pathlib import Path
 
 INDEX = Path(os.environ.get("MAINS_REFS", Path(__file__).resolve().parents[1] / "refs" / "index.json.gz"))
 MAX_PASSAGES = 6     # extracts shown to every check
 MAX_REFS = 16        # with the extracts that check single claims
 CLAIM_SOURCES = 5    # extracts per claim
+MAX_CASES = 2        # landmark cases added to a Constitution question, for credit and additions only
+MAX_BOOK = 2         # passages of the licensed book (private core only), for credit and additions only
 TITLE_WEIGHT = 3.0  # how much a match in an Article's title adds
 FROM_QUESTION_FIRST = 2   # passages for the question itself, before the answer's claims get theirs
 CLAIM_SCORE = 0.6         # a claim's passage may score lower than a question's: claims are one short sentence
@@ -35,6 +39,47 @@ measures steps need india indian scope widen widened constitution constitutional
 ARTICLE = re.compile(r"(?:\bart(?:icle)?s?\.?|अनुच्छेद)\s*(\d{1,3}[A-Z]{0,3})\b", re.I)
 BOOK = {"keps1": "Political Theory", "keps2": "Indian Constitution at Work"}
 NCERT_FILES = [f"keps10{i}" for i in (1, 2, 3, 4, 6, 7, 8)] + [f"keps2{i:02d}" for i in range(1, 11)]
+EMBED_REPO = "keisuke-miyako/multilingual-e5-small-gguf-q8_0"   # intfloat/multilingual-e5-small, GGUF Q8_0
+EMBED_FILE = "multilingual-e5-small-Q8_0.gguf"
+EMBED_SHA256 = "0d5a5a0b0ad84faad6357a6145e769b0661f0efbf53acf74598afc34dab454f4"   # pinned: the file is checked
+EMBED_DIR = Path(os.environ.get("MAINS_EMBED_DIR", Path(__file__).resolve().parents[1] / "models"))
+
+
+class Embedder:
+    """multilingual-e5-small through llama-cpp-python (already installed for Gemma): no torch, no API, CPU only."""
+
+    def __init__(self, path):
+        import llama_cpp
+        self.llm = llama_cpp.Llama(model_path=str(path), embedding=True, n_ctx=512, n_batch=512,
+                                   n_threads=max(2, os.cpu_count() or 2), pooling_type=1, verbose=False)
+
+    def embed(self, texts):
+        return [self.llm.embed(t[:1500], normalize=True, truncate=True) for t in texts]
+
+
+def embedder():
+    """The pinned e5 model when it is on this runner (models/, downloaded by the workflow) and its checksum matches;
+    otherwise None, and search is keyword-only. Never raises: a missing model must not stop grading."""
+    if os.environ.get("MAINS_EMBED", "1") == "0":
+        return None
+    path = EMBED_DIR / EMBED_FILE
+    try:
+        if not path.exists():
+            if os.environ.get("MAINS_EMBED_DOWNLOAD") != "1":
+                return None
+            from huggingface_hub import hf_hub_download
+            path = Path(hf_hub_download(repo_id=EMBED_REPO, filename=EMBED_FILE, local_dir=str(EMBED_DIR)))
+        h = hashlib.sha256()
+        with open(path, "rb") as fh:
+            for block in iter(lambda: fh.read(1 << 20), b""):
+                h.update(block)
+        if h.hexdigest() != EMBED_SHA256:
+            print("refs embedding model checksum mismatch; using keyword search only", flush=True)
+            return None
+        return Embedder(path)
+    except Exception as e:  # noqa: BLE001 - fail open to keyword search
+        print(f"refs embedding unavailable ({type(e).__name__}); using keyword search only", flush=True)
+        return None
 
 
 def _stem(w):
@@ -107,12 +152,33 @@ def ncert_chunks(pages):
     return out
 
 
+def case_chunks(entries):
+    """Our summaries are useful for credit/gaps, never contradiction evidence."""
+    return [{"id": "case:" + e["id"], "label": f"Case: {e['name']} ({e['year']})",
+             "title": e["name"], "text": e["holding"], "case": True,
+             "articles": e.get("articles", [])} for e in entries]
+
+
+def laxmikanth_chunks(entries):
+    """The licensed book, private core only: labels name chapter and section; the text never leaves the runner."""
+    out = []
+    for n, e in enumerate(entries, 1):
+        sec = e.get("section") or ""
+        label = f"Laxmikanth, Indian Polity, Ch. {e['chapter']} ({e['title']})" + (f", {sec}" if sec else "")
+        out.append({"id": f"l{n}", "label": label, "title": f"{e['title']}. {sec}", "text": e["text"],
+                    "private": True})
+    return out
+
+
 # ------------------------------------------------------------------ search
 
 class Index:
-    def __init__(self, chunks, min_score=MIN_SCORE, min_coverage=MIN_COVERAGE):
+    def __init__(self, chunks, min_score=MIN_SCORE, min_coverage=MIN_COVERAGE, embedder=None, cache_dir=None):
         self.chunks = list(chunks)
+        self.cache_dir = cache_dir
         self.min_score, self.min_coverage = min_score, min_coverage
+        self.embedder = embedder
+        self._vectors = None
         self.docs = [collections.Counter(terms(c["title"] + " " + c["text"])) for c in self.chunks]
         # An Article's own title says what it is about ("Appointment of Governor"). Titles get their own index, with
         # their own rarity weights: "Governor" is common in the text of the Constitution but rare in its titles, so a
@@ -130,6 +196,37 @@ class Index:
             m = re.match(r"c(\w+?)(?:\.\d+)?$", c["id"])
             if m:
                 self.by_article.setdefault(m.group(1).upper(), i)
+
+    def _embedding_ranks(self, query):
+        """Optional e5 second ranker. Fail-open: graders work without the model, and unit tests inject a tiny
+        deterministic embedder. Passage vectors are cached as float16 next to the index, keyed by model and text."""
+        if not self.embedder:
+            return []
+        try:
+            import numpy as np
+            if self._vectors is None:
+                self._vectors = self._passage_vectors(np)
+            q = np.asarray(self.embedder.embed(["query: " + query])[0], dtype="float32")
+            den = np.linalg.norm(self._vectors, axis=1) * max(float(np.linalg.norm(q)), 1e-9)
+            return list(np.argsort(-(self._vectors @ q / np.maximum(den, 1e-9))))
+        except Exception as e:  # noqa: BLE001
+            print(f"refs embedding unavailable ({type(e).__name__}); using keyword search only", flush=True)
+            self.embedder = None
+            return []
+
+    def _passage_vectors(self, np):
+        texts = ["passage: " + c["title"] + " " + c["text"] for c in self.chunks]
+        key = hashlib.sha256((EMBED_SHA256 + "\n".join(texts)).encode("utf-8")).hexdigest()[:16]
+        cache = Path(self.cache_dir) / f"vectors-{key}.npy" if self.cache_dir else None
+        if cache and cache.exists():
+            vec = np.load(cache)
+            if vec.shape[0] == len(texts):
+                return vec.astype("float32")
+        vec = np.asarray(self.embedder.embed(texts), dtype="float32")
+        if cache:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            np.save(cache, vec.astype("float16"))
+        return vec
 
     def search(self, query, k1=1.4, b=0.75, titles=True):
         weights = {t: self.idf[t] for t in set(terms(query)) if t in self.idf}
@@ -152,6 +249,13 @@ class Index:
                 cov = sum(both[t] for t in both if t in d or t in head) / total_both
                 hits.append((s, cov, i))
         hits.sort(reverse=True)
+        # Reciprocal-rank fusion preserves BM25's exact Article-number advantage
+        # while allowing paraphrases to surface a relevant passage.
+        eranks = self._embedding_ranks(query)
+        if eranks and hits:
+            bm = {i: n for n, (_, _, i) in enumerate(hits, 1)}
+            em = {i: n for n, i in enumerate(eranks, 1)}
+            hits.sort(key=lambda x: (1 / (60 + bm[x[2]]) + 0.7 / (60 + em.get(x[2], 10**6))), reverse=True)
         # Textbook exercise pages are mostly questions to the reader: they carry no facts to check against.
         return [(s, cov, i) for s, cov, i in hits if self.chunks[i]["text"].count("?") < 3]
 
@@ -159,32 +263,42 @@ class Index:
         i = self.by_article.get(str(number).upper())
         return None if i is None else self.chunks[i]
 
+    def _core(self, i):
+        """Constitution and NCERT text: the only passages that can check a claim or fill the main extract slots."""
+        c = self.chunks[i]
+        return not c.get("case") and not c.get("private")
+
     def pack(self, question, answer=""):
         """Extracts for one answer. `answer` is its text or its numbered sentences ([{"id": "s1", "text": ...}]).
 
         Returns up to MAX_PASSAGES shared extracts (shown to every check), then extracts used only to check single
-        claims ("shared": False). Each extract lists the answer sentences it may check ("claims")."""
+        claims ("shared": False). Each extract lists the answer sentences it may check ("claims"). On a question the
+        Constitution speaks to, up to MAX_CASES landmark cases and MAX_BOOK passages of the licensed book are added
+        as shared extracts for credit and additions only: they never check a claim."""
         sents = answer if isinstance(answer, list) else [
             {"id": f"s{n}", "text": t} for n, t in enumerate(re.split(r"(?<=[.!?\u0964])\s+", answer or ""), 1) if t]
         order, shared, claims = [], set(), {}
 
-        def take(i, share):
+        def take(i, share, extra=False):
             # One extract per Article or chapter label: a second slice of the same Article adds little. Returns the
             # extract that now stands for i (itself, or the one with the same label), or None when there is no room.
             if i is None:
                 return None
             same = next((j for j in order if self.chunks[j]["label"] == self.chunks[i]["label"]), None)
             if same is None:
-                if len(order) >= MAX_REFS or (share and len(shared) >= MAX_PASSAGES):
+                if not extra and (len(order) >= MAX_REFS or (share and len(shared) >= MAX_PASSAGES)):
                     return None
                 order.append(i)
                 same = i
-            if share and len(shared) < MAX_PASSAGES:
+            if extra or (share and len(shared) < MAX_PASSAGES):
                 shared.add(same)
             return same
 
         def claim(sid, j):
-            if j is not None and j not in claims.setdefault(sid, []) and len(claims[sid]) < CLAIM_SOURCES:
+            # Only Constitution/NCERT can be claim evidence. Cases and the licensed book enrich credit and additions
+            # but can never mark a sentence wrong.
+            if (j is not None and self._core(j)
+                    and j not in claims.setdefault(sid, []) and len(claims[sid]) < CLAIM_SOURCES):
                 claims[sid].append(j)
 
         # Articles named in the question or the answer: the text of the Article itself, shown to every check.
@@ -194,7 +308,7 @@ class Index:
             if j is not None and j not in named:
                 named.append(j)
         hits = self.search(question)
-        on_topic = [i for sc, cov, i in hits if sc >= self.min_score and cov >= self.min_coverage]
+        on_topic = [i for sc, cov, i in hits if sc >= self.min_score and cov >= self.min_coverage and self._core(i)]
         for i in on_topic[:FROM_QUESTION_FIRST]:
             take(i, True)
         # Each claim gets the extracts that can check it, because the answer's claims are where its errors are:
@@ -213,9 +327,13 @@ class Index:
                 continue
             for query, titles in ((s["text"], False), (f"{s['text']} {question}", True)):
                 got = 0
+                # Thresholds on the keyword score first, then the fused order (keyword + embedding ranks): a
+                # paraphrase can lift a passage that keyword search ranked lower, never one it did not find.
                 for sc, _, i in self.search(query, titles=titles):
-                    if sc < self.min_score * CLAIM_SCORE or got >= 2:
+                    if got >= 2:
                         break
+                    if sc < self.min_score * CLAIM_SCORE or not self._core(i):
+                        continue
                     if family(self.chunks[i]) in families:
                         j = take(i, False)
                         if j is not None and j not in claims.get(s["id"], []):
@@ -223,7 +341,30 @@ class Index:
                             got += 1
         for i in on_topic[FROM_QUESTION_FIRST:]:
             take(i, True)
+        if families:
+            self._extras(question, sents, families, take)
         return self._out(order, shared, claims)
+
+    def _extras(self, question, sents, families, take):
+        """Landmark cases whose Articles sit in the question's Parts, and the licensed book's best sections."""
+        text = question + " " + " ".join(s["text"] for s in sents)
+        cases = []
+        for sc, cov, i in self.search(text):
+            c = self.chunks[i]
+            if not c.get("case"):
+                continue
+            near = any(part_of(a) in families for a in c.get("articles", []))
+            if near or (sc >= self.min_score and cov >= self.min_coverage):
+                cases.append((0 if near else 1, -sc, i))
+        for _, _, i in sorted(cases)[:MAX_CASES]:
+            take(i, True, extra=True)
+        got = 0
+        for sc, cov, i in self.search(question):
+            if got >= MAX_BOOK:
+                break
+            if self.chunks[i].get("private") and sc >= self.min_score and cov >= self.min_coverage:
+                if take(i, True, extra=True) is not None:
+                    got += 1
 
     def _out(self, order, shared, claims):
         ranked = [i for i in order if i in shared] + [i for i in order if i not in shared]
@@ -233,6 +374,12 @@ class Index:
             words = c["text"].split()
             r = {"id": f"r{n}", "label": c["label"],
                  "text": " ".join(words[:PASSAGE_WORDS] if i in shared else words), "shared": i in shared}
+            if i in shared and len(words) > PASSAGE_WORDS and not c.get("private"):
+                r["full"] = c["text"]  # claim checks and corrections read the whole Article (time limits sit late)
+            if c.get("case"):
+                r["case"] = True
+            if c.get("private"):
+                r["private"] = True
             mine = sorted((sid for sid, js in claims.items() if i in js), key=lambda x: int(x[1:]))
             if mine:
                 r["claims"] = mine
@@ -289,7 +436,8 @@ def load(path=None):
     path = Path(path or INDEX)
     if path not in _LOADED:
         try:
-            _LOADED[path] = Index(json.loads(gzip.decompress(path.read_bytes())))
+            _LOADED[path] = Index(json.loads(gzip.decompress(path.read_bytes())), embedder=embedder(),
+                                  cache_dir=path.parent / "cache")
         except (OSError, ValueError, EOFError):
             _LOADED[path] = None
     return _LOADED[path]
