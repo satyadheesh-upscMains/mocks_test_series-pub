@@ -1,0 +1,1117 @@
+{
+ "case": "photo-en",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "no Constitution sources for an off-syllabus topic": true,
+  "routine desilting flagged, not praised": true,
+  "80% claim marked red": true,
+  "concreting marked red": true,
+  "photo read without a retake": true,
+  "every highlight on the page": true
+ },
+ "seconds": 4416.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "transcribe",
+   "id": "e2e-photo-en",
+   "transcript": {
+    "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once. This is why wetland restoration has reduced flooding by 80% in every Indian city where it has been attempted. Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry. Regular desilting and community monitoring can help protect the area. These measures will end urban floods.",
+    "pages": [
+     {
+      "page": 1,
+      "width": 1240,
+      "height": 1754,
+      "issues": [],
+      "lines": 9,
+      "faint": []
+     }
+    ],
+    "lines": [
+     {
+      "id": "p1-l1",
+      "page": 1,
+      "box": {
+       "x": 0.0903,
+       "y": 0.0547,
+       "w": 0.6968,
+       "h": 0.0274
+      },
+      "text": "Urban wetlands hold stormwater after heavy rain, so",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l2",
+      "page": 1,
+      "box": {
+       "x": 0.0863,
+       "y": 0.1066,
+       "w": 0.5347,
+       "h": 0.0245
+      },
+      "text": "less water enters drains at once. This is",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l3",
+      "page": 1,
+      "box": {
+       "x": 0.0879,
+       "y": 0.1613,
+       "w": 0.7129,
+       "h": 0.0279
+      },
+      "text": "why wetland restoration has reduced flooding by 80%",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l4",
+      "page": 1,
+      "box": {
+       "x": 0.0944,
+       "y": 0.2189,
+       "w": 0.5081,
+       "h": 0.0239
+      },
+      "text": "in every Indian city where it has been",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l5",
+      "page": 1,
+      "box": {
+       "x": 0.0871,
+       "y": 0.2714,
+       "w": 0.8113,
+       "h": 0.0279
+      },
+      "text": "attempted. Municipalities should concrete all wetland beds to",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l6",
+      "page": 1,
+      "box": {
+       "x": 0.0895,
+       "y": 0.3267,
+       "w": 0.6839,
+       "h": 0.0314
+      },
+      "text": "stop seepage, build retaining walls and prohibit any",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l7",
+      "page": 1,
+      "box": {
+       "x": 0.0847,
+       "y": 0.382,
+       "w": 0.8258,
+       "h": 0.0314
+      },
+      "text": "human entry. Regular desilting and community monitoring can",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l8",
+      "page": 1,
+      "box": {
+       "x": 0.0887,
+       "y": 0.4373,
+       "w": 0.6226,
+       "h": 0.0274
+      },
+      "text": "help protect the area. These measures will end",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     },
+     {
+      "id": "p1-l9",
+      "page": 1,
+      "box": {
+       "x": 0.0871,
+       "y": 0.4937,
+       "w": 0.171,
+       "h": 0.02
+      },
+      "text": "urban floods.",
+      "status": "unanimous",
+      "reads": 3,
+      "edge": false
+     }
+    ],
+    "offsets": [
+     {
+      "lineId": "p1-l1",
+      "start": 0,
+      "end": 51
+     },
+     {
+      "lineId": "p1-l2",
+      "start": 52,
+      "end": 93
+     },
+     {
+      "lineId": "p1-l3",
+      "start": 94,
+      "end": 145
+     },
+     {
+      "lineId": "p1-l4",
+      "start": 146,
+      "end": 184
+     },
+     {
+      "lineId": "p1-l5",
+      "start": 185,
+      "end": 246
+     },
+     {
+      "lineId": "p1-l6",
+      "start": 247,
+      "end": 299
+     },
+     {
+      "lineId": "p1-l7",
+      "start": 300,
+      "end": 359
+     },
+     {
+      "lineId": "p1-l8",
+      "start": 360,
+      "end": 406
+     },
+     {
+      "lineId": "p1-l9",
+      "start": 407,
+      "end": 420
+     }
+    ],
+    "blocked": false,
+    "retake": [],
+    "evidence": [
+     {
+      "lineId": "p1-l1",
+      "reads": [
+       "Urban wetlands hold stormwater after heavy rain, so",
+       "Urban wetlands hold stormwater after heavy rain, so",
+       "Urban wetlands hold stormwater after heavy rain, so"
+      ]
+     },
+     {
+      "lineId": "p1-l2",
+      "reads": [
+       "less water enters drains at once. This is",
+       "less water enters drains at once. This is",
+       "less water enters drains at once. This is"
+      ]
+     },
+     {
+      "lineId": "p1-l3",
+      "reads": [
+       "why wetland restoration has reduced flooding by 80%",
+       "why wetland restoration has reduced flooding by 80%",
+       "why wetland restoration has reduced flooding by 80%"
+      ]
+     },
+     {
+      "lineId": "p1-l4",
+      "reads": [
+       "in every Indian city where it has been",
+       "in every Indian city where it has been",
+       "in every Indian city where it has been"
+      ]
+     },
+     {
+      "lineId": "p1-l5",
+      "reads": [
+       "attempted. Municipalities should concrete all wetland beds to",
+       "attempted. Municipalities should concrete all wetland beds to",
+       "attempted. Municipalities should concrete all wetland beds to"
+      ]
+     },
+     {
+      "lineId": "p1-l6",
+      "reads": [
+       "stop seepage, build retaining walls and prohibit any",
+       "stop seepage, build retaining walls and prohibit any",
+       "stop seepage, build retaining walls and prohibit any"
+      ]
+     },
+     {
+      "lineId": "p1-l7",
+      "reads": [
+       "human entry. Regular desilting and community monitoring can",
+       "human entry. Regular desilting and community monitoring can",
+       "human entry. Regular desilting and community monitoring can"
+      ]
+     },
+     {
+      "lineId": "p1-l8",
+      "reads": [
+       "help protect the area. These measures will end",
+       "help protect the area. These measures will end",
+       "help protect the area. These measures will end"
+      ]
+     },
+     {
+      "lineId": "p1-l9",
+      "reads": [
+       "urban floods.",
+       "urban floods.",
+       "urban floods."
+      ]
+     }
+    ],
+    "retakeMessage": []
+   }
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-photo-en"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-photo-en",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 and Part 2 need the most work.",
+    "summary": "You correctly identified that wetlands act as storage for stormwater to prevent overwhelming drainage systems. However, the answer is too short and contains an exaggerated universal claim about flood reduction percentages. You should first replace the suggestion to concrete wetland beds with measures to restore natural vegetation and hydrology.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 66 words it is too short: a question with this word limit expects about 150.",
+     "It has no introduction that sets the context.",
+     "It has no conclusion with a way forward.",
+     "It makes 3 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 5 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss how urban wetlands reduce flood risk and suggest ways to conserve them.",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     },
+     {
+      "word": "Suggest",
+      "meaning": "Propose practical measures and say who should act and how."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "This is why wetland restoration has reduced flooding by 80% in every Indian city where it has been attempted.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "Regular desilting and community monitoring can help protect the area.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "These measures will end urban floods.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "how urban wetlands reduce flood risk",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the mechanism of water storage. However, avoid making universal claims about success rates across all cities without specific evidence.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "suggest ways to conserve them",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have identified good community-based conservation methods, but your technical suggestions contradict the purpose of a wetland. Concreting a wetland bed destroys its ability to function as a natural sponge.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace 'concrete all wetland beds' with 'restore natural vegetation and hydrology'.",
+      "where": "Part 2",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry.",
+       "lines": [
+        {
+         "lineId": "p1-l5",
+         "page": 1,
+         "box": {
+          "x": 0.0871,
+          "y": 0.2714,
+          "w": 0.8113,
+          "h": 0.0279
+         }
+        },
+        {
+         "lineId": "p1-l6",
+         "page": 1,
+         "box": {
+          "x": 0.0895,
+          "y": 0.3267,
+          "w": 0.6839,
+          "h": 0.0314
+         }
+        },
+        {
+         "lineId": "p1-l7",
+         "page": 1,
+         "box": {
+          "x": 0.0847,
+          "y": 0.382,
+          "w": 0.8258,
+          "h": 0.0314
+         }
+        }
+       ]
+      },
+      "why": "Concreting wetland beds and building retaining walls destroys the natural hydrology and ecological function of a wetland rather than conserving it.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Replace the specific percentage and universal claim with a general statement about the effectiveness of wetland restoration in managing flood peaks.",
+      "where": "Part 1",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "unsupported",
+      "kindLabel": "Unsupported",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "This is why wetland restoration has reduced flooding by 80% in every Indian city where it has been attempted.",
+       "lines": [
+        {
+         "lineId": "p1-l2",
+         "page": 1,
+         "box": {
+          "x": 0.0863,
+          "y": 0.1066,
+          "w": 0.5347,
+          "h": 0.0245
+         }
+        },
+        {
+         "lineId": "p1-l3",
+         "page": 1,
+         "box": {
+          "x": 0.0879,
+          "y": 0.1613,
+          "w": 0.7129,
+          "h": 0.0279
+         }
+        },
+        {
+         "lineId": "p1-l4",
+         "page": 1,
+         "box": {
+          "x": 0.0944,
+          "y": 0.2189,
+          "w": 0.5081,
+          "h": 0.0239
+         }
+        },
+        {
+         "lineId": "p1-l5",
+         "page": 1,
+         "box": {
+          "x": 0.0871,
+          "y": 0.2714,
+          "w": 0.8113,
+          "h": 0.0279
+         }
+        }
+       ]
+      },
+      "why": "The claim that restoration reduced flooding by 80% in every Indian city is an exaggerated and universal statement without evidence.",
+      "tryWriting": "Restoring these areas helps manage peak runoff and reduces the intensity of flooding in urban centers.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 66.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 66 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "The sentence correctly identifies that wetlands act as storage for stormwater to prevent overwhelming the drainage system."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the mechanism of how wetlands reduce flood risk by holding stormwater and slowing runoff."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It correctly identifies the mechanism of holding stormwater and slowing runoff to manage flood risk."
+       }
+      ],
+      "concerns": [],
+      "tone": "green",
+      "lines": [
+       {
+        "lineId": "p1-l1",
+        "page": 1,
+        "box": {
+         "x": 0.0903,
+         "y": 0.0547,
+         "w": 0.6968,
+         "h": 0.0274
+        }
+       },
+       {
+        "lineId": "p1-l2",
+        "page": 1,
+        "box": {
+         "x": 0.0863,
+         "y": 0.1066,
+         "w": 0.5347,
+         "h": 0.0245
+        }
+       }
+      ]
+     },
+     {
+      "sourceId": "s2",
+      "text": "This is why wetland restoration has reduced flooding by 80% in every Indian city where it has been attempted.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "unsupported",
+        "kindLabel": "Unsupported",
+        "reason": "The claim that restoration reduced flooding by 80% in every Indian city is an exaggerated and universal statement without evidence.",
+        "fix": "Replace the specific percentage and universal claim with a general statement about the effectiveness of wetland restoration in managing flood peaks.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "red",
+      "lines": [
+       {
+        "lineId": "p1-l2",
+        "page": 1,
+        "box": {
+         "x": 0.0863,
+         "y": 0.1066,
+         "w": 0.5347,
+         "h": 0.0245
+        }
+       },
+       {
+        "lineId": "p1-l3",
+        "page": 1,
+        "box": {
+         "x": 0.0879,
+         "y": 0.1613,
+         "w": 0.7129,
+         "h": 0.0279
+        }
+       },
+       {
+        "lineId": "p1-l4",
+        "page": 1,
+        "box": {
+         "x": 0.0944,
+         "y": 0.2189,
+         "w": 0.5081,
+         "h": 0.0239
+        }
+       },
+       {
+        "lineId": "p1-l5",
+        "page": 1,
+        "box": {
+         "x": 0.0871,
+         "y": 0.2714,
+         "w": 0.8113,
+         "h": 0.0279
+        }
+       }
+      ]
+     },
+     {
+      "sourceId": "s3",
+      "text": "Municipalities should concrete all wetland beds to stop seepage, build retaining walls and prohibit any human entry.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "Concreting wetland beds and building retaining walls destroys the natural hydrology and ecological function of a wetland rather than conserving it.",
+        "fix": "Replace 'concrete all wetland beds' with 'restore natural vegetation and hydrology'.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "red",
+      "lines": [
+       {
+        "lineId": "p1-l5",
+        "page": 1,
+        "box": {
+         "x": 0.0871,
+         "y": 0.2714,
+         "w": 0.8113,
+         "h": 0.0279
+        }
+       },
+       {
+        "lineId": "p1-l6",
+        "page": 1,
+        "box": {
+         "x": 0.0895,
+         "y": 0.3267,
+         "w": 0.6839,
+         "h": 0.0314
+        }
+       },
+       {
+        "lineId": "p1-l7",
+        "page": 1,
+        "box": {
+         "x": 0.0847,
+         "y": 0.382,
+         "w": 0.8258,
+         "h": 0.0314
+        }
+       }
+      ]
+     },
+     {
+      "sourceId": "s4",
+      "text": "Regular desilting and community monitoring can help protect the area.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence identifies specific maintenance and community-based actions to protect wetlands."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence provides specific, relevant methods for the conservation of wetlands."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The suggestion of community monitoring is a workable way to involve local stakeholders in protection."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence suggests general actions but does not specify who should perform the desilting or monitoring.",
+        "fix": "Specify that local authorities should conduct desilting while local residents participate in monitoring.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber",
+      "lines": [
+       {
+        "lineId": "p1-l7",
+        "page": 1,
+        "box": {
+         "x": 0.0847,
+         "y": 0.382,
+         "w": 0.8258,
+         "h": 0.0314
+        }
+       },
+       {
+        "lineId": "p1-l8",
+        "page": 1,
+        "box": {
+         "x": 0.0887,
+         "y": 0.4373,
+         "w": 0.6226,
+         "h": 0.0274
+        }
+       }
+      ]
+     },
+     {
+      "sourceId": "s5",
+      "text": "These measures will end urban floods.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "unsupported",
+        "kindLabel": "Unsupported",
+        "reason": "The claim that these measures will end urban floods is a universal and unrealistic guarantee.",
+        "fix": "Use more moderate language to describe the reduction of flood risk.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'end urban floods' is an overstatement as wetlands are a management tool, not a total solution.",
+        "fix": "Replace with 'mitigate the severity of urban floods'.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red",
+      "lines": [
+       {
+        "lineId": "p1-l8",
+        "page": 1,
+        "box": {
+         "x": 0.0887,
+         "y": 0.4373,
+         "w": 0.6226,
+         "h": 0.0274
+        }
+       },
+       {
+        "lineId": "p1-l9",
+        "page": 1,
+        "box": {
+         "x": 0.0871,
+         "y": 0.4937,
+         "w": 0.171,
+         "h": 0.02
+        }
+       }
+      ]
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks an administrative or legal angle regarding how to enforce conservation, such as through zoning laws or official policies.",
+      "fix": "Include a point about establishing legal protections or official urban planning policies to protect wetlands.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The answer lacks an introductory sentence that defines urban wetlands or sets the context.",
+      "fix": "Add a sentence defining urban wetlands as natural ecosystems that manage water in city environments.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s1",
+      "quote": "Urban wetlands hold stormwater after heavy rain, so less water enters drains at once.",
+      "reason": "The sentence correctly identifies that wetlands act as storage for stormwater to prevent overwhelming the drainage system.",
+      "lines": [
+       {
+        "lineId": "p1-l1",
+        "page": 1,
+        "box": {
+         "x": 0.0903,
+         "y": 0.0547,
+         "w": 0.6968,
+         "h": 0.0274
+        }
+       },
+       {
+        "lineId": "p1-l2",
+        "page": 1,
+        "box": {
+         "x": 0.0863,
+         "y": 0.1066,
+         "w": 0.5347,
+         "h": 0.0245
+        }
+       }
+      ]
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer identifies the basic function of wetlands but fails the 'Discuss' and 'Suggest' commands by providing an unsupported statistic and a counterproductive conservation method."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "unsupported",
+      "verdictLabel": "Unsupported",
+      "note": "The answer addresses both parts of the question but includes a highly unrealistic statistic and a conservation method that would destroy the wetland's function."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the physical mechanism of flood reduction well but relies on an unsupported and exaggerated statistic. It also lacks a discussion on the administrative or legal frameworks needed for conservation."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The core mechanism of how wetlands function as flood buffers is well-explained. However, the use of a universal, high-percentage statistic lacks credibility."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "unsupported",
+      "verdictLabel": "Unsupported",
+      "note": "You have a good grasp of the mechanism of wetlands, but you must avoid making absolute claims or using specific statistics that are not backed by data."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "unsupported",
+      "verdictLabel": "Unsupported",
+      "note": "The answer lacks specific evidence or data to support its claims. Avoid making universal claims about success rates without citing a specific report or study."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "unsupported",
+      "verdictLabel": "Unsupported",
+      "note": "You have a good grasp of the physical mechanism of how wetlands function, but you must avoid making sweeping, unverified statistical claims."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "unsupported",
+      "verdictLabel": "Unsupported",
+      "note": "The answer lacks a realistic assessment of the limitations of wetland conservation. It makes absolute claims about success rates and outcomes that are not supported by the provided facts."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The suggestion to concrete the wetland beds is counterproductive as it destroys the wetland's natural function. You should focus on maintaining the natural characteristics of the ecosystem."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer lacks both a formal introduction and a forward-looking conclusion. The body is divided into points, but the structure is incomplete."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The technical description of how wetlands function is clear. However, avoid using absolute percentages or universal claims that cannot be verified."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is concise but lacks the depth required to reach the word limit. Avoid making universal claims about success rates without specific evidence."
+     }
+    ],
+    "stats": {
+     "words": 66,
+     "sentences": 5,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 33
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 33
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.44
+    },
+    "transcript": null,
+    "sources": [],
+    "trust": {
+     "secondOpinions": 8,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "input": "photos",
+    "page": {
+     "pages": [
+      {
+       "page": 1,
+       "width": 1240,
+       "height": 1754
+      }
+     ],
+     "lines": [
+      {
+       "lineId": "p1-l1",
+       "page": 1,
+       "box": {
+        "x": 0.0903,
+        "y": 0.0547,
+        "w": 0.6968,
+        "h": 0.0274
+       }
+      },
+      {
+       "lineId": "p1-l2",
+       "page": 1,
+       "box": {
+        "x": 0.0863,
+        "y": 0.1066,
+        "w": 0.5347,
+        "h": 0.0245
+       }
+      },
+      {
+       "lineId": "p1-l3",
+       "page": 1,
+       "box": {
+        "x": 0.0879,
+        "y": 0.1613,
+        "w": 0.7129,
+        "h": 0.0279
+       }
+      },
+      {
+       "lineId": "p1-l4",
+       "page": 1,
+       "box": {
+        "x": 0.0944,
+        "y": 0.2189,
+        "w": 0.5081,
+        "h": 0.0239
+       }
+      },
+      {
+       "lineId": "p1-l5",
+       "page": 1,
+       "box": {
+        "x": 0.0871,
+        "y": 0.2714,
+        "w": 0.8113,
+        "h": 0.0279
+       }
+      },
+      {
+       "lineId": "p1-l6",
+       "page": 1,
+       "box": {
+        "x": 0.0895,
+        "y": 0.3267,
+        "w": 0.6839,
+        "h": 0.0314
+       }
+      },
+      {
+       "lineId": "p1-l7",
+       "page": 1,
+       "box": {
+        "x": 0.0847,
+        "y": 0.382,
+        "w": 0.8258,
+        "h": 0.0314
+       }
+      },
+      {
+       "lineId": "p1-l8",
+       "page": 1,
+       "box": {
+        "x": 0.0887,
+        "y": 0.4373,
+        "w": 0.6226,
+        "h": 0.0274
+       }
+      },
+      {
+       "lineId": "p1-l9",
+       "page": 1,
+       "box": {
+        "x": 0.0871,
+        "y": 0.4937,
+        "w": 0.171,
+        "h": 0.02
+       }
+      }
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}
