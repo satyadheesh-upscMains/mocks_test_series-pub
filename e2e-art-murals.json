@@ -1,0 +1,663 @@
+{
+ "case": "art-murals",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: under the patronage of Pulakeshin II": true,
+  "cited: under the patronage of Pulakeshin II": true,
+  "caught: the Buddhist caves at Sittanavasal": false,
+  "cited: the Buddhist caves at Sittanavasal": false,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 5731.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-murals"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-murals",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You successfully describe the stylistic link between Chalukyan murals and the Ajanta tradition and provide specific evidence for the Chola mural tradition. However, the answer is primarily descriptive and fails to discuss the stylistic transitions or the 'how' and 'why' of the evolution between periods. To improve, first correct the patronage of the Badami caves to Mangalesha and then add a sentence explaining how the shift from fluid lines to rectilinear compartments reflects a change in narrative structure.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It makes 5 distinct points; about 6 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 4 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the evolution of mural painting in peninsular India after Ajanta, from the Chalukyas to the Kerala school. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "After Ajanta, the mural tradition continued in the Deccan and the far south, where temples and cave shrines were painted under successive dynasties.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Sculptures too were often plastered and painted.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "At Badami, the early Chalukya capital in Karnataka, the cave temples were excavated under the patronage of Pulakeshin II.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The surviving fragment in the Vishnu cave (Cave 4) shows a palace scene with Kirtivarman watching a dance, its fluid lines recalling Ajanta.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The Pallava king Mahendravarman I bore titles such as Vichitrachitta and Chitrakarapuli, reflecting his interest in art, while Rajasimha patronised the paintings at Kanchipuram.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Under the Pandyas, the Buddhist caves at Sittanavasal preserve graceful dancing celestial nymphs on the veranda pillars, outlined in vermilion red.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Chola murals in the Brihadeswara temple at Thanjavur, built by Rajaraja Chola, were revealed beneath a later Nayaka layer in the passage around the sanctum.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "They depict Shiva as Tripurantaka and Nataraja, dancing figures, and a portrait of Rajaraja with his preceptor Kuruvar.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Vijayanagara painters at Hampi's Virupaksha temple and at Lepakshi near Hindupur in Andhra Pradesh showed faces in profile and arranged narratives in rectilinear compartments.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Nayaka painting extended the Vijayanagara idiom, while Kerala muralists of the sixteenth to eighteenth centuries, drawing on Kathakali and kalam ezhuthu, painted local versions of the epics in luminous colours.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "These murals, from Badami to the Dutch Palace at Kochi, document dynastic patronage and religious life, and need scientific conservation and digital documentation to survive for future generations.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the evolution of mural painting in peninsular India after Ajanta, from the Chalukyas to the Kerala school",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have identified key milestones in the timeline, but the 'evolution' aspect is slightly fragmented. Try to better link how the style changed as it moved from caves to temples.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s10"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The cave temples were excavated under the patronage of Mangalesha.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "At Badami, the early Chalukya capital in Karnataka, the cave temples were excavated under the patronage of Pulakeshin II."
+      },
+      "why": "The extract states that Mangalesha, not Pulakeshin II, patronised the excavation of the Badami caves.",
+      "tryWriting": "At Badami, the early Chalukya capital in Karnataka, the cave temples were excavated under the patronage of Mangalesha.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "sourceRef": "r1",
+      "evidence": {
+       "wrongWords": "the cave temples were excavated under the patronage of Pulakeshin II",
+       "sourceWords": "The Chalukya king, Mangalesha, patronised the excavation of the Badami caves."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Add a sentence explaining how the transition from the fluid lines of the Chalukyas to the rectilinear compartments of the Vijayanagara period reflects a shift in narrative structure.",
+      "where": "Did what the question asks",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer is primarily descriptive and lacks a discussion of the 'evolution'—it does not explain the stylistic transitions, technical changes, or the 'how' and 'why' of the shift from early Deccan styles to the Kerala school.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Include the name of the king who patronised the Badami cave excavations.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer fails to mention that the Chalukyan king Mangalesha was the one who patronised the excavation of the Badami caves.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "sourceRef": "r1",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "After Ajanta, the mural tradition continued in the Deccan and the far south, where temples and cave shrines were painted under successive dynasties.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It establishes the geographical and chronological scope of the mural tradition following the Ajanta period."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies that the mural tradition continued in the Deccan and South India after Ajanta, which is supported by the text describing the extension of painting traditions to Badami and further south to Tamil Nadu."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the geographical and historical context of the mural tradition after Ajanta."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the continuation of the tradition but does not explain the specific technical evolution or stylistic shifts that occurred after Ajanta.",
+        "fix": "Describe how the mural techniques adapted from cave environments to temple architecture.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Sculptures too were often plastered and painted.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies that sculptures were also plastered and painted, which is a specific detail mentioned in the source."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While interesting, the mention of painted sculptures is a secondary detail that does not directly advance the discussion on mural painting evolution.",
+        "fix": "Remove or integrate this into a sentence about the broader decorative arts.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "At Badami, the early Chalukya capital in Karnataka, the cave temples were excavated under the patronage of Pulakeshin II.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states that Mangalesha, not Pulakeshin II, patronised the excavation of the Badami caves.",
+        "fix": "The cave temples were excavated under the patronage of Mangalesha.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The student attributes the excavation of the Badami caves to Pulakeshin II, but the source identifies Mangalesha as the patron.",
+        "fix": "Change the patron from Pulakeshin II to Mangalesha.",
+        "fixNumber": null,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The surviving fragment in the Vishnu cave (Cave 4) shows a palace scene with Kirtivarman watching a dance, its fluid lines recalling Ajanta.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It describes the specific stylistic link between the Chalukyan murals and the Ajanta tradition."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the stylistic continuity by describing the fluid lines of the palace scene as a direct link to the Ajanta tradition."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the Vishnu cave and the specific palace scene with Kirtivarman."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Chola murals in the Brihadeswara temple at Thanjavur, built by Rajaraja Chola, were revealed beneath a later Nayaka layer in the passage around the sanctum.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the discovery of Chola murals beneath a Nayaka layer in the Brihadeswara temple."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "Uses a specific temple and a specific historical layer to provide evidence for the Chola mural tradition."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Vijayanagara painters at Hampi's Virupaksha temple and at Lepakshi near Hindupur in Andhra Pradesh showed faces in profile and arranged narratives in rectilinear compartments.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "It describes the stylistic evolution of the Vijayanagara period, specifically the use of profile faces and rectilinear compartments."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Nayaka painting extended the Vijayanagara idiom, while Kerala muralists of the sixteenth to eighteenth centuries, drawing on Kathakali and kalam ezhuthu, painted local versions of the epics in luminous colours.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It identifies the specific artistic influences and stylistic features of the Kerala school."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It specifically addresses the final stage of the evolution by describing the Kerala school's unique characteristics."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It identifies the specific artistic influences (Kathakali and kalam ezhuthu) and the shift to local versions of epics for the Kerala school."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of Kathakali and kalam ezhuthu provides context but lacks a specific example of a site or a specific mural description to ground the Kerala school's evolution.",
+        "fix": "Mention a specific site or a characteristic feature of a Kerala mural painting.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "These murals, from Badami to the Dutch Palace at Kochi, document dynastic patronage and religious life, and need scientific conservation and digital documentation to survive for future generations.",
+      "credit": [
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies the need for scientific conservation and digital documentation to preserve the murals."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion regarding conservation and documentation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The concluding sentence shifts toward conservation and documentation rather than the historical evolution of the art form.",
+        "fix": "Replace the conservation plea with a summary of the stylistic transition from the Deccan to the Kerala school.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive and lacks a discussion of the 'evolution'—it does not explain the stylistic transitions, technical changes, or the 'how' and 'why' of the shift from early Deccan styles to the Kerala school.",
+      "fix": "Add a sentence explaining how the transition from the fluid lines of the Chalukyas to the rectilinear compartments of the Vijayanagara period reflects a shift in narrative structure.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer fails to mention that the Chalukyan king Mangalesha was the one who patronised the excavation of the Badami caves.",
+      "fix": "Include the name of the king who patronised the Badami cave excavations.",
+      "fixNumber": 3,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer lists various dynasties and styles but fails to explain the causal evolution or stylistic transitions between them.",
+      "fix": "Explain how the stylistic features of one period (like the Vijayanagara profile faces) influenced the subsequent Nayaka and Kerala styles.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Make about 6 distinct points in the body; it has 5.",
+      "fix": "Make about 6 distinct points in the body; it has 5.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s4",
+      "quote": "The surviving fragment in the Vishnu cave (Cave 4) shows a palace scene with Kirtivarman watching a dance, its fluid lines recalling Ajanta.",
+      "reason": "It describes the specific stylistic link between the Chalukyan murals and the Ajanta tradition."
+     },
+     {
+      "where": "Examples and evidence",
+      "sourceId": "s7",
+      "quote": "Chola murals in the Brihadeswara temple at Thanjavur, built by Rajaraja Chola, were revealed beneath a later Nayaka layer in the passage around the sanctum.",
+      "reason": "Uses a specific temple and a specific historical layer to provide evidence for the Chola mural tradition."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological list of sites and dynasties but reads more like a list of facts than a discussion of evolution. To improve, you should explicitly link the styles of one period to the next to show how the art changed over time."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer maintains a very strong focus on the chronological and regional progression requested. It avoids irrelevant tangents by sticking to the dynastic progression of mural art."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological progression of styles. However, it focuses heavily on descriptive facts rather than the underlying evolution of artistic techniques and patronage."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies key stylistic markers and influences for different periods well. It could be improved by more explicitly describing the technical evolution of the painting medium itself."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains specific and accurate details regarding the Chola and Vijayanagara periods. However, there is a factual error regarding the specific Chalukyan king who patronized the Badami caves."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported with specific historical sites and dynasties. Adding a specific site or descriptive detail for the Kerala school would complete the evidence chain."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the Chalukyan capital and the practice of painting sculptures. However, you missed the specific king responsible for the Badami cave excavations."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological list of sites and dynasties but lacks a clear narrative on how the artistic techniques evolved from one period to the next."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question asks for a discussion on evolution, which typically allows for a descriptive historical flow. However, mentioning the limitations of preservation would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a general suggestion for conservation but lacks specific details on who should execute the work or the specific timeline."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "Make about 6 distinct points in the body; it has 5."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses specific artistic terminology well, particularly when describing the Kerala school and the stylistic links to Ajanta. Refining geographical descriptors will improve the formal tone."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word limit well to cover a wide chronological range. However, the concluding sentence shifts away from the historical evolution to modern conservation, which is unnecessary for this specific prompt."
+     }
+    ],
+    "stats": {
+     "words": 242,
+     "sentences": 11,
+     "paragraphs": 3,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 53
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s5",
+       "text": "The Pallava king Mahendravarman I bore titles such as Vichitrachitta and Chitrakarapuli, reflecting his interest in art, while Rajasimha patronised the paintings at Kanchipuram."
+      },
+      {
+       "sourceId": "s6",
+       "text": "Under the Pandyas, the Buddhist caves at Sittanavasal preserve graceful dancing celestial nymphs on the veranda pillars, outlined in vermilion red."
+      },
+      {
+       "sourceId": "s8",
+       "text": "They depict Shiva as Tripurantaka and Nataraja, dancing figures, and a portrait of Rajaraja with his preceptor Kuruvar."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 0.97
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 2 (Indian Paintings), Classification of Indian Paintings",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 5 (Later Mural Traditions)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It makes 5 distinct points; about 6 are expected.",
+      "It does not fully do what the question's command word asks.",
+      "It has 4 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

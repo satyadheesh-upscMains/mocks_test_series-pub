@@ -1,0 +1,758 @@
+{
+ "case": "hist-gandhi-mass-movement",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Brigadier-General Reginald Dyer": true,
+  "trap not red: the Turkish Sultan, as Khalifa, retain control": true
+ },
+ "seconds": 7621.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-gandhi-mass-movement"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-gandhi-mass-movement",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer correctly identifies the definition of Satyagraha and provides specific locations and years for early peasant and worker movements. It lacks a causal explanation of how specific methods or symbols facilitated the transition to a mass movement and misses the economic impact of British taxation on consumers. To improve, first explain the mechanisms of transformation and then include the economic dimension of the salt protest.",
+    "levelWhy": [
+     "It leaves out an important angle of the issue."
+    ],
+    "formatNote": null,
+    "question": "How did Mahatma Gandhi transform Indian nationalism into a mass movement between 1915 and 1931? Discuss. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "When Gandhiji returned from South Africa in January 1915, Indian nationalism was largely confined to the educated elite.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Within fifteen years he had turned it into a movement of peasants, workers and women.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Satyagraha: In South Africa he had already forged satyagraha, his technique of non-violent protest.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "At the opening of the Banaras Hindu University in February 1916, he charged the Indian elite with neglecting the labouring poor.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Struggles in Champaran (1917), Ahmedabad and Kheda (1918) showed his sympathy for the poor.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Rowlatt Satyagraha: His countrywide campaign of 1919 against the Rowlatt Act made him a national leader.",
+      "para": 3
+     },
+     {
+      "id": "s7",
+      "text": "Public anger deepened after Brigadier-General Reginald Dyer ordered troops to fire on a meeting at Jallianwala Bagh in Amritsar.",
+      "para": 3
+     },
+     {
+      "id": "s8",
+      "text": "Non-cooperation: He joined hands with the Khilafat Movement of the Ali brothers, which demanded that the Turkish Sultan, as Khalifa, retain control over Muslim holy places.",
+      "para": 4
+     },
+     {
+      "id": "s9",
+      "text": "Students left government schools, lawyers boycotted courts, and peasants and tribals interpreted the call in their own ways.",
+      "para": 4
+     },
+     {
+      "id": "s10",
+      "text": "He withdrew the movement after the violence at Chauri Chaura in 1922.",
+      "para": 4
+     },
+     {
+      "id": "s11",
+      "text": "Organisation and symbols: Provincial Congress committees were organised on linguistic lines, while the charkha, khadi and the campaign against untouchability made him a Mahatma to the poor.",
+      "para": 5
+     },
+     {
+      "id": "s12",
+      "text": "Salt Satyagraha: After the Lahore Congress adopted Purna Swaraj in December 1929, he began the Dandi March from Sabarmati on 12 March 1930 and broke the salt law.",
+      "para": 6
+     },
+     {
+      "id": "s13",
+      "text": "Women took part in large numbers for the first time in a nationalist campaign.",
+      "para": 6
+     },
+     {
+      "id": "s14",
+      "text": "The movement led to the Gandhi-Irwin Pact of 1931 and his presence at the Second Round Table Conference.",
+      "para": 6
+     },
+     {
+      "id": "s15",
+      "text": "By uniting moral appeal with organisation, Gandhiji made nationalism truly mass-based, and his methods still shape democratic protest.",
+      "para": 7
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "How did Mahatma Gandhi transform Indian nationalism into a mass movement between 1915 and 1931",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies the key demographics and symbols used to broaden the nationalist movement. To improve, you could more explicitly link the transition from elite politics to mass mobilization in the opening.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s11"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Mention how the salt protest specifically targeted the economic burden of British taxation on common consumers.",
+      "where": "Covered the key angles",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a specific discussion on the economic dimension of the movement, such as the impact of British taxation on basic commodities.",
+      "tryWriting": "The movement also addressed economic grievances, specifically targeting British taxation policies on basic commodities like salt which burdened common consumers.",
+      "checkedTwice": false,
+      "source": "NCERT Class 12, Social Change and Development in India, Ch. 8 (Social Movements)",
+      "sourceRef": "r2",
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Explain how specific methods like Satyagraha or the use of local symbols facilitated this transition.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Within fifteen years he had turned it into a movement of peasants, workers and women."
+      },
+      "why": "The sentence states the outcome (transformation into a movement of peasants, workers, and women) but does not explain the causal mechanism of how he achieved this transition.",
+      "tryWriting": "By employing non-violent Satyagraha and adopting symbols like the charkha, he successfully mobilized the rural and urban masses into the nationalist fold.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement).",
+      "where": "Constitution and textbook basics",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Public anger deepened after Brigadier-General Reginald Dyer ordered troops to fire on a meeting at Jallianwala Bagh in Amritsar."
+      },
+      "why": "This does not match NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement).",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "sourceRef": "r11",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "When Gandhiji returned from South Africa in January 1915, Indian nationalism was largely confined to the educated elite.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the initial state of Indian nationalism as being confined to the educated elite."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence clearly distinguishes between the 'educated elite' and the broader population, providing a precise starting point for the transformation."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Within fifteen years he had turned it into a movement of peasants, workers and women.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence clearly identifies the specific groups—peasants, workers, and women—that were integrated into the movement to make it a mass movement."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence identifies the specific demographic shift from an elite movement to one involving peasants, workers, and women."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the transformation of the movement into a mass movement by identifying the specific groups involved."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the outcome (transformation into a movement of peasants, workers, and women) but does not explain the causal mechanism of how he achieved this transition.",
+        "fix": "Explain how specific methods like Satyagraha or the use of local symbols facilitated this transition.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Satyagraha: In South Africa he had already forged satyagraha, his technique of non-violent protest.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The student correctly identifies and defines Satyagraha as a technique of non-violent protest."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Struggles in Champaran (1917), Ahmedabad and Kheda (1918) showed his sympathy for the poor.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific geographical locations and years for the early peasant and worker movements."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Public anger deepened after Brigadier-General Reginald Dyer ordered troops to fire on a meeting at Jallianwala Bagh in Amritsar.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "This does not match NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement).",
+        "fix": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement).",
+        "fixNumber": 3,
+        "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Non-cooperation: He joined hands with the Khilafat Movement of the Ali brothers, which demanded that the Turkish Sultan, as Khalifa, retain control over Muslim holy places.",
+      "credit": [
+       {
+        "where": "Cause and effect",
+        "reason": "It explains how joining the Khilafat Movement served as a mechanism to broaden the movement's reach."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Students left government schools, lawyers boycotted courts, and peasants and tribals interpreted the call in their own ways.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'interpreted the call in their own ways' is vague as it does not specify what those interpretations or actions were.",
+        "fix": "specify the types of local actions taken by different groups",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "He withdrew the movement after the violence at Chauri Chaura in 1922.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The student identifies a specific limit to the movement by mentioning the withdrawal due to violence."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Organisation and symbols: Provincial Congress committees were organised on linguistic lines, while the charkha, khadi and the campaign against untouchability made him a Mahatma to the poor.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence explains the methods used to reach the masses, such as linguistic organization and the use of symbols like the charkha and khadi."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence explains the use of symbols and organizational changes that helped reach the masses."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence highlights the use of cultural and social symbols like the charkha and khadi to connect with the masses."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the charkha and khadi but does not explain how these specific symbols functioned to bridge the gap between the elite and the masses.",
+        "fix": "Explain how wearing khadi and using the charkha served as a tool for economic self-reliance and a symbol of national unity.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s12",
+      "text": "Salt Satyagraha: After the Lahore Congress adopted Purna Swaraj in December 1929, he began the Dandi March from Sabarmati on 12 March 1930 and broke the salt law.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately links the Dandi March to the adoption of Purna Swaraj and the breaking of the salt law."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific dates and locations for the Dandi March and the adoption of Purna Swaraj."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly identifies the Dandi March as a protest against the salt law."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "The movement led to the Gandhi-Irwin Pact of 1931 and his presence at the Second Round Table Conference.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the Gandhi-Irwin Pact is a historical fact, it describes a political negotiation rather than the mechanism of how the movement became a mass one.",
+        "fix": "Briefly mention how the mass participation in the Salt Satyagraha led to these negotiations.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s15",
+      "text": "By uniting moral appeal with organisation, Gandhiji made nationalism truly mass-based, and his methods still shape democratic protest.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides a reasoned conclusion by synthesizing how Gandhi combined moral appeal with organization to create a mass-based movement."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by linking his methods to modern democratic protest."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a specific discussion on the economic dimension of the movement, such as the impact of British taxation on basic commodities.",
+      "fix": "Mention how the salt protest specifically targeted the economic burden of British taxation on common consumers.",
+      "fixNumber": 1,
+      "source": "NCERT Class 12, Social Change and Development in India, Ch. 8 (Social Movements)"
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention the Bardoli peasant movement which occurred during the specified timeframe.",
+      "fix": "Include the Bardoli peasant movement as an example of rural mobilization.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the specific costs or risks faced by the participants, such as the economic impact of boycotts or the risks of imprisonment.",
+      "fix": "Mention the risks of imprisonment or the economic impact on participants.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer exceeds the 250-word limit, suggesting that some descriptive details could be condensed to improve economy.",
+      "fix": "Combine the descriptions of the Rowlatt Satyagraha and the Jallianwala Bagh massacre into a single concise sentence.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Did what the question asks",
+      "sourceId": "s15",
+      "quote": "By uniting moral appeal with organisation, Gandhiji made nationalism truly mass-based, and his methods still shape democratic protest.",
+      "reason": "The sentence provides a reasoned conclusion by synthesizing how Gandhi combined moral appeal with organization to create a mass-based movement."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s3",
+      "quote": "Satyagraha: In South Africa he had already forged satyagraha, his technique of non-violent protest.",
+      "reason": "The student correctly identifies and defines Satyagraha as a technique of non-violent protest."
+     },
+     {
+      "where": "Examples and evidence",
+      "sourceId": "s5",
+      "quote": "Struggles in Champaran (1917), Ahmedabad and Kheda (1918) showed his sympathy for the poor.",
+      "reason": "The sentence provides specific geographical locations and years for the early peasant and worker movements."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence provides a reasoned conclusion by synthesizing how Gandhi combined moral appeal with organization to create a mass-based movement."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt, focusing on the transition from elite politics to mass mobilization."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the social and political dimensions well by highlighting the inclusion of different groups and the use of symbols. It could be strengthened by explicitly mentioning the economic grievances that fueled the mass participation."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The student correctly identifies and defines the key movements and techniques used by Gandhi. To improve, explain the underlying logic of how symbols like the charkha actually transformed the movement's reach."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific historical events and dates to ground the narrative. To improve, ensure that broad claims about 'mass' participation are consistently linked to the specific symbols or methods used to achieve that reach."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately uses historical facts regarding symbols and specific movements from the provided sources. It could be strengthened by including the Bardoli movement."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies a major limitation by mentioning the withdrawal of the movement due to violence. However, it could be strengthened by mentioning the personal or economic costs to the participants."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very strong. You have a clear introduction, a chronological and thematic body, and a concluding statement."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong, specific historical terminology to describe the movement's evolution. Refining the description of local interpretations would add more precision."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is comprehensive and covers all key phases of the movement. However, it slightly exceeds the word limit, indicating a need to condense descriptive details."
+     }
+    ],
+    "stats": {
+     "words": 278,
+     "sentences": 15,
+     "paragraphs": 7,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 42
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "At the opening of the Banaras Hindu University in February 1916, he charged the Indian elite with neglecting the labouring poor."
+      },
+      {
+       "sourceId": "s6",
+       "text": "Rowlatt Satyagraha: His countrywide campaign of 1919 against the Rowlatt Act made him a national leader."
+      },
+      {
+       "sourceId": "s13",
+       "text": "Women took part in large numbers for the first time in a nationalist campaign."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Social Change and Development in India, Ch. 8 (Social Movements)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 3 (Mahatma Gandhi and the Nationalist Movement)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 2,
+     "softened": 1,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It leaves out an important angle of the issue."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,675 @@
+{
+ "case": "eco-unemployment",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: the National Statistical Office, formed by merging the NSSO and the CSO": true,
+  "trap not red: Disguised unemployment occurs when more people are engaged in a task than needed": true
+ },
+ "seconds": 3152.6,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-unemployment"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-unemployment",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "You successfully identified disguised unemployment and provided a specific example of a public works program as a safety net. However, the inclusion of administrative data collection details takes away space from the core discussion. To improve, you should first remove the sentence about the National Statistical Office to allow for a deeper analysis of structural unemployment in the Indian context.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Discuss the major types of unemployment prevalent in India. What measures can address them? (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Unemployment refers to a situation in which people who are willing and able to work at prevailing wages cannot find work.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "In India it appears more often as underemployment and low-quality work than as open joblessness.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Open unemployment exists when people actively seek work but find none, a pattern more visible in urban areas.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Disguised unemployment occurs when more people are engaged in a task than needed, so that withdrawing some would not reduce output.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "It is common in Indian agriculture, where family members share work on small farms.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Seasonal unemployment arises because farm work is available only in certain months of the year.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Structural unemployment results from a mismatch between the skills of workers and the jobs available, or from inadequate productive capacity.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Educated unemployment is widespread among youth whose qualifications do not match labour market needs.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Many workers are pushed into the informal sector, where they lack regular income and social security.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Over the decades, workers have also moved from self-employment and regular salaried jobs to casual wage work, a process called casualisation.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "Since 2019, labour force surveys have been conducted by the National Statistical Office, formed by merging the NSSO and the CSO.",
+      "para": 2
+     },
+     {
+      "id": "s12",
+      "text": "Measures include promoting labour-intensive manufacturing and MSMEs, expanding skill development, encouraging rural non-farm employment and extending social security to informal workers.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "Public works such as those under the Mahatma Gandhi National Rural Employment Guarantee Act, 2005 provided a safety net for rural households.",
+      "para": 3
+     },
+     {
+      "id": "s14",
+      "text": "Sustained job-rich growth, rather than growth alone, is essential for India to reap its demographic dividend.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the major types of unemployment prevalent in India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have identified several key types of unemployment including disguised, seasonal, and structural. To improve, ensure each type is explicitly linked to the Indian context.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s6"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "What measures can address them?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have identified several relevant measures and provided a specific example of a public works program. To improve, link your solutions more directly to the specific types of unemployment you discussed in the first part of the answer.",
+      "checkedTwice": false,
+      "sentences": [
+       "s12",
+       "s13"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Add a phrase explaining how this mismatch manifests in the Indian labor market.",
+      "where": "Part 1",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Structural unemployment results from a mismatch between the skills of workers and the jobs available, or from inadequate productive capacity."
+      },
+      "why": "The sentence defines structural unemployment but does not explicitly state its prevalence in the Indian context as requested.",
+      "tryWriting": "Structural unemployment is prevalent in India due to a mismatch between the skills of the workforce and the requirements of the modern industrial sector.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Add a concluding sentence that summarizes how integrated policy measures can transition the workforce from low-quality work to productive employment.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a reasoned conclusion or a concluding synthesis that ties the types of unemployment to the proposed measures, which is required for a 'discuss' command.",
+      "tryWriting": "To address these challenges, a multi-pronged approach focusing on skill alignment and structural shifts in the economy is necessary to ensure that job creation matches the growing labor force.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Remove this sentence to allow for more depth in the discussion of structural unemployment.",
+      "where": "Use of space",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s11",
+       "text": "Since 2019, labour force surveys have been conducted by the National Statistical Office, formed by merging the NSSO and the CSO."
+      },
+      "why": "This sentence provides administrative background on data collection rather than addressing the types of unemployment or specific measures.",
+      "tryWriting": "Addressing these issues requires a shift toward job-rich growth to ensure that the expanding workforce finds productive opportunities.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Unemployment refers to a situation in which people who are willing and able to work at prevailing wages cannot find work.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "Provides a clear definition of the core concept to set the context."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The definition is standard but lacks depth regarding the specific nuances of the Indian labor market mentioned later in the answer.",
+        "fix": "Add a brief mention of how these definitions manifest in a developing economy context.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "In India it appears more often as underemployment and low-quality work than as open joblessness.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides a nuanced discussion by highlighting that underemployment and low-quality work are more prevalent than open joblessness in the Indian context."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'more often' is vague as it does not specify the scale or proportion of underemployment compared to open joblessness.",
+        "fix": "Replace 'more often' with a more specific descriptor like 'predominantly' or 'frequently'.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Disguised unemployment occurs when more people are engaged in a task than needed, so that withdrawing some would not reduce output.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "The sentence correctly identifies and defines disguised unemployment."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Correctly identifies and describes disguised unemployment as a major type in the Indian context."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly explains the mechanism of disguised unemployment by describing how removing workers does not reduce output."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Seasonal unemployment arises because farm work is available only in certain months of the year.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "The sentence correctly identifies and explains seasonal unemployment."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Structural unemployment results from a mismatch between the skills of workers and the jobs available, or from inadequate productive capacity.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "Correctly identifies and describes structural unemployment as a major type."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence accurately defines structural unemployment as a mismatch between worker skills and available jobs."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence defines structural unemployment but does not explicitly state its prevalence in the Indian context as requested.",
+        "fix": "Add a phrase explaining how this mismatch manifests in the Indian labor market.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Educated unemployment is widespread among youth whose qualifications do not match labour market needs.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence identifies educated unemployment but lacks a specific contextual detail about the Indian labor market.",
+        "fix": "Mention the specific mismatch between academic degrees and industrial requirements.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Since 2019, labour force surveys have been conducted by the National Statistical Office, formed by merging the NSSO and the CSO.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "The student correctly identifies the merger of the NSSO and CSO to form the National Statistical Office."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "This sentence provides administrative background on data collection rather than addressing the types of unemployment or specific measures.",
+        "fix": "Remove this sentence to allow for more depth in the discussion of structural unemployment.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s12",
+      "text": "Measures include promoting labour-intensive manufacturing and MSMEs, expanding skill development, encouraging rural non-farm employment and extending social security to informal workers.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides a comprehensive list of measures including manufacturing, MSMEs, skill development, and social security."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides concrete measures to address the types of unemployment discussed in the first part of the answer."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the economic and administrative dimensions by suggesting specific industrial and social security measures."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence lists measures but does not explicitly explain the causal link between these actions and the reduction of specific unemployment types mentioned earlier.",
+        "fix": "Explain how specific measures like skill development directly address the skill mismatch in structural unemployment.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Public works such as those under the Mahatma Gandhi National Rural Employment Guarantee Act, 2005 provided a safety net for rural households.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides a specific example of a public works program that acts as a safety net for rural households."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The student correctly identifies the name and year of the Mahatma Gandhi National Rural Employment Guarantee Act."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific legislative example of a public works program to support the measure of providing a safety net."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "Sustained job-rich growth, rather than growth alone, is essential for India to reap its demographic dividend.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the demographic and economic dimension by linking employment to the demographic dividend."
+       },
+       {
+        "where": "Structure",
+        "reason": "Offers a forward-looking conclusion regarding the demographic dividend."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a high-level concluding thought that justifies the necessity of the measures discussed."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a reasoned conclusion or a concluding synthesis that ties the types of unemployment to the proposed measures, which is required for a 'discuss' command.",
+      "fix": "Add a concluding sentence that summarizes how integrated policy measures can transition the workforce from low-quality work to productive employment.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly address the social dimension of unemployment, such as how it affects different social groups or gender equality.",
+      "fix": "Add a point about how unemployment disproportionately affects marginalized communities or women.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not discuss the costs or limitations of the proposed measures, such as the fiscal burden of social security or the challenges of scaling skill development.",
+      "fix": "Add a sentence mentioning the fiscal challenges or the need for high-quality training to make skill development effective.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s4",
+      "quote": "Disguised unemployment occurs when more people are engaged in a task than needed, so that withdrawing some would not reduce output.",
+      "reason": "The sentence correctly identifies and defines disguised unemployment."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s13",
+      "quote": "Public works such as those under the Mahatma Gandhi National Rural Employment Guarantee Act, 2005 provided a safety net for rural households.",
+      "reason": "This sentence provides a specific example of a public works program that acts as a safety net for rural households."
+     },
+     {
+      "where": "Covered the key angles",
+      "sourceId": "s14",
+      "quote": "Sustained job-rich growth, rather than growth alone, is essential for India to reap its demographic dividend.",
+      "reason": "The sentence addresses the demographic and economic dimension by linking employment to the demographic dividend."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies various types of unemployment and suggests measures well, but it lacks a concluding synthesis to fully satisfy the 'discuss' command."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays very well on topic, covering various types of unemployment and specific measures. The mention of the statistical office is the only minor drift from the core question."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the economic and demographic aspects well. It could be strengthened by mentioning the social impact of unemployment on different demographics."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core types of unemployment are well-defined and explained through their underlying mechanisms rather than just being listed."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The factual details regarding the National Statistical Office and the rural employment act are accurate. Ensure that any mention of government bodies includes their primary function or specific survey frequency for better depth."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer includes a specific legislative example for rural employment, but other measures remain general. Adding a specific report or a named scheme for skill development would strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the causes of various unemployment types well. However, the transition from identifying problems to proposing solutions lacks a clear causal link explaining how the measures solve the specific issues."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses on identifying types of unemployment and listing solutions but does not address the trade-offs or limitations of these measures."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The measures provided are relevant but lean towards general policy goals. To improve, link each measure more directly to the specific types of unemployment identified in the first half of the answer."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear definition, a well-organized body, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses accurate economic terminology for different types of unemployment. Refining the comparative language in the introduction would improve precision."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word limit well, but the inclusion of administrative details about data collection takes up space that could be used for more analysis."
+     }
+    ],
+    "stats": {
+     "words": 255,
+     "sentences": 14,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 70
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 43
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s3",
+       "text": "Open unemployment exists when people actively seek work but find none, a pattern more visible in urban areas."
+      },
+      {
+       "sourceId": "s5",
+       "text": "It is common in Indian agriculture, where family members share work on small farms."
+      },
+      {
+       "sourceId": "s9",
+       "text": "Many workers are pushed into the informal sector, where they lack regular income and social security."
+      },
+      {
+       "sourceId": "s10",
+       "text": "Over the decades, workers have also moved from self-employment and regular salaried jobs to casual wage work, a process called casualisation."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.02
+    },
+    "transcript": null,
+    "sources": [],
+    "trust": {
+     "secondOpinions": 1,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

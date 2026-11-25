@@ -1,0 +1,665 @@
+{
+ "case": "eco-financial-inclusion",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: Payments banks can also extend small loans": true,
+  "cited: Payments banks can also extend small loans": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Self-help groups pool the small savings of members, mostly women": true
+ },
+ "seconds": 8585.0,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-financial-inclusion"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-financial-inclusion",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You correctly identified the role of small finance banks in providing credit and savings to unorganised sector entities. However, the answer is only partially complete because it lacks an analysis of how these institutions overcome barriers or the regulatory framework behind niche banks. You should first correct the claim about payments banks lending credit, as they are not permitted to provide loans.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 5 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Examine the role of differentiated banks and other institutions in furthering financial inclusion in India. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Financial inclusion means affordable access to savings, credit, payments, insurance and pensions for underserved sections.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "NABARD serves as the apex body coordinating the activities of all institutions involved in rural finance.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Commercial banks, regional rural banks and cooperatives together form a multi-agency structure for rural credit.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Self-help groups pool the small savings of members, mostly women, and lend to needy members without collateral.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Small finance banks were licensed to provide savings products and credit to small farmers, micro and small enterprises and other unorganised sector entities.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Payments banks can accept savings and current account deposits and offer payment and remittance services.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Payments banks can also extend small loans to migrant labourers and low-income households.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Pradhan Mantri Jan Dhan Yojana opened basic accounts for unbanked households, which now serve as channels for direct benefit transfers.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "The Unified Payments Interface, operated by the National Payments Corporation of India, has made low-value digital payments widespread.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Deeper inclusion now needs financial literacy, last-mile connectivity and productive credit that turns accounts into livelihoods.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the role of differentiated banks and other institutions in furthering financial inclusion in India",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have identified the functions of specific institutions well. To improve, explicitly use the term 'differentiated banks' to directly address the prompt's terminology.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s6"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Payments banks can provide payment and remittance services to migrant labourers and low-income households.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Payments banks can also extend small loans to migrant labourers and low-income households."
+      },
+      "why": "The provided text explicitly states that no credit lending is allowed for Payments Banks.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "sourceRef": "r16",
+      "evidence": {
+       "wrongWords": "extend small loans",
+       "sourceWords": "No credit lending is allowed for Payments Banks."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Add a sentence analyzing how these institutions overcome traditional banking barriers or mention a specific challenge like high operational costs in rural areas.",
+      "where": "Did what the question asks",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer provides a descriptive list of institutions but fails to 'examine' the role by analyzing the impact, challenges, or limitations of these institutions in achieving inclusion.",
+      "tryWriting": "While these differentiated banks bridge the gap for the unorganised sector, their effectiveness is often constrained by high operational costs in remote areas and the need for robust digital infrastructure.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Mention the regulatory guidelines or the specific objective of creating niche banks to reach underserved populations.",
+      "where": "Covered the key angles",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a discussion on the regulatory or policy framework that enables these differentiated banks to operate.",
+      "tryWriting": "The government introduced differentiated banks like small finance and payments banks as niche institutions to target underserved segments and promote financial inclusion.",
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "sourceRef": "r1",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Financial inclusion means affordable access to savings, credit, payments, insurance and pensions for underserved sections.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly defines the core concept of financial inclusion by listing the specific components like savings, credit, and insurance."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The extract confirms that the objective of financial inclusion is to ensure excluded sections have access to various financial services including savings, credit, remittance, insurance, and pension."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of financial inclusion to set the context."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While this defines financial inclusion, it does not describe the role of the institutions requested by the question.",
+        "fix": "Connect this definition directly to how specific institutions bridge the gap for underserved sections.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Self-help groups pool the small savings of members, mostly women, and lend to needy members without collateral.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the mechanism of self-help groups but lacks a specific example of a state-led initiative or a specific success story to ground the claim.",
+        "fix": "Mention a specific state-led initiative or a successful model of a self-help group network you have studied.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Small finance banks were licensed to provide savings products and credit to small farmers, micro and small enterprises and other unorganised sector entities.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence correctly identifies the specific role of small finance banks in providing credit and savings to unorganised sector entities."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It identifies a specific differentiated bank and explains its role in providing credit to the unorganised sector."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence explains how small finance banks specifically target unorganised sector entities to promote inclusion."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Payments banks can accept savings and current account deposits and offer payment and remittance services.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence explains how payments banks contribute to inclusion by facilitating deposits and remittance services."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It describes the specific role of payment banks in providing remittance and deposit services for inclusion."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the core functions of payments banks regarding deposits and remittances."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence identifies what payments banks can do but does not explicitly link these functions to the goal of furthering financial inclusion.",
+        "fix": "Add a phrase explaining how these services facilitate inclusion for the unbanked.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Payments banks can also extend small loans to migrant labourers and low-income households.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The provided text explicitly states that no credit lending is allowed for Payments Banks.",
+        "fix": "Payments banks can provide payment and remittance services to migrant labourers and low-income households.",
+        "fixNumber": 1,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that payments banks can extend small loans to migrant labourers is not supported by the provided text or general banking rules for payments banks.",
+        "fix": "Verify if payments banks are permitted to extend loans or if they are restricted to payment services.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Pradhan Mantri Jan Dhan Yojana opened basic accounts for unbanked households, which now serve as channels for direct benefit transfers.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific government scheme to support the point about opening accounts for unbanked households."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the scheme is relevant, the sentence focuses more on the government initiative than the specific role of the differentiated banks or institutions requested by the prompt.",
+        "fix": "Connect the scheme more directly to how it utilizes the infrastructure of differentiated banks.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "The Unified Payments Interface, operated by the National Payments Corporation of India, has made low-value digital payments widespread.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence identifies a specific digital infrastructure and its role in facilitating low-value payments."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Deeper inclusion now needs financial literacy, last-mile connectivity and productive credit that turns accounts into livelihoods.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking statement regarding literacy and connectivity."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The conclusion identifies needs like financial literacy and last-mile connectivity but lacks any specific data or a report to support the scale of these requirements.",
+        "fix": "Reference a specific report or a set of data points regarding the current level of financial literacy in rural areas.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence identifies broad needs like financial literacy and connectivity but does not specify who should act or how these should be implemented to turn accounts into livelihoods.",
+        "fix": "Specify that the government and financial institutions should partner to provide targeted financial literacy programs and infrastructure in rural areas.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer provides a descriptive list of institutions but fails to 'examine' the role by analyzing the impact, challenges, or limitations of these institutions in achieving inclusion.",
+      "fix": "Add a sentence analyzing how these institutions overcome traditional banking barriers or mention a specific challenge like high operational costs in rural areas.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a discussion on the regulatory or policy framework that enables these differentiated banks to operate.",
+      "fix": "Mention the regulatory guidelines or the specific objective of creating niche banks to reach underserved populations.",
+      "fixNumber": 3,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer lists various institutions but fails to explicitly link how these specific structures collectively result in the 'furthering' of financial inclusion beyond just listing their functions.",
+      "fix": "Add a concluding sentence explaining how these differentiated models collectively bridge the gap for the unbanked by providing niche services.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer exceeds the word limit, indicating a lack of conciseness in the analysis of the institutions' roles.",
+      "fix": "Remove the introductory definition and combine the descriptions of different bank types.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "Small finance banks were licensed to provide savings products and credit to small farmers, micro and small enterprises and other unorganised sector entities.",
+      "reason": "This sentence correctly identifies the specific role of small finance banks in providing credit and savings to unorganised sector entities."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is a good descriptive overview of various institutions but lacks the analytical depth required by the command word 'examine'. You should move beyond listing functions to evaluating their effectiveness or the hurdles they face."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt by identifying specific types of banks and institutions."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies several types of institutions well but misses the broader policy context of why these 'differentiated' banks were created."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concepts of financial inclusion and the specific roles of differentiated banks are well-defined. The answer could be strengthened by more explicitly linking the functions of payments banks to the inclusion objective."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the roles of small finance and payments banks. However, you should verify the lending capabilities of payments banks as they are typically restricted from lending."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses specific schemes and infrastructure to support its points well. To improve, include more data or specific reports to back up the concluding observations on literacy and connectivity."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You have correctly identified the functions of small finance and payments banks. However, you missed the specific regulatory requirements like capital and promoter shareholding which define these institutions."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully identified the functions of different institutions, but the causal link between these functions and the overall goal of 'furthering' inclusion is slightly underdeveloped."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a comprehensive list of institutional roles but lacks a critical examination of the limitations or trade-offs involved in these financial models."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies necessary components for deeper inclusion but lacks specific, workable actions or actors for the final suggestions."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good technical terminology for different banking types. Refining the description of the target audience would make the opening more precise."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove the general definition of financial inclusion to allow more space for analyzing the specific roles of the institutions."
+     }
+    ],
+    "stats": {
+     "words": 169,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 53
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s2",
+       "text": "NABARD serves as the apex body coordinating the activities of all institutions involved in rural finance."
+      },
+      {
+       "sourceId": "s3",
+       "text": "Commercial banks, regional rural banks and cooperatives together form a multi-agency structure for rural credit."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.13
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction",
+      "used": false
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 5 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

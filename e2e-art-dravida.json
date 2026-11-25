@@ -1,0 +1,712 @@
+{
+ "case": "art-dravida",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": false,
+  "trap not red: also called the Rajarajeshwara temple": true,
+  "trap not red: often classed as Vesara": true,
+  "trap not red: built by the Pallava ruler Rajasimha": true
+ },
+ "seconds": 8155.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-dravida"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-dravida",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "You correctly identified the vimana and mandapa as defining features and provided high-quality examples of the Dravida style. However, the answer lacks an explanation of how Chola resources and engineering scale contributed to the architectural climax. You should first revise the origin of the style and add details on the economic prosperity that enabled these massive structures.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Temple architecture in south India attained its climax under the Cholas. Discuss the main features of the Dravida style with suitable examples. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Dravida style of temple architecture, which took shape under the Pallavas, reached its climax under the imperial Cholas.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It is so called because it was largely confined to south India.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Its defining feature is the vimana, a pyramidal tower of several storeys rising above the garbhagriha that houses the main deity.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "A mandapa with elaborately carved pillars and a flat roof, placed in front of the sanctum, served as an audience hall and a venue for ritual dances by devadasis.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The complex, often with a circumambulatory passage around the sanctum, was enclosed by high walls pierced by gateways called gopurams, which became ever more elaborate in later centuries.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "An early example is the eighth-century Kailasanatha temple at Kanchipuram, built by the Pallava ruler Rajasimha.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Brihadeshwara temple at Thanjavur, built by Rajaraja I and also called the Rajarajeshwara temple, is among the finest expressions of the style, with a towering vimana over its sanctum.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Rajendra I's temple at his new capital, Gangaikondacholapuram, and Rajaraja II's Airavateshvara temple at Darasuram continued this tradition.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Temples were also economic hubs, receiving revenue-free land grants and merchant donations, lending money and funding tanks and irrigation channels.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "In Karnataka, the Hoysaleswara temple at Halebidu, with its richly carved panels, exemplifies a hybrid Deccan style often classed as Vesara.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "As living shrines and centres of community life, Chola temples integrated architecture, sculpture, painting and dance, and their heritage deserves sustained conservation and wider public appreciation.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Temple architecture in south India attained its climax under the Cholas.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully established the historical context of the Chola period as the peak of Dravida architecture. To improve, you could briefly mention the economic resources that facilitated such grand construction.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Discuss the main features of the Dravida style with suitable examples.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer identifies key architectural components like the vimana and mandapa while providing specific Chola examples. To improve, ensure all architectural features mentioned are clearly linked to the Dravida style's definition.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The Dravida style of temple architecture acquired a new style under the Chola kingdom after the decline of the Pallava dynasty.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The Dravida style of temple architecture, which took shape under the Pallavas, reached its climax under the imperial Cholas."
+      },
+      "why": "The extract states that the Dravidian style was acquired as a new style under the Chola kingdom after the decline of the Pallava dynasty, rather than taking shape under the Pallavas.",
+      "tryWriting": "The Dravida style of temple architecture, which was a continuation of the previous Pallava architecture with some variations, reached its climax under the imperial Cholas.",
+      "checkedTwice": true,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "sourceRef": "r4",
+      "evidence": {
+       "wrongWords": "took shape under the Pallavas",
+       "sourceWords": "After the decline of Pallava dynasty, temple architecture acquired a new style under the Chola kingdom, known as the Dravidian style of temple architecture."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Add a sentence explaining how the vast resources of the Chola empire enabled such architectural heights.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer is primarily descriptive. To 'discuss' the climax, it should briefly explain why the Cholas were able to achieve this (e.g., economic prosperity or royal patronage) rather than just listing features.",
+      "tryWriting": "The Chola rulers utilized the vast resources of their empire to fund these massive projects, allowing temple architecture to reach its peak of complexity and scale.",
+      "checkedTwice": true,
+      "source": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "sourceRef": "r1",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Add a sentence explaining how the scale and complexity of Chola structures represented the peak of Dravida engineering.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer describes the features of the Dravida style but does not explicitly explain the causal link of how these specific architectural features contributed to the 'climax' of the style.",
+      "tryWriting": "The massive scale and structural complexity of these features, particularly the towering vimanas, represented the pinnacle of engineering and artistic expression in the Dravida style.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Dravida style of temple architecture, which took shape under the Pallavas, reached its climax under the imperial Cholas.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "The sentence correctly identifies that the Dravida style reached its peak or climax during the imperial Chola period."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It acknowledges the historical progression from the Pallavas to the Cholas, setting the context for the 'climax' mentioned in the question."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the Chola period as the climax of the Dravida style."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states that the Dravidian style was acquired as a new style under the Chola kingdom after the decline of the Pallava dynasty, rather than taking shape under the Pallavas.",
+        "fix": "The Dravida style of temple architecture acquired a new style under the Chola kingdom after the decline of the Pallava dynasty.",
+        "fixNumber": 1,
+        "source": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It is so called because it was largely confined to south India.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly explains that the style is named Dravida because it was largely confined to south India."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Its defining feature is the vimana, a pyramidal tower of several storeys rising above the garbhagriha that houses the main deity.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Correctly identifies the vimana as a defining feature of the Dravida style and describes its structure."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence identifies a core architectural feature of the Dravida style."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly identifies and explains the vimana as a pyramidal tower over the garbhagriha."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "A mandapa with elaborately carved pillars and a flat roof, placed in front of the sanctum, served as an audience hall and a venue for ritual dances by devadasis.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the function and architectural features of the mandapa as an audience hall and ritual space."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies the mandapa as a pillared hall with a flat roof used as an audience hall and for ceremonial dances by devadasis."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The complex, often with a circumambulatory passage around the sanctum, was enclosed by high walls pierced by gateways called gopurams, which became ever more elaborate in later centuries.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'gopurams' and 'circumambulatory passage' accurately identifies specific Dravida architectural components."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions gopurams but does not explicitly state they are a defining feature of the Dravida style in the same way as the vimana.",
+        "fix": "Explicitly state that gopurams are a characteristic feature of the Dravida style.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Brihadeshwara temple at Thanjavur, built by Rajaraja I and also called the Rajarajeshwara temple, is among the finest expressions of the style, with a towering vimana over its sanctum.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Provides a specific, high-quality example of the Dravida style with a towering vimana."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the Brihadeshwara temple as a premier expression of the Dravida style with a towering vimana."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific, high-profile example of the Dravida style's climax under the Cholas."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Rajendra I's temple at his new capital, Gangaikondacholapuram, and Rajaraja II's Airavateshvara temple at Darasuram continued this tradition.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the temples at Gangaikondacholapuram and Darasuram as continuing the Chola architectural tradition."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides additional specific examples of Chola temples to support the continuity of the architectural tradition."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides multiple specific examples to demonstrate the continuity and climax of the style."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Temples were also economic hubs, receiving revenue-free land grants and merchant donations, lending money and funding tanks and irrigation channels.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The student correctly identifies the economic dimension of the temples as hubs for land grants, donations, and lending."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "The sentence explains the economic cause (land grants and donations) that enabled the construction and maintenance of these architectural feats."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While interesting, the economic functions of temples are secondary to the architectural features requested by the prompt.",
+        "fix": "Briefly link the economic hub status to the scale of the architectural construction.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "In Karnataka, the Hoysaleswara temple at Halebidu, with its richly carved panels, exemplifies a hybrid Deccan style often classed as Vesara.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the student correctly identifies the Vesara style, the question specifically asks for the Dravida style; this sentence provides a contrast rather than a feature of the requested style.",
+        "fix": "Remove or shorten the mention of the Vesara style to focus more on Dravida features.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "As living shrines and centres of community life, Chola temples integrated architecture, sculpture, painting and dance, and their heritage deserves sustained conservation and wider public appreciation.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a concluding perspective on the role of these temples as centers of community life, moving beyond a simple description of architecture."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The student addresses the social and cultural dimension by describing temples as centers of community life and integrated arts."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion regarding conservation and public appreciation."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "Temple architecture in south India attained its climax under the Cholas.",
+      "reason": "The answer does not explicitly discuss the specific reasons or factors that allowed the Cholas to achieve this climax, such as the immense resources available to them.",
+      "fix": "Mention that the vast resources of the Chola empire enabled the construction of these magnificent structures.",
+      "fixNumber": null,
+      "source": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life"
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive. To 'discuss' the climax, it should briefly explain why the Cholas were able to achieve this (e.g., economic prosperity or royal patronage) rather than just listing features.",
+      "fix": "Add a sentence explaining how the vast resources of the Chola empire enabled such architectural heights.",
+      "fixNumber": 2,
+      "source": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer describes the features of the Dravida style but does not explicitly explain the causal link of how these specific architectural features contributed to the 'climax' of the style.",
+      "fix": "Add a sentence explaining how the scale and complexity of Chola structures represented the peak of Dravida engineering.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the political dimension of temple patronage as a tool for imperial legitimacy or power projection.",
+      "fix": "Add a sentence explaining how the construction of massive temples served to project the power and authority of the Chola monarchs.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention that the Chola style was a continuation of the previous Pallava architecture with some variations.",
+      "fix": "Mention that the Chola Dravida style evolved from and continued the previous Pallava architecture.",
+      "fixNumber": null,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s3",
+      "quote": "Its defining feature is the vimana, a pyramidal tower of several storeys rising above the garbhagriha that houses the main deity.",
+      "reason": "Correctly identifies the vimana as a defining feature of the Dravida style and describes its structure."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s7",
+      "quote": "The Brihadeshwara temple at Thanjavur, built by Rajaraja I and also called the Rajarajeshwara temple, is among the finest expressions of the style, with a towering vimana over its sanctum.",
+      "reason": "Provides a specific, high-quality example of the Dravida style with a towering vimana."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s4",
+      "quote": "A mandapa with elaborately carved pillars and a flat roof, placed in front of the sanctum, served as an audience hall and a venue for ritual dances by devadasis.",
+      "reason": "The sentence explains the function and architectural features of the mandapa as an audience hall and ritual space."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a very good description of the Dravida style and its features. To fully satisfy the 'discuss' command, you should briefly explain the factors that allowed the Cholas to reach this architectural climax."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer remains mostly focused on the Dravida style, but the inclusion of the Vesara style in Karnataka is a significant deviation from the specific architectural style requested."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the economic and social aspects well. It could be strengthened by mentioning the political role of these structures in establishing imperial authority."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core architectural components of the Dravida style are well-defined and explained with sufficient depth."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The factual details regarding the Chola temples and the specific architectural features like the vimana and gopurams are accurate."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You have provided excellent specific examples of Chola temples to support your points. Ensure you clearly distinguish between the earlier Pallava precursors and the Chola climax."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the core definition and historical peak of the Dravida style as described in the sources."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have identified the historical progression and the economic drivers well. However, you need to more clearly link the specific architectural features to why they represent the 'climax' of the style."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a descriptive 'Discuss' prompt rather than an evaluative one, so trade-offs are not strictly required. However, mentioning the scale of resource mobilization would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer concludes with a general statement about conservation but lacks specific actionable steps or responsible authorities."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear introduction, distinct body points, and a forward-looking conclusion. The inclusion of the Vesara style is slightly off-topic for a focused discussion on Dravida features."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The use of technical terms like vimana and gopuram is excellent and shows a good grasp of the subject matter."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence efficiently combines a specific example with a description of a key architectural feature (the towering vimana)."
+     }
+    ],
+    "stats": {
+     "words": 240,
+     "sentences": 11,
+     "paragraphs": 3,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 19
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 79
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s6",
+       "text": "An early example is the eighth-century Kailasanatha temple at Kanchipuram, built by the Pallava ruler Rajasimha."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 0.96
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 3 (South India: The Chola Empire (900–1200)), Cultural Life",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "The Dravida style of temple architecture, which took shape under the Pallavas, reached its climax under the imperial Cholas."
+     ],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

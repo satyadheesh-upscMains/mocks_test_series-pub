@@ -1,0 +1,781 @@
+{
+ "case": "hist-permanent-settlement",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: the jotedars generally lived in towns": true,
+  "cited: the jotedars generally lived in towns": true,
+  "caught: this ryotwari demand was fixed permanently": true,
+  "cited: this ryotwari demand was fixed permanently": true,
+  "no red marks on correct sentences": false,
+  "trap not red: first settlement in the 1820s": true
+ },
+ "seconds": 9676.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-permanent-settlement"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-permanent-settlement",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 4 serious problems cost you credit.",
+    "summary": "You correctly identified the direct relationship of the ryotwari settlement with the ryot and explained the legal consequences for zamindars and the social impact on the peasantry. However, you lost credit for claiming the ryotwari demand was fixed permanently and for misidentifying the residential locations of zamindars and jotedars. You must first clarify that the ryotwari system allowed for periodic revenue revisions unlike the Permanent Settlement.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 4 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Compare the Permanent Settlement in Bengal with the ryotwari settlement in the Bombay Deccan. How did these revenue arrangements reshape rural society? (Answer in 250 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The East India Company tried different land revenue systems to secure a stable income, and the Permanent Settlement of Bengal and the ryotwari settlement of the Bombay Deccan were two contrasting models.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Permanent Settlement: Introduced in Bengal in 1793 when Lord Cornwallis was Governor-General, it fixed the revenue demand of the zamindars in perpetuity.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The zamindar was treated not as a landowner but as a revenue collector who gathered rent from villages, paid the Company and kept the difference.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Officials hoped a fixed demand would create a loyal class of improving landlords.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "In practice the demand was pegged high and the Sunset Law punished any delay, so many zamindaris were auctioned in the 1790s.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Zamindars often survived through benami purchases, as when agents of the Raja of Burdwan bought back his estates.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "In north Bengal, rich peasants known as jotedars controlled local trade and moneylending.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Unlike the zamindars, who lived among the peasants, the jotedars generally lived in towns and controlled their land from a distance.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Ryotwari: Shaped partly by David Ricardo's ideas on rent, the ryotwari settlement in the Bombay Deccan was made directly with the ryot.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "As in Bengal, this ryotwari demand was fixed permanently, so the state could never raise it.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "The heavy demand of the first settlement in the 1820s forced many peasants to desert their villages or borrow from sahukars.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "When the cotton boom of the American Civil War ended, moneylenders refused fresh loans.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "This anger exploded in the Deccan riots of 1875, when ryots burnt the account books and debt bonds of sahukars.",
+      "para": 3
+     },
+     {
+      "id": "s14",
+      "text": "Both systems put revenue first but eroded customary rural relations, a lesson that still matters for land-record and rural credit reforms.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the Permanent Settlement in Bengal with the ryotwari settlement in the Bombay Deccan",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "This sentence correctly identifies the Permanent Settlement in Bengal and its core mechanism of fixing revenue for zamindars.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s9"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "How did these revenue arrangements reshape rural society?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified the consequences for both the landowning class and the peasantry. To improve, you could more explicitly describe the shift in power dynamics between different social groups in the village.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s11"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Clarify that the ryotwari settlement allowed for periodic revisions of revenue demand unlike the Permanent Settlement.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Permanent Settlement: Introduced in Bengal in 1793 when Lord Cornwallis was Governor-General, it fixed the revenue demand of the zamindars in perpetuity."
+      },
+      "why": "The sentence states the ryotwari demand was fixed permanently, but the ryotwari system was characterized by a revenue demand that could be revised by the state, unlike the Permanent Settlement.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside).",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "Unlike the zamindars, who lived among the peasants, the jotedars generally lived in towns and controlled their land from a distance."
+      },
+      "why": "The student claims zamindars lived among peasants and jotedars lived in towns, but the source states the opposite: zamindars often lived in urban areas while jotedars were located in the villages.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "sourceRef": "r12",
+      "evidence": {
+       "wrongWords": "Unlike the zamindars, who lived among the peasants, the jotedars generally lived in towns and controlled their land from a distance.",
+       "sourceWords": "Unlike zamindars who often lived in urban areas, jotedars were located in the villages"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Clarify that the ryotwari system typically involved a direct settlement with the ryot where revenue could be revised based on land productivity.",
+      "where": "Did what the question asks",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "As in Bengal, this ryotwari demand was fixed permanently, so the state could never raise it."
+      },
+      "why": "The sentence claims the ryotwari demand was fixed permanently, which contradicts the standard historical understanding of the ryotwari system where revenue was often revisable.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The East India Company tried different land revenue systems to secure a stable income, and the Permanent Settlement of Bengal and the ryotwari settlement of the Bombay Deccan were two contrasting models.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence correctly identifies the two systems as contrasting models, setting up the basis for a comparison."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the two specific revenue systems required by the question."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The introductory sentence is slightly wordy and could be condensed to allow more space for the analysis of rural society.",
+        "fix": "Combine the first two sentences to move directly into the comparison.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Permanent Settlement: Introduced in Bengal in 1793 when Lord Cornwallis was Governor-General, it fixed the revenue demand of the zamindars in perpetuity.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the Permanent Settlement in Bengal and its core mechanism of fixing revenue for zamindars."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly explains the core mechanism of the Permanent Settlement by identifying it as a fixed revenue demand on zamindars."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the year and the specific administrative role of the official who introduced the Permanent Settlement."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence states the ryotwari demand was fixed permanently, but the ryotwari system was characterized by a revenue demand that could be revised by the state, unlike the Permanent Settlement.",
+        "fix": "Clarify that the ryotwari settlement allowed for periodic revisions of revenue demand unlike the Permanent Settlement.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The zamindar was treated not as a landowner but as a revenue collector who gathered rent from villages, paid the Company and kept the difference.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence identifies the political and administrative shift of the zamindar from a landowner to a revenue collector."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Provides depth by explaining the specific role of the zamindar as a revenue collector rather than a traditional landowner."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies the zamindar's role as a revenue collector who collected rent and paid the Company."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "In practice the demand was pegged high and the Sunset Law punished any delay, so many zamindaris were auctioned in the 1790s.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It explains how the legal framework of the settlement led to the loss of land by many zamindars."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly links the high revenue demand and the Sunset Law to the outcome of auctioning zamindaris."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It identifies the negative consequence of the high revenue demand and the legal pressure of the Sunset Law on the landowning class."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Zamindars often survived through benami purchases, as when agents of the Raja of Burdwan bought back his estates.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific historical instance of a zamindar using benami purchases to retain land."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence claims the ryotwari demand was fixed permanently, but the ryotwari system was characterized by the state's ability to revise and increase revenue demands over time.",
+        "fix": "Clarify that unlike the Permanent Settlement, the ryotwari demand was not fixed in perpetuity and could be revised by the state.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Unlike the zamindars, who lived among the peasants, the jotedars generally lived in towns and controlled their land from a distance.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims zamindars lived among peasants and jotedars lived in towns, but the source states the opposite: zamindars often lived in urban areas while jotedars were located in the villages.",
+        "fix": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside).",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Ryotwari: Shaped partly by David Ricardo's ideas on rent, the ryotwari settlement in the Bombay Deccan was made directly with the ryot.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the ryotwari settlement in the Bombay Deccan and its direct relationship with the ryot."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a concise comparison by introducing the Ryotwari model and its underlying theory."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "As in Bengal, this ryotwari demand was fixed permanently, so the state could never raise it.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Did what the question asks",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence claims the ryotwari demand was fixed permanently, which contradicts the standard historical understanding of the ryotwari system where revenue was often revisable.",
+        "fix": "Clarify that the ryotwari system typically involved a direct settlement with the ryot where revenue could be revised based on land productivity.",
+        "fixNumber": 3,
+        "source": null
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The source indicates the first revenue settlement in the Bombay Deccan was in 1818, and the ryotwari system was not fixed permanently in the same way as the Bengal settlement.",
+        "fix": "Clarify that the ryotwari settlement was not a permanent fix in the same manner as the Bengal model.",
+        "fixNumber": null,
+        "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s11",
+      "text": "The heavy demand of the first settlement in the 1820s forced many peasants to desert their villages or borrow from sahukars.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It describes the social impact on the peasantry, specifically the displacement of people and the rise of debt."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the economic and social impact on the peasantry, specifically regarding debt and migration."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the heavy demand of the ryotwari settlement to the specific outcomes of peasant desertion and debt."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s13",
+      "text": "This anger exploded in the Deccan riots of 1875, when ryots burnt the account books and debt bonds of sahukars.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student cites a specific historical event, the Deccan riots of 1875, to support the impact of the ryotwari system."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly identifies the 1875 Deccan riots as a consequence of the revenue system."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "Both systems put revenue first but eroded customary rural relations, a lesson that still matters for land-record and rural credit reforms.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides an analytical conclusion by explaining how both systems eroded customary rural relations."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence addresses the impact on rural society by mentioning the erosion of customary relations."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by linking the historical systems to modern land-record and credit reforms."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions that lessons matter for reforms but does not suggest specific, workable actions or policies to address the issues of land records or rural credit.",
+        "fix": "Suggest a specific action, such as digitizing land records to prevent illegal land transfers or establishing cooperative credit societies to reduce dependence on moneylenders.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer fails to mention the specific year of the first revenue settlement in the Bombay Deccan, which provides a chronological contrast to the 1793 Bengal settlement.",
+      "fix": "mention the 1818 first revenue settlement in the Bombay Deccan",
+      "fixNumber": null,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)"
+     },
+     {
+      "where": "Structure",
+      "reason": "The answer lacks a clear comparative structure; the two systems are described sequentially rather than being directly compared in a way that highlights their differences.",
+      "fix": "Use a comparative structure or a table to explicitly contrast the ownership rights and revenue collection methods of the two systems.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s9",
+      "quote": "Ryotwari: Shaped partly by David Ricardo's ideas on rent, the ryotwari settlement in the Bombay Deccan was made directly with the ryot.",
+      "reason": "This sentence correctly identifies the ryotwari settlement in the Bombay Deccan and its direct relationship with the ryot."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s5",
+      "quote": "In practice the demand was pegged high and the Sunset Law punished any delay, so many zamindaris were auctioned in the 1790s.",
+      "reason": "It explains how the legal framework of the settlement led to the loss of land by many zamindars."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s11",
+      "quote": "The heavy demand of the first settlement in the 1820s forced many peasants to desert their villages or borrow from sahukars.",
+      "reason": "It describes the social impact on the peasantry, specifically the displacement of people and the rise of debt."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive comparison but contains a factual error regarding the 'permanent' nature of the ryotwari settlement."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers both systems and their social impacts well, but contains a significant factual error regarding the nature of the ryotwari settlement."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the social and economic impacts well but lacks a clear structural comparison of the two systems' legal frameworks."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The explanation of the Bengal system is strong, but there is a significant factual error regarding the nature of the Ryotwari settlement."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly identifies the year and the specific administrative role of the official who introduced the Permanent Settlement."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific historical examples like the Raja of Burdwan and the 1875 riots to ground the arguments. However, there is a factual error regarding the 'permanent' nature of the ryotwari demand."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified key dates and events from the source. However, you incorrectly stated that the ryotwari demand was fixed permanently, which contradicts the historical distinction between the two systems."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully linked specific revenue policies to their immediate socio-economic consequences for the landholders and peasants. However, you incorrectly stated that the ryotwari demand was fixed permanently."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully identified the social costs and pressures on both zamindars and ryots. However, you incorrectly stated that the ryotwari demand was fixed permanently, which is a key distinction from the Permanent Settlement."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies a need for reform but fails to provide a workable suggestion or specific policy action."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear beginning and end, but the body lacks a comparative structure. Instead of comparing the two systems side-by-side, you have listed them one after the other."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The use of technical terms like 'revenue demand' and 'zamindars' is precise. However, the description of the ryotwari system's permanence is a factual error that affects the clarity of the comparison."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses the space well to describe the mechanics of both systems. However, the claim that Ryotwari demand was fixed permanently is a significant factual error that needs correction."
+     }
+    ],
+    "stats": {
+     "words": 280,
+     "sentences": 14,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 44
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 64
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "Officials hoped a fixed demand would create a loyal class of improving landlords."
+      },
+      {
+       "sourceId": "s7",
+       "text": "In north Bengal, rich peasants known as jotedars controlled local trade and moneylending."
+      },
+      {
+       "sourceId": "s12",
+       "text": "When the cotton boom of the American Civil War ended, moneylenders refused fresh loans."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.12
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 1 (Colonialism and the Countryside)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 9,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "Permanent Settlement: Introduced in Bengal in 1793 when Lord Cornwallis was Governor-General, it fixed the revenue demand of the zamindars in perpetuity.",
+      "Zamindars often survived through benami purchases, as when agents of the Raja of Burdwan bought back his estates."
+     ],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 4 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

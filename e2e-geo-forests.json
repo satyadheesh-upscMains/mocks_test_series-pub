@@ -1,0 +1,634 @@
+{
+ "case": "geo-forests",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": false,
+  "trap not red: windward western slopes of the Western Ghats": true,
+  "trap not red: best developed in the Sundarbans": true
+ },
+ "seconds": 8545.0,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-forests"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-forests",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 and Part 2 need the most work.",
+    "summary": "The use of 'Littoral and swamp forests' provides a precise classification for coastal and wetland vegetation. However, the answer lacks an explanation of the causal relationship between specific climatic conditions and forest types, and it includes irrelevant information on conservation. To improve, remove the sentence on management to save space and add details on leaf-shedding patterns and specific rainfall or temperature influences.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It does not fully do what the question's command word asks.",
+     "It has 4 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Classify the forests of India and describe the distribution and characteristics of the major forest types. (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "India's natural vegetation varies with rainfall, temperature, altitude and soil, and its forests are broadly grouped into five types.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Tropical evergreen and semi-evergreen forests grow on the windward western slopes of the Western Ghats, the north-eastern hills and the Andaman and Nicobar Islands.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "They look green all year, as trees have no fixed season for shedding leaves, and include rosewood, mahogany and ebony.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Tropical deciduous or monsoon forests are the most widespread type, with teak and sal among their main species.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Tropical thorn forests of babool, ber and khejri occur in semi-arid Rajasthan, Gujarat, Punjab and Haryana.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Montane forests change with altitude, from deciduous forests in the Himalayan foothills to conifers such as deodar and, higher up, alpine pastures.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Temperate forests called sholas occur in the Nilgiri, Anaimalai and Palani hills.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Littoral and swamp forests, including mangroves, are best developed in the Sundarbans and the Andaman and Nicobar Islands.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "As forests face encroachment, sustainable management with local community participation must be strengthened.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Classify the forests of India",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified that there are five types of forests, but the answer would be stronger if you explicitly named those five types in the introductory sentence.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "describe the distribution and characteristics of the major forest types",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have successfully covered the distribution and characteristics for several forest types. To improve, ensure every forest type mentioned includes both its geographical location and its physical traits.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Remove this sentence to stay within the word limit and focus on the classification.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s9",
+       "text": "As forests face encroachment, sustainable management with local community participation must be strengthened."
+      },
+      "why": "This sentence discusses conservation and management, which is not asked by the question and wastes space that could be used for more forest types.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Add a description of the leaf-shedding pattern or the dry season influence on these forests.",
+      "where": "Concepts explained",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer fails to explain the specific characteristics of tropical deciduous forests beyond naming their main species.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how specific rainfall amounts or temperature ranges lead to the growth of evergreen versus deciduous species.",
+      "where": "Cause and effect",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lists the types of forests but does not explain the causal relationship between specific climatic conditions (like specific rainfall levels or temperature ranges) and why a particular forest type develops in a specific region.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "India's natural vegetation varies with rainfall, temperature, altitude and soil, and its forests are broadly grouped into five types.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "The sentence correctly identifies that Indian forests are broadly grouped into five types, providing a clear classification framework."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence correctly identifies the classification of Indian forests into five types as requested by the first part of the question."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence establishes the environmental factors like rainfall and temperature that determine forest distribution."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions five types but does not explicitly name the classification system or the specific five types in the opening statement.",
+        "fix": "Specify the five types of forests being referred to.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Tropical evergreen and semi-evergreen forests grow on the windward western slopes of the Western Ghats, the north-eastern hills and the Andaman and Nicobar Islands.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly identifies the geographical distribution and the specific type of forest (tropical evergreen and semi-evergreen)."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses precise geographical terms like 'windward western slopes' and 'north-eastern hills' to describe distribution."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a dense and useful combination of distribution and characteristics for the first forest type."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the distribution but does not mention the specific characteristics of these forests as required by the question.",
+        "fix": "Add a brief description of their physical characteristics, such as their dense canopy or evergreen nature.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "They look green all year, as trees have no fixed season for shedding leaves, and include rosewood, mahogany and ebony.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence describes the physical characteristics and provides specific species for the evergreen forests."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the characteristic of evergreen forests by describing the lack of a fixed leaf-shedding season."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific species like rosewood, mahogany, and ebony to support the characteristics of evergreen forests."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes characteristics but does not specify the geographical distribution of these specific trees.",
+        "fix": "Mention the specific regions where these species are predominantly found.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Tropical deciduous or monsoon forests are the most widespread type, with teak and sal among their main species.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions the species, it lacks a specific geographical distribution for the deciduous forests.",
+        "fix": "Add the geographical regions where these forests are primarily found.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Tropical thorn forests of babool, ber and khejri occur in semi-arid Rajasthan, Gujarat, Punjab and Haryana.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately lists the specific states and the characteristic species for tropical thorn forests."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific species like babool, ber, and khejri to support the description of thorn forests."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence lists the distribution but does not describe the physical characteristics of the thorn forests.",
+        "fix": "Include a brief description of the physical characteristics of these forests.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Montane forests change with altitude, from deciduous forests in the Himalayan foothills to conifers such as deodar and, higher up, alpine pastures.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the concept of altitudinal zonation by describing how forest types change from foothills to higher altitudes."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Littoral and swamp forests, including mangroves, are best developed in the Sundarbans and the Andaman and Nicobar Islands.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'Littoral and swamp forests' provides a precise classification for the coastal and wetland vegetation."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "As forests face encroachment, sustainable management with local community participation must be strengthened.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the administrative and environmental management aspect of forest conservation."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion regarding sustainable management and community participation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "This sentence discusses conservation and management, which is not asked by the question and wastes space that could be used for more forest types.",
+        "fix": "Remove this sentence to stay within the word limit and focus on the classification.",
+        "fixNumber": 1,
+        "source": null
+       },
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion lacks specific details on who should act or what specific actions should be taken beyond a general call for 'strengthened' management.",
+        "fix": "Specify a concrete action, such as establishing joint forest management committees or implementing a specific reforestation policy in high-encroachment zones.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "Classify the forests of India",
+      "reason": "The answer does not explicitly name the five categories of forests in a list or a single sentence, which would make the classification clearer.",
+      "fix": "List the five types of forests (e.g., tropical evergreen, deciduous, thorn, montane, and littoral/swamp) directly after mentioning the grouping.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Concepts explained",
+      "reason": "The answer fails to explain the specific characteristics of tropical deciduous forests beyond naming their main species.",
+      "fix": "Add a description of the leaf-shedding pattern or the dry season influence on these forests.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer lists the types of forests but does not explain the causal relationship between specific climatic conditions (like specific rainfall levels or temperature ranges) and why a particular forest type develops in a specific region.",
+      "fix": "Explain how specific rainfall amounts or temperature ranges lead to the growth of evergreen versus deciduous species.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly mention the economic importance of these forests, such as timber production or livelihood support.",
+      "fix": "Add a brief mention of the economic value of forest products like timber or non-timber forest produce.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks for a classification and description of forest types, which is a descriptive task. While the student mentions encroachment in the conclusion, the prompt does not specifically ask for the trade-offs or limitations of forest management.",
+      "fix": "Remove the concluding sentence as it shifts the focus away from the descriptive requirements of the prompt.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Clear wording",
+      "sourceId": "s8",
+      "quote": "Littoral and swamp forests, including mangroves, are best developed in the Sundarbans and the Andaman and Nicobar Islands.",
+      "reason": "The use of 'Littoral and swamp forests' provides a precise classification for the coastal and wetland vegetation."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully classified and distributed the forest types. To improve, ensure you describe the specific characteristics (like leaf type or canopy height) for every major forest type mentioned."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the classification and description of forest types. However, the final sentence shifts toward conservation policy and should be removed to maintain focus."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the geographical and environmental dimensions well. Including the economic significance of these forests would provide a more holistic view."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have correctly explained the characteristics of evergreen and montane forests. However, the description for deciduous forests is too brief and lacks a conceptual explanation of their behavior."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The geographical distribution and species for most forest types are accurately described. The classification is clear but could be more explicit in the introductory sentence."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific species names to illustrate different forest types. Listing the classification categories directly in the introduction would strengthen the structure."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies the environmental factors influencing forest types. It could be strengthened by referencing the empirical relationship between climate data and vegetation classification."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have identified the factors that influence vegetation, but you need to explicitly link these factors to the characteristics of the forests to show a clear causal chain."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is descriptive in nature and does not explicitly ask for trade-offs, costs, or counter-arguments. Therefore, this check is not applicable."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The conclusion provides a general policy direction but lacks the specific 'who' and 'how' required for a workable suggestion."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good, following the standard UPSC format with a clear introduction, a detailed body, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality geographical terminology and specific species names to describe the forests accurately."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. Removing the concluding sentence about management would bring it within the limit and improve focus."
+     }
+    ],
+    "stats": {
+     "words": 162,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 19
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 78
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "Temperate forests called sholas occur in the Nilgiri, Anaimalai and Palani hills."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.08
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 22 (The Cool Temperate Western Margin (British Type) Climate)",
+      "used": false
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 23 (The Cool Temperate Continental (Siberian) Climate)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 11 (World Climate and Climate Change)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 7,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "As forests face encroachment, sustainable management with local community participation must be strengthened."
+     ],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It does not fully do what the question's command word asks.",
+      "It has 4 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

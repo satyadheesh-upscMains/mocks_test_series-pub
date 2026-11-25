@@ -1,0 +1,605 @@
+{
+ "case": "hist-renaissance-italy",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: The Flemish anatomist Andreas Vesalius": true
+ },
+ "seconds": 5415.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-renaissance-italy",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer successfully identifies the role of trade routes, the rise of a merchant-led political structure, and the shift toward secular subjects in fostering humanism. To improve, you should replace the specific scientific advancement of Andreas Vesalius with a point about how the wealth of city-states provided patronage for scholars. You should also use clear transitions or bullet points to distinguish between the economic, political, and intellectual factors.",
+    "levelWhy": [
+     "It could do more of what the question's command word asks.",
+     "It leaves out an important angle of the issue."
+    ],
+    "formatNote": null,
+    "question": "Why did the Italian city-states become the birthplace of Renaissance humanism? Explain. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "From the fourteenth century, Italian towns such as Florence, Venice and Rome became centres of a humanist culture that the historian Jacob Burckhardt later called the Renaissance.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The universities of Padua and Bologna began to study law in the context of Roman culture, a shift represented by Petrarch.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Arab translators had preserved the works of Plato and Aristotle.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Popes, merchants and aristocrats patronised artists like Michelangelo.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Printed books carried these ideas across the Alps.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "The humanist faith in human ability still shapes modern ideas of individual dignity and secular inquiry.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Why did the Italian city-states become the birthplace of Renaissance humanism?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the economic, political, and geographical reasons for the rise of humanism in Italy. To improve, ensure the transition between trade and the specific shift in educational focus is more fluid.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Explain.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified the socio-political and educational shifts that defined humanism. To improve, ensure every point directly links back to the 'why' of the humanist movement.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace this sentence with a point about the wealth of the city-states providing the necessary patronage for humanist scholars.",
+      "where": "Use of space",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection."
+      },
+      "why": "The mention of Andreas Vesalius and human dissection is a specific scientific advancement that does not directly explain why the city-states were the birthplace of humanism.",
+      "tryWriting": "The immense wealth of these city-states provided the necessary patronage for scholars and artists to pursue humanist studies.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Mention the tension between emerging secular humanism and the dominant religious authority of the time.",
+      "where": "Trade-offs and limits",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The question asks 'why' the city-states became the birthplace, but the answer does not address the limitations or the specific social costs of this transition, such as the tension between new humanist ideals and existing religious structures.",
+      "tryWriting": "While these developments fostered humanism, they often existed in tension with the established religious hegemony of the era.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Use bullet points or clear transition words to separate the economic, political, and intellectual factors.",
+      "where": "Structure",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The body lacks clear subheadings or transitional phrases to distinguish between the different reasons (economic, political, and intellectual) requested by the 'Explain' part of the prompt.",
+      "tryWriting": "The rise of Renaissance humanism was driven by a combination of economic prosperity, unique political structures, and the recovery of classical knowledge.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "From the fourteenth century, Italian towns such as Florence, Venice and Rome became centres of a humanist culture that the historian Jacob Burckhardt later called the Renaissance.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific names of Italian towns (Florence, Venice, Rome) to ground the geographical claim."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies the period, the specific cities, and the historian's role in naming the Renaissance."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the historical context by identifying the specific cities and the term Renaissance."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It identifies the trade routes and external interactions that revived Italian ports and brought in new influences."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the 'how' by identifying the trade routes and external interactions that revived Italian ports."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Explains how trade with the Byzantine Empire and Islamic world revived Italian ports, providing a geographical and economic reason for the birthplace."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains the political structure of the city-states and how the rise of a merchant class over feudal lords fostered the concept of citizenship."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the 'why' by linking the political structure of independent city-states to the development of the idea of citizenship."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Identifies the political structure of independent city-states and the role of merchants in fostering the idea of citizenship."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The universities of Padua and Bologna began to study law in the context of Roman culture, a shift represented by Petrarch.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence identifies specific universities (Padua and Bologna) and a specific historical figure (Petrarch) to support the shift toward Roman culture."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies that the universities of Padua and Bologna were centers of legal studies and that there was a shift toward studying law in the context of Roman culture, as represented by Petrarch."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions a shift toward Roman culture but does not explain how this specific shift defined the humanist movement.",
+        "fix": "Explain how the study of Roman law and literature provided a secular framework for humanistic thought.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It explains the shift in educational focus toward secular subjects like grammar and moral philosophy."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly identifies the specific subjects of humanist study and distinguishes them from religious curricula."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The list of specific subjects like 'grammar, rhetoric, poetry, history and moral philosophy' provides precise academic context for humanism."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Arab translators had preserved the works of Plato and Aristotle.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the role of Arab translators in preserving the works of Plato and Aristotle."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of Andreas Vesalius and human dissection is a specific scientific advancement that does not directly explain why the city-states were the birthplace of humanism.",
+        "fix": "Replace this sentence with a point about the wealth of the city-states providing the necessary patronage for humanist scholars.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Popes, merchants and aristocrats patronised artists like Michelangelo.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning a famous artist provides a name, it does not specifically illustrate the 'humanist' shift in thought or education as requested by the prompt.",
+        "fix": "Mention a specific humanist text or a specific humanist educational reform instead of a visual artist.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "The humanist faith in human ability still shapes modern ideas of individual dignity and secular inquiry.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by linking the movement to modern ideas of dignity and inquiry."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'still shapes modern ideas' is a broad generalization that lacks specific historical connection to the Italian city-states.",
+        "fix": "Connect the legacy of humanism to specific modern concepts like individual rights or secular education.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks 'why' the city-states became the birthplace, but the answer does not address the limitations or the specific social costs of this transition, such as the tension between new humanist ideals and existing religious structures.",
+      "fix": "Mention the tension between emerging secular humanism and the dominant religious authority of the time.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks clear subheadings or transitional phrases to distinguish between the different reasons (economic, political, and intellectual) requested by the 'Explain' part of the prompt.",
+      "fix": "Use bullet points or clear transition words to separate the economic, political, and intellectual factors.",
+      "fixNumber": 3,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "reason": "It identifies the trade routes and external interactions that revived Italian ports and brought in new influences."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "reason": "It explains the political structure of the city-states and how the rise of a merchant class over feudal lords fostered the concept of citizenship."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s5",
+      "quote": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "reason": "It explains the shift in educational focus toward secular subjects like grammar and moral philosophy."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have identified several important economic and political factors, but the answer lacks a clear explanation of the intellectual shift toward classical antiquity."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies economic, political, and intellectual reasons for the rise of humanism in Italy. However, some specific scientific details are less relevant to the core question of humanism's origins."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers economic and political dimensions well. It would be stronger by addressing the religious context of the time."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You have correctly identified the socio-political and educational shifts that enabled humanism. To improve, more depth on how the specific 'Roman' influence shaped the humanist philosophy would be beneficial."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies the economic and intellectual conduits (trade and translation) that facilitated the Renaissance. The inclusion of Vesalius is slightly tangential to the core theme of humanism."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You have used good specific examples of cities, universities, and historical figures to ground your answer. To improve, ensure your examples directly link to the 'humanist' intellectual shift rather than just general Renaissance art."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The student correctly identifies the period, the specific cities, and the historian's role in naming the Renaissance."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is an explanatory 'why' question rather than a 'discuss' or 'evaluate' question, so a balanced counter-argument is not strictly required. However, acknowledging the friction between new ideas and old institutions would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer follows a logical structure with a clear introduction and conclusion. However, the body would be more effective if the different reasons were grouped more distinctly."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong, specific terminology regarding the socio-economic structure of the city-states. The concluding sentence is slightly too broad and could be more grounded in the historical context."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove the modern legacy and specific anatomical details to focus more on the socio-economic and intellectual reasons for the Italian birthplace."
+     }
+    ],
+    "stats": {
+     "words": 165,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 61
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 57
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s9",
+       "text": "Printed books carried these ideas across the Alps."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 2 (Writing and City Life)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "causality",
+      "solutions"
+     ]
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It could do more of what the question's command word asks.",
+      "It leaves out an important angle of the issue."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

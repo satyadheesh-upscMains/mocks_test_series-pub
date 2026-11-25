@@ -1,0 +1,623 @@
+{
+ "case": "hist-alauddin-market",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: outlived him and were retained by the Tughlaq sultans": true,
+  "cited: outlived him and were retained by the Tughlaq sultans": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 4726.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-alauddin-market"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-alauddin-market",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You successfully identified the primary objective of maintaining a large army through low prices and correctly detailed the specific market types and revenue measurement methods. However, the answer lacks an analysis of the social impact on the peasantry and incorrectly states that market regulations were retained by the Tughlaq sultans. To improve, first add a sentence explaining that agrarian reforms aimed to maximize state revenue and ensure a steady supply of grain.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 6 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Examine the objectives and outcomes of Alauddin Khalji's market control and agrarian measures. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Contemporaries saw Alauddin Khalji's market control as a wonder of the world, and it was closely tied to his agrarian reforms.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Mongol invasions forced him to keep a large army, which he could afford only if prices, and hence salaries, stayed low.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "He set up three markets at Delhi, for foodgrains, costly cloth, and horses, slaves and cattle, each under an officer called the shahna.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Land revenue in the doab was collected directly by the state at half the produce, largely in cash, forcing peasants to sell grain cheaply to banjaras.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "State warehouses stored grain for scarcity, and overcharging shopkeepers were harshly punished.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "He was the first Sultan to assess land revenue in the doab by measurement.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The khuts and muqaddams had to pay the same taxes as others.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "His market regulations outlived him and were retained by the Tughlaq sultans.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "They helped him raise an efficient cavalry that repelled the Mongols.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "His agrarian measures later provided a basis for the reforms of Sher Shah and Akbar.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the objectives and outcomes of Alauddin Khalji's market control and agrarian measures",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have successfully identified the objectives and outcomes for market control. However, the objectives for the agrarian measures are missing from your analysis.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s9"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Add a sentence explaining that agrarian reforms aimed to maximize state revenue and ensure a steady supply of grain.",
+      "where": "The question",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer does not explicitly state the objectives of the agrarian measures, such as increasing state revenue or ensuring food security.",
+      "tryWriting": "His agrarian measures aimed to maximize state revenue and ensure food security to support the growing empire.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Correct this sentence using Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "His market regulations outlived him and were retained by the Tughlaq sultans."
+      },
+      "why": "The extract explicitly states that the market regulations ended upon his death rather than being retained by the Tughlaq sultans.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments",
+      "sourceRef": "r3",
+      "evidence": {
+       "wrongWords": "outlived him and were retained by the Tughlaq sultans",
+       "sourceWords": "The market regulations of Alauddin came to an end with his death"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Add a sentence discussing the social consequences of price controls on traders or the burden on the rural population.",
+      "where": "Covered the key angles",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a clear analysis of the social impact on the peasantry or the merchant class, which is a key dimension of market control.",
+      "tryWriting": "These measures also had significant social implications, as strict price controls and forced sales impacted the livelihoods of both urban merchants and rural producers.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Contemporaries saw Alauddin Khalji's market control as a wonder of the world, and it was closely tied to his agrarian reforms.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "This matches the text of the Constitution."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides context by linking market control to agrarian reforms without repeating the question."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'wonder of the world' is a subjective description of contemporary opinion rather than a precise historical analysis of the policy's nature.",
+        "fix": "Replace with a description of the policy's comprehensive nature or its impact on price stability.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Mongol invasions forced him to keep a large army, which he could afford only if prices, and hence salaries, stayed low.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence clearly identifies the primary objective of market control: maintaining a large army by keeping prices and salaries low."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the 'why' behind the market control by linking it to the necessity of maintaining a large army during Mongol invasions."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence identifies the political and military objective of maintaining a large army to counter Mongol invasions."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "He set up three markets at Delhi, for foodgrains, costly cloth, and horses, slaves and cattle, each under an officer called the shahna.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "The student accurately identifies the specific types of markets and the administrative officer (shahna) involved."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific details about the types of markets and the specific officer title used for oversight."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses precise historical terminology like 'shahna' to describe the administrative officers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Land revenue in the doab was collected directly by the state at half the produce, largely in cash, forcing peasants to sell grain cheaply to banjaras.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the mechanism of agrarian reform by describing how direct state collection and cash payments forced peasants to sell grain cheaply."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the economic and administrative dimension of land revenue collection and its impact on the peasantry."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific details regarding the revenue rate and the specific group of traders involved in the grain trade."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "He was the first Sultan to assess land revenue in the doab by measurement.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "The student correctly identifies the specific method of land revenue assessment (measurement) used in the doab."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The khuts and muqaddams had to pay the same taxes as others.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The sentence correctly identifies specific social categories like 'khuts' and 'muqaddams' involved in the agrarian system."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "His market regulations outlived him and were retained by the Tughlaq sultans.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract explicitly states that the market regulations ended upon his death rather than being retained by the Tughlaq sultans.",
+        "fix": "Correct this sentence using Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments.",
+        "fixNumber": 2,
+        "source": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s9",
+      "text": "They helped him raise an efficient cavalry that repelled the Mongols.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence identifies a key outcome of the measures: the creation of an efficient cavalry to repel Mongol invasions."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the market regulations directly to the outcome of building an efficient cavalry to repel invaders."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a specific outcome regarding the cavalry and defense against external threats."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that these measures helped repel the Mongols is a broad outcome that would be stronger if linked to a specific military capability or logistical advantage.",
+        "fix": "Explain how the efficient cavalry specifically enabled the defense against Mongol incursions.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "His agrarian measures later provided a basis for the reforms of Sher Shah and Akbar.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by linking the measures to later historical developments."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "The question",
+      "partText": "the objectives and outcomes of Alauddin Khalji's market control and agrarian measures",
+      "reason": "The answer does not explicitly state the objectives of the agrarian measures, such as increasing state revenue or ensuring food security.",
+      "fix": "Add a sentence explaining that agrarian reforms aimed to maximize state revenue and ensure a steady supply of grain.",
+      "fixNumber": 1,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a clear analysis of the social impact on the peasantry or the merchant class, which is a key dimension of market control.",
+      "fix": "Add a sentence discussing the social consequences of price controls on traders or the burden on the rural population.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The answer names the measures but does not explicitly explain the 'outcomes' of the agrarian reforms beyond their influence on later rulers.",
+      "fix": "Add a sentence explaining the immediate impact on the peasantry or the state's revenue stability.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear organizational structure or subheadings to distinguish between the 'objectives' and 'outcomes' as requested by the prompt.",
+      "fix": "Use subheadings or clear transition words to separate the objectives (e.g., military funding) from the outcomes (e.g., cavalry strength and long-term influence).",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer is slightly over the word limit, which suggests a need to condense the descriptive details of the markets to make room for more analysis.",
+      "fix": "Combine the description of the three markets and the role of the shahna into a single concise phrase.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s2",
+      "quote": "The Mongol invasions forced him to keep a large army, which he could afford only if prices, and hence salaries, stayed low.",
+      "reason": "This sentence clearly identifies the primary objective of market control: maintaining a large army by keeping prices and salaries low."
+     },
+     {
+      "where": "Facts are accurate",
+      "sourceId": "s6",
+      "quote": "He was the first Sultan to assess land revenue in the doab by measurement.",
+      "reason": "The student correctly identifies the specific method of land revenue assessment (measurement) used in the doab."
+     },
+     {
+      "where": "Facts are accurate",
+      "sourceId": "s3",
+      "quote": "He set up three markets at Delhi, for foodgrains, costly cloth, and horses, slaves and cattle, each under an officer called the shahna.",
+      "reason": "The student accurately identifies the specific types of markets and the administrative officer (shahna) involved."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive overview of the 'how' and 'what' of the policies. To fully 'examine' the objectives, you should more clearly state the underlying goals of the state, such as revenue maximization or political centralization."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well within the scope of the question, focusing on both market and agrarian policies. It successfully links the objectives to the outcomes."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the political and economic objectives well but misses the social dimension of how these policies affected different classes of people."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have explained the 'why' (objectives) and the 'how' (mechanisms) very well. However, the 'outcomes' for the agrarian side are mostly historical legacies rather than immediate socio-economic results."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The factual details regarding the market structure and revenue measurement are well-stated. The connection to later rulers is an interpretation that lacks specific evidence in the provided text."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific details regarding market types and revenue rates. To improve, connect the outcomes more directly to the specific military and administrative impacts."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer effectively covers the objectives and outcomes of the market and agrarian reforms. It could be improved by acknowledging the contemporary criticism of his policies."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully linked the military objectives to market price controls. However, the connection between the agrarian reforms and the market outcomes is not clearly established."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified the economic burden placed on the peasantry. To improve, you could briefly mention the administrative difficulties of maintaining such a rigid system."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains all necessary information but lacks a clear structural distinction between objectives and outcomes. Organizing the body into two distinct sections would improve readability."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The use of specific historical terms for officials and landholders is excellent. Avoid using hyperbolic phrases like 'wonder of the world' in a formal historical analysis."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses the space well to cover both objectives and outcomes, but it exceeds the word limit. You should condense the descriptive list of markets to stay within the limit."
+     }
+    ],
+    "stats": {
+     "words": 168,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 33
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s5",
+       "text": "State warehouses stored grain for scarcity, and overcharging shopkeepers were harshly punished."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.12
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), The Khaljis (1290–1320)",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), The Khaljis (1290–1320)",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat— (Circa 1300–1400)), Muhammad Tughlaq’s Experiments",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 9,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 6 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

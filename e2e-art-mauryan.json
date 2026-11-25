@@ -1,0 +1,661 @@
+{
+ "case": "art-mauryan",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: commemorates the Buddha's enlightenment": true,
+  "cited: commemorates the Buddha's enlightenment": true,
+  "caught: donated by Ashoka to the Jainas": true,
+  "cited: donated by Ashoka to the Jainas": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Mauryan pillars were monolithic": true
+ },
+ "seconds": 6894.2,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mauryan"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-mauryan",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You correctly identified the technical shift to monolithic rock-cut pillars as a distinct advancement. However, the answer loses marks due to factual errors regarding the purpose of the Sarnath Lion Capital and the specific sect associated with the Lomas Rishi cave. To improve, you should first correct these facts and add a discussion on how this period transitioned from wood to stone or integrated diverse religious traditions into a unified imperial style.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Mauryan art marked a new phase in Indian stone sculpture and rock-cut architecture. Discuss. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Mauryan rule, especially under Ashoka in the third century BCE, saw stone art on a monumental scale.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Ashoka erected polished stone pillars bearing his inscriptions, crowned by animal capitals such as the bull, lion and elephant.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Unlike Achaemenid pillars assembled in pieces by masons, Mauryan pillars were monolithic.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Sarnath Lion Capital, with four addorsed lions, commemorates the Buddha's enlightenment at Bodh Gaya.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Its abacus bears an elephant, a bull, a horse and a lion between wheels, and the capital became the National Emblem.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Yaksha and Yakshi images, such as the polished sandstone Didarganj Yakshi holding a chauri, reflect popular folk cults.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The rock-cut elephant at Dhauli in Odisha, beside an Ashokan edict, shows modelling in the round.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Lomas Rishi cave in the Barabar hills, with its chaitya-arch facade, was donated by Ashoka to the Jainas.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Blending royal patronage with popular cults, Mauryan art laid the foundation for later stupa sculpture at Bharhut and Sanchi, and its sites today merit careful conservation.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "Mauryan art marked a new phase in Indian stone sculpture and rock-cut architecture.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies key technical shifts like monolithic construction and specific examples of rock-cut caves. To improve, more explicitly contrast these developments with earlier traditions to emphasize the 'new phase' aspect.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "commemorates the first sermon or Dhammachakrapravartana by the Buddha at Sarnath",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "The Sarnath Lion Capital, with four addorsed lions, commemorates the Buddha's enlightenment at Bodh Gaya."
+      },
+      "why": "The capital commemorates the first sermon or Dhammachakrapravartana at Sarnath, not the enlightenment at Bodh Gaya.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "sourceRef": "r6",
+      "evidence": {
+       "wrongWords": "commemorates the Buddha's enlightenment at Bodh Gaya",
+       "sourceWords": "Built in commemoration of the historical event of the first sermon or the Dhammachakrapravartana by the Buddha at Sarnath"
+      }
+     },
+     {
+      "n": 2,
+      "title": "The cave was donated by Ashoka for the Ajivika sect.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The Lomas Rishi cave in the Barabar hills, with its chaitya-arch facade, was donated by Ashoka to the Jainas."
+      },
+      "why": "The extract states the cave was donated for the Ajivika sect, not the Jainas.",
+      "tryWriting": "The Lomas Rishi cave in the Barabar hills, with its chaitya-arch facade, was donated by Ashoka for the Ajivika sect.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "sourceRef": "r16",
+      "evidence": {
+       "wrongWords": "donated by Ashoka to the Jainas",
+       "sourceWords": "The cave was donated by Ashoka for the Ajivika sect."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Add a sentence discussing how this period transitioned from wood to stone or how it integrated diverse religious traditions into a unified imperial style.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer is primarily descriptive and lacks a balanced discussion on the limitations or the specific transitionary nature of this 'new phase' beyond just listing examples.",
+      "tryWriting": "This shift represented a transition from perishable materials to permanent stone, allowing for the integration of diverse religious symbols into a unified imperial aesthetic.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Mauryan rule, especially under Ashoka in the third century BCE, saw stone art on a monumental scale.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It establishes the historical context and the shift to monumental stone art."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the historical context of the Mauryan period and the scale of stone art without repeating the question."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions monumental scale, it does not explicitly state how this marked a 'new phase' compared to previous traditions.",
+        "fix": "Specify that this period introduced a shift toward monumental stone construction and sophisticated polishing techniques.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Ashoka erected polished stone pillars bearing his inscriptions, crowned by animal capitals such as the bull, lion and elephant.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The extract confirms that Ashoka erected stone pillars with inscriptions and that the top portion was carved with capital figures like the bull, lion, and elephant."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Unlike Achaemenid pillars assembled in pieces by masons, Mauryan pillars were monolithic.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the shift to monolithic rock-cut pillars as a distinct technical advancement over previous styles."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a comparative analysis by distinguishing Mauryan monolithic pillars from Achaemenid assembled pillars to highlight the 'new phase' of craftsmanship."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The student correctly distinguishes Mauryan pillars from Achaemenid ones by highlighting the monolithic construction technique."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Sarnath Lion Capital, with four addorsed lions, commemorates the Buddha's enlightenment at Bodh Gaya.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific example of a capital and its historical context to support the claim about stone sculpture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The capital commemorates the first sermon or Dhammachakrapravartana at Sarnath, not the enlightenment at Bodh Gaya.",
+        "fix": "commemorates the first sermon or Dhammachakrapravartana by the Buddha at Sarnath",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "unsupported",
+        "kindLabel": "Unsupported",
+        "reason": "The sentence claims the capital commemorates the Buddha's enlightenment at Bodh Gaya, but the provided materials do not confirm this specific historical narrative.",
+        "fix": "Remove the specific claim about the location of enlightenment unless confirmed by your source.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Its abacus bears an elephant, a bull, a horse and a lion between wheels, and the capital became the National Emblem.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student correctly identifies the four animals on the abacus and the status of the capital as the National Emblem."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Yaksha and Yakshi images, such as the polished sandstone Didarganj Yakshi holding a chauri, reflect popular folk cults.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the social and religious dimension by linking sculpture to popular folk cults."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Lomas Rishi cave in the Barabar hills, with its chaitya-arch facade, was donated by Ashoka to the Jainas.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence provides a specific example of early rock-cut architecture and its religious patronage."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It provides a specific example of rock-cut architecture from the period."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The student identifies a specific rock-cut cave and its architectural feature, which supports the claim of a new phase in rock-cut architecture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states the cave was donated for the Ajivika sect, not the Jainas.",
+        "fix": "The cave was donated by Ashoka for the Ajivika sect.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Blending royal patronage with popular cults, Mauryan art laid the foundation for later stupa sculpture at Bharhut and Sanchi, and its sites today merit careful conservation.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It discusses the historical significance by explaining how Mauryan art laid the foundation for later developments in stupa sculpture."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the historical continuity and evolution of art by linking Mauryan work to later developments."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the Mauryan period to the subsequent development of stupa sculpture, showing the historical progression of the art form."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of conservation is a modern administrative concern and does not help discuss the historical phase of Mauryan art.",
+        "fix": "Remove the sentence about modern conservation to maintain focus on historical art.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive and lacks a balanced discussion on the limitations or the specific transitionary nature of this 'new phase' beyond just listing examples.",
+      "fix": "Add a sentence discussing how this period transitioned from wood to stone or how it integrated diverse religious traditions into a unified imperial style.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a specific discussion on the political dimension, such as how these monuments served as tools for imperial communication or state authority.",
+      "fix": "Add a sentence explaining how monumental pillars and inscriptions served as a medium for royal edicts and state communication.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention the specific distinction between Vihars (residential halls) and Chaitya halls (prayer halls) which were developed during this period.",
+      "fix": "Include a sentence explaining the development of Vihars as residential halls and Chaitya halls as prayer halls.",
+      "fixNumber": null,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer describes various types of art but does not explicitly explain the 'why' or 'how' of the transition from previous styles to this new phase.",
+      "fix": "Explain how royal patronage and the shift toward monumental stone work facilitated this transition from earlier traditions.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "Unlike Achaemenid pillars assembled in pieces by masons, Mauryan pillars were monolithic.",
+      "reason": "The sentence correctly identifies the shift to monolithic rock-cut pillars as a distinct technical advancement over previous styles."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides excellent descriptive evidence of Mauryan achievements but leans towards a list of facts rather than a balanced discussion of the shift in artistic evolution."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt, focusing on the transition to monumental stone work and specific architectural styles."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the artistic and social dimensions well but misses the political significance of these monuments as tools of statecraft."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The student correctly distinguishes Mauryan pillars from Achaemenid ones by highlighting the monolithic construction technique."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer accurately distinguishes Mauryan monolithic pillars from Achaemenid styles and provides specific examples of rock-cut architecture."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported by specific examples of pillars, sculptures, and caves. Including a specific example for the general opening statement would further strengthen the argument."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the monolithic nature of pillars and specific rock-cut examples. However, it misses the specific architectural distinction between Vihars and Chaitya halls."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have listed excellent examples of Mauryan art, but you need to more clearly articulate the causal link between the shift in patronage/technique and the emergence of a 'new phase'."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a descriptive 'discuss' prompt rather than a 'critically evaluate' prompt, so a balanced argument regarding trade-offs is not strictly required."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good historical overview but the concluding suggestion is too vague to be a workable policy or action."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear introduction, a detailed body, and a conclusion that looks toward the future."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terms like 'monolithic' and 'chaitya-arch' which demonstrate a good grasp of the subject matter."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word count well to cover both sculpture and rock-cut architecture. Removing the modern conservation point would make the conclusion more relevant to the prompt."
+     }
+    ],
+    "stats": {
+     "words": 163,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 48
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "The rock-cut elephant at Dhauli in Odisha, beside an Ashokan edict, shows modelling in the round."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.09
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 3 (Arts of the Mauryan Period)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 1 (Indian Architecture, Sculpture and Pottery), Indian Architecture",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 7,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

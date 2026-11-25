@@ -1,0 +1,624 @@
+{
+ "case": "hist-ashoka-dhamma",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: appointed special officers called rajukas": true,
+  "cited: appointed special officers called rajukas": false,
+  "no red marks on correct sentences": true,
+  "trap not red: deciphered by James Prinsep in the late 1830s": true
+ },
+ "seconds": 6408.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-ashoka-dhamma"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-ashoka-dhamma",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "You successfully demonstrated that Dhamma was a social code by highlighting specific moral behaviors and the absence of sectarian goals like nirvana. However, the answer lacks a clear concluding synthesis and fails to define the contrast between a sectarian creed and a social ethic. You should first verify the specific title of the officers appointed to spread Dhamma, as the term used may be incorrect.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Ashoka's Dhamma was a code of social ethics rather than a sectarian creed. Examine. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "After the Kalinga war, Ashoka inscribed messages on rocks and polished pillars to proclaim his dhamma, a set of moral principles meant to hold together a vast empire.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its content was simple: respect for elders, generosity towards Brahmanas and renouncers, kindness to slaves and servants, and respect for other religions.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Though personally a Buddhist, Ashoka did not impose his faith and made gifts even to non-Buddhist sects.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "He promised heaven to those who behaved well but never spoke of nirvana, the Buddhist goal.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "To spread the message of dhamma, Ashoka appointed special officers called rajukas.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Most edicts used Prakrit in the Brahmi script, while some in the north-west used Kharosthi, Aramaic or Greek.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Dhamma also served the state, for Ashoka retained Kalinga and warned forest peoples against violating the social order.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "These edicts, deciphered by James Prinsep in the late 1830s, remain our main source on his ideas.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Ashoka's blend of ethics and statecraft still inspires India, whose national emblem comes from his lion capital at Sarnath.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "Ashoka's Dhamma was a code of social ethics rather than a sectarian creed.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully distinguished between personal faith and public policy by highlighting the lack of sectarian goals like nirvana. The list of moral behaviors provides strong evidence for the 'social ethics' aspect of the question.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s4"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Verify the specific title of the officers appointed to spread Dhamma.",
+      "where": "Facts are accurate",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "To spread the message of dhamma, Ashoka appointed special officers called rajukas."
+      },
+      "why": "The term 'rajukas' refers to village headmen or local administrators in later periods; the student should check the specific term used for officers appointed to spread Dhamma.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Add a concluding sentence that synthesizes how the focus on social harmony and tolerance over religious dogma confirms it as a code of ethics.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a clear concluding judgment or synthesis that explicitly weighs the 'social ethics' against the 'sectarian creed' to fulfill the 'examine' command.",
+      "tryWriting": "By prioritizing universal values like tolerance and social order over specific religious goals, Ashoka's Dhamma functioned as a pragmatic ethical framework for imperial stability rather than a sectarian doctrine.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Define a sectarian creed as a belief system tied to a specific religious group before explaining how Dhamma transcended such boundaries.",
+      "where": "Concepts explained",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer does not explicitly define what a 'sectarian creed' is in contrast to a 'social ethic' to establish the conceptual framework of the debate.",
+      "tryWriting": "Unlike a sectarian creed which demands adherence to a specific religious doctrine, Dhamma functioned as a universal code of social ethics.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "After the Kalinga war, Ashoka inscribed messages on rocks and polished pillars to proclaim his dhamma, a set of moral principles meant to hold together a vast empire.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It sets the context by explaining the origin and purpose of Dhamma without repeating the question."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Its content was simple: respect for elders, generosity towards Brahmanas and renouncers, kindness to slaves and servants, and respect for other religions.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence lists specific moral behaviors like respect and kindness, which directly supports the idea of a social code."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence provides specific examples of social behaviors like respect for elders and kindness to servants, which supports the 'social ethics' part of the prompt."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific examples of the moral principles included in the dhamma, such as respect for elders and kindness to servants."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Though personally a Buddhist, Ashoka did not impose his faith and made gifts even to non-Buddhist sects.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It supports the 'rather than a sectarian creed' part of the prompt by showing he did not impose his personal faith."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence highlights the non-sectarian nature of his actions by mentioning his support for non-Buddhist sects."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence accurately notes that Ashoka did not impose his personal faith and provided support to non-Buddhist sects."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "He promised heaven to those who behaved well but never spoke of nirvana, the Buddhist goal.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "By highlighting the absence of the specific Buddhist goal of nirvana, this sentence proves the teachings were not a sectarian creed."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a specific piece of evidence that his teachings were not focused on Buddhist goals like nirvana."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the distinction between a religious goal (nirvana) and a moral promise (heaven), supporting the argument that it was not a sectarian creed."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "To spread the message of dhamma, Ashoka appointed special officers called rajukas.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The term 'rajukas' refers to village headmen or local administrators in later periods; the student should check the specific term used for officers appointed to spread Dhamma.",
+        "fix": "Verify the specific title of the officers appointed to spread Dhamma.",
+        "fixNumber": 1,
+        "source": null
+       },
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of rajukas explains the administration of the message but does not directly explain why the content was a social ethic rather than a creed.",
+        "fix": "Explain that these officers were tasked with ensuring the social order and moral conduct of the people.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Most edicts used Prakrit in the Brahmi script, while some in the north-west used Kharosthi, Aramaic or Greek.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The description of scripts and languages is a linguistic fact that does not directly address whether the Dhamma was a social ethic or a sectarian creed.",
+        "fix": "Remove the sentence or link it to how the use of local scripts helped spread the social message.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Dhamma also served the state, for Ashoka retained Kalinga and warned forest peoples against violating the social order.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly notes that the teachings were intended to maintain the existing social order."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence identifies a trade-off where Dhamma served the state's interests by maintaining the social order and retaining territory."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The link between retaining Kalinga and the definition of Dhamma as social ethics is not clearly explained.",
+        "fix": "Explain how maintaining the social order through Dhamma served as a tool for political stability.",
+        "fixNumber": null,
+        "source": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "These edicts, deciphered by James Prinsep in the late 1830s, remain our main source on his ideas.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "Mentioning the historian who deciphered the edicts is a historical fact that does not contribute to the analysis of the content of the Dhamma.",
+        "fix": "Remove this sentence to focus more on the content of the ethics.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Ashoka's blend of ethics and statecraft still inspires India, whose national emblem comes from his lion capital at Sarnath.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by linking historical ethics to modern national identity."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a clear concluding judgment or synthesis that explicitly weighs the 'social ethics' against the 'sectarian creed' to fulfill the 'examine' command.",
+      "fix": "Add a concluding sentence that synthesizes how the focus on social harmony and tolerance over religious dogma confirms it as a code of ethics.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The answer does not explicitly define what a 'sectarian creed' is in contrast to a 'social ethic' to establish the conceptual framework of the debate.",
+      "fix": "Define a sectarian creed as a belief system tied to a specific religious group before explaining how Dhamma transcended such boundaries.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer could further explore the tension between individual moral freedom and the state's use of Dhamma as a tool for political stability.",
+      "fix": "Mention how the focus on social order might have limited the radical spiritual freedom of the individual.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to distinguish between the 'social ethics' aspect and the 'sectarian creed' aspect.",
+      "fix": "Use a connecting phrase to explicitly contrast the ethical nature of the teachings with the lack of sectarian requirements.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s2",
+      "quote": "Its content was simple: respect for elders, generosity towards Brahmanas and renouncers, kindness to slaves and servants, and respect for other religions.",
+      "reason": "This sentence lists specific moral behaviors like respect and kindness, which directly supports the idea of a social code."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s4",
+      "quote": "He promised heaven to those who behaved well but never spoke of nirvana, the Buddhist goal.",
+      "reason": "By highlighting the absence of the specific Buddhist goal of nirvana, this sentence proves the teachings were not a sectarian creed."
+     },
+     {
+      "where": "Covered the key angles",
+      "sourceId": "s3",
+      "quote": "Though personally a Buddhist, Ashoka did not impose his faith and made gifts even to non-Buddhist sects.",
+      "reason": "This sentence highlights the non-sectarian nature of his actions by mentioning his support for non-Buddhist sects."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good evidence for the 'social ethics' side but lacks a final evaluative judgment to conclude the examination."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well on topic by focusing on the content of the edicts and the ruler's intent. However, some sentences about scripts and historians are unnecessary for this specific question."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence provides specific examples of social behaviors like respect for elders and kindness to servants, which supports the 'social ethics' part of the prompt."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully identified specific behaviors that constitute the social ethics of Dhamma. However, the answer would be stronger if you explicitly contrasted these with the characteristics of a sectarian creed."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies key evidence that Dhamma was a social code, such as the omission of nirvana and the support for multiple sects. However, the specific terminology for the officers appointed to spread the message needs verification."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific contrasts to distinguish between a religious creed and a social code. Adding more detail on how the state enforced these ethics would strengthen the argument."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence correctly identifies that Ashoka did not preach nirvana, which distinguishes his teachings from specific Buddhist goals."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links the absence of sectarian goals to the presence of universal moral principles. Strengthening the connection between statecraft and social order would improve the argument."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You successfully identified the practical limits of Ashoka's religious expression and the state's role in enforcing social order. To improve, you could briefly mention the tension between personal spiritual goals and state-mandated social stability."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear introduction and a relevant conclusion. To improve, ensure the body clearly distinguishes between the ethical components and the evidence against it being a sectarian creed."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong, specific terminology to distinguish between religious goals and social ethics. Refining the role of the officials would improve administrative clarity."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove historical facts about scripts and decipherers to make more room for analyzing the ethical nature of the Dhamma."
+     }
+    ],
+    "stats": {
+     "words": 167,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 50
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 18 (The Maurya Age)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 8,
+     "overturned": 5,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

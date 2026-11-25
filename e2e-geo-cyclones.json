@@ -1,0 +1,671 @@
+{
+ "case": "geo-cyclones",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: Tropical cyclones move from west to east": true,
+  "cited: Tropical cyclones move from west to east": true,
+  "no red marks on correct sentences": false,
+  "trap not red: willy-willies in north-western Australia": false
+ },
+ "seconds": 9572.2,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-cyclones"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-cyclones",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You correctly identified the geographical origins and land/sea formation differences for both cyclone types. However, you lost credit due to incorrect movement directions and a failure to mention that extra-tropical cyclones cover a larger area. You should first correct the directions of movement and remove the sentence about nomenclature to save space for technical details.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Differentiate between tropical cyclones and extra-tropical (temperate) cyclones with respect to their origin, structure and behaviour. (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Tropical and extra-tropical cyclones are both low-pressure systems with rotating winds, but they differ in origin, structure and behaviour.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Tropical cyclones originate over warm tropical oceans, whereas extra-tropical cyclones form along the polar front in the middle and high latitudes.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Extra-tropical cyclones have a clear frontal system with warm and cold fronts, which tropical cyclones lack.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Extra-tropical cyclones can originate over land or sea, while tropical cyclones form only over the seas and dissipate on reaching land.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Tropical cyclones affect a smaller area but have much higher wind speeds and are more destructive, with a calm central eye.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Tropical cyclones move from west to east, whereas extra-tropical cyclones move from east to west.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Because they need the Coriolis force, tropical cyclones do not form close to the equator.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "They are called hurricanes in the Atlantic, typhoons in the western Pacific and willy-willies in north-western Australia.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "As India's east coast is cyclone-prone, early warning, shelters and mangrove restoration remain key to reducing losses.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "between tropical cyclones and extra-tropical (temperate) cyclones with respect to their origin",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the primary geographical and environmental origins for both cyclone types.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s4"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "structure",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified the presence of fronts and the central eye as key structural differences. To improve, you could also mention the difference in the physical size or area covered by these systems.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "and behaviour",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the differences in movement direction and spatial scale. To improve, ensure you focus strictly on behavioral dynamics like speed and intensification rates.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s6"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Correct the directions of movement for both cyclone types.",
+      "where": "Did what the question asks",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "Tropical cyclones move from west to east, whereas extra-tropical cyclones move from east to west."
+      },
+      "why": "The statement regarding the direction of movement is incorrect; tropical cyclones generally move from east to west, while extra-tropical cyclones move from west to east.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Remove this sentence to save space for more technical details.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "They are called hurricanes in the Atlantic, typhoons in the western Pacific and willy-willies in north-western Australia."
+      },
+      "why": "This sentence provides nomenclature rather than the required differentiation of origin, structure, or behavior, wasting space.",
+      "tryWriting": "Tropical cyclones are characterized by a calm central eye and higher wind speeds, while extra-tropical cyclones cover a larger geographical area.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Mention that extra-tropical cyclones cover a larger area.",
+      "where": "Constitution and textbook basics",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer fails to mention that extra-tropical cyclones cover a larger area compared to tropical cyclones, which is a key structural difference.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "sourceRef": "r1",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Tropical and extra-tropical cyclones are both low-pressure systems with rotating winds, but they differ in origin, structure and behaviour.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a clear context by defining both systems as low-pressure systems before starting the comparison."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Tropical cyclones originate over warm tropical oceans, whereas extra-tropical cyclones form along the polar front in the middle and high latitudes.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies the geographical origin of tropical cyclones as warm tropical oceans and extra-tropical cyclones as the polar front."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence correctly differentiates the origin of both cyclone types by mentioning the tropical oceans versus the polar front."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly addresses the origin of both cyclone types as requested by the prompt."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Extra-tropical cyclones have a clear frontal system with warm and cold fronts, which tropical cyclones lack.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly identifies the presence of a frontal system in extra-tropical cyclones and its absence in tropical cyclones."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence identifies a key structural difference regarding the presence of frontal systems."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Accurately explains the structural difference regarding the presence of frontal systems in extra-tropical cyclones."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims tropical cyclones lack a frontal system, but the source material indicates that the distinction is that extra-tropical cyclones have a clear frontal system which is not present in tropical cyclones.",
+        "fix": "State that extra-tropical cyclones possess a clear frontal system of warm and cold fronts, a feature absent in tropical cyclones.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Extra-tropical cyclones can originate over land or sea, while tropical cyclones form only over the seas and dissipate on reaching land.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies that extra-tropical cyclones can form over land or sea, while tropical cyclones are restricted to seas."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Tropical cyclones affect a smaller area but have much higher wind speeds and are more destructive, with a calm central eye.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly identifies the structural feature of a calm central eye in tropical cyclones."
+       },
+       {
+        "where": "Part 3",
+        "reason": "The sentence correctly identifies the difference in the spatial scale and wind intensity of the two systems."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 3",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The description of the 'calm central eye' is a structural feature rather than a behavioral characteristic.",
+        "fix": "Add a point about the rate of intensification or the speed of movement to further describe behavior.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Tropical cyclones move from west to east, whereas extra-tropical cyclones move from east to west.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "The sentence correctly identifies the difference in the direction of movement for these cyclones."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Did what the question asks",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The statement regarding the direction of movement is incorrect; tropical cyclones generally move from east to west, while extra-tropical cyclones move from west to east.",
+        "fix": "Correct the directions of movement for both cyclone types.",
+        "fixNumber": 1,
+        "source": null
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims specific directions of movement for both cyclone types which is not mentioned in the provided source.",
+        "fix": "Remove the specific directions of movement as they are not supported by the text.",
+        "fixNumber": null,
+        "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "They are called hurricanes in the Atlantic, typhoons in the western Pacific and willy-willies in north-western Australia.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific regional names for tropical cyclones, which serves as a valid example of their classification."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "This sentence provides nomenclature rather than the required differentiation of origin, structure, or behavior, wasting space.",
+        "fix": "Remove this sentence to save space for more technical details.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s9",
+      "text": "As India's east coast is cyclone-prone, early warning, shelters and mangrove restoration remain key to reducing losses.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting mitigation measures like mangrove restoration."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence lists measures like early warning and shelters but does not specify who should implement them or the specific context of the cyclone-prone coast.",
+        "fix": "Specify that the government should implement early warning systems and community shelters along the east coast.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Stayed on topic",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "This sentence discusses disaster management and mitigation strategies, which is outside the scope of the question's requirement to differentiate between cyclone types.",
+        "fix": "Remove this sentence to stay focused on the physical differences between the cyclones.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Use of space",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The conclusion focuses on mitigation strategies rather than completing the comparison of behavior.",
+        "fix": "Replace this with a sentence comparing the movement or speed of the two systems.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "between tropical cyclones and extra-tropical (temperate) cyclones with respect to their origin",
+      "reason": "The answer does not mention the specific atmospheric conditions like temperature gradients or moisture levels that drive these origins.",
+      "fix": "Mention that tropical cyclones require warm sea surfaces while extra-tropical cyclones are driven by temperature gradients between air masses.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "partId": "p2",
+      "where": "Part 2",
+      "partText": "structure",
+      "reason": "The answer does not mention the relative size or spatial extent of the two cyclone types as a structural difference.",
+      "fix": "Add a point comparing the spatial scale of the two systems.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)"
+     }
+    ],
+    "additions": [
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer fails to mention that extra-tropical cyclones cover a larger area compared to tropical cyclones, which is a key structural difference.",
+      "fix": "Mention that extra-tropical cyclones cover a larger area.",
+      "fixNumber": 3,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)"
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear organizational structure like a table or distinct subheadings to separate the three required dimensions (origin, structure, behaviour).",
+      "fix": "Use subheadings or a table to clearly separate origin, structure, and behaviour.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Tropical cyclones originate over warm tropical oceans, whereas extra-tropical cyclones form along the polar front in the middle and high latitudes.",
+      "reason": "Correctly identifies the geographical origin of tropical cyclones as warm tropical oceans and extra-tropical cyclones as the polar front."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s4",
+      "quote": "Extra-tropical cyclones can originate over land or sea, while tropical cyclones form only over the seas and dissipate on reaching land.",
+      "reason": "Correctly identifies that extra-tropical cyclones can form over land or sea, while tropical cyclones are restricted to seas."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully identifies the differences in origin and structure. However, the description of the movement behavior is factually incorrect."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays mostly on topic but includes a concluding sentence about disaster management that is irrelevant to the specific question asked."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the primary geographical and structural differences well. Including the difference in the spatial scale would make the comparison more complete."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The core concepts of origin and structure are well-explained. However, the description of movement behavior contains a factual error regarding direction."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The descriptions of origin and structure are accurate and well-supported. However, the claim regarding the direction of movement is factually incorrect."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good general classifications but would be strengthened by including specific data or a named coastal management project to support the concluding point."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the frontal systems and the geographical origins of both cyclone types. However, avoid adding specific directional movements that are not supported by the reference material."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the structural and geographical origins but contains a significant error regarding the direction of movement for extra-tropical cyclones."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The suggestions provided are relevant to disaster management but lack specific actors and locations to be fully workable."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains all necessary components but lacks clear structural organization between the different dimensions of the question."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The use of technical terms like 'polar front' and 'frontal system' is excellent. However, the directional movement of extra-tropical cyclones is factually incorrect."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove the list of names and the concluding sentence about mitigation to focus entirely on the technical differences requested."
+     }
+    ],
+    "stats": {
+     "words": 162,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 42
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 37
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 36
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "Because they need the Coriolis force, tropical cyclones do not form close to the equator."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.08
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 10,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "balance"
+     ]
+    },
+    "qa": {
+     "falseRed": [
+      "They are called hurricanes in the Atlantic, typhoons in the western Pacific and willy-willies in north-western Australia.",
+      "As India's east coast is cyclone-prone, early warning, shelters and mangrove restoration remain key to reducing losses."
+     ],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

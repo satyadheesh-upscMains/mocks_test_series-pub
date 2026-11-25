@@ -1,0 +1,666 @@
+{
+ "case": "geo-ghats",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: highest peak of Peninsular India": true,
+  "trap not red: their windward slopes receive heavy orographic rain": true
+ },
+ "seconds": 5888.7,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-ghats"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-ghats",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer correctly identifies the height and continuity of the Western Ghats and explains the orographic rainfall and rain-shadow effects. However, it fails to explicitly compare how the physical characteristics of the Eastern Ghats specifically influence drainage or climate. To improve, you should first add a sentence comparing the Western Ghats as a primary water divide against the dissected nature of the Eastern Ghats.",
+    "levelWhy": [
+     "It makes 4 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Compare the Western Ghats and the Eastern Ghats in terms of their relief and continuity, and bring out their influence on the drainage and climate of Peninsular India. (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Western and Eastern Ghats form the western and eastern edges of the Deccan Plateau, yet they differ markedly in height, continuity and influence.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Western Ghats are higher and more continuous, and their height increases from north to south.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "They are known locally as the Sahyadri in Maharashtra and as the Anaimalai and Cardamom hills in Kerala.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Anaimudi in the Anaimalai hills is the highest peak of Peninsular India, followed by Dodabetta in the Nilgiris.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The Eastern Ghats are low, discontinuous hills, heavily dissected by the Mahanadi, Godavari, Krishna and Kaveri.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "The two ranges meet in the Nilgiri hills.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Western Ghats are the main water divide of the Peninsula, and the Godavari, Krishna and Kaveri rise there.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Lying across the Arabian Sea monsoon, their windward slopes receive heavy orographic rain, while the Deccan interior lies in a rain-shadow.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "As a biodiversity hotspot and a source of major rivers, the Western Ghats, like the highly eroded Eastern Ghats, need landscape-level conservation.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the Western Ghats and the Eastern Ghats in terms of their relief and continuity",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer provides a clear contrast between the two ranges regarding their height and physical continuity.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s5"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "bring out their influence on the drainage and climate of Peninsular India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully addressed both the drainage and climate aspects by identifying the water divide and the rain-shadow effect. To improve, you could more explicitly contrast the drainage patterns of the two ranges.",
+      "checkedTwice": false,
+      "sentences": [
+       "s7",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Add a sentence comparing how the Western Ghats act as a primary water divide while the Eastern Ghats are dissected by major rivers.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer describes the features but does not explicitly 'compare' the influence on drainage and climate by showing the relationship between the two ranges.",
+      "tryWriting": "While the Western Ghats act as a primary water divide and a barrier for monsoon rains, the Eastern Ghats are more heavily dissected by rivers, showing a different role in the drainage system.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Add a sentence explaining how the discontinuous nature of the Eastern Ghats allows for different drainage patterns or less significant rain-shadow effects compared to the Western Ghats.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer fails to explain how the physical characteristics of the Eastern Ghats (low and discontinuous) specifically influence the drainage or climate of the peninsula.",
+      "tryWriting": "The discontinuous and lower elevation of the Eastern Ghats allows for more extensive river drainage through the range compared to the Western Ghats.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Make about 5 distinct points in the body; it has 4.",
+      "where": "Structure",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "Make about 5 distinct points in the body; it has 4.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Western and Eastern Ghats form the western and eastern edges of the Deccan Plateau, yet they differ markedly in height, continuity and influence.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence establishes the geographical context and introduces the comparison of the two ranges."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the geographical context of the Deccan Plateau without repeating the question's wording."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence introduces the idea of differences in height and continuity but does not specify the direction of these differences.",
+        "fix": "Specify that the Western Ghats are higher and more continuous than the Eastern Ghats.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Western Ghats are higher and more continuous, and their height increases from north to south.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies that the Western Ghats are higher and more continuous than the Eastern Ghats and notes the north-to-south height increase."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence provides a clear comparison of the height and continuity of the Western Ghats as requested by the first part of the question."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the relief and continuity aspect of the Western Ghats."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "They are known locally as the Sahyadri in Maharashtra and as the Anaimalai and Cardamom hills in Kerala.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific local names for the Western Ghats, which serves as geographical evidence for the relief description."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies the local names for the Western Ghats in Maharashtra and Kerala as stated in the textbook."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence provides local names which do not directly address the relief, continuity, or drainage/climate aspects of the question.",
+        "fix": "Remove the local names to save space for more analysis on climate influence.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Anaimudi in the Anaimalai hills is the highest peak of Peninsular India, followed by Dodabetta in the Nilgiris.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the highest peak of the Peninsular plateau and its location."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific peak names and their relative heights to support the claim about the elevation of the Western Ghats."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that Dodabetta is the second highest peak of Peninsular India, but the source indicates that Dodabetta is located on the Nilgiri hills, which are part of the meeting point of the two ranges, not necessarily the second highest peak of the entire peninsula.",
+        "fix": "Verify the ranking of peaks in the Peninsular plateau using a reliable geographical source.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The Eastern Ghats are low, discontinuous hills, heavily dissected by the Mahanadi, Godavari, Krishna and Kaveri.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly describes the Eastern Ghats as low and discontinuous hills that are dissected by major rivers."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly explains the relief and continuity of the Eastern Ghats by describing them as low and discontinuous hills."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'dissected' is a precise geographical term to describe the broken nature of the Eastern Ghats."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the Eastern Ghats are dissected by the Godavari and Krishna, but the source indicates the Western Ghats act as the water divide for these rivers.",
+        "fix": "Clarify that the Western Ghats act as the water divide for these rivers while the Eastern Ghats are dissected by them.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "The two ranges meet in the Nilgiri hills.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The Western and Eastern Ghats do not meet; they are separated by the Deccan Plateau.",
+        "fix": "Remove the claim that the ranges meet.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Western Ghats are the main water divide of the Peninsula, and the Godavari, Krishna and Kaveri rise there.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Correctly identifies the Western Ghats as the primary water divide for major rivers in the peninsula."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims the Godavari, Krishna, and Kaveri rise in the Western Ghats, but the source indicates the Western Ghats act as the divide for rivers discharging into the Bay of Bengal, which are the eastern-flowing rivers.",
+        "fix": "Clarify that these rivers originate in the Western Ghats but flow eastward towards the Bay of Bengal.",
+        "fixNumber": null,
+        "source": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Lying across the Arabian Sea monsoon, their windward slopes receive heavy orographic rain, while the Deccan interior lies in a rain-shadow.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Explains the influence on climate by describing the orographic rainfall on the windward slopes and the rain-shadow effect on the interior."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence correctly identifies the climatic influence of the Western Ghats on rainfall patterns and the resulting rain-shadow effect."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "As a biodiversity hotspot and a source of major rivers, the Western Ghats, like the highly eroded Eastern Ghats, need landscape-level conservation.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking statement regarding conservation rather than just summarizing the body."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of biodiversity and conservation is outside the scope of the question which asks for relief, continuity, drainage, and climate.",
+        "fix": "Remove the mention of biodiversity and conservation to stay focused on physical geography.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "the Western Ghats and the Eastern Ghats in terms of their relief and continuity",
+      "reason": "The student could have explicitly mentioned the average elevation of the Western Ghats to provide a more precise comparison of relief.",
+      "fix": "Include the average elevation of the Western Ghats in the comparison.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)"
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer describes the features but does not explicitly 'compare' the influence on drainage and climate by showing the relationship between the two ranges.",
+      "fix": "Add a sentence comparing how the Western Ghats act as a primary water divide while the Eastern Ghats are dissected by major rivers.",
+      "fixNumber": 1,
+      "source": null
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer fails to explain how the physical characteristics of the Eastern Ghats (low and discontinuous) specifically influence the drainage or climate of the peninsula.",
+      "fix": "Add a sentence explaining how the discontinuous nature of the Eastern Ghats allows for different drainage patterns or less significant rain-shadow effects compared to the Western Ghats.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Make about 5 distinct points in the body; it has 4.",
+      "fix": "Make about 5 distinct points in the body; it has 4.",
+      "fixNumber": 3,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer is slightly over the word limit, suggesting that some descriptive details should be condensed to allow for more depth on the drainage and climate impacts.",
+      "fix": "Condense the geographical descriptions to ensure the answer stays under 150 words.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "The Western Ghats are higher and more continuous, and their height increases from north to south.",
+      "reason": "This sentence correctly identifies that the Western Ghats are higher and more continuous than the Eastern Ghats and notes the north-to-south height increase."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s8",
+      "quote": "Lying across the Arabian Sea monsoon, their windward slopes receive heavy orographic rain, while the Deccan interior lies in a rain-shadow.",
+      "reason": "Explains the influence on climate by describing the orographic rainfall on the windward slopes and the rain-shadow effect on the interior."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good descriptive details for both ranges but lacks a direct comparative analysis of their climatic and drainage influences."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays on topic for the most part, but the final sentence introduces a conservation theme that is not requested by the prompt."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly explains the relief and continuity of the Western Ghats by mentioning their higher elevation and north-to-south height increase."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly identifies the physical characteristics of both ranges but makes a significant geographical error regarding the drainage direction of the major rivers."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific geographical names and peaks to support the relief description. To improve, more specific evidence regarding the drainage patterns (like the specific direction of flow) could be strengthened."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly identifies that the Western Ghats are higher and more continuous than the Eastern Ghats and that their height increases from north to south."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully explained the climatic impact of the Western Ghats, but you did not provide a comparative causal link for the Eastern Ghats."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a descriptive and analytical geographical comparison rather than a policy or socio-economic debate. Therefore, there are no specific trade-offs or counter-arguments required by the prompt."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a general concluding thought rather than a specific, workable policy or action plan."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "Make about 5 distinct points in the body; it has 4."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The use of technical geographical terms like 'dissected' and 'continuous' is excellent. Minor improvements in specifying the exact area of the rain-shadow would enhance precision."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses the space well to describe the physical features, but it exceeds the word limit. Removing local names would provide more room to expand on the climate and drainage impacts."
+     }
+    ],
+    "stats": {
+     "words": 162,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 32
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 40
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.08
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 2 (Structure and Physiography)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It makes 4 distinct points; about 5 are expected.",
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

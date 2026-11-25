@@ -1,0 +1,615 @@
+{
+ "case": "eco-balance-of-payments",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: The balance of trade is the difference between the value of exports and imports of goods and services": false,
+  "cited: The balance of trade is the difference between the value of exports and imports of goods and services": false,
+  "caught: Foreign direct investment and external commercial borrowings are recorded in the current account": false,
+  "cited: Foreign direct investment and external commercial borrowings are recorded in the current account": false,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 6281.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-balance-of-payments"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-balance-of-payments",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 and Part 2 need the most work.",
+    "summary": "You correctly identified that a current account deficit is financed by a net capital inflow and the use of foreign exchange reserves. However, both parts of the answer need significant work regarding the classification of transactions. You should first reclassify foreign direct investment and external commercial borrowings as capital account items rather than current account items.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check)."
+    ],
+    "formatNote": null,
+    "question": "Explain the structure of India's balance of payments. How is a current account deficit financed? (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The balance of payments records transactions between a country's residents and the rest of the world over a period, usually a year.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The current account records trade in goods and services, income flows and transfer payments.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The balance of trade is the difference between the value of exports and imports of goods and services.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Invisibles cover services such as software and tourism, factor income flows and transfers such as remittances.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The capital account records international transactions in assets such as shares, bonds and loans.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Foreign direct investment and external commercial borrowings are recorded in the current account because they bring in foreign exchange.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "A current account deficit must be financed by a net capital inflow, that is, a capital account surplus.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Any remaining gap is met by drawing down the RBI's foreign exchange reserves, an accommodating or below-the-line item.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Errors and omissions capture transactions that cannot be recorded accurately.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Financing deficits through stable FDI rather than volatile portfolio flows, with stronger exports, is key to external sustainability.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the structure of India's balance of payments",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the current and capital accounts. However, you incorrectly placed investment flows in the current account instead of the capital account.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s5"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "How is a current account deficit financed?",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the primary mechanisms of financing a deficit through capital inflows and reserves. However, you incorrectly categorized investment flows as current account items.",
+      "checkedTwice": false,
+      "sentences": [
+       "s7",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Reclassify foreign direct investment and external commercial borrowings as capital account transactions.",
+      "where": "Part 1",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "Foreign direct investment and external commercial borrowings are recorded in the current account because they bring in foreign exchange."
+      },
+      "why": "Foreign direct investment and external commercial borrowings are capital account items, not current account items.",
+      "tryWriting": "Foreign direct investment and external commercial borrowings are recorded in the capital account as they represent financial assets and liabilities.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Distinguish between current account items like trade and transfers, and capital account items like investments.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The current account records trade in goods and services, income flows and transfer payments."
+      },
+      "why": "The sentence incorrectly implies that foreign direct investment and external commercial borrowings are part of the current account, whereas these are capital account transactions.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Distinguish between services (invisibles) and factor income/transfers as separate components of the current account.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Invisibles cover services such as software and tourism, factor income flows and transfers such as remittances."
+      },
+      "why": "The sentence incorrectly classifies factor income flows and transfers as part of 'invisibles' in the context of the current account structure; while they are part of the current account, they are distinct from the 'invisible' category which specifically refers to services.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The balance of payments records transactions between a country's residents and the rest of the world over a period, usually a year.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly defines the balance of payments as a record of transactions between residents and the rest of the world over a period, which aligns with the textbook definition."
+       },
+       {
+        "where": "Structure",
+        "reason": "Provides a clear definition of the Balance of Payments to set the context."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The current account records trade in goods and services, income flows and transfer payments.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the components of the current account, which is a primary part of the BoP structure."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly identifies the three components of the current account: trade in goods and services, income flows, and transfer payments."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence correctly uses precise economic terms like 'income flows' and 'transfer payments' to define the current account."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence incorrectly implies that foreign direct investment and external commercial borrowings are part of the current account, whereas these are capital account transactions.",
+        "fix": "Distinguish between current account items like trade and transfers, and capital account items like investments.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Invisibles cover services such as software and tourism, factor income flows and transfers such as remittances.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific examples of invisibles like software and tourism to clarify the concept."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence incorrectly classifies factor income flows and transfers as part of 'invisibles' in the context of the current account structure; while they are part of the current account, they are distinct from the 'invisible' category which specifically refers to services.",
+        "fix": "Distinguish between services (invisibles) and factor income/transfers as separate components of the current account.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The capital account records international transactions in assets such as shares, bonds and loans.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the capital account as the other primary component of the BoP structure."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly defines the capital account as recording international transactions in assets like shares, bonds, and loans."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific examples of assets like shares, bonds, and loans to clarify the capital account."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the components of the capital account but does not explicitly state that these are international transactions or assets held by the country.",
+        "fix": "Specify that these are international transactions involving assets like shares, bonds, and loans.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Foreign direct investment and external commercial borrowings are recorded in the current account because they bring in foreign exchange.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "Foreign direct investment and external commercial borrowings are capital account items, not current account items.",
+        "fix": "Reclassify foreign direct investment and external commercial borrowings as capital account transactions.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "A current account deficit must be financed by a net capital inflow, that is, a capital account surplus.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Correctly identifies that a current account deficit is financed by a net capital inflow or capital account surplus."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the mechanism of how a current account deficit is financed by a capital account surplus."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies the primary causal link where a current account deficit necessitates a capital account surplus."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Any remaining gap is met by drawing down the RBI's foreign exchange reserves, an accommodating or below-the-line item.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "Correctly explains that remaining gaps are met by drawing down foreign exchange reserves."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the secondary method of financing a deficit through the use of foreign exchange reserves."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "Correctly identifies the role of official foreign exchange reserves in balancing the remaining deficit."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Financing deficits through stable FDI rather than volatile portfolio flows, with stronger exports, is key to external sustainability.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence identifies the trade-off between stable and volatile capital flows to ensure external sustainability."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies specific types of capital flows (stable FDI vs volatile portfolio flows) to improve external sustainability."
+       },
+       {
+        "where": "Structure",
+        "reason": "Offers a forward-looking conclusion regarding external sustainability."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion to use stronger exports is a general goal but lacks a specific mechanism or target for how this should be achieved to finance the deficit.",
+        "fix": "Specify a target sector or policy for export growth to address the current account deficit.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s7",
+      "quote": "A current account deficit must be financed by a net capital inflow, that is, a capital account surplus.",
+      "reason": "Correctly identifies that a current account deficit is financed by a net capital inflow or capital account surplus."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s8",
+      "quote": "Any remaining gap is met by drawing down the RBI's foreign exchange reserves, an accommodating or below-the-line item.",
+      "reason": "Correctly explains that remaining gaps are met by drawing down foreign exchange reserves."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the mechanisms for financing a deficit but contains a fundamental error regarding which account records investment flows."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the structure well but contains a significant technical error regarding where specific investment types are recorded."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the mechanics of financing a deficit but contains a fundamental error regarding which account records investment flows."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified the components of the current and capital accounts but made a significant error by placing investment flows in the current account."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly identifies the mechanism of financing a deficit through capital inflows and reserves. However, there is a significant classification error regarding where FDI and borrowings are recorded."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have used good illustrative examples for the components of the balance of payments. However, the answer lacks specific data or a target figure to ground the discussion in the Indian context."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly explained the mechanics of financing a deficit using capital inflows and reserves. However, you incorrectly categorized investment types in the current account."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The reasoning for how a deficit is financed is logically sound, but the classification of investment types is factually incorrect."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the trade-off between stable and volatile capital flows. However, it contains a fundamental error regarding which account records investment flows."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The suggestion regarding the type of capital inflow is specific and workable. However, the point about exports is a broad goal that needs a more concrete action plan."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The structure follows the required format with a clear introduction and conclusion. However, a major factual error regarding the classification of FDI disrupts the accuracy of the body."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses high-quality economic terminology for most components. However, there is a significant technical error regarding which account records investment flows."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     }
+    ],
+    "stats": {
+     "words": 167,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 47
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 55
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s3",
+       "text": "The balance of trade is the difference between the value of exports and imports of goods and services."
+      },
+      {
+       "sourceId": "s9",
+       "text": "Errors and omissions capture transactions that cannot be recorded accurately."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 6 (Open Economy Macroeconomics)",
+      "used": false
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 15 (External Sector in India), Introduction",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 0,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "presentation"
+     ]
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

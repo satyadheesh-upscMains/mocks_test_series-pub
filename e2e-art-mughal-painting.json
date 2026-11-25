@@ -1,0 +1,615 @@
+{
+ "case": "art-mughal-painting",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: reached its climax under Shah Jahan": false,
+  "cited: reached its climax under Shah Jahan": false,
+  "no red marks on correct sentences": false,
+  "trap not red: Mir Sayyid Ali and Abdus Samad": true
+ },
+ "seconds": 7801.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-mughal-painting"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-mughal-painting",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer successfully highlights the collaborative environment of artists from different faiths and provides specific names of Persian masters to show the origin of Persian influence. It effectively illustrates the synthesis by mentioning the inclusion of Indian themes and landscapes. To improve, you should first explain the specific mechanism of how Persian techniques integrated with indigenous themes and mention the karkhana system as the institutional framework for this synthesis.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Mughal painting was a confluence of Persian and Indian traditions. Discuss. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Mughal painting drew on Persian models but soon developed a distinctly Indian character.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Humayun took into his service two Persian masters, Mir Sayyid Ali and Abdus Samad, during his exile in Safavid Iran.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Under Akbar, they led an imperial karkhana where artists of both faiths, including Daswant and Basawan, worked together.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The atelier illustrated the Persian translation of the Mahabharata, the Razmnama, and the Akbarnama, bringing Indian themes and landscapes into the art.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Indian colours such as peacock blue and Indian red were adopted, and rounded brushwork giving a three-dimensional effect replaced the flatter Persian style.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Portuguese priests introduced European painting at Akbar's court, and techniques such as foreshortening were adopted.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Mughal painting reached its climax under Shah Jahan, whose discriminating eye could identify each artist's hand in a single picture.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Under Jahangir, portraiture and animal studies flourished, with Mansur the master of natural history painting.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Its legacy passed to the Rajput and Pahari schools, and it remains a model of creative synthesis.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "Mughal painting was a confluence of Persian and Indian traditions.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies the synthesis of styles by citing specific artistic techniques and collaborative environments. To improve, ensure the opening statement more clearly defines the nature of this 'confluence'.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Add a sentence discussing how the synthesis was not always seamless or how different regional styles reacted to this Mughal influence.",
+      "where": "Did what the question asks",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer is primarily descriptive and lacks a balanced discussion of the tensions or limitations of this confluence.",
+      "tryWriting": "While this synthesis created a unique imperial style, it also sparked a dialogue with indigenous traditions, leading to the development of distinct regional schools.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Mention how the imperial patronage and the karkhana system provided the institutional framework for this artistic synthesis.",
+      "where": "Covered the key angles",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer does not explicitly discuss the socio-political patronage or the specific administrative structures (like the karkhana system) that facilitated this confluence.",
+      "tryWriting": "The imperial karkhana system provided a structured environment where state patronage facilitated the fusion of Persian techniques with indigenous Indian themes.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how the integration of Persian techniques with indigenous themes created a unique synthesis.",
+      "where": "The question",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "Mughal painting drew on Persian models but soon developed a distinctly Indian character."
+      },
+      "why": "The sentence states the conclusion but does not explain the mechanism of confluence.",
+      "tryWriting": "Mughal painting emerged as a unique synthesis where Persian stylistic elements were integrated with indigenous Indian themes and techniques.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Mughal painting drew on Persian models but soon developed a distinctly Indian character.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence establishes the core thesis of the confluence by acknowledging both the Persian origin and the subsequent Indian character."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "The sentence directly addresses the confluence of Persian models and Indian character as requested by the prompt."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies the synthesis of Persian models with a distinct Indian character."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the conclusion but does not explain the mechanism of confluence.",
+        "fix": "Explain how the integration of Persian techniques with indigenous themes created a unique synthesis.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Humayun took into his service two Persian masters, Mir Sayyid Ali and Abdus Samad, during his exile in Safavid Iran.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the specific Persian masters brought into the service of Humayun."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides specific names of Persian masters and the location of their training to support the origin of the Persian influence."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Under Akbar, they led an imperial karkhana where artists of both faiths, including Daswant and Basawan, worked together.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It highlights the collaborative environment where artists of different faiths worked together to create imperial art."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the names of the artists and the collaborative nature of the imperial karkhana."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The extract confirms that a painting workshop was set up in imperial establishments (karkhanas) where both Hindus and Muslims joined in the work."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The atelier illustrated the Persian translation of the Mahabharata, the Razmnama, and the Akbarnama, bringing Indian themes and landscapes into the art.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence provides a specific example of how Indian themes and landscapes were integrated into the artistic output."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence illustrates the synthesis by mentioning the inclusion of Indian themes and landscapes into the art."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student names specific literary works and themes to illustrate how Indian content was integrated into the painting style."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Indian colours such as peacock blue and Indian red were adopted, and rounded brushwork giving a three-dimensional effect replaced the flatter Persian style.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It provides specific evidence of the synthesis by mentioning the adoption of Indian colors and the shift from flat Persian styles to three-dimensional Indian brushwork."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence provides depth by contrasting specific technical changes, such as the shift from flat Persian styles to three-dimensional rounded brushwork."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of specific technical terms like 'rounded brushwork' and 'three-dimensional effect' provides precise artistic detail."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the student mentions specific colors, the description of 'rounded brushwork' is a good observation but could be strengthened by mentioning the specific Indian artistic traditions it replaced or complemented.",
+        "fix": "Mention that these techniques integrated with indigenous Indian artistic traditions.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Portuguese priests introduced European painting at Akbar's court, and techniques such as foreshortening were adopted.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "unsupported",
+        "kindLabel": "Unsupported",
+        "reason": "The claim that Portuguese priests introduced European painting at Akbar's court is not supported by the provided materials.",
+        "fix": "Mention the influence of European techniques like foreshortening without attributing them to a specific group if not sure.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Mughal painting reached its climax under Shah Jahan, whose discriminating eye could identify each artist's hand in a single picture.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions a ruler's preference, it does not contribute to the specific argument of the confluence of Persian and Indian traditions.",
+        "fix": "Replace this with a sentence describing how the fusion of styles became a standardized imperial aesthetic.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Under Jahangir, portraiture and animal studies flourished, with Mansur the master of natural history painting.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "This sentence focuses on specific genres like portraiture rather than the synthesis of the two traditions requested by the prompt.",
+        "fix": "Briefly mention how these genres combined Persian realism with Indian decorative elements.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Its legacy passed to the Rajput and Pahari schools, and it remains a model of creative synthesis.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by discussing the legacy and synthesis of the art form."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive and lacks a balanced discussion of the tensions or limitations of this confluence.",
+      "fix": "Add a sentence discussing how the synthesis was not always seamless or how different regional styles reacted to this Mughal influence.",
+      "fixNumber": 1,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the socio-political patronage or the specific administrative structures (like the karkhana system) that facilitated this confluence.",
+      "fix": "Mention how the imperial patronage and the karkhana system provided the institutional framework for this artistic synthesis.",
+      "fixNumber": 2,
+      "source": null
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention the influence of the old Indian tradition of wall-paintings at Ajanta as a source of vigour for the painting tradition.",
+      "fix": "Mention the influence of the old Indian tradition of wall-paintings at Ajanta.",
+      "fixNumber": null,
+      "source": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting"
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or sub-heading to separate the discussion of Persian influences from Indian influences.",
+      "fix": "Use a connecting phrase to transition from the arrival of Persian masters to the integration of Indian elements.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "Under Akbar, they led an imperial karkhana where artists of both faiths, including Daswant and Basawan, worked together.",
+      "reason": "It highlights the collaborative environment where artists of different faiths worked together to create imperial art."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s4",
+      "quote": "The atelier illustrated the Persian translation of the Mahabharata, the Razmnama, and the Akbarnama, bringing Indian themes and landscapes into the art.",
+      "reason": "This sentence illustrates the synthesis by mentioning the inclusion of Indian themes and landscapes into the art."
+     },
+     {
+      "where": "Examples and evidence",
+      "sourceId": "s2",
+      "quote": "Humayun took into his service two Persian masters, Mir Sayyid Ali and Abdus Samad, during his exile in Safavid Iran.",
+      "reason": "The student provides specific names of Persian masters and the location of their training to support the origin of the Persian influence."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological description of the synthesis but remains largely descriptive. To fully 'discuss' the topic, you should briefly mention the complexities or the specific ways different regional traditions interacted with the Mughal style."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt throughout. Most sentences contribute directly to the theme of cultural synthesis."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer effectively covers the artistic and technical synthesis of the two traditions. It could be strengthened by briefly mentioning the institutional framework of the court that allowed this fusion to occur."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer does a good job of moving beyond naming the traditions by describing specific technical shifts and thematic syntheses."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The historical details regarding the Persian masters and the collaborative karkhana are well-supported. You should verify the specific role of Portuguese priests in the court's artistic development."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported with specific names of artists, literary works, and technical details. To improve, ensure the transition between Persian and Indian elements is clearly linked to the evolution of the style."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer effectively captures the synthesis of Persian and Indian elements. Including the historical depth of Indian wall-paintings would strengthen the argument regarding the 'Indian' side of the confluence."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully links the presence of Persian masters and the inclusion of Indian themes to the creation of a unique synthesis. To improve, more clearly articulate the transition from Persian influence to a blended style."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question asks for a discussion, which usually implies looking at the nuances of the synthesis. The answer focuses well on the 'how' but misses the 'limits' of this confluence."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear opening and a concluding statement on the legacy of the art. To improve, ensure the transition between the two traditions is more explicitly balanced in the body."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong technical vocabulary regarding art techniques and specific historical titles. Refining the description of 'Indian character' would make the synthesis even clearer."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove the descriptive sentences about specific rulers' preferences to make room for more analysis on the synthesis of styles."
+     }
+    ],
+    "stats": {
+     "words": 163,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 54
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.09
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 2 (Indian Paintings), Classification of Indian Paintings",
+      "used": false
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 15 (India in the First Half of the Seventeenth Century), Mughal-Persian Relations—the Last Phase",
+      "used": false
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 4,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "Portuguese priests introduced European painting at Akbar's court, and techniques such as foreshortening were adopted."
+     ],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

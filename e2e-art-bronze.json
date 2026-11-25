@@ -1,0 +1,683 @@
+{
+ "case": "art-bronze",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: hoard of Buddhist bronzes found at Akota": false,
+  "cited: hoard of Buddhist bronzes found at Akota": false,
+  "caught: balances on his left leg": true,
+  "cited: balances on his left leg": true,
+  "no red marks on correct sentences": false,
+  "trap not red: among the earliest surviving bronze figures": false
+ },
+ "seconds": 9907.9,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bronze"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-bronze",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You correctly identify the Chola period as the peak of bronze casting evolution. However, the answer lacks a clear chronological transition between the Harappan and Gupta/Pala periods and contains a factual error regarding the specific legs of the Nataraja sculpture. To improve, first add a sentence describing how bronze casting transitioned from utilitarian objects to religious iconography during the post-Mauryan period.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It does not fully do what the question's command word asks.",
+     "It has 7 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Trace the evolution of bronze sculpture in India from the Harappan period to the Chola age. (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "India's bronze tradition rests on the lost-wax or cire-perdue process, known since the Indus Valley Civilisation.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Dancing Girl from Mohenjodaro is among the earliest surviving bronze figures.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Kushana-period images of Jain tirthankaras come from Chausa in Bihar.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "A famous hoard of Buddhist bronzes found at Akota near Vadodara shows that casting flourished in Gujarat.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Gupta and post-Gupta standing Buddhas, such as the monumental Sultanganj image from Bihar, show a refined classical style with foldless drapery.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Himachal and Kashmir produced distinctive images such as the four-headed Vaikuntha Vishnu, while Pala workshops at Nalanda and Kurkihar revived the Gupta idiom.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Bronze casting reached its peak under the Cholas, with queen Sembiyan Mahadevi as a notable patron.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Chola Nataraja balances on his left leg, crushing the dwarf Apasmara, while his raised right leg signifies release from illusion.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Kumbakonam artisans still practise this craft, and supporting such living traditions can sustain both heritage and livelihoods.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the evolution of bronze sculpture in India from the Harappan period to the Chola age",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have successfully identified the starting point and the peak of the tradition. However, the 'evolution' aspect is slightly fragmented; you need to better connect the stylistic shifts between the Harappan, Gupta, and Chola periods.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Add a sentence describing how bronze casting transitioned from utilitarian objects to religious iconography during the post-Mauryan period.",
+      "where": "The question",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a clear chronological transition or description of the stylistic evolution between the Harappan period and the Gupta/Pala periods.",
+      "tryWriting": "Following the Harappan period, bronze casting evolved from utilitarian tools to sophisticated religious icons, reaching a refined classical style during the Gupta and Pala periods before peaking in the Chola era.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Describe the figure as a copper-based figurine or a metal figurine.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The Dancing Girl from Mohenjodaro is among the earliest surviving bronze figures."
+      },
+      "why": "The Dancing Girl is a famous archaeological find, but it is a copper-based figurine, not a bronze figure.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "The Chola Nataraja balances on his right leg, crushing the dwarf Apasmara, while his raised left leg signifies release from illusion.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The Chola Nataraja balances on his left leg, crushing the dwarf Apasmara, while his raised right leg signifies release from illusion."
+      },
+      "why": "The student swapped the legs; the sculpture balances on the right leg and raises the left leg to signify the release from illusion.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "sourceRef": "r19",
+      "evidence": {
+       "wrongWords": "balances on his left leg, crushing the dwarf Apasmara, while his raised right leg signifies release from illusion",
+       "sourceWords": "balancing himself on his right leg and suppressing the apasmara... he raises his left leg in bhujangatrasita stance, which represents tirobhava, that is kicking away the veil of maya or illusion"
+      }
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "India's bronze tradition rests on the lost-wax or cire-perdue process, known since the Indus Valley Civilisation.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the technical origin of the bronze tradition in the Harappan period."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence establishes the technical foundation of the evolution by identifying the lost-wax process as a continuous tradition from the Harappan period."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It establishes the technical foundation of the bronze tradition starting from the Harappan period."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims the lost-wax process was known since the Indus Valley Civilisation, but the provided source does not confirm this specific technical knowledge for that period.",
+        "fix": "Mention the lost-wax process as a foundational technique while checking the specific period of its first known use.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "unsupported",
+        "kindLabel": "Unsupported",
+        "reason": "The claim that the lost-wax process was known since the Indus Valley Civilisation is not explicitly confirmed in the provided materials.",
+        "fix": "Check if the lost-wax process is historically attributed to the Harappan period or if it is a later development.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Dancing Girl from Mohenjodaro is among the earliest surviving bronze figures.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence provides a specific, historically accurate example of an early bronze figure from the Indus Valley."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies a specific, well-known early bronze figure from the Harappan period."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific archaeological find (Dancing Girl from Mohenjodaro) to support the claim about the Harappan period."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The Dancing Girl is a famous archaeological find, but it is a copper-based figurine, not a bronze figure.",
+        "fix": "Describe the figure as a copper-based figurine or a metal figurine.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Kushana-period images of Jain tirthankaras come from Chausa in Bihar.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the sentence mentions a location, it lacks a specific description of the bronze style or technique to support the 'evolution' aspect of the prompt.",
+        "fix": "Describe the stylistic features of these Jain tirthankara bronzes.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Gupta and post-Gupta standing Buddhas, such as the monumental Sultanganj image from Bihar, show a refined classical style with foldless drapery.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student uses a specific monumental image (Sultanganj Buddha) to illustrate the refined classical style of the Gupta period."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The sentence describes a style but does not explicitly link it to the evolution of bronze casting techniques or materials.",
+        "fix": "Mention how the casting technique evolved to achieve this refined style.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'refined classical style' is somewhat subjective; it would be sharper to describe the specific stylistic features like the 'foldless drapery' as the primary evidence of that refinement.",
+        "fix": "Replace 'refined classical style' with 'stylistic refinement characterized by foldless drapery'.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Himachal and Kashmir produced distinctive images such as the four-headed Vaikuntha Vishnu, while Pala workshops at Nalanda and Kurkihar revived the Gupta idiom.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The sentence describes regional styles and workshop locations but fails to explicitly trace the chronological evolution or technical progression of bronze sculpture as requested by the prompt.",
+        "fix": "Explain how the Pala workshops specifically transitioned or evolved the earlier Gupta bronze styles.",
+        "fixNumber": null,
+        "source": null
+       },
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions different regions but does not describe the specific visual characteristics of the bronzes produced there.",
+        "fix": "Briefly describe the visual traits of the Vaikuntha Vishnu or the Pala bronzes.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Bronze casting reached its peak under the Cholas, with queen Sembiyan Mahadevi as a notable patron.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence identifies the Chola period as the peak of the evolution, providing a clear chronological endpoint for the trace."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It identifies the Chola period as the peak of the evolution of bronze casting."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence identifies the peak of the craft and the role of royal patronage."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Chola Nataraja balances on his left leg, crushing the dwarf Apasmara, while his raised right leg signifies release from illusion.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses precise iconographic terms like 'Apasmara' and 'illusion' to describe the symbolism of the sculpture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student swapped the legs; the sculpture balances on the right leg and raises the left leg to signify the release from illusion.",
+        "fix": "The Chola Nataraja balances on his right leg, crushing the dwarf Apasmara, while his raised left leg signifies release from illusion.",
+        "fixNumber": 3,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Kumbakonam artisans still practise this craft, and supporting such living traditions can sustain both heritage and livelihoods.",
+      "credit": [
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies a specific group (Kumbakonam artisans) and a clear goal (sustaining heritage and livelihoods) which makes the suggestion actionable."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by linking historical heritage to modern livelihoods."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of modern artisans and livelihoods drifts away from the historical evolution requested by the prompt.",
+        "fix": "Remove the sentence about modern livelihoods to maintain focus on historical evolution.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "The question",
+      "partText": "the evolution of bronze sculpture in India from the Harappan period to the Chola age",
+      "reason": "The answer lacks a clear chronological transition or description of the stylistic evolution between the Harappan period and the Gupta/Pala periods.",
+      "fix": "Add a sentence describing how bronze casting transitioned from utilitarian objects to religious iconography during the post-Mauryan period.",
+      "fixNumber": 1,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer describes specific artifacts but fails to 'trace' the evolution by explaining the stylistic transitions or the 'how' and 'why' of the changes between periods.",
+      "fix": "Add a sentence explaining how the style transitioned from the early Harappan figures to the refined classical styles of the Gupta and Pala periods.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a discussion on the socio-religious context or the functional evolution of these sculptures (e.g., from votive objects to temple icons).",
+      "fix": "Add a sentence explaining how the purpose of sculptures shifted from personal votive items to public temple worship.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer lists various periods and styles but fails to explain the causal transitions or stylistic shifts between them.",
+      "fix": "Use transitional phrases to explain how Gupta styles influenced Pala workshops or how the Chola period refined earlier traditions.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks to trace an evolution, which is a historical progression. The answer focuses on chronological milestones but does not address the limitations or challenges faced during these transitions, such as resource scarcity or stylistic shifts.",
+      "fix": "Mention the limitations of bronze availability or the shift in patronage styles during different eras.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s7",
+      "quote": "Bronze casting reached its peak under the Cholas, with queen Sembiyan Mahadevi as a notable patron.",
+      "reason": "It identifies the Chola period as the peak of the evolution of bronze casting."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological list of artifacts but reads more like a description than a trace of evolution. To improve, you should explicitly link the periods by describing how styles changed over time."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well within the scope of the historical timeline requested. The final sentence is slightly off-topic as it discusses modern-day preservation rather than historical evolution."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the chronological and technological progression well but misses the functional and socio-religious evolution of the art form."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have identified the correct techniques and key sculptures, but the 'evolution' aspect needs more focus on how the artistic style changed over time."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer identifies key milestones and specific artifacts across the requested timeline. You should verify the specific historical origin of the lost-wax technique."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific examples like the Dancing Girl and Sultanganj Buddha to ground the historical timeline. To improve, describe the stylistic changes (e.g., proportions, poses, or details) for the intermediate periods mentioned."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer provides a good chronological flow but misses the specific evolution of the Nataraja figure which is a key highlight of Chola bronzes."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological list of milestones but lacks a cohesive narrative on how one period's style led to or influenced the next."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a historical tracing task rather than a policy or socio-economic debate, so trade-offs and costs are not strictly required. However, acknowledging the limitations of material availability would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a practical suggestion regarding the preservation of craft, but it remains somewhat general in its implementation strategy."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer follows a logical chronological structure and includes both a contextual opening and a forward-looking closing. To improve, use clearer structural markers to distinguish between the different historical eras."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology such as 'cire-perdue' and specific iconographic names. Minor improvements can be made by linking stylistic descriptions more directly to physical attributes."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word count well to cover a long historical timeline. However, the final sentence drifts into modern socio-economics rather than historical evolution."
+     }
+    ],
+    "stats": {
+     "words": 153,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 28
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "A famous hoard of Buddhist bronzes found at Akota near Vadodara shows that casting flourished in Gujarat."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.02
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 7 (Indian Bronze Sculpture)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 10,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "India's bronze tradition rests on the lost-wax or cire-perdue process, known since the Indus Valley Civilisation.",
+      "The Dancing Girl from Mohenjodaro is among the earliest surviving bronze figures."
+     ],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It does not fully do what the question's command word asks.",
+      "It has 7 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

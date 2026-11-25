@@ -1,0 +1,693 @@
+{
+ "case": "geo-currents",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: western margins of continents in tropical and subtropical latitudes": true,
+  "trap not red: keeps the ports of north-western Europe ice-free in winter": true
+ },
+ "seconds": 9221.2,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-currents"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-currents",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer provides a clear definition of ocean currents and successfully explains how meeting currents create rich fishing grounds with specific examples. To improve, you should first clarify that westerlies drive currents eastward in temperate latitudes. Additionally, mentioning thermohaline circulation and explaining the mechanism of how cold currents cause aridity would strengthen the technical depth.",
+    "levelWhy": [
+     "It could do more of what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Discuss the factors that generate and control ocean currents. Explain, with examples, how warm and cold currents influence coastal climates and fishing. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     },
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Ocean currents are regular, large-scale flows of ocean water in a definite direction, acting like rivers within the oceans.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "They are set in motion and steered by a combination of primary and secondary forces.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Planetary winds are the dominant influence: the trade winds drive the equatorial currents westwards, while the westerlies push water eastwards in temperate latitudes.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Differences in temperature and salinity create density contrasts, so cold or saline water sinks and creeps along the bottom while warmer, lighter water flows over the surface.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The Coriolis force deflects currents to the right in the Northern Hemisphere and to the left in the Southern Hemisphere, producing large circular gyres in the ocean basins.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Landmasses obstruct and divert currents, as when the 'shoulder' of Brazil splits the South Equatorial Current into the Cayenne and Brazilian currents.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "In the North Indian Ocean, currents reverse their direction with the seasonal monsoon winds.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Cold currents such as the Peruvian and Benguela flow along the western margins of continents in tropical and subtropical latitudes, producing cool, foggy and arid coasts like the Atacama and Namib.",
+      "para": 3
+     },
+     {
+      "id": "s9",
+      "text": "The warm North Atlantic Drift keeps the ports of north-western Europe ice-free in winter, whereas ports of eastern Canada washed by the cold Labrador Current freeze for months.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "Where warm and cold waters meet, as the Gulf Stream and the Labrador Current do off Newfoundland, mixing replenishes oxygen and plankton and creates rich fishing grounds such as the Grand Banks.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "Since currents redistribute heat between latitudes, monitoring how they respond to a warming climate is essential for forecasting weather, protecting fisheries and planning coastal economies.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the factors that generate and control ocean currents",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer covers the primary drivers including wind, density, and the Coriolis effect well.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s4"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Explain, with examples, how warm and cold currents influence coastal climates and fishing",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully addresses both climate and fishing with specific geographical examples. To improve, ensure the climate examples also touch upon the economic/fishing aspects where relevant.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8",
+       "s10"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Clarify that westerlies drive currents eastward in temperate latitudes.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Planetary winds are the dominant influence: the trade winds drive the equatorial currents westwards, while the westerlies push water eastwards in temperate latitudes."
+      },
+      "why": "The sentence states that westerlies push water eastwards, but westerlies blow from the west to the east, which would push water eastward; however, the standard geographical description of the westerlies' effect on currents in temperate latitudes is that they drive currents eastward.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Mention that these density differences drive the thermohaline circulation.",
+      "where": "Concepts explained",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Differences in temperature and salinity create density contrasts, so cold or saline water sinks and creeps along the bottom while warmer, lighter water flows over the surface."
+      },
+      "why": "The sentence mentions density contrasts but does not explicitly name 'thermohaline circulation' or the specific role of deep-water movement in global circulation.",
+      "tryWriting": "Differences in temperature and salinity create density contrasts, driving thermohaline circulation where cold or saline water sinks and moves along the bottom while warmer, lighter water flows over the surface.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain that cold currents stabilize the atmosphere and reduce moisture, leading to aridity.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "Cold currents such as the Peruvian and Benguela flow along the western margins of continents in tropical and subtropical latitudes, producing cool, foggy and arid coasts like the Atacama and Namib."
+      },
+      "why": "The sentence states that cold currents produce arid coasts but does not explain the mechanism (e.g., how cold water inhibits evaporation or moisture transport).",
+      "tryWriting": "Cold currents such as the Peruvian and Benguela flow along western margins, where they stabilize the atmosphere and reduce moisture, creating cool, foggy, and arid coasts like the Atacama and Namib.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Ocean currents are regular, large-scale flows of ocean water in a definite direction, acting like rivers within the oceans.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The student's definition of ocean currents as regular flows in a definite direction is confirmed by the textbook extract."
+       },
+       {
+        "where": "Structure",
+        "reason": "Provides a clear definition of ocean currents to set the context."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "They are set in motion and steered by a combination of primary and secondary forces.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence introduces the concept of primary and secondary forces but does not specify what these forces are, leaving the statement vague.",
+        "fix": "Specify the primary and secondary forces such as wind, temperature, and salinity.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Planetary winds are the dominant influence: the trade winds drive the equatorial currents westwards, while the westerlies push water eastwards in temperate latitudes.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies planetary winds as a dominant influence and provides specific examples of trade winds and westerlies."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "Explains the 'how' of wind-driven currents by identifying specific wind types and their directions."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Correctly identifies planetary winds as a primary factor for generating and steering currents."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that westerlies push water eastwards, but westerlies blow from the west to the east, which would push water eastward; however, the standard geographical description of the westerlies' effect on currents in temperate latitudes is that they drive currents eastward.",
+        "fix": "Clarify that westerlies drive currents eastward in temperate latitudes.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Differences in temperature and salinity create density contrasts, so cold or saline water sinks and creeps along the bottom while warmer, lighter water flows over the surface.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Explains how density contrasts from temperature and salinity drive vertical and horizontal movement."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "Explains the 'how' of thermohaline circulation by linking temperature and salinity to density and vertical movement."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Correctly identifies density differences from temperature and salinity as a generating factor."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions density contrasts but does not explicitly name 'thermohaline circulation' or the specific role of deep-water movement in global circulation.",
+        "fix": "Mention that these density differences drive the thermohaline circulation.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The Coriolis force deflects currents to the right in the Northern Hemisphere and to the left in the Southern Hemisphere, producing large circular gyres in the ocean basins.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "Accurately explains the Coriolis force and its role in creating circular gyres."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the Coriolis force and its effect on current direction and the formation of gyres."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'Coriolis force' and 'gyres' demonstrates a high level of technical precision regarding oceanography."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the Coriolis force is mentioned, the sentence does not explicitly state that it is a controlling factor for the direction of the currents.",
+        "fix": "Explicitly state that the Coriolis force is a primary force that deflects currents.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Landmasses obstruct and divert currents, as when the 'shoulder' of Brazil splits the South Equatorial Current into the Cayenne and Brazilian currents.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific geographical example of how landmasses divert currents by naming the 'shoulder' of Brazil and the specific currents involved."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a specific geographical example of landmass obstruction, making good use of the word count."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes a physical process but lacks a specific geographical example of a landmass obstructing a current to explain the 'control' factor clearly.",
+        "fix": "Mention how continents act as physical barriers that force currents to turn or split.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Cold currents such as the Peruvian and Benguela flow along the western margins of continents in tropical and subtropical latitudes, producing cool, foggy and arid coasts like the Atacama and Namib.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly explains how cold currents create arid and foggy coastal climates and provides specific examples of these currents and regions."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the environmental/climatic impact of cold currents on coastal regions."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly describes how cold currents create arid and foggy coastal conditions in tropical and subtropical latitudes."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that cold currents produce arid coasts but does not explain the mechanism (e.g., how cold water inhibits evaporation or moisture transport).",
+        "fix": "Explain that cold currents stabilize the atmosphere and reduce moisture, leading to aridity.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "The warm North Atlantic Drift keeps the ports of north-western Europe ice-free in winter, whereas ports of eastern Canada washed by the cold Labrador Current freeze for months.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While this sentence provides good examples of climate influence, it does not explicitly mention the impact on fishing which was part of the prompt.",
+        "fix": "Add a brief mention of how these currents affect local maritime activities or fishing.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Where warm and cold waters meet, as the Gulf Stream and the Labrador Current do off Newfoundland, mixing replenishes oxygen and plankton and creates rich fishing grounds such as the Grand Banks.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence explains how the meeting of warm and cold currents creates rich fishing grounds and provides a specific example of a fishing area."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the economic/biological impact of currents on fishing."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "Clearly links the meeting of warm and cold waters to the biological outcome of replenishing oxygen and plankton for fishing."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Since currents redistribute heat between latitudes, monitoring how they respond to a warming climate is essential for forecasting weather, protecting fisheries and planning coastal economies.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "Offers a forward-looking statement regarding climate monitoring and economic planning."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions monitoring and planning but does not specify who should act or what specific actions should be taken to protect fisheries or coastal economies.",
+        "fix": "Specify that coastal authorities and maritime agencies should monitor current shifts to develop specific disaster management plans and sustainable fishing quotas.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly mention the administrative or logistical impact on maritime trade routes, which is a significant economic dimension of ocean currents.",
+      "fix": "Add a brief mention of how currents influence shipping routes and maritime trade.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention how onshore winds can pile up warm water near the coast to raise temperatures.",
+      "fix": "Add a point about how onshore winds can increase coastal temperatures by piling up warm water.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 12 (Water (Oceans))"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks to discuss factors and explain influences, but the answer does not address the uncertainty or risks associated with changing current patterns due to climate change.",
+      "fix": "Mention the uncertainty in predicting how shifting currents might impact global food security or coastal stability.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the 'factors' part from the 'influence' part of the question.",
+      "fix": "Use a subheading or a transitional phrase to separate the generation of currents from their climatic impacts.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s10",
+      "quote": "Where warm and cold waters meet, as the Gulf Stream and the Labrador Current do off Newfoundland, mixing replenishes oxygen and plankton and creates rich fishing grounds such as the Grand Banks.",
+      "reason": "The sentence explains how the meeting of warm and cold currents creates rich fishing grounds and provides a specific example of a fishing area."
+     },
+     {
+      "where": "Structure",
+      "sourceId": "s1",
+      "quote": "Ocean currents are regular, large-scale flows of ocean water in a definite direction, acting like rivers within the oceans.",
+      "reason": "Provides a clear definition of ocean currents to set the context."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully explains the mechanisms of current generation and their specific impacts on climate and fishing. However, it reads more like a list of facts than a 'discussion' because it lacks a concluding synthesis."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt, focusing on physical drivers and geographical impacts. The final sentence is slightly tangential as it discusses human response rather than physical factors."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the primary environmental and economic dimensions well. Adding a point on maritime navigation or trade would provide a more comprehensive economic perspective."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The student correctly identifies the primary physical drivers of ocean currents including wind, Coriolis effect, and density. The explanation of how these forces interact to create specific patterns like gyres is well-developed."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The student accurately identifies the primary physical forces (winds, Coriolis, and density) that govern ocean currents."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported with specific geographical examples for both the generation of currents and their climatic/economic impacts."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer accurately reflects the primary drivers of currents and their climatic effects. It could be improved by mentioning the specific role of onshore winds in local temperature variations."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer shows strong causal links for the generation of currents and the impact on fishing. The link between cold currents and arid climates could be strengthened by explaining the atmospheric mechanism."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is descriptive rather than evaluative, so a complex trade-off analysis is not strictly required. However, acknowledging the uncertainty of current shifts in a warming climate would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the need for monitoring but lacks specific actionable steps or responsible agencies."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear definition, a well-organized body, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses excellent technical terminology such as 'Coriolis force' and 'gyres' to describe ocean dynamics. Minor improvements in describing deep-water movement would enhance the professional tone."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-balanced, covering both parts of the question with specific examples. The word count is slightly over the limit, so removing the general concluding sentence would improve economy."
+     }
+    ],
+    "stats": {
+     "words": 264,
+     "sentences": 11,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 78
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 91
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "In the North Indian Ocean, currents reverse their direction with the seasonal monsoon winds."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.06
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 12 (The Oceans)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 12 (Water (Oceans))",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 13 (Movements of Ocean Water)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 0,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It could do more of what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}
