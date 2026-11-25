@@ -237,7 +237,13 @@ def level_of(parts, dims, majors, length=None, form=None, L=0):
         good_needs.append(("Not every part of the question is answered.", "सवाल का हर हिस्सा पूरा नहीं है।")[L])
     good_needs += short(0.7 if not ok("dimensions") else 0.6)
     good_needs += shape()
-    if not ok("directive"):
+    # The command word stops Good only when the answer commits its failure (a major finding, or a verdict worse than
+    # partial). v15 run 45459767588 held a full, well-built Governor answer at Developing on a "partial" whose only
+    # notes were ways to deepen it. Strong still needs the command word fully met.
+    d = dims.get("directive") or {}
+    directive_failed = verdict("directive") in ("missing", "wrong", "unsupported") or (
+        verdict("directive") == "partial" and any(c.get("priority") == "major" for c in d.get("concerns") or []))
+    if directive_failed:
         good_needs.append(("It does not fully do what the question's command word asks.",
                            "यह सवाल के निर्देश शब्द की माँग पूरी तरह नहीं करता।")[L])
     if len(majors) > 1:
@@ -251,6 +257,9 @@ def level_of(parts, dims, majors, length=None, form=None, L=0):
                              f"{words} शब्दों में यह लगभग {limit} की सीमा से काफ़ी ज़्यादा है।")[L])
     if majors:
         strong_needs.append(("It has a serious problem (see the fixes).", "इसमें एक गंभीर कमी है (सुधार देखें)।")[L])
+    if not ok("directive") and not directive_failed:
+        strong_needs.append(("It could do more of what the question's command word asks.",
+                             "यह सवाल के निर्देश शब्द की माँग को और गहराई से पूरा कर सकता है।")[L])
     if not ok("dimensions"):
         strong_needs.append(("It leaves out an important angle of the issue.", "इसमें मुद्दे का एक ज़रूरी पहलू छूटा है।")[L])
     if not ok("evidence"):

@@ -369,7 +369,9 @@ class MarkingStandard(unittest.TestCase):
         self.assertEqual(self.level(150, form=self.form(points=3))[0], "developing")
 
     def test_directive_not_met_caps_at_developing(self):
-        self.assertEqual(self.level(150, dims={"directive": {"verdict": "partial"}})[0], "developing")
+        failed = {"verdict": "partial", "concerns": [{"priority": "major"}]}
+        self.assertEqual(self.level(150, dims={"directive": failed})[0], "developing")
+        self.assertEqual(self.level(150, dims={"directive": {"verdict": "missing"}})[0], "developing")
 
     def test_missing_evidence_stops_strong_only(self):
         lvl, why = self.level(150, dims={"evidence": {"verdict": "partial"}})
@@ -455,6 +457,55 @@ class NoInventedContent(unittest.TestCase):
                "note": "The answer does not weigh who is affected.", "verdict": "not_applicable",
                "rewrite": {"sourceId": "none", "text": ""}}
         self.assertEqual(checks.bind(raw, prep, "balance")["verdict"], "partial")
+
+class V15RunFixes(unittest.TestCase):
+    """What split run 45459767588 and v16 run 45475980062 got wrong on the real model."""
+
+    def test_past_rulings_and_amendments_are_not_checked_against_todays_text(self):
+        for s in ("In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+                  "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c).",
+                  "The 42nd Amendment extended Article 31C to all the Directive Principles."):
+            self.assertTrue(checks.about_the_past(s), s)
+        for s in ("A Money Bill can be introduced in either House of Parliament.",
+                  "Every constitutional amendment must also be ratified by the legislatures of at least half of the States.",
+                  "The Governor is elected by the State Legislative Assembly for a fixed term of five years."):
+            self.assertFalse(checks.about_the_past(s), s)
+
+    def wrong(self, sid, quote, reason, ref=None, kind="wrong"):
+        return {"sourceId": sid, "quote": quote, "kind": kind, "priority": "major", "reason": reason,
+                "fix": "Fix it.", "ref": ref}
+
+    def test_an_error_is_not_repeated_on_the_next_sentence(self):
+        s4 = "The Rajya Sabha can keep a Money Bill for up to three months before returning it."
+        s5 = "It cannot reject or amend the Bill and can only suggest changes."
+        fact = {"id": "facts:s4", "kind": "fact", "status": "ok", "verdict": "wrong", "credit": [],
+                "concerns": [self.wrong("s4", s4, "The limit is fourteen days, not three months.", "r1")]}
+        acc = {"id": "accuracy", "kind": "check", "status": "ok", "verdict": "wrong", "credit": [], "rewrite": None,
+               "concerns": [self.wrong("s5", s5, "It says the Rajya Sabha can keep a Money Bill for three months.")]}
+        out = pipeline.merge_facts([fact, acc])
+        self.assertEqual(next(r for r in out if r["id"] == "accuracy")["concerns"], [])
+
+    def test_a_case_missing_from_the_extracts_is_not_red(self):
+        s = "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives plenary powers."
+        acc = {"id": "accuracy", "kind": "check", "status": "ok", "verdict": "partial", "credit": [], "rewrite": None,
+               "concerns": [self.wrong("s4", s, "This case is not provided in the reference materials.",
+                                       kind="unsupported")]}
+        out = pipeline.merge_facts([acc])
+        c = next(r for r in out if r["id"] == "accuracy")["concerns"][0]
+        self.assertEqual((c["kind"], c["priority"]), ("weak", "minor"))
+
+    def test_deepening_notes_on_the_command_word_do_not_stop_good(self):
+        ps = [{"status": "met"}]
+        ds = {d: {"verdict": "good"} for d in ("scope", "dimensions", "evidence", "structure")}
+        form = {"intro": "s1", "conclusion": "s9", "points": 6, "pointsNeeded": 5}
+        length = {"words": 173, "limit": 150, "ratio": 1.15}
+        ds["directive"] = {"verdict": "partial", "concerns": [{"priority": "minor"}]}
+        lvl, why = report.level_of(ps, ds, [], length, form, 0)
+        self.assertEqual(lvl, "good")
+        self.assertTrue(any("command word" in w for w in why))
+        ds["directive"] = {"verdict": "partial", "concerns": [{"priority": "major"}]}
+        self.assertEqual(report.level_of(ps, ds, [], length, form, 0)[0], "developing")
+
 
 
 if __name__ == "__main__":

@@ -6,6 +6,8 @@
 
 `evaluate` runs the same stages one after another on a single runner. Both paths give the same report.
 """
+import re
+
 from . import breakdown, checks, prompts, refs, report, verify
 from .model import log
 from .rubric import FORMATS, SHARDS, word_limit
@@ -59,6 +61,24 @@ def check_ids(prep, shard):
     return list(SHARDS[shard])
 
 
+NOT_IN_SOURCES = re.compile(r"(?i)\bnot (?:in|among|part of|found in|included in|provided in|present in|mentioned in) "
+                            r"(?:the |your |our )?(?:provided |given |reference |source )*(?:materials?|sources?|"
+                            r"extracts?|references?)|\b(?:materials?|sources?|extracts?) (?:do|does) not (?:mention|"
+                            r"include|contain|cover)")
+
+
+def about_other(c, sid, wrong_at, spans):
+    """True when at least two words of the finding's reason come from a sentence already found wrong and not from
+    the sentence it is attached to."""
+    own = set(_words(spans.get(sid, "")))
+    said = set(_words(c.get("reason") or "")) - own
+    return any(len({w for w in said if len(w) >= 4} & set(_words(spans.get(o, "")))) >= 2 for o in wrong_at if o != sid)
+
+
+def _words(text):
+    return re.findall(r"\w+", (text or "").casefold())
+
+
 def merge_facts(results):
     """Claim checks become findings of the "Constitution and textbook basics" check, so the report, the second
     opinion and the student see one check, with each wrong claim marked on its own sentence."""
@@ -75,6 +95,7 @@ def merge_facts(results):
                and not any(c["kind"] == "wrong" for c in r["concerns"])}
     found = [c for r in facts if r["id"].startswith("facts:") for c in r["concerns"] if c["kind"] == "wrong"]
     wrong_at = {c["sourceId"] for c in found}
+    spans = {c["sourceId"]: c.get("quote") or "" for r in results for c in r.get("concerns") or [] if c.get("sourceId")}
     for r in rest:
         if r["status"] != "ok":
             continue
@@ -88,10 +109,18 @@ def merge_facts(results):
             on_source = bool(c.get("ref")) or r["id"] == "provisions" or (rw.get("ref") and rw.get("sourceId") == sid)
             if c["kind"] in ("wrong", "unsupported") and on_source and (sid in cleared or sid in wrong_at):
                 continue
+            # A "wrong" whose reason is about another sentence's error: split run 45475980062 marked a correct Money
+            # Bill sentence ("It cannot reject or amend the Bill") wrong for "three months", the next sentence's error.
+            if c["kind"] == "wrong" and sid and sid not in wrong_at and about_other(c, sid, wrong_at, spans):
+                continue
+            # "Unsupported" because a case or report is not in the extracts is not an error: the extracts are a
+            # small sample (run 45459767588 marked Mohinder Singh Gill (1978) red). Advice only, never red.
+            if c["kind"] == "unsupported" and sid and NOT_IN_SOURCES.search(c.get("reason") or ""):
+                c = dict(c, kind="weak", priority="minor")
             if sid and any(f["sourceId"] != sid and similar(f["reason"], c["reason"], 0.45) for f in found):
                 continue
             keep.append(c)
-        if len(keep) != len(r["concerns"]):
+        if keep != r["concerns"]:
             r["concerns"] = keep
             r["revised"] = True
     concerns = [c for r in facts for c in r["concerns"]]

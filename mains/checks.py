@@ -79,8 +79,10 @@ def task(prep, check_id):
         fails = [f"'{w}': the answer fails if it is {DIRECTIVE_FAILURE[w]}" for w in found if w in DIRECTIVE_FAILURE]
         if fails:
             extra = (" For this question: " + "; ".join(fails) + ". If the answer commits that failure, the verdict "
-                     "cannot be good. In a question with two command words, a strong first part does not make up for "
-                     "an unanswered second one.")
+                     "is partial or missing and one concern of priority major says so. If it does what the command "
+                     "word asks and you only see ways to deepen it, the verdict is good and those are minor concerns. "
+                     "In a question with two command words, a strong first part does not make up for an unanswered "
+                     "second one.")
     return (f"TASK [{check_id}]\nCheck only this: {d['en']}. {d['task']}{extra} Judge only this check, not the whole "
             "answer.\n\n" + FIELDS.format(verdicts=DIM_VERDICTS))
 
@@ -401,6 +403,19 @@ def hard_difference(wrong_words, source_words):
     return bool((a or b) and a != b)
 
 
+# A sentence about what a court held or an amendment did: a dated case or a numbered amendment, and a verb of ruling
+# or changing. Today's text of the Constitution cannot contradict what was true in that year.
+_PAST_VERB = re.compile(r"(?i)\b(?:held|ruled|struck down|upheld|overruled|added|inserted|extended|substituted|"
+                        r"omitted|repealed|declared)\b")
+_PAST_ANCHOR = re.compile(r"(?i)\(\s*(?:1[89]|20)\d\d\s*\)|\b(?:in|by|until|till|since) (?:1[89]|20)\d\d\b|"
+                          r"\b(?:\d{1,3}(?:st|nd|rd|th)|[a-z]+(?:-[a-z]+)?(?:st|nd|rd|th))\s+"
+                          r"(?:constitutional\s+)?amendment\b")
+
+
+def about_the_past(text):
+    return bool(_PAST_ANCHOR.search(text or "") and _PAST_VERB.search(text or ""))
+
+
 def run_fact(examiner, prep, system, check_id):
     """Gemma 12B judges a whole answer by its worst problem (runs 45169827637, 45238473782): a wrong body or time
     limit in a lesser sentence goes unseen. So each claim is checked on its own, against only its own extracts.
@@ -438,6 +453,12 @@ def run_fact(examiner, prep, system, check_id):
         verdict = raw["verdict"]
         if verdict == "contradicted" and raw.get("bothTrue") == "yes":
             verdict = "not_covered"  # Gemma itself says both can hold: no contradiction (v10 Governor, Article 154)
+        if verdict == "contradicted" and about_the_past(sent["text"]):
+            # What a court held or an amendment did in its year cannot be contradicted by today's text: run
+            # 45459767588 called "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental
+            # Rights" wrong by Article 13(4), inserted later, and the Twenty-fifth Amendment's Article 31C wrong by
+            # the wording the Forty-second Amendment gave it.
+            verdict = "not_covered"
         if verdict == "not_covered":
             return {"verdict": "not_applicable", "credit": [], "concerns": [], "rewrite": None, "note": None}
         if verdict == "confirmed":
