@@ -1,0 +1,155 @@
+name: Mains subject QA
+
+# v17: History, Geography, Art & Culture and Economy answers with planted errors, each graded end to end on one
+# runner by the PRIVATE core, because the GS textbooks and reference books it checks against live only there. They
+# come through the CORE_TOKEN checkout (as in mains-review.yml) and never enter this repository: logs print labels
+# and counts only, and the published reports carry what a student's report would. Synthetic answers only.
+on:
+  push:
+    branches: [qa/mains-v17]
+    paths: ['qa/subject-cases.json', '.github/workflows/mains-subject-qa.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: mains-subject-qa
+  cancel-in-progress: false
+
+env:
+  CORE_REF: feat/mains-v17
+  MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
+  RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      cases: ${{ steps.cases.outputs.cases }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: pub
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          path: core
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q ${{ env.RUNTIME }}
+      - name: Unit tests (no model)
+        working-directory: core
+        shell: bash   # pipefail: the step fails when the tests fail, not only when tail does
+        run: python -m unittest test_examiner test_refs test_photo test_worker test_review test_v10 test_v11 2>&1 | tail -n 4
+      - name: Build reference index (counts only)
+        working-directory: core
+        timeout-minutes: 10
+        run: python tools/build_refs.py
+      - name: Planted errors reach the words that settle them
+        working-directory: core
+        shell: bash
+        run: python tools/retrieval_check.py | grep -v '^hindi probe'
+      - id: cases
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          have = {c["id"] for c in json.loads(Path("core/qa/subject_cases.json").read_text())}
+          want = json.loads(Path("pub/qa/subject-cases.json").read_text())
+          print("cases=" + json.dumps([c for c in want if c in have] or sorted(have)))
+          PY
+
+  # Model files for this branch's cache: a branch restores only its own caches and the default branch's, and
+  # forty runners each downloading 7 GB from Hugging Face would be slow and fragile.
+  model:
+    needs: gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/cache@v4
+        id: cache
+        timeout-minutes: 30
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          pip install -q huggingface-hub==0.36.0
+          python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='unsloth/gemma-4-12b-it-GGUF', filename='gemma-4-12b-it-Q4_K_M.gguf', local_dir='models')"
+          ls -la models | tail -n 3
+
+  answer:
+    needs: [gate, model]
+    name: answer ${{ matrix.case }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 220
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        case: ${{ fromJSON(needs.gate.outputs.cases) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_REF }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        timeout-minutes: 12
+        continue-on-error: true
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - run: pip install -q ${{ env.RUNTIME }}
+      - name: Build reference index (counts only)
+        timeout-minutes: 10
+        run: python tools/build_refs.py
+      - run: python tools/e2e_qa.py --case ${{ matrix.case }} --dir subject-out
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: subject-${{ matrix.case }}
+          path: subject-out
+          if-no-files-found: ignore
+          retention-days: 7
+
+  publish:
+    needs: [gate, answer]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: 'subject-*'
+          path: reports
+          merge-multiple: true
+      - name: Publish to qa/mains-subject-reports
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          echo "${{ github.run_id }} gate=${{ needs.gate.result }} answer=${{ needs.answer.result }}" > RUN
+          git init -q -b qa/mains-subject-reports
+          git config user.name "mains-qa"
+          git config user.email "mains-qa@users.noreply.github.com"
+          git add -A
+          git commit -qm "Synthetic subject QA, run ${{ github.run_id }}"
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-subject-reports
