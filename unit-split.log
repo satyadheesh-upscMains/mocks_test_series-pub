@@ -1,0 +1,210 @@
+test_a_complete_accurate_answer_far_under_the_limit_is_developing (test_examiner.MarkingStandard.test_a_complete_accurate_answer_far_under_the_limit_is_developing) ... ok
+test_between_sixty_and_seventy_percent_needs_the_angles (test_examiner.MarkingStandard.test_between_sixty_and_seventy_percent_needs_the_angles) ... ok
+test_case_studies_say_what_is_not_checked_yet (test_examiner.MarkingStandard.test_case_studies_say_what_is_not_checked_yet) ... ok
+test_directive_not_met_caps_at_developing (test_examiner.MarkingStandard.test_directive_not_met_caps_at_developing) ... ok
+test_directive_task_names_the_failure_to_avoid (test_examiner.MarkingStandard.test_directive_task_names_the_failure_to_avoid) ... ok
+test_form_needs_intro_at_the_start_and_conclusion_at_the_end (test_examiner.MarkingStandard.test_form_needs_intro_at_the_start_and_conclusion_at_the_end) ... ok
+test_full_length_well_shaped_answer_can_be_strong (test_examiner.MarkingStandard.test_full_length_well_shaped_answer_can_be_strong) ... ok
+test_hindi_gets_an_allowance (test_examiner.MarkingStandard.test_hindi_gets_an_allowance) ... ok
+test_length_fix_is_first_and_uses_the_real_numbers (test_examiner.MarkingStandard.test_length_fix_is_first_and_uses_the_real_numbers) ... ok
+test_missing_evidence_stops_strong_only (test_examiner.MarkingStandard.test_missing_evidence_stops_strong_only) ... ok
+test_much_too_long_is_not_strong (test_examiner.MarkingStandard.test_much_too_long_is_not_strong) ... ok
+test_no_conclusion_caps_at_developing (test_examiner.MarkingStandard.test_no_conclusion_caps_at_developing) ... ok
+test_printed_word_limit_wins (test_examiner.MarkingStandard.test_printed_word_limit_wins) ... ok
+test_too_few_points_caps_at_developing (test_examiner.MarkingStandard.test_too_few_points_caps_at_developing) ... ok
+test_evidence_check_gives_advice_only (test_examiner.NoInventedContent.test_evidence_check_gives_advice_only) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_names_not_in_materials_are_rejected (test_examiner.NoInventedContent.test_names_not_in_materials_are_rejected) ... ok
+test_not_applicable_with_problems_is_partial (test_examiner.NoInventedContent.test_not_applicable_with_problems_is_partial) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_dimension_gap_matching_a_missing_part_is_folded (test_examiner.Report.test_dimension_gap_matching_a_missing_part_is_folded) ... ok
+test_english_report (test_examiner.Report.test_english_report) ... ok
+test_extra_angle_on_a_complete_answer_is_not_a_big_problem (test_examiner.Report.test_extra_angle_on_a_complete_answer_is_not_a_big_problem) ... ok
+test_hindi_report_with_missing_part (test_examiner.Report.test_hindi_report_with_missing_part) ... ok
+test_many_failed_checks_still_build_a_report (test_examiner.Report.test_many_failed_checks_still_build_a_report) ... ok
+test_same_advice_twice_is_one_fix (test_examiner.Report.test_same_advice_twice_is_one_fix) ... ok
+test_same_rewrite_twice_is_one_fix_and_repeated_sentences_are_trimmed (test_examiner.Report.test_same_rewrite_twice_is_one_fix_and_repeated_sentences_are_trimmed) ... ok
+test_second_look_flags_a_lesser_suggestion (test_examiner.Report.test_second_look_flags_a_lesser_suggestion) ... ok
+test_second_look_ignores_claims_and_other_sentences (test_examiner.Report.test_second_look_ignores_claims_and_other_sentences) ... ok
+test_shards_match_single_runner (test_examiner.Report.test_shards_match_single_runner) ... ok
+test_two_failed_checks_show_not_checked (test_examiner.Report.test_two_failed_checks_show_not_checked) ... ok
+test_breakdown_falls_back_to_sentences (test_examiner.Stages.test_breakdown_falls_back_to_sentences) ... gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+gemma {"stage":"breakdown","check":"question","attempt":2,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+gemma {"stage":"breakdown","check":"question","attempt":3,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"breakdown:not_verbatim"}
+ok
+test_breakdown_must_be_verbatim (test_examiner.Stages.test_breakdown_must_be_verbatim) ... ok
+test_check_binding_rules (test_examiner.Stages.test_check_binding_rules) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_duplicate_concerns_are_deduped (test_examiner.Stages.test_duplicate_concerns_are_deduped) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_overturned_finding_is_dropped (test_examiner.Stages.test_overturned_finding_is_dropped) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"part:p1","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"part:p2","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"directive","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"scope","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"dimensions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"concepts","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"accuracy","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"evidence","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"causality","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"balance","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions:s1","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions:s2","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions:s4","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"solutions:s5","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"structure","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"language","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"presentation","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"part:p1","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"part:p2","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"accuracy","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"solutions","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"verify","check":"structure","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_rejected_output_gets_one_corrected_retry (test_examiner.Stages.test_rejected_output_gets_one_corrected_retry) ... gemma {"stage":"refs","passages":0,"shared":0,"claims":0,"constitution":0}
+gemma {"stage":"breakdown","check":"question","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+gemma {"stage":"check","check":"directive","attempt":1,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"rejected","reason":"credit:unsourced_number"}
+gemma {"stage":"check","check":"directive","attempt":2,"seconds":0.0,"prompt_tokens":1000,"output_tokens":200,"status":"ok"}
+ok
+test_clean_rejects_gibberish (test_examiner.TextRules.test_clean_rejects_gibberish) ... ok
+test_invented_numbers_are_caught (test_examiner.TextRules.test_invented_numbers_are_caught) ... ok
+test_script_rules (test_examiner.TextRules.test_script_rules) ... ok
+test_sentences_keep_exact_wording (test_examiner.TextRules.test_sentences_keep_exact_wording) ... ok
+test_a_case_missing_from_the_extracts_is_not_red (test_examiner.V15RunFixes.test_a_case_missing_from_the_extracts_is_not_red) ... ok
+test_an_error_is_not_repeated_on_the_next_sentence (test_examiner.V15RunFixes.test_an_error_is_not_repeated_on_the_next_sentence) ... ok
+test_deepening_notes_on_the_command_word_do_not_stop_good (test_examiner.V15RunFixes.test_deepening_notes_on_the_command_word_do_not_stop_good) ... ok
+test_past_rulings_and_amendments_are_not_checked_against_todays_text (test_examiner.V15RunFixes.test_past_rulings_and_amendments_are_not_checked_against_todays_text) ... ok
+test_a_background_source_never_marks_a_sentence_wrong (test_refs.Background.test_a_background_source_never_marks_a_sentence_wrong) ... ok
+test_a_textbook_figure_is_never_quoted (test_refs.Background.test_a_textbook_figure_is_never_quoted) ... ok
+test_geography_question_gets_its_chapter_as_background_only (test_refs.Background.test_geography_question_gets_its_chapter_as_background_only) ... ok
+test_label_and_flag (test_refs.Background.test_label_and_flag) ... ok
+test_polity_extracts_do_not_change (test_refs.Background.test_polity_extracts_do_not_change) ... ok
+test_reference_books_are_background_one_passage_per_chapter (test_refs.Background.test_reference_books_are_background_one_passage_per_chapter) ... ok
+test_the_prompt_marks_background_sources (test_refs.Background.test_the_prompt_marks_background_sources) ... ok
+test_labels_name_the_source (test_refs.Building.test_labels_name_the_source) ... ok
+test_a_citation_the_advice_does_not_use_is_dropped (test_refs.Citing.test_a_citation_the_advice_does_not_use_is_dropped) ... ok
+test_a_cited_source_allows_its_facts (test_refs.Citing.test_a_cited_source_allows_its_facts) ... ok
+test_credit_naming_an_unknown_body_is_dropped_not_retried (test_refs.Citing.test_credit_naming_an_unknown_body_is_dropped_not_retried) ... ok
+test_naming_a_source_fact_without_citing_it_is_dropped (test_refs.Citing.test_naming_a_source_fact_without_citing_it_is_dropped) ... ok
+test_a_claim_flagged_without_its_extract_is_dropped (test_refs.InTheReport.test_a_claim_flagged_without_its_extract_is_dropped) ... ok
+test_a_clash_not_in_the_claims_own_words_is_not_called_wrong (test_refs.InTheReport.test_a_clash_not_in_the_claims_own_words_is_not_called_wrong) ... ok
+test_a_cleared_claim_is_not_called_wrong_by_another_check (test_refs.InTheReport.test_a_cleared_claim_is_not_called_wrong_by_another_check) ... ok
+test_a_failed_question_part_gets_one_more_try (test_refs.InTheReport.test_a_failed_question_part_gets_one_more_try) ... ok
+test_a_wrong_claim_is_marked_on_its_own_sentence (test_refs.InTheReport.test_a_wrong_claim_is_marked_on_its_own_sentence) ... ok
+test_no_sources_skips_the_check_without_a_model_call (test_refs.InTheReport.test_no_sources_skips_the_check_without_a_model_call) ... ok
+test_source_backed_point_shows_its_label (test_refs.InTheReport.test_source_backed_point_shows_its_label) ... ok
+test_claim_only_extracts_stay_out_of_the_shared_prompt (test_refs.Search.test_claim_only_extracts_stay_out_of_the_shared_prompt) ... ok
+test_each_claim_gets_its_passage_within_the_topic (test_refs.Search.test_each_claim_gets_its_passage_within_the_topic) ... ok
+test_embedding_ranker_finds_governor_paraphrase (test_refs.Search.test_embedding_ranker_finds_governor_paraphrase) ... ok
+test_missing_index_means_no_sources (test_refs.Search.test_missing_index_means_no_sources) ... ok
+test_named_article_comes_first (test_refs.Search.test_named_article_comes_first) ... ok
+test_off_topic_question_gets_nothing (test_refs.Search.test_off_topic_question_gets_nothing) ... ok
+test_topic_question_gets_its_chapter_and_articles (test_refs.Search.test_topic_question_gets_its_chapter_and_articles) ... ok
+test_optional_nukta_is_the_same_word_but_flap_letters_are_not (test_photo.Agreement.test_optional_nukta_is_the_same_word_but_flap_letters_are_not) ... ok
+test_three_matching_reads_are_needed (test_photo.Agreement.test_three_matching_reads_are_needed) ... ok
+test_blank_page_has_no_lines (test_photo.Detection.test_blank_page_has_no_lines) ... ok
+test_dim_photo_still_finds_lines_and_is_flagged (test_photo.Detection.test_dim_photo_still_finds_lines_and_is_flagged) ... ok
+test_finds_each_line_on_ruled_paper (test_photo.Detection.test_finds_each_line_on_ruled_paper) ... ok
+test_line_running_off_the_edge_is_marked (test_photo.Detection.test_line_running_off_the_edge_is_marked) ... ok
+test_paper_noise_and_paragraph_gaps_are_not_faint_writing (test_photo.Detection.test_paper_noise_and_paragraph_gaps_are_not_faint_writing) ... ok
+test_smudged_line_is_flagged_not_dropped (test_photo.Detection.test_smudged_line_is_flagged_not_dropped) ... ok
+test_tilted_photo_is_straightened (test_photo.Detection.test_tilted_photo_is_straightened) ... ok
+test_blank_page_asks_for_retake (test_photo.Transcription.test_blank_page_asks_for_retake) ... ok
+test_clear_page_reads_every_line (test_photo.Transcription.test_clear_page_reads_every_line) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.2,"status":"ok"}
+ok
+test_cut_off_line_blocks_even_when_reads_agree (test_photo.Transcription.test_cut_off_line_blocks_even_when_reads_agree) ... gemma {"stage":"transcribe","check":"page1","lines":6,"seconds":0.2,"status":"ok"}
+ok
+test_same_misreading_twice_is_corrected_by_close_ups (test_photo.Transcription.test_same_misreading_twice_is_corrected_by_close_ups) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.2,"status":"ok"}
+ok
+test_smudged_page_asks_for_retake (test_photo.Transcription.test_smudged_page_asks_for_retake) ... gemma {"stage":"transcribe","check":"page1","lines":4,"seconds":0.2,"status":"ok"}
+ok
+test_two_pages_continue_the_answer (test_photo.Transcription.test_two_pages_continue_the_answer) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.2,"status":"ok"}
+gemma {"stage":"transcribe","check":"page2","lines":5,"seconds":0.2,"status":"ok"}
+ok
+test_unreadable_line_blocks_grading (test_photo.Transcription.test_unreadable_line_blocks_grading) ... gemma {"stage":"transcribe","check":"page1","lines":5,"seconds":0.2,"status":"ok"}
+ok
+test_bad_photo_data_goes_back_to_the_queue (test_worker.Worker.test_bad_photo_data_goes_back_to_the_queue) ... ok
+test_lost_lease_stops_that_job_cleanly (test_worker.Worker.test_lost_lease_stops_that_job_cleanly) ... ok
+test_model_failure_returns_the_job_and_stops (test_worker.Worker.test_model_failure_returns_the_job_and_stops) ... ok
+test_photo_answer_is_read_then_graded_with_page_marks (test_worker.Worker.test_photo_answer_is_read_then_graded_with_page_marks) ... ok
+test_photo_is_read_with_vision_and_graded_text_only (test_worker.Worker.test_photo_is_read_with_vision_and_graded_text_only) ... ok
+test_stops_claiming_when_time_is_short (test_worker.Worker.test_stops_claiming_when_time_is_short) ... ok
+test_typed_answer_gets_a_report (test_worker.Worker.test_typed_answer_gets_a_report) ... ok
+test_unreadable_photo_asks_for_a_retake_and_is_not_graded (test_worker.Worker.test_unreadable_photo_asks_for_a_retake_and_is_not_graded) ... ok
+test_vision_model_is_freed_before_the_text_model_loads (test_worker.Worker.test_vision_model_is_freed_before_the_text_model_loads) ... ok
+test_v1_and_v2_are_additive_and_idempotent (test_review.Migrations.test_v1_and_v2_are_additive_and_idempotent) ... ok
+test_v2_does_not_alter_existing_tables (test_review.Migrations.test_v2_does_not_alter_existing_tables) ... ok
+test_v2_rejects_bad_values (test_review.Migrations.test_v2_rejects_bad_values) ... ok
+test_v3_rejects_bad_formats (test_review.Migrations.test_v3_rejects_bad_formats) ... ok
+test_a_governor_question_gets_governor_cases_and_cases_never_check_claims (test_v10.CasesAndBook.test_a_governor_question_gets_governor_cases_and_cases_never_check_claims) ... /home/runner/work/mocks_test_series-pub/mocks_test_series-pub/test_v10.py:174: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/refs/constitution_of_india_2026.json' mode='r' encoding='utf-8'>
+  chunks = refs.constitution_chunks(json.load(open(refs.Path(__file__).resolve().parent /
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/test_v10.py:176: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/refs/cases.json' mode='r' encoding='utf-8'>
+  chunks += refs.case_chunks(json.load(open(refs.Path(__file__).resolve().parent / "refs/cases.json",
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_a_textbook_only_question_still_gets_its_articles_from_the_claims (test_v10.CasesAndBook.test_a_textbook_only_question_still_gets_its_articles_from_the_claims) ... /home/runner/work/mocks_test_series-pub/mocks_test_series-pub/test_v10.py:199: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/refs/constitution_of_india_2026.json' mode='r' encoding='utf-8'>
+  chunks = refs.constitution_chunks(json.load(open(root / "refs/constitution_of_india_2026.json",
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_book_labels_name_chapter_and_section (test_v10.CasesAndBook.test_book_labels_name_chapter_and_section) ... ok
+test_off_topic_question_gets_no_cases (test_v10.CasesAndBook.test_off_topic_question_gets_no_cases) ... /home/runner/work/mocks_test_series-pub/mocks_test_series-pub/test_v10.py:187: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/refs/cases.json' mode='r' encoding='utf-8'>
+  chunks = refs.case_chunks(json.load(open(refs.Path(__file__).resolve().parent / "refs/cases.json",
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/test_v10.py:189: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/runner/work/mocks_test_series-pub/mocks_test_series-pub/refs/constitution_of_india_2026.json' mode='r' encoding='utf-8'>
+  chunks += refs.constitution_chunks(json.load(open(refs.Path(__file__).resolve().parent /
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_claim_finding_replaces_an_uncited_one_and_keeps_its_article (test_v10.ClearedStaysCleared.test_claim_finding_replaces_an_uncited_one_and_keeps_its_article) ... ok
+test_provisions_cannot_overrule_a_cleared_claim_via_its_rewrite (test_v10.ClearedStaysCleared.test_provisions_cannot_overrule_a_cleared_claim_via_its_rewrite) ... ok
+test_a_correction_from_the_extract_is_kept (test_v10.CorrectionsTeachNoNewError.test_a_correction_from_the_extract_is_kept) ... ok
+test_a_correction_with_a_new_number_or_name_is_dropped (test_v10.CorrectionsTeachNoNewError.test_a_correction_with_a_new_number_or_name_is_dropped) ... ok
+test_an_unsourced_rewrite_of_a_wrong_fact_is_not_shown (test_v10.CorrectionsTeachNoNewError.test_an_unsourced_rewrite_of_a_wrong_fact_is_not_shown) ... ok
+test_long_copying_is_detected (test_v10.LicensedText.test_long_copying_is_detected) ... ok
+test_two_fixes_on_the_same_number_and_source_are_one (test_v10.OneCorrectionOnce.test_two_fixes_on_the_same_number_and_source_are_one) ... ok
+test_contradicted_without_the_words_is_not_covered (test_v10.UnprovenClaims.test_contradicted_without_the_words_is_not_covered) ... gemma {"stage":"check","check":"facts:s2","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"rejected","reason":"fact:wrong_words"}
+gemma {"stage":"check","check":"facts:s2","attempt":2,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"rejected","reason":"fact:wrong_words"}
+ok
+test_an_omission_is_amber_not_red (test_v10.WrongMeansWhatItSays.test_an_omission_is_amber_not_red) ... ok
+test_equivalent_wording_is_not_a_problem (test_v10.WrongMeansWhatItSays.test_equivalent_wording_is_not_a_problem) ... ok
+test_a_correct_line_worded_like_the_constitution_is_kept (test_v11.CheckedCorrections.test_a_correct_line_worded_like_the_constitution_is_kept) ... ok
+test_a_line_without_the_sources_fact_is_dropped (test_v11.CheckedCorrections.test_a_line_without_the_sources_fact_is_dropped) ... ok
+test_a_negated_correction_counts (test_v11.CheckedCorrections.test_a_negated_correction_counts) ... ok
+test_a_found_error_keeps_its_article_when_the_answer_names_it (test_v11.ClaimCheck.test_a_found_error_keeps_its_article_when_the_answer_names_it) ... gemma {"stage":"check","check":"facts:s4","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"ok"}
+ok
+test_a_trimmed_quote_counts_and_cites_the_extract_it_comes_from (test_v11.ClaimCheck.test_a_trimmed_quote_counts_and_cites_the_extract_it_comes_from) ... gemma {"stage":"check","check":"facts:s2","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"ok"}
+ok
+test_an_unproven_claim_clears_nothing (test_v11.ClaimCheck.test_an_unproven_claim_clears_nothing) ... ok
+test_both_true_is_not_a_contradiction (test_v11.ClaimCheck.test_both_true_is_not_a_contradiction) ... gemma {"stage":"check","check":"facts:s3","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"ok"}
+ok
+test_not_covered_carries_no_concern (test_v11.ClaimCheck.test_not_covered_carries_no_concern) ... gemma {"stage":"check","check":"facts:s4","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"ok"}
+ok
+test_a_copied_extract_is_not_a_correction (test_v11.Corrections.test_a_copied_extract_is_not_a_correction) ... ok
+test_a_dropped_rewrite_of_a_wrong_fact_does_not_come_back_through_a_merge (test_v11.Corrections.test_a_dropped_rewrite_of_a_wrong_fact_does_not_come_back_through_a_merge) ... ok
+test_an_opinion_checks_rewrite_stays (test_v11.Corrections.test_an_opinion_checks_rewrite_stays) ... ok
+test_a_source_quote_that_says_the_same_thing_is_not_a_contradiction (test_v11.QuoteMustDiffer.test_a_source_quote_that_says_the_same_thing_is_not_a_contradiction) ... ok
+test_every_planted_error_still_counts (test_v11.QuoteMustDiffer.test_every_planted_error_still_counts) ... ok
+test_the_claim_check_retries_then_marks_nothing (test_v11.QuoteMustDiffer.test_the_claim_check_retries_then_marks_nothing) ... gemma {"stage":"check","check":"facts:s2","attempt":1,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"rejected","reason":"fact:quote_agrees"}
+gemma {"stage":"check","check":"facts:s2","attempt":2,"seconds":0.0,"prompt_tokens":null,"output_tokens":null,"status":"rejected","reason":"fact:quote_agrees"}
+ok
+test_claim_contradictions_are_rechecked_first_and_outside_the_budget (test_v11.SecondOpinion.test_claim_contradictions_are_rechecked_first_and_outside_the_budget) ... ok
+test_a_claim_meets_the_article_that_settles_it_without_sharing_a_word (test_v11.Sources.test_a_claim_meets_the_article_that_settles_it_without_sharing_a_word) ... ok
+test_a_long_article_gives_the_claim_its_deciding_clause (test_v11.Sources.test_a_long_article_gives_the_claim_its_deciding_clause) ... ok
+test_a_union_answer_is_not_checked_against_the_state_mirror (test_v11.Sources.test_a_union_answer_is_not_checked_against_the_state_mirror) ... ok
+test_cases_come_only_through_the_articles_the_answer_is_checked_against (test_v11.Sources.test_cases_come_only_through_the_articles_the_answer_is_checked_against) ... ok
+test_common_names_map_to_the_constitutions_words (test_v11.Sources.test_common_names_map_to_the_constitutions_words) ... ok
+test_textbook_slices_never_crowd_out_the_constitution (test_v11.Sources.test_textbook_slices_never_crowd_out_the_constitution) ... ok
+test_a_hard_difference_is_not_asked_and_cannot_be_removed (test_v11.ThirdView.test_a_hard_difference_is_not_asked_and_cannot_be_removed) ... ok
+test_a_real_difference_keeps_the_red_mark (test_v11.ThirdView.test_a_real_difference_keeps_the_red_mark) ... ok
+test_same_meaning_removes_the_red_mark (test_v11.ThirdView.test_same_meaning_removes_the_red_mark) ... ok
+
+----------------------------------------------------------------------
+Ran 135 tests in 5.252s
+
+OK

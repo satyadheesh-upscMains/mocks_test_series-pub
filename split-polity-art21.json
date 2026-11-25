@@ -1,0 +1,944 @@
+{
+ "case": "polity-art21",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: only to citizens": true,
+  "cited: only to citizens": true,
+  "caught: High Court directly under Article 32": true,
+  "cited: High Court directly under Article 32": false,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "developing",
+  "levelLabel": "Developing",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "You answer the question only in part.",
+  "summary": "You correctly identified the core language of Article 21 and listed specific expanded rights like livelihood and privacy. However, the answer is too short and contains factual errors regarding the eligibility of foreigners and the specific court mentioned under Article 32. You should first correct the statement about foreigners to reflect that they also enjoy Article 21 protection.",
+  "levelWhy": [
+   "Not every part of the question is answered.",
+   "At 84 words it is too short: a question with this word limit expects about 150.",
+   "It makes 3 distinct points; about 5 are expected.",
+   "It does not fully do what the question's command word asks.",
+   "It has 3 serious problems (see the fixes)."
+  ],
+  "formatNote": null,
+  "question": "Examine how the Supreme Court has widened the scope of Article 21 of the Constitution.",
+  "directives": [
+   {
+    "word": "Examine",
+    "meaning": "Look into the issue in detail: its causes, effects and implications."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "This protection is available only to citizens of India, not to foreigners.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+    "para": 1
+   },
+   {
+    "id": "s4",
+    "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32.",
+    "para": 1
+   },
+   {
+    "id": "s5",
+    "text": "This expansion has made Article 21 the heart of the Fundamental Rights.",
+    "para": 1
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "how the Supreme Court has widened the scope of Article 21 of the Constitution",
+    "status": "partial",
+    "statusLabel": "Partly",
+    "note": "You correctly identified the expansion of rights into the scope of Article 21. However, you have factual errors regarding who is protected by Article 21 and which court handles Article 32 petitions.",
+    "checkedTwice": false,
+    "sentences": [
+     "s3"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Correct the statement to reflect that foreigners also enjoy Article 21 protection.",
+    "where": "The question",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s2",
+     "text": "This protection is available only to citizens of India, not to foreigners."
+    },
+    "why": "The sentence claims Article 21 is only for citizens, but the source confirms that foreigners also enjoy this protection.",
+    "tryWriting": "This protection is available to persons, including foreigners, as no person shall be deprived of his life or personal liberty except according to procedure established by law.",
+    "checkedTwice": true,
+    "source": "Constitution of India, Article 21",
+    "sourceRef": "r1",
+    "evidence": {
+     "wrongWords": "only to citizens of India, not to foreigners",
+     "sourceWords": "No person shall be deprived of his life or personal liberty"
+    }
+   },
+   {
+    "n": 2,
+    "title": "Write about 150 words: this answer has 84.",
+    "where": "Use of space",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The word limit tells you how much a 10-mark answer needs. At 84 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+    "tryWriting": null,
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 3,
+    "title": "Change the court name to Supreme Court to align with Article 32.",
+    "where": "Facts are accurate",
+    "impact": "major",
+    "impactLabel": "Big effect on your marks",
+    "kind": "wrong",
+    "kindLabel": "Wrong",
+    "yourLine": {
+     "sourceId": "s4",
+     "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32."
+    },
+    "why": "The sentence states a citizen can approach the High Court under Article 32, but Article 32 specifically guarantees the right to move the Supreme Court.",
+    "tryWriting": null,
+    "checkedTwice": true,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law.",
+    "credit": [
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence correctly identifies the core text of Article 21 as the basis for the discussion."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "The sentence correctly states the text of Article 21 as provided in the source."
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The sentence correctly states the text of Article 21 regarding the deprivation of life and personal liberty."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s2",
+    "text": "This protection is available only to citizens of India, not to foreigners.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "The question",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "The sentence claims Article 21 is only for citizens, but the source confirms that foreigners also enjoy this protection.",
+      "fix": "Correct the statement to reflect that foreigners also enjoy Article 21 protection.",
+      "fixNumber": 1,
+      "source": "Constitution of India, Article 21"
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s3",
+    "text": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "The sentence correctly identifies specific rights like livelihood, environment, and privacy as expansions of the right to life."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence directly addresses the core of the question by listing specific rights the court has integrated into the right to life."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence identifies specific legal dimensions (livelihood, environment, privacy) that the court added to the right to life."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Facts are accurate",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "reason": "The sentence states a citizen can approach the High Court under Article 32, but Article 32 specifically guarantees the right to move the Supreme Court.",
+      "fix": "Change the court name to Supreme Court to align with Article 32.",
+      "fixNumber": 3,
+      "source": null
+     }
+    ],
+    "tone": "red"
+   },
+   {
+    "sourceId": "s5",
+    "text": "This expansion has made Article 21 the heart of the Fundamental Rights.",
+    "credit": [
+     {
+      "where": "Structure",
+      "reason": "It provides a concluding statement on the significance of the expansion."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Did what the question asks",
+    "reason": "The answer provides a list of rights but fails to examine the 'how' or the judicial shift from a narrow interpretation to a broad one.",
+    "fix": "Explain the shift from a literal interpretation of 'procedure established by law' to a substantive protection of human dignity.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Cause and effect",
+    "reason": "The answer does not explain the transition from a narrow interpretation of 'procedure established by law' to a broader scope of rights.",
+    "fix": "Mention how the court moved from a narrow procedural view to a substantive rights-based view.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Structure",
+    "reason": "Make about 5 distinct points in the body; it has 3.",
+    "fix": "Make about 5 distinct points in the body; it has 3.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Use of space",
+    "reason": "The answer is very short and does not fully utilize the available word limit to provide depth or examples of the expanded rights.",
+    "fix": "Add specific examples of how the court interpreted these rights in practice.",
+    "fixNumber": null,
+    "source": null
+   }
+  ],
+  "strengths": [
+   {
+    "where": "The question",
+    "sourceId": "s3",
+    "quote": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+    "reason": "The sentence correctly identifies specific rights like livelihood, environment, and privacy as expansions of the right to life."
+   },
+   {
+    "where": "Clear wording",
+    "sourceId": "s1",
+    "quote": "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law.",
+    "reason": "The sentence accurately quotes the core legal language of Article 21."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer identifies the expanded rights but lacks the depth required by the command word 'Examine'. It needs to explain the judicial transition from a narrow to a broad interpretation."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer correctly identifies the expansion of rights but contains significant factual errors regarding who is protected and which article allows for High Court access."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "You correctly identified the specific rights added to Article 21, but you made a factual error regarding who is protected by it."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "You correctly identified the expansion of rights like privacy and livelihood. However, you have significant factual errors regarding who is protected by Article 21 and which court handles Article 32 petitions."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "wrong",
+    "verdictLabel": "Wrong",
+    "note": "The answer contains significant factual errors regarding who is protected by Article 21 and which court is accessed under Article 32. You should verify the scope of rights for non-citizens and the specific court mentioned in the Constitution."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "You correctly identified the types of rights expanded by the judiciary, but you made a factual error regarding the eligibility of foreigners under Article 21."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "wrong",
+    "verdictLabel": "Wrong",
+    "note": "You correctly identified the expansion of rights under Article 21. However, you made a factual error regarding the eligibility of foreigners for these protections."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer identifies the expanded rights but fails to explain the judicial shift from a narrow procedural view to a broader one. It also contains a factual error regarding the eligibility of foreigners."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer focuses entirely on the expansion of rights without discussing the limitations or the balance of power between the individual and the state."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "not_applicable",
+    "verdictLabel": "Not needed here",
+    "note": null
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer has a clear structure with an introduction, body, and conclusion. However, there is a factual error regarding who is protected by Article 21."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The sentence uses precise legal concepts like 'livelihood' and 'privacy' to describe the expansion of rights."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer is too brief and fails to use the available space to provide a comprehensive examination. It also contains a factual error regarding the eligibility of foreigners."
+   }
+  ],
+  "stats": {
+   "words": 84,
+   "sentences": 5,
+   "paragraphs": 1,
+   "limit": 150,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 51
+    }
+   ],
+   "uncreditedSentences": [],
+   "marks": 10,
+   "format": "gs-10",
+   "ratio": 0.56
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 21",
+    "used": true
+   },
+   {
+    "label": "Constitution of India, Article 32",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 124",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 129",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 130",
+    "used": false
+   },
+   {
+    "label": "Constitution of India, Article 134A",
+    "used": false
+   },
+   {
+    "label": "Case: A.K. Gopalan v State of Madras (1950)",
+    "used": true
+   },
+   {
+    "label": "Case: Louis De Raedt v Union of India (1991)",
+    "used": false
+   }
+  ],
+  "trust": {
+   "secondOpinions": 9,
+   "overturned": 1,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [],
+   "sourcesUsed": [
+    "Constitution of India, Article 21",
+    "Case: A.K. Gopalan v State of Madras (1950)"
+   ],
+   "expected": [
+    "Constitution of India, Article 21",
+    "Constitution of India, Article 32"
+   ],
+   "casesGiven": [
+    "Case: A.K. Gopalan v State of Madras (1950)",
+    "Case: Louis De Raedt v Union of India (1991)"
+   ],
+   "casesCited": [],
+   "expectedCaseCited": false,
+   "redFixesWithTryWriting": 1
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 385.9,
+   "prompt_tokens": 2326,
+   "output_tokens": 249,
+   "status": "rejected",
+   "reason": "note:source_id"
+  },
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 2,
+   "seconds": 140.1,
+   "prompt_tokens": 2352,
+   "output_tokens": 348,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 406.4,
+   "prompt_tokens": 2231,
+   "output_tokens": 168,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 385.3,
+   "prompt_tokens": 2224,
+   "output_tokens": 310,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 480.1,
+   "prompt_tokens": 2205,
+   "output_tokens": 340,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 455.3,
+   "prompt_tokens": 2249,
+   "output_tokens": 292,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 375.0,
+   "prompt_tokens": 2363,
+   "output_tokens": 242,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 448.0,
+   "prompt_tokens": 2247,
+   "output_tokens": 299,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 598.5,
+   "prompt_tokens": 3360,
+   "output_tokens": 141,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 598.8,
+   "prompt_tokens": 3218,
+   "output_tokens": 201,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 421.5,
+   "prompt_tokens": 3409,
+   "output_tokens": 257,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 400.9,
+   "prompt_tokens": 3207,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 1,
+   "seconds": 529.2,
+   "prompt_tokens": 3415,
+   "output_tokens": 221,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 480.1,
+   "prompt_tokens": 2326,
+   "output_tokens": 294,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 430.5,
+   "prompt_tokens": 2222,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 471.5,
+   "prompt_tokens": 2250,
+   "output_tokens": 318,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 44.8,
+   "prompt_tokens": 201,
+   "output_tokens": 42,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 438.8,
+   "prompt_tokens": 2265,
+   "output_tokens": 312,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 483.3,
+   "prompt_tokens": 2303,
+   "output_tokens": 322,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 399.5,
+   "prompt_tokens": 2232,
+   "output_tokens": 315,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 275.5,
+   "prompt_tokens": 2329,
+   "output_tokens": 164,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 417.9,
+   "prompt_tokens": 2397,
+   "output_tokens": 310,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 222.8,
+   "prompt_tokens": 2178,
+   "output_tokens": 56,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 36.3,
+   "prompt_tokens": 2059,
+   "output_tokens": 47,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 34.7,
+   "prompt_tokens": 2049,
+   "output_tokens": 48,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 36.8,
+   "prompt_tokens": 2043,
+   "output_tokens": 56,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 37.0,
+   "prompt_tokens": 2047,
+   "output_tokens": 54,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 35.8,
+   "prompt_tokens": 2044,
+   "output_tokens": 51,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 36.8,
+   "prompt_tokens": 2052,
+   "output_tokens": 61,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 36.1,
+   "prompt_tokens": 2045,
+   "output_tokens": 54,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 34.8,
+   "prompt_tokens": 2050,
+   "output_tokens": 48,
+   "status": "ok"
+  },
+  {
+   "stage": "correct",
+   "check": "fix:1",
+   "attempt": 1,
+   "seconds": 27.6,
+   "prompt_tokens": 1970,
+   "output_tokens": 37,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 61.1,
+   "prompt_tokens": 2177,
+   "output_tokens": 75,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 9666.7,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 21",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 32",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5"
+   ]
+  },
+  {
+   "id": "r3",
+   "label": "Constitution of India, Article 124",
+   "shared": true,
+   "claims": [
+    "s5"
+   ]
+  },
+  {
+   "id": "r4",
+   "label": "Constitution of India, Article 129",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5"
+   ]
+  },
+  {
+   "id": "r5",
+   "label": "Constitution of India, Article 130",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r6",
+   "label": "Constitution of India, Article 134A",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r7",
+   "label": "Case: A.K. Gopalan v State of Madras (1950)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r8",
+   "label": "Case: Louis De Raedt v Union of India (1991)",
+   "shared": true,
+   "claims": []
+  },
+  {
+   "id": "r9",
+   "label": "Constitution of India, Article 124",
+   "shared": false,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r10",
+   "label": "Constitution of India, Article 31A",
+   "shared": false,
+   "claims": [
+    "s1"
+   ]
+  },
+  {
+   "id": "r11",
+   "label": "Constitution of India, Article 124",
+   "shared": false,
+   "claims": [
+    "s2",
+    "s3",
+    "s4"
+   ]
+  },
+  {
+   "id": "r12",
+   "label": "Constitution of India, Article 29",
+   "shared": false,
+   "claims": [
+    "s2"
+   ]
+  },
+  {
+   "id": "r13",
+   "label": "Constitution of India, Article 374",
+   "shared": false,
+   "claims": [
+    "s3"
+   ]
+  },
+  {
+   "id": "r14",
+   "label": "Constitution of India, Article 226",
+   "shared": false,
+   "claims": [
+    "s4"
+   ]
+  },
+  {
+   "id": "r15",
+   "label": "Constitution of India, Article 13",
+   "shared": false,
+   "claims": [
+    "s5"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "wrong",
+   "unproven": false,
+   "contradicted": true
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s5",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  }
+ ]
+}

@@ -1,0 +1,1025 @@
+{
+ "case": "band-strong-15",
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true
+ },
+ "lostTasks": [],
+ "report": {
+  "version": "mains-report-v15",
+  "model": "gemma-4-12b-it-Q4_K_M.gguf",
+  "lang": "en",
+  "level": "good",
+  "levelLabel": "Good",
+  "levels": [
+   "Off track",
+   "Developing",
+   "Good",
+   "Strong"
+  ],
+  "headline": "Every part is answered. The fixes below will make it stronger.",
+  "summary": "The answer successfully identifies core administrative functions and uses specific court cases and legislative acts to discuss the Commission's independence. However, it lacks a clear explanation of how the Commission's powers and the Model Code of Conduct specifically ensure a level playing field. To improve, you should first explain the causal link between the Commission's independence and the prevention of executive interference.",
+  "levelWhy": [
+   "It leaves out an important angle of the issue."
+  ],
+  "formatNote": null,
+  "question": "Examine the role of the Election Commission of India in ensuring free and fair elections. (Answer in 250 words)",
+  "directives": [
+   {
+    "word": "Examine",
+    "meaning": "Look into the issue in detail: its causes, effects and implications."
+   }
+  ],
+  "sentences": [
+   {
+    "id": "s1",
+    "text": "Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India.",
+    "para": 1
+   },
+   {
+    "id": "s2",
+    "text": "Its independence and its wide powers are the base of India's electoral democracy.",
+    "para": 1
+   },
+   {
+    "id": "s3",
+    "text": "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment.",
+    "para": 2
+   },
+   {
+    "id": "s4",
+    "text": "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent.",
+    "para": 2
+   },
+   {
+    "id": "s5",
+    "text": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+    "para": 2
+   },
+   {
+    "id": "s6",
+    "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute.",
+    "para": 2
+   },
+   {
+    "id": "s7",
+    "text": "Technologically, electronic voting machines with VVPAT slips have made counting faster and more verifiable.",
+    "para": 2
+   },
+   {
+    "id": "s8",
+    "text": "Challenges remain.",
+    "para": 3
+   },
+   {
+    "id": "s9",
+    "text": "Other Election Commissioners lack the CEC's protection, as they can be removed on the CEC's recommendation.",
+    "para": 3
+   },
+   {
+    "id": "s10",
+    "text": "Money power and criminal candidates still weaken the level playing field.",
+    "para": 3
+   },
+   {
+    "id": "s11",
+    "text": "In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.",
+    "para": 3
+   },
+   {
+    "id": "s12",
+    "text": "Giving all Commissioners equal protection, a statutory basis for the Model Code and an independent selection process would make the Commission's role in free and fair elections more secure.",
+    "para": 4
+   }
+  ],
+  "parts": [
+   {
+    "id": "p1",
+    "label": "The question",
+    "text": "the role of the Election Commission of India in ensuring free and fair elections",
+    "status": "met",
+    "statusLabel": "Answered",
+    "note": "The answer identifies key administrative and regulatory mechanisms like the Model Code of Conduct and electoral roll preparation. To improve, you could briefly mention how the Commission handles the logistics of polling to ensure accessibility.",
+    "checkedTwice": false,
+    "sentences": [
+     "s5",
+     "s6"
+    ]
+   }
+  ],
+  "fixes": [
+   {
+    "n": 1,
+    "title": "Add a sentence about the Commission's role in coordinating with state administrations to ensure uniform election conduct across the country.",
+    "where": "Covered the key angles",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "missing",
+    "kindLabel": "Missing",
+    "yourLine": null,
+    "why": "The answer lacks a discussion on the federal dimension, specifically how the Commission manages elections across different states and the coordination with state governments.",
+    "tryWriting": "The Commission also ensures a federal balance by coordinating with state governments to maintain uniform electoral standards across the country.",
+    "checkedTwice": true,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 2,
+    "title": "Explain how independence prevents executive interference and how wide powers allow for proactive enforcement of rules.",
+    "where": "Cause and effect",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s2",
+     "text": "Its independence and its wide powers are the base of India's electoral democracy."
+    },
+    "why": "The sentence states that independence and powers are the base of democracy but does not explain the causal link of how these specific attributes ensure 'free and fair' elections.",
+    "tryWriting": "The Commission's independence ensures it can act without executive pressure, while its wide powers allow it to proactively enforce rules to maintain a level playing field.",
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   },
+   {
+    "n": 3,
+    "title": "Explain how the code ensures a level playing field for all candidates.",
+    "where": "Concepts explained",
+    "impact": "medium",
+    "impactLabel": "Medium effect on your marks",
+    "kind": "weak",
+    "kindLabel": "Needs work",
+    "yourLine": {
+     "sourceId": "s6",
+     "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute."
+    },
+    "why": "The sentence mentions the Model Code of Conduct but does not explain how it specifically ensures 'free and fair' elections beyond just restraining government machinery.",
+    "tryWriting": "Through the Model Code of Conduct, the Commission ensures a level playing field by restraining the use of government machinery and preventing the use of state resources for campaigning.",
+    "checkedTwice": false,
+    "source": null,
+    "sourceRef": null,
+    "evidence": null
+   }
+  ],
+  "highlights": [
+   {
+    "sourceId": "s1",
+    "text": "Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India.",
+    "credit": [
+     {
+      "where": "Did what the question asks",
+      "reason": "It establishes the constitutional basis for the Commission's authority over various elections."
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence correctly identifies the constitutional basis of the Commission's authority over various levels of government."
+     },
+     {
+      "where": "Facts are accurate",
+      "reason": "Correctly identifies the constitutional mandate of the Election Commission as per Article 324."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "The question",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "While it establishes the legal authority, it does not describe the actual 'role' or actions taken to ensure fairness.",
+      "fix": "Add a brief phrase explaining how this authority allows the Commission to act independently.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s2",
+    "text": "Its independence and its wide powers are the base of India's electoral democracy.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Cause and effect",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence states that independence and powers are the base of democracy but does not explain the causal link of how these specific attributes ensure 'free and fair' elections.",
+      "fix": "Explain how independence prevents executive interference and how wide powers allow for proactive enforcement of rules.",
+      "fixNumber": 2,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s3",
+    "text": "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment.",
+    "credit": [
+     {
+      "where": "Facts are accurate",
+      "reason": "Accurately describes the removal process and service conditions for the Chief Election Commissioner."
+     },
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "Correctly describes the constitutional protection regarding the removal of the Chief Election Commissioner."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s4",
+    "text": "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent.",
+    "credit": [
+     {
+      "where": "Concepts explained",
+      "reason": "The sentence explains the scope of the Commission's powers by referencing a judicial interpretation of its plenary authority."
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The student uses a specific court judgment to support the claim regarding the Commission's plenary powers."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Facts are accurate",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The student mentions a specific court case and year which is not provided in the reference materials.",
+      "fix": "Verify the case name and year against official legal records.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s5",
+    "text": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "It identifies specific administrative actions like preparing electoral rolls and deploying forces which are core functions for ensuring fair elections."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence describes the administrative functions of the Commission that directly contribute to conducting elections."
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence covers the administrative dimension of the Commission's role by mentioning electoral rolls and deployment of forces."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s6",
+    "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute.",
+    "credit": [
+     {
+      "where": "The question",
+      "reason": "It explains how the Commission uses the Model Code of Conduct to prevent the misuse of government machinery."
+     },
+     {
+      "where": "Did what the question asks",
+      "reason": "It explains a specific mechanism (Model Code of Conduct) used to ensure fairness by restricting government power."
+     },
+     {
+      "where": "Stayed on topic",
+      "reason": "This sentence explains how the Commission uses the Model Code of Conduct to ensure a level playing field."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Concepts explained",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The sentence mentions the Model Code of Conduct but does not explain how it specifically ensures 'free and fair' elections beyond just restraining government machinery.",
+      "fix": "Explain how the code ensures a level playing field for all candidates.",
+      "fixNumber": 3,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s7",
+    "text": "Technologically, electronic voting machines with VVPAT slips have made counting faster and more verifiable.",
+    "credit": [
+     {
+      "where": "Covered the key angles",
+      "reason": "This sentence addresses the technological dimension of ensuring fair elections through verifiable voting systems."
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "It connects the use of specific technology to the outcome of faster and more verifiable counting."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Examples and evidence",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The mention of electronic voting machines is a general technological fact rather than a specific instance of the Commission's active role in ensuring fairness.",
+      "fix": "Describe a specific instance where the Commission's use of technology prevented electoral malpractice.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s8",
+    "text": "Challenges remain.",
+    "credit": [],
+    "concerns": [
+     {
+      "where": "Structure",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "This sentence is a transition rather than a distinct body point or a conclusion.",
+      "fix": "Remove this sentence to improve flow between the body and the conclusion.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   },
+   {
+    "sourceId": "s9",
+    "text": "Other Election Commissioners lack the CEC's protection, as they can be removed on the CEC's recommendation.",
+    "credit": [
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The student identifies a specific structural limitation regarding the removal process of other Election Commissioners compared to the Chief Election Commissioner."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s10",
+    "text": "Money power and criminal candidates still weaken the level playing field.",
+    "credit": [
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The student acknowledges external factors like money power and criminal candidates that limit the Commission's ability to ensure a level playing field."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s11",
+    "text": "In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.",
+    "credit": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The student cites a specific court case and a subsequent legislative act to provide evidence for the challenges regarding the Commission's independence."
+     }
+    ],
+    "concerns": [],
+    "tone": "green"
+   },
+   {
+    "sourceId": "s12",
+    "text": "Giving all Commissioners equal protection, a statutory basis for the Model Code and an independent selection process would make the Commission's role in free and fair elections more secure.",
+    "credit": [
+     {
+      "where": "Suggestions are workable",
+      "reason": "The suggestion to give all Commissioners equal protection directly addresses the vulnerability of the other Election Commissioners mentioned in the previous sentence."
+     },
+     {
+      "where": "Structure",
+      "reason": "It offers a forward-looking way ahead by suggesting specific reforms."
+     }
+    ],
+    "concerns": [
+     {
+      "where": "Suggestions are workable",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "reason": "The suggestion to provide a statutory basis for the Model Code of Conduct is a good idea but does not specify how it should be structured or what specific powers it should grant.",
+      "fix": "Specify that the statute should define the specific prohibited actions and the penalties for violations by candidates and political parties.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "tone": "amber"
+   }
+  ],
+  "missing": [],
+  "additions": [
+   {
+    "where": "Covered the key angles",
+    "reason": "The answer lacks a discussion on the federal dimension, specifically how the Commission manages elections across different states and the coordination with state governments.",
+    "fix": "Add a sentence about the Commission's role in coordinating with state administrations to ensure uniform election conduct across the country.",
+    "fixNumber": 1,
+    "source": null
+   },
+   {
+    "where": "Constitution and textbook basics",
+    "reason": "The answer does not mention that the President has the power to fix the number of other Election Commissioners.",
+    "fix": "Mention that the President determines the number of other Election Commissioners.",
+    "fixNumber": null,
+    "source": null
+   },
+   {
+    "where": "Trade-offs and limits",
+    "reason": "The answer does not explicitly mention the logistical or financial costs associated with implementing large-scale electoral reforms or technological upgrades.",
+    "fix": "Mention the logistical challenges or costs of universal technological implementation.",
+    "fixNumber": null,
+    "source": null
+   }
+  ],
+  "strengths": [
+   {
+    "where": "The question",
+    "sourceId": "s5",
+    "quote": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+    "reason": "It identifies specific administrative actions like preparing electoral rolls and deploying forces which are core functions for ensuring fair elections."
+   },
+   {
+    "where": "Facts are accurate",
+    "sourceId": "s3",
+    "quote": "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment.",
+    "reason": "Accurately describes the removal process and service conditions for the Chief Election Commissioner."
+   },
+   {
+    "where": "Examples and evidence",
+    "sourceId": "s11",
+    "quote": "In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.",
+    "reason": "The student cites a specific court case and a subsequent legislative act to provide evidence for the challenges regarding the Commission's independence."
+   }
+  ],
+  "checks": [
+   {
+    "id": "directive",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Did what the question asks",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "It establishes the constitutional basis for the Commission's authority over various elections."
+   },
+   {
+    "id": "scope",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Stayed on topic",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer remains highly relevant to the role of the Election Commission. It covers administrative, legal, and technological aspects well."
+   },
+   {
+    "id": "dimensions",
+    "group": "question",
+    "groupLabel": "The question",
+    "label": "Covered the key angles",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer covers administrative and technological aspects well. However, it misses the federal dimension of how the Commission interacts with state governments."
+   },
+   {
+    "id": "concepts",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Concepts explained",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer correctly identifies the constitutional and judicial basis of the Commission's powers. It could be strengthened by more deeply explaining the mechanism of 'fairness' in the Model Code of Conduct."
+   },
+   {
+    "id": "accuracy",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Facts are accurate",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The core constitutional facts regarding the powers and protections of the Commission are well-stated. Ensure that specific case law citations are verified against official records."
+   },
+   {
+    "id": "evidence",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Examples and evidence",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer is well-supported by legal precedents and specific legislative developments. To improve, try to link technological mentions to specific instances of ensuring fairness."
+   },
+   {
+    "id": "provisions",
+    "group": "content",
+    "groupLabel": "Content",
+    "label": "Constitution and textbook basics",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer accurately reflects the constitutional provisions regarding the Commission's powers and the protection of the Chief Election Commissioner."
+   },
+   {
+    "id": "causality",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Cause and effect",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The answer identifies several mechanisms (Model Code, technology, administrative duties) that contribute to fair elections. However, the opening claim about independence needs a clearer causal link to the outcome of 'free and fair' elections."
+   },
+   {
+    "id": "balance",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Trade-offs and limits",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer successfully identifies structural and external limitations to the Commission's power. It could be further improved by mentioning the practical costs or logistical hurdles of its mandates."
+   },
+   {
+    "id": "solutions",
+    "group": "reasoning",
+    "groupLabel": "Reasoning",
+    "label": "Suggestions are workable",
+    "verdict": "partial",
+    "verdictLabel": "Partly",
+    "note": "The suggestions are relevant to the problems identified but could be more specific regarding the implementation of a statutory code."
+   },
+   {
+    "id": "structure",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Structure",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The structure is very good. You have a clear introduction, a well-organized body with multiple dimensions, and a constructive conclusion."
+   },
+   {
+    "id": "language",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Clear wording",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The use of technical legal terms from the Constitution is excellent. Avoid overly broad metaphorical language when describing the Commission's role."
+   },
+   {
+    "id": "presentation",
+    "group": "writing",
+    "groupLabel": "Writing",
+    "label": "Use of space",
+    "verdict": "good",
+    "verdictLabel": "Good",
+    "note": "The answer uses the word count very effectively, covering constitutional, administrative, and technological aspects while staying within the limit."
+   }
+  ],
+  "stats": {
+   "words": 246,
+   "sentences": 12,
+   "paragraphs": 4,
+   "limit": 250,
+   "wordsByPart": [
+    {
+     "partId": "p1",
+     "label": "The question",
+     "words": 70
+    }
+   ],
+   "uncreditedSentences": [],
+   "marks": 15,
+   "format": "gs-15",
+   "ratio": 0.98
+  },
+  "transcript": null,
+  "sources": [
+   {
+    "label": "Constitution of India, Article 324",
+    "used": false
+   }
+  ],
+  "trust": {
+   "secondOpinions": 3,
+   "overturned": 2,
+   "softened": 0,
+   "thirdOpinions": 0,
+   "thirdRemoved": 0,
+   "unavailableChecks": []
+  },
+  "qa": {
+   "falseRed": [],
+   "levelWhy": [
+    "It leaves out an important angle of the issue."
+   ]
+  }
+ },
+ "modelCalls": [
+  {
+   "stage": "check",
+   "check": "accuracy",
+   "attempt": 1,
+   "seconds": 302.9,
+   "prompt_tokens": 1819,
+   "output_tokens": 229,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "balance",
+   "attempt": 1,
+   "seconds": 342.8,
+   "prompt_tokens": 1724,
+   "output_tokens": 248,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "causality",
+   "attempt": 1,
+   "seconds": 331.6,
+   "prompt_tokens": 1717,
+   "output_tokens": 275,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "concepts",
+   "attempt": 1,
+   "seconds": 297.9,
+   "prompt_tokens": 1698,
+   "output_tokens": 263,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 352.6,
+   "prompt_tokens": 1742,
+   "output_tokens": 243,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 334.1,
+   "prompt_tokens": 1856,
+   "output_tokens": 294,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "evidence",
+   "attempt": 1,
+   "seconds": 299.0,
+   "prompt_tokens": 1740,
+   "output_tokens": 256,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s1",
+   "attempt": 1,
+   "seconds": 430.8,
+   "prompt_tokens": 2321,
+   "output_tokens": 186,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s2",
+   "attempt": 1,
+   "seconds": 451.3,
+   "prompt_tokens": 2299,
+   "output_tokens": 237,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s3",
+   "attempt": 1,
+   "seconds": 427.2,
+   "prompt_tokens": 2338,
+   "output_tokens": 173,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s4",
+   "attempt": 1,
+   "seconds": 449.2,
+   "prompt_tokens": 2329,
+   "output_tokens": 231,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s5",
+   "attempt": 1,
+   "seconds": 411.8,
+   "prompt_tokens": 2304,
+   "output_tokens": 148,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s6",
+   "attempt": 1,
+   "seconds": 541.6,
+   "prompt_tokens": 2313,
+   "output_tokens": 252,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s7",
+   "attempt": 1,
+   "seconds": 339.2,
+   "prompt_tokens": 2302,
+   "output_tokens": 154,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "facts:s8",
+   "attempt": 1,
+   "seconds": 362.6,
+   "prompt_tokens": 2286,
+   "output_tokens": 181,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "gap:p1",
+   "attempt": 1,
+   "seconds": 368.1,
+   "prompt_tokens": 1817,
+   "output_tokens": 243,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "language",
+   "attempt": 1,
+   "seconds": 343.3,
+   "prompt_tokens": 1715,
+   "output_tokens": 246,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "part:p1",
+   "attempt": 1,
+   "seconds": 363.4,
+   "prompt_tokens": 1741,
+   "output_tokens": 263,
+   "status": "ok"
+  },
+  {
+   "stage": "breakdown",
+   "check": "question",
+   "attempt": 1,
+   "seconds": 45.8,
+   "prompt_tokens": 208,
+   "output_tokens": 40,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "presentation",
+   "attempt": 1,
+   "seconds": 300.1,
+   "prompt_tokens": 1758,
+   "output_tokens": 213,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "provisions",
+   "attempt": 1,
+   "seconds": 361.0,
+   "prompt_tokens": 1796,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "scope",
+   "attempt": 1,
+   "seconds": 300.1,
+   "prompt_tokens": 1725,
+   "output_tokens": 242,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 315.7,
+   "prompt_tokens": 1822,
+   "output_tokens": 266,
+   "status": "rejected",
+   "reason": "credit:source"
+  },
+  {
+   "stage": "check",
+   "check": "solutions",
+   "attempt": 2,
+   "seconds": 88.2,
+   "prompt_tokens": 1846,
+   "output_tokens": 236,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s1",
+   "attempt": 1,
+   "seconds": 150.9,
+   "prompt_tokens": 1845,
+   "output_tokens": 228,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s2",
+   "attempt": 1,
+   "seconds": 123.4,
+   "prompt_tokens": 1823,
+   "output_tokens": 159,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s3",
+   "attempt": 1,
+   "seconds": 131.0,
+   "prompt_tokens": 1848,
+   "output_tokens": 172,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s4",
+   "attempt": 1,
+   "seconds": 135.0,
+   "prompt_tokens": 1839,
+   "output_tokens": 185,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s5",
+   "attempt": 1,
+   "seconds": 132.4,
+   "prompt_tokens": 1828,
+   "output_tokens": 183,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "solutions:s6",
+   "attempt": 1,
+   "seconds": 126.4,
+   "prompt_tokens": 1837,
+   "output_tokens": 162,
+   "status": "ok"
+  },
+  {
+   "stage": "check",
+   "check": "structure",
+   "attempt": 1,
+   "seconds": 406.3,
+   "prompt_tokens": 1890,
+   "output_tokens": 378,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "directive",
+   "attempt": 1,
+   "seconds": 203.9,
+   "prompt_tokens": 1551,
+   "output_tokens": 49,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "dimensions",
+   "attempt": 1,
+   "seconds": 44.3,
+   "prompt_tokens": 1540,
+   "output_tokens": 50,
+   "status": "ok"
+  },
+  {
+   "stage": "verify",
+   "check": "solutions",
+   "attempt": 1,
+   "seconds": 48.5,
+   "prompt_tokens": 1555,
+   "output_tokens": 59,
+   "status": "ok"
+  },
+  {
+   "stage": "summary",
+   "check": "report",
+   "attempt": 1,
+   "seconds": 78.9,
+   "prompt_tokens": 1698,
+   "output_tokens": 79,
+   "status": "ok"
+  }
+ ],
+ "modelSeconds": 9741.3,
+ "prepSources": [
+  {
+   "id": "r1",
+   "label": "Constitution of India, Article 324",
+   "shared": true,
+   "claims": [
+    "s1",
+    "s2",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s10",
+    "s11"
+   ]
+  },
+  {
+   "id": "r2",
+   "label": "Constitution of India, Article 324",
+   "shared": false,
+   "claims": [
+    "s3",
+    "s4",
+    "s9",
+    "s12"
+   ]
+  }
+ ],
+ "claimResults": [
+  {
+   "id": "facts:s1",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s2",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s3",
+   "status": "ok",
+   "verdict": "good",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s4",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s5",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s6",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s7",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  },
+  {
+   "id": "facts:s8",
+   "status": "ok",
+   "verdict": "not_applicable",
+   "unproven": false,
+   "contradicted": false
+  }
+ ]
+}
