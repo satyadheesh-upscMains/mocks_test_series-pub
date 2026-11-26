@@ -2,7 +2,6 @@ name: Mains fact harness
 on:
   push:
     branches: [qa/mains-harness]
-  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -13,22 +12,71 @@ env:
   MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
   RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 jobs:
+  model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          pip install -q huggingface-hub==0.36.0
+          python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='unsloth/gemma-4-12b-it-GGUF', filename='gemma-4-12b-it-Q4_K_M.gguf', local_dir='models')"
   facts:
+    needs: model
     strategy:
       fail-fast: false
-      matrix: {repeat: [1, 2]}
+      matrix:
+        repeat: [1, 2]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-        with: {repository: satyadheesh-upscMains/mocks_test_series-core, ref: '${{ env.CORE_SHA }}', token: '${{ secrets.CORE_TOKEN }}'}
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_SHA }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
+        with:
+          python-version: '3.11'
       - uses: actions/cache/restore@v4
-        with: {path: models, key: '${{ env.MODEL_KEY }}'}
+        with:
+          path: models
+          key: ${{ env.MODEL_KEY }}
       - run: pip install -q ${{ env.RUNTIME }}
       - run: python tools/build_refs.py
-      - run: python tools/fact_harness.py --repeat 1 --out fact-harness-${{ matrix.repeat }}.json
+      - run: python tools/fact_harness.py --repeat ${{ matrix.repeat }} --out fact-harness-${{ matrix.repeat }}.json
       - if: always()
         uses: actions/upload-artifact@v4
-        with: {name: fact-harness-${{ matrix.repeat }}, path: fact-harness-${{ matrix.repeat }}.json, retention-days: 7}
+        with:
+          name: "fact-harness-${{ matrix.repeat }}"
+          path: "fact-harness-${{ matrix.repeat }}.json"
+          retention-days: 7
+  publish:
+    needs: facts
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: fact-harness-*
+          path: reports
+          merge-multiple: true
+      - name: Publish labels and verdicts
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports && cd reports
+          git init -q -b qa/mains-harness-reports
+          git config user.name mains-qa
+          git config user.email mains-qa@users.noreply.github.com
+          git add -A
+          git commit -qm "Fact harness ${{ github.run_id }}"
+          AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -qf "https://github.com/${{ github.repository }}.git" HEAD:qa/mains-harness-reports
