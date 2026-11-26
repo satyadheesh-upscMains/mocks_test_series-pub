@@ -1,0 +1,702 @@
+{
+ "case": "band-strong-15",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 7235.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-15"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-band-strong-15",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer correctly identifies the constitutional mandate, administrative roles like preparing electoral rolls, and the plenary powers of the Commission. To improve, you should explain how the Model Code of Conduct specifically ensures a level playing field and how the current framework struggles to curb money and criminal influence. You should also refine the phrasing regarding the Commission's role to focus on its role as a guarantor of procedural integrity.",
+    "levelWhy": [
+     "It leaves out an important angle of the issue."
+    ],
+    "formatNote": null,
+    "question": "Examine the role of the Election Commission of India in ensuring free and fair elections. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its independence and its wide powers are the base of India's electoral democracy.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Technologically, electronic voting machines with VVPAT slips have made counting faster and more verifiable.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Challenges remain.",
+      "para": 3
+     },
+     {
+      "id": "s9",
+      "text": "Other Election Commissioners lack the CEC's protection, as they can be removed on the CEC's recommendation.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "Money power and criminal candidates still weaken the level playing field.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "Giving all Commissioners equal protection, a statutory basis for the Model Code and an independent selection process would make the Commission's role in free and fair elections more secure.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the role of the Election Commission of India in ensuring free and fair elections",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer identifies key administrative and regulatory functions of the Commission. To improve, explicitly link how the Commission actively counters the specific challenges mentioned in the latter half of the answer.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s6"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Explain how the Commission's current regulatory framework struggles to curb the influence of money and criminal elements.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "Money power and criminal candidates still weaken the level playing field."
+      },
+      "why": "The sentence mentions money power and criminal candidates but does not explain how the Commission's specific actions or failures lead to a lack of a level playing field.",
+      "tryWriting": "The Commission's role is challenged by the influence of money and criminal candidates, which can distort the level playing field despite existing regulatory oversight.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Replace with 'foundation of the integrity of India's electoral process'",
+      "where": "Clear wording",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Its independence and its wide powers are the base of India's electoral democracy."
+      },
+      "why": "The phrase 'base of India's electoral democracy' is slightly abstract; it could more precisely describe the Commission's role as a guarantor of procedural integrity.",
+      "tryWriting": "Its independence and wide powers are the foundation of the integrity of India's electoral process.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how the code ensures a level playing field by preventing the ruling party from using state resources for campaigning.",
+      "where": "Concepts explained",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute."
+      },
+      "why": "The sentence mentions the Model Code of Conduct but does not explain how it specifically ensures 'free and fair' elections beyond just restraining government machinery.",
+      "tryWriting": "Through the Model Code of Conduct, the Commission ensures a level playing field by restraining the use of government machinery and resources for campaigning once elections are announced.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the constitutional mandate for the Commission to oversee elections to Parliament and State Legislatures."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly identifies the constitutional mandate of Article 324 regarding the superintendence, direction, and control of elections."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the constitutional provision and the scope of the Commission's authority."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Its independence and its wide powers are the base of India's electoral democracy.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'base of India's electoral democracy' is slightly abstract; it could more precisely describe the Commission's role as a guarantor of procedural integrity.",
+        "fix": "Replace with 'foundation of the integrity of India's electoral process'",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Constitutionally, the Chief Election Commissioner can be removed only in the manner and on the grounds of a Supreme Court judge, and the conditions of service cannot be varied to the CEC's disadvantage after appointment.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "This matches the text of the Constitution."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly explains the scope of the Commission's powers as plenary where law is silent, citing a relevant judicial precedent."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately cites the judicial interpretation regarding plenary powers when law is silent."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student correctly cites a specific court judgment to support the claim regarding the Commission's plenary powers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It correctly identifies administrative roles like preparing electoral rolls and deploying observers to ensure fair conduct."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence correctly identifies the administrative role of the Commission in managing electoral rolls and deploying forces."
+       },
+       {
+        "where": "Use of space",
+        "reason": "It concisely lists multiple administrative functions to demonstrate the scope of the Commission's role."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Through the Model Code of Conduct it restrains the use of government machinery once elections are announced, although the code rests on consensus rather than a statute.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It explains how the Model Code of Conduct is used to restrain the use of government machinery."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'government machinery' and 'consensus rather than a statute' clearly distinguishes the legal status of the Model Code of Conduct."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the Model Code of Conduct but does not explain how it specifically ensures 'free and fair' elections beyond just restraining government machinery.",
+        "fix": "Explain how the code ensures a level playing field by preventing the ruling party from using state resources for campaigning.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Technologically, electronic voting machines with VVPAT slips have made counting faster and more verifiable.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence highlights the technological dimension of the Commission's role in making counting verifiable."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While electronic voting machines are a tool, the sentence does not explicitly link how they ensure 'free and fair' elections beyond speed.",
+        "fix": "Explain how these machines reduce manual tampering to ensure fairness.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Challenges remain.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Structure",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'Challenges remain' is too brief and does not effectively transition between the Commission's roles and the obstacles it faces.",
+        "fix": "Replace with a more descriptive transition sentence that introduces the limitations of the current system.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Other Election Commissioners lack the CEC's protection, as they can be removed on the CEC's recommendation.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The student identifies a specific structural limitation regarding the lack of protection for other Election Commissioners compared to the Chief Election Commissioner."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Money power and criminal candidates still weaken the level playing field.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The student acknowledges external factors like money power and criminal candidates that limit the Commission's ability to ensure a level playing field."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions money power and criminal candidates but does not explain how the Commission's specific actions or failures lead to a lack of a level playing field.",
+        "fix": "Explain how the Commission's current regulatory framework struggles to curb the influence of money and criminal elements.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "In Anoop Baranwal (2023) the Court required a selection committee including the Chief Justice until Parliament legislated, but the 2023 Act replaced the Chief Justice with a Union Minister, which revived concerns about independence.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a critical analysis of the appointment process and its impact on the Commission's independence."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific court case and subsequent legislative action to support the discussion on the independence of the Commission."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Trade-offs and limits",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning the 2023 Act, the sentence does not explicitly state the specific cost or trade-off of the change beyond 'revived concerns'.",
+        "fix": "Explain how the change in the selection committee composition might impact the perceived independence of the body.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s12",
+      "text": "Giving all Commissioners equal protection, a statutory basis for the Model Code and an independent selection process would make the Commission's role in free and fair elections more secure.",
+      "credit": [
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies specific actors (Commissioners) and specific actions (equal protection, statutory basis, independent selection) to address the issues of independence and the Model Code of Conduct."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting specific structural improvements to secure the Commission's role."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion to give 'all Commissioners equal protection' is vague because it does not specify the exact legal mechanism or constitutional amendment required to achieve this.",
+        "fix": "Specify a constitutional amendment to grant other Election Commissioners the same removal protections as the Chief Election Commissioner.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly address the federal dimension, such as the Commission's role in coordinating elections across different states and union territories.",
+      "fix": "Add a point about the Commission's role as an all-India body coordinating elections across various states.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention that the Commission can postpone or cancel elections if the atmosphere is vitiated.",
+      "fix": "Add that the Commission can postpone or cancel elections if the atmosphere is vitiated to ensure a free and fair poll.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "Administratively, the Commission prepares the electoral rolls, schedules elections and deploys observers and central forces.",
+      "reason": "It correctly identifies administrative roles like preparing electoral rolls and deploying observers to ensure fair conduct."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s1",
+      "quote": "Article 324 vests the superintendence, direction and control of elections to Parliament, the State Legislatures and the offices of President and Vice-President in the Election Commission of India.",
+      "reason": "This sentence correctly identifies the constitutional mandate for the Commission to oversee elections to Parliament and State Legislatures."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s4",
+      "quote": "The Supreme Court held in Mohinder Singh Gill (1978) that Article 324 gives the Commission plenary powers where the law is silent.",
+      "reason": "Correctly explains the scope of the Commission's powers as plenary where law is silent, citing a relevant judicial precedent."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer moves beyond a simple description by analyzing the legal protections, administrative actions, and current challenges to the Commission's independence."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains consistently focused on the Election Commission's functions and legal standing. It avoids irrelevant topics effectively."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers administrative, technological, and legal dimensions well. It would be improved by mentioning its role as an all-India body coordinating federal elections."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies the constitutional basis and the plenary nature of the Commission's powers. It could be strengthened by more deeply explaining the mechanism of the Model Code of Conduct."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported by specific legal precedents and court cases. Adding a specific data point or report regarding electoral challenges would further strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies the constitutional basis and judicial interpretations of the Commission's powers. It could be strengthened by including specific administrative powers like the authority to cancel elections."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the legal powers and administrative tools used by the Commission, but it could more clearly link how specific institutional weaknesses directly impact the 'fairness' of the outcome."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies structural and external limitations to the Commission's effectiveness. To improve, you could more explicitly detail the trade-offs involved in the appointment process."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The suggestions are logically linked to the problems identified in the answer, but they lack specific procedural details on how the changes would be implemented."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear constitutional opening and a constructive conclusion. To improve, ensure transitions between the Commission's powers and the challenges it faces are more fluid."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical vocabulary and correctly identifies specific legal concepts. Minor improvements can be made by replacing broad descriptors with more functional terms."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-balanced in terms of length and avoids significant padding. However, the transition in sentence 8 is too brief and could be used to introduce more specific content."
+     }
+    ],
+    "stats": {
+     "words": 246,
+     "sentences": 12,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 53
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 0.98
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 324",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Political Theory, Ch. 3",
+      "used": false
+     },
+     {
+      "label": "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+      "used": false
+     },
+     {
+      "label": "Case: Anoop Baranwal v Union of India (2023)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 42 (Election Commission), Introduction",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 2 (Era of One-Party Dominance)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 1,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It leaves out an important angle of the issue."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

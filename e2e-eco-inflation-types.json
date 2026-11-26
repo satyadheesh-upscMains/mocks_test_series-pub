@@ -1,0 +1,617 @@
+{
+ "case": "eco-inflation-types",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: Cost-push inflation arises when aggregate demand rises faster than output": true,
+  "cited: Cost-push inflation arises when aggregate demand rises faster than output": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 5320.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-inflation-types"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-inflation-types",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 2 is answered. Part 1 needs the most work.",
+    "summary": "You correctly identified demand-pull inflation as a mismatch where demand exceeds supply and noted the triggers for cost-push inflation. However, your definition of cost-push inflation incorrectly describes demand-pull characteristics instead of focusing on production costs. You should first redefine cost-push inflation as a price rise resulting from increased production costs like wages and raw materials.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check)."
+    ],
+    "formatNote": null,
+    "question": "Differentiate between demand-pull and cost-push inflation. Suggest measures to control each. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Suggest",
+      "meaning": "Propose practical measures and say who should act and how."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Inflation is a sustained rise in the general price level, which erodes the purchasing power of money.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Demand-pull inflation occurs when aggregate demand exceeds the available supply of goods and services, often described as too much money chasing too few goods.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "It is fuelled by rising incomes, easy credit or deficit financing.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Cost-push inflation arises when aggregate demand rises faster than output and pulls prices upwards.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Its usual triggers are higher wages, costlier raw materials and oil price shocks.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Demand-pull inflation is checked by tighter monetary policy, such as a higher repo rate, and by fiscal restraint through lower spending or higher taxes.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Cost-push inflation is eased by supply-side steps such as cutting excise and customs duties on inputs, importing goods in short supply and raising productivity.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Monetary tightening alone works poorly against price rises in items of daily use such as onions or wheat, because these are rarely bought on credit.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "As Indian inflation often combines both, coordinated monetary, fiscal and supply-side action works best.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Differentiate between demand-pull and cost-push inflation",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have correctly identified the drivers for both types of inflation, but you have confused the definitions of demand-pull and cost-push in your description of cost-push inflation.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s5"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Suggest measures to control each",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified the measures for both types of inflation. However, your definition of cost-push inflation is technically incorrect as it describes demand-pull inflation instead.",
+      "checkedTwice": false,
+      "sentences": [
+       "s6",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Define cost-push inflation as a price rise resulting from an increase in production costs such as wages and raw materials.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Cost-push inflation arises when aggregate demand rises faster than output and pulls prices upwards."
+      },
+      "why": "The student describes demand-pull inflation characteristics instead of cost-push inflation; the text states cost-push inflation is the result of an increase in production cost.",
+      "tryWriting": "Cost-push inflation arises when there is an increase in factor input costs, such as wages and raw materials, which pushes up prices.",
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "sourceRef": "r1",
+      "evidence": {
+       "wrongWords": "aggregate demand rises faster than output",
+       "sourceWords": "An increase in factor input costs (i.e., wages and raw materials) pushes up prices. The price rise which is the result of increase in the production cost is cost-push inflation."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Target these measures specifically at sectors where the demand-supply mismatch is most acute.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "Demand-pull inflation is checked by tighter monetary policy, such as a higher repo rate, and by fiscal restraint through lower spending or higher taxes."
+      },
+      "why": "While the measures are correct, the sentence does not specify that these actions should be targeted at the specific goods or sectors where demand exceeds supply.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Target these supply-side steps at the specific inputs or goods causing the price rise.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Cost-push inflation is eased by supply-side steps such as cutting excise and customs duties on inputs, importing goods in short supply and raising productivity."
+      },
+      "why": "The sentence suggests these actions generally but does not specify that these measures should be targeted at the specific goods or inputs causing the price hike.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Inflation is a sustained rise in the general price level, which erodes the purchasing power of money.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The definition of inflation as a sustained rise in the general level of prices is directly supported by the academic definitions provided in the text."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of inflation to set the context."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Demand-pull inflation occurs when aggregate demand exceeds the available supply of goods and services, often described as too much money chasing too few goods.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies demand-pull inflation as a mismatch where demand exceeds supply."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the mechanism of demand-pull inflation as demand exceeding supply."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies the causal link where demand exceeding supply leads to inflation."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Cost-push inflation arises when aggregate demand rises faster than output and pulls prices upwards.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student describes demand-pull inflation characteristics instead of cost-push inflation; the text states cost-push inflation is the result of an increase in production cost.",
+        "fix": "Define cost-push inflation as a price rise resulting from an increase in production costs such as wages and raw materials.",
+        "fixNumber": 1,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction"
+       },
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes cost-push inflation as demand rising faster than output, which is actually the definition of demand-pull inflation.",
+        "fix": "Redefine cost-push inflation as a rise in prices due to increased production costs.",
+        "fixNumber": null,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Its usual triggers are higher wages, costlier raw materials and oil price shocks.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the triggers for cost-push inflation as higher wages and raw material costs."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately lists factor input costs like wages and raw materials as triggers for cost-push inflation."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It identifies specific factors like wages and raw materials as the causes that push prices up."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Demand-pull inflation is checked by tighter monetary policy, such as a higher repo rate, and by fiscal restraint through lower spending or higher taxes.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly identifies monetary and fiscal measures like higher repo rates and lower spending to control demand-pull inflation."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence provides specific monetary and fiscal measures to control demand-pull inflation."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly suggests fiscal restraint through higher taxes and lower spending to tackle excess demand."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the measures are correct, the sentence does not specify that these actions should be targeted at the specific goods or sectors where demand exceeds supply.",
+        "fix": "Target these measures specifically at sectors where the demand-supply mismatch is most acute.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Cost-push inflation is eased by supply-side steps such as cutting excise and customs duties on inputs, importing goods in short supply and raising productivity.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence provides specific supply-side measures such as cutting duties and importing goods to address cost-push inflation."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence correctly identifies the supply-side and fiscal measures used to control cost-push inflation."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence effectively uses space to list three distinct supply-side measures for cost-push inflation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence suggests these actions generally but does not specify that these measures should be targeted at the specific goods or inputs causing the price hike.",
+        "fix": "Target these supply-side steps at the specific inputs or goods causing the price rise.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "As Indian inflation often combines both, coordinated monetary, fiscal and supply-side action works best.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a balanced, forward-looking way ahead by suggesting coordinated action."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific data or real-world examples to illustrate the impact of oil price shocks or the effectiveness of repo rate hikes.",
+      "fix": "Include a specific example of a commodity price shock or a period of high inflation to ground the theory.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the potential trade-offs or costs of the suggested measures, such as how higher interest rates or reduced government spending might slow down economic growth.",
+      "fix": "Add a sentence mentioning that while these measures control inflation, they may also slow down economic growth or reduce public investment.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Demand-pull inflation occurs when aggregate demand exceeds the available supply of goods and services, often described as too much money chasing too few goods.",
+      "reason": "It correctly identifies demand-pull inflation as a mismatch where demand exceeds supply."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s5",
+      "quote": "Its usual triggers are higher wages, costlier raw materials and oil price shocks.",
+      "reason": "It correctly identifies the triggers for cost-push inflation as higher wages and raw material costs."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides clear measures for both types of inflation, but the definition provided for cost-push inflation is factually incorrect as it describes demand-pull inflation."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic but contains a significant conceptual error by swapping the definitions of demand-pull and cost-push inflation."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the economic and fiscal dimensions well but fails to correctly distinguish the mechanism of cost-push inflation."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly identifies the drivers of both types of inflation but mistakenly uses the definition of demand-pull inflation to describe cost-push inflation."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You have correctly identified the triggers for both types of inflation, but you have swapped the definition of cost-push inflation with demand-pull inflation."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The primary issue is a conceptual error where the definition of cost-push inflation is swapped with demand-pull inflation. Adding specific data or a real-world example would strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the mechanisms for demand-pull inflation but mischaracterized the fundamental cause of cost-push inflation."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly identifies the drivers for demand-pull inflation but incorrectly defines the mechanism for cost-push inflation by repeating the demand-side logic."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides clear solutions but lacks a discussion on the economic trade-offs or the limitations of these policies."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The distinction between the two types of inflation is confused in your definition of cost-push inflation. Your suggested measures are otherwise specific and workable."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The structure is well-organized with a clear introduction and conclusion. However, the definition of cost-push inflation is factually incorrect and contradicts the demand-pull definition."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have a significant conceptual error in the definition of cost-push inflation. It should focus on production costs rather than demand levels."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. The definition of cost-push inflation is currently incorrect and contradicts the demand-pull definition."
+     }
+    ],
+    "stats": {
+     "words": 166,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 51
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 62
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s3",
+       "text": "It is fuelled by rising incomes, easy credit or deficit financing."
+      },
+      {
+       "sourceId": "s8",
+       "text": "Monetary tightening alone works poorly against price rises in items of daily use such as onions or wheat, because these are rarely bought on credit."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 1,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

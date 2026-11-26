@@ -1,0 +1,616 @@
+{
+ "case": "band-strong-10",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 7783.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-strong-10"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-band-strong-10",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer correctly identifies the Governor's constitutional status, executive powers, and functional role in relation to the Council of Ministers. However, the use of metaphorical language and a list of cases at the end lacks technical depth and a cohesive conclusion. To improve, you should describe the Governor as a bridge between the Union and State, explain how the role of a guardian ensures federal balance, and integrate the cited cases into a final concluding thought.",
+    "levelWhy": [
+     "It could do more of what the question's command word asks.",
+     "It leaves out an important angle of the issue.",
+     "Its points need specific examples, data or cases."
+    ],
+    "formatNote": null,
+    "question": "Analyse the position of the Governor in India's federal structure. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Analyse",
+      "meaning": "Break the issue into its parts and show how they connect and what follows from them."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Because the Governor is appointed by the President, the office sits where the Union and the States meet.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "As a link with the Union, the Governor holds office during the pleasure of the President under Article 156.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Discretion in inviting a party to form the government after a hung verdict has often caused Centre-State friction.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Sarkaria Commission therefore recommended that Governors be detached figures from outside the State.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P.",
+      "para": 3
+     },
+     {
+      "id": "s9",
+      "text": "Singhal (2010) and Nabam Rebia (2016).",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the position of the Governor in India's federal structure",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer identifies the Governor's dual role as a constitutional head and a link to the Union. It would be stronger if it explicitly analyzed the tension between these two roles.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Explain how acting as a guardian ensures the autonomy of the State while maintaining the integrity of the Union.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P."
+      },
+      "why": "The sentence states the Governor must act as a guardian for federalism to work, but it does not explain the causal mechanism of how this specific role ensures federal balance.",
+      "tryWriting": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, ensuring that their tenure is protected from arbitrary removal.",
+      "checkedTwice": false,
+      "source": "Case: B.P. Singhal v Union of India (2010)",
+      "sourceRef": "r8",
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Describe the Governor as a bridge between the Union and the State governments.",
+      "where": "Concepts explained",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Because the Governor is appointed by the President, the office sits where the Union and the States meet."
+      },
+      "why": "The phrase 'where the Union and the States meet' is a metaphorical description that lacks technical depth regarding the federal role.",
+      "tryWriting": "The Governor serves as a vital link between the Union and the States, ensuring the integration of the federal structure.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Integrate these cases into the final sentence to support the need for a balanced federal role.",
+      "where": "Structure",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s9",
+       "text": "Singhal (2010) and Nabam Rebia (2016)."
+      },
+      "why": "The sentence 'Singhal (2010) and Nabam Rebia (2016)' is just a list of cases and does not provide a concluding thought or a way forward.",
+      "tryWriting": "Therefore, the Governor must balance their role as a federal link with their duty as a constitutional guardian, as clarified in the Singhal and Nabam Rebia cases.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "Correctly identifies the Governor as the constitutional head and mentions the vesting of executive power."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly identifies that executive power is vested in the Governor as per Article 154."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of the Governor's role as the constitutional head of a State."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Because the Governor is appointed by the President, the office sits where the Union and the States meet.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the Governor's role as a point of intersection between the Union and the States."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies the causal link between the appointment by the President and the resulting position as a meeting point for Union and State interests."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'where the Union and the States meet' is a metaphorical description that lacks technical depth regarding the federal role.",
+        "fix": "Describe the Governor as a bridge between the Union and the State governments.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "Explains the functional role of the Governor by mentioning the requirement to act on the aid and advice of the Council of Ministers."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the role of the Council of Ministers and the Governor's actions under Article 163."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence correctly supports the role of the Governor by citing a specific court judgment regarding the aid and advice of the Council of Ministers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "As a link with the Union, the Governor holds office during the pleasure of the President under Article 156.",
+      "credit": [
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies that the Governor holds office during the pleasure of the President as per Article 156."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence highlights the Governor's specific powers regarding constitutional machinery and State Bills, which are central to their role in federalism."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Explains the Governor's role in reporting failure of machinery and reserving bills, which are key aspects of their position in the federal structure."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence efficiently uses space to cover multiple constitutional powers (Article 356 and Article 200) in a single concise statement."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Discretion in inviting a party to form the government after a hung verdict has often caused Centre-State friction.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the effect of the Governor's discretion on federal relations by mentioning Centre-State friction."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It highlights the political friction caused by the Governor's discretionary powers in a federal setup."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It explains how the specific action of exercising discretion during a hung verdict leads to the outcome of Centre-State friction."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Sarkaria Commission therefore recommended that Governors be detached figures from outside the State.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides evidence for the Governor's role by citing a specific commission's recommendation."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies a specific recommendation from a commission to ensure the Governor is a detached figure."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "For federalism to work, the Governor must act as a constitutional guardian rather than an agent of the Union, within the limits the Court set in B.P.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides an analytical conclusion by contrasting the role of a constitutional guardian against an agent of the Union."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence acknowledges the tension between the Governor's role as a constitutional guardian versus an agent of the Union."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting the Governor should act as a constitutional guardian."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the Governor must act as a guardian for federalism to work, but it does not explain the causal mechanism of how this specific role ensures federal balance.",
+        "fix": "Explain how acting as a guardian ensures the autonomy of the State while maintaining the integrity of the Union.",
+        "fixNumber": 1,
+        "source": "Case: B.P. Singhal v Union of India (2010)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Singhal (2010) and Nabam Rebia (2016).",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Structure",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence 'Singhal (2010) and Nabam Rebia (2016)' is just a list of cases and does not provide a concluding thought or a way forward.",
+        "fix": "Integrate these cases into the final sentence to support the need for a balanced federal role.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer does not mention that there shall be a Governor for each State.",
+      "fix": "Add a sentence stating that there is a Governor for each State.",
+      "fixNumber": null,
+      "source": "Constitution of India, Article 153"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not explicitly mention the impact on the autonomy of the State government or the specific groups affected by these frictions.",
+      "fix": "Mention how these frictions can impact the administrative autonomy of the State government.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "The Governor may report a failure of constitutional machinery under Article 356 and may reserve State Bills for the President under Article 200.",
+      "reason": "The sentence highlights the Governor's specific powers regarding constitutional machinery and State Bills, which are central to their role in federalism."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s1",
+      "quote": "The Governor is the constitutional head of a State, and Article 154 vests the State's executive power in the office.",
+      "reason": "Correctly identifies the Governor as the constitutional head and mentions the vesting of executive power."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s3",
+      "quote": "As constitutional head, the Governor acts on the aid and advice of the Council of Ministers under Article 163, as the Supreme Court held in Shamsher Singh (1974).",
+      "reason": "Explains the functional role of the Governor by mentioning the requirement to act on the aid and advice of the Council of Ministers."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good list of constitutional facts but leans towards description. To fully 'analyse', you must more explicitly link these powers to the resulting impact on the federal balance."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains focused on the constitutional and functional role of the Governor. It covers both the formal powers and the friction points in federalism."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the constitutional and political dimensions well but misses the administrative dimension of the office."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies the constitutional basis of the Governor's powers and their role in the executive structure."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies several key constitutional articles and judicial principles. However, the concluding interpretation of the Governor's role as a 'guardian' vs 'agent' is a subjective analysis rather than a stated fact."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have included several high-quality references including court cases and a commission report. To improve, ensure that every piece of evidence is explicitly linked to the argument it is meant to support."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer correctly identifies several key constitutional articles and judicial principles regarding the Governor's role. It could be strengthened by mentioning the basic requirement of one Governor per state."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links constitutional provisions to political outcomes, such as friction and the role of the Governor as a bridge. To improve, clarify the causal link between the Governor's specific actions and the preservation of federal balance."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully identified the friction between the Union and States as a significant trade-off of the Governor's position."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a clear recommendation for the Governor's role but lacks specificity regarding the legal limits of that role."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear introduction and a concluding thought. However, the final sentence is just a list of cases rather than a concluding statement."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong constitutional terminology in most places. However, some phrasing is slightly metaphorical rather than technical."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-structured and covers the constitutional, political, and judicial dimensions of the Governor's role. However, the final sentence is a list of citations that lacks analytical depth."
+     }
+    ],
+    "stats": {
+     "words": 173,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 41
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.15
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 154",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 163",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 156",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 356",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 200",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 153",
+      "used": true
+     },
+     {
+      "label": "Case: Shamsher Singh v State of Punjab (1974)",
+      "used": false
+     },
+     {
+      "label": "Case: B.P. Singhal v Union of India (2010)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 0,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It could do more of what the question's command word asks.",
+      "It leaves out an important angle of the issue.",
+      "Its points need specific examples, data or cases."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

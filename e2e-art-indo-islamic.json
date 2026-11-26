@@ -1,0 +1,790 @@
+{
+ "case": "art-indo-islamic",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: associated with the Sufi saint Nizamuddin Auliya": true,
+  "cited: associated with the Sufi saint Nizamuddin Auliya": true,
+  "caught: Chand Minar at Golconda": false,
+  "cited: Chand Minar at Golconda": false,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 11857.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indo-islamic"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-indo-islamic",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You successfully identified the synthesis of West Asian forms with Indian craftsmanship and correctly detailed decorative patterns and major Mughal monuments. However, the answer loses marks due to a factual error regarding the saint associated with the Qutub Minar and vague phrasing regarding 'Indian sensibilities' and 'public support.' You should first correct the association of the Qutub Minar to the correct saint and specify concrete actions for monument conservation.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Indo-Islamic architecture was a synthesis of indigenous and imported traditions. Elaborate with reference to its structural techniques, decorative forms and major monuments. (Answer in 250 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Large-scale Indo-Islamic building began under the Delhi Sultanate in the early thirteenth century, when Turkish rulers combined West Asian forms with Indian materials and craftsmanship.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its forms drew on Persian, Turkish and Saracenic influences but remained rooted in Indian sensibilities.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Indian builders had relied on trabeation, using pillars, brackets and lintels, but the arcuate method introduced true arches of voussoirs and keystones, and domes on squinches and pendentives that freed interiors of pillars.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "As religious art avoided living forms, surfaces were adorned with calligraphy, arabesque and geometric patterns in plaster and stone.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Indian motifs persisted, such as the lotus bud fringe on arches, the inverted lotus atop domes and, in Gujarat, bell and chain carvings borrowed from temples.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Thick rubble walls were cased with chunam plaster or dressed stone, while pietra dura, glazed tiles and jali screens enriched surfaces.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The thirteenth-century Qutub Minar, a tapering tower of red and buff sandstone, came to be associated with the Sufi saint Nizamuddin Auliya.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The fifteenth-century Chand Minar at Golconda, whose facade once bore encaustic tile work, was built by local architects with others from Delhi and Iran.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Provincial styles flourished in Mandu, Gujarat, Bengal and Jaunpur, and a distinct Deccani style developed at Bijapur and Golconda.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Mughal tombs such as Humayun's Tomb and the Taj Mahal were set within charbagh gardens symbolising paradise, while also proclaiming imperial grandeur.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "This fusion of arch and lintel, dome and lotus, created a shared architectural heritage whose conservation and study deserve greater public support.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Indo-Islamic architecture was a synthesis of indigenous and imported traditions.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer clearly establishes the synthesis between imported and indigenous traditions in the introduction.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "with reference to its structural techniques",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer effectively contrasts the indigenous trabeation system with the imported arcuate system. It provides good technical detail regarding arches and domes.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s6"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "decorative forms",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified both the imported Islamic decorative styles and the indigenous Indian motifs. To improve, you could more explicitly link the materials used to the specific cultural traditions they represent.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s5"
+      ]
+     },
+     {
+      "id": "p4",
+      "label": "Part 4",
+      "text": "and major monuments.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified several major monuments across different periods. To improve, ensure each monument mentioned highlights a specific synthesis of styles.",
+      "checkedTwice": false,
+      "sentences": [
+       "s7",
+       "s10"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace Nizamuddin Auliya with Khwaja Qutbuddin Bakhtiyar Kaki.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The thirteenth-century Qutub Minar, a tapering tower of red and buff sandstone, came to be associated with the Sufi saint Nizamuddin Auliya."
+      },
+      "why": "The text states the Qutub Minar was associated with Khwaja Qutbuddin Bakhtiyar Kaki, not Nizamuddin Auliya.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "sourceRef": "r10",
+      "evidence": {
+       "wrongWords": "Nizamuddin Auliya",
+       "sourceWords": "The Qutub Minar also came to be associated with the much revered saint of Delhi, Khwaja Qutbuddin Bakhtiyar Kaki."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Specify a concrete action, such as a government-funded initiative for the restoration of specific provincial monuments.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s11",
+       "text": "This fusion of arch and lintel, dome and lotus, created a shared architectural heritage whose conservation and study deserve greater public support."
+      },
+      "why": "The suggestion for 'greater public support' is vague because it does not specify who should provide the support or what specific actions they should take.",
+      "tryWriting": "This fusion of arch and lintel, dome and lotus, created a shared architectural heritage that requires a dedicated government-led restoration fund to preserve provincial monuments like those in Mandu and Jaunpur.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Specify the types of indigenous traditions or motifs that were retained.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Its forms drew on Persian, Turkish and Saracenic influences but remained rooted in Indian sensibilities."
+      },
+      "why": "The phrase 'Indian sensibilities' is vague and does not specify which architectural elements or traditions were retained.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Large-scale Indo-Islamic building began under the Delhi Sultanate in the early thirteenth century, when Turkish rulers combined West Asian forms with Indian materials and craftsmanship.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the synthesis by mentioning the combination of West Asian forms with Indian materials and craftsmanship."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It establishes the causal link between the arrival of Turkish rulers and the combination of West Asian forms with Indian materials."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Its forms drew on Persian, Turkish and Saracenic influences but remained rooted in Indian sensibilities.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explicitly states that the forms drew on Persian and Turkish influences while remaining rooted in Indian sensibilities."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It directly addresses the synthesis by mentioning Persian and Turkish influences rooted in Indian sensibilities."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the synthesis of Persian, Turkish, and Saracenic influences with Indian sensibilities."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'Indian sensibilities' is vague and does not specify which architectural elements or traditions were retained.",
+        "fix": "Specify the types of indigenous traditions or motifs that were retained.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Indian builders had relied on trabeation, using pillars, brackets and lintels, but the arcuate method introduced true arches of voussoirs and keystones, and domes on squinches and pendentives that freed interiors of pillars.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies the transition from the indigenous trabeation system to the imported arcuate method, specifically mentioning arches, domes, and squinches."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'how' of the synthesis by contrasting the indigenous trabeation with the imported arcuate method."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It correctly identifies the structural shift from trabeation to the arcuate method using voussoirs and keystones."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions the arcuate method, it could be more specific about how these techniques were adapted to local materials.",
+        "fix": "Mention how these imported techniques were adapted to local stone and masonry traditions.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "As religious art avoided living forms, surfaces were adorned with calligraphy, arabesque and geometric patterns in plaster and stone.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence correctly identifies the use of calligraphy, arabesque, and geometric patterns as decorative forms."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the conceptual reason for the specific decorative forms, noting how the avoidance of living forms led to the use of calligraphy and geometric patterns."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of specific decorative terms like 'calligraphy', 'arabesque', and 'geometric patterns' accurately identifies the stylistic elements."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Indian motifs persisted, such as the lotus bud fringe on arches, the inverted lotus atop domes and, in Gujarat, bell and chain carvings borrowed from temples.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence provides specific examples of indigenous motifs like the lotus bud fringe and bell and chain carvings."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It elaborates on the synthesis by identifying specific indigenous motifs like the lotus bud and bell carvings integrated into the architecture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence identifies specific motifs but does not explicitly link them to the 'synthesis' of indigenous and imported traditions mentioned in the prompt.",
+        "fix": "Explain how these indigenous motifs were integrated into the imported arcuate structures.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Thick rubble walls were cased with chunam plaster or dressed stone, while pietra dura, glazed tiles and jali screens enriched surfaces.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides specific structural details regarding the use of rubble walls, chunam plaster, and dressed stone."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 3",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning pietra dura and jali screens is good, the sentence lacks the specific 'synthesis' aspect by not explicitly linking these to the indigenous or imported traditions mentioned in the prompt.",
+        "fix": "Mention how these decorative elements combined imported techniques with local materials.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The thirteenth-century Qutub Minar, a tapering tower of red and buff sandstone, came to be associated with the Sufi saint Nizamuddin Auliya.",
+      "credit": [
+       {
+        "where": "Part 4",
+        "reason": "The sentence identifies the Qutub Minar as a specific monument associated with the period."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific monument, the Qutub Minar, to ground the discussion of early Indo-Islamic architecture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The text states the Qutub Minar was associated with Khwaja Qutbuddin Bakhtiyar Kaki, not Nizamuddin Auliya.",
+        "fix": "Replace Nizamuddin Auliya with Khwaja Qutbuddin Bakhtiyar Kaki.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the Qutub Minar but does not describe its structural techniques or decorative forms as requested by the prompt.",
+        "fix": "Describe the tapering structure or the use of red and buff sandstone in relation to the synthesis of styles.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The fifteenth-century Chand Minar at Golconda, whose facade once bore encaustic tile work, was built by local architects with others from Delhi and Iran.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Provides a specific example of a monument and correctly identifies the collaborative nature of its construction."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 4",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the Chand Minar is mentioned, the sentence focuses more on the architects than the monument's specific architectural features.",
+        "fix": "Describe the specific architectural features of the Chand Minar to better illustrate the synthesis.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Provincial styles flourished in Mandu, Gujarat, Bengal and Jaunpur, and a distinct Deccani style developed at Bijapur and Golconda.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning provincial styles, the sentence lacks specific monument names for Mandu, Bengal, or Jaunpur to provide concrete evidence.",
+        "fix": "Include a specific monument name for at least one of the mentioned provincial styles.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Mughal tombs such as Humayun's Tomb and the Taj Mahal were set within charbagh gardens symbolising paradise, while also proclaiming imperial grandeur.",
+      "credit": [
+       {
+        "where": "Part 4",
+        "reason": "The sentence names two major Mughal tombs and describes their symbolic and imperial significance."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence uses specific Mughal tombs and the charbagh garden concept as evidence for the synthesis of imperial grandeur and religious symbolism."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s11",
+      "text": "This fusion of arch and lintel, dome and lotus, created a shared architectural heritage whose conservation and study deserve greater public support.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion regarding the conservation and study of this shared heritage."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion for 'greater public support' is vague because it does not specify who should provide the support or what specific actions they should take.",
+        "fix": "Specify a concrete action, such as a government-funded initiative for the restoration of specific provincial monuments.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer describes the elements but fails to 'elaborate' on the synthesis by explaining the underlying reasons or the process of cultural exchange.",
+      "fix": "Add a sentence explaining how the adoption of local materials and craftsmanship facilitated the integration of foreign styles.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The answer does not explicitly define the term 'Indo-Islamic' as a synthesis of local and imported traditions in the introductory conceptual framework.",
+      "fix": "Define Indo-Islamic architecture as a hybrid style that merged local Indian craftsmanship with West Asian structural forms.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention that the synthesis occurred through a process of constant intervention involving the acceptance, rejection, or modification of architectural elements.",
+      "fix": "Add a phrase explaining that the style evolved through the selective acceptance and modification of local and imported elements.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer does not explicitly explain how the synthesis of these specific techniques and motifs led to the development of the provincial styles mentioned.",
+      "fix": "Add a sentence explaining how the blending of these techniques allowed for regional variations in Mandu and Bengal.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s1",
+      "quote": "Large-scale Indo-Islamic building began under the Delhi Sultanate in the early thirteenth century, when Turkish rulers combined West Asian forms with Indian materials and craftsmanship.",
+      "reason": "It correctly identifies the synthesis by mentioning the combination of West Asian forms with Indian materials and craftsmanship."
+     },
+     {
+      "where": "Part 3",
+      "sourceId": "s4",
+      "quote": "As religious art avoided living forms, surfaces were adorned with calligraphy, arabesque and geometric patterns in plaster and stone.",
+      "reason": "This sentence correctly identifies the use of calligraphy, arabesque, and geometric patterns as decorative forms."
+     },
+     {
+      "where": "Part 4",
+      "sourceId": "s10",
+      "quote": "Mughal tombs such as Humayun's Tomb and the Taj Mahal were set within charbagh gardens symbolising paradise, while also proclaiming imperial grandeur.",
+      "reason": "The sentence names two major Mughal tombs and describes their symbolic and imperial significance."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive overview of the architectural elements but could be improved by more explicitly explaining the process of synthesis."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt throughout. It avoids irrelevant topics and focuses on the synthesis of styles."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the technical and decorative dimensions well. It could be strengthened by briefly mentioning the cultural context of this synthesis."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The technical explanation of structural shifts and the reasoning behind decorative choices are well-handled. Adding a clearer conceptual definition of the 'synthesis' at the start would strengthen the opening."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer accurately identifies technical structural shifts and specific monuments. Ensure that the descriptions of monuments also highlight the 'synthesis' aspect more clearly."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You have used several specific monuments to support your points well. Adding one or two more specific examples for the provincial styles would strengthen the evidence further."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer demonstrates a strong grasp of the structural techniques and the synthesis of styles. It could be improved by explicitly mentioning the process of modification and selection that defined the architectural evolution."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully links the arrival of new influences to specific structural changes like the arcuate method. It could be improved by better connecting these technical fusions to the emergence of regional styles."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is descriptive rather than evaluative, so a deep analysis of trade-offs is not strictly required. However, acknowledging the 'rejection or modification' of elements would have added depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer concludes with a general call for support but lacks the specificity required for a workable policy suggestion."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure follows the required format with a clear introduction, body, and conclusion. To improve, ensure the transition between different parts of the question is more distinct."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses excellent technical terminology for architectural elements, which is highly effective for this topic. Minor improvements in specifying regional origins would enhance the precision further."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word count very effectively, covering all three required dimensions (structure, decoration, and monuments) without unnecessary padding."
+     }
+    ],
+    "stats": {
+     "words": 248,
+     "sentences": 11,
+     "paragraphs": 3,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 40
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 54
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 66
+      },
+      {
+       "partId": "p4",
+       "label": "Part 4",
+       "words": 68
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 0.99
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 8 (Some Aspects of Indo-Islamic Architecture)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

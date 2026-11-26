@@ -1,0 +1,654 @@
+{
+ "case": "eco-niti-aayog",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Its Governing Council includes the Chief Ministers of all states and of union territories with legislatures": true,
+  "trap not red: ranking states on indices such as the SDG India Index": true
+ },
+ "seconds": 8424.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-niti-aayog"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-niti-aayog",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer successfully addresses both parts of the question by highlighting the structural difference in fund allocation. To improve, you should first clarify that the lack of fund allocation necessitates a shift from mandatory directives to a consultative and advisory role. You should also specify the mechanisms that enable bottom-up planning and explain the functional shift between the two bodies beyond just their names and dates.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "How is NITI Aayog different from the erstwhile Planning Commission? Evaluate its role in promoting cooperative federalism. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Evaluate",
+      "meaning": "Weigh the merits and limits and give a clear judgement on how well it works."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Planning Commission, set up in 1950 with the Prime Minister as its Chairperson, was replaced in January 2015 by NITI Aayog, the National Institution for Transforming India.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Planning Commission followed a largely top-down approach, whereas NITI Aayog is designed as a think tank that favours bottom-up planning.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The Planning Commission allocated plan funds to states, but NITI Aayog has no power to allocate funds.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Its Governing Council includes the Chief Ministers of all states and of union territories with legislatures, along with the Lieutenant Governors of other union territories.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Regional councils, convened by the Prime Minister, address issues affecting more than one state.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "It encourages competitive federalism by ranking states on indices such as the SDG India Index.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "It also offers states policy advice and capacity-building support, acting as their partner at the Centre.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "However, because it controls no funds, its influence over state priorities depends largely on persuasion.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Stronger state-level think tanks can make NITI Aayog an effective engine of Team India.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "How is NITI Aayog different from the erstwhile Planning Commission?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the core structural and philosophical differences between the two bodies.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Evaluate its role in promoting cooperative federalism.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified both the structural (Governing Council) and functional (indices and policy advice) aspects of cooperative federalism. To improve, you could more clearly contrast the 'persuasion' model with the old 'command' model.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s6"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Clarify that the lack of fund allocation necessitates a shift from mandatory directives to a consultative and advisory role.",
+      "where": "Part 2",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "However, because it controls no funds, its influence over state priorities depends largely on persuasion."
+      },
+      "why": "The statement that influence depends 'largely on persuasion' is a bit vague; it should specify that the lack of fund allocation shifts the role from a directive body to a consultative one.",
+      "tryWriting": "Because it lacks fund allocation powers, its role in cooperative federalism is primarily consultative, relying on policy advocacy rather than fiscal mandates.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Add a brief phrase explaining the shift in philosophy or role.",
+      "where": "Part 1",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The Planning Commission, set up in 1950 with the Prime Minister as its Chairperson, was replaced in January 2015 by NITI Aayog, the National Institution for Transforming India."
+      },
+      "why": "While it provides the date and name, it does not explain a functional difference between the two bodies.",
+      "tryWriting": "The Planning Commission, set up in 1950 with the Prime Minister as its Chairperson, was replaced in January 2015 by NITI Aayog, which shifted the focus from a central planning body to a policy think tank.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how the think tank structure or specific consultative bodies facilitate this bottom-up planning.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The Planning Commission followed a largely top-down approach, whereas NITI Aayog is designed as a think tank that favours bottom-up planning."
+      },
+      "why": "The sentence describes a conceptual shift but does not specify the mechanisms or structural changes that enable this bottom-up approach.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Planning Commission, set up in 1950 with the Prime Minister as its Chairperson, was replaced in January 2015 by NITI Aayog, the National Institution for Transforming India.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the establishment date and the leadership of the Planning Commission."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly identifies the date of replacement and the name of the institution."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear historical context by mentioning the replacement of the Planning Commission in 2015."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it provides the date and name, it does not explain a functional difference between the two bodies.",
+        "fix": "Add a brief phrase explaining the shift in philosophy or role.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Planning Commission followed a largely top-down approach, whereas NITI Aayog is designed as a think tank that favours bottom-up planning.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the shift from a top-down approach to a bottom-up planning model."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'top-down approach' and 'bottom-up planning' provides precise technical terminology to contrast the two bodies."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence efficiently contrasts the 'top-down' and 'bottom-up' approaches to distinguish the two bodies without unnecessary padding."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes a conceptual shift but does not specify the mechanisms or structural changes that enable this bottom-up approach.",
+        "fix": "Explain how the think tank structure or specific consultative bodies facilitate this bottom-up planning.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The Planning Commission allocated plan funds to states, but NITI Aayog has no power to allocate funds.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It highlights a key structural difference regarding the power to allocate funds."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately distinguishes the funding powers of NITI Aayog compared to the Planning Commission."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Its Governing Council includes the Chief Ministers of all states and of union territories with legislatures, along with the Lieutenant Governors of other union territories.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It identifies the inclusion of Chief Ministers in the Governing Council as a structural feature of cooperative federalism."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the inclusion of Lieutenant Governors but does not specify their role or the specific composition of the Governing Council.",
+        "fix": "Clarify the role of the Governing Council in decision making.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Regional councils, convened by the Prime Minister, address issues affecting more than one state.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies that regional councils are convened by the Prime Minister to address issues impacting more than one state."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes a structural feature but does not specify how these councils specifically facilitate the 'cooperative' aspect of federalism.",
+        "fix": "Explain how these councils facilitate collaborative decision-making between states.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "It encourages competitive federalism by ranking states on indices such as the SDG India Index.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It highlights the use of indices to encourage competitive federalism as a specific mechanism."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It addresses the administrative and competitive dimension of federalism through the use of indices to rank states."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific example of an index used to rank states to promote competitive federalism."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The term 'competitive federalism' is named but the underlying concept of how ranking creates competition between states is not explained.",
+        "fix": "Explain how ranking states on indices creates a competitive environment for better governance.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "It also offers states policy advice and capacity-building support, acting as their partner at the Centre.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that it acts as a 'partner' is a general description; it would be stronger with a specific instance of a joint initiative.",
+        "fix": "Mention a specific type of joint initiative or a collaborative project between the Centre and states.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "However, because it controls no funds, its influence over state priorities depends largely on persuasion.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence correctly identifies a limitation by noting that the lack of fund control means influence relies on persuasion."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The statement that influence depends 'largely on persuasion' is a bit vague; it should specify that the lack of fund allocation shifts the role from a directive body to a consultative one.",
+        "fix": "Clarify that the lack of fund allocation necessitates a shift from mandatory directives to a consultative and advisory role.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Stronger state-level think tanks can make NITI Aayog an effective engine of Team India.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence acknowledges a condition or uncertainty by stating that the effectiveness of the body depends on the strength of state-level think tanks."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies a specific actor (state-level think tanks) and the desired outcome (effective engine of Team India)."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting how state-level think tanks can enhance the institution's effectiveness."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'effective engine' is a metaphor that does not specify the exact mechanism or actions required to achieve the goal.",
+        "fix": "Specify how these think tanks should collaborate with NITI Aayog to align state priorities with national goals.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a final judgment or a balanced conclusion to 'evaluate' the effectiveness of the role in cooperative federalism.",
+      "fix": "Add a concluding sentence that weighs the strengths of the collaborative model against the limitations of its lack of funding power.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly address the economic dimension of federalism, such as how the shift from fund allocation to policy advice affects state-level fiscal autonomy.",
+      "fix": "Add a sentence explaining how the shift from fund allocation to policy advice impacts the economic autonomy of states.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the specific shift towards a development model that is 'all round, all pervasive, all inclusive and holistic'.",
+      "fix": "Include the specific normative planning model described in the source.",
+      "fixNumber": null,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 4 (Economic Planning), Introduction"
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer is slightly over the word limit, which indicates a lack of conciseness in the phrasing.",
+      "fix": "Combine the sentences regarding the Governing Council and Regional Councils to save space.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "The Planning Commission allocated plan funds to states, but NITI Aayog has no power to allocate funds.",
+      "reason": "It highlights a key structural difference regarding the power to allocate funds."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains strictly focused on the comparison between the two bodies and the role of NITI Aayog in federalism."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core differences between the two bodies are well-defined. The explanation of cooperative federalism could be deeper by explaining the mechanism of competition."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The factual details regarding the transition from the Planning Commission to NITI Aayog are accurate and well-presented."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer includes a specific index as evidence for competitive federalism, which is good. However, the description of its role as a partner could be more concrete."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You have correctly identified the structural and procedural differences between the two bodies. To improve, incorporate the specific normative planning goals mentioned in the background material."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully connects the structural shift in planning methodology to the promotion of cooperative and competitive federalism. The reasoning could be strengthened by more clearly explaining how the lack of funding power forces a move toward collaborative policy-making."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": null
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a conceptual suggestion for improvement but lacks specific operational details on how the proposed mechanism would function."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The structure is well-organized with a clear introduction and distinct body points. However, the final sentence acts more like a concluding point than a balanced forward-looking summary."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality administrative terminology like 'top-down' and 'competitive federalism' effectively. One minor area for improvement is making the description of influence more formal."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers both parts of the question well and uses the space effectively to provide specific mechanisms. However, you should aim to stay under the 150-word limit by merging related points about the council structures."
+     }
+    ],
+    "stats": {
+     "words": 165,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 66
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 55
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 5 (Planning in India), Introduction",
+      "used": false
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 4 (Economic Planning), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 3 (Politics of Planned Development)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

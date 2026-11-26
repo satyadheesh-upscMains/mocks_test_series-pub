@@ -1,0 +1,553 @@
+{
+ "case": "polity-356",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: continue indefinitely": true,
+  "cited: continue indefinitely": true,
+  "no red marks on correct sentences": false,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 5306.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-356"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-356",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "At 59 words, this answer is far shorter than the 150 the question expects.",
+    "summary": "You correctly identified the core function of Article 356 and its historical impact on state autonomy. However, the answer is significantly under the word limit, which prevents you from providing a comprehensive analysis. You should first correct the claim that the rule can continue indefinitely, as it is limited to three years, and clarify that parliamentary approval is for its continuance.",
+    "levelWhy": [
+     "At 59 words it is too short: a question with this word limit expects about 150.",
+     "It has no conclusion with a way forward.",
+     "It makes 3 distinct points; about 5 are expected.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Examine the use of Article 356 and its impact on Indian federalism.",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Article 356 lets the President take over the government of a State when its government cannot be carried on in accordance with the Constitution.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The proclamation must be approved by both Houses of Parliament.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Once approved, President's Rule can continue indefinitely until the Centre decides to end it.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "Its frequent use in the past weakened the autonomy of States.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the use of Article 356",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified the purpose and the parliamentary approval process for Article 356. However, you should clarify that its use is intended to be exceptional rather than indefinite.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "its impact on Indian federalism",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The sentence correctly identifies that the use of the provision has historically reduced the autonomy of States.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The proclamation may be continued if a resolution approving its continuance is passed by both Houses of Parliament.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The proclamation must be approved by both Houses of Parliament."
+      },
+      "why": "The extract for Article 356 shows that a proclamation does not necessarily 'must' be approved by both Houses to be issued, but rather requires a resolution for its 'continuance' or to prevent it from ceasing after a specific period.",
+      "tryWriting": "A resolution approving the continuance in force of such a Proclamation is passed by both Houses of Parliament.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 356",
+      "sourceRef": "r9",
+      "evidence": {
+       "wrongWords": "must be approved",
+       "sourceWords": "unless before the expiration of the said period a resolution approving the continuance in force of such a Proclamation is passed by both Houses of Parliament"
+      }
+     },
+     {
+      "n": 2,
+      "title": "limit the duration to a maximum of three years",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Once approved, President's Rule can continue indefinitely until the Centre decides to end it."
+      },
+      "why": "The claim that it can continue 'indefinitely' is incorrect because the provision states it shall not remain in force for more than three years.",
+      "tryWriting": "Once approved, President's Rule shall, unless revoked, continue in force for a further period of six months, but no such Proclamation shall in any case remain in force for more than three years.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 356",
+      "sourceRef": "r9",
+      "evidence": {
+       "wrongWords": "continue indefinitely",
+       "sourceWords": "no such Proclamation shall in any case remain in force for more than three years"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 59.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 59 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Article 356 lets the President take over the government of a State when its government cannot be carried on in accordance with the Constitution.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the core function of Article 356 by stating it allows the President to take over a State government when it cannot be carried on in accordance with the Constitution."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It correctly identifies the constitutional basis and the condition of 'failure of constitutional machinery' for the use of Article 356."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the core mechanism of Article 356 as a tool for the President to take over state government."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The proclamation must be approved by both Houses of Parliament.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence adds necessary procedural detail regarding the requirement for approval by both Houses of Parliament."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It identifies the necessary parliamentary approval required for the proclamation."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence accurately notes the requirement for parliamentary approval of the proclamation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract for Article 356 shows that a proclamation does not necessarily 'must' be approved by both Houses to be issued, but rather requires a resolution for its 'continuance' or to prevent it from ceasing after a specific period.",
+        "fix": "The proclamation may be continued if a resolution approving its continuance is passed by both Houses of Parliament.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 356"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Once approved, President's Rule can continue indefinitely until the Centre decides to end it.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The claim that it can continue 'indefinitely' is incorrect because the provision states it shall not remain in force for more than three years.",
+        "fix": "limit the duration to a maximum of three years",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 356"
+       },
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that it can continue 'indefinitely' is incorrect; the proclamation must be approved by Parliament.",
+        "fix": "Clarify that the proclamation requires parliamentary approval to continue.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Its frequent use in the past weakened the autonomy of States.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly identifies that the use of the provision has historically reduced the autonomy of States."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It addresses the impact on federalism by mentioning the weakening of state autonomy."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It addresses the political and federal impact by noting how frequent use affects state autonomy."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a legal or judicial dimension regarding the oversight of these powers.",
+      "fix": "Mention that the proclamation is subject to judicial review.",
+      "fixNumber": null,
+      "source": "Case: S.R. Bommai v Union of India (1994)"
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific judicial rulings or committee reports to support the analysis of Article 356's impact.",
+      "fix": "Mention a specific court case or a commission report regarding the misuse of emergency powers.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer fails to mention that the power is an exceptional power that should be used only occasionally.",
+      "fix": "Add a sentence stating that Article 356 is an exceptional power intended for special situations.",
+      "fixNumber": null,
+      "source": "Laxmikanth, Indian Polity, Ch. 16 (Emergency Provisions), President’s Rule"
+     },
+     {
+      "where": "Suggestions are workable",
+      "reason": "The answer does not provide any suggestions or measures to address the issues discussed.",
+      "fix": "Add a concluding sentence suggesting a specific measure, such as ensuring the floor of the House is the primary venue for testing a government's majority.",
+      "fixNumber": null,
+      "source": "Laxmikanth, Indian Polity, Ch. 16 (Emergency Provisions), President’s Rule"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s1",
+      "quote": "Article 356 lets the President take over the government of a State when its government cannot be carried on in accordance with the Constitution.",
+      "reason": "This sentence correctly identifies the core function of Article 356 by stating it allows the President to take over a State government when it cannot be carried on in accordance with the Constitution."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s4",
+      "quote": "Its frequent use in the past weakened the autonomy of States.",
+      "reason": "The sentence correctly identifies that the use of the provision has historically reduced the autonomy of States."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It correctly identifies the constitutional basis and the condition of 'failure of constitutional machinery' for the use of Article 356."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic and addresses both the use and the impact of the article. However, the claim regarding the duration of the rule is factually incorrect based on the constitutional process."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the basic functional and political aspects well. However, it misses the legal dimension regarding judicial oversight which is crucial for a complete examination of Article 356."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the basic mechanism of Article 356 but contains a significant factual error regarding its duration."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence correctly describes the condition for the President to take over a State government as stated in the Constitution."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good conceptual overview but lacks the specific evidence required for a high-scoring UPSC answer. You should incorporate judicial precedents or historical examples to substantiate your claims."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You have correctly identified the basic mechanics of Article 356. To improve, you should emphasize its status as an exceptional power rather than a routine tool."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It establishes the mechanism of Article 356 as the starting point for the causal chain."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified the negative impact on state autonomy, but you should also mention the constitutional limits on when this power should be exercised."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question asks to examine the use and impact of Article 356, but the answer provides no suggestions for improvement or reform. Since no suggestions were made, this specific check is not applicable to the current content."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear introduction and body points, but it fails to provide a concluding statement as required by the structure."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The use of constitutional terminology is accurate, but the claim regarding the duration of the proclamation is factually incorrect."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too brief and fails to utilize the available space to provide a comprehensive analysis. You should expand on the consequences for federalism and the judicial review of the provision."
+     }
+    ],
+    "stats": {
+     "words": 59,
+     "sentences": 4,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 34
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 11
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.39
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 356",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 357",
+      "used": false
+     },
+     {
+      "label": "Case: S.R. Bommai v Union of India (1994)",
+      "used": true
+     },
+     {
+      "label": "Case: Rameshwar Prasad v Union of India (2006)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 16 (Emergency Provisions), President’s Rule",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 2 (Era of One-Party Dominance)",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 356",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 356",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 8,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "The proclamation must be approved by both Houses of Parliament."
+     ],
+     "sourcesUsed": [
+      "Constitution of India, Article 356",
+      "Case: S.R. Bommai v Union of India (1994)",
+      "Laxmikanth, Indian Polity, Ch. 16 (Emergency Provisions), President’s Rule",
+      "Constitution of India, Article 356",
+      "Constitution of India, Article 356"
+     ],
+     "expected": [
+      "Constitution of India, Article 356"
+     ],
+     "casesGiven": [
+      "Case: S.R. Bommai v Union of India (1994)",
+      "Case: Rameshwar Prasad v Union of India (2006)"
+     ],
+     "casesCited": [
+      "Case: S.R. Bommai v Union of India (1994)"
+     ],
+     "expectedCaseCited": true,
+     "redFixesWithTryWriting": 2
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

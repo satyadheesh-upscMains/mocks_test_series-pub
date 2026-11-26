@@ -1,0 +1,769 @@
+{
+ "case": "geo-monsoon",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: it is the westerly jet stream, positioned over the peninsula": true,
+  "cited: it is the westerly jet stream, positioned over the peninsula": true,
+  "caught: Mawsynram, on the crest of the Garo hills": true,
+  "cited: Mawsynram, on the crest of the Garo hills": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 13774.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-monsoon"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-monsoon",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 2 is answered. Part 1 needs the most work.",
+    "summary": "You have successfully defined the monsoon and explained the movement of the Bay of Bengal branch and the deflection of south-east trades. However, Part 1 needs the most work because you incorrectly attributed the monsoon burst to the westerly jet stream instead of the easterly jet stream. You should first correct the jet stream's role and update the location of Mawsynram to the Khasi hills.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Explain the mechanism of the onset of the south-west monsoon in India. How do its two branches shape the spatial pattern of rainfall across the country? (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The south-west monsoon is a seasonal reversal of winds that brings the bulk of India's annual rainfall.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its onset results from the interplay of surface pressure, the Inter Tropical Convergence Zone (ITCZ) and upper-air jet streams.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Intense heating of the north-western plains in May deepens a thermal low over the subcontinent.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The ITCZ shifts northwards and in July lies over the Gangetic plain as the monsoon trough.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Attracted by this low, the south-east trades cross the equator and, deflected by the Coriolis force, blow from the south-west.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "In the upper air, it is the westerly jet stream, positioned over the peninsula, that is held responsible for the sudden burst of the monsoon.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The monsoon normally reaches the Kerala coast in early June and then advances rapidly northwards.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Arabian Sea branch strikes the Western Ghats, giving heavy orographic rain on the windward slopes, while the Deccan interior lies in a rain-shadow.",
+      "para": 3
+     },
+     {
+      "id": "s9",
+      "text": "Another arm moves along the Narmada and Tapi valleys into central India, while a third crosses Kachchh, giving only scanty rain to western Rajasthan.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "The Bay of Bengal branch is deflected towards India by the Arakan Hills and splits into a westward flow along the Ganga plains and a northward flow up the Brahmaputra valley.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "A sub-branch strikes the Meghalaya plateau, where Mawsynram, on the crest of the Garo hills, receives the world's highest average annual rainfall.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "The Tamil Nadu coast stays relatively dry, lying parallel to the Bay of Bengal branch and in the rain-shadow of the Arabian Sea branch.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "Closer monitoring of the jet streams and of ocean-atmosphere links such as ENSO is therefore vital for reliable monsoon forecasts and farm planning.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Explain the mechanism of the onset of the south-west monsoon in India.",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have correctly identified the thermal low and the role of the Coriolis force. However, you must clarify the role of the jet streams, as the westerly jet's retreat is a key mechanism for the monsoon's onset.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "How do its two branches shape the spatial pattern of rainfall across the country?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the spatial distribution of rainfall for both the Arabian Sea and Bay of Bengal branches. To improve, ensure the distinction between the two main branches remains the primary focus.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8",
+       "s10"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace the westerly jet stream with the easterly jet stream.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "In the upper air, it is the westerly jet stream, positioned over the peninsula, that is held responsible for the sudden burst of the monsoon."
+      },
+      "why": "The student attributes the monsoon burst to the westerly jet stream, but the text states the easterly jet stream is held responsible.",
+      "tryWriting": "In the upper air, it is the easterly jet stream that is held responsible for the burst of the monsoon.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "sourceRef": "r6",
+      "evidence": {
+       "wrongWords": "westerly jet stream, positioned over the peninsula",
+       "sourceWords": "This easterly jet stream is held responsible for the burst of the monsoon in India."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Change 'Garo hills' to 'Khasi hills'.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s11",
+       "text": "A sub-branch strikes the Meghalaya plateau, where Mawsynram, on the crest of the Garo hills, receives the world's highest average annual rainfall."
+      },
+      "why": "The student states Mawsynram is on the Garo hills, but the extract specifies it is on the Khasi hills.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "sourceRef": "r2",
+      "evidence": {
+       "wrongWords": "on the crest of the Garo hills",
+       "sourceWords": "Mawsynram, located on the crest of Khasi hills, receives the highest average annual rainfall in the world."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Specify a government body or agency to integrate these links into a specific early-warning system for farmers.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s13",
+       "text": "Closer monitoring of the jet streams and of ocean-atmosphere links such as ENSO is therefore vital for reliable monsoon forecasts and farm planning."
+      },
+      "why": "The suggestion to monitor jet streams and ocean-atmosphere links is a general statement that lacks a specific actor or a concrete action plan for farm planning.",
+      "tryWriting": "Meteorological departments should integrate ENSO and jet stream data into a localized early-warning system to provide specific irrigation and sowing schedules for farmers.",
+      "checkedTwice": true,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The south-west monsoon is a seasonal reversal of winds that brings the bulk of India's annual rainfall.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies the monsoon as a seasonal reversal of winds and notes it brings the bulk of the annual rainfall."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of the monsoon as a seasonal reversal of winds."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Its onset results from the interplay of surface pressure, the Inter Tropical Convergence Zone (ITCZ) and upper-air jet streams.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the core atmospheric components like the ITCZ and jet streams that drive the monsoon mechanism."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies the role of the ITCZ and jet streams in the monsoon onset."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the interplay of these factors but does not explain the specific mechanism of how they interact to cause the onset.",
+        "fix": "Explain how the northward shift of the ITCZ and the withdrawal of the westerly jet stream facilitate the monsoon's arrival.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Intense heating of the north-western plains in May deepens a thermal low over the subcontinent.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies the role of intense heating and the formation of a thermal low over the north-western plains."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'how' by identifying the heating of the north-western plains as the cause for the deepening of the thermal low."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It explains the specific thermal mechanism of the low pressure over the north-western plains."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the formation of a thermal low but does not explicitly link it to the specific mechanism of the monsoon's onset.",
+        "fix": "Explain how this thermal low creates a pressure gradient that draws in moisture-laden winds.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The ITCZ shifts northwards and in July lies over the Gangetic plain as the monsoon trough.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the northward shift of the ITCZ and its role as the monsoon trough over the Gangetic plain."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the ITCZ lies over the Gangetic plain in July, but the source indicates the thermal low is in northwest India.",
+        "fix": "State that the ITCZ shifts northwards to the Gangetic plain while the thermal low remains in northwest India.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Attracted by this low, the south-east trades cross the equator and, deflected by the Coriolis force, blow from the south-west.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Explains the movement of south-east trades across the equator and their deflection by the Coriolis force."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the mechanism of how south-east trades cross the equator and are deflected by the Coriolis force to become south-west winds."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It explains how the thermal low attracts the south-east trades and how the Coriolis force causes their deflection."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "In the upper air, it is the westerly jet stream, positioned over the peninsula, that is held responsible for the sudden burst of the monsoon.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student attributes the monsoon burst to the westerly jet stream, but the text states the easterly jet stream is held responsible.",
+        "fix": "Replace the westerly jet stream with the easterly jet stream.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)"
+       },
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence incorrectly attributes the 'sudden burst' to the westerly jet stream; the westerly jet actually retreats northwards to allow the monsoon to establish.",
+        "fix": "Explain that the withdrawal of the westerly jet stream from the subcontinent allows the monsoon to burst.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Arabian Sea branch strikes the Western Ghats, giving heavy orographic rain on the windward slopes, while the Deccan interior lies in a rain-shadow.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly explains how the Arabian Sea branch creates a spatial pattern of heavy rain on windward slopes and a rain-shadow effect."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It explains the spatial pattern of rainfall by describing the orographic effect and rain-shadow of the Arabian Sea branch."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence efficiently explains the spatial impact of the Arabian Sea branch by mentioning both the windward rain and the rain-shadow."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the 'rain-shadow' is a good geographical concept but would be stronger if supported by a specific regional example or data point.",
+        "fix": "Mention a specific region or state that experiences a rain-shadow effect.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Another arm moves along the Narmada and Tapi valleys into central India, while a third crosses Kachchh, giving only scanty rain to western Rajasthan.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions a third arm, the question specifically asks for the two main branches.",
+        "fix": "Focus on the primary two branches to stay aligned with the question's specific scope.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "The Bay of Bengal branch is deflected towards India by the Arakan Hills and splits into a westward flow along the Ganga plains and a northward flow up the Brahmaputra valley.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence describes how the Bay of Bengal branch splits and moves across the Ganga plains and Brahmaputra valley to distribute rainfall."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It details the spatial distribution of the Bay of Bengal branch by describing its split into westward and northward flows."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly describes how the Arakan Hills deflect the Bay of Bengal branch towards the Indian subcontinent."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s11",
+      "text": "A sub-branch strikes the Meghalaya plateau, where Mawsynram, on the crest of the Garo hills, receives the world's highest average annual rainfall.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the sub-branch striking the Meghalaya plateau and the high rainfall at Mawsynram."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific geographical location and a specific record of rainfall to support the impact of the Bay of Bengal branch."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student states Mawsynram is on the Garo hills, but the extract specifies it is on the Khasi hills.",
+        "fix": "Change 'Garo hills' to 'Khasi hills'.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Closer monitoring of the jet streams and of ocean-atmosphere links such as ENSO is therefore vital for reliable monsoon forecasts and farm planning.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion regarding monitoring and planning."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion to monitor jet streams and ocean-atmosphere links is a general statement that lacks a specific actor or a concrete action plan for farm planning.",
+        "fix": "Specify a government body or agency to integrate these links into a specific early-warning system for farmers.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not address the economic or agricultural impact of these rainfall patterns.",
+      "fix": "Add a concluding sentence on how these spatial patterns dictate agricultural zones across India.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks for the mechanism and spatial patterns, but the answer does not mention the uncertainty or variability in monsoon behavior, such as the impact of ocean-atmosphere links.",
+      "fix": "Mention that the monsoon's strength and timing are subject to variability due to ocean-atmosphere interactions.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the mechanism of onset from the spatial patterns of the branches.",
+      "fix": "Use a connecting phrase to transition from the atmospheric mechanisms to the geographical distribution of rainfall.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s5",
+      "quote": "Attracted by this low, the south-east trades cross the equator and, deflected by the Coriolis force, blow from the south-west.",
+      "reason": "Explains the movement of south-east trades across the equator and their deflection by the Coriolis force."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s10",
+      "quote": "The Bay of Bengal branch is deflected towards India by the Arakan Hills and splits into a westward flow along the Ganga plains and a northward flow up the Brahmaputra valley.",
+      "reason": "This sentence describes how the Bay of Bengal branch splits and moves across the Ganga plains and Brahmaputra valley to distribute rainfall."
+     },
+     {
+      "where": "Structure",
+      "sourceId": "s1",
+      "quote": "The south-west monsoon is a seasonal reversal of winds that brings the bulk of India's annual rainfall.",
+      "reason": "It provides a clear definition of the monsoon as a seasonal reversal of winds."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully explains the causal chain of the monsoon's onset using pressure, the ITCZ, and jet streams. To improve, clarify the specific role of the jet stream's movement in triggering the 'burst'."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the physical geography of the monsoon. The final sentence is slightly off-topic as it discusses forecasting rather than the mechanism or spatial distribution."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the physical and geographical dimensions well. It could be improved by briefly mentioning the socio-economic significance of these rainfall patterns."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a strong explanation of the thermal and pressure-driven mechanisms. However, there is a significant technical error regarding the role of the jet streams."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The description of the monsoon's mechanism and spatial distribution is largely accurate, but there is a significant error regarding the type of jet stream responsible for the monsoon burst."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses specific geographical locations well to illustrate the spatial pattern of rainfall. Adding a specific data point or a named region for the rain-shadow effect would further strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer captures the geographical movements of the monsoon branches well but misses the specific role of the Himalayas in splitting the Bay of Bengal branch."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The reasoning chain for the onset is strong, linking thermal lows and trade winds well. However, the specific role of the upper-air jet streams in the 'burst' could be more clearly linked to the movement of the monsoon."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a descriptive geographical explanation and does not inherently require a discussion of trade-offs or costs. However, acknowledging the uncertainty in monsoon behavior would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The conclusion offers a general idea for improvement but fails to specify who should act or how the data should be practically applied to the problem of monsoon variability."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good, following the required format of introduction, body, and conclusion. To improve, ensure a clearer transition between the two distinct parts of the question."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology throughout. Replacing informal descriptors like 'arm' with more formal geographical terms will improve the professional tone."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the space well to cover both branches and the mechanism. Removing the concluding sentence on monitoring would allow for more depth in the spatial patterns."
+     }
+    ],
+    "stats": {
+     "words": 275,
+     "sentences": 13,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 60
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 79
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "The monsoon normally reaches the Kerala coast in early June and then advances rapidly northwards."
+      },
+      {
+       "sourceId": "s12",
+       "text": "The Tamil Nadu coast stays relatively dry, lying parallel to the Bay of Bengal branch and in the rain-shadow of the Arabian Sea branch."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 16 (The Tropical Monsoon and Tropical Marine Climate)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 4 (Climate)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It has 3 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

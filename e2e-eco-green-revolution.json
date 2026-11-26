@@ -1,0 +1,687 @@
+{
+ "case": "eco-green-revolution",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: concentrated in irrigated regions such as Punjab and Haryana": true
+ },
+ "seconds": 9730.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-green-revolution"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-green-revolution",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "The answer correctly identifies the shift toward foodgrain self-sufficiency and the limitations regarding rainfed regions and specific crops. However, the conclusion is too vague because it lacks specific policy actions or agro-ecological practices to achieve an 'evergreen revolution'. To improve, you should first specify concrete policy actions or methods to reduce chemical toxicity.",
+    "levelWhy": [
+     "It has a serious problem (see the fixes).",
+     "It leaves out an important angle of the issue.",
+     "Its points need specific examples, data or cases."
+    ],
+    "formatNote": null,
+    "question": "Critically examine the impact of the Green Revolution on Indian agriculture. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Critically examine",
+      "meaning": "Look at the issue closely, weigh its strengths and weaknesses with evidence, and end with your own reasoned judgement."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Green Revolution was the large rise in foodgrain output from the mid-1960s using high-yielding variety (HYV) seeds of wheat and rice with fertilisers, pesticides and irrigation.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It ended India's dependence on food imports and brought self-sufficiency in foodgrains.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "A large marketed surplus lowered the relative price of foodgrains, which benefited low-income consumers.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "It enabled the government to procure grain and build buffer stocks for use in times of shortage.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "In its first phase the gains were concentrated in irrigated regions such as Punjab and Haryana, and mainly in wheat.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "In the second phase, from the mid-1970s, the technology spread to more states and crops.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Fears that only big farmers would benefit were partly offset by cheap credit and subsidised fertilisers for small farmers.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "However, intensive use of water and chemicals has caused falling water tables, soil degradation and a cereal-centred cropping pattern.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Pulses, oilseeds and rainfed regions received comparatively little attention.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "An evergreen revolution that raises productivity without ecological harm is the way forward.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the impact of the Green Revolution on Indian agriculture",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer covers both the positive outcomes of food security and the negative environmental consequences well.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Specify a policy action, such as promoting organic manures or specific agro-ecological practices to reduce chemical toxicity.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "An evergreen revolution that raises productivity without ecological harm is the way forward."
+      },
+      "why": "The suggestion for an 'evergreen revolution' is a vague concept that does not specify who should act or what specific policy actions are required to achieve it.",
+      "tryWriting": "To mitigate ecological harm, the government should promote an 'evergreen revolution' by incentivizing organic manures and sustainable water management practices.",
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "sourceRef": "r1",
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Reference a specific type of government credit scheme or subsidy program you have studied.",
+      "where": "Examples and evidence",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Fears that only big farmers would benefit were partly offset by cheap credit and subsidised fertilisers for small farmers."
+      },
+      "why": "The claim that fears were 'partly offset' by credit and subsidies is a general statement without specific data or a cited policy to prove the extent of this offset.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Mention that it involved high-yielding variety seeds, irrigation, and chemical inputs.",
+      "where": "Facts are accurate",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The Green Revolution was the large rise in foodgrain output from the mid-1960s using high-yielding variety (HYV) seeds of wheat and rice with fertilisers, pesticides and irrigation."
+      },
+      "why": "The sentence describes the revolution as a 'large rise' but does not specify the specific types of inputs beyond fertilizers and pesticides.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Green Revolution was the large rise in foodgrain output from the mid-1960s using high-yielding variety (HYV) seeds of wheat and rice with fertilisers, pesticides and irrigation.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It correctly identifies the core components of the Green Revolution, such as high-yielding variety seeds and irrigation."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly defines the Green Revolution by identifying the specific inputs like high-yielding variety seeds, fertilisers, and irrigation."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the use of HYV seeds for wheat and rice along with fertilizers, pesticides, and irrigation as the core components of the Green Revolution."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the revolution as a 'large rise' but does not specify the specific types of inputs beyond fertilizers and pesticides.",
+        "fix": "Mention that it involved high-yielding variety seeds, irrigation, and chemical inputs.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It ended India's dependence on food imports and brought self-sufficiency in foodgrains.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It correctly identifies the shift toward self-sufficiency in foodgrains as a major impact."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It examines the positive impact by explaining how the revolution ended dependence on food imports."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence correctly identifies the economic impact of achieving self-sufficiency in foodgrains."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "A large marketed surplus lowered the relative price of foodgrains, which benefited low-income consumers.",
+      "credit": [
+       {
+        "where": "Cause and effect",
+        "reason": "It explains how a large marketed surplus leads to lower prices for low-income consumers."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that it benefited low-income consumers lacks specific evidence or a mechanism beyond the general concept of price lowering.",
+        "fix": "Mention a specific type of foodgrain or a general economic indicator to ground the claim.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "In its first phase the gains were concentrated in irrigated regions such as Punjab and Haryana, and mainly in wheat.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately notes that the first phase was concentrated in irrigated regions like Punjab and Haryana."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence identifies specific regions (Punjab and Haryana) where the first phase of the revolution was concentrated."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the concentration of gains but does not explicitly state the impact on the agricultural landscape beyond the location.",
+        "fix": "Explain how this concentration led to regional disparities in agricultural development.",
+        "fixNumber": null,
+        "source": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Fears that only big farmers would benefit were partly offset by cheap credit and subsidised fertilisers for small farmers.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that fears were 'partly offset' by credit and subsidies is a general statement without specific data or a cited policy to prove the extent of this offset.",
+        "fix": "Reference a specific type of government credit scheme or subsidy program you have studied.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "However, intensive use of water and chemicals has caused falling water tables, soil degradation and a cereal-centred cropping pattern.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It highlights the negative environmental impacts like falling water tables and soil degradation."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the environmental impact by mentioning soil degradation and falling water tables."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the concept of ecological impact by linking intensive chemical use to specific consequences like falling water tables and soil degradation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions falling water tables and soil degradation but does not explicitly link these back to the specific 'intensive use' of chemicals or water mentioned in the previous sentence.",
+        "fix": "Explain how the specific chemicals and water usage lead to these environmental outcomes.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Pulses, oilseeds and rainfed regions received comparatively little attention.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It highlights the limitation of the revolution by noting that rainfed regions and certain crops received little attention."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "An evergreen revolution that raises productivity without ecological harm is the way forward.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking way ahead by suggesting an evergreen revolution."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion for an 'evergreen revolution' is a vague concept that does not specify who should act or what specific policy actions are required to achieve it.",
+        "fix": "Specify a policy action, such as promoting organic manures or specific agro-ecological practices to reduce chemical toxicity.",
+        "fixNumber": 1,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction"
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the social impact on the farming community's structure or the specific socio-economic disparities between different types of farmers.",
+      "fix": "Add a point about the shift in land ownership or the socio-economic divide between large and small landholders.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the development of agro-inputs, agro-processing industries, and small-scale industries that resulted from this strategy.",
+      "fix": "Add a point about the growth of agro-processing and small-scale industries.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)"
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the positive impacts from the critical impacts.",
+      "fix": "Use a connecting phrase to transition from the benefits of self-sufficiency to the environmental costs.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s2",
+      "quote": "It ended India's dependence on food imports and brought self-sufficiency in foodgrains.",
+      "reason": "It correctly identifies the shift toward self-sufficiency in foodgrains as a major impact."
+     },
+     {
+      "where": "Trade-offs and limits",
+      "sourceId": "s9",
+      "quote": "Pulses, oilseeds and rainfed regions received comparatively little attention.",
+      "reason": "It highlights the limitation of the revolution by noting that rainfed regions and certain crops received little attention."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It examines the positive impact by explaining how the revolution ended dependence on food imports."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the impact of the Green Revolution, covering both positive and negative dimensions."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers economic and environmental dimensions well. It could be strengthened by including the social dimension regarding the changing status of the farming community."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concepts of the Green Revolution, including its technological inputs and its environmental consequences, are well-defined."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The facts provided are well-supported by the provided materials, particularly regarding the geographical spread and the goal of self-reliance."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good regional examples and specific environmental impacts. To improve, include more specific evidence regarding the socio-economic benefits for small farmers."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer captures the core economic and regional impacts well. Including the industrial side-effects would make the analysis more comprehensive."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer shows clear causal links between the technological inputs and the resulting economic and food security outcomes. To improve, more explicitly connect the environmental degradation to the specific practices of the revolution."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies both the environmental costs and the geographical limitations of the Green Revolution."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The conclusion identifies a correct goal but fails to provide a workable plan. It lacks specific actors and actionable steps."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear definition as an introduction, a well-organized body, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology throughout, making the impacts clear and professional. The conclusion could be sharpened by using more specific terminology instead of general phrases."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is very economical and avoids padding. It covers both positive and negative impacts effectively within the word limit."
+     }
+    ],
+    "stats": {
+     "words": 165,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 51
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "It enabled the government to procure grain and build buffer stocks for use in times of shortage."
+      },
+      {
+       "sourceId": "s6",
+       "text": "In the second phase, from the mid-1970s, the technology spread to more states and crops."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 26 (Agriculture)",
+      "used": false
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 3 (Land Resources and Agriculture)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 8 (Agriculture and Food Management), Introduction",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It has a serious problem (see the fixes).",
+      "It leaves out an important angle of the issue.",
+      "Its points need specific examples, data or cases."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

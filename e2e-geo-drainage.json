@@ -1,0 +1,699 @@
+{
+ "case": "geo-drainage",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: known as the 'sorrow of Bengal'": false,
+  "cited: known as the 'sorrow of Bengal'": false,
+  "caught: also build large deltas at their mouths": true,
+  "cited: also build large deltas at their mouths": true,
+  "no red marks on correct sentences": true,
+  "trap not red: such as the Satluj and the Kosi, are antecedent": true
+ },
+ "seconds": 10797.6,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-drainage"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-drainage",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 is answered. Part 2 and Part 3 need the most work.",
+    "summary": "The answer correctly identifies the Himalayan system's origin in young fold mountains and the older geological status of the Peninsular drainage. However, the description of the nature of flow and landforms needs more work, specifically regarding the lack of alluvial and deltaic deposits in certain rivers. To improve, you should first mention that many Peninsular rivers originate in the Western Ghats and specify a particular region or project for inter-basin transfer plans.",
+    "levelWhy": [
+     "Not every part of the question is answered."
+    ],
+    "formatNote": null,
+    "question": "Distinguish between the Himalayan and the Peninsular drainage systems of India with reference to their origin, nature of flow and the landforms they create. (Answer in 250 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "India's rivers are commonly grouped into the Himalayan and the Peninsular drainage systems on the basis of their mode of origin, nature and characteristics.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The two differ sharply in age, regime and landforms.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The Peninsular drainage is much older, as shown by its broad, largely graded shallow valleys and mature rivers.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Himalayan system, comprising the Indus, Ganga and Brahmaputra basins, has evolved along with the uplift of the young fold mountains.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Fed by both snowmelt and rainfall, Himalayan rivers are perennial, whereas most Peninsular rivers are rain-fed and seasonal.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Several Himalayan rivers, such as the Satluj and the Kosi, are antecedent and have carved deep gorges because erosion kept pace with the rise of the mountains.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "On the plains they meander, form ox-bow lakes, flood plains and braided channels, and shift their courses frequently.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Kosi, known as the 'sorrow of Bengal', is notorious for such shifts because of the huge sediment load it carries.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Peninsular rivers, by contrast, have fixed courses with few meanders, as they flow over the hard and stable Peninsular block.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "Most of them, such as the Mahanadi, Godavari, Krishna and Kaveri, flow eastwards owing to the block's tilt towards the south-east and build fertile deltas on the Bay of Bengal coast.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "The west-flowing Narmada and Tapi, which occupy rift valleys, also build large deltas at their mouths.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "The Western Ghats act as the main water divide, so rivers draining into the Arabian Sea are short and swift.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "Perennial Himalayan rivers thus suit canal irrigation, while seasonal Peninsular rivers need storage reservoirs, a complementarity that inter-basin transfer plans must use carefully.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the Himalayan and the Peninsular drainage systems of India with reference to their origin",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully distinguishes the geological age and mountain-related origins of both systems. Adding specific geographical starting points for the Peninsular rivers would strengthen the distinction.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s4"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "nature of flow",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have correctly identified the perennial versus seasonal distinction and the difference in course stability. However, you must be careful with geographical facts regarding the Narmada and Tapi.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s9"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "and the landforms they create",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You successfully identified several landforms for the Himalayan system. However, you made a factual error regarding the landforms created by the Narmada and Tapi.",
+      "checkedTwice": false,
+      "sentences": [
+       "s6",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "state that these rivers lack alluvial and deltaic deposits.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s11",
+       "text": "The west-flowing Narmada and Tapi, which occupy rift valleys, also build large deltas at their mouths."
+      },
+      "why": "The extract states that there is a lack of alluvial and deltaic deposits in the Narmada and Tapi rivers.",
+      "tryWriting": "The west-flowing Narmada and Tapi, which flow through the rift valley, have a lack of alluvial and deltaic deposits.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "sourceRef": "r3",
+      "evidence": {
+       "wrongWords": "also build large deltas at their mouths",
+       "sourceWords": "there is a lack of alluvial and deltaic deposits in these rivers"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Specify a particular inter-basin transfer project or a specific geographical region where these plans should be prioritized.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s13",
+       "text": "Perennial Himalayan rivers thus suit canal irrigation, while seasonal Peninsular rivers need storage reservoirs, a complementarity that inter-basin transfer plans must use carefully."
+      },
+      "why": "The suggestion to use inter-basin transfer plans carefully is a vague instruction that does not specify which basins or what specific actions are required.",
+      "tryWriting": "Perennial Himalayan rivers suit canal irrigation, while seasonal Peninsular rivers need storage reservoirs; inter-basin transfer plans should prioritize these specific needs in water-scarce regions.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Mention that many Peninsular rivers originate in the Western Ghats.",
+      "where": "Part 1",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer does not explicitly mention the specific geographical sources like the Western Ghats for Peninsular rivers as a point of origin.",
+      "tryWriting": "While the Himalayan system evolved with the uplift of young fold mountains, many Peninsular rivers originate in the Western Ghats.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "India's rivers are commonly grouped into the Himalayan and the Peninsular drainage systems on the basis of their mode of origin, nature and characteristics.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the classification of Indian drainage into Himalayan and Peninsular systems based on origin, nature, and characteristics as stated in the textbook."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context by defining the classification of Indian rivers without repeating the question."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The Peninsular drainage is much older, as shown by its broad, largely graded shallow valleys and mature rivers.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It establishes the Peninsular drainage as much older, providing a basis for its geological origin."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Himalayan system, comprising the Indus, Ganga and Brahmaputra basins, has evolved along with the uplift of the young fold mountains.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the Himalayan system's origin as being linked to the uplift of the young fold mountains."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Fed by both snowmelt and rainfall, Himalayan rivers are perennial, whereas most Peninsular rivers are rain-fed and seasonal.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence correctly distinguishes the perennial nature of Himalayan rivers from the seasonal, rain-fed nature of Peninsular rivers."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'how' of the nature of flow by contrasting snowmelt and rainfall sources for perennial versus seasonal flows."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Several Himalayan rivers, such as the Satluj and the Kosi, are antecedent and have carved deep gorges because erosion kept pace with the rise of the mountains.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "The sentence correctly identifies the creation of deep gorges by Himalayan rivers."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence correctly identifies the creation of deep gorges as a specific landform resulting from the Himalayan drainage system."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Explains the concept of antecedent rivers and how they interact with mountain uplift to create deep gorges."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "On the plains they meander, form ox-bow lakes, flood plains and braided channels, and shift their courses frequently.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "The sentence describes the formation of ox-bow lakes, flood plains, and braided channels by Himalayan rivers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Peninsular rivers, by contrast, have fixed courses with few meanders, as they flow over the hard and stable Peninsular block.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It identifies the fixed courses and lack of meanders in Peninsular rivers compared to the Himalayan system."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It links the geological stability of the Peninsular block to the resulting fixed courses of the rivers."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The phrase 'fixed courses' accurately contrasts with the shifting nature of Himalayan rivers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Most of them, such as the Mahanadi, Godavari, Krishna and Kaveri, flow eastwards owing to the block's tilt towards the south-east and build fertile deltas on the Bay of Bengal coast.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence explains the origin and flow of Peninsular rivers by mentioning the tilt of the block towards the south-east."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence identifies the creation of fertile deltas as a landform resulting from the Peninsular drainage system."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the eastward flow of major Peninsular rivers and the formation of deltas."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s11",
+      "text": "The west-flowing Narmada and Tapi, which occupy rift valleys, also build large deltas at their mouths.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states that there is a lack of alluvial and deltaic deposits in the Narmada and Tapi rivers.",
+        "fix": "state that these rivers lack alluvial and deltaic deposits.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)"
+       },
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims that the Narmada and Tapi build large deltas, but these rivers flow into the Arabian Sea and do not form deltas.",
+        "fix": "Remove the claim about building large deltas for the Narmada and Tapi.",
+        "fixNumber": null,
+        "source": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Perennial Himalayan rivers thus suit canal irrigation, while seasonal Peninsular rivers need storage reservoirs, a complementarity that inter-basin transfer plans must use carefully.",
+      "credit": [
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies a specific application for the different river types, namely canal irrigation for perennial rivers and storage reservoirs for seasonal ones."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion regarding the use of these systems in irrigation and water management."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion to use inter-basin transfer plans carefully is a vague instruction that does not specify which basins or what specific actions are required.",
+        "fix": "Specify a particular inter-basin transfer project or a specific geographical region where these plans should be prioritized.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "the Himalayan and the Peninsular drainage systems of India with reference to their origin",
+      "reason": "The answer does not explicitly mention the specific geographical sources like the Western Ghats for Peninsular rivers as a point of origin.",
+      "fix": "Mention that many Peninsular rivers originate in the Western Ghats.",
+      "fixNumber": 3,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks for a distinction between drainage systems, but the answer does not address the limitations or trade-offs of these systems, such as the ecological costs of river diversion or the risks of seasonal water scarcity.",
+      "fix": "Add a concluding sentence on the management challenges or ecological trade-offs of these different drainage systems.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or concluding summary that synthesizes the comparison into a final judgment.",
+      "fix": "Add a concluding sentence summarizing the geographical significance of these drainage systems for India's water security.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s4",
+      "quote": "The Himalayan system, comprising the Indus, Ganga and Brahmaputra basins, has evolved along with the uplift of the young fold mountains.",
+      "reason": "It correctly identifies the Himalayan system's origin as being linked to the uplift of the young fold mountains."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "The Peninsular drainage is much older, as shown by its broad, largely graded shallow valleys and mature rivers.",
+      "reason": "It establishes the Peninsular drainage as much older, providing a basis for its geological origin."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s5",
+      "quote": "Fed by both snowmelt and rainfall, Himalayan rivers are perennial, whereas most Peninsular rivers are rain-fed and seasonal.",
+      "reason": "The sentence correctly distinguishes the perennial nature of Himalayan rivers from the seasonal, rain-fed nature of Peninsular rivers."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully explains the 'how' and 'why' behind the differences in origin and flow. However, it contains a factual error regarding the landforms created by west-flowing rivers."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the physical geography of the drainage systems. The final sentence drifts slightly into human geography/utility."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the physical geography well but contains a significant geographical error regarding the landforms created by west-flowing rivers."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a strong conceptual distinction between the two systems, particularly regarding geological age and flow patterns. However, there is a factual error regarding the landforms created by the west-flowing rivers."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The distinction between the drainage systems is well-articulated, but there is a significant geographical error regarding the landforms created by west-flowing rivers."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific examples for the majority of the drainage systems. However, there is a geographical inaccuracy regarding the landforms created by the west-flowing rivers."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the geological origins and flow patterns of both systems. However, it incorrectly attributes delta formation to the Narmada and Tapi."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links geological features to river behavior and landforms. However, there is a factual error regarding the landforms created by the west-flowing rivers."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a descriptive 'distinguish' prompt, so trade-offs are not strictly required. However, mentioning the management challenges of seasonal vs. perennial flows would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a logical conclusion regarding water management, but the final suggestion lacks the specificity required for a workable policy recommendation."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear introduction, a well-organized body divided by the three required dimensions, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses high-quality geographical terminology like 'antecedent' and 'perennial' effectively. However, there is a technical error regarding the landforms created by the west-flowing rivers."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. Removing the concluding sentence about irrigation would improve the focus and space management."
+     }
+    ],
+    "stats": {
+     "words": 266,
+     "sentences": 13,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 39
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 54
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 61
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s2",
+       "text": "The two differ sharply in age, regime and landforms."
+      },
+      {
+       "sourceId": "s8",
+       "text": "The Kosi, known as the 'sorrow of Bengal', is notorious for such shifts because of the huge sediment load it carries."
+      },
+      {
+       "sourceId": "s12",
+       "text": "The Western Ghats act as the main water divide, so rivers draining into the Arabian Sea are short and swift."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.06
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

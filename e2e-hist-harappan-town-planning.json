@@ -1,0 +1,704 @@
+{
+ "case": "hist-harappan-town-planning",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: stood in the Lower Town among ordinary houses": true,
+  "cited: stood in the Lower Town among ordinary houses": true,
+  "no red marks on correct sentences": true,
+  "trap not red: A massive granary, which some scholars call a warehouse": true
+ },
+ "seconds": 10095.2,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-harappan-town-planning"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-harappan-town-planning",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "The answer successfully describes the spatial organization of the city into a Citadel and Lower Town and explains the functionality of the drainage system. However, it loses credit because it incorrectly places the Great Bath in the Lower Town instead of the Citadel. To improve, first move the Great Bath to the Citadel and then emphasize how the grid pattern distinguishes Harappan planning from haphazard growth.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Town planning was the most distinctive feature of Harappan cities. Discuss. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Harappan Civilisation was marked by planned urban centres such as Mohenjodaro, Harappa, Dholavira and Lothal.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Mohenjodaro was divided into a raised, walled Citadel built on mud-brick platforms and a larger, separately walled Lower Town.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Its streets followed an approximate grid pattern, intersecting at right angles.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "A carefully planned drainage system linked house drains to covered street drains, with sumps for cleaning.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Bricks, whether sun-dried or baked, followed a standardised ratio across Harappan settlements.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Houses were built around courtyards, had their own bathrooms and showed concern for privacy, with no windows in ground-level walls.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Great Bath, a watertight tank probably used for ritual bathing, stood in the Lower Town among ordinary houses.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "A massive granary, which some scholars call a warehouse, shows the ability to mobilise labour.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "At Dholavira and Lothal the entire settlement was fortified.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Such planning suggests strong civic authority, and Harappan drainage still offers lessons for sanitation in modern cities.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "Town planning was the most distinctive feature of Harappan cities.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified and described the core elements of Harappan town planning, such as the grid system and the division of urban spaces.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Move the Great Bath to the Citadel in the description.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The Great Bath, a watertight tank probably used for ritual bathing, stood in the Lower Town among ordinary houses."
+      },
+      "why": "The student states the Great Bath was in the Lower Town, but the extract specifies it was found in the Citadel.",
+      "tryWriting": "The Great Bath, a large rectangular tank probably used for some kind of a special ritual bath, was found on the Citadel.",
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "sourceRef": "r21",
+      "evidence": {
+       "wrongWords": "stood in the Lower Town among ordinary houses",
+       "sourceWords": "the context in which it was found (the Citadel, with several distinctive buildings)"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Emphasize how the grid pattern distinguishes Harappan planning from haphazard growth.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Its streets followed an approximate grid pattern, intersecting at right angles."
+      },
+      "why": "The sentence describes a characteristic of the streets but does not explicitly link it to the 'distinctive' nature of the town planning mentioned in the prompt.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Specify the standard ratio of the bricks.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "Bricks, whether sun-dried or baked, followed a standardised ratio across Harappan settlements."
+      },
+      "why": "The sentence mentions a standardized ratio but does not specify what that ratio was or how it contributed to the planning.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Harappan Civilisation was marked by planned urban centres such as Mohenjodaro, Harappa, Dholavira and Lothal.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It introduces the core topic of planned urban centres in Harappan cities."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that Mohenjodaro, Harappa, Dholavira, and Lothal are major cities within the Harappan civilization."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context by identifying the major urban centers of the civilization."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Mohenjodaro was divided into a raised, walled Citadel built on mud-brick platforms and a larger, separately walled Lower Town.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It describes the specific spatial organization of the city into a Citadel and Lower Town."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Its streets followed an approximate grid pattern, intersecting at right angles.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It highlights the systematic grid pattern of the streets as a key planning feature."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence correctly identifies the grid pattern and right-angle intersections as a key planning feature."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'grid pattern' and 'intersecting at right angles' provides precise geometric terminology for the urban layout."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes a characteristic of the streets but does not explicitly link it to the 'distinctive' nature of the town planning mentioned in the prompt.",
+        "fix": "Emphasize how the grid pattern distinguishes Harappan planning from haphazard growth.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "A carefully planned drainage system linked house drains to covered street drains, with sumps for cleaning.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the functionality of the drainage system by detailing how it linked house drains to covered street drains with sumps."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence accurately describes the link between house drains and covered street drains with sumps."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "It provides specific evidence of the drainage system, mentioning 'covered street drains' and 'sumps' to support the point about planning."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Bricks, whether sun-dried or baked, followed a standardised ratio across Harappan settlements.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly notes the use of standardized brick ratios across settlements as a planning feature."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions a standardized ratio but does not specify what that ratio was or how it contributed to the planning.",
+        "fix": "Specify the standard ratio of the bricks.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Houses were built around courtyards, had their own bathrooms and showed concern for privacy, with no windows in ground-level walls.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the social dimension by highlighting the architectural concern for privacy and domestic life."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Great Bath, a watertight tank probably used for ritual bathing, stood in the Lower Town among ordinary houses.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student states the Great Bath was in the Lower Town, but the extract specifies it was found in the Citadel.",
+        "fix": "Move the Great Bath to the Citadel in the description.",
+        "fixNumber": 1,
+        "source": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)"
+       },
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the Great Bath describes a specific structure rather than the broader town planning layout.",
+        "fix": "Explain how the placement of public structures like the Great Bath integrated into the urban layout.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "A massive granary, which some scholars call a warehouse, shows the ability to mobilise labour.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It links the physical structure of the granary to the 'ability to mobilise labour', providing a reason for the planning."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The granary describes a specific building's function rather than the distinctive feature of town planning.",
+        "fix": "Describe how the location of the granary reflects the organized spatial distribution of the city.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Such planning suggests strong civic authority, and Harappan drainage still offers lessons for sanitation in modern cities.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It moves beyond description by interpreting the planning as evidence of 'strong civic authority'."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It connects the planning to the concept of civic authority and modern relevance."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence correctly identifies the administrative and political dimension by attributing the planning to a strong civic authority."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions 'strong civic authority' but does not explicitly link it back to the 'distinctive' nature of the planning compared to other features.",
+        "fix": "Explicitly state that this level of planning was unique compared to contemporary civilizations.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive and lacks a balanced discussion of other distinctive features like craft production or trade.",
+      "fix": "Add a sentence comparing town planning to other features like craft specialization or maritime trade to provide a balanced discussion.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not discuss the economic dimension, such as how the town planning facilitated trade or craft production.",
+      "fix": "Add a sentence explaining how the planned layout supported commercial activities or craft production.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention that Harappan cities showed well-planned growth compared to the haphazard growth of Mesopotamian counterparts.",
+      "fix": "Add a comparison to Mesopotamian cities to highlight the distinctive nature of Harappan planning.",
+      "fixNumber": null,
+      "source": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not discuss the limitations or the eventual collapse of this urban planning system.",
+      "fix": "Mention the eventual decline or collapse of these planned cities to show the limits of their sustainability.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s2",
+      "quote": "Mohenjodaro was divided into a raised, walled Citadel built on mud-brick platforms and a larger, separately walled Lower Town.",
+      "reason": "It describes the specific spatial organization of the city into a Citadel and Lower Town."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s1",
+      "quote": "The Harappan Civilisation was marked by planned urban centres such as Mohenjodaro, Harappa, Dholavira and Lothal.",
+      "reason": "It introduces the core topic of planned urban centres in Harappan cities."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s4",
+      "quote": "A carefully planned drainage system linked house drains to covered street drains, with sumps for cleaning.",
+      "reason": "It explains the functionality of the drainage system by detailing how it linked house drains to covered street drains with sumps."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides an excellent description of urban planning but remains one-sided. To 'discuss' effectively, you should briefly mention other defining features of the civilization to show why planning was the *most* distinctive."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt, focusing consistently on urban planning features."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the administrative and social aspects of town planning well. It would be stronger by mentioning the economic purpose of these planned layouts."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer does a good job of explaining the structural components of town planning rather than just listing them. It provides depth on the layout, drainage, and residential privacy."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The description of the drainage and grid system is accurate. However, the location of the Great Bath is factually incorrect based on standard archaeological records."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific archaeological features like the Citadel, grid patterns, and drainage systems to support the argument. The conclusion's shift to modern lessons is less relevant to the historical discussion."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer effectively uses specific details about drainage and brick standardization to support the claim of town planning. Including a comparison with contemporary civilizations would further emphasize the 'distinctive' nature of these cities."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully linked physical structures to social organization, such as labor mobilization and civic authority. To fully address the 'most distinctive' part of the prompt, you need to explicitly contrast this planning with other major features of the civilization."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses entirely on the successes of Harappan planning without addressing the limitations or the eventual collapse of these urban systems."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer does not provide specific policy suggestions or actionable measures, making the check for workability mostly not applicable."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear introduction, a detailed body of evidence, and a concluding thought that looks toward the present."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses very precise archaeological and architectural terminology which enhances the technical quality of the response."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word limit effectively by providing a comprehensive list of planning features. It avoids unnecessary padding while covering multiple aspects of urban design."
+     }
+    ],
+    "stats": {
+     "words": 154,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 47
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s9",
+       "text": "At Dholavira and Lothal the entire settlement was fortified."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.03
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 2 (Kings, Farmers and Towns)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 10 (Harappan Culture: Bronze Age Urbanization in the Indus Valley)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

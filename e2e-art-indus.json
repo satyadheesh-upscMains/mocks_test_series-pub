@@ -1,0 +1,570 @@
+{
+ "case": "art-indus",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: The bronze Dancing Girl from Mohenjodaro": true,
+  "trap not red: The so-called Pashupati seal": true,
+  "trap not red: The steatite bust of a bearded": true
+ },
+ "seconds": 3446.1,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-indus"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-indus",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "strong",
+    "levelLabel": "Strong",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, and the answer is strong.",
+    "summary": "The answer successfully addresses all parts of the question, particularly through the mention of the lost-wax technique as an example of refined craftsmanship. To improve, you should first describe the 'priest-king' as a stone sculpture or statue rather than a bust. Additionally, ensure you explicitly describe the technical skill and precision involved in the craftsmanship of the pottery and intaglio carving.",
+    "levelWhy": [],
+    "formatNote": null,
+    "question": "The art of the Harappan civilisation reveals refined craftsmanship across different media. Illustrate. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Illustrate",
+      "meaning": "Make the point with a concrete example."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The art of the Indus Valley Civilisation, which emerged in the second half of the third millennium BCE, spanned stone, bronze, terracotta, seals, pottery and jewellery.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The steatite bust of a bearded 'priest-king' from Mohenjodaro wears a shawl with trefoil patterns over the left shoulder.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The bronze Dancing Girl from Mohenjodaro, cast by the lost-wax technique, stands with her right hand on her hip and her left arm covered in bangles.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Seals, mostly of steatite and carved in intaglio, depict animals such as the unicorn bull, tiger and elephant along with an undeciphered script.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The so-called Pashupati seal shows a cross-legged figure surrounded by an elephant, a tiger, a rhinoceros and a buffalo.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Terracotta was used for mother goddess figurines and toys such as carts, whistles and rattles.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Wheel-made red pottery painted in black, and bead workshops at Chanhudaro and Lothal using carnelian and lapis lazuli, show high technical skill.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Lost-wax casting and terracotta craft survive in India today, a Harappan legacy worth documenting.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "The art of the Harappan civilisation reveals refined craftsmanship across different media.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully illustrated craftsmanship by mentioning specific techniques like lost-wax casting and bead making. To improve, ensure the introductory sentence also hints at the quality of the art rather than just listing materials.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Describe it as a stone sculpture or statue.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The steatite bust of a bearded 'priest-king' from Mohenjodaro wears a shawl with trefoil patterns over the left shoulder."
+      },
+      "why": "The description of the 'priest-king' as a 'steatite bust' is incorrect as it is a stone sculpture, not a bust.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Briefly describe the quality or technique of one or two media listed.",
+      "where": "The question",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The art of the Indus Valley Civilisation, which emerged in the second half of the third millennium BCE, spanned stone, bronze, terracotta, seals, pottery and jewellery."
+      },
+      "why": "While it lists the media, it does not describe the 'refined craftsmanship' of those items.",
+      "tryWriting": "The art of the Indus Valley Civilisation, which emerged in the second half of the third millennium BCE, showcased sophisticated craftsmanship across media including stone, bronze, terracotta, and jewellery.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Describe the precision or artistic skill used in the intaglio carving technique.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Seals, mostly of steatite and carved in intaglio, depict animals such as the unicorn bull, tiger and elephant along with an undeciphered script."
+      },
+      "why": "The sentence describes the content of the seals but does not explicitly highlight the 'refined craftsmanship' or technical skill involved in the carving process.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The art of the Indus Valley Civilisation, which emerged in the second half of the third millennium BCE, spanned stone, bronze, terracotta, seals, pottery and jewellery.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It establishes the scope of the answer by listing the various media used in the Indus Valley Civilisation."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It establishes the breadth of media used, including stone, bronze, and terracotta."
+       },
+       {
+        "where": "Structure",
+        "reason": "This sentence provides historical context by mentioning the time period and the variety of media used."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it lists the media, it does not describe the 'refined craftsmanship' of those items.",
+        "fix": "Briefly describe the quality or technique of one or two media listed.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The steatite bust of a bearded 'priest-king' from Mohenjodaro wears a shawl with trefoil patterns over the left shoulder.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides a specific example of a steatite bust to illustrate refined craftsmanship in sculpture."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific example of a steatite bust and describes its intricate trefoil patterns."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The description of the 'priest-king' as a 'steatite bust' is incorrect as it is a stone sculpture, not a bust.",
+        "fix": "Describe it as a stone sculpture or statue.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The bronze Dancing Girl from Mohenjodaro, cast by the lost-wax technique, stands with her right hand on her hip and her left arm covered in bangles.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The mention of the 'lost-wax technique' provides a specific example of refined craftsmanship in bronze."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence uses the Dancing Girl and the lost-wax technique as a concrete illustration of metalwork."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the 'lost-wax technique' as a specific method of casting, which demonstrates the depth of craftsmanship."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Seals, mostly of steatite and carved in intaglio, depict animals such as the unicorn bull, tiger and elephant along with an undeciphered script.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains 'intaglio' as a method of carving, providing depth to the concept of seal making."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence accurately describes the material (steatite) and the 'intaglio' carving style of the seals."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the content of the seals but does not explicitly highlight the 'refined craftsmanship' or technical skill involved in the carving process.",
+        "fix": "Describe the precision or artistic skill used in the intaglio carving technique.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Terracotta was used for mother goddess figurines and toys such as carts, whistles and rattles.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the use of terracotta but does not explicitly link it to the 'refined craftsmanship' required by the prompt.",
+        "fix": "Describe the level of detail or skill involved in creating the mother goddess figurines and toys.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Wheel-made red pottery painted in black, and bead workshops at Chanhudaro and Lothal using carnelian and lapis lazuli, show high technical skill.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The description of 'wheel-made red pottery' and 'bead workshops' illustrates technical skill across different media."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It provides specific evidence of technical skill in pottery and bead making."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It highlights the technological skill involved in pottery and bead production."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning bead workshops, the sentence lacks a specific description of the craftsmanship or design of the beads.",
+        "fix": "Describe the specific shapes or techniques used in the bead making.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Lost-wax casting and terracotta craft survive in India today, a Harappan legacy worth documenting.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "This sentence offers a forward-looking conclusion by linking the legacy to modern India."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of how these crafts 'survive in India today' shifts the focus away from the Harappan craftsmanship itself.",
+        "fix": "Remove the comparison to modern India to maintain focus on the Harappan period.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer could further illustrate craftsmanship by describing the specific aesthetic qualities or intricate details of the pottery mentioned.",
+      "fix": "Describe the specific patterns or shapes of the wheel-made pottery.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a discussion on the social or religious significance of these artistic expressions.",
+      "fix": "Add a sentence explaining how these crafts served religious rituals or social status.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks to illustrate craftsmanship, and while the answer provides excellent examples, it does not address any limitations or uncertainties regarding the interpretation of these artifacts.",
+      "fix": "Briefly mention that the exact meanings of some symbols or figures remain uncertain due to the undeciphered script.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks clear subheadings or transition words to distinguish between the different media mentioned.",
+      "fix": "Use bullet points or bold headers to separate the different media like 'Sculpture', 'Metalwork', and 'Pottery'.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "The bronze Dancing Girl from Mohenjodaro, cast by the lost-wax technique, stands with her right hand on her hip and her left arm covered in bangles.",
+      "reason": "The mention of the 'lost-wax technique' provides a specific example of refined craftsmanship in bronze."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully follows the 'Illustrate' command by providing specific examples of artifacts across various media like stone, bronze, and terracotta."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt by providing specific examples of different media. The final sentence slightly drifts into modern continuity."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer effectively covers the technical and material aspects of Harappan art. To improve, you could briefly mention the social or religious context of these artifacts."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully identified and explained specific technical processes like lost-wax casting and intaglio. To improve, ensure you describe the quality of the craftsmanship rather than just listing the materials."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer provides specific technical details like 'lost-wax' and 'intaglio' which demonstrate high-quality craftsmanship. Ensure that claims about the modern survival of these crafts are framed as cultural influences rather than direct continuities."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer provides strong specific examples for sculpture and seals. To improve, you could add more descriptive detail regarding the craftsmanship of the pottery and beads."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links specific artistic techniques and materials to the evidence of craftsmanship. To improve, ensure the opening sentence explicitly connects the variety of media to the quality of the craft."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is descriptive rather than analytical, so a counter-argument is not required. However, acknowledging the uncertainty of interpreting these artifacts would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good historical overview but lacks a specific, actionable plan for the concluding suggestion."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear introduction, a detailed body, and a concluding thought."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You used excellent technical terminology like 'lost-wax' and 'intaglio' to describe the craftsmanship. To improve, ensure the phrasing emphasizes the quality of the work rather than just listing the materials."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the space well by providing specific examples for various media. However, the final sentence is slightly repetitive of the theme and could be removed to stay under the word limit."
+     }
+    ],
+    "stats": {
+     "words": 164,
+     "sentences": 8,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 74
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s5",
+       "text": "The so-called Pashupati seal shows a cross-legged figure surrounded by an elephant, a tiger, a rhinoceros and a buffalo."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.09
+    },
+    "transcript": null,
+    "sources": [],
+    "trust": {
+     "secondOpinions": 0,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": []
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

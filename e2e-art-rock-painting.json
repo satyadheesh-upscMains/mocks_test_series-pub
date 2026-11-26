@@ -1,0 +1,662 @@
+{
+ "case": "art-rock-painting",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: by Archibald Carlleyle": true,
+  "trap not red: by Vishnu Shridhar Wakankar": true
+ },
+ "seconds": 9753.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-rock-painting"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-rock-painting",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "The answer successfully uses specific examples like Lakhudiyar and provides technical details on mineral pigments. However, it fails to explain how these paintings specifically serve as a window into early human life and lacks concrete conservation actions. To improve, you should describe how the paintings reflect human skills and daily activities while suggesting specific management plans to protect the sites.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Prehistoric rock paintings of India offer a window into the life of early humans. Discuss with reference to Bhimbetka and other sites. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "India's earliest paintings, dating from the Upper Palaeolithic, survive on the walls and ceilings of rock shelters.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The first discovery of rock paintings in India was made in 1867-68 by Archibald Carlleyle, before the find at Altamira in Spain.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The largest and most spectacular rock-shelter complex is Bhimbetka in the Vindhya hills of Madhya Pradesh, discovered in 1957-58 by Vishnu Shridhar Wakankar.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Upper Palaeolithic paintings are linear figures of huge animals such as bison, elephants and rhinos, in green and dark red.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The Mesolithic phase has the largest number of paintings, smaller in size, in which hunting scenes predominate alongside dances and honey collection.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Artists ground minerals into pigments, obtaining red from haematite (geru) and green from chalcedony, and mixed them with water, fat or resin.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "At Lakhudiyar on the Suyal river in Uttarakhand, superimposed layers run from black to red ochre to white and include hand-linked dancers.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "These paintings reveal early beliefs and daily life, and their fragile sites need protection from vandalism and weathering.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Prehistoric rock paintings of India offer a window into the life of early humans.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified specific activities and beliefs depicted in the art. To improve, ensure you consistently link the artistic style to the specific human behaviors they represent.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s8"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Discuss with reference to Bhimbetka and other sites.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified Bhimbetka and another specific site (Lakhudiyar) to support your discussion. Adding the UNESCO status for Bhimbetka would add more weight to your description.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Suggest specific actions like establishing a dedicated conservation fund or implementing a site-specific management plan to mitigate weathering.",
+      "where": "Suggestions are workable",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "These paintings reveal early beliefs and daily life, and their fragile sites need protection from vandalism and weathering."
+      },
+      "why": "The sentence mentions that sites need protection from vandalism and weathering but does not specify who should act or what specific measures should be taken.",
+      "tryWriting": "These paintings reveal early beliefs and daily life; therefore, the government should implement site-specific conservation plans to protect these fragile shelters from weathering and human-induced damage.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "sourceRef": "r1",
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Describe the paintings as being in colors like red and green derived from minerals.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Upper Palaeolithic paintings are linear figures of huge animals such as bison, elephants and rhinos, in green and dark red."
+      },
+      "why": "The sentence claims the paintings are in green, but the source material indicates that green was obtained from chalcedony and red from haematite.",
+      "tryWriting": "Upper Palaeolithic paintings of huge animals like bison and elephants reflect the fauna and hunting patterns of early humans.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how these paintings reflect the skills and daily activities of early humans.",
+      "where": "Suggestions are workable",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "India's earliest paintings, dating from the Upper Palaeolithic, survive on the walls and ceilings of rock shelters."
+      },
+      "why": "The sentence describes the existence of paintings but does not explain how they serve as a 'window' into early human life as requested by the prompt.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "India's earliest paintings, dating from the Upper Palaeolithic, survive on the walls and ceilings of rock shelters.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies that the earliest paintings in India are from the Upper Palaeolithic period."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context by identifying the era and location of the paintings without repeating the question."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the existence of paintings but does not explain how they serve as a 'window' into early human life as requested by the prompt.",
+        "fix": "Explain how these paintings reflect the skills and daily activities of early humans.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The first discovery of rock paintings in India was made in 1867-68 by Archibald Carlleyle, before the find at Altamira in Spain.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the discovery date and the comparison to Altamira in Spain does not directly contribute to the discussion of what the paintings reveal about early human life.",
+        "fix": "Remove the comparison to Spain to focus on the content of the paintings.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The largest and most spectacular rock-shelter complex is Bhimbetka in the Vindhya hills of Madhya Pradesh, discovered in 1957-58 by Vishnu Shridhar Wakankar.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence identifies Bhimbetka as a major rock-shelter complex and provides its specific location and discovery details."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies Bhimbetka as a primary site for the discussion."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the location of Bhimbetka in the Vindhya hills of Madhya Pradesh."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the discovery and location of Bhimbetka but does not specify the historical periods represented there.",
+        "fix": "Mention that the paintings at Bhimbetka span from the Upper Palaeolithic to the Mesolithic age.",
+        "fixNumber": null,
+        "source": "Nitin Singhania, Indian Art and Culture, Ch. 2 (Indian Paintings), Classification of Indian Paintings"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Upper Palaeolithic paintings are linear figures of huge animals such as bison, elephants and rhinos, in green and dark red.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the visual style of the Upper Palaeolithic paintings by describing them as linear figures of specific animals."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'linear figures' and 'tonal effect' (implied by the description of colors) accurately describes the artistic style."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims the paintings are in green, but the source material indicates that green was obtained from chalcedony and red from haematite.",
+        "fix": "Describe the paintings as being in colors like red and green derived from minerals.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The Mesolithic phase has the largest number of paintings, smaller in size, in which hunting scenes predominate alongside dances and honey collection.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence explains how paintings show specific activities like hunting, dancing, and honey collection."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a specific angle on the 'window into life' by mentioning hunting scenes, dances, and honey collection."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the Mesolithic phase by detailing the shift to smaller sizes and the predominance of hunting scenes and honey collection."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that paintings include 'honey collection' is not supported by the provided materials.",
+        "fix": "mention hunting scenes and dances as primary activities",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Artists ground minerals into pigments, obtaining red from haematite (geru) and green from chalcedony, and mixed them with water, fat or resin.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses precise mineral names like 'haematite' and 'chalcedony' to describe the pigments."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "At Lakhudiyar on the Suyal river in Uttarakhand, superimposed layers run from black to red ochre to white and include hand-linked dancers.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides a specific example of another site, Lakhudiyar, and describes the visual details of the paintings found there."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence provides a specific example of another site beyond Bhimbetka to show human interaction and social life."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Provides a specific example of another site, Lakhudiyar, and describes its unique features."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "These paintings reveal early beliefs and daily life, and their fragile sites need protection from vandalism and weathering.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence explicitly states that the paintings reveal early beliefs and daily life."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It moves beyond description by discussing the current status and need for protection of these sites."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It links the existence of these paintings to the revelation of early beliefs and daily life."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions that sites need protection from vandalism and weathering but does not specify who should act or what specific measures should be taken.",
+        "fix": "Suggest specific actions like establishing a dedicated conservation fund or implementing a site-specific management plan to mitigate weathering.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)"
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is primarily descriptive and lacks a balanced discussion on the significance of these paintings as a historical record.",
+      "fix": "Add a sentence discussing how these paintings serve as primary evidence for reconstructing prehistoric social structures and cultural evolution.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not discuss the social or religious significance of the paintings, such as why they were painted in the same place repeatedly.",
+      "fix": "Add a point about the possible sacred or special nature of certain sites.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)"
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer fails to mention that Bhimbetka was declared a UNESCO World Heritage Site.",
+      "fix": "Add a mention of its UNESCO World Heritage status.",
+      "fixNumber": null,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. 2 (Indian Paintings), Classification of Indian Paintings"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer does not explain the causal link between the physical characteristics of the paintings and the specific insights they provide into human evolution or social structures.",
+      "fix": "Explain how specific motifs like stick-like figures or repeated layers suggest social organization or sacred practices.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s7",
+      "quote": "At Lakhudiyar on the Suyal river in Uttarakhand, superimposed layers run from black to red ochre to white and include hand-linked dancers.",
+      "reason": "This sentence provides a specific example of another site, Lakhudiyar, and describes the visual details of the paintings found there."
+     },
+     {
+      "where": "Clear wording",
+      "sourceId": "s6",
+      "quote": "Artists ground minerals into pigments, obtaining red from haematite (geru) and green from chalcedony, and mixed them with water, fat or resin.",
+      "reason": "The sentence uses precise mineral names like 'haematite' and 'chalcedony' to describe the pigments."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good descriptive details about the sites and techniques, but it reads more like a list of facts than a 'discussion' of what these paintings reveal about human life."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well within the scope of the question by focusing on specific sites and the content of the paintings. The mention of Spain is a minor distraction from the core topic."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the daily activities and artistic techniques well. It would be stronger by including the cultural or spiritual significance of the sites."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer does a good job of distinguishing between the artistic styles and themes of different prehistoric periods. To improve, you could briefly explain how specific motifs represent the 'beliefs' mentioned in the conclusion."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The geographical details for Bhimbetka and the specific description of Lakhudiyar are well-supported. The comparison to Altamira is an external fact not found in the provided materials."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific examples like Bhimbetka and Lakhudiyar to ground the discussion. To improve, you could include more specific details on the types of conservation challenges faced by these sites."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have correctly identified the geographical location and the significance of the Mesolithic period. To improve, include the international recognition of the site and more specific details on the artistic skill shown."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have listed the activities depicted in the paintings well, but you need to better explain how these visual elements serve as a 'window' into the human experience."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question asks to discuss the paintings as a window into early life, which implies an analysis of what they reveal and what they might obscure. The answer focuses well on the 'reveals' but lacks a discussion on the limitations of using art as a primary historical source."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies a need for protection but fails to provide a workable solution or specific action plan."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-defined with a clear opening and a concluding thought. To improve, ensure there is a clearer distinction between the specific site analysis and the general artistic techniques."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The technical terminology regarding pigments and artistic styles is excellent. To improve, be more specific when describing abstract concepts like 'beliefs'."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove non-essential historical facts like discovery dates to make more room for describing the 'window into life' aspect."
+     }
+    ],
+    "stats": {
+     "words": 166,
+     "sentences": 8,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 60
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 45
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. 2 (Indian Paintings), Classification of Indian Paintings",
+      "used": true
+     },
+     {
+      "label": "R.S. Sharma, India's Ancient Past, Ch. 7 (Human Evolution: The Old Stone Age)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, An Introduction to Indian Art – Part 1, Ch. 1 (Prehistoric Rock Paintings)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

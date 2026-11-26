@@ -1,0 +1,700 @@
+{
+ "case": "hist-renaissance-italy",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: The Flemish anatomist Andreas Vesalius": true
+ },
+ "seconds": 7961.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-renaissance-italy"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-renaissance-italy",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer successfully explains the economic foundation of the movement through trade and the political role of merchants in fostering citizenship. To improve, you should remove the irrelevant point about anatomy to save space and add a specific work by Michelangelo to strengthen the patronage argument. You should also check the timeline for the spread of ideas across the Alps to ensure historical accuracy.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check)."
+    ],
+    "formatNote": null,
+    "question": "Why did the Italian city-states become the birthplace of Renaissance humanism? Explain. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "From the fourteenth century, Italian towns such as Florence, Venice and Rome became centres of a humanist culture that the historian Jacob Burckhardt later called the Renaissance.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The universities of Padua and Bologna began to study law in the context of Roman culture, a shift represented by Petrarch.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Arab translators had preserved the works of Plato and Aristotle.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Popes, merchants and aristocrats patronised artists like Michelangelo.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Printed books carried these ideas across the Alps.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "The humanist faith in human ability still shapes modern ideas of individual dignity and secular inquiry.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Why did the Italian city-states become the birthplace of Renaissance humanism?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the economic and political reasons for the rise of humanism in Italy. To improve, ensure every point directly links back to the 'why' of the birthplace rather than listing general Renaissance achievements.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Explain.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified the socio-political and economic drivers of humanism, such as trade, political independence, and patronage. To improve, ensure every point directly links back to the 'why' of the humanist movement rather than listing unrelated scientific achievements.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Remove the sentence about anatomy to save space for more relevant historical context.",
+      "where": "Use of space",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection."
+      },
+      "why": "The mention of Andreas Vesalius and human dissection does not directly explain why the city-states were the birthplace of humanism.",
+      "tryWriting": "The focus on human anatomy and individual capability reflected the broader humanist shift toward studying the human experience.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Correct this sentence using NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions).",
+      "where": "Facts checked against the books",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s9",
+       "text": "Printed books carried these ideas across the Alps."
+      },
+      "why": "The student implies the movement was a general occurrence, but the extract specifies that the spread across the Alps happened specifically from the end of the fifteenth century.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "sourceRef": "r25",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Mention a specific work or project commissioned by these patrons.",
+      "where": "Examples and evidence",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "Popes, merchants and aristocrats patronised artists like Michelangelo."
+      },
+      "why": "While mentioning Michelangelo is a good specific example, the sentence lacks a specific work or project he completed to illustrate the patronage.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "From the fourteenth century, Italian towns such as Florence, Venice and Rome became centres of a humanist culture that the historian Jacob Burckhardt later called the Renaissance.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific names of Italian towns like Florence, Venice and Rome to ground the geographical context."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that towns like Florence, Venice, and Rome became centres of art and learning and that Jacob Burckhardt described this humanist culture as the Renaissance."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the historical context by identifying the specific towns and the term Renaissance."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains how trade with the Byzantine Empire and the Islamic world revived Italian ports, providing the economic foundation for the movement."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the 'how' by identifying trade with the Byzantine Empire and Islamic world as a reason for the revival of Italian ports."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the role of trade with the Byzantine Empire, Islamic world, and China in reviving Italian ports."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It identifies the political structure of independent city-states and the role of merchants in fostering the idea of citizenship."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the 'why' by linking the political structure of independent city-states to the development of the idea of citizenship."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains how the shift from clergy/feudal rule to merchant/banker rule helped the concept of citizenship take root."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The universities of Padua and Bologna began to study law in the context of Roman culture, a shift represented by Petrarch.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence identifies specific universities and a historical figure to support the shift toward Roman culture."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly identifies the specific subjects of humanist study as those not drawn from religion."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The list of subjects like 'grammar, rhetoric, poetry, history and moral philosophy' accurately defines the humanist curriculum."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Arab translators had preserved the works of Plato and Aristotle.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately notes that Arab translators preserved the works of Plato and Aristotle."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Flemish anatomist Andreas Vesalius, a professor at Padua, advanced anatomy through human dissection.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The mention of Andreas Vesalius and human dissection does not directly explain why the city-states were the birthplace of humanism.",
+        "fix": "Remove the sentence about anatomy to save space for more relevant historical context.",
+        "fixNumber": 1,
+        "source": null
+       },
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of Andreas Vesalius and human dissection is a specific scientific advancement that does not directly explain the rise of humanist culture.",
+        "fix": "Remove the specific mention of Vesalius to focus on the broader cultural shift.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Popes, merchants and aristocrats patronised artists like Michelangelo.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It identifies the specific groups, such as popes and merchants, who provided the patronage necessary for the movement."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It highlights the economic and social dimension of patronage by various classes like popes and merchants."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence uses space well to identify the specific social groups providing the necessary patronage."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While mentioning Michelangelo is a good specific example, the sentence lacks a specific work or project he completed to illustrate the patronage.",
+        "fix": "Mention a specific work or project commissioned by these patrons.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Printed books carried these ideas across the Alps.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The student implies the movement was a general occurrence, but the extract specifies that the spread across the Alps happened specifically from the end of the fifteenth century.",
+        "fix": "Correct this sentence using NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions).",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "The humanist faith in human ability still shapes modern ideas of individual dignity and secular inquiry.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by linking humanist faith to modern ideas."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'still shapes modern ideas' is a broad generalization that lacks specific historical connection to the Italian city-states.",
+        "fix": "Connect the legacy of humanism to specific modern secular institutions.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear organizational structure or headings to distinguish between the different reasons for the birthplace of humanism.",
+      "fix": "Use subheadings or clear transition words to group the economic, political, and intellectual factors.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The question asks 'why' the city-states became the birthplace, but the answer does not address the limitations or the specific social costs of this shift from religious to secular focus.",
+      "fix": "Mention the tension or shift in power from religious institutions to secular merchant classes.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Trade between the Byzantine Empire and the Islamic world, and with China via the Mongols, revived Italian ports.",
+      "reason": "It explains how trade with the Byzantine Empire and the Islamic world revived Italian ports, providing the economic foundation for the movement."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "Independent city-states such as the republics of Florence and Venice were run by merchants and bankers rather than clergy or feudal lords, helping the idea of citizenship take root.",
+      "reason": "It identifies the political structure of independent city-states and the role of merchants in fostering the idea of citizenship."
+     },
+     {
+      "where": "Concepts explained",
+      "sourceId": "s5",
+      "quote": "Humanists taught grammar, rhetoric, poetry, history and moral philosophy, subjects not drawn from religion.",
+      "reason": "It correctly identifies the specific subjects of humanist study as those not drawn from religion."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have successfully identified several key reasons like trade and political structure. To improve, you should more clearly link the availability of ancient texts to the specific shift toward humanist study."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies economic, political, and intellectual reasons for the rise of humanism in Italy. However, it includes specific scientific details and modern reflections that distract from the core question."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "You have correctly identified the socio-economic and educational shifts that fostered humanism. To improve, deepen the explanation of how specific figures like Petrarch embodied these changes."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The facts regarding trade routes and the preservation of classical texts by Arab scholars are well-stated. The inclusion of Vesalius is slightly tangential to the specific question of humanism."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific examples of cities, universities, and historical figures to ground the argument. Adding a specific work of art would further strengthen the evidence for patronage."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The provided source material is irrelevant to the question asked. You should use a history textbook to find information on the Renaissance."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have identified several important contributing factors like trade and political structure, but you need a clearer logical bridge connecting these to the specific birth of humanism."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is a 'Why' question focusing on causes rather than a 'To what extent' or 'Evaluate' question, so a balanced counter-argument is not strictly required. However, acknowledging the shift in power dynamics would add depth."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains all the necessary components but lacks clear structural organization between the different reasons provided."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses precise academic terminology to describe the shift in governance and education. Avoid broad concluding statements that drift away from the specific historical context of the city-states."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove irrelevant details like anatomy to make room for a more focused explanation of the socio-economic factors."
+     }
+    ],
+    "stats": {
+     "words": 165,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 61
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 51
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 2 (Writing and City Life)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 5 (Changing Cultural Traditions)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 1,
+     "softened": 1,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "solutions"
+     ]
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

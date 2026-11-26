@@ -1,0 +1,569 @@
+{
+ "case": "polity-eci",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: advice of the Prime Minister": true,
+  "cited: advice of the Prime Minister": true,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 6609.6,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-eci"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-eci",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You correctly identified the constitutional provision vesting power in the Election Commission. However, the answer is too short and contains a significant factual error regarding the removal of the Chief Election Commissioner. To improve, you must first correct the removal process to match the standard of a Supreme Court Judge and include specific powers like the authority to transfer officers.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 79 words it is too short: a question with this word limit expects about 150.",
+     "It has no introduction that sets the context.",
+     "It has no conclusion with a way forward.",
+     "It makes 4 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Examine the constitutional safeguards that protect the independence of the Election Commission of India.",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Article 324 vests the superintendence, direction and control of elections to Parliament and the State Legislatures in the Election Commission.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Chief Election Commissioner can be removed by the President on the advice of the Prime Minister, like any other senior officer.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "His conditions of service cannot be varied to his disadvantage after his appointment.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "The Commission also prepares the electoral rolls for these elections.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "These safeguards help the Commission act without fear of the government of the day.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the constitutional safeguards that protect the independence of the Election Commission of India",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the primary constitutional authority and the protection of service conditions. However, the removal process for the Chief Election Commissioner is a critical safeguard that you misstated.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The Chief Election Commissioner shall not be removed from office except in like manner and on the like grounds as a Judge of the Supreme Court.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The Chief Election Commissioner can be removed by the President on the advice of the Prime Minister, like any other senior officer."
+      },
+      "why": "The text states the Chief Election Commissioner shall not be removed except in like manner and on the like grounds as a Judge of the Supreme Court, which is a much higher standard than a senior officer.",
+      "tryWriting": "The Chief Election Commissioner shall not be removed from his office except in like manner and on the like grounds as a Judge of the Supreme Court.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 324",
+      "sourceRef": "r15",
+      "evidence": {
+       "wrongWords": "removed by the President on the advice of the Prime Minister, like any other senior officer",
+       "sourceWords": "the Chief Election Commissioner shall not be removed from his office except in like manner and on the like grounds as a Judge of the Supreme Court"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Mention a specific power, such as the authority to transfer officers, to demonstrate independence.",
+      "where": "Examples and evidence",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "These safeguards help the Commission act without fear of the government of the day."
+      },
+      "why": "The claim that safeguards help the Commission act 'without fear' is a general conclusion rather than a specific piece of evidence or a cited fact.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "sourceRef": "r3",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 79.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 79 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Article 324 vests the superintendence, direction and control of elections to Parliament and the State Legislatures in the Election Commission.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "This sentence correctly identifies the constitutional provision that vests the power of superintendence, direction, and control in the Election Commission."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It identifies the core constitutional provision (Article 324) that grants the Commission its authority over elections."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies Article 324 as the source of superintendence, direction, and control for elections."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Chief Election Commissioner can be removed by the President on the advice of the Prime Minister, like any other senior officer.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The text states the Chief Election Commissioner shall not be removed except in like manner and on the like grounds as a Judge of the Supreme Court, which is a much higher standard than a senior officer.",
+        "fix": "The Chief Election Commissioner shall not be removed from office except in like manner and on the like grounds as a Judge of the Supreme Court.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 324"
+       },
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence incorrectly states the Chief Election Commissioner is removed like 'any other senior officer' by the advice of the Prime Minister.",
+        "fix": "Clarify that the Chief Election Commissioner has a specific removal process that differs from ordinary civil servants.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "His conditions of service cannot be varied to his disadvantage after his appointment.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It highlights a specific constitutional protection regarding the conditions of service to ensure independence."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately states that conditions of service cannot be varied to the disadvantage of the Chief Election Commissioner after appointment."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence identifies a specific constitutional protection regarding the service conditions of the Chief Election Commissioner."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Commission also prepares the electoral rolls for these elections.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that the Election Commission is vested with the superintendence, direction and control of the preparation of the electoral rolls."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "These safeguards help the Commission act without fear of the government of the day.",
+      "credit": [
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the existence of safeguards to the outcome of independent action."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that safeguards help the Commission act 'without fear' is a general conclusion rather than a specific piece of evidence or a cited fact.",
+        "fix": "Mention a specific power, such as the authority to transfer officers, to demonstrate independence.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)"
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer fails to examine the implications or the 'why' behind these safeguards, providing only a list of facts rather than an examination of how they ensure independence.",
+      "fix": "Add a sentence explaining how these specific protections prevent executive interference in the electoral process.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "There is no forward-looking conclusion; the final sentence only summarizes the existing safeguards.",
+      "fix": "Add a concluding sentence suggesting how strengthening these safeguards can further enhance the sanctity of the electoral process.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer fails to mention that other Election Commissioners can only be removed on the recommendation of the Chief Election Commissioner.",
+      "fix": "Add a point about the removal process for other Election Commissioners.",
+      "fixNumber": null,
+      "source": "Laxmikanth, Indian Polity, Ch. 42 (Election Commission), Independence"
+     },
+     {
+      "where": "Structure",
+      "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s1",
+      "quote": "Article 324 vests the superintendence, direction and control of elections to Parliament and the State Legislatures in the Election Commission.",
+      "reason": "This sentence correctly identifies the constitutional provision that vests the power of superintendence, direction, and control in the Election Commission."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a basic list of facts but fails to 'examine' the topic deeply. It contains a significant factual error regarding the removal of the Chief Election Commissioner."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic by focusing on the constitutional provisions and the independence of the Commission. However, the comparison to a standard senior officer is factually incorrect regarding the level of protection provided."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the source of power and the protection of service conditions, but it contains a significant factual error regarding the removal process of the Chief Election Commissioner."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the primary constitutional article and the protection against disadvantageous changes in service conditions. However, it incorrectly equates the removal of the Chief Election Commissioner to that of a standard senior officer."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer lacks specific evidence such as court judgments or specific constitutional provisions regarding the removal process to support the claim of independence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the primary Article and the protection against varying service conditions. However, the removal process for the Chief Election Commissioner is a critical safeguard that you described incorrectly."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the core purpose of the safeguards but contains a significant factual error regarding the removal process of the Chief Election Commissioner."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses entirely on the strengths of the safeguards and does not address the limitations or flaws mentioned in the reference material."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good body points but fails to follow the required structure of having a distinct introduction and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The use of official constitutional terminology in the first sentence is excellent. However, the description of the removal process is factually incorrect and undermines the argument about independence."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too brief and fails to utilize the available space to discuss the full scope of constitutional protections. One major factual error regarding the removal of the Chief Election Commissioner undermines the argument on independence."
+     }
+    ],
+    "stats": {
+     "words": 79,
+     "sentences": 5,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 42
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.53
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 324",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 48A",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 338",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 338A",
+      "used": false
+     },
+     {
+      "label": "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+      "used": false
+     },
+     {
+      "label": "Case: Anoop Baranwal v Union of India (2023)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 42 (Election Commission), Independence",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 2 (Era of One-Party Dominance)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 6 (The Crisis of Democratic Order)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 3 (Politics of Planned Development)",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 324",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 324",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 2,
+     "softened": 1,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "Constitution of India, Article 324",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "Laxmikanth, Indian Polity, Ch. 42 (Election Commission), Independence",
+      "Constitution of India, Article 324",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "Constitution of India, Article 324",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 3 (Election and Representation)"
+     ],
+     "expected": [
+      "Constitution of India, Article 324"
+     ],
+     "casesGiven": [
+      "Case: Mohinder Singh Gill v Chief Election Commissioner (1978)",
+      "Case: Anoop Baranwal v Union of India (2023)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": null,
+     "redFixesWithTryWriting": 1
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

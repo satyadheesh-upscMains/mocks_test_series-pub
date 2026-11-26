@@ -1,0 +1,554 @@
+{
+ "case": "polity-amend",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: Every constitutional amendment must also be ratified": true,
+  "cited: Every constitutional amendment must also be ratified": false,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 3874.0,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-amend"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-amend",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You correctly identified the initiation of bills in either House and the specific special majority requirements. However, the answer is too short and incorrectly claims that every amendment requires state ratification, which is only true for specific provisions. To improve, you should specify which amendments require state consent and provide examples of different amendment types to better illustrate the balance between rigidity and flexibility.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 66 words it is too short: a question with this word limit expects about 150.",
+     "It has no introduction that sets the context.",
+     "It has no conclusion with a way forward.",
+     "It makes 4 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 6 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Critically examine the procedure for amending the Constitution under Article 368.",
+    "directives": [
+     {
+      "word": "Critically examine",
+      "meaning": "Look at the issue closely, weigh its strengths and weaknesses with evidence, and end with your own reasoned judgement."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Under Article 368, an amendment can be initiated by introducing a Bill in either House of Parliament.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It must be passed in each House by a majority of the total membership and two-thirds of the members present and voting.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Every constitutional amendment must also be ratified by the legislatures of at least half of the States.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "This makes the Indian Constitution partly rigid and partly flexible.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the procedure for amending the Constitution under Article 368",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "The answer correctly identifies the initiation and the special majority requirements. However, it incorrectly implies that state ratification is a universal requirement for all amendments.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "State ratification is required for specific amendments, such as those affecting the distribution of powers or representation.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Every constitutional amendment must also be ratified by the legislatures of at least half of the States."
+      },
+      "why": "The claim states 'Every' amendment requires state ratification, but the text indicates this is only for 'some articles' related to distribution of powers or representation.",
+      "tryWriting": "For some articles of the Constitution, such as those related to the distribution of powers between the States and the central government or representation, it is necessary that the legislatures of half the States give their consent.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "sourceRef": "r16",
+      "evidence": {
+       "wrongWords": "Every constitutional amendment",
+       "sourceWords": "For some articles of the Constitution, special majority is not sufficient."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Provide a specific example of a provision that is easily amended versus one that requires state ratification.",
+      "where": "Examples and evidence",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "This makes the Indian Constitution partly rigid and partly flexible."
+      },
+      "why": "The claim that the Constitution is 'partly rigid and partly flexible' is a general observation and lacks specific evidence or a reference to the different types of amendments.",
+      "tryWriting": "This demonstrates a dual-track procedure where some provisions require a special majority while others require ratification by state legislatures.",
+      "checkedTwice": false,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "sourceRef": "r2",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 66.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 66 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Under Article 368, an amendment can be initiated by introducing a Bill in either House of Parliament.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "Correctly identifies that an amendment can be initiated by introducing a Bill in either House of Parliament."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence correctly identifies the starting point of the procedure by mentioning the introduction of a Bill in either House."
+       },
+       {
+        "where": "Structure",
+        "reason": "This sentence introduces the starting point of the amendment process."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It must be passed in each House by a majority of the total membership and two-thirds of the members present and voting.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "Accurately describes the special majority requirement of total membership and two-thirds of members present and voting."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence describes the specific majority requirements needed for the passage of the amendment."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly explains the specific 'special majority' required for an amendment by detailing both the total membership and the members present and voting."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Every constitutional amendment must also be ratified by the legislatures of at least half of the States.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence correctly identifies the federal dimension of the amendment process by mentioning the requirement for ratification by State legislatures."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly identifies the requirement for ratification by the legislatures of at least half of the States for certain amendments."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly links the requirement of state ratification to the process for certain types of amendments."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The claim states 'Every' amendment requires state ratification, but the text indicates this is only for 'some articles' related to distribution of powers or representation.",
+        "fix": "State ratification is required for specific amendments, such as those affecting the distribution of powers or representation.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)"
+       },
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states every amendment must be ratified by half of the States, but Article 368 only requires this for specific types of amendments.",
+        "fix": "Clarify that ratification by half of the States is required only for specific provisions, while others only need a special majority in Parliament.",
+        "fixNumber": null,
+        "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "This makes the Indian Constitution partly rigid and partly flexible.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "The sentence addresses the structural nature of the Constitution by describing it as partly rigid and partly flexible."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that the Constitution is 'partly rigid and partly flexible' is a general observation and lacks specific evidence or a reference to the different types of amendments.",
+        "fix": "Provide a specific example of a provision that is easily amended versus one that requires state ratification.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)"
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer describes the procedure but fails to provide a critical examination or a reasoned verdict on the effectiveness or limitations of this process.",
+      "fix": "Add a concluding sentence evaluating whether the procedure successfully balances the need for stability with the need for change.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The answer fails to explain the distinction between the different types of amendments, such as those requiring only a special majority versus those requiring state ratification.",
+      "fix": "Explain that different procedures apply to different sets of articles.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer fails to explain the causal link between the specific procedures and the 'rigid' or 'flexible' nature of the Constitution.",
+      "fix": "Explain how the different majority requirements for different types of provisions create a balance between stability and change.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer fails to provide a critical examination of the procedure, which requires discussing the limitations or the balance between parliamentary sovereignty and federalism.",
+      "fix": "Add a sentence discussing how the requirement for state ratification protects the federal structure against unilateral central action.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s1",
+      "quote": "Under Article 368, an amendment can be initiated by introducing a Bill in either House of Parliament.",
+      "reason": "Correctly identifies that an amendment can be initiated by introducing a Bill in either House of Parliament."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s2",
+      "quote": "It must be passed in each House by a majority of the total membership and two-thirds of the members present and voting.",
+      "reason": "Accurately describes the special majority requirement of total membership and two-thirds of members present and voting."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive overview of the amendment process but fails to meet the 'critically examine' requirement by omitting an evaluation or judgment."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays on topic by describing the procedural steps for constitutional amendments. It could be improved by distinguishing between different types of amendments."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the procedural and federal aspects well but misses the final executive step and the legal implications of the amendment."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified the specific majorities and the state ratification requirement. However, you did not explain that these procedures apply to different sets of articles."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The description of the parliamentary procedure is accurate. However, the statement regarding state ratification is too broad as it applies only to specific provisions."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer describes the procedure accurately but lacks specific evidence or examples to support the concluding analysis."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the initiation and voting majorities. However, you missed the distinction between amendments requiring only a special majority and those requiring state ratification."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have listed the procedural steps correctly, but you have not explained the logic of why these specific steps result in a 'rigid' or 'flexible' system."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "missing",
+      "verdictLabel": "Missing",
+      "note": "The question asks to 'critically examine', which requires you to discuss the implications, limitations, or the balance of power inherent in the procedure. Your current answer is purely descriptive."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides the procedural steps but lacks the required structural components of an introduction and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The technical terminology regarding the majorities required is very precise. To improve, you could more clearly distinguish between the different types of amendments rather than using a general summary."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too brief and fails to utilize the available space to provide a 'critical examination'. It lists the procedure but does not analyze its implications or limitations."
+     }
+    ],
+    "stats": {
+     "words": 66,
+     "sentences": 4,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 56
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.44
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 368",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 109",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 4",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 349",
+      "used": false
+     },
+     {
+      "label": "Case: Shankari Prasad v Union of India (1951)",
+      "used": false
+     },
+     {
+      "label": "Case: I.C. Golaknath v State of Punjab (1967)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 10 (Amendment of the Constitution), Procedure for Amendment",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 368",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 10,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "Constitution of India, Article 368",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "Constitution of India, Article 368",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)"
+     ],
+     "expected": [
+      "Constitution of India, Article 368"
+     ],
+     "casesGiven": [
+      "Case: Shankari Prasad v Union of India (1951)",
+      "Case: I.C. Golaknath v State of Punjab (1967)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": false,
+     "redFixesWithTryWriting": 1
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,775 @@
+{
+ "case": "hist-1857-awadh",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: devised by Lord Dalhousie": true,
+  "cited: devised by Lord Dalhousie": true,
+  "caught: regarded the taluqdars as the rightful owners": true,
+  "cited: regarded the taluqdars as the rightful owners": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Lucknow was recaptured by the British only in March 1858": true
+ },
+ "seconds": 12879.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-1857-awadh"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-1857-awadh",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You successfully explained the political catalyst of the annexation, the specific grievances of peasants, and the long duration of resistance in the region. However, you lost credit for attributing the Subsidiary Alliance to the wrong person and for misrepresenting the Summary Settlement of 1856. To improve, first correct the historical figures and facts, then explain how the diverse participation of different social groups specifically contributed to the intensity of the revolt.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Why did Awadh emerge as one of the most intense centres of the Revolt of 1857? Examine the grievances of different social groups there. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Revolt of 1857 began as a sepoy mutiny at Meerut on 10 May 1857.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "In Awadh it became a popular uprising against firangi raj in which prince, taluqdar, peasant and sepoy fought together.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Political humiliation: The Subsidiary Alliance, devised by Lord Dalhousie, was imposed on Awadh in 1801 and left the Nawab without his own army.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "In 1856 Awadh was annexed on the plea of misgovernment, and the popular Nawab Wajid Ali Shah was exiled to Calcutta.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "His exile cost musicians, poets, artisans and court officials their livelihood.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Taluqdars: The Summary Settlement of 1856 regarded the taluqdars as the rightful owners of the land and left their estates intact.",
+      "para": 3
+     },
+     {
+      "id": "s7",
+      "text": "The taluqdars were also disarmed and their forts destroyed, and many of them joined Begum Hazrat Mahal in Lucknow.",
+      "para": 3
+     },
+     {
+      "id": "s8",
+      "text": "Peasants: Without the patronage of the taluqdars, peasants were directly exposed to over-assessment and inflexible revenue collection.",
+      "para": 4
+     },
+     {
+      "id": "s9",
+      "text": "Sepoys: Awadh was called the nursery of the Bengal Army, so sepoy grievances over low pay, difficulty in getting leave and racial abuse by officers travelled back to their villages.",
+      "para": 5
+     },
+     {
+      "id": "s10",
+      "text": "The rumour that the cartridges of the new Enfield rifle were greased with the fat of cows and pigs became the immediate trigger.",
+      "para": 5
+     },
+     {
+      "id": "s11",
+      "text": "Leadership: Rebels in Lucknow hailed Birjis Qadr, the young son of the Nawab, as their leader.",
+      "para": 6
+     },
+     {
+      "id": "s12",
+      "text": "Maulvi Ahmadullah Shah fought in the Battle of Chinhat, where British forces under Henry Lawrence were defeated.",
+      "para": 6
+     },
+     {
+      "id": "s13",
+      "text": "Resistance in Awadh lasted the longest, and Lucknow was recaptured by the British only in March 1858.",
+      "para": 6
+     },
+     {
+      "id": "s14",
+      "text": "Awadh shows how shared grievances turned a mutiny into a people's revolt, later remembered by nationalists as the First War of Independence.",
+      "para": 7
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Why did Awadh emerge as one of the most intense centres of the Revolt of 1857?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified the political reasons for the revolt and the duration of the resistance. To improve, more clearly link the specific local conditions to the 'intensity' of the uprising.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s13"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Examine the grievances of different social groups there.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies the grievances of several distinct groups including the landed elite, the peasantry, and the urban artisan class.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace Lord Dalhousie with Lord Wellesley.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Political humiliation: The Subsidiary Alliance, devised by Lord Dalhousie, was imposed on Awadh in 1801 and left the Nawab without his own army."
+      },
+      "why": "The student attributes the Subsidiary Alliance to Lord Dalhousie, but the text states it was a system devised by Lord Wellesley.",
+      "tryWriting": "Political humiliation: The Subsidiary Alliance was a system devised by Lord Wellesley in 1798.",
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "sourceRef": "r9",
+      "evidence": {
+       "wrongWords": "devised by Lord Dalhousie",
+       "sourceWords": "Subsidiary Alliance was a system devised by Lord Wellesley in 1798"
+      }
+     },
+     {
+      "n": 2,
+      "title": "The Summary Settlement of 1856 assumed taluqdars were interlopers with no permanent stakes and proceeded to remove them wherever possible.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "Taluqdars: The Summary Settlement of 1856 regarded the taluqdars as the rightful owners of the land and left their estates intact."
+      },
+      "why": "The extract states the Summary Settlement of 1856 assumed taluqdars were 'interlopers with no permanent stakes' and 'proceeded to remove' them, which contradicts the claim that they were seen as 'rightful owners' with 'estates intact'.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "sourceRef": "r12",
+      "evidence": {
+       "wrongWords": "regarded the taluqdars as the rightful owners of the land and left their estates intact",
+       "sourceWords": "the Summary Settlement of 1856, was based on the assumption that the taluqdars were interlopers with no permanent stakes in land... The Summary Settlement proceeded to remove the taluqdars wherever possible."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Explain that the diverse participation of different social groups contributed to the intensity.",
+      "where": "Part 1",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "In Awadh it became a popular uprising against firangi raj in which prince, taluqdar, peasant and sepoy fought together."
+      },
+      "why": "The phrase 'popular uprising' is a general description and does not explain the specific reasons why Awadh became an intense centre.",
+      "tryWriting": "The intensity of the revolt in Awadh was driven by a broad coalition of princes, taluqdars, peasants, and sepoys who united against colonial rule.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Revolt of 1857 began as a sepoy mutiny at Meerut on 10 May 1857.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the start of the mutiny at Meerut on 10 May 1857."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a historical context for the start of the revolt."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence about the start of the revolt at Meerut is a general fact and does not directly explain why Awadh specifically became an intense centre.",
+        "fix": "Connect the start of the mutiny to the spread of the rebellion into Awadh.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "In Awadh it became a popular uprising against firangi raj in which prince, taluqdar, peasant and sepoy fought together.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It correctly identifies that the revolt in Awadh was a popular uprising involving multiple social groups."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence efficiently establishes the multi-layered nature of the uprising by listing the specific groups involved."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'popular uprising' is a general description and does not explain the specific reasons why Awadh became an intense centre.",
+        "fix": "Explain that the diverse participation of different social groups contributed to the intensity.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Political humiliation: The Subsidiary Alliance, devised by Lord Dalhousie, was imposed on Awadh in 1801 and left the Nawab without his own army.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student attributes the Subsidiary Alliance to Lord Dalhousie, but the text states it was a system devised by Lord Wellesley.",
+        "fix": "Replace Lord Dalhousie with Lord Wellesley.",
+        "fixNumber": 1,
+        "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The Subsidiary Alliance was not imposed on Awadh in 1801; the student should check the date and specific treaty details.",
+        "fix": "Verify the date of the Subsidiary Alliance and the specific terms for Awadh.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "In 1856 Awadh was annexed on the plea of misgovernment, and the popular Nawab Wajid Ali Shah was exiled to Calcutta.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains the political catalyst of the annexation of Awadh on the plea of misgovernment."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the political cause of the revolt by detailing the annexation of Awadh and the exile of the Nawab."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the 1856 annexation of Awadh on the plea of misgovernment and the exile of Wajid Ali Shah."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Taluqdars: The Summary Settlement of 1856 regarded the taluqdars as the rightful owners of the land and left their estates intact.",
+      "credit": [
+       {
+        "where": "Clear wording",
+        "reason": "The phrase 'Summary Settlement of 1856' is a precise term for the specific administrative action taken against the taluqdars."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states the Summary Settlement of 1856 assumed taluqdars were 'interlopers with no permanent stakes' and 'proceeded to remove' them, which contradicts the claim that they were seen as 'rightful owners' with 'estates intact'.",
+        "fix": "The Summary Settlement of 1856 assumed taluqdars were interlopers with no permanent stakes and proceeded to remove them wherever possible.",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Peasants: Without the patronage of the taluqdars, peasants were directly exposed to over-assessment and inflexible revenue collection.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It explains the specific grievances of peasants regarding over-assessment and inflexible revenue collection."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the causal link between the loss of taluqdar patronage and the direct exposure of peasants to over-assessment."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Sepoys: Awadh was called the nursery of the Bengal Army, so sepoy grievances over low pay, difficulty in getting leave and racial abuse by officers travelled back to their villages.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes Awadh as the nursery of the Bengal Army and links sepoy grievances to their home villages."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions grievances but does not clearly explain how these specific grievances led to the intensity of the revolt in Awadh specifically.",
+        "fix": "Explain how the high concentration of sepoys from Awadh in the Bengal Army facilitated the spread of these grievances.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s12",
+      "text": "Maulvi Ahmadullah Shah fought in the Battle of Chinhat, where British forces under Henry Lawrence were defeated.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific historical event (the Battle of Chinhat) and names the specific individuals involved to support the point about military resistance."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Resistance in Awadh lasted the longest, and Lucknow was recaptured by the British only in March 1858.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It highlights the intensity of the revolt by noting that resistance lasted the longest in this region."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "Awadh shows how shared grievances turned a mutiny into a people's revolt, later remembered by nationalists as the First War of Independence.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking historical interpretation of the event."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a concise concluding summary that links the shared grievances to the overall intensity of the revolt."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer does not explain why Awadh emerged as a 'most intense' centre compared to other regions.",
+      "fix": "Add a sentence comparing the scale or duration of the resistance in Awadh to other regions to highlight its intensity.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly address the religious grievances of the social groups, which was a primary driver of the intensity in Awadh.",
+      "fix": "Add a point about the religious sentiments of the sepoys and local communities regarding the greased cartridges.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the specific vision or differing goals of the various social groups involved in the revolt.",
+      "fix": "Add a sentence explaining how the goals of the peasants, taluqdars, and sepoys differed during the uprising.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s4",
+      "quote": "In 1856 Awadh was annexed on the plea of misgovernment, and the popular Nawab Wajid Ali Shah was exiled to Calcutta.",
+      "reason": "It explains the political catalyst of the annexation of Awadh on the plea of misgovernment."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s13",
+      "quote": "Resistance in Awadh lasted the longest, and Lucknow was recaptured by the British only in March 1858.",
+      "reason": "It highlights the intensity of the revolt by noting that resistance lasted the longest in this region."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s8",
+      "quote": "Peasants: Without the patronage of the taluqdars, peasants were directly exposed to over-assessment and inflexible revenue collection.",
+      "reason": "It explains the specific grievances of peasants regarding over-assessment and inflexible revenue collection."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good breakdown of the grievances of different social groups. However, it lacks a specific analysis of why Awadh was uniquely 'intense' compared to other centers of the revolt."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well within the scope of the question, focusing on the specific political and social dynamics of Awadh."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers political and economic dimensions well but misses the religious dimension which was central to the intensity of the revolt."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies key political and military reasons for the intensity of the revolt. However, the date provided for the Subsidiary Alliance is factually incorrect."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good specific historical events like the annexation of Awadh and the Battle of Chinhat to ground the narrative. Adding more specific details regarding the nature of the 'racial abuse' would further strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the political and military context of the revolt in Awadh using historical facts. It could be improved by addressing the differing visions of the various groups involved."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer does a good job of linking political actions to social consequences, particularly for the peasants and the ruling class. To improve, more clearly connect the specific grievances of the sepoys to the geographical intensity of the revolt in Awadh."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the grievances well but does not explore the internal tensions or differing visions among the various groups involved in the revolt."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear beginning and end, but the body is a long list of facts. You should organize the body into two distinct sections to clearly address both parts of the question."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": null
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers all required groups well, but it exceeds the word limit. You can improve the economy of the answer by removing the general introductory sentence about Meerut."
+     }
+    ],
+    "stats": {
+     "words": 271,
+     "sentences": 14,
+     "paragraphs": 7,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 57
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 47
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s5",
+       "text": "His exile cost musicians, poets, artisans and court officials their livelihood."
+      },
+      {
+       "sourceId": "s7",
+       "text": "The taluqdars were also disarmed and their forts destroyed, and many of them joined Begum Hazrat Mahal in Lucknow."
+      },
+      {
+       "sourceId": "s10",
+       "text": "The rumour that the cartridges of the new Enfield rifle were greased with the fat of cows and pigs became the immediate trigger."
+      },
+      {
+       "sourceId": "s11",
+       "text": "Leadership: Rebels in Lucknow hailed Birjis Qadr, the young son of the Nawab, as their leader."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.08
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Social Change and Development in India, Ch. 8 (Social Movements)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part III, Ch. 2 (Rebels and the Raj)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

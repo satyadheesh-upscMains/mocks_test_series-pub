@@ -1,0 +1,706 @@
+{
+ "case": "geo-elnino",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: temporarily replaces the cold Peruvian (Humboldt) Current": true,
+  "trap not red: meaning 'the Christ Child'": true
+ },
+ "seconds": 8023.7,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-elnino"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-elnino",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 and Part 3 are answered. Part 2 needs the most work.",
+    "summary": "You correctly identified El Niño as the appearance of warm water off the coast of Peru and noted the accompanying atmospheric changes. The most work is needed on Part 2, as you must explain the specific mechanism of how pressure changes in the Pacific and Australia relate to water warming. To improve, first clarify how El Niño's influence on sea surface temperatures and pressure helps predict monsoon patterns.",
+    "levelWhy": [
+     "Not every part of the question is answered."
+    ],
+    "formatNote": null,
+    "question": "What is El Niño? Explain its relationship with the Southern Oscillation and discuss its implications for the Indian monsoon. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     },
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "El Niño is the periodic appearance of unusually warm water off the coast of Peru in the eastern Pacific, accompanied by large-scale changes in atmospheric circulation.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "During El Niño, warm water from the central Pacific drifts eastwards and temporarily replaces the cold Peruvian (Humboldt) Current.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "The name, meaning 'the Christ Child', comes from its appearance around Christmas.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The warming reduces plankton and hence the fish catch off Peru.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "El Niño is linked to the Southern Oscillation, a see-saw in surface pressure measured between Tahiti and Darwin.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "The combined phenomenon is called ENSO.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "In strong ENSO years the arid west coast of South America receives heavy rain, while Australia and sometimes India suffer drought.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "El Niño is therefore used in India for long-range monsoon forecasting.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "However, a positive Indian Ocean Dipole can offset part of its adverse effect.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Since ENSO events recur irregularly, India needs better ocean monitoring and drought-proofed, contingency-ready agriculture.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "What is El Niño?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have provided a clear and technically accurate definition of El Niño by describing both the oceanographic and atmospheric aspects.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Explain its relationship with the Southern Oscillation",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the components of ENSO and the pressure locations. To improve, explain the physical mechanism connecting the pressure changes to the water temperature.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s6"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "discuss its implications for the Indian monsoon",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified the primary impact of El Niño on India as drought and included a nuanced point about the Indian Ocean Dipole. To improve, explicitly describe the physical changes to the monsoon's rainfall patterns.",
+      "checkedTwice": false,
+      "sentences": [
+       "s7",
+       "s9"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Explain how the pressure changes in the Pacific and Australia are closely associated with the warming of the water.",
+      "where": "Part 2",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "El Niño is linked to the Southern Oscillation, a see-saw in surface pressure measured between Tahiti and Darwin."
+      },
+      "why": "The sentence mentions the link but does not explain the specific mechanism of the relationship between the pressure changes and the water temperature.",
+      "tryWriting": "El Niño is linked to the Southern Oscillation, where pressure changes in the Central Pacific and Australia are closely associated with the warming of the ocean surface.",
+      "checkedTwice": false,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "sourceRef": "r1",
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Explain that El Niño's influence on sea surface temperatures and atmospheric pressure helps predict monsoon patterns.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "El Niño is therefore used in India for long-range monsoon forecasting."
+      },
+      "why": "The sentence states El Niño is used for forecasting but does not explain the causal mechanism of how it predicts the monsoon.",
+      "tryWriting": "Because El Niño alters the atmospheric pressure and sea surface temperatures, it serves as a critical indicator for long-range monsoon forecasting.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Specify that the government should establish a real-time ocean monitoring network to provide early warnings for farmers.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "Since ENSO events recur irregularly, India needs better ocean monitoring and drought-proofed, contingency-ready agriculture."
+      },
+      "why": "The suggestion for 'better ocean monitoring' does not specify who should perform the monitoring or how the data should be used to mitigate the effects.",
+      "tryWriting": "India should establish a national ocean monitoring network to provide early warnings and promote the adoption of drought-resistant crop varieties to mitigate monsoon failures.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "El Niño is the periodic appearance of unusually warm water off the coast of Peru in the eastern Pacific, accompanied by large-scale changes in atmospheric circulation.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies El Niño as the appearance of warm water off the coast of Peru and mentions the atmospheric changes."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly defines El Niño by mentioning the warm water off the coast of Peru and the change in atmospheric circulation."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of El Niño as an introduction to the topic."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "During El Niño, warm water from the central Pacific drifts eastwards and temporarily replaces the cold Peruvian (Humboldt) Current.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence provides a clear mechanism by explaining how warm water from the central Pacific replaces the cold Peruvian current."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the mechanism of how warm water from the central Pacific drifts eastwards to replace the cold current."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence accurately describes the drift of warm water from the central Pacific to replace the cool Peruvian current."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The description of the warm water drifting eastwards is correct but could be more specific about the replacement of the cool Peruvian current.",
+        "fix": "Specify that the warm water replaces the cool Peruvian current.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The name, meaning 'the Christ Child', comes from its appearance around Christmas.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "This matches the text of the Constitution."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the etymology of the name is interesting, it does not define the physical phenomenon of El Niño.",
+        "fix": "Remove the etymological explanation to save word count for more technical details.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The warming reduces plankton and hence the fish catch off Peru.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of fish catch and plankton is a biological impact and does not directly address the atmospheric or monsoon aspects of the question.",
+        "fix": "Remove the sentence about fish catch to save word count for monsoon implications.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "El Niño is linked to the Southern Oscillation, a see-saw in surface pressure measured between Tahiti and Darwin.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies the Southern Oscillation as a see-saw in surface pressure between specific locations."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the relationship by identifying the see-saw in surface pressure between Tahiti and Darwin."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the link between El Niño and the Southern Oscillation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the link but does not explain the specific mechanism of the relationship between the pressure changes and the water temperature.",
+        "fix": "Explain how the pressure changes in the Pacific and Australia are closely associated with the warming of the water.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "The combined phenomenon is called ENSO.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies that the two phenomena combine to form ENSO."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence identifies the combined phenomenon but does not explain the mechanism of the relationship between the two.",
+        "fix": "Explain how the pressure changes in the Pacific and Australia link the two phenomena.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "In strong ENSO years the arid west coast of South America receives heavy rain, while Australia and sometimes India suffer drought.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence correctly identifies the specific impact of strong ENSO years on India, which is a drought."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence correctly identifies the environmental and climatic impact of ENSO on the Indian subcontinent."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific geographical contrast between South America, Australia, and India to illustrate the impact of ENSO."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The statement that India suffers drought is a common correlation but the student should check if this is a universal rule for every El Niño event.",
+        "fix": "Use qualifying language like 'often' or 'frequently' to describe the impact on India.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "El Niño is therefore used in India for long-range monsoon forecasting.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states El Niño is used for forecasting but does not explain the causal mechanism of how it predicts the monsoon.",
+        "fix": "Explain that El Niño's influence on sea surface temperatures and atmospheric pressure helps predict monsoon patterns.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "However, a positive Indian Ocean Dipole can offset part of its adverse effect.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence adds depth by mentioning a specific factor that can modify the expected impact on the monsoon."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It identifies a complicating factor by mentioning how a positive Indian Ocean Dipole can offset the adverse effects of El Niño."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of a positive Indian Ocean Dipole is a good technical point but lacks a specific description of how it interacts with the monsoon.",
+        "fix": "Explain how a positive Indian Ocean Dipole can mitigate the drying effect of El Niño.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Since ENSO events recur irregularly, India needs better ocean monitoring and drought-proofed, contingency-ready agriculture.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the administrative and agricultural implications of monsoon variability."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies the need for drought-proofed agriculture as a way to handle the impacts of monsoon failure."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting monitoring and agricultural changes."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion for 'better ocean monitoring' does not specify who should perform the monitoring or how the data should be used to mitigate the effects.",
+        "fix": "Specify that the government should establish a real-time ocean monitoring network to provide early warnings for farmers.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Use of space",
+      "reason": "The answer is slightly over the word limit, which may lead to a penalty in a real exam.",
+      "fix": "Condense the final sentence to stay under the 150-word limit.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not explicitly mention the uncertainty or variability in the strength of ENSO events which affects the predictability of monsoon outcomes.",
+      "fix": "Mention that the intensity of ENSO events varies, creating uncertainty in monsoon predictions.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s1",
+      "quote": "El Niño is the periodic appearance of unusually warm water off the coast of Peru in the eastern Pacific, accompanied by large-scale changes in atmospheric circulation.",
+      "reason": "This sentence correctly identifies El Niño as the appearance of warm water off the coast of Peru and mentions the atmospheric changes."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It explains the mechanism of how warm water from the central Pacific drifts eastwards to replace the cold current."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt. The inclusion of biological impacts on fish catch is a slight deviation from the core meteorological and monsoon focus."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence correctly identifies the environmental and climatic impact of ENSO on the Indian subcontinent."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concepts of El Niño and the Southern Oscillation are well-defined and accurately linked."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core definitions of El Niño and its mechanism are accurate and well-explained. Ensure you use qualifying language for the impacts on India to avoid making universal claims."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses geographical locations well to illustrate the phenomenon. Adding a brief explanation of the mechanism for the Indian Ocean Dipole would strengthen the technical depth."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence correctly identifies El Niño as the appearance of warm water off the coast of Peru."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer establishes a clear link between the physical phenomenon and the resulting drought in India. However, the transition from 'phenomenon' to 'forecasting tool' lacks a causal explanation."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully identified a counter-factor (Indian Ocean Dipole) that limits the impact of El Niño. Adding a note on the inherent uncertainty in these climate patterns would further strengthen the discussion."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the correct areas for improvement but remains too vague on the 'how' and 'who' of the implementation."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-organized with a clear definition at the start and a forward-looking conclusion. However, some body points are more about trivia than the core mechanics requested by the question."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical vocabulary that aligns well with geographical and climatic studies."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers all parts of the question well but includes a cultural fact that does not contribute to the scientific explanation. You should also monitor your word count more closely as you are slightly over the limit."
+     }
+    ],
+    "stats": {
+     "words": 151,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 57
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 24
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 45
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.01
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 3 (Evolution of the Indian Economy), Introduction",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 9 (Atmospheric Circulation and Weather Systems)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

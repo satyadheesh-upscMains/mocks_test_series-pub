@@ -1,0 +1,686 @@
+{
+ "case": "geo-seafloor",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: nearest the crest of the ridges were found to be the oldest": true,
+  "cited: nearest the crest of the ridges were found to be the oldest": true,
+  "caught: mid-oceanic ridges were found to be deep-seated": true,
+  "cited: mid-oceanic ridges were found to be deep-seated": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 6866.1,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-seafloor"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-seafloor",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You successfully explained the mechanism of sea-floor spreading and the synthesis of plate tectonics. However, you lost credit due to two factual errors regarding the age of rocks near ridges and the depth of earthquake foci. You should first correct the rock age description to show that rocks are youngest at the crest and oldest further away.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "How did the concept of sea-floor spreading revive the idea of continental drift and lead to the theory of plate tectonics? (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Wegener's continental drift theory was largely rejected because the forces he proposed were considered inadequate.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Post-war mapping of the ocean floor supplied the missing evidence.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The surveys revealed mid-oceanic ridges marked by frequent volcanic eruptions.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Rocks nearest the crest of the ridges were found to be the oldest, with age decreasing away from the crest.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Rocks equidistant on either side of the crest were remarkably similar.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Oceanic crust proved far younger than continental rocks, and ocean-floor sediments were unexpectedly thin.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Earthquakes along the mid-oceanic ridges were found to be deep-seated, while those at the trenches had shallow foci.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "From these facts Harry Hess proposed that magma erupting at the ridges pushes the crust apart, while older crust sinks and is consumed at the trenches.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "McKenzie, Parker and Morgan then synthesised these ideas into plate tectonics, in which rigid lithospheric plates move over the asthenosphere, driven by mantle convection.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Plate tectonics now explains the distribution of earthquakes, volcanoes and fold mountains like the Himalayas, aiding seismic hazard mapping.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "How did the concept of sea-floor spreading revive the idea of continental drift",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified the evidence from ocean floor mapping and the mechanism of magma pushing the crust. To improve, more clearly state that these findings provided the 'how' that Wegener's theory originally lacked.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s8"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "and lead to the theory of plate tectonics?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully explained the transition from sea-floor spreading to plate tectonics by describing the mechanism of crustal movement. To improve, you could explicitly mention mantle convection as the driving force.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8",
+       "s9"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Rocks closer to the mid-oceanic ridges were found to be the youngest, with age increasing away from the crest.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Rocks nearest the crest of the ridges were found to be the oldest, with age decreasing away from the crest."
+      },
+      "why": "The student claims rocks at the crest are the oldest, but the extract states that rocks closer to the mid-oceanic ridges are the youngest and age increases as one moves away from the crest.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "sourceRef": "r7",
+      "evidence": {
+       "wrongWords": "Rocks nearest the crest of the ridges were found to be the oldest, with age decreasing away from the crest.",
+       "sourceWords": "Rocks closer to the mid-oceanic ridges have normal polarity and are the youngest. The age of the rocks increases as one moves away from the crest."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Earthquakes along the mid-oceanic ridges were found to have shallow foci, while those at the trenches were deep-seated.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Earthquakes along the mid-oceanic ridges were found to be deep-seated, while those at the trenches had shallow foci."
+      },
+      "why": "The sentence incorrectly swaps the depth of earthquake foci; the extract states that deep trenches have deep-seated occurrences while mid-oceanic ridges have shallow depths.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "sourceRef": "r7",
+      "evidence": {
+       "wrongWords": "Earthquakes along the mid-oceanic ridges were found to be deep-seated, while those at the trenches had shallow foci.",
+       "sourceWords": "The deep trenches have deep-seated earthquake occurrences while in the midoceanic ridge areas, the quake foci have shallow depths."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Connect the rejection of Wegener's theory directly to the lack of a mechanism, which sea-floor spreading later provided.",
+      "where": "Part 1",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "Wegener's continental drift theory was largely rejected because the forces he proposed were considered inadequate."
+      },
+      "why": "While it mentions the rejection of Wegener's theory, it does not explicitly link the revival to the specific evidence of sea-floor spreading.",
+      "tryWriting": "Wegener's continental drift theory lacked a viable mechanism, leading to its initial rejection until sea-floor spreading provided the necessary explanation.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Wegener's continental drift theory was largely rejected because the forces he proposed were considered inadequate.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly identifies that Wegener's theory was rejected due to inadequate forces."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context by explaining why the previous theory was rejected before moving into the new evidence."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions the rejection of Wegener's theory, it does not explicitly link the revival to the specific evidence of sea-floor spreading.",
+        "fix": "Connect the rejection of Wegener's theory directly to the lack of a mechanism, which sea-floor spreading later provided.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Post-war mapping of the ocean floor supplied the missing evidence.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It identifies that post-war mapping provided the evidence needed to support the theory."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies that post-war ocean floor mapping provided new information to support the study of continents and oceans."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Rocks nearest the crest of the ridges were found to be the oldest, with age decreasing away from the crest.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "It correctly identifies the age gradient of rocks relative to the mid-oceanic ridge crest."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific evidence regarding the age of rocks relative to the ridge crest to support the mechanism of spreading."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims rocks at the crest are the oldest, but the extract states that rocks closer to the mid-oceanic ridges are the youngest and age increases as one moves away from the crest.",
+        "fix": "Rocks closer to the mid-oceanic ridges were found to be the youngest, with age increasing away from the crest.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Oceanic crust proved far younger than continental rocks, and ocean-floor sediments were unexpectedly thin.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "It accurately describes the relative age of oceanic crust compared to continental rocks and the thinness of sediments."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "It provides specific comparative data regarding the age of oceanic crust versus continental rocks to support the theory."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Earthquakes along the mid-oceanic ridges were found to be deep-seated, while those at the trenches had shallow foci.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence incorrectly swaps the depth of earthquake foci; the extract states that deep trenches have deep-seated occurrences while mid-oceanic ridges have shallow depths.",
+        "fix": "Earthquakes along the mid-oceanic ridges were found to have shallow foci, while those at the trenches were deep-seated.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims earthquakes at trenches have shallow foci, but seismic activity at subduction zones involves deep-seated earthquakes.",
+        "fix": "Check the depth of earthquake foci at oceanic trenches.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "From these facts Harry Hess proposed that magma erupting at the ridges pushes the crust apart, while older crust sinks and is consumed at the trenches.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains the mechanism of sea-floor spreading where magma pushes the crust apart."
+       },
+       {
+        "where": "Part 2",
+        "reason": "It explains the mechanism of magma erupting at ridges and crust sinking at trenches, which is the foundation for the plate tectonics theory."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It clearly explains the mechanism of sea-floor spreading as the causal link between the ocean floor observations and the movement of the crust."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "McKenzie, Parker and Morgan then synthesised these ideas into plate tectonics, in which rigid lithospheric plates move over the asthenosphere, driven by mantle convection.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It correctly identifies the synthesis of ideas into plate tectonics and mentions the movement of lithospheric plates over the asthenosphere."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the synthesis of these ideas into a unified theory by describing the movement of lithospheric plates over the asthenosphere."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It describes the synthesis of these ideas into the theory of plate tectonics."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Plate tectonics now explains the distribution of earthquakes, volcanoes and fold mountains like the Himalayas, aiding seismic hazard mapping.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by mentioning the practical application of the theory in hazard mapping."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the Himalayas and seismic hazard mapping is an application of the theory rather than a description of how the theory was formed.",
+        "fix": "Remove the specific mention of the Himalayas to stay focused on the theoretical evolution.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p2",
+      "where": "Part 2",
+      "partText": "and lead to the theory of plate tectonics?",
+      "reason": "The answer does not explicitly mention the role of mantle convection as the primary driving force for plate movement.",
+      "fix": "Mention mantle convection as the driving force for plate movement.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)"
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer describes the evidence for sea-floor spreading but does not explicitly explain how this specific concept 'revived' the idea of continental drift.",
+      "fix": "Add a sentence explaining that sea-floor spreading provided the mechanism for movement that Wegener's theory lacked.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the two distinct parts of the question: the revival of continental drift and the subsequent lead to plate tectonics.",
+      "fix": "Use a connecting phrase or subheading to distinguish between the evidence for sea-floor spreading and the synthesis into plate tectonics.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly mention the geological history or the specific 'dynamic' nature of the earth's interior as a contrast to the 'motionless' view.",
+      "fix": "Add a brief mention that these findings proved the earth's interior is dynamic rather than static.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)"
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the specific magnetic field strips that help determine the rates of plate movement.",
+      "fix": "Include a mention of magnetic field strips parallel to mid-oceanic ridges.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Post-war mapping of the ocean floor supplied the missing evidence.",
+      "reason": "It identifies that post-war mapping provided the evidence needed to support the theory."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s8",
+      "quote": "From these facts Harry Hess proposed that magma erupting at the ridges pushes the crust apart, while older crust sinks and is consumed at the trenches.",
+      "reason": "It explains the mechanism of sea-floor spreading where magma pushes the crust apart."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s9",
+      "quote": "McKenzie, Parker and Morgan then synthesised these ideas into plate tectonics, in which rigid lithospheric plates move over the asthenosphere, driven by mantle convection.",
+      "reason": "It correctly identifies the synthesis of ideas into plate tectonics and mentions the movement of lithospheric plates over the asthenosphere."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological flow of evidence and the final theory, but it misses the explicit link of how sea-floor spreading specifically acted as the catalyst to revive the earlier rejected theory."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the evolution of geological theories. The final sentence is slightly tangential as it discusses applications rather than the conceptual transition requested."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer effectively covers the scientific progression from sea-floor spreading to plate tectonics. It could be strengthened by explicitly contrasting the new dynamic view with the old static view of the earth."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the mechanics of sea-floor spreading and the components of plate tectonics. However, there is a significant factual error regarding the age of rocks at the mid-oceanic ridge."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The description of the age of the seafloor and the mechanism of crustal movement is accurate. However, the description of earthquake depths at trenches is factually incorrect."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good geological observations as evidence. To improve, you could include specific data points like the rates of movement mentioned in your background material."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the transition from continental drift to plate tectonics using the provided background. It could be strengthened by mentioning the specific magnetic evidence used to measure movement."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It clearly explains the mechanism of sea-floor spreading as the causal link between the ocean floor observations and the movement of the crust."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear beginning and end, but the body is a long list of facts. You should better organize the points to clearly distinguish between the 'revival' phase and the 'plate tectonics' phase."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terms like 'lithospheric plates' and 'asthenosphere' effectively. Minor improvements can be made by being more specific about the rejected forces."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-structured and covers the transition between theories effectively. However, it slightly exceeds the word limit due to an unnecessary concluding sentence about practical applications."
+     }
+    ],
+    "stats": {
+     "words": 167,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 51
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 50
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s3",
+       "text": "The surveys revealed mid-oceanic ridges marked by frequent volcanic eruptions."
+      },
+      {
+       "sourceId": "s5",
+       "text": "Rocks equidistant on either side of the crest were remarkably similar."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 12 (Water (Oceans))",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 2 (The Earth)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Fundamentals of Physical Geography, Ch. 4 (Distribution of Oceans and Continents)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 7,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "balance"
+     ]
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

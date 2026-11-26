@@ -1,0 +1,544 @@
+{
+ "case": "polity-moneybill",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: introduced in either House": true,
+  "cited: introduced in either House": true,
+  "caught: up to three months": true,
+  "cited: up to three months": true,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 7884.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-moneybill"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-moneybill",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "At 65 words, this answer is far shorter than the 150 the question expects.",
+    "summary": "The answer correctly identifies the financial supremacy of the House of the People over the Council of States. However, the answer contains factual errors regarding where a Money Bill can be introduced and the timeframe for the Rajya Sabha to return it. You should first correct these facts and expand the content to reach the expected word limit.",
+    "levelWhy": [
+     "At 65 words it is too short: a question with this word limit expects about 150.",
+     "It has no introduction that sets the context.",
+     "It has no conclusion with a way forward.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the role of the Rajya Sabha in the passage of Money Bills.",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "A Money Bill can be introduced in either House of Parliament.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "The Lok Sabha may accept or reject the Rajya Sabha's recommendations.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "This shows the financial supremacy of the directly elected House.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the role of the Rajya Sabha in the passage of Money Bills",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The sentence correctly explains that the Lok Sabha has the power to accept or reject the recommendations made by the Rajya Sabha.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "A Money Bill can be introduced only in the Lok Sabha.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "A Money Bill can be introduced in either House of Parliament."
+      },
+      "why": "The sentence states it can be introduced in either House, but the extract specifies that a Money Bill shall not be introduced in the Council of States.",
+      "tryWriting": "A Money Bill shall not be introduced in the Council of States.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 109",
+      "sourceRef": "r1",
+      "evidence": {
+       "wrongWords": "either House",
+       "sourceWords": "A Money Bill shall not be introduced in the Council of States."
+      }
+     },
+     {
+      "n": 2,
+      "title": "The Rajya Sabha must return a Money Bill within fourteen days of receiving it.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it."
+      },
+      "why": "The extract states the Council of States shall return the bill within a period of fourteen days, not three months.",
+      "tryWriting": "The Rajya Sabha shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People with its recommendations.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 109",
+      "sourceRef": "r1",
+      "evidence": {
+       "wrongWords": "up to three months",
+       "sourceWords": "shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 65.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 65 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "A Money Bill can be introduced in either House of Parliament.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence states it can be introduced in either House, but the extract specifies that a Money Bill shall not be introduced in the Council of States.",
+        "fix": "A Money Bill can be introduced only in the Lok Sabha.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 109"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s2",
+      "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the bill is sent to the Rajya Sabha for its recommendations, but it fails to mention the specific timeframe required by the Constitution.",
+        "fix": "Specify that the bill must be returned within fourteen days.",
+        "fixNumber": null,
+        "source": "Constitution of India, Article 109"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states the Council of States shall return the bill within a period of fourteen days, not three months.",
+        "fix": "The Rajya Sabha must return a Money Bill within fourteen days of receiving it.",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 109"
+       },
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims the Rajya Sabha can keep the bill for three months, but the constitutional limit is fourteen days.",
+        "fix": "Change the time limit from three months to fourteen days.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Lok Sabha may accept or reject the Rajya Sabha's recommendations.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly explains that the Lok Sabha has the power to accept or reject the recommendations made by the Rajya Sabha."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the outcome of the process by stating the Lok Sabha's power to accept or reject recommendations."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the role of the Rajya Sabha in providing recommendations that the Lok Sabha can choose to accept or reject."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the Lok Sabha may accept or reject recommendations, but it fails to mention that the Rajya Sabha must return the bill within a specific timeframe.",
+        "fix": "Mention that the Rajya Sabha must return the bill within fourteen days.",
+        "fixNumber": null,
+        "source": "Constitution of India, Article 109"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "This shows the financial supremacy of the directly elected House.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the financial supremacy of the House of the People over the Council of States."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a concluding judgment on the financial supremacy of the House of the People."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly concludes the discussion by identifying the financial supremacy of the House of the People."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Structure",
+      "reason": "The answer lacks an introductory sentence that defines the role or sets the context of Money Bills.",
+      "fix": "Add a sentence defining a Money Bill or its significance in the legislative process.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "This shows the financial supremacy of the directly elected House.",
+      "reason": "The sentence correctly identifies the financial supremacy of the House of the People over the Council of States."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It explains the outcome of the process by stating the Lok Sabha's power to accept or reject recommendations."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence correctly identifies the role of the Rajya Sabha in providing recommendations that the Lok Sabha can choose to accept or reject."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the legislative hierarchy but contains a major factual error regarding where a Money Bill can originate. It also misses the federal perspective of the Rajya Sabha's role."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the final power of the Lok Sabha but contains significant factual errors regarding where a Money Bill starts and the time limit for the Rajya Sabha."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly states that the Lok Sabha can accept or reject the recommendations of the Rajya Sabha."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer contains significant factual errors regarding the introduction of Money Bills and the timeframe for the Rajya Sabha's recommendations. You must align these with the specific constitutional provisions provided in the sources."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It correctly identifies that the Lok Sabha's power to accept or reject recommendations leads to the final status of the bill."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the power imbalance but contains significant factual errors regarding the specific time limits and the house of origin."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer contains significant factual errors regarding the procedural rules for Money Bills. You must align your facts with the constitutional provisions provided in the sources."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good list of procedural facts but fails to follow the required structure of an introduction and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer contains significant factual errors regarding the specific time limits and the house of origin for Money Bills."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "This sentence correctly identifies the limited power of the Rajya Sabha to influence the bill's final outcome."
+     }
+    ],
+    "stats": {
+     "words": 65,
+     "sentences": 5,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 21
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.43
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 109",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 110",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 114",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 107",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 111",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 80",
+      "used": false
+     },
+     {
+      "label": "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      "used": false
+     },
+     {
+      "label": "Case: Rojer Mathew v South Indian Bank (2019)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 33 (State Legislature), Position of Legislative Council",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 22 (Parliament), Legislative Procedure in Parliament",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "Constitution of India, Article 109"
+     ],
+     "expected": [
+      "Constitution of India, Article 109"
+     ],
+     "casesGiven": [
+      "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      "Case: Rojer Mathew v South Indian Bank (2019)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": null,
+     "redFixesWithTryWriting": 2
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,723 @@
+{
+ "case": "geo-coral",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: absent on the eastern coasts of continents": true,
+  "cited: absent on the eastern coasts of continents": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 7864.3,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-coral"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-coral",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "You correctly identified the temperature and light requirements for coral growth and accurately described fringing and barrier reefs. However, a factual error regarding the coastlines where reefs are absent will cost you credit. You should first change 'eastern' to 'western' to align with the correct geographical distribution.",
+    "levelWhy": [
+     "It has no conclusion with a way forward."
+    ],
+    "formatNote": null,
+    "question": "What conditions favour the growth of coral reefs? Describe the main types of coral reefs and the theories put forward to explain their origin. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Coral reefs are limestone structures built by colonies of tiny coral polyps, which flourish only within narrow limits.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Reef-building corals need water that does not fall below about 20°C, confining them to tropical and sub-tropical seas.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Cold currents and upwelling explain why coral reefs are generally absent on the eastern coasts of continents.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Corals need shallow, sunlit water, since the algae on which polyps depend require sunlight for photosynthesis.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The water must be saline and free from sediment, so reefs are absent near muddy river mouths.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Fringing reefs lie close to the shore, while barrier reefs, like the Great Barrier Reef, are separated from the coast by a wide, deep lagoon.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Atolls are ring-shaped reefs enclosing a lagoon without central land.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Darwin's subsidence theory explains the sequence from fringing reef to barrier reef to atoll on a sinking island.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Daly's glacial control theory links reef growth to the post-glacial rise in sea level.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Reefs of Lakshadweep and the Gulf of Mannar need protection from bleaching and pollution.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "What conditions favour the growth of coral reefs?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have covered the primary environmental factors well, including temperature, light, and water clarity.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s4"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Describe the main types of coral reefs",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The student successfully identified and described the three main types of coral reefs.",
+      "checkedTwice": false,
+      "sentences": [
+       "s6",
+       "s7"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "and the theories put forward to explain their origin.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies and describes the two primary theories regarding the origin of coral reefs.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8",
+       "s9"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Change 'eastern' to 'western'.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Cold currents and upwelling explain why coral reefs are generally absent on the eastern coasts of continents."
+      },
+      "why": "The text states that reefs are absent on the western coasts of continents, not the eastern coasts.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "sourceRef": "r6",
+      "evidence": {
+       "wrongWords": "eastern coasts",
+       "sourceWords": "This explains why coral reefs are generally absent on the western coasts of continents."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Explain how the theory relates the timing of reef growth to the specific rate of sea level rise.",
+      "where": "Concepts explained",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s9",
+       "text": "Daly's glacial control theory links reef growth to the post-glacial rise in sea level."
+      },
+      "why": "The sentence names the theory but does not explain the mechanism of how glacial control influences reef formation.",
+      "tryWriting": "Daly's glacial control theory suggests that reef growth is governed by the rate of sea level rise following the melting of glaciers.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Specify a policy or agency to implement a specific conservation plan for reefs in Lakshadweep and the Gulf of Mannar.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "Reefs of Lakshadweep and the Gulf of Mannar need protection from bleaching and pollution."
+      },
+      "why": "The sentence mentions the need for protection from bleaching and pollution but does not specify who should act or what specific measures should be taken.",
+      "tryWriting": "The government should implement a marine protected area framework to mitigate bleaching and pollution in the reefs of Lakshadweep and the Gulf of Mannar.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Coral reefs are limestone structures built by colonies of tiny coral polyps, which flourish only within narrow limits.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "This sentence provides a clear definition of coral reefs as limestone structures built by polyps."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'narrow limits' is vague and does not specify what environmental factors define those limits.",
+        "fix": "Specify the environmental factors like temperature, salinity, and light.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Reef-building corals need water that does not fall below about 20°C, confining them to tropical and sub-tropical seas.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the temperature requirement and the resulting geographical distribution."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the temperature requirements for reef growth."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the temperature threshold and the resulting geographical limitation as stated in the text."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Cold currents and upwelling explain why coral reefs are generally absent on the eastern coasts of continents.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The text states that reefs are absent on the western coasts of continents, not the eastern coasts.",
+        "fix": "Change 'eastern' to 'western'.",
+        "fixNumber": 1,
+        "source": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)"
+       },
+       {
+        "where": "Did what the question asks",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that reefs are absent but does not fully explain the mechanism of how cold currents prevent growth.",
+        "fix": "Explain how cold currents lower water temperatures below the threshold required for coral survival.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Corals need shallow, sunlit water, since the algae on which polyps depend require sunlight for photosynthesis.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains the necessity of shallow, sunlit water for the symbiotic algae."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'why' behind the need for shallow water by mentioning the requirement of sunlight for photosynthesis by algae."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the biological necessity of sunlight for the algae's photosynthesis, providing depth to the condition of shallow water."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The water must be saline and free from sediment, so reefs are absent near muddy river mouths.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of salinity is good, but the sentence could be more specific about the required level of salinity.",
+        "fix": "Specify that they require clear, saline water.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Fringing reefs lie close to the shore, while barrier reefs, like the Great Barrier Reef, are separated from the coast by a wide, deep lagoon.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies and describes fringing reefs and barrier reefs."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific example of a barrier reef to support the description of its structure."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses precise geographical terms like 'fringing reefs', 'barrier reefs', and 'lagoon' to describe reef types."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Atolls are ring-shaped reefs enclosing a lagoon without central land.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies and describes atolls."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It accurately describes the structure of atolls as ring-shaped reefs."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The description of 'atolls' as 'ring-shaped reefs' is clear and technically accurate."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Darwin's subsidence theory explains the sequence from fringing reef to barrier reef to atoll on a sinking island.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence correctly identifies Darwin's subsidence theory and explains the progression from fringing to barrier to atoll reefs."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'how' of the sequence of reef formation by linking it to the sinking of an island."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly explains the mechanism of the subsidence theory by describing the sequence of reef types on a sinking island."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Daly's glacial control theory links reef growth to the post-glacial rise in sea level.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "This sentence correctly identifies Daly's glacial control theory and links it to post-glacial sea level rise."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence provides a clear, compact description of a second theory without unnecessary padding."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence names the theory but does not explain the mechanism of how glacial control influences reef formation.",
+        "fix": "Explain how the theory relates the timing of reef growth to the specific rate of sea level rise.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Reefs of Lakshadweep and the Gulf of Mannar need protection from bleaching and pollution.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the need for protection from bleaching and pollution but does not specify who should act or what specific measures should be taken.",
+        "fix": "Specify a policy or agency to implement a specific conservation plan for reefs in Lakshadweep and the Gulf of Mannar.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the specific geographical distribution of reefs as a condition for growth.",
+      "fix": "Mention that they are found in the world's oceans in tropical and sub-tropical regions.",
+      "fixNumber": null,
+      "source": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)"
+     },
+     {
+      "where": "Structure",
+      "reason": "The answer lacks a concluding sentence that provides a balanced, forward-looking way ahead.",
+      "fix": "Add a concluding sentence about the importance of marine conservation or climate change mitigation for reef survival.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not address the environmental or ecological importance of coral reefs.",
+      "fix": "Add a brief concluding sentence on the ecological role of reefs as biodiversity hotspots.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Reef-building corals need water that does not fall below about 20°C, confining them to tropical and sub-tropical seas.",
+      "reason": "It correctly identifies the temperature requirement and the resulting geographical distribution."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s4",
+      "quote": "Corals need shallow, sunlit water, since the algae on which polyps depend require sunlight for photosynthesis.",
+      "reason": "It explains the necessity of shallow, sunlit water for the symbiotic algae."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s6",
+      "quote": "Fringing reefs lie close to the shore, while barrier reefs, like the Great Barrier Reef, are separated from the coast by a wide, deep lagoon.",
+      "reason": "This sentence correctly identifies and describes fringing reefs and barrier reefs."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully explains the underlying mechanisms for most conditions and theories. To improve, ensure the explanation of environmental factors like currents is as detailed as the biological requirements."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the question. Only the final sentence drifts into conservation issues which were not asked."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the physical types and geographical conditions well. Including a point on their ecological significance would provide a more holistic perspective."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides good depth on the biological and geological mechanisms for reef growth and origin. However, the description of the glacial control theory remains a name without a functional explanation."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer provides accurate biological and physical conditions for reef growth. Ensure that geographical generalizations are specific to certain regions."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses a specific geographical example to illustrate a reef type, but the final sentence lacks relevant evidence for the core question."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately identifies the three main types of coral reefs and the primary theories of their origin. It covers the geographical and biological requirements well."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer shows good causal links between biological needs and environmental conditions, as well as the geological progression of reef types."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The question is descriptive in nature and does not require an analysis of trade-offs, costs, or counter-arguments."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies a need for protection but fails to provide a workable suggestion by omitting the actor and specific actions."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is well-structured with a clear introduction and distinct body points for each part of the question. However, it lacks a formal conclusion to provide a forward-looking perspective."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The use of specific geographical terminology for reef types is excellent. To improve, replace general phrases like 'narrow limits' with specific environmental factors."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is well-balanced across all three parts of the question. Removing the final sentence would bring the word count within the limit while maintaining all required content."
+     }
+    ],
+    "stats": {
+     "words": 167,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 51
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 35
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 32
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     },
+     {
+      "label": "G.C. Leong, Certificate Physical and Human Geography, Ch. 11 (lslands and Coral Reefs)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It has no conclusion with a way forward."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

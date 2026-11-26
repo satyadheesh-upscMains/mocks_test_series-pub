@@ -1,0 +1,537 @@
+{
+ "case": "polity-dpsp",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: enforced in courts in the same way": true,
+  "cited: enforced in courts in the same way": true,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 5654.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-dpsp"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-dpsp",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You correctly identified the role of Directive Principles in social justice and the judicial approach of reading both parts in harmony. However, the answer is too short and contains a factual error regarding the enforceability of Directive Principles. You must first state that Directive Principles are non-justiciable and cannot be enforced by any court.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 53 words it is too short: a question with this word limit expects about 150.",
+     "It has no introduction that sets the context.",
+     "It has no conclusion with a way forward.",
+     "It makes 4 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the relationship between Fundamental Rights and Directive Principles of State Policy.",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Fundamental Rights are in Part III and Directive Principles are in Part IV of the Constitution.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Directive Principles can be enforced in courts in the same way as Fundamental Rights.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Directive Principles guide the State in making laws for social and economic justice.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "Courts have tried to read both parts together in harmony.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the relationship between Fundamental Rights and Directive Principles of State Policy",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the purpose of Directive Principles and the judicial goal of harmony. However, you made a significant legal error regarding the enforceability of Directive Principles.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s4"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "State that Directive Principles are non-justiciable and cannot be enforced by any court.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Directive Principles can be enforced in courts in the same way as Fundamental Rights."
+      },
+      "why": "The extract states that the provisions in Part IV shall not be enforceable by any court, which directly contradicts the claim that they can be enforced like Fundamental Rights.",
+      "tryWriting": "Directive Principles shall not be enforceable by any court, but the principles therein laid down are nevertheless fundamental in the governance of the country.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 37",
+      "sourceRef": "r3",
+      "evidence": {
+       "wrongWords": "can be enforced in courts in the same way as Fundamental Rights",
+       "sourceWords": "shall not be enforceable by any court"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Write about 150 words: this answer has 53.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 53 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Include a point about the historical conflict where the judiciary and government disagreed on whether rights could be abridged for welfare goals.",
+      "where": "Did what the question asks",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The answer lacks a balanced discussion on the conflict between the two, such as the historical tension where rights were seen as a hindrance to welfare.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)",
+      "sourceRef": "r1",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Fundamental Rights are in Part III and Directive Principles are in Part IV of the Constitution.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It correctly identifies the constitutional location of both Fundamental Rights and Directive Principles."
+       },
+       {
+        "where": "Structure",
+        "reason": "This sentence provides a factual basis for the constitutional location of both parts."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Directive Principles can be enforced in courts in the same way as Fundamental Rights.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The extract states that the provisions in Part IV shall not be enforceable by any court, which directly contradicts the claim that they can be enforced like Fundamental Rights.",
+        "fix": "State that Directive Principles are non-justiciable and cannot be enforced by any court.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 37"
+       },
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims Directive Principles can be enforced in courts, but they are non-justiciable.",
+        "fix": "Clarify that Directive Principles are non-enforceable by courts.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Directive Principles guide the State in making laws for social and economic justice.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the role of Directive Principles in guiding the State toward social and economic justice."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence explains the purpose of Directive Principles as a guide for social and economic justice, providing a reason for their existence."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly states that Directive Principles guide the State in making laws for social and economic justice."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Courts have tried to read both parts together in harmony.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly notes the judicial approach of reading both parts in harmony."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence addresses the relationship by mentioning the judicial effort to maintain harmony between the two parts."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It mentions the judicial approach of reading both parts in harmony, which is a key legal dimension of their relationship."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a balanced discussion on the conflict between the two, such as the historical tension where rights were seen as a hindrance to welfare.",
+      "fix": "Include a point about the historical conflict where the judiciary and government disagreed on whether rights could be abridged for welfare goals.",
+      "fixNumber": 3,
+      "source": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)"
+     },
+     {
+      "where": "Suggestions are workable",
+      "reason": "The answer does not provide any specific suggestions or measures to improve the relationship between the two sets of principles.",
+      "fix": "Add a suggestion on how the State can balance these principles.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific court cases or constitutional articles to support the claims about the relationship between the two parts.",
+      "fix": "Include a specific court case or constitutional article that illustrates the harmony or conflict between rights and principles.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fix": "Add a one- or two-sentence introduction that sets the context before your first point.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "Directive Principles guide the State in making laws for social and economic justice.",
+      "reason": "The sentence correctly identifies the role of Directive Principles in guiding the State toward social and economic justice."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s4",
+      "quote": "Courts have tried to read both parts together in harmony.",
+      "reason": "The sentence correctly notes the judicial approach of reading both parts in harmony."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a basic description but fails to 'discuss' the relationship deeply. It contains a significant factual error regarding the enforceability of Directive Principles."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic by discussing the constitutional placement and purpose of both sets of principles. However, it contains a significant factual error regarding the enforceability of Directive Principles."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the core purpose and the judicial harmony between the two parts. However, it contains a major factual error regarding the enforceability of Directive Principles."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the purpose and harmony of the two parts but contains a major factual error regarding the enforceability of Directive Principles."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the location and purpose of both parts but contains a major factual error regarding the enforceability of Directive Principles."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer lacks specific evidence such as court cases or constitutional articles to support the discussion. One statement regarding the enforceability of Directive Principles is factually incorrect based on the provided sources."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the parts of the Constitution and the purpose of Directive Principles. However, you must clarify that Directive Principles are non-justiciable and mention their status as part of the basic structure."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer fails to correctly distinguish the legal enforceability of the two categories, which is a fundamental part of their relationship. You should clarify that while they are complementary, they differ in their legal status."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer fails to recognize the legal distinction between the two, specifically that Directive Principles are non-justiciable."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer contains a factual error regarding the enforceability of Directive Principles. Additionally, the question asks to discuss the relationship, but the answer lacks any constructive suggestions or forward-looking measures."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains good body points but fails to follow the required structure of having a distinct introduction and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence uses the precise term 'social and economic justice' to describe the purpose of Directive Principles."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "This sentence provides a specific purpose for Directive Principles, moving the answer toward the required discussion."
+     }
+    ],
+    "stats": {
+     "words": 53,
+     "sentences": 4,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 37
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.35
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 31C",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 37",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 13",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 1 (Constitution: Why and How?)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": false
+     },
+     {
+      "label": "Case: Minerva Mills v Union of India (1980)",
+      "used": false
+     },
+     {
+      "label": "Case: State of Madras v Champakam Dorairajan (1951)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 8 (Directive Principles of State Policy), Conflict Between Fundamental Rights and Directive Principles",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 8 (Directive Principles of State Policy), Directives Outside Part IV",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 3 (Politics of Planned Development)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 4 (India’s External Relations)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 6 (The Crisis of Democratic Order)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 7,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)",
+      "Constitution of India, Article 37",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)"
+     ],
+     "expected": [
+      "Constitution of India, Article 37"
+     ],
+     "casesGiven": [
+      "Case: Minerva Mills v Union of India (1980)",
+      "Case: State of Madras v Champakam Dorairajan (1951)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": false,
+     "redFixesWithTryWriting": 1
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

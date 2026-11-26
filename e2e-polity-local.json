@@ -1,0 +1,578 @@
+{
+ "case": "polity-local",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: Election Commission of India": true,
+  "cited: Election Commission of India": true,
+  "caught: all the subjects in the State List": true,
+  "cited: all the subjects in the State List": true,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 5693.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-local"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-local",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 2 is answered. Part 1 needs the most work.",
+    "summary": "The answer correctly identifies the constitutional status, the three-tier structure, and the reservation for women. However, the answer is too short and contains factual errors regarding the authority of the State Legislature and the specific commission responsible for elections. You should first correct the claim about the Election Commission of India and the scope of panchayat powers using Article 243K.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 80 words it is too short: a question with this word limit expects about 150.",
+     "It has no conclusion with a way forward.",
+     "It makes 4 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 4 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss how the 73rd Constitutional Amendment strengthened rural local self-government in India. What challenges remain?",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system of village, block and district panchayats.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It made elections every five years compulsory, and these elections are conducted by the Election Commission of India.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "One-third of the seats are reserved for women, which has brought many women into local politics.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "Panchayats now control all the subjects in the State List.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "However, many panchayats still depend on grants from the State government and lack trained staff.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "how the 73rd Constitutional Amendment strengthened rural local self-government in India",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the structural and representative changes. However, you must be careful not to claim that panchayats have absolute control over all state subjects.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "What challenges remain?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "This sentence correctly identifies financial dependence and lack of staff as ongoing challenges.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Correct this sentence using Constitution of India, Article 243K.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "It made elections every five years compulsory, and these elections are conducted by the Election Commission of India."
+      },
+      "why": "The student claims the Election Commission of India conducts these elections, but the extract states that the conduct of elections to the Panchayats is vested in a State Election Commission.",
+      "tryWriting": "It made elections every five years compulsory, and the conduct of these elections is vested in a State Election Commission.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 243K",
+      "sourceRef": "r10",
+      "evidence": {
+       "wrongWords": "conducted by the Election Commission of India",
+       "sourceWords": "the conduct of, all elections to the Panchayats shall be vested in a State Election Commission"
+      }
+     },
+     {
+      "n": 2,
+      "title": "The State Legislature may endow Panchayats with powers and responsibilities to function as institutions of self-government.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Panchayats now control all the subjects in the State List."
+      },
+      "why": "The student claims panchayats 'now control all' subjects, but the extract states the Legislature of a State may 'endow' them with powers and responsibilities.",
+      "tryWriting": "The Legislature of a State may, by law, endow the Panchayats with powers and authority to function as institutions of self-government regarding matters listed in the Eleventh Schedule.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 243G",
+      "sourceRef": "r17",
+      "evidence": {
+       "wrongWords": "now control all the subjects in the State List",
+       "sourceWords": "the Legislature of a State may, by law, endow the Panchayats with such powers and authority as may be necessary to enable them to function as institutions of self-government"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 80.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 80 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system of village, block and district panchayats.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the constitutional status and the three-tier structure established by the amendment."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies that the 73rd Amendment gave constitutional status to panchayats and established a three-tier system."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It establishes the foundational cause by explaining how the amendment provided constitutional status and a structured three-tier system."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It made elections every five years compulsory, and these elections are conducted by the Election Commission of India.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims the Election Commission of India conducts these elections, but the extract states that the conduct of elections to the Panchayats is vested in a State Election Commission.",
+        "fix": "Correct this sentence using Constitution of India, Article 243K.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 243K"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "One-third of the seats are reserved for women, which has brought many women into local politics.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It highlights the specific mechanism of reservation for women as a way to strengthen representation."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains how reservation for women has increased participation in local politics."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the social dimension by highlighting how reservation for women has increased their participation in local politics."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Panchayats now control all the subjects in the State List.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims panchayats 'now control all' subjects, but the extract states the Legislature of a State may 'endow' them with powers and responsibilities.",
+        "fix": "The State Legislature may endow Panchayats with powers and responsibilities to function as institutions of self-government.",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 243G"
+       },
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that panchayats control 'all the subjects' in the State List is incorrect as powers are often shared or delegated.",
+        "fix": "Clarify that the amendment provides a framework for the devolution of powers from the State List.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "However, many panchayats still depend on grants from the State government and lack trained staff.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies financial dependence and lack of staff as ongoing challenges."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the administrative and financial dimensions by identifying the lack of staff and dependence on state grants."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a reasoned conclusion to balance the discussion between the strengths and the remaining challenges.",
+      "fix": "Add a concluding sentence summarizing the balance between constitutional progress and implementation hurdles.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The answer lacks a concluding sentence that provides a balanced, forward-looking way ahead.",
+      "fix": "Add a concluding sentence about empowering panchayats through fiscal autonomy and capacity building.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific data or a report to support the claim about the lack of trained staff.",
+      "fix": "Include a reference to a specific report or a general type of audit that highlights the shortage of technical staff in rural bodies.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s1",
+      "quote": "The 73rd Amendment of 1992 gave constitutional status to panchayats and created a three-tier system of village, block and district panchayats.",
+      "reason": "It correctly identifies the constitutional status and the three-tier structure established by the amendment."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "One-third of the seats are reserved for women, which has brought many women into local politics.",
+      "reason": "It highlights the specific mechanism of reservation for women as a way to strengthen representation."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s5",
+      "quote": "However, many panchayats still depend on grants from the State government and lack trained staff.",
+      "reason": "This sentence correctly identifies financial dependence and lack of staff as ongoing challenges."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies key structural improvements but contains a significant factual error regarding the scope of panchayat powers. It also lacks a concluding synthesis to fulfill the 'discuss' requirement."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic by addressing both the structural strengths and the remaining challenges. However, the claim regarding the scope of subjects controlled by panchayats is factually inaccurate."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers social, administrative, and political dimensions well. However, the claim regarding the scope of subjects controlled by panchayats is factually incorrect."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the structural and representative changes, but contains a significant factual error regarding the scope of panchayat powers."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the structural and reservation aspects of the amendment. However, the claim regarding the scope of subjects controlled by panchayats is an overstatement."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies key structural changes but contains a significant factual error regarding the scope of power. Adding a specific report or data point on administrative capacity would strengthen the challenges section."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the structural changes and reservation rules. However, you made a significant factual error regarding the scope of power over the State List."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links the structural changes and reservations to political outcomes. However, the claim regarding the scope of power over the State List is factually incorrect."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified structural challenges like funding and staffing. However, you overstate the extent of power transferred to local bodies."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear structure for the body but fails to provide a conclusion. You need a final sentence that looks toward the future rather than just summarizing the challenges."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good technical terms like 'three-tier system' and 'constitutional status'. However, the claim regarding the scope of power over state subjects is factually incorrect."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too brief and fails to utilize the available word limit to explore the depth of the challenges. One sentence contains a major factual error regarding the scope of panchayat powers."
+     }
+    ],
+    "stats": {
+     "words": 80,
+     "sentences": 5,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 47
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 15
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.53
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 243D",
+      "used": false
+     },
+     {
+      "label": "Case: K. Krishna Murthy v Union of India (2010)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 39 (Municipalities), Central Council of Local Government",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 243K",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 243G",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "Constitution of India, Article 243K",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)",
+      "Constitution of India, Article 243G",
+      "NCERT Class 11, Indian Constitution at Work, Ch. 8 (Local Governments)"
+     ],
+     "expected": [
+      "Constitution of India, Article 243G",
+      "Constitution of India, Article 243K",
+      "Constitution of India, Schedule 11"
+     ],
+     "casesGiven": [
+      "Case: K. Krishna Murthy v Union of India (2010)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": null,
+     "redFixesWithTryWriting": 2
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

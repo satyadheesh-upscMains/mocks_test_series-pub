@@ -1,0 +1,815 @@
+{
+ "case": "geo-minerals",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: The most important Tertiary coalfields, such as Jharia and Raniganj": true,
+  "cited: The most important Tertiary coalfields, such as Jharia and Raniganj": true,
+  "caught: Digboi in Assam is a classic market-based refinery": true,
+  "cited: Digboi in Assam is a classic market-based refinery": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 11264.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-geo-minerals"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-geo-minerals",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You successfully explained the geological ages of coal and the distribution of petroleum across specific sedimentary rocks. However, you lost credit by incorrectly identifying the geological age of the Jharia and Raniganj coalfields and swapping the refinery types for Digboi and Barauni. You should first correct the coalfield classification to Gondwana and fix the refinery descriptions.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Explain how geology shapes the distribution of mineral and energy resources in India. Illustrate with suitable examples. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Explain",
+      "meaning": "Make clear how and why it happens: causes, the steps in between, and the effects."
+     },
+     {
+      "word": "Illustrate",
+      "meaning": "Make the point with a concrete example."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "India's varied geological structure gives it a rich but uneven endowment of minerals.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Most valuable metallic minerals are associated with the ancient igneous and metamorphic rocks of the Peninsula, while fuels are tied to particular sedimentary formations.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The vast alluvial plain of north India, built of recent river deposits, is devoid of minerals of economic use.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Most metallic minerals occur in the old crystalline rocks of the Peninsular plateau.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The north-eastern plateau belt of Chhotanagpur, Odisha and Chhattisgarh holds iron ore, coal, manganese, bauxite and mica, which explains the concentration of iron and steel plants there.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Manganese is mainly associated with the ancient Dharwar system of rocks.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Aravali belt of Rajasthan is known for copper and zinc, besides building stones such as marble and sandstone.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Bauxite is associated with laterite on the plateaus and hill ranges of the Peninsula, as in Kalahandi and Koraput.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Coal occurs in rocks of two geological ages, the Gondwana and the Tertiary.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "The most important Tertiary coalfields, such as Jharia and Raniganj, lie in the Damodar valley.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "Petroleum occurs in Tertiary sedimentary rocks in Assam, Gujarat and offshore Mumbai High, with newer finds in the Krishna-Godavari and Kaveri basins.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "Digboi in Assam is a classic market-based refinery, whereas Barauni is field-based.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "Thorium is obtained mainly from monazite in the beach sands of Kerala and Tamil Nadu, while uranium occurs in the Dharwar rocks of the Singhbhum copper belt.",
+      "para": 3
+     },
+     {
+      "id": "s14",
+      "text": "As minerals are exhaustible, India must pair exploration with recycling of scrap metals, use of substitutes and a steady shift towards renewable energy.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "how geology shapes the distribution of mineral and energy resources in India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully linked specific geological formations (igneous, metamorphic, sedimentary, and alluvial) to the presence or absence of resources.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Illustrate with suitable examples",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer provides several strong geographical examples linking specific minerals and energy sources to geological formations. To improve, ensure all examples focus on the geological 'why' rather than industrial processing.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s11"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The most important Gondwana coal fields, such as Jharia and Raniganj, lie in the Damodar valley.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "The most important Tertiary coalfields, such as Jharia and Raniganj, lie in the Damodar valley."
+      },
+      "why": "The student identifies Jharia and Raniganj as Tertiary coalfields, but the extract states they are the most important Gondwana coal fields.",
+      "tryWriting": "The most important Gondwana coal fields of India, such as Jharia and Raniganj, lie in the Damodar valley.",
+      "checkedTwice": true,
+      "source": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "sourceRef": "r19",
+      "evidence": {
+       "wrongWords": "Tertiary coalfields",
+       "sourceWords": "The most important Gondwana coal fields of India are located in Damodar Valley. They lie in Jharkhand-Bengal coal belt and the important coal fields in this region are Raniganj, Jharia, Bokaro, Giridih, Karanpura."
+      }
+     },
+     {
+      "n": 2,
+      "title": "State that Digboi is a field-based refinery and Barauni is a market-based refinery.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s12",
+       "text": "Digboi in Assam is a classic market-based refinery, whereas Barauni is field-based."
+      },
+      "why": "The student swapped the types; the extract states Digboi is field-based and Barauni is market-based.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "sourceRef": "r19",
+      "evidence": {
+       "wrongWords": "Digboi in Assam is a classic market-based refinery, whereas Barauni is field-based",
+       "sourceWords": "Digboi is an example of fieldbased and Barauni is an example of marketbased refinery."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Specify which government bodies or industries should lead the recycling initiatives and set a target for the transition to renewables.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s14",
+       "text": "As minerals are exhaustible, India must pair exploration with recycling of scrap metals, use of substitutes and a steady shift towards renewable energy."
+      },
+      "why": "The suggestion to pair exploration with recycling and substitutes is a general statement that lacks specific actors or a defined timeline.",
+      "tryWriting": "To manage exhaustible minerals, the government should establish a national recycling framework for scrap metals and provide subsidies for industries transitioning to renewable energy sources.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "India's varied geological structure gives it a rich but uneven endowment of minerals.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "It correctly identifies that the geological structure is the primary driver for the uneven distribution of minerals."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that India's varied geological structure leads to a rich variety of mineral resources."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear context by stating the uneven endowment of minerals due to geological structure."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'varied geological structure' is a bit vague; it would be stronger if it specified the types of structures.",
+        "fix": "Specify the types of geological structures, such as the Peninsular shield and the sedimentary basins.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Most valuable metallic minerals are associated with the ancient igneous and metamorphic rocks of the Peninsula, while fuels are tied to particular sedimentary formations.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the geological link between metallic minerals and igneous/metamorphic rocks versus fuels and sedimentary formations."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'how' by linking metallic minerals to ancient igneous and metamorphic rocks and fuels to sedimentary formations."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It establishes the direct link between specific rock types (igneous, metamorphic, sedimentary) and the types of resources found."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence provides a general description of geological associations but does not specify which sedimentary formations or types of fuels are being discussed.",
+        "fix": "Specify the types of sedimentary formations and the specific fuels associated with them.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The vast alluvial plain of north India, built of recent river deposits, is devoid of minerals of economic use.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains how the geological process of river deposits in the alluvial plain results in a lack of minerals."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies that the north Indian alluvial plains lack minerals of economic use as stated in the textbook."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions the lack of minerals in alluvial plains, it does not explicitly explain the geological reason why these deposits are absent compared to other regions.",
+        "fix": "Explain that the lack of ancient rock formations in these recent deposits prevents the accumulation of metallic minerals.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Most metallic minerals occur in the old crystalline rocks of the Peninsular plateau.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes a geological fact but lacks a specific example to illustrate the distribution as requested by the prompt.",
+        "fix": "Add a specific example of a mineral found in these rocks.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The north-eastern plateau belt of Chhotanagpur, Odisha and Chhattisgarh holds iron ore, coal, manganese, bauxite and mica, which explains the concentration of iron and steel plants there.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides a specific geographical example of a plateau belt and lists multiple minerals found there."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific geographical regions and a list of minerals to illustrate the concentration of resources."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the geological presence of specific minerals to the industrial outcome of concentrated iron and steel plants."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the concentration of iron and steel plants but does not specify the geographical extent or the specific industrial hubs.",
+        "fix": "Specify the industrial hubs in the Chhotanagpur region.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Manganese is mainly associated with the ancient Dharwar system of rocks.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "missing",
+        "kindLabel": "Missing",
+        "reason": "The sentence describes a geological association but does not provide a specific geographical example or location to illustrate the distribution.",
+        "fix": "Add a specific region or state where this geological system is prominent.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Coal occurs in rocks of two geological ages, the Gondwana and the Tertiary.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the geological age (Gondwana and Tertiary) as the reason for coal occurrence."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately identifies the two specific geological ages (Gondwana and Tertiary) associated with coal occurrence."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly identifies that coal occurs in rocks of two geological ages, the Gondwana and the Tertiary."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "The most important Tertiary coalfields, such as Jharia and Raniganj, lie in the Damodar valley.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student identifies Jharia and Raniganj as Tertiary coalfields, but the extract states they are the most important Gondwana coal fields.",
+        "fix": "The most important Gondwana coal fields, such as Jharia and Raniganj, lie in the Damodar valley.",
+        "fixNumber": 1,
+        "source": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Petroleum occurs in Tertiary sedimentary rocks in Assam, Gujarat and offshore Mumbai High, with newer finds in the Krishna-Godavari and Kaveri basins.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence illustrates the distribution of petroleum by naming specific sedimentary rock types and geographical regions."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It links the presence of petroleum specifically to Tertiary sedimentary rocks."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific locations and basins to illustrate the distribution of petroleum."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s12",
+      "text": "Digboi in Assam is a classic market-based refinery, whereas Barauni is field-based.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student swapped the types; the extract states Digboi is field-based and Barauni is market-based.",
+        "fix": "State that Digboi is a field-based refinery and Barauni is a market-based refinery.",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)"
+       },
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes refinery types rather than illustrating how geology shapes the distribution of resources.",
+        "fix": "Remove the sentence or replace it with a geological description of a specific oil field.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s14",
+      "text": "As minerals are exhaustible, India must pair exploration with recycling of scrap metals, use of substitutes and a steady shift towards renewable energy.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence acknowledges the limitation that minerals are exhaustible and suggests a shift towards renewable energy."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence correctly identifies the need to shift towards renewable energy as a way to manage exhaustible minerals."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting a shift towards renewable energy and recycling."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion to pair exploration with recycling and substitutes is a general statement that lacks specific actors or a defined timeline.",
+        "fix": "Specify which government bodies or industries should lead the recycling initiatives and set a target for the transition to renewables.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a clear explanation of the geological processes that formed these structures, such as plate tectonics or sedimentation, to fully 'explain' the shaping of resources.",
+      "fix": "Briefly mention the tectonic movements or sedimentary processes that created the Peninsular and Gondwana formations.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks clear thematic organization or subheadings to distinguish between different types of minerals or geological regions.",
+      "fix": "Organize the body into distinct paragraphs or bullet points for metallic minerals, non-metallic minerals, and energy resources.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly mention the economic impact or industrial development resulting from these geological distributions.",
+      "fix": "Add a sentence explaining how these geological distributions drive regional industrialization and economic growth.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the spatial distribution of non-ferrous metals.",
+      "fix": "Add a sentence describing the spatial distribution of non-ferrous metals.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s11",
+      "quote": "Petroleum occurs in Tertiary sedimentary rocks in Assam, Gujarat and offshore Mumbai High, with newer finds in the Krishna-Godavari and Kaveri basins.",
+      "reason": "This sentence illustrates the distribution of petroleum by naming specific sedimentary rock types and geographical regions."
+     },
+     {
+      "where": "Did what the question asks",
+      "sourceId": "s9",
+      "quote": "Coal occurs in rocks of two geological ages, the Gondwana and the Tertiary.",
+      "reason": "It explains the geological age (Gondwana and Tertiary) as the reason for coal occurrence."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully links specific minerals to geological formations and provides numerous examples. To improve, briefly mention the geological processes (like tectonic activity or deposition) that created these formations."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the geological drivers of resource distribution. The final sentence on recycling and renewables is slightly off-topic."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer effectively covers the geological and spatial distribution aspects. It could be strengthened by briefly mentioning the economic consequences of these distributions."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer does a good job of linking specific mineral types to their respective geological formations and ages."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer demonstrates a strong understanding of the geological links to mineral types. However, ensure the technical classification of specific refineries is accurate."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer provides good geographical examples for both metallic minerals and energy resources. To improve, you could include a specific statistic or a more detailed geological description for the alluvial plains."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately links geological formations to specific mineral types and ages. It could be improved by including the spatial distribution of non-ferrous metals as suggested by the background material."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully links geological formations to specific mineral types and industrial locations. To improve, you could more explicitly contrast the geological processes of the plains versus the plateaus."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the finite nature of mineral resources as a limit. However, it could be strengthened by mentioning the environmental costs of extraction."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The final sentence provides a good conceptual direction but lacks the specific 'who' and 'how' required for a workable policy suggestion."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear introduction and conclusion, but the body is a long list of facts rather than organized points."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality geological terminology throughout, which is excellent for this topic. Minor improvements in describing industrial infrastructure could sharpen the focus on geology."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word limit well by providing specific examples for different mineral types. However, the final sentence is irrelevant to the prompt's focus on geology."
+     }
+    ],
+    "stats": {
+     "words": 257,
+     "sentences": 14,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 56
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 61
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "The Aravali belt of Rajasthan is known for copper and zinc, besides building stones such as marble and sandstone."
+      },
+      {
+       "sourceId": "s8",
+       "text": "Bauxite is associated with laterite on the plateaus and hill ranges of the Peninsula, as in Kalahandi and Koraput."
+      },
+      {
+       "sourceId": "s13",
+       "text": "Thorium is obtained mainly from monazite in the beach sands of Kerala and Tamil Nadu, while uranium occurs in the Dharwar rocks of the Singhbhum copper belt."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.03
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Contemporary World Politics, Ch. 6 (Environment and Natural Resources)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Fundamentals of Human Geography, Ch. 8 (International Trade)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,720 @@
+{
+ "case": "hist-meiji-modernisation",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Japan was not wholly isolated before this": true
+ },
+ "seconds": 9056.7,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-meiji-modernisation"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-meiji-modernisation",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "good",
+    "levelLabel": "Good",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The use of the specific slogan 'fukoku kyohei' provides precise historical context for the state's objectives. To improve, you should first shorten the historical context to focus more on the specific reforms of the Meiji Restoration. You should also explain how the economic reforms provided a fiscal base for state-building and how the Meiji Constitution established a formal legal framework for the new state.",
+    "levelWhy": [
+     "It could do more of what the question's command word asks.",
+     "It leaves out an important angle of the issue.",
+     "Its points need specific examples, data or cases."
+    ],
+    "formatNote": null,
+    "question": "Discuss the reforms through which Meiji Japan built a modern nation-state. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The arrival of the American Commodore Perry in 1853 to demand trade unsettled Tokugawa rule, and in 1868 the Meiji Restoration removed the shogun and restored the emperor.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Japan was not wholly isolated before this, having access to wider knowledge through the Dutch and the Chinese.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Under the slogan fukoku kyohei (rich country, strong army), the new leaders sought to avoid being colonised like India.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "An emperor system made the emperor, revered as a descendant of the Sun Goddess, the symbol of the nation and of westernisation.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Schooling became compulsory for boys and girls, with stress on loyalty and Japanese history.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "All young men over twenty had to do military service.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The economy was modernised through an agricultural tax, the Tokyo-Yokohama railway, modern banks and subsidies to firms like Mitsubishi.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The Meiji Constitution of 1889 created a Diet with limited powers.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Victories over China and Russia displayed Japan's new strength.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Japan's state-led modernisation offers lessons for developing nations, though its slide into militarism shows the cost of weak democratic checks.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the reforms through which Meiji Japan built a modern nation-state",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have covered the key pillars of modernization including education, military service, and economic infrastructure. To improve, ensure the constitutional reforms are linked more clearly to the concept of a 'nation-state' structure.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s7"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Shorten the historical context to focus more on the specific reforms of the Meiji Restoration.",
+      "where": "Use of space",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The arrival of the American Commodore Perry in 1853 to demand trade unsettled Tokugawa rule, and in 1868 the Meiji Restoration removed the shogun and restored the emperor."
+      },
+      "why": "The opening sentence about the arrival of Commodore Perry provides historical context but does not directly describe the reforms.",
+      "tryWriting": "The Meiji Restoration removed the shogun and established a centralized government under the emperor to modernize the nation.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Explain how these economic reforms provided the fiscal base for state-building.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The economy was modernised through an agricultural tax, the Tokyo-Yokohama railway, modern banks and subsidies to firms like Mitsubishi."
+      },
+      "why": "The sentence lists economic changes but does not explicitly explain how these specific actions led to the formation of a modern nation-state.",
+      "tryWriting": "The economy was modernised through an agricultural tax and modern banks, providing the fiscal infrastructure necessary to fund a centralized nation-state.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how the Meiji Constitution established a formal legal framework for the new state.",
+      "where": "The question",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The Meiji Constitution of 1889 created a Diet with limited powers."
+      },
+      "why": "The mention of the Diet is good, but it should emphasize how the constitution established a formal legal framework for the state.",
+      "tryWriting": "The Meiji Constitution of 1889 provided a formal legal framework, establishing a Diet to institutionalize the nation-state's governance.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The arrival of the American Commodore Perry in 1853 to demand trade unsettled Tokugawa rule, and in 1868 the Meiji Restoration removed the shogun and restored the emperor.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the role of Commodore Perry and the 1868 Meiji Restoration in ending Tokugawa rule."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that Commodore Perry arrived in 1853 to demand a treaty for trade and diplomatic relations, and that a movement in 1868 forcibly removed the shogun from power."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the historical context of the Meiji Restoration and the end of Tokugawa rule."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The opening sentence about the arrival of Commodore Perry provides historical context but does not directly describe the reforms.",
+        "fix": "Shorten the historical context to focus more on the specific reforms of the Meiji Restoration.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Japan was not wholly isolated before this, having access to wider knowledge through the Dutch and the Chinese.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies that Japan had access to wider knowledge through the Dutch and the Chinese."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of Dutch and Chinese knowledge is a minor detail that does not contribute to the discussion of nation-building reforms.",
+        "fix": "Remove this sentence to save space for more details on industrial or social reforms.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Under the slogan fukoku kyohei (rich country, strong army), the new leaders sought to avoid being colonised like India.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "This matches the text of the Constitution."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It establishes the causal motivation (fukoku kyohei) for the subsequent reforms to avoid colonization."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of the specific slogan 'fukoku kyohei' provides precise historical context for the state's objectives."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "An emperor system made the emperor, revered as a descendant of the Sun Goddess, the symbol of the nation and of westernisation.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It explains how the emperor system functioned as a symbol of both national identity and westernisation."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'symbol of the nation and of westernisation' is slightly vague as it conflates the emperor's role with the process of modernization.",
+        "fix": "describe the emperor as the unifying symbol of national identity and the catalyst for modernization.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Schooling became compulsory for boys and girls, with stress on loyalty and Japanese history.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the implementation of compulsory schooling as a reform to build a nation-state."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "The sentence describes the implementation of compulsory schooling to build national identity."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the social and educational dimension of nation-building through compulsory schooling."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the content of schooling but does not specify the administrative body or the timeframe for the compulsory education reform.",
+        "fix": "Specify that the Meiji government implemented compulsory schooling for boys and girls.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "All young men over twenty had to do military service.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the action but does not explicitly state that this was a state-mandated reform to build the nation-state.",
+        "fix": "Specify that the state mandated universal military service for all young men over twenty.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The economy was modernised through an agricultural tax, the Tokyo-Yokohama railway, modern banks and subsidies to firms like Mitsubishi.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence details specific economic reforms like the agricultural tax and railway development to modernize the nation."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the specific economic reforms like the agricultural tax and railway to show how modernization was achieved."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific examples of infrastructure and industrial entities like the Tokyo-Yokohama railway and Mitsubishi to support the claim of economic modernization."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence lists economic changes but does not explicitly explain how these specific actions led to the formation of a modern nation-state.",
+        "fix": "Explain how these economic reforms provided the fiscal base for state-building.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Meiji Constitution of 1889 created a Diet with limited powers.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It discusses the political reform of creating a constitution and a Diet to establish a nation-state structure."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the political and legal dimension by mentioning the creation of a constitution and a legislature."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly identifies the creation of a Diet with limited powers as a specific constitutional reform."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the Diet is good, but it should emphasize how the constitution established a formal legal framework for the state.",
+        "fix": "Explain how the Meiji Constitution established a formal legal framework for the new state.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Japan's state-led modernisation offers lessons for developing nations, though its slide into militarism shows the cost of weak democratic checks.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence correctly identifies the cost of modernization by mentioning the slide into militarism."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a balanced, forward-looking conclusion by discussing lessons and costs."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions 'lessons for developing nations' but does not specify what those lessons are or how a nation should act.",
+        "fix": "Specify a concrete policy or strategy that a developing nation could adopt based on the Meiji model.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer lacks a specific discussion on the administrative reforms or the restructuring of the feudal land system to centralize power.",
+      "fix": "Add a point about the abolition of the feudal system and the centralization of administrative authority.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention the role of Chinese intellectuals like Liang Qichao or Kume Kunitake in the context of modernization.",
+      "fix": "Mention the influence of Chinese intellectuals on modernization.",
+      "fixNumber": null,
+      "source": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the social costs or the specific groups, such as the peasantry, who bore the burden of the agricultural tax.",
+      "fix": "Mention the heavy burden placed on the rural population to fund industrialization.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the different types of reforms (social, economic, political).",
+      "fix": "Use subheadings or clear transition words to distinguish between educational, economic, and political reforms.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Clear wording",
+      "sourceId": "s3",
+      "quote": "Under the slogan fukoku kyohei (rich country, strong army), the new leaders sought to avoid being colonised like India.",
+      "reason": "The use of the specific slogan 'fukoku kyohei' provides precise historical context for the state's objectives."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive list of reforms but lacks a balanced discussion of the challenges or internal conflicts faced during this transition."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt by covering educational, military, economic, and constitutional reforms."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers political, social, and economic dimensions well. However, it could be strengthened by explicitly mentioning the administrative overhaul of the feudal structure."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies key pillars of the reforms including education, military, and infrastructure. However, it relies on an external historical comparison that is not grounded in the provided text."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core historical facts regarding the restoration, the constitution, and the slogan are well-presented. However, avoid using specific modern comparisons or naming specific corporations unless you have verified the source."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific examples for infrastructure and governance. However, the comparison to a specific colony is an unsupported historical claim."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer provides a good overview of the reforms but misses the specific intellectual influences mentioned in the background material."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies several key reforms but could more clearly link the economic and social changes to the specific outcome of nation-building."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully identified the long-term political cost of the reforms. To improve, you could briefly mention the social sacrifices made by the common people to achieve these goals."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a historical overview but lacks a specific, workable suggestion for modern application."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear historical introduction, a multi-dimensional body, and a reflective conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses specific historical terminology like 'fukoku kyohei' and 'Diet' effectively to ground the discussion."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is slightly over the word limit. You should remove the historical context and minor details to focus more on the specific reforms."
+     }
+    ],
+    "stats": {
+     "words": 170,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 44
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s9",
+       "text": "Victories over China and Russia displayed Japan's new strength."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.13
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Themes in World History, Ch. 7 (Paths to Modernisation)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 1,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It could do more of what the question's command word asks.",
+      "It leaves out an important angle of the issue.",
+      "Its points need specific examples, data or cases."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

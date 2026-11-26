@@ -1,0 +1,648 @@
+{
+ "case": "eco-budget-deficits",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: Revenue deficit is the excess of revenue receipts over revenue expenditure": false,
+  "cited: Revenue deficit is the excess of revenue receipts over revenue expenditure": false,
+  "caught: Primary deficit is the fiscal deficit minus capital expenditure": false,
+  "cited: Primary deficit is the fiscal deficit minus capital expenditure": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 7947.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-budget-deficits"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-budget-deficits",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 1 and Part 2 need the most work.",
+    "summary": "You correctly identified how capital expenditure creates assets and how a high revenue deficit share indicates consumption-based borrowing. However, both parts of the answer need significant work due to incorrect definitions of revenue, fiscal, and primary deficits. You should first rewrite these definitions to accurately reflect the relationship between expenditure, receipts, and interest payments.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check)."
+    ],
+    "formatNote": null,
+    "question": "Distinguish between revenue deficit, fiscal deficit and primary deficit. Why is the composition of the fiscal deficit as important as its size? (Answer in 150 words)",
+    "directives": [],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Budget deficits show how far government spending exceeds its receipts and what the gap finances.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Revenue deficit is the excess of revenue receipts over revenue expenditure.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "A revenue deficit means the government is dissaving and borrowing to meet part of its consumption expenditure.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Fiscal deficit is the excess of total expenditure over total receipts excluding borrowings, and it shows the government's total borrowing requirement from all sources.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Primary deficit is the fiscal deficit minus capital expenditure, so it reflects only the borrowing needed for creating new assets.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Composition matters because borrowing for capital expenditure creates assets that raise future growth and help service debt.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "When borrowing funds salaries, subsidies and interest, debt and interest liabilities build up without matching assets.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Hence a large share of revenue deficit in the fiscal deficit signals that loans are financing consumption rather than investment.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Fiscal consolidation under the FRBM framework should therefore aim not only at a smaller deficit but at a higher share of capital outlay within it.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "Distinguish between revenue deficit, fiscal deficit and primary deficit",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have correctly identified the revenue and fiscal deficits. However, the definition of primary deficit is technically incorrect based on standard economic principles.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s4"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Why is the composition of the fiscal deficit as important as its size?",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the importance of capital outlay for growth. However, your definition of primary deficit is incorrect as it excludes capital expenditure instead of interest payments.",
+      "checkedTwice": false,
+      "sentences": [
+       "s6",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Rewrite the sentence to state that revenue deficit is the excess of revenue expenditure over revenue receipts.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "Revenue deficit is the excess of revenue receipts over revenue expenditure."
+      },
+      "why": "The sentence states revenue deficit is the excess of revenue receipts over revenue expenditure, but it is actually the excess of revenue expenditure over revenue receipts.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Redefine primary deficit as the fiscal deficit minus interest payments to focus on current fiscal imbalances.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "A revenue deficit means the government is dissaving and borrowing to meet part of its consumption expenditure."
+      },
+      "why": "The sentence incorrectly defines primary deficit by stating it reflects borrowing for new assets; the source indicates primary deficit is fiscal deficit minus interest payments.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "sourceRef": "r2",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Define fiscal deficit as the difference between total expenditure and total receipts excluding borrowings to show the total borrowing requirement.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Fiscal deficit is the excess of total expenditure over total receipts excluding borrowings, and it shows the government's total borrowing requirement from all sources."
+      },
+      "why": "The sentence states that fiscal deficit is the excess of expenditure over receipts excluding borrowings, but the definition of fiscal deficit is actually the total borrowing requirement, which includes the borrowing itself as a source of financing.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Budget deficits show how far government spending exceeds its receipts and what the gap finances.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of budget deficits to set the context before the specific distinctions."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Revenue deficit is the excess of revenue receipts over revenue expenditure.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly defines revenue deficit as the excess of revenue receipts over revenue expenditure."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states revenue deficit is the excess of revenue receipts over revenue expenditure, but it is actually the excess of revenue expenditure over revenue receipts.",
+        "fix": "Rewrite the sentence to state that revenue deficit is the excess of revenue expenditure over revenue receipts.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "A revenue deficit means the government is dissaving and borrowing to meet part of its consumption expenditure.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies that a revenue deficit involves dissaving and borrowing to fund consumption expenditure."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence incorrectly defines primary deficit by stating it reflects borrowing for new assets; the source indicates primary deficit is fiscal deficit minus interest payments.",
+        "fix": "Redefine primary deficit as the fiscal deficit minus interest payments to focus on current fiscal imbalances.",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Fiscal deficit is the excess of total expenditure over total receipts excluding borrowings, and it shows the government's total borrowing requirement from all sources.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Accurately describes fiscal deficit as the total borrowing requirement by excluding non-debt creating receipts."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence correctly uses the precise term 'borrowing requirement' to define fiscal deficit."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that fiscal deficit is the excess of expenditure over receipts excluding borrowings, but the definition of fiscal deficit is actually the total borrowing requirement, which includes the borrowing itself as a source of financing.",
+        "fix": "Define fiscal deficit as the difference between total expenditure and total receipts excluding borrowings to show the total borrowing requirement.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Primary deficit is the fiscal deficit minus capital expenditure, so it reflects only the borrowing needed for creating new assets.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states primary deficit is fiscal deficit minus capital expenditure, but it should be fiscal deficit minus interest payments.",
+        "fix": "Rewrite the definition to state that primary deficit is the fiscal deficit minus interest payments.",
+        "fixNumber": null,
+        "source": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Composition matters because borrowing for capital expenditure creates assets that raise future growth and help service debt.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly explains that capital expenditure creates assets to raise future growth and service debt."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'why' by linking capital expenditure to future growth and debt servicing."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It addresses the economic dimension by explaining how capital expenditure creates assets for future growth."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Hence a large share of revenue deficit in the fiscal deficit signals that loans are financing consumption rather than investment.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies that a high share of revenue deficit indicates borrowing for consumption rather than investment."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the significance of composition by contrasting consumption-led borrowing with investment."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It establishes a clear causal link between a high revenue deficit share and the financing of consumption over investment."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Fiscal consolidation under the FRBM framework should therefore aim not only at a smaller deficit but at a higher share of capital outlay within it.",
+      "credit": [
+       {
+        "where": "Covered the key angles",
+        "reason": "It addresses the administrative/policy dimension by mentioning the FRBM framework for fiscal consolidation."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies that fiscal consolidation should aim for a higher share of capital outlay within the deficit."
+       },
+       {
+        "where": "Suggestions are workable",
+        "reason": "The sentence identifies a specific framework (FRBM) and a clear goal of increasing the share of capital outlay."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of the FRBM framework is a good conceptual link but lacks specific targets or data to strengthen the argument.",
+        "fix": "Mention a specific target or a recent observation regarding the share of capital outlay.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific data, reports, or committee findings to support the claims about fiscal composition.",
+      "fix": "Include a reference to a specific fiscal framework or a report that discusses the ideal composition of the fiscal deficit.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly address the political or federal dimensions of deficit management.",
+      "fix": "Mention the political implications of deficit spending on public debt sustainability.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the potential risks or costs of high borrowing, such as the burden of debt servicing on future generations or the risk of inflation.",
+      "fix": "Mention the risk of high debt-servicing costs on future budgets.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer exceeds the 150-word limit, which suggests a need to trim redundant phrasing.",
+      "fix": "Combine the definitions of revenue and fiscal deficits to save space.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s6",
+      "quote": "Composition matters because borrowing for capital expenditure creates assets that raise future growth and help service debt.",
+      "reason": "This sentence correctly explains that capital expenditure creates assets to raise future growth and service debt."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s8",
+      "quote": "Hence a large share of revenue deficit in the fiscal deficit signals that loans are financing consumption rather than investment.",
+      "reason": "This sentence correctly identifies that a high share of revenue deficit indicates borrowing for consumption rather than investment."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer explains the importance of composition well, but the definition of primary deficit is technically incorrect based on the provided source."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic and addresses both parts of the question. However, the definition of primary deficit is technically incorrect based on the provided source."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the economic and administrative dimensions well. It could be strengthened by briefly mentioning the political implications of high debt."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The definitions for revenue and fiscal deficits are accurate. However, the definition of primary deficit is incorrect as it confuses capital expenditure with interest payments."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The definition of primary deficit is incorrect; it is not about capital expenditure but about excluding interest payments. You should check the specific formula for primary deficit in your source materials."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good conceptual explanation but lacks the empirical evidence or specific institutional references required for a high-scoring UPSC answer."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the implications of the deficit composition, but you have a fundamental error in the definition of primary deficit."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The reasoning for why composition matters is strong, but the definition of primary deficit is factually incorrect, which breaks the logic of the distinction."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses well on the benefits of capital expenditure but lacks a discussion on the costs or risks associated with high fiscal deficits."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The suggestion is relevant and identifies the correct framework, but it remains a bit general in its implementation."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The structure is well-organized with a clear introduction and conclusion. However, the definition of primary deficit is factually incorrect based on standard economic principles."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses strong economic terminology like 'fiscal consolidation' and 'dissaving'. However, the definition of primary deficit is technically incorrect based on the provided source."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer is slightly over the word limit. You must correct the definition of primary deficit as it is a fundamental error."
+     }
+    ],
+    "stats": {
+     "words": 165,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 55
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 57
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "When borrowing funds salaries, subsidies and interest, debt and interest liabilities build up without matching assets."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 18 (Public Finance in India), Introduction",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Fundamentals of Human Geography, Ch. 4 (Primary Activities)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 1,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

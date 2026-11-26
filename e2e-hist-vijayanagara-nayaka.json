@@ -1,0 +1,722 @@
+{
+ "case": "hist-vijayanagara-nayaka",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: belonged to the Sangama dynasty": true,
+  "cited: belonged to the Sangama dynasty": true,
+  "caught: a work on statecraft, in Kannada": true,
+  "cited: a work on statecraft, in Kannada": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Rakshasi-Tangadi (Talikota)": true
+ },
+ "seconds": 10480.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-vijayanagara-nayaka"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-vijayanagara-nayaka",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 2 is answered. Part 1 needs the most work.",
+    "summary": "The answer successfully identifies the ruling dynasties and explains the role of amara-nayakas as military commanders who collected taxes. However, Part 1 needs significant work because the dynasty of Krishnadeva Raya is incorrect and the comparison to the Delhi Sultanate is unsupported. You should first correct the dynasty name to Tuluva and remove the iqta system comparison.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the political organisation of the Vijayanagara Empire with special reference to the amara-nayaka system. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Founded by the brothers Harihara and Bukka in the fourteenth century, Vijayanagara grew into an empire stretching from the river Krishna to the extreme south of the peninsula.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its rulers, called rayas, came from four successive dynasties: the Sangama, Saluva, Tuluva and Aravidu.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Krishnadeva Raya, its most famous ruler, belonged to the Sangama dynasty.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "He also wrote the Amuktamalyada, a work on statecraft, in Kannada.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "The amara-nayaka system, probably derived from the iqta system of the Delhi Sultanate, was a major political innovation.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "Amara-nayakas were military commanders who governed territories granted by the raya and collected taxes from peasants, craftspersons and traders.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "They kept part of the revenue to maintain horses and elephants for the king and sent him tribute every year.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Kings occasionally controlled them by transfers, yet many nayakas rebelled and later became independent.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Rivalry with the Deccan Sultanates ended in defeat at Rakshasi-Tangadi (Talikota) in 1565, after which the capital was sacked.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Vijayanagara shows how delegated military power can both strengthen and weaken a state.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the political organisation of the Vijayanagara Empire",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have provided a good historical overview of the dynasties and geography. However, you need to describe the broader administrative framework of the empire to fully address political organisation.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s2"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "with special reference to the amara-nayaka system",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer provides a good overview of the amara-nayaka system's structure and its role in revenue collection. To improve, you could more clearly link how this system specifically shaped the empire's political hierarchy.",
+      "checkedTwice": false,
+      "sentences": [
+       "s5",
+       "s6"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Change the dynasty name to Tuluva.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "Krishnadeva Raya, its most famous ruler, belonged to the Sangama dynasty."
+      },
+      "why": "The student states he belonged to the Sangama dynasty, but the extract says he belonged to the Tuluva dynasty.",
+      "tryWriting": "Krishnadeva Raya, its most famous ruler, belonged to the Tuluva dynasty.",
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "sourceRef": "r7",
+      "evidence": {
+       "wrongWords": "Sangama dynasty",
+       "sourceWords": "Krishnadeva Raya belonged to the Tuluva dynasty."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara).",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "He also wrote the Amuktamalyada, a work on statecraft, in Kannada."
+      },
+      "why": "This does not match NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara).",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "sourceRef": "r12",
+      "evidence": {
+       "wrongWords": "in Kannada",
+       "sourceWords": "composed a work on statecraft in Telugu known as the Amuktamalyada"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Remove the specific comparison to the Delhi Sultanate unless you can cite a specific historical source for this link.",
+      "where": "Examples and evidence",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "The amara-nayaka system, probably derived from the iqta system of the Delhi Sultanate, was a major political innovation."
+      },
+      "why": "The claim that the system was derived from the iqta system of the Delhi Sultanate is not supported by the provided materials.",
+      "tryWriting": "The amara-nayaka system functioned as a political innovation likely modeled after the iqta system of the Delhi Sultanate.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Founded by the brothers Harihara and Bukka in the fourteenth century, Vijayanagara grew into an empire stretching from the river Krishna to the extreme south of the peninsula.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It establishes the geographical extent and the founding of the empire, providing the necessary context for its political structure."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the founding century and the geographical extent of the empire as described in the textbook."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides historical context by mentioning the founding and geographical extent of the empire."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Did what the question asks",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the geography and founding but does not discuss the political structure or administrative hierarchy.",
+        "fix": "Add a sentence describing the administrative hierarchy or the role of the raya in governing the empire.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Its rulers, called rayas, came from four successive dynasties: the Sangama, Saluva, Tuluva and Aravidu.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It identifies the specific dynasties that ruled the empire, which is a key component of its political history."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the four successive dynasties of the empire."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific names of the four successive dynasties to support the description of the empire's rulers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Krishnadeva Raya, its most famous ruler, belonged to the Sangama dynasty.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence identifies a specific famous ruler and his dynasty to ground the political history."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student states he belonged to the Sangama dynasty, but the extract says he belonged to the Tuluva dynasty.",
+        "fix": "Change the dynasty name to Tuluva.",
+        "fixNumber": 1,
+        "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)"
+       },
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states Krishnadeva Raya belonged to the Sangama dynasty, but the text suggests he was a famous ruler without specifying his dynasty's name correctly in relation to the others.",
+        "fix": "Verify the specific dynasty of Krishnadeva Raya in your notes.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "He also wrote the Amuktamalyada, a work on statecraft, in Kannada.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "This does not match NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara).",
+        "fix": "Correct this sentence using NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara).",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)"
+       },
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "Mentioning the literary work Amuktamalyada does not directly explain the political organisation of the empire.",
+        "fix": "Replace this with a sentence about the administrative structure or the role of the raya.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "The amara-nayaka system, probably derived from the iqta system of the Delhi Sultanate, was a major political innovation.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It correctly identifies the amara-nayaka system as a major political innovation and suggests its historical origin."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the system as a major political innovation and notes its likely derivation from the iqta system."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of the term 'political innovation' accurately describes the structural change introduced by the system."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that the system was derived from the iqta system of the Delhi Sultanate is not supported by the provided materials.",
+        "fix": "Remove the specific comparison to the Delhi Sultanate unless you can cite a specific historical source for this link.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Amara-nayakas were military commanders who governed territories granted by the raya and collected taxes from peasants, craftspersons and traders.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It explains the role of amara-nayakas as military commanders who governed territories and collected taxes."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence explains the role of amara-nayakas in governing territories and collecting taxes."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence explains the administrative and fiscal duties of the amara-nayakas, covering the administrative dimension."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Kings occasionally controlled them by transfers, yet many nayakas rebelled and later became independent.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a balanced view by mentioning both the king's control and the rebels' independence."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the political dynamics of power and rebellion, covering the political dimension."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It connects the king's method of control to the eventual outcome of rebellion and independence."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions rebellion but does not specify the scale or the specific consequences for the empire's stability.",
+        "fix": "Explain how frequent rebellions by nayakas challenged the central authority of the raya.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Rivalry with the Deccan Sultanates ended in defeat at Rakshasi-Tangadi (Talikota) in 1565, after which the capital was sacked.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Structure",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the defeat at Rakshasi-Tangadi as the end of the empire, but the question asks to discuss political organisation.",
+        "fix": "Replace the specific battle details with a sentence on the structural impact of the empire's political decay.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s10",
+      "text": "Vijayanagara shows how delegated military power can both strengthen and weaken a state.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It offers a concluding judgment on how the system both strengthened and weakened the state."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It acknowledges the dual nature of the system by stating it could both strengthen and weaken the state."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a balanced concluding judgment on the impact of delegated military power."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "the political organisation of the Vijayanagara Empire",
+      "reason": "The answer lacks a description of the central administrative structure or the relationship between the king and the local administration beyond the nayaka system.",
+      "fix": "Add a sentence describing the central authority of the raya and the administrative divisions of the empire.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention that these chiefs often moved from one area to another or were accompanied by peasants seeking fertile land.",
+      "fix": "Add a point about the mobility of the nayakas and the migration of peasants with them.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)"
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not mention the social structure or the specific linguistic/cultural identities of the nayakas.",
+      "fix": "Mention that the nayakas often spoke Telugu or Kannada.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the specific impact on the peasants or craftspersons who were the subjects of the tax collection.",
+      "fix": "Mention the impact of tax collection on the local population.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Its rulers, called rayas, came from four successive dynasties: the Sangama, Saluva, Tuluva and Aravidu.",
+      "reason": "It identifies the specific dynasties that ruled the empire, which is a key component of its political history."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s6",
+      "quote": "Amara-nayakas were military commanders who governed territories granted by the raya and collected taxes from peasants, craftspersons and traders.",
+      "reason": "It explains the role of amara-nayakas as military commanders who governed territories and collected taxes."
+     },
+     {
+      "where": "Did what the question asks",
+      "sourceId": "s10",
+      "quote": "Vijayanagara shows how delegated military power can both strengthen and weaken a state.",
+      "reason": "It offers a concluding judgment on how the system both strengthened and weakened the state."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully moves beyond simple description by discussing the dual nature of the amara-nayaka system as both a tool for expansion and a source of instability."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays on topic by focusing on the administrative and military roles of the nayakas. However, some sentences about literature and specific battles are less relevant to the core question of political organisation."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the political and administrative aspects well. Adding the cultural or linguistic identity of the nayakas would provide a more complete picture."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concept of the amara-nayaka system is well-explained in terms of its administrative and military functions. However, ensure the dynastic affiliations of specific rulers are accurate."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The dynastic sequence and the identification of the amara-nayaka system are accurate. However, there is a factual error regarding which dynasty Krishnadeva Raya belonged to."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses specific dynasty names and a famous ruler to provide historical context. However, the claim regarding the origin of the amara-nayaka system lacks supporting evidence from the provided materials."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the administrative and rebellious nature of the nayakas. It could be improved by including the migratory nature of these chiefs and their followers."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully links the administrative duties of the nayakas to the political stability and eventual fragmentation of the empire."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies the political risks and the inherent instability of the amara-nayaka system."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-defined with a clear introduction and a concluding judgment. However, the body includes a specific historical event at the end that feels like a chronological fact rather than a discussion of political organisation."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses appropriate historical terminology like 'rayas' and 'amara-nayaka'. However, there is a factual error regarding the dynasty of a key ruler."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses the word count well but includes some historical narrative that does not directly address the political structure or the amara-nayaka system."
+     }
+    ],
+    "stats": {
+     "words": 168,
+     "sentences": 10,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 43
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 51
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "They kept part of the revenue to maintain horses and elephants for the king and sent him tribute every year."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.12
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 2 (Northern India: Age of the Three Empires (800–1000)), Political Ideas and Organisation",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It has 3 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

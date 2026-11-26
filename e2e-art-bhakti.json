@@ -1,0 +1,691 @@
+{
+ "case": "art-bhakti",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": false,
+  "trap not red: spent his later years at Puri": false,
+  "trap not red: active roughly between the sixth and ninth centuries": true
+ },
+ "seconds": 8187.0,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-bhakti"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-bhakti",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "You successfully identified the movement's origins in the Tamil country and provided specific examples of saints and their diverse disciples. However, your answer contains a factual error regarding where Chaitanya spent his later years. You should first correct this location to Gaya and then strengthen your argument by linking the use of regional languages directly to the democratization of religious knowledge.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "The Bhakti movement reshaped the religious and social life of medieval India. Discuss with reference to its major saints. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Bhakti movement stressed loving devotion to a personal God as a path to salvation open to all, challenging ritualism and caste hierarchy.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It also gave a powerful impetus to regional languages.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "It first took popular form in the Tamil country, where the Shaiva Nayanars and Vaishnava Alvars, active roughly between the sixth and ninth centuries, sang in Tamil.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Ramanuja gave Vaishnava devotion a philosophical basis, and Ramananda, a follower of Ramanuja, carried it north, substituting the worship of Rama for Vishnu.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Ramananda enrolled disciples from all castes, traditionally including Kabir the weaver, Ravidas the cobbler, Sena the barber and Sadhana the butcher.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "In Maharashtra, Namadeva, a tailor by caste, composed devotional poetry in Marathi and is said to have held discussions with Sufi saints at Delhi.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Kabir, raised in a Muslim weaver's household, denounced idol worship, pilgrimages and caste, and called God by names such as Rama, Hari and Allah.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Guru Nanak, born at Talwandi in 1469, preached devotion to one God, purity of conduct and a householder's middle path, singing hymns to Mardana's rabab.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Chaitanya popularised ecstatic kirtan in Bengal and Odisha and spent his later years at Puri.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "Saint-poets such as Meera in Rajasthan, Surdas in western Uttar Pradesh and Narsinha Mehta in Gujarat enriched regional languages with Krishna bhakti.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "Though it could not break the caste system, the movement softened its rigour, built a common platform with the Sufis and shaped composite culture, a legacy that still inspires social harmony.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "The Bhakti movement reshaped the religious and social life of medieval India.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer effectively covers both the religious shift toward personal devotion and the social impact on the caste system.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s11"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "with reference to its major saints.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies a wide range of major saints from different regions and backgrounds. It provides good specific details about their individual contributions.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "spent much of his time at Gaya",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s9",
+       "text": "Chaitanya popularised ecstatic kirtan in Bengal and Odisha and spent his later years at Puri."
+      },
+      "why": "The student claims he spent his later years at Puri, but the extract states that most of his time was spent at Gaya.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "sourceRef": "r28",
+      "evidence": {
+       "wrongWords": "spent his later years at Puri",
+       "sourceWords": "most of his time was spent at Gaya"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Mention a specific saint's action that directly challenged a caste-based restriction.",
+      "where": "Examples and evidence",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "The Bhakti movement stressed loving devotion to a personal God as a path to salvation open to all, challenging ritualism and caste hierarchy."
+      },
+      "why": "The claim that it challenged 'caste hierarchy' is a broad statement that would be stronger if supported by a specific instance of a saint's action.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Connect the use of regional languages to the democratization of religious knowledge.",
+      "where": "Stayed on topic",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "It also gave a powerful impetus to regional languages."
+      },
+      "why": "While regional languages are important, the sentence does not explicitly link this to the reshaping of religious or social life.",
+      "tryWriting": "It also democratized religious knowledge by giving a powerful impetus to regional languages.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Bhakti movement stressed loving devotion to a personal God as a path to salvation open to all, challenging ritualism and caste hierarchy.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence correctly identifies the core religious shift by highlighting the move toward personal devotion and the challenge to ritualism and caste."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence establishes the core theme of the movement by explaining how it challenged ritualism and caste hierarchy."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses how the movement reshaped religious life by challenging ritualism and caste hierarchy."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that it challenged 'caste hierarchy' is a broad statement that would be stronger if supported by a specific instance of a saint's action.",
+        "fix": "Mention a specific saint's action that directly challenged a caste-based restriction.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It also gave a powerful impetus to regional languages.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While regional languages are important, the sentence does not explicitly link this to the reshaping of religious or social life.",
+        "fix": "Connect the use of regional languages to the democratization of religious knowledge.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s3",
+      "text": "It first took popular form in the Tamil country, where the Shaiva Nayanars and Vaishnava Alvars, active roughly between the sixth and ninth centuries, sang in Tamil.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the early origins of the movement in the Tamil country with the Nayanars and Alvars."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Ramanuja gave Vaishnava devotion a philosophical basis, and Ramananda, a follower of Ramanuja, carried it north, substituting the worship of Rama for Vishnu.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence identifies Ramanuja and Ramananda as major saints and explains their specific contributions to the movement's philosophy and geography."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies Ramananda as a follower of Ramanuja who carried the movement north and substituted the worship of Rama for Vishnu."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that Ramananda substituted the worship of Rama for Vishnu is not supported by the provided materials.",
+        "fix": "Check the specific theological shift attributed to Ramananda.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Ramananda enrolled disciples from all castes, traditionally including Kabir the weaver, Ravidas the cobbler, Sena the barber and Sadhana the butcher.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific examples of disciples from different castes like a weaver, cobbler, and barber to support the claim of social inclusivity."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "In Maharashtra, Namadeva, a tailor by caste, composed devotional poetry in Marathi and is said to have held discussions with Sufi saints at Delhi.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "It provides a specific example of a saint from a specific caste who composed poetry in a regional language."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Guru Nanak, born at Talwandi in 1469, preached devotion to one God, purity of conduct and a householder's middle path, singing hymns to Mardana's rabab.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence provides specific details about Guru Nanak, including his birthplace, teachings, and musical practices."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The phrase 'householder's middle path' precisely describes the specific lifestyle and spiritual stance advocated by Guru Nanak."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Chaitanya popularised ecstatic kirtan in Bengal and Odisha and spent his later years at Puri.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims he spent his later years at Puri, but the extract states that most of his time was spent at Gaya.",
+        "fix": "spent much of his time at Gaya",
+        "fixNumber": 1,
+        "source": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Though it could not break the caste system, the movement softened its rigour, built a common platform with the Sufis and shaped composite culture, a legacy that still inspires social harmony.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence explains the social impact by mentioning the softening of caste rigour and the creation of a composite culture."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence provides a balanced conclusion by acknowledging the limitations of the movement while highlighting its role in creating a composite culture."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the nuanced impact of the movement by noting it softened the rigour of the caste system and fostered a composite culture."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'softened its rigour' is somewhat vague regarding the specific social changes.",
+        "fix": "Replace with 'challenged the exclusivity of the caste system'",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "The Bhakti movement reshaped the religious and social life of medieval India.",
+      "reason": "The answer could more explicitly state how the movement specifically 'reshaped' the social structure beyond just 'softening' it.",
+      "fix": "Add a phrase describing the democratization of spiritual access.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer is largely descriptive of the saints' lives and lacks a deeper discussion on the specific mechanisms of how they reshaped social life beyond the introductory and concluding remarks.",
+      "fix": "Add a sentence explaining how the use of regional languages and public kirtans specifically democratized religious knowledge for the masses.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer lacks a specific explanation of how the saints' actions directly led to the reshaping of social life beyond the general mention of softening caste rigour.",
+      "fix": "Explain how the inclusion of diverse disciples by specific saints directly broke social barriers.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the economic impact or the shift in patronage systems during the medieval period.",
+      "fix": "Add a brief mention of how the movement shifted religious focus from expensive rituals to personal devotion.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Concepts explained",
+      "reason": "The answer does not explicitly explain the concept of 'cultural synthesis' or the specific shift from extreme austerity to theistic devotion mentioned in the background.",
+      "fix": "Briefly mention the shift from extreme austerity to theistic devotion as a key conceptual shift.",
+      "fixNumber": null,
+      "source": "Satish Chandra, History of Medieval India, Ch. 4 (Economic and Social Life, Education and Religious Beliefs (800–1200)), Religious Movements and Beliefs"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 2",
+      "sourceId": "s8",
+      "quote": "Guru Nanak, born at Talwandi in 1469, preached devotion to one God, purity of conduct and a householder's middle path, singing hymns to Mardana's rabab.",
+      "reason": "This sentence provides specific details about Guru Nanak, including his birthplace, teachings, and musical practices."
+     },
+     {
+      "where": "Facts are accurate",
+      "sourceId": "s3",
+      "quote": "It first took popular form in the Tamil country, where the Shaiva Nayanars and Vaishnava Alvars, active roughly between the sixth and ninth centuries, sang in Tamil.",
+      "reason": "Correctly identifies the early origins of the movement in the Tamil country with the Nayanars and Alvars."
+     },
+     {
+      "where": "Examples and evidence",
+      "sourceId": "s5",
+      "quote": "Ramananda enrolled disciples from all castes, traditionally including Kabir the weaver, Ravidas the cobbler, Sena the barber and Sadhana the butcher.",
+      "reason": "The sentence provides specific examples of disciples from different castes like a weaver, cobbler, and barber to support the claim of social inclusivity."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good overview of the saints and the movement's goals, but it leans towards a descriptive list rather than a deep discussion of the 'how' and 'why' of social reshaping."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains consistently focused on the social and religious transformations of the Bhakti movement."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the social and religious dimensions well. It could be further strengthened by mentioning the shift in patronage or economic aspects of religious life."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concepts of Bhakti and its social impact are well-explained. Adding a brief mention of the shift away from extreme austerity would provide more depth."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer provides strong specific details regarding the saints and regional developments. Ensure the specific theological transitions between Ramanuja and Ramananda are verified."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported by specific names of saints and their respective crafts or regions. To improve, ensure the initial claim about challenging hierarchy is linked more directly to the evidence provided later."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the core tenets and geographical origins of the Bhakti movement as described in the sources. It could be strengthened by mentioning the specific religious context of the time."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully links the movement's philosophy to its social outcomes. To improve, more explicitly connect the specific actions of the saints to the broader social transformation."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully acknowledges the limitations of the movement regarding the caste system. It could be improved by mentioning the counter-reaction of the priesthood."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear definition as an introduction and a reflective conclusion. To improve, ensure the transition between the general impact and the specific saints is smoother."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses strong, historically accurate terminology like 'ritualism' and 'householder's middle path'. Refining the description of social impact would make the conclusion sharper."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the space very effectively, covering a wide range of saints and regions while staying within the word limit. It avoids repetitive padding and balances the discussion between the movement's impact and its key figures."
+     }
+    ],
+    "stats": {
+     "words": 244,
+     "sentences": 11,
+     "paragraphs": 3,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 54
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 48
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s7",
+       "text": "Kabir, raised in a Muslim weaver's household, denounced idol worship, pilgrimages and caste, and called God by names such as Rama, Hari and Allah."
+      },
+      {
+       "sourceId": "s10",
+       "text": "Saint-poets such as Meera in Rajasthan, Surdas in western Uttar Pradesh and Narsinha Mehta in Gujarat enriched regional languages with Krishna bhakti."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 0.98
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 4 (Economic and Social Life, Education and Religious Beliefs (800–1200)), Religious Movements and Beliefs",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Bhakti Movement",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Bhakti Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 4 (Economic and Social Life, Education and Religious Beliefs (800–1200)), Religious Movements and Beliefs",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 4 (Economic and Social Life, Education and Religious Beliefs (800–1200)), Religious Movements and Beliefs",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Bhakti Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Bhakti Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Bhakti Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Vaishnavite Movement",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 4,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "Chaitanya popularised ecstatic kirtan in Bengal and Odisha and spent his later years at Puri."
+     ],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

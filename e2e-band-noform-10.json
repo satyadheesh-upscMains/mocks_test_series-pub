@@ -1,0 +1,598 @@
+{
+ "case": "band-noform-10",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": false,
+  "structure not rated good without an introduction and a conclusion": true
+ },
+ "seconds": 4904.5,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-noform-10"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-band-noform-10",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You successfully used the Kesavananda Bharati case to provide evidence regarding the judicial review of Article 31C. However, the answer is only partially complete as it fails to fully address the relationship between the two concepts. To improve, first clarify that Article 21A is distinct from Article 45, and ensure you mention that Directive Principles are fundamental to the governance of the country.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "It has no conclusion with a way forward.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the relationship between Fundamental Rights and Directive Principles of State Policy. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "In Champakam Dorairajan (1951) the Supreme Court held that the Directive Principles must yield to the Fundamental Rights.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The First Amendment then allowed special provisions for backward classes.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c).",
+      "para": 1
+     },
+     {
+      "id": "s6",
+      "text": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+      "para": 1
+     },
+     {
+      "id": "s7",
+      "text": "The right to education in Article 21A began as a Directive Principle in Article 45.",
+      "para": 1
+     },
+     {
+      "id": "s8",
+      "text": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the relationship between Fundamental Rights and Directive Principles of State Policy",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You have provided a good chronological history of the legal conflict. To improve, explicitly state the current consensus that they are complementary rather than contradictory.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s8"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The right to education in Article 21A is distinct from the provision for early childhood care and education for children below the age of six years in Article 45.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The right to education in Article 21A began as a Directive Principle in Article 45."
+      },
+      "why": "Article 45 provides for early childhood care and education for children below the age of six years, whereas Article 21A is the right to education for children aged six to fourteen years.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 45",
+      "sourceRef": "r4",
+      "evidence": {
+       "wrongWords": "The right to education in Article 21A began as a Directive Principle in Article 45",
+       "sourceWords": "Provision for early childhood care and education to children below the age of six years. The State shall endeavour to provide early childhood care and education for all children until they complete the age of six years."
+      }
+     },
+     {
+      "n": 2,
+      "title": "Clarify that Minerva Mills struck down the clause barring judicial review while upholding the harmony between rights and principles.",
+      "where": "Facts are accurate",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension."
+      },
+      "why": "The sentence states Minerva Mills struck down the extension of Article 31C to all Directive Principles, but the source indicates it struck down the clause barring judicial review.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Add that these principles are fundamental to the governance of the country.",
+      "where": "Examples and evidence",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court."
+      },
+      "why": "The sentence mentions Article 37 but does not explicitly state the constitutional status of the principles as fundamental to governance.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": "Constitution of India, Article 37",
+      "sourceRef": "r1",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Fundamental Rights in Part III can be enforced in courts, while Article 37 says the Directive Principles in Part IV cannot be enforced by any court.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It correctly identifies the legal distinction between the enforceability of Fundamental Rights and Directive Principles."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the non-enforceable nature of Directive Principles as stated in Article 37."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "Correctly identifies that Part III rights are enforceable while Part IV principles are not, citing Article 37."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions Article 37 but does not explicitly state the constitutional status of the principles as fundamental to governance.",
+        "fix": "Add that these principles are fundamental to the governance of the country.",
+        "fixNumber": 3,
+        "source": "Constitution of India, Article 37"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "In Champakam Dorairajan (1951) the Supreme Court held that the Directive Principles must yield to the Fundamental Rights.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student correctly cites the Champakam Dorairajan case to support the historical conflict between rights and principles."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies the initial judicial stance that Directive Principles must yield to Fundamental Rights."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'must yield to' is slightly informal; using 'prevailed over' or 'precedence' is more standard in legal analysis.",
+        "fix": "replace 'must yield to' with 'prevailed over'",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "In Golaknath (1967) the Court held that Parliament could not amend the Fundamental Rights.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the Golaknath case is relevant to the history of the relationship, the sentence does not explicitly link it to the interaction between rights and principles.",
+        "fix": "Explain how the Golaknath ruling restricted the government's ability to prioritize Directive Principles over Fundamental Rights.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student uses the Kesavananda Bharati case to provide evidence regarding the judicial review of Article 31C."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence correctly identifies the judicial limit by noting that the clause barring judicial review was struck down."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The right to education in Article 21A began as a Directive Principle in Article 45.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence provides a specific example of a Directive Principle being incorporated as a Fundamental Right."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the transition of the right to education from a Directive Principle to a Fundamental Right."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "Article 45 provides for early childhood care and education for children below the age of six years, whereas Article 21A is the right to education for children aged six to fourteen years.",
+        "fix": "The right to education in Article 21A is distinct from the provision for early childhood care and education for children below the age of six years in Article 45.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 45"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The Forty-second Amendment extended Article 31C to all the Directive Principles, and Minerva Mills (1980) struck down that extension.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It explains the judicial evolution regarding the balance and harmony between the two sets of principles."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It highlights the judicial resolution regarding the balance between rights and principles."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It highlights the judicial evolution toward a balanced relationship between the two sets of principles."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states Minerva Mills struck down the extension of Article 31C to all Directive Principles, but the source indicates it struck down the clause barring judicial review.",
+        "fix": "Clarify that Minerva Mills struck down the clause barring judicial review while upholding the harmony between rights and principles.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Structure",
+      "reason": "The answer lacks a conclusion that provides a balanced, forward-looking way ahead.",
+      "fix": "Add a concluding sentence about the harmony between rights and principles as a basic structure.",
+      "fixNumber": null,
+      "source": "Case: Minerva Mills v Union of India (1980)"
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Examples and evidence",
+      "sourceId": "s6",
+      "quote": "In Kesavananda Bharati (1973) the Court upheld the first part of Article 31C but struck down the clause that barred judicial review.",
+      "reason": "The student uses the Kesavananda Bharati case to provide evidence regarding the judicial review of Article 31C."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological history of the legal conflict but fails to provide a balanced conclusion on their current relationship."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains focused on the legal and constitutional evolution of the relationship between the two sets of principles."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological history of the legal conflict but misses the final synthesis of harmony between the two."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological history of the legal conflict but lacks a clear statement on the current principle of harmony between the two sets of provisions."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the legal status of both parts and the historical shift of the right to education. However, the description of the Minerva Mills case needs to be more precise regarding judicial review."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported by specific landmark court cases and constitutional amendments."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately traces the legal evolution and specific articles. It would be strengthened by explicitly mentioning the 'basic structure' doctrine regarding the harmony between these two parts."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good chronological history of the legal conflict but lacks a concluding statement on the current status of harmony between the two."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the legal evolution and specific amendments well, but it could be strengthened by explicitly mentioning the principle of harmony between the two sets of provisions."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a very detailed chronological history of the legal conflict but fails to provide a concluding summary or a forward-looking statement."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses appropriate legal terminology to describe the constitutional status of the two parts. Using more formal judicial language for the court's rulings would improve the professional tone."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is concise and avoids padding, but it misses a concluding synthesis on the current legal status of the relationship."
+     }
+    ],
+    "stats": {
+     "words": 140,
+     "sentences": 8,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 45
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s3",
+       "text": "The First Amendment then allowed special provisions for backward classes."
+      },
+      {
+       "sourceId": "s5",
+       "text": "The Twenty-fifth Amendment added Article 31C to protect laws giving effect to Article 39(b) and (c)."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.93
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 37",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 31C",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 21A",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 45",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 2 (Rights in the Indian Constitution)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Constitution at Work, Ch. 9 (Constitution as a Living Document)",
+      "used": false
+     },
+     {
+      "label": "Case: State of Madras v Champakam Dorairajan (1951)",
+      "used": false
+     },
+     {
+      "label": "Case: Minerva Mills v Union of India (1980)",
+      "used": true
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 8 (Directive Principles of State Policy), Conflict Between Fundamental Rights and Directive Principles",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 7 (Fundamental Rights), Exceptions to Fundamental Rights",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 3 (Politics of Planned Development)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 4 (India’s External Relations)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 6 (The Crisis of Democratic Order)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 4,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "The right to education in Article 21A began as a Directive Principle in Article 45."
+     ],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "It has no conclusion with a way forward.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

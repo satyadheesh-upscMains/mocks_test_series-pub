@@ -1,0 +1,807 @@
+{
+ "case": "eco-monetary-tools",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: When the RBI buys government securities in the open market, it withdraws liquidity": true,
+  "cited: When the RBI buys government securities in the open market, it withdraws liquidity": true,
+  "caught: The reverse repo rate is the rate at which banks borrow overnight from the RBI": true,
+  "cited: The reverse repo rate is the rate at which banks borrow overnight from the RBI": false,
+  "no red marks on correct sentences": false,
+  "trap not red: the Standing Deposit Facility, which absorbs surplus liquidity without requiring collateral": true
+ },
+ "seconds": 14295.9,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-monetary-tools"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-monetary-tools",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 3 serious problems cost you credit.",
+    "summary": "You correctly identified the shift toward flexible inflation targeting and the role of the Monetary Policy Committee. However, your answer contains three significant factual errors regarding the mechanics of the SLR, open market operations, and the reverse repo rate. You should first correct the description of open market operations to show that buying securities injects liquidity rather than withdrawing it.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the quantitative instruments of monetary policy available to the Reserve Bank of India. How has the monetary policy framework changed since 2016? (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Monetary policy is the RBI's management of money supply and interest rates to maintain price stability with growth.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Its quantitative instruments regulate the overall volume and cost of credit.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The Cash Reserve Ratio is the share of a bank's deposits kept with the RBI in cash; raising it shrinks lendable funds.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in liquid assets such as cash, gold and approved securities.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Open market operations are the RBI's purchases and sales of government securities in the market.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "When the RBI buys government securities in the open market, it withdraws liquidity from the banking system and reduces the money supply.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The repo rate is the rate at which the RBI lends short-term funds to banks against government securities, and it serves as the policy rate.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The reverse repo rate is the rate at which banks borrow overnight from the RBI when they face a liquidity shortage.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Since 2022, the Standing Deposit Facility, which absorbs surplus liquidity without requiring collateral, has replaced the fixed-rate reverse repo as the corridor's floor.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "The Marginal Standing Facility lets banks borrow overnight from the RBI at a penal rate above the repo rate, and the Bank Rate is now aligned with it.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "The framework changed when the RBI Act, 1934 was amended in 2016 to give statutory backing to flexible inflation targeting.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "The Government, in consultation with the RBI, sets the inflation target in terms of consumer price inflation.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "A six-member Monetary Policy Committee, chaired by the RBI Governor who has a casting vote, now decides the policy repo rate.",
+      "para": 3
+     },
+     {
+      "id": "s14",
+      "text": "Faster transmission to lending rates, aided by external benchmark-linked loans, will decide these tools' effectiveness.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "the quantitative instruments of monetary policy available to the Reserve Bank of India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer identifies several key quantitative instruments including CRR, SLR, and OMOs. To improve, ensure the functional role of the repo rate as a tool for liquidity management is more clearly linked to its quantitative nature.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "How has the monetary policy framework changed since 2016?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have correctly identified the legislative change and the shift to a committee-based decision-making process. To improve, specify the actual inflation target and the shift to a single-objective framework.",
+      "checkedTwice": false,
+      "sentences": [
+       "s11",
+       "s13"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in non-cash liquid assets such as gold and approved securities.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in liquid assets such as cash, gold and approved securities."
+      },
+      "why": "The student includes 'cash' as a component of the SLR, but the extract specifies that the SLR is maintained in 'non-cash form'.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "sourceRef": "r11",
+      "evidence": {
+       "wrongWords": "liquid assets such as cash, gold and approved securities",
+       "sourceWords": "the statutory liquidity ratio (SLR) is the ratio (fixed by the RBI) of the total deposits of a bank which is to be maintained by the bank with itself in non-cash form prescribed by the government"
+      }
+     },
+     {
+      "n": 2,
+      "title": "When the RBI buys government securities in the open market, it injects liquidity into the banking system and increases the money supply.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "When the RBI buys government securities in the open market, it withdraws liquidity from the banking system and reduces the money supply."
+      },
+      "why": "The student claims buying securities withdraws liquidity, but the extract states that when the RBI buys a bond, it pays by giving a cheque which increases the total amount of reserves and increases the money supply.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "sourceRef": "r14",
+      "evidence": {
+       "wrongWords": "withdraws liquidity from the banking system and reduces the money supply",
+       "sourceWords": "When RBI buys a Government bond in the open market, it pays for it by giving a cheque. This cheque increases the total amount of reserves in the economy and thus increases the money supply."
+      }
+     },
+     {
+      "n": 3,
+      "title": "The reverse repo rate is the rate at which the RBI borrows from banks and financial institutions who offer short-term loans to it.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The reverse repo rate is the rate at which banks borrow overnight from the RBI when they face a liquidity shortage."
+      },
+      "why": "The student claims banks borrow from the RBI at the reverse repo rate during a shortage, but the extract states the RBI borrows from the banks and institutions at this rate.",
+      "tryWriting": "The reverse repo rate is the rate at which the RBI borrows funds from banks when there is excess liquidity in the system.",
+      "checkedTwice": true,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction",
+      "sourceRef": "r17",
+      "evidence": {
+       "wrongWords": "banks borrow overnight from the RBI when they face a liquidity shortage",
+       "sourceWords": "the RBI is borrowing from the banks and the financial institutions"
+      }
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Monetary policy is the RBI's management of money supply and interest rates to maintain price stability with growth.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies the primary objectives of monetary policy as maintaining price stability while keeping growth in mind, which aligns with the goals described in the agreement."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of monetary policy as a context-setting introduction."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The Cash Reserve Ratio is the share of a bank's deposits kept with the RBI in cash; raising it shrinks lendable funds.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies the Cash Reserve Ratio and explains its mechanism of shrinking lendable funds."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the Cash Reserve Ratio as a quantitative instrument."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly explains how the Cash Reserve Ratio functions by describing the share of deposits and its impact on lendable funds."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in liquid assets such as cash, gold and approved securities.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student includes 'cash' as a component of the SLR, but the extract specifies that the SLR is maintained in 'non-cash form'.",
+        "fix": "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in non-cash liquid assets such as gold and approved securities.",
+        "fixNumber": 1,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Open market operations are the RBI's purchases and sales of government securities in the market.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "Correctly identifies Open Market Operations and describes the mechanism of buying and selling securities."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence accurately defines open market operations as the purchase and sale of government securities."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence correctly identifies 'Open market operations' and the specific action of 'purchases and sales of government securities'."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes the action but does not specify the purpose or the context of the market where these operations occur.",
+        "fix": "Specify that these operations are used to regulate liquidity in the banking system.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s6",
+      "text": "When the RBI buys government securities in the open market, it withdraws liquidity from the banking system and reduces the money supply.",
+      "credit": [
+       {
+        "where": "Cause and effect",
+        "reason": "It clearly links the purchase of securities to the withdrawal of liquidity and reduction of money supply."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims buying securities withdraws liquidity, but the extract states that when the RBI buys a bond, it pays by giving a cheque which increases the total amount of reserves and increases the money supply.",
+        "fix": "When the RBI buys government securities in the open market, it injects liquidity into the banking system and increases the money supply.",
+        "fixNumber": 2,
+        "source": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)"
+       },
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that buying securities withdraws liquidity, but buying securities actually injects liquidity into the banking system.",
+        "fix": "Change 'withdraws' to 'injects' and 'reduces' to 'increases' to correctly describe the impact of buying securities.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The repo rate is the rate at which the RBI lends short-term funds to banks against government securities, and it serves as the policy rate.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it identifies the repo rate, it does not explicitly state how it functions as a quantitative tool to control liquidity.",
+        "fix": "Explain how the repo rate influences the cost of borrowing for banks to control money supply.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The reverse repo rate is the rate at which banks borrow overnight from the RBI when they face a liquidity shortage.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims banks borrow from the RBI at the reverse repo rate during a shortage, but the extract states the RBI borrows from the banks and institutions at this rate.",
+        "fix": "The reverse repo rate is the rate at which the RBI borrows from banks and financial institutions who offer short-term loans to it.",
+        "fixNumber": 3,
+        "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction"
+       },
+       {
+        "where": "Clear wording",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The phrase 'borrow overnight' is slightly imprecise as the reverse repo rate applies to any duration, though it is often used for overnight liquidity.",
+        "fix": "Use 'park surplus funds' or 'borrow funds' to reflect the broader role of the rate.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s11",
+      "text": "The framework changed when the RBI Act, 1934 was amended in 2016 to give statutory backing to flexible inflation targeting.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence correctly identifies the 2016 amendment to the RBI Act and the shift toward flexible inflation targeting."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the shift to a flexible inflation targeting framework by mentioning the 2016 amendment."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the change in the framework since 2016 by mentioning the RBI Act amendment."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s13",
+      "text": "A six-member Monetary Policy Committee, chaired by the RBI Governor who has a casting vote, now decides the policy repo rate.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "This sentence explains the structural change in decision-making by mentioning the six-member Monetary Policy Committee."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence highlights the institutional change in the decision-making body for monetary policy."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides the specific structure of the Monetary Policy Committee, including the number of members and the casting vote."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "Faster transmission to lending rates, aided by external benchmark-linked loans, will decide these tools' effectiveness.",
+      "credit": [
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking statement regarding the effectiveness of tools through external benchmarks."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of external benchmark-linked loans describes a transmission mechanism rather than a change in the policy framework or a quantitative instrument.",
+        "fix": "Remove the sentence or link it more clearly to the effectiveness of the repo rate.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p2",
+      "where": "Part 2",
+      "partText": "How has the monetary policy framework changed since 2016?",
+      "reason": "The answer does not explicitly mention the specific inflation target percentage or the formal shift from a 'multiple-objective' to a 'single-objective' framework.",
+      "fix": "Mention the specific numerical inflation target and the shift to a single objective of price stability.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a reasoned conclusion or a balanced discussion on the implications of these changes, which is required by the 'Discuss' command.",
+      "fix": "Add a concluding sentence evaluating how these changes have improved the transparency and effectiveness of monetary policy.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific data or a recent example of how the inflation target is currently being met or missed.",
+      "fix": "Include a recent percentage for the inflation target or a brief mention of a recent policy meeting outcome.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The answer lacks a concluding sentence that provides a balanced, forward-looking way ahead or a final judgment.",
+      "fix": "Add a concluding sentence about the importance of balancing inflation and growth in a volatile global economy.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Use of space",
+      "reason": "The answer exceeds the 250-word limit, indicating a lack of conciseness in the description of instruments.",
+      "fix": "Combine the descriptions of the repo and reverse repo rates to reduce word count.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s3",
+      "quote": "The Cash Reserve Ratio is the share of a bank's deposits kept with the RBI in cash; raising it shrinks lendable funds.",
+      "reason": "Correctly identifies the Cash Reserve Ratio and explains its mechanism of shrinking lendable funds."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s11",
+      "quote": "The framework changed when the RBI Act, 1934 was amended in 2016 to give statutory backing to flexible inflation targeting.",
+      "reason": "This sentence correctly identifies the 2016 amendment to the RBI Act and the shift toward flexible inflation targeting."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s13",
+      "quote": "A six-member Monetary Policy Committee, chaired by the RBI Governor who has a casting vote, now decides the policy repo rate.",
+      "reason": "This sentence explains the structural change in decision-making by mentioning the six-member Monetary Policy Committee."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive overview of the instruments and the 2016 changes but lacks a concluding discussion on the overall impact of these shifts."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays focused on the instruments and the 2016 framework shift. The final sentence is slightly tangential to the core question."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the legal and institutional changes well but misses the fundamental shift in the policy's primary objective."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly explains most quantitative instruments, but there is a fundamental error regarding the direction of funds in the reverse repo rate."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The description of the reverse repo rate is factually incorrect as it describes a lending action by banks to the RBI rather than the RBI's borrowing from banks. Most other quantitative instruments are correctly identified."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the correct legislative and structural changes well. It would be strengthened by including a specific data point regarding the current inflation target."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the legislative changes and the committee structure. It could be improved by mentioning the call money market as a relevant segment of the money market."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully demonstrates the causal links between specific instruments and their impact on liquidity. The final point on transmission could be strengthened by explaining the mechanism of the link."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses on describing the instruments and the framework change but does not address the limitations or trade-offs inherent in these policies."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer describes existing instruments and historical changes but fails to provide any forward-looking suggestions as a concluding measure."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear introduction and a well-structured body. However, the final sentence acts more like a concluding point of the body rather than a distinct, forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology consistent with central banking standards. Minor improvements in describing the specific function of the reverse repo rate would enhance precision."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers all required parts but exceeds the word limit. You should condense the descriptions of standard instruments to allow more space for the 2016 framework changes."
+     }
+    ],
+    "stats": {
+     "words": 282,
+     "sentences": 14,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 62
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 41
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s2",
+       "text": "Its quantitative instruments regulate the overall volume and cost of credit."
+      },
+      {
+       "sourceId": "s9",
+       "text": "Since 2022, the Standing Deposit Facility, which absorbs surplus liquidity without requiring collateral, has replaced the fixed-rate reverse repo as the corridor's floor."
+      },
+      {
+       "sourceId": "s10",
+       "text": "The Marginal Standing Facility lets banks borrow overnight from the RBI at a penal rate above the repo rate, and the Bank Rate is now aligned with it."
+      },
+      {
+       "sourceId": "s12",
+       "text": "The Government, in consultation with the RBI, sets the inflation target in terms of consumer price inflation."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.13
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 16 (International Economic Organisations & India), Introduction",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 12 (Banking in India), Introduction",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 10,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 3,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "The Statutory Liquidity Ratio requires banks to hold part of their deposits with themselves in liquid assets such as cash, gold and approved securities."
+     ],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 3 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

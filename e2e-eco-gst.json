@@ -1,0 +1,746 @@
+{
+ "case": "eco-gst",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": false,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: Constitution (One Hundred and First Amendment) Act, 2016": true,
+  "trap not red: chaired by the Union Finance Minister": true,
+  "trap not red: the Supreme Court held that the Council's recommendations have persuasive rather than binding value": true
+ },
+ "seconds": 8732.7,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-gst"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-gst",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Part 2 is answered. Part 1 and Part 3 need the most work.",
+    "summary": "The answer correctly identifies the dual structure, the removal of the cascading effect, and the role of the GST Council as a constitutional body. However, it fails to fully explain how the surrender of taxing power establishes a landmark in cooperative federalism and lacks depth on structural federal friction. You should first explain how shared taxing power creates a common national market and verify the legal status of Council recommendations.",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "The Goods and Services Tax is often called a landmark in cooperative fiscal federalism. Discuss its key features and the challenges in its implementation. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Goods and Services Tax (GST), enabled by the Constitution (One Hundred and First Amendment) Act, 2016 and rolled out on 1 July 2017, replaced fragmented central and state indirect taxes with a nationwide tax.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "It is a destination-based consumption tax, so revenue accrues to the state where goods or services are consumed.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "It follows a dual structure in which the Centre levies Central GST and the states levy State GST on the same intra-state supply.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Integrated GST on inter-state supplies is levied and collected by the Centre and apportioned between the Centre and the destination state.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Seamless input tax credit along the value chain removes the cascading effect of tax on tax.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "It subsumed levies such as central excise duty, service tax, state VAT, entry tax and octroi.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The GST Council, a constitutional body under Article 279A chaired by the Union Finance Minister, recommends rates, exemptions and other GST matters to the Union and the states.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "In the Council the Centre holds one-third of the voting weight and the states together two-thirds, making decisions a shared exercise.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Alcoholic liquor for human consumption lies outside GST, and the Constitution leaves petroleum crude, petrol, diesel, natural gas and aviation turbine fuel out of GST until the Council recommends a date, which breaks the input tax credit chain.",
+      "para": 3
+     },
+     {
+      "id": "s10",
+      "text": "States surrendered much of their independent taxing power and relied on compensation for revenue shortfalls during the transition period.",
+      "para": 3
+     },
+     {
+      "id": "s11",
+      "text": "Frequent filings and technology glitches burden small businesses.",
+      "para": 3
+     },
+     {
+      "id": "s12",
+      "text": "In the Mohit Minerals case (2022), the Supreme Court held that the Council's recommendations have persuasive rather than binding value.",
+      "para": 3
+     },
+     {
+      "id": "s13",
+      "text": "Easing compliance, rationalising rates further and gradually bringing petroleum products into GST would help realise the vision of one nation, one tax, one market.",
+      "para": 4
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "The Goods and Services Tax is often called a landmark in cooperative fiscal federalism.",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the structural mechanisms of the GST Council that facilitate cooperation. To improve, explicitly link these features to the concept of 'cooperative federalism' to address the 'landmark' aspect of the prompt.",
+      "checkedTwice": false,
+      "sentences": [
+       "s7",
+       "s8"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Discuss its key features and the challenges in its implementation.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer covers the technical features well, including the dual structure and tax credit mechanism. To improve, you could more deeply explore the fiscal challenges regarding state autonomy and revenue sharing.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     },
+     {
+      "id": "p3",
+      "label": "Part 3",
+      "text": "(Answer in 250 words)",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "The answer covers the required content well but exceeds the specified word limit.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s13"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Explain how the shared surrender of taxing power for a common national market demonstrates cooperative federalism.",
+      "where": "Cause and effect",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s10",
+       "text": "States surrendered much of their independent taxing power and relied on compensation for revenue shortfalls during the transition period."
+      },
+      "why": "The sentence mentions states surrendered power but does not clearly explain how this specific action leads to the 'landmark' status of cooperative federalism.",
+      "tryWriting": "By surrendering independent taxing powers to a shared national framework, states demonstrated a cooperative shift toward a unified market, though they relied on compensation for revenue shortfalls.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Elaborate on the complexities of tax administration and the friction between state and central interests.",
+      "where": "Part 2",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s11",
+       "text": "Frequent filings and technology glitches burden small businesses."
+      },
+      "why": "The mention of technology glitches is a minor point compared to broader structural challenges like federal friction.",
+      "tryWriting": "Implementation faces challenges such as complex compliance for small businesses and the ongoing friction regarding the fiscal autonomy of states.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Verify the specific legal ruling regarding the binding nature of Council recommendations.",
+      "where": "Facts are accurate",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s12",
+       "text": "In the Mohit Minerals case (2022), the Supreme Court held that the Council's recommendations have persuasive rather than binding value."
+      },
+      "why": "The claim regarding the specific legal status of the Council's recommendations in the Mohit Minerals case cannot be verified from the provided materials.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Goods and Services Tax (GST), enabled by the Constitution (One Hundred and First Amendment) Act, 2016 and rolled out on 1 July 2017, replaced fragmented central and state indirect taxes with a nationwide tax.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "The sentence provides a concise introduction that establishes the context of the GST within the word limit."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It introduces the GST as a nationwide tax replacing fragmented taxes, establishing the core topic."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides context by explaining the legal basis and the transition from fragmented taxes to a nationwide system."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "It is a destination-based consumption tax, so revenue accrues to the state where goods or services are consumed.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly explains the 'destination-based' nature by clarifying that revenue accrues to the state of consumption."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The phrase 'destination-based consumption tax' is a precise technical term that correctly identifies the tax's core principle."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "It follows a dual structure in which the Centre levies Central GST and the states levy State GST on the same intra-state supply.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It correctly identifies the dual structure of Central and State GST as a key feature."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It accurately describes the 'dual structure' by explaining the simultaneous levy of Central and State GST on intra-state supplies."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The use of 'dual structure' and 'intra-state supply' accurately describes the specific legal framework of the GST."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Seamless input tax credit along the value chain removes the cascading effect of tax on tax.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It explains the removal of the cascading effect through input tax credit as a core feature."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The GST Council, a constitutional body under Article 279A chaired by the Union Finance Minister, recommends rates, exemptions and other GST matters to the Union and the states.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It identifies the GST Council as a constitutional body where the Union and states jointly decide on tax matters."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the cooperative mechanism of the GST Council as a constitutional body for shared decision making."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "It explains the GST Council's role as a constitutional body, which is central to the cooperative federalism aspect."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "In the Council the Centre holds one-third of the voting weight and the states together two-thirds, making decisions a shared exercise.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It explains the shared voting weight between the Centre and states, which is the core of cooperative federalism."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence highlights the federal dimension by explaining the shared voting weight between the Centre and states."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the voting weight distribution between the Centre and the states."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions shared exercise but does not explain how the voting weight mechanism specifically facilitates cooperative federalism.",
+        "fix": "Explain how the weighted voting ensures that neither the Centre nor the States can unilaterally impose decisions.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Alcoholic liquor for human consumption lies outside GST, and the Constitution leaves petroleum crude, petrol, diesel, natural gas and aviation turbine fuel out of GST until the Council recommends a date, which breaks the input tax credit chain.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides specific examples of commodities like petroleum and aviation fuel to illustrate the exceptions to the tax regime."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly identifies that the Council must recommend the date for levying tax on these specific items."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s10",
+      "text": "States surrendered much of their independent taxing power and relied on compensation for revenue shortfalls during the transition period.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides a balanced view by discussing the challenges of surrendered taxing power and revenue reliance."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence addresses the fiscal federalism aspect by discussing the surrender of independent taxing power and revenue compensation."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It identifies the cost to states of surrendering independent taxing power."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Cause and effect",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions states surrendered power but does not clearly explain how this specific action leads to the 'landmark' status of cooperative federalism.",
+        "fix": "Explain how the shared surrender of taxing power for a common national market demonstrates cooperative federalism.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Frequent filings and technology glitches burden small businesses.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "It highlights the burden of technology glitches and filings on small businesses."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 2",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The mention of technology glitches is a minor point compared to broader structural challenges like federal friction.",
+        "fix": "Elaborate on the complexities of tax administration and the friction between state and central interests.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s12",
+      "text": "In the Mohit Minerals case (2022), the Supreme Court held that the Council's recommendations have persuasive rather than binding value.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The student provides a specific court case to support the point about the Council's authority."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim regarding the specific legal status of the Council's recommendations in the Mohit Minerals case cannot be verified from the provided materials.",
+        "fix": "Verify the specific legal ruling regarding the binding nature of Council recommendations.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Easing compliance, rationalising rates further and gradually bringing petroleum products into GST would help realise the vision of one nation, one tax, one market.",
+      "credit": [
+       {
+        "where": "Part 3",
+        "reason": "The concluding sentence effectively summarizes the future path while remaining within the required length."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by suggesting specific steps to realize the vision of a unified market."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The concluding sentence uses several words to state a vision that is already implied by the previous points.",
+        "fix": "Shorten the conclusion to focus on the specific policy actions needed to resolve the mentioned challenges.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p1",
+      "where": "Part 1",
+      "partText": "The Goods and Services Tax is often called a landmark in cooperative fiscal federalism.",
+      "reason": "The answer does not explicitly state why the GST is a 'landmark' in cooperative federalism, such as the shift from unilateral to joint decision-making.",
+      "fix": "Add a sentence explaining that the GST represents a shift from independent taxing powers to a shared constitutional framework.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "partId": "p3",
+      "where": "Part 3",
+      "partText": "(Answer in 250 words)",
+      "reason": "The total word count exceeds the 250-word limit specified in the prompt.",
+      "fix": "Edit the content to be more concise to stay under 250 words.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a clear discussion on why GST is a landmark in cooperative federalism beyond just listing its features.",
+      "fix": "Add a sentence explaining how the GST Council facilitates joint decision-making between the Centre and States.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear transition or heading to separate the 'key features' from the 'challenges' as requested by the question.",
+      "fix": "Use a subheading or a clear transition sentence to distinguish between the features and the implementation challenges.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the political dimension of federal friction or consensus-building beyond the voting structure.",
+      "fix": "Add a sentence on the political challenges of reaching a consensus among diverse state interests.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not explicitly mention the uncertainty or friction regarding the legal status of the Council's decisions.",
+      "fix": "Mention the legal ambiguity regarding whether Council recommendations are binding.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s7",
+      "quote": "The GST Council, a constitutional body under Article 279A chaired by the Union Finance Minister, recommends rates, exemptions and other GST matters to the Union and the states.",
+      "reason": "It identifies the GST Council as a constitutional body where the Union and states jointly decide on tax matters."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s3",
+      "quote": "It follows a dual structure in which the Centre levies Central GST and the states levy State GST on the same intra-state supply.",
+      "reason": "It correctly identifies the dual structure of Central and State GST as a key feature."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s5",
+      "quote": "Seamless input tax credit along the value chain removes the cascading effect of tax on tax.",
+      "reason": "It explains the removal of the cascading effect through input tax credit as a core feature."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good list of features and challenges but needs to more explicitly link these to the concept of 'cooperative federalism' to fully address the 'discuss' command."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays strictly on topic by covering the features, implementation challenges, and the constitutional framework."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer covers the economic and federal dimensions well. It could be strengthened by mentioning the political dynamics of state-centre negotiations."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The core concepts of the GST structure, such as the dual model and destination-based tax, are well-defined. The explanation of the GST Council's voting structure could be deeper to better reflect the 'cooperative' aspect."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides precise details regarding the constitutional framework and voting structure of the GST Council. However, the specific legal interpretation of the Council's power needs verification against official records."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses specific legal and commodity examples well to ground the discussion. Adding a specific report or data point regarding the impact on small businesses would strengthen the challenges section."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly describes the voting weight distribution between the Centre and the states."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You successfully linked technical features to their immediate effects, such as the removal of cascading taxes. To improve, more clearly link the structural concessions made by states to the concept of cooperative federalism."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer successfully identifies the trade-offs for states and the operational costs for small businesses. It could be strengthened by mentioning the legal uncertainty regarding the Council's authority."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "unavailable",
+      "verdictLabel": "Not checked",
+      "note": "This check could not be judged automatically."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer follows a logical flow with a clear introduction and conclusion. However, the body would be much stronger if the features and challenges were clearly demarcated into two distinct sections."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology like 'dual structure' and 'cascading effect' which is excellent for a UPSC answer."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the space well, covering both features and challenges comprehensively. The word count is slightly over the limit, so trimming the concluding sentence would improve economy."
+     }
+    ],
+    "stats": {
+     "words": 287,
+     "sentences": 13,
+     "paragraphs": 4,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 49
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 47
+      },
+      {
+       "partId": "p3",
+       "label": "Part 3",
+       "words": 59
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "Integrated GST on inter-state supplies is levied and collected by the Centre and apportioned between the Centre and the destination state."
+      },
+      {
+       "sourceId": "s6",
+       "text": "It subsumed levies such as central excise duty, service tax, state VAT, entry tax and octroi."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.15
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 279A",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 4,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": [
+      "solutions"
+     ]
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Not every part of the question is answered.",
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks.",
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

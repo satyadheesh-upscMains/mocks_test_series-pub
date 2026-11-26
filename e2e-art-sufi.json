@@ -1,0 +1,635 @@
+{
+ "case": "art-sufi",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing or good": true,
+  "the report says what stops the next level": true,
+  "caught: confined largely to Bengal and the Deccan": true,
+  "cited: confined largely to Bengal and the Deccan": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 5771.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-art-sufi"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-art-sufi",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 1 serious problem costs you credit.",
+    "summary": "You successfully identified the specific silsilas and their geographical context while highlighting the Chishti order's use of local languages and musical recitation. However, your answer contains a factual error regarding the geographical location of the Suhrawardi order. You should first correct the location of the Suhrawardi order to the Punjab and Multan instead of Bengal and the Deccan.",
+    "levelWhy": [
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "Examine the role of the Chishti and Suhrawardi silsilas in the Sufi movement in medieval India. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Of the many Sufi silsilas, the Chishti and Suhrawardi orders gained the widest following in north India during the thirteenth and fourteenth centuries.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Khwaja Muinuddin Chishti established the Chishti order in India and settled at Ajmer.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "His spiritual line passed through Qutbuddin Bakhtiyar Kaki to Baba Fariduddin Ganj-i-Shakar, some of whose verses appear in the Adi Granth.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Nizamuddin Auliya and Nasiruddin Chiragh-i-Delhi were the most celebrated Chishti saints, mingling with common people and conversing in Hindawi.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Chishti saints popularised sama, musical recitation often set to Hindi verses, to evoke nearness to God.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "The Chishtis kept aloof from state politics and shunned the company of rulers and nobles.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The Suhrawardi order, which entered India at about the same time as the Chishtis, was confined largely to Bengal and the Deccan.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Unlike the Chishtis, Suhrawardi saints did not embrace poverty and accepted state service, some holding posts in the ecclesiastical department.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "Both orders fostered a climate of tolerance, and their message of harmony remains relevant to India's pluralism.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the role of the Chishti and Suhrawardi silsilas in the Sufi movement in medieval India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer provides a good contrast between the two orders, particularly regarding their relationship with the state and the common people. To improve, you could more clearly state the specific role of the Suhrawardi order in the movement beyond just their geographical location.",
+      "checkedTwice": false,
+      "sentences": [
+       "s4",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "The Suhrawardi order, which entered India at about the same time as the Chishtis, was confined largely to the Punjab and Multan.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "The Suhrawardi order, which entered India at about the same time as the Chishtis, was confined largely to Bengal and the Deccan."
+      },
+      "why": "The text states that Suhrawardi activities were confined largely to the Punjab and Multan, not Bengal and the Deccan.",
+      "tryWriting": "The Suhrawardi order was established in Multan and was known for accepting royal patronage and amassing property.",
+      "checkedTwice": true,
+      "source": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs",
+      "sourceRef": "r11",
+      "evidence": {
+       "wrongWords": "confined largely to Bengal and the Deccan",
+       "sourceWords": "its activities were confined largely to the Punjab and Multan"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Describe how their acceptance of royal patronage and property influenced their position in the Sufi hierarchy.",
+      "where": "The question",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "Unlike the Chishtis, Suhrawardi saints did not embrace poverty and accepted state service, some holding posts in the ecclesiastical department."
+      },
+      "why": "The sentence mentions the Suhrawardi order accepted state service but does not specify the extent of their influence or role in the broader Sufi movement.",
+      "tryWriting": "The Suhrawardi order accepted royal patronage and amassed property, advocating for a fusion of mysticism and scholarship.",
+      "checkedTwice": false,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement",
+      "sourceRef": "r1",
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain that this aloofness was a deliberate choice to maintain spiritual purity.",
+      "where": "Concepts explained",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s6",
+       "text": "The Chishtis kept aloof from state politics and shunned the company of rulers and nobles."
+      },
+      "why": "The sentence states the Chishtis kept aloof from politics but does not explain the underlying philosophy of 'fana' or 'zuhd' that drove this choice.",
+      "tryWriting": "The Chishtis maintained a policy of 'zuhd' (asceticism), deliberately keeping aloof from state politics to preserve their spiritual independence.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Of the many Sufi silsilas, the Chishti and Suhrawardi orders gained the widest following in north India during the thirteenth and fourteenth centuries.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the specific silsilas and the geographical and temporal context of the Sufi movement."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The extract confirms that the Chishti and Suhrawardi silsilahs were the two ba-shara movements that acquired significant influence and following in north India during the thirteenth and fourteenth centuries."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides context by identifying the specific orders and the timeframe of their prominence."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "His spiritual line passed through Qutbuddin Bakhtiyar Kaki to Baba Fariduddin Ganj-i-Shakar, some of whose verses appear in the Adi Granth.",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence correctly identifies that the spiritual line passed through specific figures and mentions the inclusion of verses in the Adi Granth."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Nizamuddin Auliya and Nasiruddin Chiragh-i-Delhi were the most celebrated Chishti saints, mingling with common people and conversing in Hindawi.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It highlights the role of the Chishti order in mingling with common people and using local languages like Hindawi."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the role of the Chishti order by describing how they mingled with common people and used local languages to reach the masses."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence accurately identifies key figures and their practice of conversing in Hindawi."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Chishti saints popularised sama, musical recitation often set to Hindi verses, to evoke nearness to God.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It explains the specific role of the Chishti order in popularising sama to evoke nearness to God."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the concept of 'sama' by describing it as musical recitation used to evoke nearness to God."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence accurately describes the use of sama and musical recitation to evoke nearness to God as a Chisti practice."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "The Chishtis kept aloof from state politics and shunned the company of rulers and nobles.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence highlights a specific limitation or policy of the Chishti order by mentioning they kept aloof from state politics."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the Chishtis kept aloof from politics but does not explain the underlying philosophy of 'fana' or 'zuhd' that drove this choice.",
+        "fix": "Explain that this aloofness was a deliberate choice to maintain spiritual purity.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The Suhrawardi order, which entered India at about the same time as the Chishtis, was confined largely to Bengal and the Deccan.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The text states that Suhrawardi activities were confined largely to the Punjab and Multan, not Bengal and the Deccan.",
+        "fix": "The Suhrawardi order, which entered India at about the same time as the Chishtis, was confined largely to the Punjab and Multan.",
+        "fixNumber": 1,
+        "source": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states the Suhrawardi order was confined to Bengal and the Deccan, but the source indicates it was established in Multan and accepted royal patronage.",
+        "fix": "Check the geographical extent and primary centers of the Suhrawardi order.",
+        "fixNumber": null,
+        "source": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Unlike the Chishtis, Suhrawardi saints did not embrace poverty and accepted state service, some holding posts in the ecclesiastical department.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It examines the role of the Suhrawardi order by highlighting their unique position in accepting state service and holding official posts."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence explains the specific stance of the Suhrawardi order regarding state service and property ownership."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence identifies a contrasting approach to state involvement and property ownership by the Suhrawardi order."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions the Suhrawardi order accepted state service but does not specify the extent of their influence or role in the broader Sufi movement.",
+        "fix": "Describe how their acceptance of royal patronage and property influenced their position in the Sufi hierarchy.",
+        "fixNumber": 2,
+        "source": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s9",
+      "text": "Both orders fostered a climate of tolerance, and their message of harmony remains relevant to India's pluralism.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence summarizes the broader role of these orders in fostering a climate of tolerance."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a forward-looking conclusion by linking the historical message of harmony to modern pluralism."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that their message remains relevant to India's pluralism is a subjective modern application rather than an examination of their historical role.",
+        "fix": "Describe how their message of harmony influenced the social fabric of medieval India.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks a clear analysis of the broader implications or the specific 'role' these silsilas played in the wider Sufi movement beyond just describing their practices.",
+      "fix": "Add a sentence explaining how these two orders provided a framework for religious pluralism and social integration in medieval India.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer omits the specific belief of the Suhrawardi order regarding the three attributes of property, knowledge, and hal.",
+      "fix": "Add a point about the Suhrawardi belief in owning property, knowledge, and mystical enlightenment.",
+      "fixNumber": null,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement"
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer does not explain the causal link between the Suhrawardi order's acceptance of state service and its specific role or impact on the broader Sufi movement.",
+      "fix": "Explain how the Suhrawardi order's acceptance of royal patronage influenced its influence or reach compared to the Chishtis.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the specific geographical limitations or the specific types of property amassed by the Suhrawardi order.",
+      "fix": "Mention that the Suhrawardi order amassed property and accepted royal patronage.",
+      "fixNumber": null,
+      "source": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s4",
+      "quote": "Nizamuddin Auliya and Nasiruddin Chiragh-i-Delhi were the most celebrated Chishti saints, mingling with common people and conversing in Hindawi.",
+      "reason": "It highlights the role of the Chishti order in mingling with common people and using local languages like Hindawi."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "Chishti saints popularised sama, musical recitation often set to Hindi verses, to evoke nearness to God.",
+      "reason": "It explains the specific role of the Chishti order in popularising sama to evoke nearness to God."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s1",
+      "quote": "Of the many Sufi silsilas, the Chishti and Suhrawardi orders gained the widest following in north India during the thirteenth and fourteenth centuries.",
+      "reason": "This sentence correctly identifies the specific silsilas and the geographical and temporal context of the Sufi movement."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive comparison of the two orders but needs to move beyond description to better 'examine' their broader impact on the Sufi movement."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer stays well within the scope of the question by focusing on the specific characteristics and impacts of the two orders."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the political and religious differences well but could be strengthened by explicitly detailing the social impact on the common people."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": null
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies key figures and cultural practices of the Chishti order. However, the geographical distribution and specific characteristics of the Suhrawardi order need correction based on the provided materials."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific names of saints and literary connections to support the Chishti order. However, the description of Suhrawardi state service would be stronger with a more concrete example of their involvement."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the cultural and linguistic contributions of the Chishtis. However, the geographical and structural details regarding the Suhrawardi order need correction based on the provided text."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": null
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer successfully identifies the contrasting political and social stances of both orders, which serves as a good way to show their different roles."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is well-defined with a clear introduction, a detailed body, and a relevant conclusion. To improve, ensure a smoother transition between the two different silsilas."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses precise historical terminology like 'silsilas', 'sama', and 'Hindawi' effectively. The distinction between the two orders' relationship with the state is clearly articulated."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word count well to provide a balanced comparison between the two orders. However, the final sentence is a bit of a filler that could be replaced with more historical detail."
+     }
+    ],
+    "stats": {
+     "words": 166,
+     "sentences": 9,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 55
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s2",
+       "text": "Khwaja Muinuddin Chishti established the Chishti order in India and settled at Ajmer."
+      }
+     ],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.11
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": false
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs",
+      "used": true
+     },
+     {
+      "label": "Satish Chandra, History of Medieval India, Ch. 11 (Cultural Development in India (1200–1500)), The Chishti and Suharwardi Silsilahs",
+      "used": true
+     },
+     {
+      "label": "Nitin Singhania, Indian Art and Culture, Ch. A2 (Bhakti and Sufi Movement), The Sufi Movement",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,581 @@
+{
+ "case": "band-wrong-10",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: introduced in either House": true,
+  "cited: introduced in either House": true,
+  "caught: up to three months": true,
+  "cited: up to three months": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 7731.9,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-band-wrong-10"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-band-wrong-10",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "You correctly identified the limited role of the Rajya Sabha and its inability to reject or amend Money Bills. However, you provided incorrect information regarding the house of origin and the timeframe for returning the bill. You must first correct the claim that Money Bills can be introduced in either house and update the return period from three months to fourteen days.",
+    "levelWhy": [
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Discuss the role of the Rajya Sabha in the passage of Money Bills. (Answer in 150 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "The Speaker's certificate that a Bill is a Money Bill is final under Article 110(3).",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "The passage of the Aadhaar Act as a Money Bill showed how this certificate can narrow the Rajya Sabha's role.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the role of the Rajya Sabha in the passage of Money Bills",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "It correctly identifies that the Bill is sent to the Rajya Sabha for recommendations after being passed by the Lok Sabha.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "A Money Bill can be introduced only in the House of the People.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President."
+      },
+      "why": "The student claims a Money Bill can be introduced in either House, but the extract states it shall not be introduced in the Council of States.",
+      "tryWriting": "A Money Bill shall not be introduced in the Council of States.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 109",
+      "sourceRef": "r2",
+      "evidence": {
+       "wrongWords": "introduced in either House",
+       "sourceWords": "A Money Bill shall not be introduced in the Council of States."
+      }
+     },
+     {
+      "n": 2,
+      "title": "The Rajya Sabha must return a Money Bill to the Lok Sabha within fourteen days of receiving it.",
+      "where": "Constitution and textbook basics",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it."
+      },
+      "why": "The sentence states the Rajya Sabha can keep a Money Bill for 'three months', but the extract specifies it must return the Bill 'within a period of fourteen days'.",
+      "tryWriting": "The Rajya Sabha shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People with its recommendations.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 109",
+      "sourceRef": "r2",
+      "evidence": {
+       "wrongWords": "up to three months",
+       "sourceWords": "the Council of States shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Propose a specific mechanism, such as a joint committee review, to verify the Money Bill status before the Speaker's final certification.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s8",
+       "text": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed."
+      },
+      "why": "The suggestion that the certification power needs restraint is a general observation rather than a specific, workable mechanism for how the Rajya Sabha's role should be protected.",
+      "tryWriting": "To ensure the Rajya Sabha is not bypassed, a mechanism could be introduced where the Speaker's certification is subject to a review by a joint committee of both Houses.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.",
+      "credit": [
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the subject of the question as the passage of Money Bills."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly identifies the core components of a Money Bill such as taxes and the Consolidated Fund of India."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "Correctly identifies the definition of Money Bills and their subject matter as per Article 110."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "A Money Bill can be introduced in either House of Parliament on the recommendation of the President.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student claims a Money Bill can be introduced in either House, but the extract states it shall not be introduced in the Council of States.",
+        "fix": "A Money Bill can be introduced only in the House of the People.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 109"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It correctly identifies that the Bill is sent to the Rajya Sabha for recommendations after being passed by the Lok Sabha."
+       },
+       {
+        "where": "Constitution and textbook basics",
+        "reason": "The sentence correctly describes the transmission of a Money Bill from the House of the People to the Council of States for recommendations as per Article 109."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies the sequence where the passage by the House of the People leads to the transmission of the Bill to the Rajya Sabha."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Rajya Sabha can keep a Money Bill for up to three months before returning it.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Constitution and textbook basics",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence states the Rajya Sabha can keep a Money Bill for 'three months', but the extract specifies it must return the Bill 'within a period of fourteen days'.",
+        "fix": "The Rajya Sabha must return a Money Bill to the Lok Sabha within fourteen days of receiving it.",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 109"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "It accurately describes the limited role of the Rajya Sabha, which cannot reject or amend the Bill."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the specific limitation of the Rajya Sabha's power to reject or amend, which is central to discussing its role."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the specific role and limitations of the Rajya Sabha in the legislative process of these bills."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "The Speaker's certificate that a Bill is a Money Bill is final under Article 110(3).",
+      "credit": [
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly states that the Speaker's certificate regarding a Money Bill is final."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence accurately uses the specific technical term 'Speaker's certificate' to describe the procedural mechanism."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "The passage of the Aadhaar Act as a Money Bill showed how this certificate can narrow the Rajya Sabha's role.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence uses a specific legislative example to illustrate how the certification power affects the Rajya Sabha's role."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s8",
+      "text": "The arrangement reflects the financial primacy of the directly elected House, but the certification power needs restraint so that the Rajya Sabha is not bypassed.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "The sentence provides a balanced view by acknowledging both the financial primacy of the House of the People and the need for restraint in certification."
+       },
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence identifies a trade-off by acknowledging the financial primacy of the House of the People while highlighting the risk of the Rajya Sabha being bypassed."
+       },
+       {
+        "where": "Structure",
+        "reason": "It offers a balanced, forward-looking conclusion regarding the need for restraint in certification."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion that the certification power needs restraint is a general observation rather than a specific, workable mechanism for how the Rajya Sabha's role should be protected.",
+        "fix": "Propose a specific mechanism, such as a joint committee review, to verify the Money Bill status before the Speaker's final certification.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Constitution and textbook basics",
+      "reason": "The answer fails to mention the specific time limit of fourteen days for the Rajya Sabha to return the Bill.",
+      "fix": "mention that the Council of States shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People with its recommendations",
+      "fixNumber": null,
+      "source": "Constitution of India, Article 109"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "After the Lok Sabha passes it, the Bill is sent to the Rajya Sabha for its recommendations.",
+      "reason": "It correctly identifies that the Bill is sent to the Rajya Sabha for recommendations after being passed by the Lok Sabha."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "It cannot reject or amend the Bill and can only suggest changes, which the Lok Sabha may accept or reject.",
+      "reason": "It accurately describes the limited role of the Rajya Sabha, which cannot reject or amend the Bill."
+     },
+     {
+      "where": "Stayed on topic",
+      "sourceId": "s1",
+      "quote": "Money Bills, defined in Article 110, deal with taxes, borrowing and the Consolidated Fund of India, and their passage shows how Parliament balances its two Houses.",
+      "reason": "This sentence correctly identifies the subject of the question as the passage of Money Bills."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence provides a balanced view by acknowledging both the financial primacy of the House of the People and the need for restraint in certification."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence correctly identifies the subject of the question as the passage of Money Bills."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence correctly identifies the political and federal dimension by discussing the financial primacy of the House of the People and the need for restraint in certification."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly identifies the core components of a Money Bill such as taxes and the Consolidated Fund of India."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "Correctly identifies the definition of Money Bills as dealing with taxes, borrowing, and the Consolidated Fund of India."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence uses a specific legislative example to illustrate how the certification power affects the Rajya Sabha's role."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You have correctly identified the definition and the finality of the Speaker's certificate. However, you must correct the specific procedural rules regarding where a Money Bill can be introduced and the exact timeframe for the Rajya Sabha's recommendations."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It correctly identifies the sequence where the passage by the House of the People leads to the transmission of the Bill to the Rajya Sabha."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The sentence identifies a trade-off by acknowledging the financial primacy of the House of the People while highlighting the risk of the Rajya Sabha being bypassed."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies a systemic issue but fails to provide a workable, specific solution or mechanism to address the limitation of the Rajya Sabha's powers."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "It provides a clear definition of Money Bills and sets the context of parliamentary balance."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good technical terminology but contains a significant factual error regarding which House can initiate a Money Bill."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "This sentence efficiently explains the limited power of the Rajya Sabha to suggest changes without wasting space on irrelevant details."
+     }
+    ],
+    "stats": {
+     "words": 156,
+     "sentences": 8,
+     "paragraphs": 3,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 37
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 1.04
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 110",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 109",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 266",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 274",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 107",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 117",
+      "used": false
+     },
+     {
+      "label": "Case: K.S. Puttaswamy v Union of India (Aadhaar) (2018)",
+      "used": false
+     },
+     {
+      "label": "Case: Rojer Mathew v South Indian Bank (2019)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 3,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

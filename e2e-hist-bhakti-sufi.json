@@ -1,0 +1,771 @@
+{
+ "case": "hist-bhakti-sufi",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is good or strong": false,
+  "the report says what stops the next level": true,
+  "no red marks on correct sentences": true,
+  "trap not red: initiated into bhakti by Ramananda": true,
+  "trap not red: born at Talwandi (now Nankana Sahib)": true
+ },
+ "seconds": 8958.8,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-hist-bhakti-sufi"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-hist-bhakti-sufi",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered. The fixes below will make it stronger.",
+    "summary": "The answer successfully addresses both parts by providing specific examples of saints who criticized rituals and explaining how Sufis used local languages and music. To improve, you should explicitly link the shift toward personal devotion to the direct challenge against established orthodoxy. You should also remove minor historical debates and explain more clearly how these traditions specifically enriched local arts and vernacular literature.",
+    "levelWhy": [
+     "Its structure needs work (see the Structure check).",
+     "It does not fully do what the question's command word asks."
+    ],
+    "formatNote": null,
+    "question": "The Bhakti and Sufi traditions questioned orthodoxy and enriched popular culture in medieval India. Discuss. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "In medieval India, bhakti saints and sufi masters offered paths to God through personal devotion rather than ritual.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "In doing so they challenged religious orthodoxy and social hierarchy.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Alvars and Nayanars: Some of the earliest bhakti movements were led by the Alvars, devotees of Vishnu, and the Nayanars, devotees of Shiva, who travelled from place to place singing hymns in Tamil.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "Their saints came from diverse social backgrounds, and women such as Andal and Karaikkal Ammaiyar challenged patriarchal norms.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "Virashaivas: In twelfth-century Karnataka, the Lingayat followers of Basavanna challenged caste, the notion of pollution and the theory of rebirth through vachanas in Kannada.",
+      "para": 3
+     },
+     {
+      "id": "s6",
+      "text": "Nirguna saints: Kabir described God as one, whether called Allah, Ram or Hari, and criticised the rituals of both Hindus and Muslims.",
+      "para": 4
+     },
+     {
+      "id": "s7",
+      "text": "According to tradition, Kabir was initiated into bhakti by Ramananda, though historians doubt that the two were contemporaries.",
+      "para": 4
+     },
+     {
+      "id": "s8",
+      "text": "Guru Nanak, born at Talwandi (now Nankana Sahib), taught remembrance of the Divine Name through shabads in Punjabi and organised his followers into a community.",
+      "para": 4
+     },
+     {
+      "id": "s9",
+      "text": "Mirabai, a Rajput princess from Merta, defied her husband and worshipped Krishna as her beloved.",
+      "para": 4
+     },
+     {
+      "id": "s10",
+      "text": "Sufis: Chishti sufis such as Khwaja Muinuddin of Ajmer and Shaikh Nizamuddin Auliya of Delhi kept a distance from worldly power and ran open kitchens for all.",
+      "para": 5
+     },
+     {
+      "id": "s11",
+      "text": "They adopted Hindavi, the language of the people, and their sama, or devotional music, lives on in the qawwali still sung at dargahs.",
+      "para": 5
+     },
+     {
+      "id": "s12",
+      "text": "Sufi poets like Malik Muhammad Jayasi, author of Padmavat, used human love as an allegory for divine love.",
+      "para": 5
+     },
+     {
+      "id": "s13",
+      "text": "Together these traditions built a shared devotional culture whose message of tolerance remains vital for a plural India.",
+      "para": 6
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "The Bhakti and Sufi traditions questioned orthodoxy",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer successfully identifies how both Bhakti and Sufi traditions challenged established norms through specific examples like Kabir and the Lingayats.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s6"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "and enriched popular culture in medieval India",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You successfully identified how these traditions used vernacular languages and music to reach the masses. To improve, you could briefly mention their impact on broader folk traditions or local literature.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s11"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Explicitly state that prioritizing personal devotion over ritual was a direct challenge to the established religious orthodoxy.",
+      "where": "Part 1",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s1",
+       "text": "In medieval India, bhakti saints and sufi masters offered paths to God through personal devotion rather than ritual."
+      },
+      "why": "While it mentions personal devotion over ritual, it does not explicitly state how this challenged the established orthodoxy.",
+      "tryWriting": "In medieval India, bhakti saints and sufi masters offered paths to God through personal devotion rather than ritual, directly challenging the established religious orthodoxy.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 2,
+      "title": "Remove the sentence about historical doubts to maintain focus on the religious impact.",
+      "where": "Stayed on topic",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "According to tradition, Kabir was initiated into bhakti by Ramananda, though historians doubt that the two were contemporaries."
+      },
+      "why": "The historical debate regarding whether Kabir and Ramananda were contemporaries is a minor detail that does not directly address the questioning of orthodoxy or cultural enrichment.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     },
+     {
+      "n": 3,
+      "title": "Explain how these traditions influenced local arts, music, or vernacular literature to show cultural enrichment.",
+      "where": "Concepts explained",
+      "impact": "minor",
+      "impactLabel": "Small polish",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s13",
+       "text": "Together these traditions built a shared devotional culture whose message of tolerance remains vital for a plural India."
+      },
+      "why": "The sentence mentions a 'shared devotional culture' but does not explain how this culture specifically enriched popular culture beyond just being 'vital'.",
+      "tryWriting": "Together these traditions built a shared devotional culture that enriched popular culture by integrating vernacular languages and music into everyday life.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "In medieval India, bhakti saints and sufi masters offered paths to God through personal devotion rather than ritual.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It correctly identifies the core shift from ritualistic orthodoxy to personal devotion as the primary method of the Bhakti and Sufi traditions."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It establishes the primary cause of the movement: a shift toward personal devotion over ritual."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context by defining the core approach of these traditions as personal devotion rather than ritual."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While it mentions personal devotion over ritual, it does not explicitly state how this challenged the established orthodoxy.",
+        "fix": "Explicitly state that prioritizing personal devotion over ritual was a direct challenge to the established religious orthodoxy.",
+        "fixNumber": 1,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s2",
+      "text": "In doing so they challenged religious orthodoxy and social hierarchy.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "This sentence directly addresses the questioning of religious orthodoxy and social hierarchy."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the first part of the question by stating how the traditions challenged religious orthodoxy."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It directly links the shift in devotion to the effect of challenging religious orthodoxy."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Alvars and Nayanars: Some of the earliest bhakti movements were led by the Alvars, devotees of Vishnu, and the Nayanars, devotees of Shiva, who travelled from place to place singing hymns in Tamil.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence highlights how early bhakti movements used local languages to sing hymns, which directly relates to the enrichment of popular culture."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides specific names of early bhakti movements and the specific deities they worshipped."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The student correctly identifies the Alvars as devotees of Vishnu and the Nayanars as devotees of Shiva who sang hymns in Tamil."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s5",
+      "text": "Virashaivas: In twelfth-century Karnataka, the Lingayat followers of Basavanna challenged caste, the notion of pollution and the theory of rebirth through vachanas in Kannada.",
+      "credit": [
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific regional movement, the name of the leader, and the specific literary form used."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s6",
+      "text": "Nirguna saints: Kabir described God as one, whether called Allah, Ram or Hari, and criticised the rituals of both Hindus and Muslims.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It provides a specific example of a saint who criticised the rituals of both major religions."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "It explains the concept of questioning orthodoxy by detailing how Kabir criticized the specific rituals of both Hindus and Muslims."
+       },
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly notes that these leaders criticized rituals, which aligns with the source's point about questioning authority."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s7",
+      "text": "According to tradition, Kabir was initiated into bhakti by Ramananda, though historians doubt that the two were contemporaries.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Stayed on topic",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The historical debate regarding whether Kabir and Ramananda were contemporaries is a minor detail that does not directly address the questioning of orthodoxy or cultural enrichment.",
+        "fix": "Remove the sentence about historical doubts to maintain focus on the religious impact.",
+        "fixNumber": 2,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "They adopted Hindavi, the language of the people, and their sama, or devotional music, lives on in the qawwali still sung at dargahs.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "The sentence explains how Sufis used the language of the people and how their devotional music continues to influence cultural practices like qawwali."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence explains how the traditions enriched popular culture by adopting the language of the people."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "This sentence covers the cultural dimension by explaining how the use of local language and music enriched popular culture."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Together these traditions built a shared devotional culture whose message of tolerance remains vital for a plural India.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence provides a concluding perspective on how these traditions built a shared devotional culture, fulfilling the 'discuss' requirement for a balanced view."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by linking the historical traditions to the modern plural India."
+       },
+       {
+        "where": "Use of space",
+        "reason": "This sentence effectively concludes by summarizing the shared cultural impact of both traditions."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Concepts explained",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions a 'shared devotional culture' but does not explain how this culture specifically enriched popular culture beyond just being 'vital'.",
+        "fix": "Explain how these traditions influenced local arts, music, or vernacular literature to show cultural enrichment.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [
+     {
+      "partId": "p2",
+      "where": "Part 2",
+      "partText": "and enriched popular culture in medieval India",
+      "reason": "The answer could further explain how these traditions influenced folk arts, literature, or local festivals beyond just music and language.",
+      "fix": "Add a sentence mentioning the influence of these traditions on local folk literature or festive traditions.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer focuses heavily on describing specific historical figures and movements rather than analyzing the 'how' and 'why' of their impact on popular culture.",
+      "fix": "Add a sentence explaining how the use of vernacular languages and public performances specifically democratized religious knowledge for the masses.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Cause and effect",
+      "reason": "The answer does not explicitly explain how the questioning of orthodoxy led to the enrichment of popular culture.",
+      "fix": "Add a sentence explaining how the use of local languages and music by these saints made their message accessible to the masses.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "The body lacks a clear structural transition or heading to separate the discussion of 'questioning orthodoxy' from 'enriching popular culture'.",
+      "fix": "Use a connecting phrase or a subheading to distinguish between the critique of religious norms and the cultural contributions.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not explicitly discuss the political dimension, such as how these movements interacted with or were independent of the ruling elites.",
+      "fix": "Add a brief mention of how these movements operated outside the influence of the ruling political authorities.",
+      "fixNumber": null,
+      "source": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)"
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "In doing so they challenged religious orthodoxy and social hierarchy.",
+      "reason": "This sentence directly addresses the questioning of religious orthodoxy and social hierarchy."
+     },
+     {
+      "where": "Part 1",
+      "sourceId": "s6",
+      "quote": "Nirguna saints: Kabir described God as one, whether called Allah, Ram or Hari, and criticised the rituals of both Hindus and Muslims.",
+      "reason": "It provides a specific example of a saint who criticised the rituals of both major religions."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s11",
+      "quote": "They adopted Hindavi, the language of the people, and their sama, or devotional music, lives on in the qawwali still sung at dargahs.",
+      "reason": "The sentence explains how Sufis used the language of the people and how their devotional music continues to influence cultural practices like qawwali."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good descriptive overview of various movements but leans more towards a list of examples than a deep discussion of the mechanisms of cultural enrichment."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt throughout. It successfully balances the discussion between the critique of established norms and the contribution to common culture."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the social and cultural dimensions well. It could be strengthened by briefly mentioning the political context of these movements."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer does a good job of explaining the shift from ritual to personal devotion and naming specific ways orthodoxy was challenged. It could be stronger by more explicitly detailing the 'enrichment' of popular culture."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The historical facts regarding the specific saints, Sufi orders, and linguistic shifts are well-supported. Avoid making subjective claims about the modern relevance of these traditions."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer is well-supported by specific historical figures and regional movements. To improve, you could provide a more concrete example of how these traditions merged into a 'shared' culture."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer captures the essence of the traditions' popular appeal and their rejection of ritual. It could be strengthened by acknowledging the limitations of their influence on the ruling class."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You have established a clear link between the shift in religious practice and the questioning of orthodoxy. However, the causal link to the enrichment of popular culture is implied rather than explained."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses well on the achievements of the traditions but misses the historical context regarding their limited political influence."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear beginning and end, but the body is a long list of examples. You should group these examples into two distinct sections to clearly address both parts of the question."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses good terminology like 'vernacular' and 'devotional music'. To improve, be more specific about which authorities were being challenged."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses the word count well, providing specific examples for both Bhakti and Sufi traditions. Removing minor historical debates will allow for more focus on the cultural impact."
+     }
+    ],
+    "stats": {
+     "words": 269,
+     "sentences": 13,
+     "paragraphs": 6,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 50
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 56
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s4",
+       "text": "Their saints came from diverse social backgrounds, and women such as Andal and Karaikkal Ammaiyar challenged patriarchal norms."
+      },
+      {
+       "sourceId": "s8",
+       "text": "Guru Nanak, born at Talwandi (now Nankana Sahib), taught remembrance of the Divine Name through shabads in Punjabi and organised his followers into a community."
+      },
+      {
+       "sourceId": "s9",
+       "text": "Mirabai, a Rajput princess from Merta, defied her husband and worshipped Krishna as her beloved."
+      },
+      {
+       "sourceId": "s10",
+       "text": "Sufis: Chishti sufis such as Khwaja Muinuddin of Ajmer and Shaikh Nizamuddin Auliya of Delhi kept a distance from worldly power and ran open kitchens for all."
+      },
+      {
+       "sourceId": "s12",
+       "text": "Sufi poets like Malik Muhammad Jayasi, author of Padmavat, used human love as an allegory for divine love."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.08
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Themes in Indian History – Part II, Ch. 2 (Bhakti-Sufi Traditions)",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 3,
+     "softened": 0,
+     "thirdOpinions": 0,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "Its structure needs work (see the Structure check).",
+      "It does not fully do what the question's command word asks."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

@@ -1,0 +1,562 @@
+{
+ "case": "polity-art21",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: only to citizens": true,
+  "cited: only to citizens": true,
+  "caught: High Court directly under Article 32": true,
+  "cited: High Court directly under Article 32": true,
+  "no red marks on correct sentences": true,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 5347.1,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-art21"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-art21",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "You answer the question only in part.",
+    "summary": "You answer the question only in part. First, State that this protection is available to both citizens and non-citizens. Then, A citizen whose Article 21 right is violated can approach the Supreme Court directly under Article 32..",
+    "levelWhy": [
+     "Not every part of the question is answered.",
+     "At 84 words it is too short: a question with this word limit expects about 150.",
+     "It makes 3 distinct points; about 5 are expected.",
+     "It does not fully do what the question's command word asks.",
+     "It has 3 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Examine how the Supreme Court has widened the scope of Article 21 of the Constitution.",
+    "directives": [
+     {
+      "word": "Examine",
+      "meaning": "Look into the issue in detail: its causes, effects and implications."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "This protection is available only to citizens of India, not to foreigners.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32.",
+      "para": 1
+     },
+     {
+      "id": "s5",
+      "text": "This expansion has made Article 21 the heart of the Fundamental Rights.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "how the Supreme Court has widened the scope of Article 21 of the Constitution",
+      "status": "partial",
+      "statusLabel": "Partly",
+      "note": "You correctly identified the expansion of rights like privacy and environment. However, you made a factual error regarding the eligibility of non-citizens under Article 21.",
+      "checkedTwice": false,
+      "sentences": [
+       "s3",
+       "s5"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "State that this protection is available to both citizens and non-citizens.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "This protection is available only to citizens of India, not to foreigners."
+      },
+      "why": "The text of Article 21 uses the term 'no person' rather than 'no citizen', and the textbook source r10 explicitly states that this right is available to both citizens and non-citizens.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 21",
+      "sourceRef": "r1",
+      "evidence": {
+       "wrongWords": "only to citizens of India, not to foreigners",
+       "sourceWords": "no person shall be deprived of his life or personal liberty except according to procedure established by law"
+      }
+     },
+     {
+      "n": 2,
+      "title": "A citizen whose Article 21 right is violated can approach the Supreme Court directly under Article 32.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32."
+      },
+      "why": "Article 32 guarantees the right to move the Supreme Court, not the High Court.",
+      "tryWriting": "A citizen whose Article 21 right is violated can move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part under Article 32.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 32",
+      "sourceRef": "r2",
+      "evidence": {
+       "wrongWords": "approach the High Court directly under Article 32",
+       "sourceWords": "The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Write about 150 words: this answer has 84.",
+      "where": "Use of space",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "missing",
+      "kindLabel": "Missing",
+      "yourLine": null,
+      "why": "The word limit tells you how much a 10-mark answer needs. At 84 words there is room for only a few points, so the answer cannot reach the level of an average exam answer however accurate it is.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "Article 21 says that no one shall be deprived of life or personal liberty except according to procedure established by law.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "Correctly states the constitutional text of Article 21 regarding life and personal liberty."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "The sentence correctly states the text of Article 21 as provided in the source."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of Article 21 to set the context for the answer."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "This protection is available only to citizens of India, not to foreigners.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The text of Article 21 uses the term 'no person' rather than 'no citizen', and the textbook source r10 explicitly states that this right is available to both citizens and non-citizens.",
+        "fix": "State that this protection is available to both citizens and non-citizens.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 21"
+       },
+       {
+        "where": "The question",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence claims protection is only for citizens, but the source states it is available to both citizens and non-citizens.",
+        "fix": "Correct the statement to reflect that Article 21 applies to all persons.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies specific rights like livelihood, a clean environment, and privacy as being read into the right to life."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It identifies specific rights like livelihood and privacy that the court has integrated into the right to life."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence directly addresses the expansion of Article 21 by listing specific rights like livelihood and privacy."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s4",
+      "text": "A citizen whose Article 21 right is violated can approach the High Court directly under Article 32.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "Article 32 guarantees the right to move the Supreme Court, not the High Court.",
+        "fix": "A citizen whose Article 21 right is violated can approach the Supreme Court directly under Article 32.",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 32"
+       },
+       {
+        "where": "Use of space",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence mentions Article 32 but does not explain how it relates to the widening of Article 21's scope.",
+        "fix": "Explain how judicial review or writs help enforce the expanded rights.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s5",
+      "text": "This expansion has made Article 21 the heart of the Fundamental Rights.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "The sentence correctly identifies the central role of Article 21 in the framework of Fundamental Rights."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a concluding statement that summarizes the significance of the expansion."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Did what the question asks",
+      "reason": "The answer lacks an examination of the shift from a narrow 'procedure established by law' to a 'fair, just and reasonable' standard.",
+      "fix": "Explain how the court moved from a literal interpretation to a substantive one that links Articles 14, 19, and 21.",
+      "fixNumber": null,
+      "source": "Case: Maneka Gandhi v Union of India (1978)"
+     },
+     {
+      "where": "Structure",
+      "reason": "Make about 5 distinct points in the body; it has 3.",
+      "fix": "Make about 5 distinct points in the body; it has 3.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention any limitations or the balance between individual rights and state interests.",
+      "fix": "Add a sentence mentioning that these rights are subject to reasonable restrictions or the 'procedure established by law'.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s3",
+      "quote": "Over the years the Supreme Court has read rights such as livelihood, a clean environment and privacy into the right to life.",
+      "reason": "The sentence correctly identifies specific rights like livelihood, a clean environment, and privacy as being read into the right to life."
+     },
+     {
+      "where": "The question",
+      "sourceId": "s5",
+      "quote": "This expansion has made Article 21 the heart of the Fundamental Rights.",
+      "reason": "The sentence correctly identifies the central role of Article 21 in the framework of Fundamental Rights."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a basic list of expanded rights but fails to examine the legal shift from a narrow to a broad interpretation of 'procedure'. It also contains a factual error regarding the eligibility of non-citizens."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the expansion of rights but contains a significant factual error regarding who is protected by Article 21."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the expansion of rights well but contains a significant factual error regarding who is protected by Article 21."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the expansion of rights but contains a significant factual error regarding who is protected by Article 21."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The student correctly identified the core text and the expansion of rights, but made a significant factual error regarding the eligibility of non-citizens."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer correctly identifies the types of rights added to Article 21 but contains significant factual errors regarding who is protected and which article provides the remedy."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the expansion of rights like privacy and environment. However, you incorrectly stated that Article 21 is only for citizens; it applies to everyone."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the expanded rights but fails to explain the legal shift (from narrow procedure to fair procedure) that caused this expansion. It also contains a factual error regarding who is protected by Article 21."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer focuses entirely on the expansion of rights without acknowledging the legal boundaries or the 'procedure' required by the Constitution."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": null
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The structure follows the required format with an introduction, body, and conclusion. However, the factual claim regarding who is protected by Article 21 is incorrect based on the provided materials."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies specific rights added to Article 21, but contains a significant factual error regarding who is entitled to these protections."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too short and fails to utilize the available word limit to provide a comprehensive examination. You should include more details on the shift from a narrow to a broad interpretation."
+     }
+    ],
+    "stats": {
+     "words": 84,
+     "sentences": 5,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 46
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.56
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 21",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 32",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 124",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 129",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 130",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 134A",
+      "used": false
+     },
+     {
+      "label": "Case: A.K. Gopalan v State of Madras (1950)",
+      "used": false
+     },
+     {
+      "label": "Case: Maneka Gandhi v Union of India (1978)",
+      "used": true
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 26 (Supreme Court), Supreme Court Advocates",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 7 (Fundamental Rights), Right to Freedom",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 6 (The Crisis of Democratic Order)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 8 (Recent Developments in Indian Politics)",
+      "used": false
+     }
+    ],
+    "trust": {
+     "secondOpinions": 6,
+     "overturned": 2,
+     "softened": 0,
+     "thirdOpinions": 1,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "sourcesUsed": [
+      "Constitution of India, Article 21",
+      "Constitution of India, Article 32",
+      "Case: Maneka Gandhi v Union of India (1978)"
+     ],
+     "expected": [
+      "Constitution of India, Article 21",
+      "Constitution of India, Article 32"
+     ],
+     "casesGiven": [
+      "Case: A.K. Gopalan v State of Madras (1950)",
+      "Case: Maneka Gandhi v Union of India (1978)"
+     ],
+     "casesCited": [
+      "Case: Maneka Gandhi v Union of India (1978)"
+     ],
+     "expectedCaseCited": true,
+     "redFixesWithTryWriting": 1
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

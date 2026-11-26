@@ -1,0 +1,804 @@
+{
+ "case": "eco-1991-reforms",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "level is developing": true,
+  "the report says what stops the next level": true,
+  "caught: India approached the Asian Development Bank and the IMF": true,
+  "cited: India approached the Asian Development Bank and the IMF": true,
+  "caught: Stabilisation measures were long-term measures": true,
+  "cited: Stabilisation measures were long-term measures": true,
+  "no red marks on correct sentences": true
+ },
+ "seconds": 11553.4,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-eco-1991-reforms"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-eco-1991-reforms",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "Every part is answered, but 2 serious problems cost you credit.",
+    "summary": "The answer correctly identifies the fiscal imbalance and trade reform measures while setting a clear context for the 1991 crisis. However, it loses credit due to inaccuracies regarding the specific lending institutions and the duration of stabilization measures. You should first replace the Asian Development Bank with the World Bank and correctly describe stabilization measures as short-term actions to control inflation and balance of payments weaknesses.",
+    "levelWhy": [
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "What were the causes of the balance of payments crisis of 1991? Discuss the major reforms introduced under the New Economic Policy. (Answer in 250 words)",
+    "directives": [
+     {
+      "word": "Discuss",
+      "meaning": "Look at the issue from more than one side, with reasons, and reach a balanced view."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "In 1991 India faced a severe balance of payments crisis, which led to the New Economic Policy built on liberalisation, privatisation and globalisation.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "Through the late 1980s, government expenditure persistently exceeded revenue, and the gap was met by borrowing at home and abroad.",
+      "para": 2
+     },
+     {
+      "id": "s3",
+      "text": "Imports grew much faster than exports, and foreign exchange reserves fell to a level barely enough to finance about two weeks of imports.",
+      "para": 2
+     },
+     {
+      "id": "s4",
+      "text": "The Gulf War of 1990-91 raised the oil import bill and cut remittances, while rising prices of essential goods deepened the crisis.",
+      "para": 2
+     },
+     {
+      "id": "s5",
+      "text": "India approached the Asian Development Bank and the IMF for emergency loans, which came with conditions to open up the economy.",
+      "para": 2
+     },
+     {
+      "id": "s6",
+      "text": "The reform package combined stabilisation measures with structural reforms.",
+      "para": 2
+     },
+     {
+      "id": "s7",
+      "text": "Stabilisation measures were long-term measures aimed at improving efficiency and international competitiveness by removing rigidities in the economy.",
+      "para": 2
+     },
+     {
+      "id": "s8",
+      "text": "Industrial licensing was abolished for almost all industries except a short list such as alcohol, cigarettes, hazardous chemicals and industrial explosives.",
+      "para": 2
+     },
+     {
+      "id": "s9",
+      "text": "The number of industries reserved for the public sector was sharply reduced, and many items reserved for small-scale units were dereserved.",
+      "para": 2
+     },
+     {
+      "id": "s10",
+      "text": "The rupee was devalued, and exchange rates were gradually left to be determined by market demand and supply.",
+      "para": 2
+     },
+     {
+      "id": "s11",
+      "text": "Trade reforms dismantled quantitative restrictions, reduced tariffs and removed most import licensing.",
+      "para": 2
+     },
+     {
+      "id": "s12",
+      "text": "Financial sector reforms allowed new private sector banks and sought to shift the RBI's role from regulator to facilitator.",
+      "para": 2
+     },
+     {
+      "id": "s13",
+      "text": "Disinvestment, the sale of part of the government's equity in public sector enterprises, was adopted to improve their financial discipline and efficiency.",
+      "para": 2
+     },
+     {
+      "id": "s14",
+      "text": "These reforms raised growth and integrated India with the world economy, but second-generation reforms in factor markets, agriculture and governance remain essential for inclusive growth.",
+      "para": 3
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "Part 1",
+      "text": "What were the causes of the balance of payments crisis of 1991?",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "You have successfully identified the internal fiscal issues, the trade imbalance, and the external shocks. The answer covers the core reasons for the 1991 crisis well.",
+      "checkedTwice": false,
+      "sentences": [
+       "s2",
+       "s3"
+      ]
+     },
+     {
+      "id": "p2",
+      "label": "Part 2",
+      "text": "Discuss the major reforms introduced under the New Economic Policy.",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "The answer covers the major pillars of the reforms well, including industrial, trade, and financial sectors. However, there is a conceptual error regarding the duration of stabilization measures.",
+      "checkedTwice": false,
+      "sentences": [
+       "s8",
+       "s11"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Replace Asian Development Bank with World Bank.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s5",
+       "text": "India approached the Asian Development Bank and the IMF for emergency loans, which came with conditions to open up the economy."
+      },
+      "why": "The student mentions the Asian Development Bank, but the extract states India approached the World Bank and the IMF.",
+      "tryWriting": "India approached the World Bank and the IMF for emergency loans, which came with conditions to open up the economy.",
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "sourceRef": "r16",
+      "evidence": {
+       "wrongWords": "Asian Development Bank",
+       "sourceWords": "India approached the International Bank for Reconstruction and Development (IBRD), popularly known as World Bank and the International Monetary Fund (IMF)"
+      }
+     },
+     {
+      "n": 2,
+      "title": "Stabilisation measures were short-term measures intended to correct weaknesses in the balance of payments and bring inflation under control.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s7",
+       "text": "Stabilisation measures were long-term measures aimed at improving efficiency and international competitiveness by removing rigidities in the economy."
+      },
+      "why": "The sentence describes stabilisation measures as long-term, but the source states they are short-term measures intended to correct balance of payments weaknesses and inflation.",
+      "tryWriting": null,
+      "checkedTwice": true,
+      "source": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "sourceRef": "r5",
+      "evidence": {
+       "wrongWords": "long-term measures aimed at improving efficiency and international competitiveness by removing rigidities in the economy",
+       "sourceWords": "Stabilisation measures are shortterm measures, intended to correct some of the weaknesses that have developed in the balance of payments and to bring inflation under control."
+      }
+     },
+     {
+      "n": 3,
+      "title": "Specify which government bodies or agencies should lead these reforms and the timeframe for their implementation.",
+      "where": "Suggestions are workable",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s14",
+       "text": "These reforms raised growth and integrated India with the world economy, but second-generation reforms in factor markets, agriculture and governance remain essential for inclusive growth."
+      },
+      "why": "The suggestion that reforms in factor markets, agriculture and governance remain essential is a broad statement that lacks a specific actor or a defined timeline for implementation.",
+      "tryWriting": "To ensure inclusive growth, the government should prioritize structural reforms in agriculture and governance by setting specific targets for rural infrastructure and ease of doing business.",
+      "checkedTwice": false,
+      "source": null,
+      "sourceRef": null,
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "In 1991 India faced a severe balance of payments crisis, which led to the New Economic Policy built on liberalisation, privatisation and globalisation.",
+      "credit": [
+       {
+        "where": "Facts checked against the books",
+        "reason": "The sentence correctly identifies that a crisis in the balance of payments led to the introduction of economic reforms in 1991."
+       },
+       {
+        "where": "Structure",
+        "reason": "It sets the context of the 1991 crisis and the resulting policy shift without repeating the question."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "Through the late 1980s, government expenditure persistently exceeded revenue, and the gap was met by borrowing at home and abroad.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It correctly identifies the fiscal imbalance where government expenditure exceeded revenue as a primary cause."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "It explains the 'why' of the crisis by identifying the fiscal deficit and borrowing as a cause."
+       },
+       {
+        "where": "Cause and effect",
+        "reason": "It correctly identifies that persistent government expenditure exceeding revenue led to borrowing, which is a primary cause of the crisis."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s3",
+      "text": "Imports grew much faster than exports, and foreign exchange reserves fell to a level barely enough to finance about two weeks of imports.",
+      "credit": [
+       {
+        "where": "Part 1",
+        "reason": "It highlights the trade deficit and the critical depletion of foreign exchange reserves."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "This sentence correctly identifies the trade deficit and falling foreign exchange reserves as causes."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Correctly identifies the imbalance between imports and exports and the depletion of foreign exchange reserves."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that reserves fell to a level enough for 'two weeks' of imports is a specific figure that should be verified against historical data.",
+        "fix": "Verify the specific number of weeks of import cover from a reliable economic history source.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s4",
+      "text": "The Gulf War of 1990-91 raised the oil import bill and cut remittances, while rising prices of essential goods deepened the crisis.",
+      "credit": [
+       {
+        "where": "Did what the question asks",
+        "reason": "It provides specific external factors like the Gulf War and oil prices to explain the pressure on the balance of payments."
+       },
+       {
+        "where": "Covered the key angles",
+        "reason": "It correctly identifies external shocks like the Gulf War and oil prices as geopolitical and economic factors."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific historical event, the Gulf War, to explain the rise in oil import bills."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Part 1",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "While the Gulf War is a valid external factor, the sentence could more clearly link how it specifically impacted the balance of payments beyond just 'deepening the crisis'.",
+        "fix": "Explain how the Gulf War specifically increased oil import costs and reduced the inflow of remittances.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s5",
+      "text": "India approached the Asian Development Bank and the IMF for emergency loans, which came with conditions to open up the economy.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The student mentions the Asian Development Bank, but the extract states India approached the World Bank and the IMF.",
+        "fix": "Replace Asian Development Bank with World Bank.",
+        "fixNumber": 1,
+        "source": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s6",
+      "text": "The reform package combined stabilisation measures with structural reforms.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence states that the package combined measures but does not specify what the stabilization measures were or how they were implemented.",
+        "fix": "Specify that stabilization measures included fiscal deficit reduction and currency management.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s7",
+      "text": "Stabilisation measures were long-term measures aimed at improving efficiency and international competitiveness by removing rigidities in the economy.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence describes stabilisation measures as long-term, but the source states they are short-term measures intended to correct balance of payments weaknesses and inflation.",
+        "fix": "Stabilisation measures were short-term measures intended to correct weaknesses in the balance of payments and bring inflation under control.",
+        "fixNumber": 2,
+        "source": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)"
+       },
+       {
+        "where": "Facts are accurate",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The sentence describes stabilization measures as long-term, but stabilization measures are typically short-term actions to correct immediate imbalances.",
+        "fix": "Change 'long-term' to 'short-term' to correctly describe stabilization measures.",
+        "fixNumber": null,
+        "source": null
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s8",
+      "text": "Industrial licensing was abolished for almost all industries except a short list such as alcohol, cigarettes, hazardous chemicals and industrial explosives.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It provides a specific example of industrial licensing abolition, which is a core reform."
+       },
+       {
+        "where": "Concepts explained",
+        "reason": "The sentence correctly explains the concept of industrial licensing by specifying the shift from a broad requirement to a restricted list."
+       },
+       {
+        "where": "Examples and evidence",
+        "reason": "The sentence provides a specific list of industries like alcohol and cigarettes to illustrate the scope of licensing abolition."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The list of exceptions is incomplete as it omits electronics, aerospace, and drugs and pharmaceuticals.",
+        "fix": "Correct this sentence using NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991).",
+        "fixNumber": null,
+        "source": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)"
+       }
+      ],
+      "tone": "amber"
+     },
+     {
+      "sourceId": "s11",
+      "text": "Trade reforms dismantled quantitative restrictions, reduced tariffs and removed most import licensing.",
+      "credit": [
+       {
+        "where": "Part 2",
+        "reason": "It correctly identifies the dismantling of quantitative restrictions and reduction of tariffs as trade reforms."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The phrase 'quantitative restrictions' is a precise term for trade barriers."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s13",
+      "text": "Disinvestment, the sale of part of the government's equity in public sector enterprises, was adopted to improve their financial discipline and efficiency.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "It clearly defines disinvestment as the sale of government equity to improve financial discipline."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s14",
+      "text": "These reforms raised growth and integrated India with the world economy, but second-generation reforms in factor markets, agriculture and governance remain essential for inclusive growth.",
+      "credit": [
+       {
+        "where": "Trade-offs and limits",
+        "reason": "The sentence acknowledges that the reforms have not yet achieved inclusive growth and identifies specific areas like agriculture and governance that still need work."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a forward-looking conclusion by mentioning essential reforms for inclusive growth."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Suggestions are workable",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The suggestion that reforms in factor markets, agriculture and governance remain essential is a broad statement that lacks a specific actor or a defined timeline for implementation.",
+        "fix": "Specify which government bodies or agencies should lead these reforms and the timeframe for their implementation.",
+        "fixNumber": 3,
+        "source": null
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Covered the key angles",
+      "reason": "The answer does not discuss the social or political implications of the reforms, such as the impact on inequality or the shift in the role of the state.",
+      "fix": "Add a sentence discussing the social impact or the shift in the state's role from a provider to a facilitator.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Examples and evidence",
+      "reason": "The answer lacks specific data or percentages regarding the magnitude of the fiscal deficit or the exact percentage of the rupee devaluation.",
+      "fix": "Include a percentage or a specific figure for the fiscal deficit or the devaluation rate.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer does not mention that the reforms were a response to both a fiscal and a balance-of-payment crisis.",
+      "fix": "Mention that the reforms were a response to a fiscal and balance-of-payment crisis.",
+      "fixNumber": null,
+      "source": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction"
+     },
+     {
+      "where": "Trade-offs and limits",
+      "reason": "The answer does not mention the specific social costs or the impact on vulnerable groups during the transition to a market-led economy.",
+      "fix": "Mention the need for social safety nets to protect those affected by the shift to a market economy.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "Part 1",
+      "sourceId": "s2",
+      "quote": "Through the late 1980s, government expenditure persistently exceeded revenue, and the gap was met by borrowing at home and abroad.",
+      "reason": "It correctly identifies the fiscal imbalance where government expenditure exceeded revenue as a primary cause."
+     },
+     {
+      "where": "Part 2",
+      "sourceId": "s11",
+      "quote": "Trade reforms dismantled quantitative restrictions, reduced tariffs and removed most import licensing.",
+      "reason": "It correctly identifies the dismantling of quantitative restrictions and reduction of tariffs as trade reforms."
+     },
+     {
+      "where": "Structure",
+      "sourceId": "s1",
+      "quote": "In 1991 India faced a severe balance of payments crisis, which led to the New Economic Policy built on liberalisation, privatisation and globalisation.",
+      "reason": "It sets the context of the 1991 crisis and the resulting policy shift without repeating the question."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a good multi-angled discussion of the causes and the reforms. However, it incorrectly categorizes the nature of stabilization measures."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer remains highly relevant to the prompt, covering both the causes of the crisis and the specific reforms. The final sentence drifts slightly into future policy goals."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers the economic and geopolitical causes well but lacks a discussion on the social or political dimensions of the policy shift."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies and defines several key reform mechanisms like licensing and disinvestment. However, it mischaracterizes the nature of stabilization measures."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The student correctly identifies the primary drivers of the 1991 crisis. However, there is a conceptual error regarding the duration of stabilization measures."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good specific examples like the Gulf War and the list of reserved industries. Adding specific data points on the fiscal deficit or devaluation would strengthen the evidence."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer accurately captures the core reasons for the 1991 crisis and the resulting policy shift. It could be strengthened by explicitly mentioning the fiscal crisis alongside the balance of payments crisis."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer establishes a clear causal link between fiscal deficits, trade imbalances, and external shocks leading to the 1991 crisis. However, the classification of stabilization measures as long-term is technically incorrect."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies that the reforms are an ongoing process and highlights the need for further improvements in specific sectors. However, it could be strengthened by mentioning the social costs or the challenges faced by marginalized groups during the liberalization process."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer concludes with a general statement about future reforms but lacks the specificity required to be a workable suggestion."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The structure is very good. You have a clear introduction, a well-organized body divided into causes and reforms, and a forward-looking conclusion."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "good",
+      "verdictLabel": "Good",
+      "note": "The answer uses high-quality technical terminology like 'quantitative restrictions' and 'disinvestment' correctly. One minor area for improvement is being more specific when describing 'rigidities'."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer covers all required points well but exceeds the word limit. You should correct the classification of stabilization measures as short-term rather than long-term."
+     }
+    ],
+    "stats": {
+     "words": 274,
+     "sentences": 14,
+     "paragraphs": 3,
+     "limit": 250,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "Part 1",
+       "words": 65
+      },
+      {
+       "partId": "p2",
+       "label": "Part 2",
+       "words": 33
+      }
+     ],
+     "uncreditedSentences": [
+      {
+       "sourceId": "s9",
+       "text": "The number of industries reserved for the public sector was sharply reduced, and many items reserved for small-scale units were dereserved."
+      },
+      {
+       "sourceId": "s10",
+       "text": "The rupee was devalued, and exchange rates were gradually left to be determined by market demand and supply."
+      },
+      {
+       "sourceId": "s12",
+       "text": "Financial sector reforms allowed new private sector banks and sought to shift the RBI's role from regulator to facilitator."
+      }
+     ],
+     "marks": 15,
+     "format": "gs-15",
+     "ratio": 1.1
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 5 (Balance of Payments)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 11, Indian Economic Development, Ch. 3 (Economic Reforms Since 1991)",
+      "used": true
+     },
+     {
+      "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 6 (Economic Reforms), Introduction",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 5,
+     "overturned": 1,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [],
+     "levelWhy": [
+      "It has 2 serious problems (see the fixes)."
+     ]
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}

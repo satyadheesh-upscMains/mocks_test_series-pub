@@ -1,0 +1,549 @@
+{
+ "case": "polity-governor",
+ "counts": {
+  "done": 1,
+  "retake": 0,
+  "failed": 0,
+  "lost": 0
+ },
+ "gates": {
+  "claimed and delivered": true,
+  "report completed": true,
+  "report version v15": true,
+  "three or fewer fixes": true,
+  "every check judged": true,
+  "caught: elected by the State Legislative Assembly": true,
+  "cited: elected by the State Legislative Assembly": true,
+  "no red marks on correct sentences": false,
+  "a short answer is not Good or Strong": true,
+  "the report says what stops the next level": true
+ },
+ "seconds": 5058.9,
+ "calls": [
+  {
+   "action": "claim"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "renew",
+   "id": "e2e-polity-governor"
+  },
+  {
+   "action": "complete",
+   "id": "e2e-polity-governor",
+   "result": {
+    "version": "mains-report-v15",
+    "model": "gemma-4-12b-it-Q4_K_M.gguf",
+    "lang": "en",
+    "level": "developing",
+    "levelLabel": "Developing",
+    "levels": [
+     "Off track",
+     "Developing",
+     "Good",
+     "Strong"
+    ],
+    "headline": "At 69 words, this answer is far shorter than the 150 the question expects.",
+    "summary": "You correctly identify the Governor as the constitutional head of a State. However, the answer is significantly shorter than the expected word limit and contains factual inaccuracies regarding the appointment and exercise of executive power. You should first correct the statement about the Governor's appointment to reflect that they are appointed by the President.",
+    "levelWhy": [
+     "At 69 words it is too short: a question with this word limit expects about 150.",
+     "It has no conclusion with a way forward.",
+     "It makes 3 distinct points; about 5 are expected.",
+     "It has 2 serious problems (see the fixes)."
+    ],
+    "formatNote": null,
+    "question": "Analyse the position of the Governor in India's federal structure.",
+    "directives": [
+     {
+      "word": "Analyse",
+      "meaning": "Break the issue into its parts and show how they connect and what follows from them."
+     }
+    ],
+    "sentences": [
+     {
+      "id": "s1",
+      "text": "The Governor is the constitutional head of a State.",
+      "para": 1
+     },
+     {
+      "id": "s2",
+      "text": "The Governor is elected by the State Legislative Assembly for a fixed term of five years and cannot be removed before that.",
+      "para": 1
+     },
+     {
+      "id": "s3",
+      "text": "The executive power of the State is vested in the Governor and is exercised through the Council of Ministers.",
+      "para": 1
+     },
+     {
+      "id": "s4",
+      "text": "Because the Governor is linked to the Centre, the office has often been at the centre of Centre-State disputes.",
+      "para": 1
+     }
+    ],
+    "parts": [
+     {
+      "id": "p1",
+      "label": "The question",
+      "text": "the position of the Governor in India's federal structure",
+      "status": "met",
+      "statusLabel": "Answered",
+      "note": "Correctly identifies the Governor as the constitutional head of a State.",
+      "checkedTwice": false,
+      "sentences": [
+       "s1",
+       "s4"
+      ]
+     }
+    ],
+    "fixes": [
+     {
+      "n": 1,
+      "title": "Correct this sentence using Constitution of India, Article 155.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s2",
+       "text": "The Governor is elected by the State Legislative Assembly for a fixed term of five years and cannot be removed before that."
+      },
+      "why": "The sentence states the Governor is elected by the Assembly, but the extract says the Governor shall be appointed by the President.",
+      "tryWriting": "The Governor of a State shall be appointed by the President by warrant under his hand and seal.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 155",
+      "sourceRef": "r2",
+      "evidence": {
+       "wrongWords": "elected by the State Legislative Assembly",
+       "sourceWords": "The Governor of a State shall be appointed by the President"
+      }
+     },
+     {
+      "n": 2,
+      "title": "The executive power of the State is vested in the Governor and is exercised by him either directly or through officers subordinate to him.",
+      "where": "Facts checked against the books",
+      "impact": "major",
+      "impactLabel": "Big effect on your marks",
+      "kind": "wrong",
+      "kindLabel": "Wrong",
+      "yourLine": {
+       "sourceId": "s3",
+       "text": "The executive power of the State is vested in the Governor and is exercised through the Council of Ministers."
+      },
+      "why": "The sentence states power is exercised through the Council of Ministers, but the extract says it is exercised by the Governor directly or through officers subordinate to him.",
+      "tryWriting": "The executive power of the State is vested in the Governor and shall be exercised by him either directly or through officers subordinate to him in accordance with this Constitution.",
+      "checkedTwice": true,
+      "source": "Constitution of India, Article 154",
+      "sourceRef": "r17",
+      "evidence": {
+       "wrongWords": "and is exercised through the Council of Ministers",
+       "sourceWords": "The executive power of the State shall be vested in the Governor and shall be exercised by him either directly or through officers subordinate to him"
+      }
+     },
+     {
+      "n": 3,
+      "title": "Include a specific instance of a state government being dismissed by a Governor to illustrate this dispute.",
+      "where": "Examples and evidence",
+      "impact": "medium",
+      "impactLabel": "Medium effect on your marks",
+      "kind": "weak",
+      "kindLabel": "Needs work",
+      "yourLine": {
+       "sourceId": "s4",
+       "text": "Because the Governor is linked to the Centre, the office has often been at the centre of Centre-State disputes."
+      },
+      "why": "The claim that the office is at the 'centre of Centre-State disputes' is a general observation and lacks a specific instance or case to ground the analysis.",
+      "tryWriting": null,
+      "checkedTwice": false,
+      "source": "NCERT Class 12, Politics in India Since Independence, Ch. 7 (Regional Aspirations)",
+      "sourceRef": "r12",
+      "evidence": null
+     }
+    ],
+    "highlights": [
+     {
+      "sourceId": "s1",
+      "text": "The Governor is the constitutional head of a State.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "Correctly identifies the Governor as the constitutional head of a State."
+       },
+       {
+        "where": "Structure",
+        "reason": "It provides a clear definition of the Governor's role as a constitutional head to set the context."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence uses the precise constitutional term 'constitutional head' to describe the Governor's role."
+       }
+      ],
+      "concerns": [],
+      "tone": "green"
+     },
+     {
+      "sourceId": "s2",
+      "text": "The Governor is elected by the State Legislative Assembly for a fixed term of five years and cannot be removed before that.",
+      "credit": [],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence states the Governor is elected by the Assembly, but the extract says the Governor shall be appointed by the President.",
+        "fix": "Correct this sentence using Constitution of India, Article 155.",
+        "fixNumber": 1,
+        "source": "Constitution of India, Article 155"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s3",
+      "text": "The executive power of the State is vested in the Governor and is exercised through the Council of Ministers.",
+      "credit": [
+       {
+        "where": "Concepts explained",
+        "reason": "Explains the distribution of executive power between the Governor and the Council of Ministers."
+       },
+       {
+        "where": "Facts are accurate",
+        "reason": "Accurately describes the vesting of executive power in the Governor and its exercise through the Council of Ministers."
+       },
+       {
+        "where": "Clear wording",
+        "reason": "The sentence correctly identifies the specific mechanism of 'executive power' being 'vested' and 'exercised' through the Council of Ministers."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Facts checked against the books",
+        "kind": "wrong",
+        "kindLabel": "Wrong",
+        "reason": "The sentence states power is exercised through the Council of Ministers, but the extract says it is exercised by the Governor directly or through officers subordinate to him.",
+        "fix": "The executive power of the State is vested in the Governor and is exercised by him either directly or through officers subordinate to him.",
+        "fixNumber": 2,
+        "source": "Constitution of India, Article 154"
+       }
+      ],
+      "tone": "red"
+     },
+     {
+      "sourceId": "s4",
+      "text": "Because the Governor is linked to the Centre, the office has often been at the centre of Centre-State disputes.",
+      "credit": [
+       {
+        "where": "The question",
+        "reason": "Explains the role of the Governor as a link to the Centre and its impact on federal relations."
+       },
+       {
+        "where": "Did what the question asks",
+        "reason": "This sentence moves beyond description by explaining the effect of the Governor's link to the Centre on federal relations."
+       },
+       {
+        "where": "Stayed on topic",
+        "reason": "Addresses the Governor's position within the federal structure by mentioning the link to the Centre and resulting disputes."
+       }
+      ],
+      "concerns": [
+       {
+        "where": "Examples and evidence",
+        "kind": "weak",
+        "kindLabel": "Needs work",
+        "reason": "The claim that the office is at the 'centre of Centre-State disputes' is a general observation and lacks a specific instance or case to ground the analysis.",
+        "fix": "Include a specific instance of a state government being dismissed by a Governor to illustrate this dispute.",
+        "fixNumber": 3,
+        "source": "NCERT Class 12, Politics in India Since Independence, Ch. 7 (Regional Aspirations)"
+       }
+      ],
+      "tone": "amber"
+     }
+    ],
+    "missing": [],
+    "additions": [
+     {
+      "where": "Facts checked against the books",
+      "reason": "The answer fails to mention that the Governor holds office during the pleasure of the President and has no security of tenure.",
+      "fix": "Add a sentence explaining that the Governor holds office during the pleasure of the President.",
+      "fixNumber": null,
+      "source": "Laxmikanth, Indian Polity, Ch. 30 (Governor), Term of Governor’s Office"
+     },
+     {
+      "where": "Structure",
+      "reason": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fix": "End with a one- or two-sentence conclusion that gives a way forward, not a summary.",
+      "fixNumber": null,
+      "source": null
+     },
+     {
+      "where": "Structure",
+      "reason": "Make about 5 distinct points in the body; it has 3.",
+      "fix": "Make about 5 distinct points in the body; it has 3.",
+      "fixNumber": null,
+      "source": null
+     }
+    ],
+    "strengths": [
+     {
+      "where": "The question",
+      "sourceId": "s1",
+      "quote": "The Governor is the constitutional head of a State.",
+      "reason": "Correctly identifies the Governor as the constitutional head of a State."
+     }
+    ],
+    "checks": [
+     {
+      "id": "directive",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Did what the question asks",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer provides a basic description but fails to fully analyze the constitutional mechanics of the Governor's role. It also contains a significant factual error regarding the method of appointment."
+     },
+     {
+      "id": "scope",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Stayed on topic",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer stays on topic but contains a significant factual error regarding how a Governor is appointed and their tenure."
+     },
+     {
+      "id": "dimensions",
+      "group": "question",
+      "groupLabel": "The question",
+      "label": "Covered the key angles",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer identifies the political friction but contains a major factual error regarding how the Governor attains office. It needs to include the legal/administrative powers to fully analyze the 'position' in a federal structure."
+     },
+     {
+      "id": "concepts",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Concepts explained",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the constitutional role but contains significant factual errors regarding how a Governor is appointed and their tenure."
+     },
+     {
+      "id": "accuracy",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Facts are accurate",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer contains significant factual errors regarding how a Governor is appointed and their tenure. You must distinguish between the Governor's role and that of an elected official."
+     },
+     {
+      "id": "evidence",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Examples and evidence",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "The answer lacks specific evidence to support its claims. Correcting the factual error regarding how a Governor is appointed is essential for a valid answer."
+     },
+     {
+      "id": "provisions",
+      "group": "content",
+      "groupLabel": "Content",
+      "label": "Constitution and textbook basics",
+      "verdict": "wrong",
+      "verdictLabel": "Wrong",
+      "note": "You correctly identified the constitutional role of the Governor but made a major factual error regarding how they are appointed. You should also mention the lack of security of tenure to fully describe their position."
+     },
+     {
+      "id": "causality",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Cause and effect",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "You correctly identified a consequence of the Governor's role, but the factual basis for how the Governor attains office is incorrect."
+     },
+     {
+      "id": "balance",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Trade-offs and limits",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer correctly identifies the tension between the Centre and States but contains a significant factual error regarding how a Governor attains office."
+     },
+     {
+      "id": "solutions",
+      "group": "reasoning",
+      "groupLabel": "Reasoning",
+      "label": "Suggestions are workable",
+      "verdict": "not_applicable",
+      "verdictLabel": "Not needed here",
+      "note": "The question asks for an analysis, but the specific task check is looking for workable suggestions. Since your answer contains no suggestions, this check is not applicable in a positive sense."
+     },
+     {
+      "id": "structure",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Structure",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer has a clear introduction and body points, but it fails to provide a concluding statement. There is also a significant factual error regarding how a Governor is appointed."
+     },
+     {
+      "id": "language",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Clear wording",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer uses good constitutional terminology but contains a major factual error regarding how the Governor attains office."
+     },
+     {
+      "id": "presentation",
+      "group": "writing",
+      "groupLabel": "Writing",
+      "label": "Use of space",
+      "verdict": "partial",
+      "verdictLabel": "Partly",
+      "note": "The answer is too brief and fails to utilize the available word limit to provide a deep analysis. It also contains a significant factual error regarding how a Governor attains office."
+     }
+    ],
+    "stats": {
+     "words": 69,
+     "sentences": 4,
+     "paragraphs": 1,
+     "limit": 150,
+     "wordsByPart": [
+      {
+       "partId": "p1",
+       "label": "The question",
+       "words": 28
+      }
+     ],
+     "uncreditedSentences": [],
+     "marks": 10,
+     "format": "gs-10",
+     "ratio": 0.46
+    },
+    "transcript": null,
+    "sources": [
+     {
+      "label": "Constitution of India, Article 153",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 155",
+      "used": true
+     },
+     {
+      "label": "Constitution of India, Article 159",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 158",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 156",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 157",
+      "used": false
+     },
+     {
+      "label": "Case: Shamsher Singh v State of Punjab (1974)",
+      "used": false
+     },
+     {
+      "label": "Case: Nabam Rebia v Deputy Speaker, Arunachal Pradesh (2016)",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 30 (Governor), Constitutional Position of Governor",
+      "used": false
+     },
+     {
+      "label": "Laxmikanth, Indian Polity, Ch. 30 (Governor), Term of Governor’s Office",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 2 (Era of One-Party Dominance)",
+      "used": false
+     },
+     {
+      "label": "NCERT Class 12, Politics in India Since Independence, Ch. 7 (Regional Aspirations)",
+      "used": true
+     },
+     {
+      "label": "NCERT Class 12, Contemporary World Politics, Ch. 4 (International Organisations)",
+      "used": false
+     },
+     {
+      "label": "Constitution of India, Article 154",
+      "used": true
+     }
+    ],
+    "trust": {
+     "secondOpinions": 2,
+     "overturned": 0,
+     "softened": 0,
+     "thirdOpinions": 2,
+     "thirdRemoved": 0,
+     "unavailableChecks": []
+    },
+    "qa": {
+     "falseRed": [
+      "The executive power of the State is vested in the Governor and is exercised through the Council of Ministers."
+     ],
+     "sourcesUsed": [
+      "Constitution of India, Article 155",
+      "Laxmikanth, Indian Polity, Ch. 30 (Governor), Term of Governor’s Office",
+      "NCERT Class 12, Politics in India Since Independence, Ch. 7 (Regional Aspirations)",
+      "Constitution of India, Article 154"
+     ],
+     "expected": [
+      "Constitution of India, Article 155",
+      "Constitution of India, Article 156"
+     ],
+     "casesGiven": [
+      "Case: Shamsher Singh v State of Punjab (1974)",
+      "Case: Nabam Rebia v Deputy Speaker, Arunachal Pradesh (2016)"
+     ],
+     "casesCited": [],
+     "expectedCaseCited": false,
+     "redFixesWithTryWriting": 2
+    }
+   },
+   "reportVersion": "mains-report-v15"
+  },
+  {
+   "action": "claim"
+  },
+  {
+   "action": "deliver"
+  }
+ ]
+}
