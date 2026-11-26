@@ -13,7 +13,9 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: mains-subject-qa-v18
+  # The previous focused run remained stuck in its gate job after the local session lost connectivity.  Keep this
+  # restart independent so it can run to completion without changing or cancelling that historical run.
+  group: mains-subject-qa-v18-rerun
   cancel-in-progress: false
 
 env:
