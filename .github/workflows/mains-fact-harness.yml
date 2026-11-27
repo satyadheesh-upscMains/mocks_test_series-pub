@@ -8,7 +8,7 @@ concurrency:
   group: mains-fact-harness
   cancel-in-progress: true
 env:
-  CORE_SHA: c03c56afbdc7cffea281f7ee136426ab13c30d3b
+  CORE_SHA: 7e4a72ff0314e40f57582b98b0edd1f9218d4ca3
   MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
   RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 jobs:
