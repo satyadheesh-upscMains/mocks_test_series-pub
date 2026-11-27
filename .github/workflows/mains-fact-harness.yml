@@ -8,7 +8,7 @@ concurrency:
   group: mains-fact-harness
   cancel-in-progress: true
 env:
-  CORE_SHA: 0f44ebf19c2e8e2453f12326dee1ad26894773a5
+  CORE_SHA: c03c56afbdc7cffea281f7ee136426ab13c30d3b
   MODEL_KEY: mains-gemma-4-12b-it-Q4_K_M-v1
   RUNTIME: llama-cpp-python==0.3.36 huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 jobs:
@@ -25,8 +25,25 @@ jobs:
         run: |
           pip install -q huggingface-hub==0.36.0
           python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='unsloth/gemma-4-12b-it-GGUF', filename='gemma-4-12b-it-Q4_K_M.gguf', local_dir='models')"
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: satyadheesh-upscMains/mocks_test_series-core
+          ref: ${{ env.CORE_SHA }}
+          token: ${{ secrets.CORE_TOKEN }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q huggingface-hub==0.36.0 Pillow==11.3.0 numpy==2.2.6 pypdf==5.1.0
+      - run: python -m unittest test_examiner test_refs test_photo test_worker test_review test_v10 test_v11
+      - run: python tools/build_refs.py
+      - run: python tools/retrieval_check.py
   facts:
-    needs: model
+    needs: [model, unit]
     strategy:
       fail-fast: false
       matrix:
