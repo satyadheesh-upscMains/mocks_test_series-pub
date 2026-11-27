@@ -1,0 +1,167 @@
+[
+ {
+  "repeat": 1,
+  "case": "polity-art21",
+  "sentence": "s4",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "Constitution of India, Article 32",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "approach the High Court directly under Article 32",
+  "reject": null,
+  "sourceWords": "The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed."
+ },
+ {
+  "repeat": 1,
+  "case": "hist-gandhi-mass-movement",
+  "sentence": "s7",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "deepened",
+     "value": "after Brigadier-General Reginald Dyer ordered troops to fire on a meeting at Jallianwala Bagh in Amritsar",
+     "answer": "silent"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-drainage",
+  "sentence": "s8",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 11, India: Physical Environment, Ch. 3 (Drainage System)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "sorrow of Bengal",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-minerals",
+  "sentence": "s10",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 12, India: People and Economy, Ch. 5 (Mineral and Energy Resources)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "Tertiary coalfields",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-rock-painting",
+  "sentence": "s3",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "is",
+     "value": "Bhimbetka in the Vindhya hills of Madhya Pradesh",
+     "answer": "supports"
+    },
+    {
+     "relation": "discovered in",
+     "value": "1957-58",
+     "answer": "supports"
+    },
+    {
+     "relation": "discovered by",
+     "value": "Vishnu Shridhar Wakankar",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-inflation-types",
+  "sentence": "s4",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 7 (Inflation and Business Cycle), Introduction",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "aggregate demand rises faster than output",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-currents",
+  "sentence": "s3",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "push water eastwards",
+  "reject": "fact:quote_agrees"
+ }
+]

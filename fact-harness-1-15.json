@@ -1,0 +1,134 @@
+[
+ {
+  "repeat": 1,
+  "case": "hist-permanent-settlement",
+  "sentence": "s10",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Themes in Indian History \u2013 Part III, Ch. 1 (Colonialism and the Countryside)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "this ryotwari demand was fixed permanently, so the state could never raise it",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "hist-alauddin-market",
+  "sentence": "s8",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "Satish Chandra, History of Medieval India, Ch. 7 (The Delhi Sultanat\u2014 (Circa 1300\u20131400)), Muhammad Tughlaq\u2019s Experiments",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "outlived him and were retained by the Tughlaq sultans",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-cyclones",
+  "sentence": "s8",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "willy-willies in north-western Australia",
+  "reject": "fact:quote_agrees"
+ },
+ {
+  "repeat": 1,
+  "case": "art-murals",
+  "sentence": "s6",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "preserve",
+     "value": "graceful dancing celestial nymphs on the veranda pillars",
+     "answer": "silent"
+    },
+    {
+     "relation": "are",
+     "value": "outlined in vermilion red",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-monetary-tools",
+  "sentence": "s6",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 3 (Determination of Income and Employment)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "withdraws liquidity from the banking system and reduces the money supply",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-unemployment",
+  "sentence": "s11",
+  "planted": false,
+  "selected": false,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "not_covered",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "",
+  "reject": null
+ }
+]

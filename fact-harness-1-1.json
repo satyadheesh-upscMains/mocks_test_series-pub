@@ -1,0 +1,150 @@
+[
+ {
+  "repeat": 1,
+  "case": "polity-local",
+  "sentence": "s2",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "Constitution of India, Article 243K",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "conducted by the Election Commission of India",
+  "reject": null,
+  "sourceWords": "The superintendence, direction and control of the preparation of electoral rolls for, and the conduct of, all elections to the Panchayats shall be vested in a State Election Commission"
+ },
+ {
+  "repeat": 1,
+  "case": "hist-1857-awadh",
+  "sentence": "s3",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Themes in Indian History \u2013 Part III, Ch. 2 (Rebels and the Raj)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "devised by Lord Dalhousie",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "hist-renaissance-italy",
+  "sentence": "s7",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "Flemish anatomist",
+  "reject": "fact:quote_agrees"
+ },
+ {
+  "repeat": 1,
+  "case": "geo-forests",
+  "sentence": "s8",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "are best developed in",
+     "value": "the Sundarbans and the Andaman and Nicobar Islands",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-mughal-painting",
+  "sentence": "s2",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "during his exile in Safavid Iran",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-monetary-tools",
+  "sentence": "s9",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "Since 2022",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "polity-governor",
+  "sentence": "s3",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "and is exercised through the Council of Ministers",
+  "reject": "fact:quote_agrees"
+ }
+]

@@ -1,0 +1,126 @@
+[
+ {
+  "repeat": 1,
+  "case": "band-wrong-10",
+  "sentence": "s4",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "Constitution of India, Article 109",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "up to three months",
+  "reject": null,
+  "sourceWords": "shall within a period of fourteen days from the date of its receipt of the Bill return the Bill to the House of the People"
+ },
+ {
+  "repeat": 1,
+  "case": "hist-vijayanagara-nayaka",
+  "sentence": "s4",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Themes in Indian History \u2013 Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "in Kannada",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-elnino",
+  "sentence": "s3",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "reject": "truncated",
+   "propositions": []
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-bronze",
+  "sentence": "s2",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": []
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-budget-deficits",
+  "sentence": "s2",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "excess of revenue receipts over revenue expenditure",
+  "reject": "fact:quote_agrees"
+ },
+ {
+  "repeat": 1,
+  "case": "eco-gst",
+  "sentence": "s12",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "not_covered",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "",
+  "reject": null
+ }
+]

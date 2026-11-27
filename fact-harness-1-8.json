@@ -1,0 +1,135 @@
+[
+ {
+  "repeat": 1,
+  "case": "polity-moneybill",
+  "sentence": "s1",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "Constitution of India, Article 109",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "either House of Parliament",
+  "reject": null,
+  "sourceWords": "A Money Bill shall not be introduced in the Council of States."
+ },
+ {
+  "repeat": 1,
+  "case": "hist-harappan-town-planning",
+  "sentence": "s7",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Themes in Indian History \u2013 Part I, Ch. 1 (Bricks, Beads and Bones: The Harappan Civilisation)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "stood in the Lower Town among ordinary houses",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-ghats",
+  "sentence": "s8",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "receive",
+     "value": "heavy orographic rain",
+     "answer": "supports"
+    },
+    {
+     "relation": "lies in",
+     "value": "a rain-shadow",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-mauryan",
+  "sentence": "s3",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "Mauryan pillars were monolithic",
+  "reject": "fact:books_disagree"
+ },
+ {
+  "repeat": 1,
+  "case": "art-bhakti",
+  "sentence": "s9",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "spent his later years at Puri",
+  "reject": "fact:quote_agrees"
+ },
+ {
+  "repeat": 1,
+  "case": "eco-balance-of-payments",
+  "sentence": "s6",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Introductory Macroeconomics, Ch. 6 (Open Economy Macroeconomics)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "recorded in the current account",
+  "reject": null
+ }
+]

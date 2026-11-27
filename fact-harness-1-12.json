@@ -1,0 +1,130 @@
+[
+ {
+  "repeat": 1,
+  "case": "band-wrong-10",
+  "sentence": "s2",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "not_needed",
+  "finalTone": "red",
+  "label": "Constitution of India, Article 109",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "introduced in either House of Parliament",
+  "reject": null,
+  "sourceWords": "A Money Bill shall not be introduced in the Council of States."
+ },
+ {
+  "repeat": 1,
+  "case": "hist-vijayanagara-nayaka",
+  "sentence": "s3",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 12, Themes in Indian History \u2013 Part II, Ch. 3 (An Imperial Capital: Vijayanagara)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "Sangama dynasty",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-elnino",
+  "sentence": "s2",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "drifts",
+     "value": "eastwards",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-bronze",
+  "sentence": "s8",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "NCERT Class 11, An Introduction to Indian Art \u2013 Part 1, Ch. 7 (Indian Bronze Sculpture)",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "balances on his left leg, crushing the dwarf Apasmara, while his raised right leg signifies release from illusion",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-dravida",
+  "sentence": "s6",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "built by the Pallava ruler Rajasimha",
+  "reject": "fact:quote_agrees"
+ },
+ {
+  "repeat": 1,
+  "case": "eco-gst",
+  "sentence": "s7",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "",
+  "reject": null
+ }
+]

@@ -1,0 +1,153 @@
+[
+ {
+  "repeat": 1,
+  "case": "hist-permanent-settlement",
+  "sentence": "s11",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "forced",
+     "value": "many peasants to desert their villages or borrow from sahukars",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "hist-meiji-modernisation",
+  "sentence": "s2",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "having",
+     "value": "access to wider knowledge through the Dutch and the Chinese",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "geo-forests",
+  "sentence": "s2",
+  "planted": false,
+  "selected": true,
+  "quoteInExtract": false,
+  "verdict": "good",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "confirmed",
+  "atomic": {
+   "ran": true,
+   "propositions": [
+    {
+     "relation": "grow on",
+     "value": "the windward western slopes of the Western Ghats",
+     "answer": "supports"
+    },
+    {
+     "relation": "grow on",
+     "value": "the north-eastern hills",
+     "answer": "supports"
+    },
+    {
+     "relation": "grow on",
+     "value": "the Andaman and Nicobar Islands",
+     "answer": "supports"
+    }
+   ]
+  },
+  "wrongWords": "",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "art-mughal-painting",
+  "sentence": "s7",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "Satish Chandra, History of Medieval India, Ch. 17 (Cultural and Religious Developments), Painting",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "reached its climax under Shah Jahan",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-monetary-tools",
+  "sentence": "s8",
+  "planted": true,
+  "selected": true,
+  "quoteInExtract": true,
+  "verdict": "wrong",
+  "second": "upheld",
+  "third": "different",
+  "finalTone": "red",
+  "label": "Ramesh Singh, Indian Economy (2018 edition), Ch. 11 (Indian Financial Market), Introduction",
+  "bothTrue": "no",
+  "verdictRaw": "contradicted",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "banks borrow overnight from the RBI when they face a liquidity shortage",
+  "reject": null
+ },
+ {
+  "repeat": 1,
+  "case": "eco-unemployment",
+  "sentence": "s4",
+  "planted": false,
+  "selected": false,
+  "quoteInExtract": false,
+  "verdict": "not_applicable",
+  "second": null,
+  "third": null,
+  "finalTone": "green",
+  "label": null,
+  "bothTrue": "yes",
+  "verdictRaw": "not_covered",
+  "atomic": {
+   "ran": false
+  },
+  "wrongWords": "",
+  "reject": null
+ }
+]
